@@ -88,7 +88,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p19315447"><a name="p19315447"></a><a name="p19315447"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p21047363"><a name="p21047363"></a><a name="p21047363"></a><a href="#cce_02_0157__table51402650">表4</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p21047363"><a name="p21047363"></a><a name="p21047363"></a><a href="#table51402650">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p42706636"><a name="p42706636"></a><a name="p42706636"></a>Spec defines the desired identities of pods in this set.</p>
 </td>
@@ -97,7 +97,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p34391662"><a name="p34391662"></a><a name="p34391662"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p34261248"><a name="p34261248"></a><a name="p34261248"></a><a href="#cce_02_0157__table28665255">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p34261248"><a name="p34261248"></a><a name="p34261248"></a><a href="#table28665255">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p11952954"><a name="p11952954"></a><a name="p11952954"></a>Status is the current status of Pods in this StatefulSet. This data may be out of date by some window of time.</p>
 </td>
@@ -140,7 +140,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="14.430000000000001%" headers="mcps1.2.5.1.2 "><p id="p51657858"><a name="p51657858"></a><a name="p51657858"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.59%" headers="mcps1.2.5.1.3 "><p id="p23536988"><a name="p23536988"></a><a name="p23536988"></a><a href="#cce_02_0157__table38300416">表8</a></p>
+<td class="cellrowborder" valign="top" width="19.59%" headers="mcps1.2.5.1.3 "><p id="p23536988"><a name="p23536988"></a><a name="p23536988"></a><a href="#table38300416">表8</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="43.3%" headers="mcps1.2.5.1.4 "><p id="p45704206"><a name="p45704206"></a><a name="p45704206"></a>The latest available observations of an object's current state. More info:</p>
 </td>
@@ -237,7 +237,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p38472785"><a name="p38472785"></a><a name="p38472785"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p29287846"><a name="p29287846"></a><a name="p29287846"></a><a href="#cce_02_0157__table21755034">表5</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p29287846"><a name="p29287846"></a><a name="p29287846"></a><a href="#table21755034">表5</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p10221142"><a name="p10221142"></a><a name="p10221142"></a>Selector is a label query over pods that should match the replica count. If empty, defaulted to labels on the pod template.</p>
 </td>
@@ -246,7 +246,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p38252711"><a name="p38252711"></a><a name="p38252711"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p11461915"><a name="p11461915"></a><a name="p11461915"></a><a href="#cce_02_0157__table7743895">表7</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p11461915"><a name="p11461915"></a><a name="p11461915"></a><a href="#table7743895">表7</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p34237264"><a name="p34237264"></a><a name="p34237264"></a>Template is the object that describes the pod that will be created if insufficient replicas are detected. Each pod stamped out by the StatefulSet will fulfill this Template, but have a unique identity from the rest of the StatefulSet.</p>
 </td>
@@ -271,7 +271,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084694%" headers="mcps1.2.5.1.2 "><p id="p37205076"><a name="p37205076"></a><a name="p37205076"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p60821183"><a name="p60821183"></a><a name="p60821183"></a><a href="#cce_02_0157__table27743911">表6</a></p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p60821183"><a name="p60821183"></a><a name="p60821183"></a><a href="#table27743911">表6</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p46792305"><a name="p46792305"></a><a name="p46792305"></a>matchExpressions is a list of label selector requirements. The requirements are ANDed.</p>
 </td>

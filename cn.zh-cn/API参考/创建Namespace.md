@@ -83,7 +83,7 @@ POST /api/v1/namespaces
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615062_p30919631"><a name="zh-cn_topic_0079615062_p30919631"></a><a name="zh-cn_topic_0079615062_p30919631"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a06e8700df468433aa540a2f15c58b358"><a name="a06e8700df468433aa540a2f15c58b358"></a><a name="a06e8700df468433aa540a2f15c58b358"></a><a href="#cce_02_0050__zh-cn_topic_0079615062_table19390540">表3</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a06e8700df468433aa540a2f15c58b358"><a name="a06e8700df468433aa540a2f15c58b358"></a><a name="a06e8700df468433aa540a2f15c58b358"></a><a href="#zh-cn_topic_0079615062_table19390540">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615062_p60714046"><a name="zh-cn_topic_0079615062_p60714046"></a><a name="zh-cn_topic_0079615062_p60714046"></a>-</p>
 </td>
@@ -92,7 +92,7 @@ POST /api/v1/namespaces
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615062_p13977142"><a name="zh-cn_topic_0079615062_p13977142"></a><a name="zh-cn_topic_0079615062_p13977142"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a3336b15d7dc74a08a73e99cd75f4058f"><a name="a3336b15d7dc74a08a73e99cd75f4058f"></a><a name="a3336b15d7dc74a08a73e99cd75f4058f"></a><a href="#cce_02_0050__zh-cn_topic_0079615062_table40297137">表4</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a3336b15d7dc74a08a73e99cd75f4058f"><a name="a3336b15d7dc74a08a73e99cd75f4058f"></a><a name="a3336b15d7dc74a08a73e99cd75f4058f"></a><a href="#zh-cn_topic_0079615062_table40297137">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615062_p33323423"><a name="zh-cn_topic_0079615062_p33323423"></a><a name="zh-cn_topic_0079615062_p33323423"></a>-</p>
 </td>

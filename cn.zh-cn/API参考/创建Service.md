@@ -103,7 +103,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615000_p30671812"><a name="zh-cn_topic_0079615000_p30671812"></a><a name="zh-cn_topic_0079615000_p30671812"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p1388809"><a name="zh-cn_topic_0079615000_p1388809"></a><a name="zh-cn_topic_0079615000_p1388809"></a><a href="#cce_02_0025__zh-cn_topic_0079615000_table43837055">表3</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p1388809"><a name="zh-cn_topic_0079615000_p1388809"></a><a name="zh-cn_topic_0079615000_p1388809"></a><a href="#zh-cn_topic_0079615000_table43837055">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p5808961"><a name="zh-cn_topic_0079615000_p5808961"></a><a name="zh-cn_topic_0079615000_p5808961"></a>-</p>
 </td>
@@ -112,7 +112,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615000_p19986890"><a name="zh-cn_topic_0079615000_p19986890"></a><a name="zh-cn_topic_0079615000_p19986890"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p8325422"><a name="zh-cn_topic_0079615000_p8325422"></a><a name="zh-cn_topic_0079615000_p8325422"></a><a href="#cce_02_0025__zh-cn_topic_0079615000_table58989182">表4</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p8325422"><a name="zh-cn_topic_0079615000_p8325422"></a><a name="zh-cn_topic_0079615000_p8325422"></a><a href="#zh-cn_topic_0079615000_table58989182">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p29435243"><a name="zh-cn_topic_0079615000_p29435243"></a><a name="zh-cn_topic_0079615000_p29435243"></a>-</p>
 </td>
@@ -121,7 +121,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615000_p2140858"><a name="zh-cn_topic_0079615000_p2140858"></a><a name="zh-cn_topic_0079615000_p2140858"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p39191780"><a name="zh-cn_topic_0079615000_p39191780"></a><a name="zh-cn_topic_0079615000_p39191780"></a><a href="#cce_02_0025__zh-cn_topic_0079615000_table61140591">表5</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p39191780"><a name="zh-cn_topic_0079615000_p39191780"></a><a name="zh-cn_topic_0079615000_p39191780"></a><a href="#zh-cn_topic_0079615000_table61140591">表5</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p49540626"><a name="zh-cn_topic_0079615000_p49540626"></a><a name="zh-cn_topic_0079615000_p49540626"></a>-</p>
 </td>
@@ -288,7 +288,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615000_p405649418162"><a name="zh-cn_topic_0079615000_p405649418162"></a><a name="zh-cn_topic_0079615000_p405649418162"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p439439618162"><a name="zh-cn_topic_0079615000_p439439618162"></a><a name="zh-cn_topic_0079615000_p439439618162"></a><a href="#cce_02_0025__tf1f749652c974a92b9e9cf83deb8d111">表6</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p439439618162"><a name="zh-cn_topic_0079615000_p439439618162"></a><a name="zh-cn_topic_0079615000_p439439618162"></a><a href="#tf1f749652c974a92b9e9cf83deb8d111">表6</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="a9587edde5d2447baad8fc20f25e98936"><a name="a9587edde5d2447baad8fc20f25e98936"></a><a name="a9587edde5d2447baad8fc20f25e98936"></a>List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.</p>
 </td>
@@ -322,7 +322,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615000_p6107739"><a name="zh-cn_topic_0079615000_p6107739"></a><a name="zh-cn_topic_0079615000_p6107739"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p24964816"><a name="zh-cn_topic_0079615000_p24964816"></a><a name="zh-cn_topic_0079615000_p24964816"></a><a href="#cce_02_0025__zh-cn_topic_0079615000_table13394413">表7</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p24964816"><a name="zh-cn_topic_0079615000_p24964816"></a><a name="zh-cn_topic_0079615000_p24964816"></a><a href="#zh-cn_topic_0079615000_table13394413">表7</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p12848880"><a name="zh-cn_topic_0079615000_p12848880"></a><a name="zh-cn_topic_0079615000_p12848880"></a>The list of ports that are exposed by this service.</p>
 </td>
@@ -434,7 +434,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p2504182413416"><a name="p2504182413416"></a><a name="p2504182413416"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p871715105433"><a name="p871715105433"></a><a name="p871715105433"></a><a href="#cce_02_0025__table136388588444">表10</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p871715105433"><a name="p871715105433"></a><a name="p871715105433"></a><a href="#table136388588444">表10</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="p20504142414114"><a name="p20504142414114"></a><a name="p20504142414114"></a>sessionAffinityConfig contains the configurations of session affinity.</p>
 </td>
@@ -459,7 +459,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615000_p19995149"><a name="zh-cn_topic_0079615000_p19995149"></a><a name="zh-cn_topic_0079615000_p19995149"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p8994406"><a name="zh-cn_topic_0079615000_p8994406"></a><a name="zh-cn_topic_0079615000_p8994406"></a><a href="#cce_02_0025__zh-cn_topic_0079615000_table53440856">表8</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p8994406"><a name="zh-cn_topic_0079615000_p8994406"></a><a name="zh-cn_topic_0079615000_p8994406"></a><a href="#zh-cn_topic_0079615000_table53440856">表8</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p47362577"><a name="zh-cn_topic_0079615000_p47362577"></a><a name="zh-cn_topic_0079615000_p47362577"></a>-</p>
 </td>
@@ -622,7 +622,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615000_p59227608"><a name="zh-cn_topic_0079615000_p59227608"></a><a name="zh-cn_topic_0079615000_p59227608"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p32706975"><a name="zh-cn_topic_0079615000_p32706975"></a><a name="zh-cn_topic_0079615000_p32706975"></a><a href="#cce_02_0025__zh-cn_topic_0079615000_table11205657">表9</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p32706975"><a name="zh-cn_topic_0079615000_p32706975"></a><a name="zh-cn_topic_0079615000_p32706975"></a><a href="#zh-cn_topic_0079615000_table11205657">表9</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p19738079"><a name="zh-cn_topic_0079615000_p19738079"></a><a name="zh-cn_topic_0079615000_p19738079"></a>Ingress is a list containing ingress points for the load-balancer. Traffic intended for the service should be sent to these ingress points.</p>
 </td>
@@ -681,7 +681,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p19676258124412"><a name="p19676258124412"></a><a name="p19676258124412"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p18954145284618"><a name="p18954145284618"></a><a name="p18954145284618"></a><a href="#cce_02_0025__table135671447154712">表11</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p18954145284618"><a name="p18954145284618"></a><a name="p18954145284618"></a><a href="#table135671447154712">表11</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="p147181506490"><a name="p147181506490"></a><a name="p147181506490"></a>clientIP contains the configurations of Client IP based session affinity.</p>
 </td>

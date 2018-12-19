@@ -32,7 +32,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterroles
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p614510411547"><a name="p614510411547"></a><a name="p614510411547"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p46408710414"><a name="p46408710414"></a><a name="p46408710414"></a><a href="#ZH-CN_TOPIC_0140918301__table1154814995615">请求参数</a></p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p46408710414"><a name="p46408710414"></a><a name="p46408710414"></a><a href="#table1154814995615">请求参数</a></p>
 </td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterroles
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p7560174915565"><a name="p7560174915565"></a><a name="p7560174915565"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p20561104917566"><a name="p20561104917566"></a><a name="p20561104917566"></a><a href="#ZH-CN_TOPIC_0140918301__d0e42951">AggregationRule字段数据结构说明</a></p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p20561104917566"><a name="p20561104917566"></a><a name="p20561104917566"></a><a href="#d0e42951">AggregationRule字段数据结构说明</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p75621249205619"><a name="p75621249205619"></a><a name="p75621249205619"></a>AggregationRule is an optional field that describes how to build the Rules for this ClusterRole. If AggregationRule is set, then the Rules are controller managed and direct changes to Rules will be stomped by the controller.</p>
 </td>
@@ -88,7 +88,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterroles
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p1378375321115"><a name="p1378375321115"></a><a name="p1378375321115"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p1578195321111"><a name="p1578195321111"></a><a name="p1578195321111"></a><a href="#ZH-CN_TOPIC_0140918301__table866915511559">metadata字段数据结构说明</a></p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p1578195321111"><a name="p1578195321111"></a><a name="p1578195321111"></a><a href="#table866915511559">metadata字段数据结构说明</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p1977810533112"><a name="p1977810533112"></a><a name="p1977810533112"></a>Standard object's metadata.</p>
 </td>
@@ -97,7 +97,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterroles
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p4774175316112"><a name="p4774175316112"></a><a name="p4774175316112"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p73260102467"><a name="p73260102467"></a><a name="p73260102467"></a><a href="#ZH-CN_TOPIC_0140918301__table157813483553">PolicyRule字段数据结构说明</a> array</p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p73260102467"><a name="p73260102467"></a><a name="p73260102467"></a><a href="#table157813483553">PolicyRule字段数据结构说明</a> array</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p19771175311119"><a name="p19771175311119"></a><a name="p19771175311119"></a>Rules holds all the PolicyRules for this ClusterRole</p>
 </td>

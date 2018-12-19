@@ -32,7 +32,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterrolebindings
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p1941911703216"><a name="p1941911703216"></a><a name="p1941911703216"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p14419107123212"><a name="p14419107123212"></a><a name="p14419107123212"></a><a href="#ZH-CN_TOPIC_0140918308__d0e42951">请求参数</a></p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p14419107123212"><a name="p14419107123212"></a><a name="p14419107123212"></a><a href="#d0e42951">请求参数</a></p>
 </td>
 </tr>
 </tbody>
@@ -79,7 +79,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterrolebindings
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p1378375321115"><a name="p1378375321115"></a><a name="p1378375321115"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p1578195321111"><a name="p1578195321111"></a><a name="p1578195321111"></a><a href="#ZH-CN_TOPIC_0140918308__zh-cn_topic_0079615000_table43837055">metadata字段数据结构说明</a></p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p1578195321111"><a name="p1578195321111"></a><a name="p1578195321111"></a><a href="#zh-cn_topic_0079615000_table43837055">metadata字段数据结构说明</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p1977810533112"><a name="p1977810533112"></a><a name="p1977810533112"></a>Standard object's metadata.</p>
 </td>
@@ -88,7 +88,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterrolebindings
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p4774175316112"><a name="p4774175316112"></a><a name="p4774175316112"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p157721753151112"><a name="p157721753151112"></a><a name="p157721753151112"></a><a href="#ZH-CN_TOPIC_0140918308__zh-cn_topic_0079615000_table58989182">roleref字段数据结构说明</a></p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p157721753151112"><a name="p157721753151112"></a><a name="p157721753151112"></a><a href="#zh-cn_topic_0079615000_table58989182">roleref字段数据结构说明</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p19771175311119"><a name="p19771175311119"></a><a name="p19771175311119"></a>RoleRef can only reference a ClusterRole in the global namespace. If the RoleRef cannot be resolved, the Authorizer must return an error.</p>
 </td>
@@ -97,7 +97,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterrolebindings
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p06261630201619"><a name="p06261630201619"></a><a name="p06261630201619"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p13626530181618"><a name="p13626530181618"></a><a name="p13626530181618"></a><a href="#ZH-CN_TOPIC_0140918308__table0504127112315">subjects字段数据结构说明</a> array</p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p13626530181618"><a name="p13626530181618"></a><a name="p13626530181618"></a><a href="#table0504127112315">subjects字段数据结构说明</a> array</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p462643012160"><a name="p462643012160"></a><a name="p462643012160"></a>Subjects holds references to the objects the role applies to.</p>
 </td>

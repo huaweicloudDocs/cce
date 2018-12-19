@@ -100,7 +100,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p1062853354013"><a name="p1062853354013"></a><a name="p1062853354013"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p074532551518"><a name="p074532551518"></a><a name="p074532551518"></a><a href="#cce_02_0252__table6304105819164">表4</a></p>
+<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p074532551518"><a name="p074532551518"></a><a name="p074532551518"></a><a href="#table6304105819164">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p2745152519150"><a name="p2745152519150"></a><a name="p2745152519150"></a>-</p>
 </td>
@@ -109,7 +109,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p8581153624016"><a name="p8581153624016"></a><a name="p8581153624016"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p1574522520158"><a name="p1574522520158"></a><a name="p1574522520158"></a><a href="#cce_02_0252__table3862152512246">表5</a></p>
+<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p1574522520158"><a name="p1574522520158"></a><a name="p1574522520158"></a><a href="#table3862152512246">表5</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p97458257151"><a name="p97458257151"></a><a name="p97458257151"></a>-</p>
 </td>
@@ -118,7 +118,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p1574516258158"><a name="p1574516258158"></a><a name="p1574516258158"></a>否</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p874562561514"><a name="p874562561514"></a><a name="p874562561514"></a><a href="#cce_02_0252__table478913499397">表6</a></p>
+<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p874562561514"><a name="p874562561514"></a><a name="p874562561514"></a><a href="#table478913499397">表6</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p8745172518154"><a name="p8745172518154"></a><a name="p8745172518154"></a>-</p>
 </td>

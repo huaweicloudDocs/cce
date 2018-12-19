@@ -97,7 +97,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/rollback \
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p46988743"><a name="p46988743"></a><a name="p46988743"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.3 "><p id="p47991837"><a name="p47991837"></a><a name="p47991837"></a><a href="#cce_02_0120__table3169229152410">表3</a></p>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.3 "><p id="p47991837"><a name="p47991837"></a><a name="p47991837"></a><a href="#table3169229152410">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.5.1.4 "><p id="p22331121"><a name="p22331121"></a><a name="p22331121"></a>The config of this deployment rollback.</p>
 </td>

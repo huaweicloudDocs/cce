@@ -86,7 +86,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.42%" headers="mcps1.2.5.1.2 "><p id="a3c23a0c1bad64a7aaa06d8b5cf59702c"><a name="a3c23a0c1bad64a7aaa06d8b5cf59702c"></a><a name="a3c23a0c1bad64a7aaa06d8b5cf59702c"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.800000000000004%" headers="mcps1.2.5.1.3 "><p id="a68dc55caf2854cef9dc9d4807e7dfa34"><a name="a68dc55caf2854cef9dc9d4807e7dfa34"></a><a name="a68dc55caf2854cef9dc9d4807e7dfa34"></a><a href="#cce_02_0067__te8aab4b8a25d48e3b3866c6c72239343">表4</a></p>
+<td class="cellrowborder" valign="top" width="18.800000000000004%" headers="mcps1.2.5.1.3 "><p id="a68dc55caf2854cef9dc9d4807e7dfa34"><a name="a68dc55caf2854cef9dc9d4807e7dfa34"></a><a name="a68dc55caf2854cef9dc9d4807e7dfa34"></a><a href="#te8aab4b8a25d48e3b3866c6c72239343">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.86000000000001%" headers="mcps1.2.5.1.4 "><p id="a342a0000645c480e9c82b88d608a9f50"><a name="a342a0000645c480e9c82b88d608a9f50"></a><a name="a342a0000645c480e9c82b88d608a9f50"></a>Spec defines the desired characteristics of a volume requested by a pod author.</p>
 </td>
@@ -95,7 +95,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.42%" headers="mcps1.2.5.1.2 "><p id="a3f758c10769e416dbb0525ca05b8c73f"><a name="a3f758c10769e416dbb0525ca05b8c73f"></a><a name="a3f758c10769e416dbb0525ca05b8c73f"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.800000000000004%" headers="mcps1.2.5.1.3 "><p id="a1ed4070c0a1946b3b9c85113c8a484b2"><a name="a1ed4070c0a1946b3b9c85113c8a484b2"></a><a name="a1ed4070c0a1946b3b9c85113c8a484b2"></a><a href="#cce_02_0067__t6d0caee8f6ff4e19882bd42052d54287">表3</a></p>
+<td class="cellrowborder" valign="top" width="18.800000000000004%" headers="mcps1.2.5.1.3 "><p id="a1ed4070c0a1946b3b9c85113c8a484b2"><a name="a1ed4070c0a1946b3b9c85113c8a484b2"></a><a name="a1ed4070c0a1946b3b9c85113c8a484b2"></a><a href="#t6d0caee8f6ff4e19882bd42052d54287">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.86000000000001%" headers="mcps1.2.5.1.4 "><p id="a860de33cd8ff458491e26f1d1942c661"><a name="a860de33cd8ff458491e26f1d1942c661"></a><a name="a860de33cd8ff458491e26f1d1942c661"></a>Status represents the current information/status of a persistent volume claim. Read-only.</p>
 </td>
@@ -181,7 +181,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.181818181818183%" headers="mcps1.2.5.1.2 "><p id="a6fc295b5732c49a6a3a11ad1381ae022"><a name="a6fc295b5732c49a6a3a11ad1381ae022"></a><a name="a6fc295b5732c49a6a3a11ad1381ae022"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.191919191919194%" headers="mcps1.2.5.1.3 "><p id="a5f8f86b21e804fa0a5607657d0445f4e"><a name="a5f8f86b21e804fa0a5607657d0445f4e"></a><a name="a5f8f86b21e804fa0a5607657d0445f4e"></a><a href="#cce_02_0067__tb72f1d98d76d4130a04d98b73e0cce23">表5</a></p>
+<td class="cellrowborder" valign="top" width="19.191919191919194%" headers="mcps1.2.5.1.3 "><p id="a5f8f86b21e804fa0a5607657d0445f4e"><a name="a5f8f86b21e804fa0a5607657d0445f4e"></a><a name="a5f8f86b21e804fa0a5607657d0445f4e"></a><a href="#tb72f1d98d76d4130a04d98b73e0cce23">表5</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="a1dfe411351ca4e2494866ccd7c945431"><a name="a1dfe411351ca4e2494866ccd7c945431"></a><a name="a1dfe411351ca4e2494866ccd7c945431"></a>Resources represents the minimum resources the volume should have.</p>
 </td>
@@ -190,7 +190,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.181818181818183%" headers="mcps1.2.5.1.2 "><p id="a65073be011424b618a9760a26b3a4b24"><a name="a65073be011424b618a9760a26b3a4b24"></a><a name="a65073be011424b618a9760a26b3a4b24"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.191919191919194%" headers="mcps1.2.5.1.3 "><p id="a9ea12189100445e08e5a781d5fbb5aa0"><a name="a9ea12189100445e08e5a781d5fbb5aa0"></a><a name="a9ea12189100445e08e5a781d5fbb5aa0"></a><a href="#cce_02_0067__t87a0b25af7d2428182ec8bb2b4416a12">表6</a></p>
+<td class="cellrowborder" valign="top" width="19.191919191919194%" headers="mcps1.2.5.1.3 "><p id="a9ea12189100445e08e5a781d5fbb5aa0"><a name="a9ea12189100445e08e5a781d5fbb5aa0"></a><a name="a9ea12189100445e08e5a781d5fbb5aa0"></a><a href="#t87a0b25af7d2428182ec8bb2b4416a12">表6</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="a6794297065b6424e8da1fc310265ae69"><a name="a6794297065b6424e8da1fc310265ae69"></a><a name="a6794297065b6424e8da1fc310265ae69"></a>A label query over volumes to consider for binding.</p>
 </td>
@@ -262,7 +262,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="17.86%" headers="mcps1.2.5.1.2 "><p id="aca2c67f0f6874158a6505ac0a585647f"><a name="aca2c67f0f6874158a6505ac0a585647f"></a><a name="aca2c67f0f6874158a6505ac0a585647f"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.5.1.3 "><p id="a7233b96002a541818ad7e1a1ddb1e469"><a name="a7233b96002a541818ad7e1a1ddb1e469"></a><a name="a7233b96002a541818ad7e1a1ddb1e469"></a><a href="#cce_02_0067__t8ff36c0b2ec24d7caf0c726319d7bb73">表7</a></p>
+<td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.5.1.3 "><p id="a7233b96002a541818ad7e1a1ddb1e469"><a name="a7233b96002a541818ad7e1a1ddb1e469"></a><a name="a7233b96002a541818ad7e1a1ddb1e469"></a><a href="#t8ff36c0b2ec24d7caf0c726319d7bb73">表7</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="41.349999999999994%" headers="mcps1.2.5.1.4 "><p id="a089ce9db9ab04f20aad32d21c5ea14c7"><a name="a089ce9db9ab04f20aad32d21c5ea14c7"></a><a name="a089ce9db9ab04f20aad32d21c5ea14c7"></a>MatchExpressions is a list of label selector requirements. The requirements are ANDed.</p>
 </td>

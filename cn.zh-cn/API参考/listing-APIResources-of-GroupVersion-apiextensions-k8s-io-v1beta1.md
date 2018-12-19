@@ -45,7 +45,7 @@ N/A.
 </tr>
 <tr id="row45832162"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p21417681"><a name="p21417681"></a><a name="p21417681"></a>resources</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p57110633"><a name="p57110633"></a><a name="p57110633"></a><a href="#cce_02_0205__d0e50159">表2</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p57110633"><a name="p57110633"></a><a name="p57110633"></a><a href="#d0e50159">表2</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p26155994"><a name="p26155994"></a><a name="p26155994"></a>Standard list resource</p>
 </td>

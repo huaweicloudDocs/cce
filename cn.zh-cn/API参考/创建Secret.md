@@ -81,7 +81,7 @@ POST /api/v1/namespaces/\{namespace\}/secrets
 </td>
 <td class="cellrowborder" valign="top" width="17.849999999999998%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079614900_p55982574"><a name="zh-cn_topic_0079614900_p55982574"></a><a name="zh-cn_topic_0079614900_p55982574"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079614900_p38294646"><a name="zh-cn_topic_0079614900_p38294646"></a><a name="zh-cn_topic_0079614900_p38294646"></a><a href="#cce_02_0043__zh-cn_topic_0079614900_table57391552">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.3%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079614900_p38294646"><a name="zh-cn_topic_0079614900_p38294646"></a><a name="zh-cn_topic_0079614900_p38294646"></a><a href="#zh-cn_topic_0079614900_table57391552">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.660000000000004%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079614900_p14858635"><a name="zh-cn_topic_0079614900_p14858635"></a><a name="zh-cn_topic_0079614900_p14858635"></a>-</p>
 </td>
@@ -250,7 +250,7 @@ POST /api/v1/namespaces/\{namespace\}/secrets
 </td>
 <td class="cellrowborder" valign="top" width="18.18181818181818%" headers="mcps1.2.5.1.2 "><p id="a9499098f0a904fb1979e0f9292b6b87c"><a name="a9499098f0a904fb1979e0f9292b6b87c"></a><a name="a9499098f0a904fb1979e0f9292b6b87c"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.2020202020202%" headers="mcps1.2.5.1.3 "><p id="a1857e4ea59ee46e78931c80b1ce4d570"><a name="a1857e4ea59ee46e78931c80b1ce4d570"></a><a name="a1857e4ea59ee46e78931c80b1ce4d570"></a><a href="#cce_02_0043__t56c9527f988e4c2c8b0d5a53ba538176">表4</a></p>
+<td class="cellrowborder" valign="top" width="20.2020202020202%" headers="mcps1.2.5.1.3 "><p id="a1857e4ea59ee46e78931c80b1ce4d570"><a name="a1857e4ea59ee46e78931c80b1ce4d570"></a><a name="a1857e4ea59ee46e78931c80b1ce4d570"></a><a href="#t56c9527f988e4c2c8b0d5a53ba538176">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.39393939393939%" headers="mcps1.2.5.1.4 "><p id="a47143b35d469419b80303ee850b0642e"><a name="a47143b35d469419b80303ee850b0642e"></a><a name="a47143b35d469419b80303ee850b0642e"></a>List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.</p>
 </td>

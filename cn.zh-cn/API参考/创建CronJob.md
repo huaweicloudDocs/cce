@@ -88,7 +88,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p19315447"><a name="p19315447"></a><a name="p19315447"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p21047363"><a name="p21047363"></a><a name="p21047363"></a><a href="#cce_02_0225__table51402650">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p21047363"><a name="p21047363"></a><a name="p21047363"></a><a href="#table51402650">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p42706636"><a name="p42706636"></a><a name="p42706636"></a>Specification of the desired behavior of a cron job, including the schedule.</p>
 </td>
@@ -97,7 +97,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p34391662"><a name="p34391662"></a><a name="p34391662"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p34261248"><a name="p34261248"></a><a name="p34261248"></a><a href="#cce_02_0225__table28665255">表4</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p34261248"><a name="p34261248"></a><a name="p34261248"></a><a href="#table28665255">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p11952954"><a name="p11952954"></a><a name="p11952954"></a>Current status of a cron job.</p>
 </td>
@@ -140,7 +140,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.2 "><p id="p14704102404010"><a name="p14704102404010"></a><a name="p14704102404010"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p19240909"><a name="p19240909"></a><a name="p19240909"></a><a href="#cce_02_0225__table928061144217">表5</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p19240909"><a name="p19240909"></a><a name="p19240909"></a><a href="#table928061144217">表5</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p933322823614"><a name="p933322823614"></a><a name="p933322823614"></a>Specifies the job that will be created when executing a CronJob.</p>
 </td>

@@ -90,7 +90,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.5.1.2 "><p id="p8598431"><a name="p8598431"></a><a name="p8598431"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p25384334"><a name="p25384334"></a><a name="p25384334"></a><a href="#cce_02_0133__table109924514514">表3</a></p>
+<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p25384334"><a name="p25384334"></a><a name="p25384334"></a><a href="#table109924514514">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p50242206"><a name="p50242206"></a><a name="p50242206"></a>The desired behavior of this daemon set.</p>
 </td>
@@ -99,7 +99,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.5.1.2 "><p id="p3383718"><a name="p3383718"></a><a name="p3383718"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p5645707"><a name="p5645707"></a><a name="p5645707"></a><a href="#cce_02_0133__table423617231387">表4</a></p>
+<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p5645707"><a name="p5645707"></a><a name="p5645707"></a><a href="#table423617231387">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p22079859"><a name="p22079859"></a><a name="p22079859"></a>The current status of this daemon set. This data may be out of date by some window of time. Populated by the system. Read-only.</p>
 </td>
@@ -151,7 +151,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p31845254"><a name="p31845254"></a><a name="p31845254"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p29328819"><a name="p29328819"></a><a name="p29328819"></a><a href="#cce_02_0133__table82651956102317">表5</a></p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p29328819"><a name="p29328819"></a><a name="p29328819"></a><a href="#table82651956102317">表5</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p40090562"><a name="p40090562"></a><a name="p40090562"></a>An object that describes the pod that will be created. The DaemonSet will create exactly one copy of this pod on every node that matches the template's node selector (or on every node if no node selector is specified).</p>
 </td>
@@ -169,7 +169,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p43965709"><a name="p43965709"></a><a name="p43965709"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p4452677"><a name="p4452677"></a><a name="p4452677"></a><a href="#cce_02_0133__table2082584572918">表6</a></p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p4452677"><a name="p4452677"></a><a name="p4452677"></a><a href="#table2082584572918">表6</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p24776540"><a name="p24776540"></a><a name="p24776540"></a>An update strategy to replace existing DaemonSet pods with new pods.</p>
 </td>

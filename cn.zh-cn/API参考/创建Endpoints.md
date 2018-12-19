@@ -90,7 +90,7 @@ POST /api/v1/namespaces/\{namespace\}/endpoints
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079614955_p11019092"><a name="zh-cn_topic_0079614955_p11019092"></a><a name="zh-cn_topic_0079614955_p11019092"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a70ceaed44bfe4d5386b09a6aa0598138"><a name="a70ceaed44bfe4d5386b09a6aa0598138"></a><a name="a70ceaed44bfe4d5386b09a6aa0598138"></a><a href="#cce_02_0059__zh-cn_topic_0079614955_table9828942">表3</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a70ceaed44bfe4d5386b09a6aa0598138"><a name="a70ceaed44bfe4d5386b09a6aa0598138"></a><a name="a70ceaed44bfe4d5386b09a6aa0598138"></a><a href="#zh-cn_topic_0079614955_table9828942">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079614955_p20019172"><a name="zh-cn_topic_0079614955_p20019172"></a><a name="zh-cn_topic_0079614955_p20019172"></a>The set of all endpoints is the union of all subsets. Addresses are placed into subsets according to the IPs they share. A single address with multiple ports, some of which are ready and some of which are not (because they come from different containers) will result in the address being displayed in different subsets for the different ports. No address will appear in both Addresses and NotReadyAddresses in the same subset. Sets of addresses and ports that comprise a service.</p>
 </td>
@@ -115,7 +115,7 @@ POST /api/v1/namespaces/\{namespace\}/endpoints
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079614955_p30902987"><a name="zh-cn_topic_0079614955_p30902987"></a><a name="zh-cn_topic_0079614955_p30902987"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a6b3970fd76624efab415cf6763a93523"><a name="a6b3970fd76624efab415cf6763a93523"></a><a name="a6b3970fd76624efab415cf6763a93523"></a><a href="#cce_02_0059__zh-cn_topic_0079614955_table21351620">表4</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a6b3970fd76624efab415cf6763a93523"><a name="a6b3970fd76624efab415cf6763a93523"></a><a name="a6b3970fd76624efab415cf6763a93523"></a><a href="#zh-cn_topic_0079614955_table21351620">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079614955_p18621933"><a name="zh-cn_topic_0079614955_p18621933"></a><a name="zh-cn_topic_0079614955_p18621933"></a>IP addresses which offer the related ports that are marked as ready. These endpoints should be considered safe for load balancers and clients to utilize.</p>
 </td>
@@ -124,7 +124,7 @@ POST /api/v1/namespaces/\{namespace\}/endpoints
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079614955_p27824865"><a name="zh-cn_topic_0079614955_p27824865"></a><a name="zh-cn_topic_0079614955_p27824865"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a68c1195d05b945c4b02599aec95682e0"><a name="a68c1195d05b945c4b02599aec95682e0"></a><a name="a68c1195d05b945c4b02599aec95682e0"></a><a href="#cce_02_0059__zh-cn_topic_0079614955_table21351620">表4</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a68c1195d05b945c4b02599aec95682e0"><a name="a68c1195d05b945c4b02599aec95682e0"></a><a name="a68c1195d05b945c4b02599aec95682e0"></a><a href="#zh-cn_topic_0079614955_table21351620">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079614955_p22834938"><a name="zh-cn_topic_0079614955_p22834938"></a><a name="zh-cn_topic_0079614955_p22834938"></a>IP addresses which offer the related ports but are not currently marked as ready because they have not yet finished starting, have recently failed a readiness check, or have recently failed a liveness check.</p>
 </td>
@@ -133,7 +133,7 @@ POST /api/v1/namespaces/\{namespace\}/endpoints
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079614955_p28999185"><a name="zh-cn_topic_0079614955_p28999185"></a><a name="zh-cn_topic_0079614955_p28999185"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a26c6fe496154497eb38ba89f858d1b97"><a name="a26c6fe496154497eb38ba89f858d1b97"></a><a name="a26c6fe496154497eb38ba89f858d1b97"></a><a href="#cce_02_0059__zh-cn_topic_0079614955_table57946857">表5</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a26c6fe496154497eb38ba89f858d1b97"><a name="a26c6fe496154497eb38ba89f858d1b97"></a><a name="a26c6fe496154497eb38ba89f858d1b97"></a><a href="#zh-cn_topic_0079614955_table57946857">表5</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079614955_p10026740"><a name="zh-cn_topic_0079614955_p10026740"></a><a name="zh-cn_topic_0079614955_p10026740"></a>Port numbers available on the related IP addresses.</p>
 </td>
@@ -167,7 +167,7 @@ POST /api/v1/namespaces/\{namespace\}/endpoints
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079614955_p63231703"><a name="zh-cn_topic_0079614955_p63231703"></a><a name="zh-cn_topic_0079614955_p63231703"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079614955_p21494305"><a name="zh-cn_topic_0079614955_p21494305"></a><a name="zh-cn_topic_0079614955_p21494305"></a><a href="#cce_02_0059__zh-cn_topic_0079614955_table51759670">表6</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079614955_p21494305"><a name="zh-cn_topic_0079614955_p21494305"></a><a name="zh-cn_topic_0079614955_p21494305"></a><a href="#zh-cn_topic_0079614955_table51759670">表6</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079614955_p63317164"><a name="zh-cn_topic_0079614955_p63317164"></a><a name="zh-cn_topic_0079614955_p63317164"></a>-</p>
 </td>

@@ -81,7 +81,7 @@ POST /api/v1/persistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.5.1.2 "><p id="ad56870e48d7d4489b2917707026dacb6"><a name="ad56870e48d7d4489b2917707026dacb6"></a><a name="ad56870e48d7d4489b2917707026dacb6"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.05%" headers="mcps1.2.5.1.3 "><p id="aaefeac87a2464d9497236b34fef04084"><a name="aaefeac87a2464d9497236b34fef04084"></a><a name="aaefeac87a2464d9497236b34fef04084"></a><a href="#cce_02_0076__tb127086a0961458f95fba61c3071d468">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.05%" headers="mcps1.2.5.1.3 "><p id="aaefeac87a2464d9497236b34fef04084"><a name="aaefeac87a2464d9497236b34fef04084"></a><a name="aaefeac87a2464d9497236b34fef04084"></a><a href="#tb127086a0961458f95fba61c3071d468">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="41.74%" headers="mcps1.2.5.1.4 "><p id="af33fa6c32187429fadb522ef6094a708"><a name="af33fa6c32187429fadb522ef6094a708"></a><a name="af33fa6c32187429fadb522ef6094a708"></a>Spec defines a specification of a persistent volume owned by the cluster. Provisioned by an administrator.</p>
 </td>
@@ -90,7 +90,7 @@ POST /api/v1/persistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.5.1.2 "><p id="afad06b19b664499d9ec7c50945f395b3"><a name="afad06b19b664499d9ec7c50945f395b3"></a><a name="afad06b19b664499d9ec7c50945f395b3"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.05%" headers="mcps1.2.5.1.3 "><p id="ad81dfe97250c4ab28225761260d5b695"><a name="ad81dfe97250c4ab28225761260d5b695"></a><a name="ad81dfe97250c4ab28225761260d5b695"></a><a href="#cce_02_0076__tab4eab31a17149b4b5cd8d26c93b5a7e">表4</a></p>
+<td class="cellrowborder" valign="top" width="20.05%" headers="mcps1.2.5.1.3 "><p id="ad81dfe97250c4ab28225761260d5b695"><a name="ad81dfe97250c4ab28225761260d5b695"></a><a name="ad81dfe97250c4ab28225761260d5b695"></a><a href="#tab4eab31a17149b4b5cd8d26c93b5a7e">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="41.74%" headers="mcps1.2.5.1.4 "><p id="ac0936b4e1e3847f790c3d03aaf1a7b6c"><a name="ac0936b4e1e3847f790c3d03aaf1a7b6c"></a><a name="ac0936b4e1e3847f790c3d03aaf1a7b6c"></a>Status represents the current information/status for the persistent volume. Populated by the system. Read-only.</p>
 </td>
@@ -137,7 +137,7 @@ POST /api/v1/persistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="ac0e00a03dd504f6fb22d7d47676f6548"><a name="ac0e00a03dd504f6fb22d7d47676f6548"></a><a name="ac0e00a03dd504f6fb22d7d47676f6548"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="a487d3f45865848f7aaea4eeb1df20888"><a name="a487d3f45865848f7aaea4eeb1df20888"></a><a name="a487d3f45865848f7aaea4eeb1df20888"></a><a href="#cce_02_0076__t5fe2db24d4ee4588b001da6f826e3d3a">表5</a></p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="a487d3f45865848f7aaea4eeb1df20888"><a name="a487d3f45865848f7aaea4eeb1df20888"></a><a name="a487d3f45865848f7aaea4eeb1df20888"></a><a href="#t5fe2db24d4ee4588b001da6f826e3d3a">表5</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="aa564a4d14fc74b73a60ce98227ad5db5"><a name="aa564a4d14fc74b73a60ce98227ad5db5"></a><a name="aa564a4d14fc74b73a60ce98227ad5db5"></a>ClaimRef is part of a bi-directional binding between PersistentVolume and PersistentVolumeClaim. Expected to be non-nil when bound. claim. VolumeName is the authoritative bind between PV and PVC.</p>
 </td>
@@ -146,7 +146,7 @@ POST /api/v1/persistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="a40a75035c80f4d5bbf9a60540d077979"><a name="a40a75035c80f4d5bbf9a60540d077979"></a><a name="a40a75035c80f4d5bbf9a60540d077979"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="a044d674a435c46dbb307c1cc4719aa3a"><a name="a044d674a435c46dbb307c1cc4719aa3a"></a><a name="a044d674a435c46dbb307c1cc4719aa3a"></a><a href="#cce_02_0076__t49e3547d603e4c019abc62b357512bf6">表6</a></p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="a044d674a435c46dbb307c1cc4719aa3a"><a name="a044d674a435c46dbb307c1cc4719aa3a"></a><a name="a044d674a435c46dbb307c1cc4719aa3a"></a><a href="#t49e3547d603e4c019abc62b357512bf6">表6</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="adbadf9d4bfdf499aba91ea7fc5f19776"><a name="adbadf9d4bfdf499aba91ea7fc5f19776"></a><a name="adbadf9d4bfdf499aba91ea7fc5f19776"></a>HostPath represents a directory on the host. Provisioned by a developer or tester. This is useful for single-node development and testing only! On-host storage is not supported in any way and WILL NOT WORK in a multi-node cluster.</p>
 </td>
@@ -155,7 +155,7 @@ POST /api/v1/persistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="a168651e90a36441bbf867859edf6fbda"><a name="a168651e90a36441bbf867859edf6fbda"></a><a name="a168651e90a36441bbf867859edf6fbda"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="a2346991b94c04146931e7cf591c46967"><a name="a2346991b94c04146931e7cf591c46967"></a><a name="a2346991b94c04146931e7cf591c46967"></a><a href="#cce_02_0076__t2f5e70bc193c4769a21652324f8fec4d">表7</a></p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="a2346991b94c04146931e7cf591c46967"><a name="a2346991b94c04146931e7cf591c46967"></a><a name="a2346991b94c04146931e7cf591c46967"></a><a href="#t2f5e70bc193c4769a21652324f8fec4d">表7</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="ac27b81771d184325a1207786c6900696"><a name="ac27b81771d184325a1207786c6900696"></a><a name="ac27b81771d184325a1207786c6900696"></a>NFS represents an NFS mount on the host. Provisioned by an admin.</p>
 </td>

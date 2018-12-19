@@ -90,7 +90,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p12424902"><a name="p12424902"></a><a name="p12424902"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p66893020"><a name="p66893020"></a><a name="p66893020"></a><a href="#cce_02_0145__d0e37783">表4</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p66893020"><a name="p66893020"></a><a name="p66893020"></a><a href="#d0e37783">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p43976738"><a name="p43976738"></a><a name="p43976738"></a>Spec defines the desired identities of pods in this set.</p>
 </td>
@@ -99,7 +99,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p4961465"><a name="p4961465"></a><a name="p4961465"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p66334361"><a name="p66334361"></a><a name="p66334361"></a><a href="#cce_02_0145__d0e37659">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p66334361"><a name="p66334361"></a><a name="p66334361"></a><a href="#d0e37659">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p39367534"><a name="p39367534"></a><a name="p39367534"></a>Status is the current status of Pods in this StatefulSet. This data may be out of date by some window of time.</p>
 </td>
@@ -230,7 +230,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p34045100"><a name="p34045100"></a><a name="p34045100"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p6189752"><a name="p6189752"></a><a name="p6189752"></a><a href="#cce_02_0145__d0e38083">表8</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p6189752"><a name="p6189752"></a><a name="p6189752"></a><a href="#d0e38083">表8</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p10100779"><a name="p10100779"></a><a name="p10100779"></a>updateStrategy indicates the StatefulSetUpdateStrategy that will be employed to update Pods in the StatefulSet when a revision is made to Template.</p>
 </td>
@@ -257,7 +257,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p27727420"><a name="p27727420"></a><a name="p27727420"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p31328571"><a name="p31328571"></a><a name="p31328571"></a><a href="#cce_02_0145__d0e37920">表5</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p31328571"><a name="p31328571"></a><a name="p31328571"></a><a href="#d0e37920">表5</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p21514819"><a name="p21514819"></a><a name="p21514819"></a>Selector is a label query over pods that should match the replica count. If empty, defaulted to labels on the pod template.</p>
 </td>
@@ -266,7 +266,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p57772947"><a name="p57772947"></a><a name="p57772947"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p49097096"><a name="p49097096"></a><a name="p49097096"></a><a href="#cce_02_0145__d0e38032">表7</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p49097096"><a name="p49097096"></a><a name="p49097096"></a><a href="#d0e38032">表7</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p22758632"><a name="p22758632"></a><a name="p22758632"></a>Template is the object that describes the pod that will be created if insufficient replicas are detected. Each pod stamped out by the StatefulSet will fulfill this Template, but have a unique identity from the rest of the StatefulSet.</p>
 </td>
@@ -291,7 +291,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084694%" headers="mcps1.2.5.1.2 "><p id="p31224060"><a name="p31224060"></a><a name="p31224060"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p46120952"><a name="p46120952"></a><a name="p46120952"></a><a href="#cce_02_0145__d0e37970">表6</a></p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p46120952"><a name="p46120952"></a><a name="p46120952"></a><a href="#d0e37970">表6</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p633806"><a name="p633806"></a><a name="p633806"></a>matchExpressions is a list of label selector requirements. The requirements are ANDed.</p>
 </td>
@@ -402,7 +402,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.5.1.2 "><p id="p65113955"><a name="p65113955"></a><a name="p65113955"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="23.46765323467653%" headers="mcps1.2.5.1.3 "><p id="p39738973"><a name="p39738973"></a><a name="p39738973"></a><a href="#cce_02_0145__table102371729161619">表9</a></p>
+<td class="cellrowborder" valign="top" width="23.46765323467653%" headers="mcps1.2.5.1.3 "><p id="p39738973"><a name="p39738973"></a><a name="p39738973"></a><a href="#table102371729161619">表9</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.796020397960206%" headers="mcps1.2.5.1.4 "><p id="p9467071"><a name="p9467071"></a><a name="p9467071"></a>RollingUpdate is used to communicate parameters when Type is RollingUpdateStatefulSetStrategyType.</p>
 </td>
