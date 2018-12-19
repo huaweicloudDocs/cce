@@ -112,7 +112,7 @@ DELETE /api/v1/namespaces/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="a643998607448401cb98bac030344b4bf"><a name="a643998607448401cb98bac030344b4bf"></a><a name="a643998607448401cb98bac030344b4bf"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a3986d3fe4dff4241a1be5661e918570b"><a name="a3986d3fe4dff4241a1be5661e918570b"></a><a name="a3986d3fe4dff4241a1be5661e918570b"></a><a href="#cce_02_0051__td7fe8359dfff482f80c7050b45a5757d">表3</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a3986d3fe4dff4241a1be5661e918570b"><a name="a3986d3fe4dff4241a1be5661e918570b"></a><a name="a3986d3fe4dff4241a1be5661e918570b"></a><a href="#td7fe8359dfff482f80c7050b45a5757d">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="ad98125a30297474b93b89524d135d843"><a name="ad98125a30297474b93b89524d135d843"></a><a name="ad98125a30297474b93b89524d135d843"></a>Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.</p>
 </td>

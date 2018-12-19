@@ -70,7 +70,7 @@ PUT /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
 
 **请求参数：**
 
-请求参数的详细描述请参见[5.22.1-请求参数](创建Ingress.md#d0e42951)。
+请求参数的详细描述请参见[请求参数](创建networkpolicy.md#d0e42951)。
 
 “Content-Type“的详细描述请参见 [PATCH请求方法操作说明](PATCH请求方法操作说明.md)。
 
@@ -119,7 +119,7 @@ PUT /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
 
 **响应参数：**
 
-响应参数的详细描述请参见[5.22.1-请求参数](创建Ingress.md#d0e42951)。
+响应参数的详细描述请参见[请求参数](创建networkpolicy.md#d0e42951)。
 
 **响应示例：**
 

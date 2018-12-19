@@ -127,7 +127,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 </td>
 <td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p7150508"><a name="p7150508"></a><a name="p7150508"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p42320251"><a name="p42320251"></a><a name="p42320251"></a><a href="#cce_02_0134__table27213123546">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p42320251"><a name="p42320251"></a><a name="p42320251"></a><a href="#table27213123546">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="46.464646464646464%" headers="mcps1.2.5.1.4 "><p id="p48494655"><a name="p48494655"></a><a name="p48494655"></a>Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.</p>
 </td>

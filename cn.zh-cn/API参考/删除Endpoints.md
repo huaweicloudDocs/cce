@@ -128,7 +128,7 @@ DELETE /api/v1/namespaces/\{namespace\}/endpoints/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="af73d5beb343c4017b1ec86b74c2f1f61"><a name="af73d5beb343c4017b1ec86b74c2f1f61"></a><a name="af73d5beb343c4017b1ec86b74c2f1f61"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.11%" headers="mcps1.2.5.1.3 "><p id="a68b7d1fcf9b248b690d47a5eaf5a0df7"><a name="a68b7d1fcf9b248b690d47a5eaf5a0df7"></a><a name="a68b7d1fcf9b248b690d47a5eaf5a0df7"></a><a href="#cce_02_0060__td963eecea01d406f99bfcb0ca63e8c82">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.11%" headers="mcps1.2.5.1.3 "><p id="a68b7d1fcf9b248b690d47a5eaf5a0df7"><a name="a68b7d1fcf9b248b690d47a5eaf5a0df7"></a><a name="a68b7d1fcf9b248b690d47a5eaf5a0df7"></a><a href="#td963eecea01d406f99bfcb0ca63e8c82">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="38.91%" headers="mcps1.2.5.1.4 "><p id="ac72ee0a8d8434bd1b9382129b472a7dd"><a name="ac72ee0a8d8434bd1b9382129b472a7dd"></a><a name="ac72ee0a8d8434bd1b9382129b472a7dd"></a>Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.</p>
 </td>

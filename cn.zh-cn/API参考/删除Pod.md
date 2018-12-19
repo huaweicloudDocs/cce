@@ -119,7 +119,7 @@ DELETE /api/v1/namespaces/\{namespace\}/pods/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.548045195480455%" headers="mcps1.2.5.1.2 "><p id="a38ccfeab36664ea9a4721c54895bf3d0"><a name="a38ccfeab36664ea9a4721c54895bf3d0"></a><a name="a38ccfeab36664ea9a4721c54895bf3d0"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.73802619738026%" headers="mcps1.2.5.1.3 "><p id="a6c2825385ff64f5185b992b264a53265"><a name="a6c2825385ff64f5185b992b264a53265"></a><a name="a6c2825385ff64f5185b992b264a53265"></a><a href="#cce_02_0035__te7bcdc459ad245a4b6c9a5be1cfbc24f">表3</a></p>
+<td class="cellrowborder" valign="top" width="19.73802619738026%" headers="mcps1.2.5.1.3 "><p id="a6c2825385ff64f5185b992b264a53265"><a name="a6c2825385ff64f5185b992b264a53265"></a><a name="a6c2825385ff64f5185b992b264a53265"></a><a href="#te7bcdc459ad245a4b6c9a5be1cfbc24f">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.28607139286072%" headers="mcps1.2.5.1.4 "><p id="a72d2875166ad476b8c4f9f40113297d8"><a name="a72d2875166ad476b8c4f9f40113297d8"></a><a name="a72d2875166ad476b8c4f9f40113297d8"></a>Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.</p>
 </td>

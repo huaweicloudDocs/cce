@@ -98,7 +98,7 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="a641ed44081304841a5fd30190451fa21"><a name="a641ed44081304841a5fd30190451fa21"></a><a name="a641ed44081304841a5fd30190451fa21"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a38577330aabe498982d7e5570c56ca61"><a name="a38577330aabe498982d7e5570c56ca61"></a><a name="a38577330aabe498982d7e5570c56ca61"></a><a href="#cce_02_0044__t3a3f9a21f2254ea1a37ab173af770d4b">表3</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a38577330aabe498982d7e5570c56ca61"><a name="a38577330aabe498982d7e5570c56ca61"></a><a name="a38577330aabe498982d7e5570c56ca61"></a><a href="#t3a3f9a21f2254ea1a37ab173af770d4b">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.28%" headers="mcps1.2.5.1.4 "><p id="add861d80e28b4c3abeb4aaba2bc1656e"><a name="add861d80e28b4c3abeb4aaba2bc1656e"></a><a name="add861d80e28b4c3abeb4aaba2bc1656e"></a>Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.</p>
 </td>
@@ -183,7 +183,7 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </tr>
 <tr id="zh-cn_topic_0079615047_row10475508"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p43209809"><a name="zh-cn_topic_0079615047_p43209809"></a><a name="zh-cn_topic_0079615047_p43209809"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p10333622"><a name="zh-cn_topic_0079615047_p10333622"></a><a name="zh-cn_topic_0079615047_p10333622"></a><a href="#cce_02_0044__zh-cn_topic_0079615047_table10041872">表5</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p10333622"><a name="zh-cn_topic_0079615047_p10333622"></a><a name="zh-cn_topic_0079615047_p10333622"></a><a href="#zh-cn_topic_0079615047_table10041872">表5</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p31717068"><a name="zh-cn_topic_0079615047_p31717068"></a><a name="zh-cn_topic_0079615047_p31717068"></a>-</p>
 </td>
@@ -211,7 +211,7 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </tr>
 <tr id="zh-cn_topic_0079615047_row32667246"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p28801274"><a name="zh-cn_topic_0079615047_p28801274"></a><a name="zh-cn_topic_0079615047_p28801274"></a>details</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p51201854"><a name="zh-cn_topic_0079615047_p51201854"></a><a name="zh-cn_topic_0079615047_p51201854"></a><a href="#cce_02_0044__zh-cn_topic_0079615047_table23267991">表6</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p51201854"><a name="zh-cn_topic_0079615047_p51201854"></a><a name="zh-cn_topic_0079615047_p51201854"></a><a href="#zh-cn_topic_0079615047_table23267991">表6</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p53709539"><a name="zh-cn_topic_0079615047_p53709539"></a><a name="zh-cn_topic_0079615047_p53709539"></a>-</p>
 </td>
@@ -281,7 +281,7 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </tr>
 <tr id="zh-cn_topic_0079615047_row36006982"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p30884404"><a name="zh-cn_topic_0079615047_p30884404"></a><a name="zh-cn_topic_0079615047_p30884404"></a>causes</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p18608762"><a name="zh-cn_topic_0079615047_p18608762"></a><a name="zh-cn_topic_0079615047_p18608762"></a><a href="#cce_02_0044__zh-cn_topic_0079615047_table8085329">表7</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p18608762"><a name="zh-cn_topic_0079615047_p18608762"></a><a name="zh-cn_topic_0079615047_p18608762"></a><a href="#zh-cn_topic_0079615047_table8085329">表7</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p30914753"><a name="zh-cn_topic_0079615047_p30914753"></a><a name="zh-cn_topic_0079615047_p30914753"></a>-</p>
 </td>
