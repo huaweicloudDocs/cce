@@ -124,7 +124,7 @@ N/A
 </tr>
 <tr id="zh-cn_topic_0079614930_row2814577"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614930_p26654174"><a name="zh-cn_topic_0079614930_p26654174"></a><a name="zh-cn_topic_0079614930_p26654174"></a>items</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="a65502d1935b94750b218e45e0b2d6903"><a name="a65502d1935b94750b218e45e0b2d6903"></a><a name="a65502d1935b94750b218e45e0b2d6903"></a><a href="#cce_02_0184__table10772055194814">表3</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="a65502d1935b94750b218e45e0b2d6903"><a name="a65502d1935b94750b218e45e0b2d6903"></a><a name="a65502d1935b94750b218e45e0b2d6903"></a><a href="#table10772055194814">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614930_p59446649"><a name="zh-cn_topic_0079614930_p59446649"></a><a name="zh-cn_topic_0079614930_p59446649"></a>List of replication controllers.</p>
 </td>
@@ -152,7 +152,7 @@ N/A
 </tr>
 <tr id="row1878135516485"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p378145584816"><a name="p378145584816"></a><a name="p378145584816"></a>involvedObject</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p167815551483"><a name="p167815551483"></a><a name="p167815551483"></a><a href="#cce_02_0184__table7744122481514">表4</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p167815551483"><a name="p167815551483"></a><a name="p167815551483"></a><a href="#table7744122481514">表4</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p979125554813"><a name="p979125554813"></a><a name="p979125554813"></a>The object that this event is about.</p>
 </td>
@@ -180,7 +180,7 @@ N/A
 </tr>
 <tr id="row579115517489"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p27918554489"><a name="p27918554489"></a><a name="p27918554489"></a>source</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p1791552481"><a name="p1791552481"></a><a name="p1791552481"></a><a href="#cce_02_0184__table3940111613552">表5</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p1791552481"><a name="p1791552481"></a><a name="p1791552481"></a><a href="#table3940111613552">表5</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p127985584815"><a name="p127985584815"></a><a name="p127985584815"></a>The component reporting this event. Should be a short machine understandable string.</p>
 </td>

@@ -117,7 +117,7 @@ N/A
 </tr>
 <tr id="row38478323"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p29736429"><a name="p29736429"></a><a name="p29736429"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p59840531"><a name="p59840531"></a><a name="p59840531"></a><a href="#cce_02_0153__d0e39691">表3</a></p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p59840531"><a name="p59840531"></a><a name="p59840531"></a><a href="#d0e39691">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p2986183"><a name="p2986183"></a><a name="p2986183"></a>Standard list metadata.</p>
 </td>

@@ -119,7 +119,7 @@ DELETE /api/v1/namespaces/\{namespace\}/configmaps/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.2 "><p id="p35152057"><a name="p35152057"></a><a name="p35152057"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p28744393"><a name="p28744393"></a><a name="p28744393"></a><a href="#cce_02_0170__d0e43330">表3</a></p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p28744393"><a name="p28744393"></a><a name="p28744393"></a><a href="#d0e43330">表3</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.796020397960206%" headers="mcps1.2.5.1.4 "><p id="p16697443"><a name="p16697443"></a><a name="p16697443"></a>Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.</p>
 </td>
