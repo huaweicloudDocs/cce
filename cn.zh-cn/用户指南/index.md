@@ -105,6 +105,7 @@
     -   [云存储插件](云存储插件.md)
     -   [Dashboard插件](Dashboard插件.md)
     -   [CoreDNS插件](CoreDNS插件.md)
+    -   [web-terminal插件](web-terminal插件.md)
 
 -   [应用运维](应用运维.md)
 -   [节点监控](节点监控.md)
