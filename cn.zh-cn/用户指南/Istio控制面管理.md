@@ -6,7 +6,7 @@ Istio控制面组件负责向数据面组件注入sidecar，管理数据面sidec
 
 ## 监控使能了服务网格的集群<a name="section14496161019566"></a>
 
-1.  在CCE左侧导航栏中选择“应用管理 \> Istio管理”。
+1.  在CCE左侧导航栏中选择“应用治理“，打开[应用服务网格控制台](https://console.huaweicloud.com/istio/)，单击左侧导航栏中的“Istio管理“。
 2.  查看所有使能了Istio服务网格的集群情况。
 
     在该页面，您可以查看每个集群的Istio版本，运行状态，控制面组件数量和数据面Sidecar数量，以及控制面组件pilot，mixer，gateway的CPU与内存占用量。
@@ -23,7 +23,7 @@ Istio控制面组件负责向数据面组件注入sidecar，管理数据面sidec
 -   Istio控制面运行版本需小于最新版本
 -   旧版本Istio控制面运行正常
 
-1.  在CCE左侧导航栏中选择“应用管理 \> Istio管理”。
+1.  在CCE左侧导航栏中选择“应用治理“，打开[应用服务网格控制台](https://console.huaweicloud.com/istio/)，单击左侧导航栏中的“Istio管理“。
 2.  在Istio管理集群列表页面，单击待升级集群后的“操作 \> 升级”。
 3.  查看升级版本，确定是否自动升级sidecar。
     -   是：会在Istio控制面升级完成后，通过重启业务pod的方式进行sidecar重新注入，过程中业务pod将会重启，可能导致业务中断。
@@ -37,7 +37,7 @@ Istio控制面组件负责向数据面组件注入sidecar，管理数据面sidec
 
 您还可以在“运行节点“中对节点进行“扩容“，详细步骤如下：
 
-1.  在CCE左侧导航栏中选择“应用管理 \> Istio管理“。
+1.  在CCE左侧导航栏中选择“应用治理“，打开应用服务网格控制台，单击左侧导航栏中的“Istio管理“。
 2.  单击相应集群名称进入Istio管理详情。
 3.  单击“运行节点“页签。
 4.  单击“操作“下的“扩容“链接跳转到弹性云服务器页面。
@@ -50,7 +50,6 @@ Istio控制面组件负责向数据面组件注入sidecar，管理数据面sidec
     **图 2**  变更规格<a name="fig179773126264"></a>  
     ![](figures/变更规格.png "变更规格")
 
-6.  
 
 ## Addon管理<a name="section20938121714487"></a>
 
@@ -63,7 +62,7 @@ Addon管理可以对grafana、prometheus、kiali、tracing四个插件进行安�
 3.  在安装页面，选择插件要绑定的“弹性负载“，输入要分配给插件安装的“CPU配额“和“内存配额“。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   当前服务网格支持“经典型负载均衡“和“增强型弹性负载均衡“，为了更好地与服务网格配合，推荐创建并使用“增强型弹型负载均衡“。创建详细步骤请参考[创建经典型负载均衡器](https://support.huaweicloud.com/qs-elb/zh-cn_topic_0015479967.html)或[创建增强型负载均衡器](https://support.huaweicloud.com/qs-elb/zh-cn_topic_0052569751.html)。  
+    >-   当前服务网格支持“经典型负载均衡“和“增强型弹性负载均衡“，为了更好地与服务网格配合，推荐创建并使用“增强型弹性负载均衡“。创建详细步骤请参考[创建经典型负载均衡器](https://support.huaweicloud.com/qs-elb/zh-cn_topic_0015479967.html)或[创建增强型负载均衡器](https://support.huaweicloud.com/qs-elb/zh-cn_topic_0052569751.html)。  
     >-   如果您的弹性负载均衡监听器配额不足将不会显示在负载均衡器列表中。  
     >-   CPU配额和内存配额中的“申请“和“限制“值为必填，且不能超过节点剩余额度。  
 
