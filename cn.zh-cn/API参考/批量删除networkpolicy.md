@@ -1,12 +1,12 @@
-# 删除networkpolicy<a name="cce_02_0279"></a>
+# 批量删除networkpolicy<a name="cce_02_0280"></a>
 
-## 功能介绍<a name="section474171885320"></a>
+## 功能介绍<a name="section12824629105311"></a>
 
-This API is used to delete a NetworkPolicy.
+This API is used to delete collection of NetworkPolicy
 
-## URL<a name="section219412719263"></a>
+## URL<a name="section46638526260"></a>
 
-DELETE /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
+DELETE /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -21,14 +21,7 @@ DELETE /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{nam
 </th>
 </tr>
 </thead>
-<tbody><tr id="row10781191719208"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p19781117112019"><a name="p19781117112019"></a><a name="p19781117112019"></a>name</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p578231710205"><a name="p578231710205"></a><a name="p578231710205"></a>Yes</p>
-</td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p978261710207"><a name="p978261710207"></a><a name="p978261710207"></a>Name of the NetworkPolicy.</p>
-</td>
-</tr>
-<tr id="row19095777"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p3254085"><a name="p3254085"></a><a name="p3254085"></a>namespace</p>
+<tbody><tr id="row19095777"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p3254085"><a name="p3254085"></a><a name="p3254085"></a>namespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p62254326"><a name="p62254326"></a><a name="p62254326"></a>Yes</p>
 </td>
@@ -66,17 +59,100 @@ N/A
 
 ```
 {
-    "apiVersion": "v1",
-	"code": 200	
-	"details": {
-	    "name": "aqws", 
-	    "group": "networking.k8s.io", 
-	    "kind": "networkpolicies"
-            "uid" : "0eea113a-ebb6-11e8-889b-fa163ecbd381"
-	},
-    "kind": "Status",
-    "metadata" : {},
-    "status": "Success",	
+  "kind": "NetworkPolicyList",
+  "apiVersion": "extensions/v1beta1",
+  "metadata": {
+    "selfLink": "/apis/extensions/v1beta1/namespaces/default/networkpolicies",
+    "resourceVersion": "1105434"
+  },
+  "items": [
+    {
+      "metadata": {
+        "name": "test111",
+        "namespace": "default",
+        "selfLink": "/apis/extensions/v1beta1/namespaces/default/networkpolicies/test111",
+        "uid": "c4ca7f4e-ed3a-11e8-85b0-fa163e2ce5f0",
+        "resourceVersion": "1105348",
+        "generation": 1,
+        "creationTimestamp": "2018-11-21T03:08:50Z",
+        "labels": {
+          "app": "nginx"
+        }
+      },
+      "spec": {
+        "podSelector": {
+          "matchLabels": {
+            "app": "nginx"
+          }
+        },
+        "ingress": [
+          {
+            "ports": [
+              {
+                "protocol": "TCP",
+                "port": 80
+              }
+            ],
+            "from": [
+              {
+                "namespaceSelector": {
+                  "matchLabels": {
+                    "project": "default"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "policyTypes": [
+          "Ingress"
+        ]
+      }
+    },
+    {
+      "metadata": {
+        "name": "test222",
+        "namespace": "default",
+        "selfLink": "/apis/extensions/v1beta1/namespaces/default/networkpolicies/test222",
+        "uid": "9017a491-ed3a-11e8-85b0-fa163e2ce5f0",
+        "resourceVersion": "1105156",
+        "generation": 1,
+        "creationTimestamp": "2018-11-21T03:07:21Z",
+        "labels": {
+          "app": "nginx"
+        }
+      },
+      "spec": {
+        "podSelector": {
+          "matchLabels": {
+            "app": "nginx"
+          }
+        },
+        "ingress": [
+          {
+            "ports": [
+              {
+                "protocol": "TCP",
+                "port": 80
+              }
+            ],
+            "from": [
+              {
+                "podSelector": {
+                  "matchLabels": {
+                    "app": "nginx"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "policyTypes": [
+          "Ingress"
+        ]
+      }
+    }
+  ]
 }
 ```
 

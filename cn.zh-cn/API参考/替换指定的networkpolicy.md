@@ -1,4 +1,4 @@
-# 替换指定的networkpolicy<a name="ZH-CN_TOPIC_0140765563"></a>
+# 替换指定的networkpolicy<a name="cce_02_0278"></a>
 
 ## 功能介绍<a name="section19932559538"></a>
 
@@ -180,7 +180,7 @@ PUT /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
 </thead>
 <tbody><tr id="row2663689"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14432280"><a name="p14432280"></a><a name="p14432280"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13489144118012"><a name="p13489144118012"></a><a name="p13489144118012"></a>success</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13489144118012"><a name="p13489144118012"></a><a name="p13489144118012"></a>OK</p>
 </td>
 </tr>
 <tr id="row1781782783012"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p81998550234"><a name="p81998550234"></a><a name="p81998550234"></a>201</p>

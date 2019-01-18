@@ -2,7 +2,7 @@
 
 ## 功能介绍<a name="section14672911"></a>
 
-This API is used to delete collection of PersistentVolumeClaim.
+该API用于删除所有的PersistentVolumeClaim资源对象。
 
 ## URI<a name="section64947336"></a>
 
@@ -88,7 +88,7 @@ N/A
 
 **响应参数：**
 
-响应参数的详细描述请参见[表2](创建指定的PersistentVolumeClaim.md#t8268aeafde034542ab17a36c7fca65c3)。
+响应参数的详细描述请参见[表2](创建PersistentVolumeClaim-0.md#t8268aeafde034542ab17a36c7fca65c3)。
 
 **响应示例：**
 

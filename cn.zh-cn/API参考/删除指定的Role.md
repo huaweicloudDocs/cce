@@ -1,4 +1,4 @@
-# 删除指定的Role<a name="ZH-CN_TOPIC_0140918318"></a>
+# 删除指定的Role<a name="cce_02_0305"></a>
 
 ## 功能介绍<a name="section28675114188"></a>
 
@@ -115,7 +115,7 @@ N/A
 </thead>
 <tbody><tr id="row2663689"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14432280"><a name="p14432280"></a><a name="p14432280"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p0978454104816"><a name="p0978454104816"></a><a name="p0978454104816"></a>success</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p0978454104816"><a name="p0978454104816"></a><a name="p0978454104816"></a>OK</p>
 </td>
 </tr>
 </tbody>

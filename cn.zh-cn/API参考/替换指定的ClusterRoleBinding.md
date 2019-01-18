@@ -1,4 +1,4 @@
-# 替换指定的ClusterRoleBinding<a name="ZH-CN_TOPIC_0140918310"></a>
+# 替换指定的ClusterRoleBinding<a name="cce_02_0296"></a>
 
 ## 功能介绍<a name="section948715345911"></a>
 
@@ -122,7 +122,7 @@ PUT /apis/rbac.authorization.k8s.io/v1/clusterrolebindings/\{name\}
 </thead>
 <tbody><tr id="row2663689"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615066_p24863727"><a name="zh-cn_topic_0079615066_p24863727"></a><a name="zh-cn_topic_0079615066_p24863727"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615066_p696045"><a name="zh-cn_topic_0079615066_p696045"></a><a name="zh-cn_topic_0079615066_p696045"></a>success</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615066_p696045"><a name="zh-cn_topic_0079615066_p696045"></a><a name="zh-cn_topic_0079615066_p696045"></a>OK</p>
 </td>
 </tr>
 <tr id="row1675275284919"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p157531052144911"><a name="p157531052144911"></a><a name="p157531052144911"></a>201</p>

@@ -2,7 +2,7 @@
 
 ## Function<a name="section3340011"></a>
 
-This API is used to delete collection of PersistentVolume.
+该API用于删除所有的PersistentVolume对象。
 
 ## URI<a name="section30060106"></a>
 
@@ -88,7 +88,7 @@ N/A
 
 **响应参数：**
 
-响应参数的详细描述请参见[表2](创建PersistentVolume-0.md#tfdb73431f39846d4a56ec4eb558e1617)。
+响应参数的详细描述请参见[表2](创建PersistentVolume-1.md#tfdb73431f39846d4a56ec4eb558e1617)。
 
 响应示例：
 
