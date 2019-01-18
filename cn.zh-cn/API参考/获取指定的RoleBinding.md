@@ -1,4 +1,4 @@
-# 获取指定的RoleBinding<a name="ZH-CN_TOPIC_0140918328"></a>
+# 获取指定的RoleBinding<a name="cce_02_0316"></a>
 
 ## 功能介绍<a name="section11492193155516"></a>
 
@@ -97,7 +97,7 @@ N/A
 </thead>
 <tbody><tr id="row2663689"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14432280"><a name="p14432280"></a><a name="p14432280"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p28164027"><a name="p28164027"></a><a name="p28164027"></a>success</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p28164027"><a name="p28164027"></a><a name="p28164027"></a>OK</p>
 </td>
 </tr>
 </tbody>

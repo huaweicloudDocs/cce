@@ -1,4 +1,4 @@
-# 获取networkpolicy列表<a name="ZH-CN_TOPIC_0140780539"></a>
+# 获取networkpolicy列表<a name="cce_02_0283"></a>
 
 ## 功能介绍<a name="section4238193710363"></a>
 
@@ -162,7 +162,7 @@ N/A
 </thead>
 <tbody><tr id="row2663689"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14432280"><a name="p14432280"></a><a name="p14432280"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p135341732589"><a name="p135341732589"></a><a name="p135341732589"></a>success</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p135341732589"><a name="p135341732589"></a><a name="p135341732589"></a>OK</p>
 </td>
 </tr>
 </tbody>
