@@ -1,4 +1,4 @@
-# 创建ClusterRole<a name="ZH-CN_TOPIC_0140918301"></a>
+# 创建ClusterRole<a name="cce_02_0286"></a>
 
 ## 功能介绍<a name="section6913131642116"></a>
 
@@ -8,7 +8,7 @@ This API is used to create a ClusterRole
 
 POST /apis/rbac.authorization.k8s.io/v1/clusterroles
 
-[参数解释](#d0e42906)描述该API的参数。
+[参数解释](#table161311441165415)描述该API的参数。
 
 **表 1**  参数解释
 
@@ -88,7 +88,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterroles
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p1378375321115"><a name="p1378375321115"></a><a name="p1378375321115"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p1578195321111"><a name="p1578195321111"></a><a name="p1578195321111"></a><a href="#table866915511559">metadata字段数据结构说明</a></p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p1578195321111"><a name="p1578195321111"></a><a name="p1578195321111"></a><a href="#table204271324125219">metadata字段数据结构说明</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p1977810533112"><a name="p1977810533112"></a><a name="p1977810533112"></a>Standard object's metadata.</p>
 </td>
@@ -411,7 +411,17 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterroles
 </thead>
 <tbody><tr id="row2663689"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14432280"><a name="p14432280"></a><a name="p14432280"></a>201</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13489144118012"><a name="p13489144118012"></a><a name="p13489144118012"></a>success</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13489144118012"><a name="p13489144118012"></a><a name="p13489144118012"></a>Created</p>
+</td>
+</tr>
+<tr id="row1886495163316"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p886495133310"><a name="p886495133310"></a><a name="p886495133310"></a>200</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1786435113335"><a name="p1786435113335"></a><a name="p1786435113335"></a>OK</p>
+</td>
+</tr>
+<tr id="row1031115510339"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p13311555103311"><a name="p13311555103311"></a><a name="p13311555103311"></a>202</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p731165523310"><a name="p731165523310"></a><a name="p731165523310"></a>Accepted</p>
 </td>
 </tr>
 </tbody>

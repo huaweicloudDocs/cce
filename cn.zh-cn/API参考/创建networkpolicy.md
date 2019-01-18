@@ -1,4 +1,4 @@
-# 创建networkpolicy<a name="ZH-CN_TOPIC_0140619317"></a>
+# 创建networkpolicy<a name="cce_02_0276"></a>
 
 ## 功能介绍<a name="section1333055875"></a>
 
@@ -289,7 +289,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="a792005b9cc9c4b62aa05ca6ba72edb1b"><a name="a792005b9cc9c4b62aa05ca6ba72edb1b"></a><a name="a792005b9cc9c4b62aa05ca6ba72edb1b"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a9fd3a2cf6b17488ebf787d90dcdd4806"><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a><a href="#table1156984163517">LableSelector字段数据结构说明</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a9fd3a2cf6b17488ebf787d90dcdd4806"><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a><a href="#table1156984163517">LabelSelector字段数据结构说明</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="aaca6cae38740430c8d9c48adc947545c"><a name="aaca6cae38740430c8d9c48adc947545c"></a><a name="aaca6cae38740430c8d9c48adc947545c"></a>Selects the pods to which this NetworkPolicy object applies. The array of ingress rules is applied to any pods selected by this field. Multiple network policies can select the same set of pods. In this case, the ingress rules for each are combined additively. This field is NOT optional and follows standard label selector semantics. An empty podSelector matches all pods in this namespace.</p>
 </td>
@@ -340,7 +340,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </tbody>
 </table>
 
-**表 6**  LableSelector字段数据结构说明
+**表 6**  LabelSelector字段数据结构说明
 
 <a name="table1156984163517"></a>
 <table><thead align="left"><tr id="row15701041358"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.1"><p id="p2027915147359"><a name="p2027915147359"></a><a name="p2027915147359"></a>参数</p>
@@ -391,7 +391,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p865513112129"><a name="p865513112129"></a><a name="p865513112129"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p12658123181216"><a name="p12658123181216"></a><a name="p12658123181216"></a><a href="#table065125363017">LabelSelector字段数据结构说明</a></p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p12658123181216"><a name="p12658123181216"></a><a name="p12658123181216"></a><a href="#table1156984163517">LabelSelector字段数据结构说明</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p4662103171214"><a name="p4662103171214"></a><a name="p4662103171214"></a>Selects Namespaces using cluster scoped-labels. This matches all pods in all namespaces selected by this label selector. This field follows standard label selector semantics. If present but empty, this selector selects all namespaces.</p>
 </td>
@@ -400,7 +400,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p136681131131213"><a name="p136681131131213"></a><a name="p136681131131213"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p19669123191213"><a name="p19669123191213"></a><a name="p19669123191213"></a><a href="#table065125363017">LabelSelector字段数据结构说明</a></p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p19669123191213"><a name="p19669123191213"></a><a name="p19669123191213"></a><a href="#table1156984163517">LabelSelector字段数据结构说明</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p111295542419"><a name="p111295542419"></a><a name="p111295542419"></a>This is a label selector which selects Pods in this namespace. This field follows standard label selector semantics. If present but empty, this selector selects all pods in this namespace.</p>
 </td>
@@ -482,7 +482,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 
 **响应参数：**
 
-响应参数的详细描述请参见[表2](#d0e42951)。
+响应参数的详细描述请参见[请求参数](#d0e42951)。
 
 **响应示例：**
 
@@ -543,7 +543,17 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </thead>
 <tbody><tr id="row2663689"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14432280"><a name="p14432280"></a><a name="p14432280"></a>201</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p28164027"><a name="p28164027"></a><a name="p28164027"></a>success</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p28164027"><a name="p28164027"></a><a name="p28164027"></a>Created</p>
+</td>
+</tr>
+<tr id="row182071116185513"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p420920168551"><a name="p420920168551"></a><a name="p420920168551"></a>200</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p112096169554"><a name="p112096169554"></a><a name="p112096169554"></a>OK</p>
+</td>
+</tr>
+<tr id="row7451192017555"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1145102075520"><a name="p1145102075520"></a><a name="p1145102075520"></a>202</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p16451202016550"><a name="p16451202016550"></a><a name="p16451202016550"></a>Accepted</p>
 </td>
 </tr>
 </tbody>

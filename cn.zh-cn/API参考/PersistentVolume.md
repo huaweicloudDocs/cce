@@ -1,6 +1,6 @@
 # PersistentVolume<a name="cce_02_0075"></a>
 
--   **[创建PersistentVolume](创建PersistentVolume-0.md)**  
+-   **[创建PersistentVolume](创建PersistentVolume-1.md)**  
 
 -   **[删除指定的PersistentVolume](删除指定的PersistentVolume.md)**  
 
@@ -12,7 +12,7 @@
 
 -   **[替换指定的PersistentVolume的状态](替换指定的PersistentVolume的状态.md)**  
 
--   **[列出PersistentVolume](列出PersistentVolume.md)**  
+-   **[列出所有的PersistentVolume](列出所有的PersistentVolume.md)**  
 
 -   **[更新指定的PersistentVolume](更新指定的PersistentVolume.md)**  
 

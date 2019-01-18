@@ -1,4 +1,4 @@
-# NetworkPolicy<a name="ZH-CN_TOPIC_0140619316"></a>
+# NetworkPolicy<a name="cce_02_0275"></a>
 
 ## 所支持的集群版本：<a name="section7301649122610"></a>
 
@@ -16,7 +16,7 @@
 
 -   **[删除networkpolicy](删除networkpolicy.md)**  
 
--   **[删除所有的networkpolicy](删除所有的networkpolicy.md)**  
+-   **[批量删除networkpolicy](批量删除networkpolicy.md)**  
 
 -   **[获取指定的networkpolicy](获取指定的networkpolicy.md)**  
 

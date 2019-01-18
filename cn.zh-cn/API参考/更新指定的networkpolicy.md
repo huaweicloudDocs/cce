@@ -1,4 +1,4 @@
-# 更新指定的networkpolicy<a name="ZH-CN_TOPIC_0140765562"></a>
+# 更新指定的networkpolicy<a name="cce_02_0277"></a>
 
 ## 功能介绍<a name="section195161234135216"></a>
 
@@ -97,7 +97,7 @@ Content-Type: application/merge-patch+json
 
 **响应参数：**
 
-响应参数的详细描述请参见。
+响应参数的详细描述请参见[请求参数](创建networkpolicy.md#d0e42951)。
 
 **响应示例：**
 
@@ -158,7 +158,7 @@ Content-Type: application/merge-patch+json
 </thead>
 <tbody><tr id="row2663689"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14432280"><a name="p14432280"></a><a name="p14432280"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13489144118012"><a name="p13489144118012"></a><a name="p13489144118012"></a>success</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13489144118012"><a name="p13489144118012"></a><a name="p13489144118012"></a>OK</p>
 </td>
 </tr>
 </tbody>

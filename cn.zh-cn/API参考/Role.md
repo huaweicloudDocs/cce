@@ -1,4 +1,4 @@
-# Role<a name="ZH-CN_TOPIC_0140901726"></a>
+# Role<a name="cce_02_0301"></a>
 
 -   **[创建Role](创建Role.md)**  
 
@@ -8,7 +8,7 @@
 
 -   **[删除指定的Role](删除指定的Role.md)**  
 
--   **[删除所有的Role](删除所有的Role.md)**  
+-   **[批量删除Role](批量删除Role.md)**  
 
 -   **[获取指定的Role](获取指定的Role.md)**  
 

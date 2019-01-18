@@ -1,4 +1,4 @@
-# RoleBinding<a name="ZH-CN_TOPIC_0140901727"></a>
+# RoleBinding<a name="cce_02_0310"></a>
 
 -   **[创建RoleBinding](创建RoleBinding.md)**  
 
@@ -8,7 +8,7 @@
 
 -   **[删除指定的RoleBinding](删除指定的RoleBinding.md)**  
 
--   **[删除所有的RoleBinding](删除所有的RoleBinding.md)**  
+-   **[批量删除RoleBinding](批量删除RoleBinding.md)**  
 
 -   **[获取指定的RoleBinding](获取指定的RoleBinding.md)**  
 
