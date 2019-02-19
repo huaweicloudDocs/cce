@@ -4,20 +4,20 @@
 
 该API用于创建一个Deployment资源对象。
 
-如果要将创建的Deployment对象在CCE工作负载界面上显示，则需要给创建的Deployment资源对象添加labels标签。
+如果要将创建的Deployment对象在CCE工作负载界面上正常显示，则必须给创建的Deployment资源对象添加labels标签。
 
 设置请求消息体中的“metadata.labels“参数键值如下内容：
 
 ```
 labels:
-    app: appname
-    name: deploymentname
+    app: deploymentname
+    
 ```
 
 其中：
 
--   “cce/appgroup“参数所键入的“appname“为显示在CCE工作负载界面上的工作负载名称，可取任意值。
--   “name“为Deployment的名称，可取任意值。
+-   同命名空间下，deploymentname名称不要重复
+-   deploymentname为显示在CCE工作负载界面上的工作负载名称，需要和metadata.name的值保持一致。且“metadata.labels.app”、“spec.selector.matchLabels.app”、“spec.template.metadata.labels.app”的值要和deploymentname的值同步。可参考请求示例。
 
 ## URI<a name="section764545414815"></a>
 
@@ -548,7 +548,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
     "kind": "Deployment",
     "metadata": {
         "labels": {
-            "name": "deployment-test"
+            "app": "deployment-test"
         },
         "name": "deployment-test"
     },
@@ -556,13 +556,13 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
         "replicas": 1,
         "selector": {
             "matchLabels": {
-                "name": "deployment-test"
+                "app": "deployment-test"
             }
         },
         "template": {
             "metadata": {
                 "labels": {
-                    "name": "deployment-test"
+                    app": "deployment-test"
                 }
             },
             "spec": {
