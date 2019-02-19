@@ -18,7 +18,7 @@
 </tr>
 <tr id="row891519223810"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.3.1.1 "><p id="p491622211811"><a name="p491622211811"></a><a name="p491622211811"></a><span class="keyword" id="keyword1443215012618"><a name="keyword1443215012618"></a><a name="keyword1443215012618"></a>kube-dns</span><span class="keyword" id="keyword6339193122618"><a name="keyword6339193122618"></a><a name="keyword6339193122618"></a>高可用</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.2.3.1.2 "><p id="p7916162220816"><a name="p7916162220816"></a><a name="p7916162220816"></a><a href="通过kubectl配置kube-dns高可用.md">通过kubectl配置kube-dns高可用</a></p>
+<td class="cellrowborder" valign="top" width="79%" headers="mcps1.2.3.1.2 "><p id="p7916162220816"><a name="p7916162220816"></a><a name="p7916162220816"></a><a href="通过kubectl配置kube-dns-CoreDNS高可用.md">通过kubectl配置kube-dns高可用</a></p>
 </td>
 </tr>
 <tr id="row183953145614"><td class="cellrowborder" rowspan="2" valign="top" width="21%" headers="mcps1.2.3.1.1 "><p id="p19239401986"><a name="p19239401986"></a><a name="p19239401986"></a>创建工作负载</p>
@@ -43,10 +43,10 @@
 <tr id="row5179024686"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1818120241088"><a name="p1818120241088"></a><a name="p1818120241088"></a><a href="亲和-反亲和性调度.md#section1894310152317">指定工作负载部署在不同节点-yaml示例</a></p>
 </td>
 </tr>
-<tr id="row41820243812"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1018212418818"><a name="p1018212418818"></a><a name="p1018212418818"></a><a href="亲和-反亲和性调度.md#section4201420133117">工作负载部署在指定可用分区-yaml示例</a></p>
+<tr id="row41820243812"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1018212418818"><a name="p1018212418818"></a><a name="p1018212418818"></a><a href="亲和-反亲和性调度.md#section4201420133117">工作负载部署在指定可用区-yaml示例</a></p>
 </td>
 </tr>
-<tr id="row17182122410811"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1718232418812"><a name="p1718232418812"></a><a name="p1718232418812"></a><a href="亲和-反亲和性调度.md#section102822029173111">工作负载不部署在指定可用分区-yaml示例</a></p>
+<tr id="row17182122410811"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1718232418812"><a name="p1718232418812"></a><a name="p1718232418812"></a><a href="亲和-反亲和性调度.md#section102822029173111">工作负载不部署在指定可用区-yaml示例</a></p>
 </td>
 </tr>
 <tr id="row131821224183"><td class="cellrowborder" rowspan="6" valign="top" width="21%" headers="mcps1.2.3.1.1 "><p id="p137511352171111"><a name="p137511352171111"></a><a name="p137511352171111"></a><span class="keyword" id="keyword3382195172513"><a name="keyword3382195172513"></a><a name="keyword3382195172513"></a>工作负载访问方式</span>设置</p>

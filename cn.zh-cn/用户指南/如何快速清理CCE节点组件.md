@@ -4,24 +4,24 @@
 
 若集群中包含包周期节点或纳管节点，删除对应集群和节点不会删除对应的ECS，此时请按照界面提示清理节点上CCE组件。若未按照提示清理节点组件，后续需要清理ECS时，可按照如下操作进行清理。
 
-执行清理操作前，若有关键数据需要保留，请提前备份或提交工单联系客服咨询。
+>![](public_sys-resources/icon-notice.gif) **注意：**   
+>卸载将会删除弹性云服务器上的CCE系统用户paas以及docker相关资源，执行清理操作前，若有关键数据需要保留，请提前备份或[提交工单](https://console.huaweicloud.com/ticket/?locale=zh-cn#/ticketindex/createIndex)联系客服咨询。  
 
 ## 操作步骤<a name="section268022815614"></a>
 
-1.  以**root**用户登录待清理的ECS，获取对应节点版本信息。
+1.  登录CCE控制台，单击左侧导航栏中的“集群管理 \> 节点管理“，在右侧的节点列表中找到要清理组件的纳管节点，在节点的“操作“区域下单击“移除“。
 
-    **VER=$\(gawk -F'.sp' '\{print $1\}' /var/paas/kubernetes/version\); echo "CCE Node Version: $VER";**
+    **图 1**  移除纳管节点<a name="fig88893368329"></a>  
+    ![](figures/移除纳管节点.png "移除纳管节点")
 
-2.  下载版本对应卸载脚本。
+2.  在弹出的“移除纳管节点“对话框中输入"REMOVE"确认移除节点，单击“确认“。
 
-    **curl -k http://cce-north.obs.myhuaweicloud.com/cluster-versions/$\{VER\}/node-uninstall.tgz -1 -O; tar zxf node-uninstall.tgz;**
+    **图 2**  确认移除纳管节点<a name="fig1363395193512"></a>  
+    ![](figures/确认移除纳管节点.png "确认移除纳管节点")
 
-3.  执行卸载脚本，清理CCE组件。
+3.  认真阅读弹出的“提示“页面内容，按照步骤清理CCE相关资源。
 
-    清理操作包括卸载docker服务、删除paas用户、删除组件目录。
-
-    **TMOUT=0; bash uninstall\_node.sh;**
-
-    若上述命令执行失败，请联系客服处理。
+    **图 3**  清理CCE节点组件步骤<a name="fig1683919195399"></a>  
+    ![](figures/清理CCE节点组件步骤.png "清理CCE节点组件步骤")
 
 

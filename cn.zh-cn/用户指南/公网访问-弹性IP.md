@@ -37,8 +37,8 @@
 
 
 
-2.  单击“下一步“进入“高级设置（可选）“页面，直接单击“创建“。
-3.  单击“查看工作负载详情“，在“访问方式“页签下，获取方式地址，例如“10.78.27.59:30911“。
+2.  完成配置后，直接单击“确定“。
+3.  单击“工作负载 \> 无状态（Deployment）“或“工作负载 \> 有状态（StatefulSet）“，在工作负载列表页面，单击“查看工作负载详情“进入工作负载详情页，在“访问方式“页签下，获取方式地址，例如“10.78.27.59:30911“。
 4.  单击访问地址，即可跳转到访问页面。
 
     **图 3**  通过弹性IP访问nginx（一）<a name="fig1543716518012"></a>  
@@ -48,7 +48,7 @@
 ## 工作负载创建完成后设置<a name="section51925078171335"></a>
 
 1.  登录CCE控制台，选择左侧导航栏的“资源管理 \> 网络管理”，在**Service**页签下，单击“添加Service”。选择类型为“公网访问”。
-2.  设置集群内访问参数。
+2.  设置公网访问参数。
     -   服务名称：自定义服务名称，可与工作负载名称保持一致。
     -   集群名称：服务所在集群。
     -   命名空间：服务所在命名空间。
@@ -86,7 +86,7 @@
     metadata:
       name: nginx
     spec:
-      replicas: 1cc
+      replicas: 1
       selector:
         matchLabels:
           app: nginx
@@ -112,7 +112,6 @@
     kind: Service
     metadata:
       annotations:
-        service.protal.kubernetes.io/access-ip: 10.78.44.60  #集群内部至少有一个节点绑定弹性IP，此处填写弹性IP地址
         service.protal.kubernetes.io/type: EIP                #指定外部访问类型为弹性IP
       labels:
         app: nginx
