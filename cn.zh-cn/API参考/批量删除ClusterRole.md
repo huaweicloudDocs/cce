@@ -30,7 +30,8 @@ DELETE /apis/rbac.authorization.k8s.io/v1/clusterroles
 </tr>
 <tr id="row324054917610"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p1124024920612"><a name="p1124024920612"></a><a name="p1124024920612"></a>continue</p>
 </td>
-<td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 ">&nbsp;&nbsp;</td>
+<td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p162415491767"><a name="p162415491767"></a><a name="p162415491767"></a>-</p>
+</td>
 <td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p12411249269"><a name="p12411249269"></a><a name="p12411249269"></a>The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.</p>
 </td>
 </tr>
