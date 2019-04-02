@@ -51,19 +51,19 @@
 </tr>
 <tr id="row131821224183"><td class="cellrowborder" rowspan="6" valign="top" width="21%" headers="mcps1.2.3.1.1 "><p id="p137511352171111"><a name="p137511352171111"></a><a name="p137511352171111"></a><span class="keyword" id="keyword3382195172513"><a name="keyword3382195172513"></a><a name="keyword3382195172513"></a>工作负载访问方式</span>设置</p>
 </td>
-<td class="cellrowborder" valign="top" width="79%" headers="mcps1.2.3.1.2 "><p id="p4182624982"><a name="p4182624982"></a><a name="p4182624982"></a><a href="集群内访问.md#section212517910573">通过kubectl命令实现集群内访问</a></p>
+<td class="cellrowborder" valign="top" width="79%" headers="mcps1.2.3.1.2 "><p id="p4182624982"><a name="p4182624982"></a><a name="p4182624982"></a><a href="集群内访问（ClusterIP）.md#section212517910573">通过kubectl命令实现集群内访问</a></p>
 </td>
 </tr>
-<tr id="row19182224388"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1018213241681"><a name="p1018213241681"></a><a name="p1018213241681"></a><a href="VPC内网访问.md#section1234016392534">通过kubectl命令实现VPC内访问</a></p>
+<tr id="row19182224388"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1018213241681"><a name="p1018213241681"></a><a name="p1018213241681"></a><a href="null.md#section1234016392534">通过kubectl命令实现VPC内访问</a></p>
 </td>
 </tr>
-<tr id="row466132092816"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p266212204289"><a name="p266212204289"></a><a name="p266212204289"></a><a href="公网访问-四层负载均衡.md#section1944313158364">通过kubectl命令行实现四层负载均衡</a></p>
+<tr id="row466132092816"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p266212204289"><a name="p266212204289"></a><a name="p266212204289"></a><a href="负载均衡-(-LoadBalancer-).md#section1944313158364">通过kubectl命令行实现四层负载均衡</a></p>
 </td>
 </tr>
-<tr id="row1126165612109"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1312915681012"><a name="p1312915681012"></a><a name="p1312915681012"></a><a href="公网访问-弹性IP.md#section1944313158364">通过kubectl命令实现弹性IP访问</a></p>
+<tr id="row1126165612109"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1312915681012"><a name="p1312915681012"></a><a name="p1312915681012"></a><a href="null.md#section1944313158364">通过kubectl命令实现弹性IP访问</a></p>
 </td>
 </tr>
-<tr id="row1160716228301"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1560712212307"><a name="p1560712212307"></a><a name="p1560712212307"></a><a href="公网访问-NAT网关.md#section1944313158364">通过kubectl命令行实现NAT网关</a></p>
+<tr id="row1160716228301"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1560712212307"><a name="p1560712212307"></a><a name="p1560712212307"></a><a href="DNAT网关-(-DNAT-).md#section1944313158364">通过kubectl命令行实现NAT网关</a></p>
 </td>
 </tr>
 <tr id="row18129145691015"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p912935641014"><a name="p912935641014"></a><a name="p912935641014"></a><a href="七层负载均衡（Ingress）.md#section1944313158364">通过kubectl命令实现七层负载均衡</a></p>

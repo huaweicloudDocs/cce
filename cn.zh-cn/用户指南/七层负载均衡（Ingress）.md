@@ -8,10 +8,10 @@
 
 ## 前提条件<a name="section2042610683912"></a>
 
-已在华为云控制台中创建“统一负载均衡“实例。
+已在华为云控制台中创建“弹性负载均衡“实例。
 
-1.  登录华为云控制台首页，在服务列表中选择“网络  \>  弹性负载均衡“。
-2.  单击右上角的“创建增强型负载均衡”，详细操作步骤请参见[创建增强型负载均衡器](https://support.huaweicloud.com/qs-elb/zh-cn_topic_0052569751.html)。
+1.  登录华为云控制台首页，在服务列表中选择“网络  \> 弹性负载均衡“。
+2.  单击右上角的“购买增强型负载均衡“，详细操作步骤请参见[创建增强型负载均衡器](https://support.huaweicloud.com/qs-elb/zh-cn_topic_0052569751.html)。
 
 ## 添加方式<a name="section10392205822818"></a>
 
@@ -25,17 +25,16 @@
 本节以ingress-test工作负载为例进行说明。
 
 1.  创建工作负载，详细步骤请参见[创建无状态工作负载](创建无状态工作负载.md)或[创建有状态工作负载](创建有状态工作负载.md)。
-    -   若创建工作负载时，配置了工作负载访问方式，且设置为“VPC内网访问”，请直接执行[3](#li45981923161059)。
+    -   若创建工作负载时，配置了工作负载访问方式，且设置为“节点访问 \( NodePort \)”，请直接执行[3](#li45981923161059)。
     -   若创建工作负载未设置访问方式，请先执行[2](#li248013365354)。
 
-2.  <a name="li248013365354"></a>（可选）若创建工作负载时，未配置“VPC内网访问”，请执行如下操作。
+2.  <a name="li248013365354"></a>（可选）若创建工作负载时，未配置“节点访问 \( NodePort \)”，请执行如下操作。
     1.  单击CCE左侧导航栏的“资源管理 \> 网络管理”。
-    2.  在Service页签下，单击“添加Service”。选择类型为“VPC内网访问”。
+    2.  在Service页签下，单击“添加Service”。选择类型为“节点访问 \( NodePort \)”。
         -   服务名称：自定义服务名称，可与工作负载名称保持一致。
         -   集群名称：选择需要添加Service的集群。
         -   命名空间：选择需要添加Service的命名空间。
-        -   关联工作负载：单击“选择工作负载”，选择需要配置VPC内网访问的工作负载名称，单击“确定”。
-        -   访问类型：选择节点IP。
+        -   关联工作负载：单击“选择工作负载”，选择需要配置节点访问 \( NodePort \)的工作负载名称，单击“确定”。
         -   端口配置：
             -   协议：请根据业务的协议类型选择。
             -   容器端口：容器镜像中工作负载实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
@@ -45,11 +44,15 @@
 
 
 
-    3.  单击“创建”，VPC内网访问方式设置成功。
+    3.  单击“创建”，节点访问方式设置成功。
 
 3.  <a name="li45981923161059"></a>添加Ingress类型的Service。
     1.  单击CCE左侧导航栏的“资源管理 \>  网络管理”。
     2.  在Ingress页签下，单击“添加Ingress”。
+
+        **图 1**  添加Ingress<a name="fig1625112413916"></a>  
+        ![](figures/添加Ingress.png "添加Ingress")
+
         -   Ingress名称：自定义Ingress名称，例如ingress-demo。
         -   集群名称：选择需要添加Ingress的集群。
         -   命名空间：选择需要添加Ingress的命名空间。
@@ -59,7 +62,7 @@
 
         -   对外端口：开放在负载均衡服务地址的端口，可任意指定。
         -   对外协议：支持HTTP和HTTPS。若选择HTTPS，请选择密钥证书。密钥证书需提前创建，密钥类型为IngressTLS。创建密钥的方法请参见[创建密钥](创建密钥.md)。
-        -   域名：实际访问的域名地址，对应负载均衡服务域名地址，需用户购买备案自己的域名，可选填。一旦配置了域名规则，则必须使用域名访问。否则，可以使用负载均衡实例的IP地址访问。
+        -   域名：实际访问的域名地址，对应负载均衡服务域名地址，需用户购买备案自己的域名，可选填。一旦配置了域名规则，则必须使用域名访问。
         -   路由配置：
             -   路由匹配规则：前缀匹配、精确匹配、正则匹配。
                 -   前缀匹配：例如映射URL为/healthz，只要符合此前缀的URL均可访问。例如/healthz/v1，/healthz/v2。
@@ -77,16 +80,31 @@
     创建完成后，在Ingress列表可查看到已创建成功的Ingress。
 
 5.  访问工作负载（例如名称为defaultbackend）的“/healthz”接口。
-    1.  获取defaultbackend“/healthz”接口的访问地址，访问地址有负载均衡实例、对外端口、映射URL组成，例如：10.154.76.63:80/healthz。
 
-        **图 1**  获取访问地址<a name="fig729725915615"></a>  
-        ![](figures/获取访问地址-1.png "获取访问地址-1")
+    方式一：负载均衡IP访问（需负载均衡访问的服务不能配置域名）
 
-    2.  在浏览器中输入“/healthz”接口的访问地址，即可成功访问工作负载，如[图2](#fig744914718206)。
+    1.  获取defaultbackend“/healthz”接口的访问地址，访问地址有负载均衡实例、对外端口、映射URL组成，例如：10.154.73.151:80/healthz。
 
-        **图 2**  访问defaultbackend“/healthz”接口<a name="fig744914718206"></a>  
+        **图 2**  获取访问地址<a name="fig911562743620"></a>  
+        ![](figures/获取访问地址-6.png "获取访问地址-6")
+
+    2.  在浏览器中输入“/healthz”接口的访问地址，如：http://10.154.73.151:80/healthz，即可成功访问工作负载，如[图3](#fig17115192714367)。
+
+        **图 3**  访问defaultbackend“/healthz”接口<a name="fig17115192714367"></a>  
         ![](figures/访问defaultbackend-healthz-接口.png "访问defaultbackend-healthz-接口")
 
+
+    方式二：域名访问
+
+    以ingress中已配置域名ingress.com为例。
+
+    1.  获取ingress-demo“/iamwangbo”接口的域名与访问地址的IP与端口。
+
+        **图 4**  获取域名与访问地址<a name="fig1992172383117"></a>  
+        ![](figures/获取域名与访问地址.png "获取域名与访问地址")
+
+    2.  在本地主机的  C:\\Windows\\System32\\drivers\\etc\\hosts中配置访问地址的IP和域名，如：49.4.78.159 ingress.com。
+    3.  在浏览器中输入http://域名:访问地址端口/映射url，如：http://ingress.com:81/iamwangbo。
 
 
 ## kubectl命令行创建<a name="section1944313158364"></a>
@@ -111,24 +129,26 @@
     apiVersion: extensions/v1beta1
     kind: Deployment
     metadata:
-      name: ingress-test
+      name: ingress-test-deployment
     spec:
       replicas: 1
       selector:
         matchLabels:
-          app: ingress-test
+          app: ingress-test-deployment
       strategy:
         type: RollingUpdate
       template:
         metadata:
           labels:
-            app: ingress-test
+            app: ingress-test-deployment
         spec:
           containers:
             #第三方公开镜像，可以参见描述获取地址，也可以使用自己的镜像
-          - image: nginx  
+          - image: ingress  
             imagePullPolicy: Always
-            name: nginx
+            name: ingress
+          imagePullSecrets:
+          -name:default-secret
     ```
 
     **vi ingress-test-svc.yaml**
@@ -138,21 +158,21 @@
     kind: Service 
     metadata: 
       labels: 
-        app: ingress-test 
-      name: ingress-test 
+        app: ingress-test-svc
+      name: ingress-test-svc
     spec: 
       ports: 
       - name: service0 
-        port: 8080             #集群虚拟IP的访问端口 
+        port: 8888            #集群虚拟IP的访问端口 
         protocol: TCP 
-        targetPort: 8080       #对应界面上的容器端口，应用程序实际监听的端口 
+        targetPort: 8888       #对应界面上的容器端口，应用程序实际监听的端口 
       #若需要设置多个端口，可依次填写，如下展示
       - name: service1 
         port: 8081 
         protocol: TCP 
         targetPort: 8081
       selector: 
-        app: ingress-test 
+        app: ingress-test-deployment
       type:  NodePort         #采用Nodeport的访问类型连接负载均衡
     ```
 
@@ -163,21 +183,26 @@
     kind: Ingress 
     metadata: 
       annotations: 
+        kubernetes.io/elb.id: f7891f9a-49f2-4ee2-b1ae-f019cd84eb4f        #必填，为负载均衡增强型实例的ID
         kubernetes.io/elb.ip: 192.168.0.39        #必填，为负载均衡增强型实例的服务地址，公网ELB配置为公网IP，私网ELB配置为私网IP
+        kubernetes.io/elb.subnet-id: 29a0567e-96f1-4227-91cc-64f54d0b064d        #可选，但自动创建时必填
+        kubernetes.io/elb.autocreate: "{\"type\":\"public\",\"bandwidth_name\":\"cce-bandwidth-1551163379627\",\"bandwidth_chargemode\":\"bandwidth\",\"bandwidth_size\":5,\"bandwidth_sharetype\":\"PER\",\"eip_type\":\"5_bgp\"}"   #可选，但公网自动创建必填，自动创建ELB所绑定的EIP
+        kubernetes.io/elb.autocreate: "{\"type\":\"inner\"}"      #可选，但私网自动创建必填，自动创建ELB
         kubernetes.io/elb.port: "80"              #必填，界面上的对外端口，为注册到负载均衡服务地址上的端口
-      name: ingress-test 
+      name: ingress-test-ingress
     spec:
       tls:                             #可选，HTTPS协议时，需添加此参数
-      - secretName: test-secret        #可选，HTTPS协议时添加，配置为创建的密钥证书名称
+      - secretName: ingress-test-secret        #可选，HTTPS协议时添加，配置为创建的密钥证书名称
       rules: 
       - http: 
           paths: 
           - backend: 
-              serviceName: ingress-test   #为ingress-test-svc.yaml的服务名称
-              servicePort: 8080           #为ingress-test-svc.yaml的targetPort，即容器端口
+              serviceName: ingress-test-svc   #为ingress-test-svc.yaml的服务名称
+              servicePort: 8888           #为ingress-test-svc.yaml的targetPort，即容器端口
             property:
               ingress.beta.kubernetes.io/url-match-mode: EQUAL_TO    #路由匹配策略，可选值为EQUAL_TO（精确匹配）、STARTS_WITH(前缀匹配)、REGEX（正则匹配）
             path: "/healthz"              #为路由，用户自定义设置
+        host: ingress.com       #可选，域名配置
     ```
 
     **vi ingress-test-secret.yaml**
@@ -191,7 +216,7 @@
     metadata:
       annotations:
         description: test for ingressTLS secrets
-      name: test-secret
+      name: ingress-test-secret
       namespace: default
     type: IngressTLS
     ```
@@ -203,7 +228,7 @@
     回显如下，表明工作负载已创建。
 
     ```
-    deployment "nginx" created
+    deployment "ingress-test-deployment" created
     ```
 
     **kubectl get po**
@@ -246,7 +271,7 @@
     回显如下，表示服务已创建。
 
     ```
-    service "ingress-test" created
+    service "ingress-test-svc" created
     ```
 
     **kubectl get svc**
@@ -264,7 +289,7 @@
     回显如下，表示ingress服务已创建。
 
     ```
-    ingress "ingress-test" created
+    ingress "ingress-test-ingress" created
     ```
 
     **kubectl get ingress**
@@ -280,7 +305,7 @@
 
     其中10.154.76.63为统一负载均衡实例的IP地址。
 
-    **图 3**  访问healthz<a name="fig1526153112115"></a>  
+    **图 5**  访问healthz<a name="fig1526153112115"></a>  
     ![](figures/访问healthz.png "访问healthz")
 
 

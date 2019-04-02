@@ -39,7 +39,7 @@ kube-dns/CoreDNS为集群提供了DNS服务。若集群中只部署了单个kube
       generation: 1
       labels:
         app: coredns
-        k8s-app: coredns
+        kubernetes-app: coredns
         kubernetes.io/cluster-service: "true"
         kubernetes.io/name: CoreDNS
         release: cceaddon-coredns
@@ -55,7 +55,7 @@ kube-dns/CoreDNS为集群提供了DNS服务。若集群中只部署了单个kube
       selector:
         matchLabels:
           app: coredns
-          k8s-app: coredns
+          kubernetes-app: coredns
       strategy:
         rollingUpdate:
           maxSurge: 10%
