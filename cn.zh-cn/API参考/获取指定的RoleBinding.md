@@ -6,7 +6,7 @@ This API is used to read the specified RoleBinding
 
 ## URL<a name="section11668133918557"></a>
 
-GET /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/rolebindings/\{name\}
+GET /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/rolebindings/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -60,22 +60,22 @@ N/A
 ```
 {
     "kind" : "RoleBinding",
-    "apiVersion" : "rbac.authorization.k8s.io/v1",
+    "apiVersion" : "rbac.authorization.kubernetes.io/v1",
     "metadata" : {
         "name" : "read-pods",
         "namespace" : "default",
-        "selfLink" : "/apis/rbac.authorization.k8s.io/v1/namespaces/default/rolebindings/secret-reader",
+        "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/namespaces/default/rolebindings/secret-reader",
         "uid" : "b3d1a49a-f1f4-11e8-b449-fa163ec24e06",
         "resourceVersion" : "16611",
         "creationTimestamp" : "2018-11-27T03:29:52Z"
     },
     "subjects" : [ {
         "kind" : "User",
-        "apiGroup" : "rbac.authorization.k8s.io",
+        "apiGroup" : "rbac.authorization.kubernetes.io",
         "name" : "jane"
     } ],
     "roleRef" : {
-        "apiGroup" : "rbac.authorization.k8s.io",
+        "apiGroup" : "rbac.authorization.kubernetes.io",
         "kind" : "Role",
         "name" : "pod-reader"
     }

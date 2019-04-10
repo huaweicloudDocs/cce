@@ -25,35 +25,36 @@ GET /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614960_p46507526"><a name="zh-cn_topic_0079614960_p46507526"></a><a name="zh-cn_topic_0079614960_p46507526"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614960_p9013252"><a name="zh-cn_topic_0079614960_p9013252"></a><a name="zh-cn_topic_0079614960_p9013252"></a>If 'true', then the output is pretty printed.</p>
+<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="p28675043"><a name="p28675043"></a><a name="p28675043"></a>设置为true后，会打印漂亮的输出结果。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079614960_row14010408"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614960_p61101288"><a name="zh-cn_topic_0079614960_p61101288"></a><a name="zh-cn_topic_0079614960_p61101288"></a>namespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614960_p50257313"><a name="zh-cn_topic_0079614960_p50257313"></a><a name="zh-cn_topic_0079614960_p50257313"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614960_p44310522"><a name="zh-cn_topic_0079614960_p44310522"></a><a name="zh-cn_topic_0079614960_p44310522"></a>Object name and auth scope, such as for teams and projects.</p>
+<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="p658610593411"><a name="p658610593411"></a><a name="p658610593411"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。可以任选其一使用：</p>
+<a name="ul75828215461"></a><a name="ul75828215461"></a><ul id="ul75828215461"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a></li><li>系统自带的namespace：default或kube-system</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079614960_row63250378"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614960_p23006966"><a name="zh-cn_topic_0079614960_p23006966"></a><a name="zh-cn_topic_0079614960_p23006966"></a>name</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614960_p51624983"><a name="zh-cn_topic_0079614960_p51624983"></a><a name="zh-cn_topic_0079614960_p51624983"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614960_p20874133"><a name="zh-cn_topic_0079614960_p20874133"></a><a name="zh-cn_topic_0079614960_p20874133"></a>Name of the ReplicationController.</p>
+<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p35684724"><a name="zh-cn_topic_0079615047_p35684724"></a><a name="zh-cn_topic_0079615047_p35684724"></a>指定ReplicationController的名称。</p>
 </td>
 </tr>
 <tr id="reff3cd4d8cfc450b9b40f31a9d5e8279"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="a717ab34c546d40cba900500dba3da03d"><a name="a717ab34c546d40cba900500dba3da03d"></a><a name="a717ab34c546d40cba900500dba3da03d"></a>exact</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.4.1.2 "><p id="a7399050b61bd4fabb94f629ebe049116"><a name="a7399050b61bd4fabb94f629ebe049116"></a><a name="a7399050b61bd4fabb94f629ebe049116"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="abaed45ac101d46868ceb3c170f13db54"><a name="abaed45ac101d46868ceb3c170f13db54"></a><a name="abaed45ac101d46868ceb3c170f13db54"></a>Should the export be exact. Exact export maintains cluster-specific fields like 'Namespace'.</p>
+<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p28969051618"><a name="zh-cn_topic_0079614927_p28969051618"></a><a name="zh-cn_topic_0079614927_p28969051618"></a>表示查看的信息是否要精准导出，设置后导出信息会保持集群专属的字段，比如"Namespace"。</p>
 </td>
 </tr>
 <tr id="raf14328054a8479587cc4955cd45b779"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="a0bc9037187c143fd8e626cd378a3737d"><a name="a0bc9037187c143fd8e626cd378a3737d"></a><a name="a0bc9037187c143fd8e626cd378a3737d"></a>export</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614960_p838454518297"><a name="zh-cn_topic_0079614960_p838454518297"></a><a name="zh-cn_topic_0079614960_p838454518297"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="a3ec493718af24276b938983c86dfea10"><a name="a3ec493718af24276b938983c86dfea10"></a><a name="a3ec493718af24276b938983c86dfea10"></a>Should this value be exported. Export strips fields that a user can not specify.</p>
+<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="a743d354f3c564a71bea87c0e96598b2d"><a name="a743d354f3c564a71bea87c0e96598b2d"></a><a name="a743d354f3c564a71bea87c0e96598b2d"></a>设置value值是否要导出，导出时会忽略用户无法指定的字段。</p>
 </td>
 </tr>
 </tbody>
@@ -145,7 +146,7 @@ N/A
 </thead>
 <tbody><tr id="zh-cn_topic_0079614960_row17120881"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079614960_p44614122"><a name="zh-cn_topic_0079614960_p44614122"></a><a name="zh-cn_topic_0079614960_p44614122"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614960_p56974164"><a name="zh-cn_topic_0079614960_p56974164"></a><a name="zh-cn_topic_0079614960_p56974164"></a>This operation succeeds, and a ReplicationController resource object is returned.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614960_p56974164"><a name="zh-cn_topic_0079614960_p56974164"></a><a name="zh-cn_topic_0079614960_p56974164"></a><span id="ph1258619294492"><a name="ph1258619294492"></a><a name="ph1258619294492"></a>操作成功，返回ReplicationController资源对象。</span></p>
 </td>
 </tr>
 </tbody>

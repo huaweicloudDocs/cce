@@ -1,12 +1,12 @@
-# listing APIResources of GroupVersion authentication.k8s.io/v1beta1<a name="cce_02_0192"></a>
+# listing APIResources of GroupVersion authentication.kubernetes.io/v1beta1<a name="cce_02_0192"></a>
 
 ## 功能介绍<a name="section51167169"></a>
 
-This API is used to list APIResources of GroupVersion "authentication.k8s.io/v1beta1".
+This API is used to list APIResources of GroupVersion "authentication.kubernetes.io/v1beta1".
 
 ## URI<a name="section57851338"></a>
 
-GET /apis/authentication.k8s.io/v1beta1
+GET /apis/authentication.kubernetes.io/v1beta1
 
 ## 请求消息<a name="section50899994"></a>
 
@@ -122,7 +122,7 @@ N/A.
 {
     "kind": "APIResourceList",
     "apiVersion": "v1",
-    "groupVersion": "authentication.k8s.io/v1beta1",
+    "groupVersion": "authentication.kubernetes.io/v1beta1",
     "resources": [
         {
             "name": "tokenreviews",

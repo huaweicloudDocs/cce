@@ -6,7 +6,7 @@ This API is used to replace the specified RoleBinding
 
 ## URL<a name="section14342143685418"></a>
 
-PUT /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/rolebindings/\{name\}
+PUT /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/rolebindings/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -65,24 +65,24 @@ PUT /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/rolebindings/\{n
 ```
 {
 	"kind": "RoleBinding",
-	"apiVersion": "rbac.authorization.k8s.io/v1",
+	"apiVersion": "rbac.authorization.kubernetes.io/v1",
 	"metadata": {
 		"name": "read-pods",
 		"namespace": "default",
-		"selfLink": "/apis/rbac.authorization.k8s.io/v1/namespaces/default/rolebindings/read-pods",
+		"selfLink": "/apis/rbac.authorization.kubernetes.io/v1/namespaces/default/rolebindings/read-pods",
 		"uid": "301398f6-f2b9-11e8-b449-fa163ec24e06",
 		"resourceVersion": "198279",
 		"creationTimestamp": "2018-11-28T02:56:22Z"
 	},
 	"subjects": [{
 		"kind": "User",
-		"apiGroup": "rbac.authorization.k8s.io",
+		"apiGroup": "rbac.authorization.kubernetes.io",
 		"name": "cce20"
 	}],
 	"roleRef": {
                 "kind": "Role",
                 "name": "pod-reader",
-		"apiGroup": "rbac.authorization.k8s.io"
+		"apiGroup": "rbac.authorization.kubernetes.io"
 	}
 }
 ```
@@ -98,22 +98,22 @@ PUT /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/rolebindings/\{n
 ```
 {
 	"kind": "RoleBinding",
-	"apiVersion": "rbac.authorization.k8s.io/v1",
+	"apiVersion": "rbac.authorization.kubernetes.io/v1",
 	"metadata": {
 		"name": "read-pods",
 		"namespace": "default",
-		"selfLink": "/apis/rbac.authorization.k8s.io/v1/namespaces/default/rolebindings/read-pods",
+		"selfLink": "/apis/rbac.authorization.kubernetes.io/v1/namespaces/default/rolebindings/read-pods",
 		"uid": "301398f6-f2b9-11e8-b449-fa163ec24e06",
 		"resourceVersion": "198279",
 		"creationTimestamp": "2018-11-28T02:56:22Z"
 	},
 	"subjects": [{
 		"kind": "User",
-		"apiGroup": "rbac.authorization.k8s.io",
+		"apiGroup": "rbac.authorization.kubernetes.io",
 		"name": "jane"
 	}],
 	"roleRef": {
-		"apiGroup": "rbac.authorization.k8s.io",
+		"apiGroup": "rbac.authorization.kubernetes.io",
 		"kind": "Role",
 		"name": "pod-reader"
 	}

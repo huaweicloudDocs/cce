@@ -18,14 +18,14 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
 ## 创建GPU集群<a name="section9343750182712"></a>
 
 1.  登录[云容器引擎管理控制台](https://console.huaweicloud.com/cce2.0/)，在左侧导航栏中单击“资源管理 \> 集群管理“，进入集群列表页面。
-2.  单击页面右上角“GPU集群“下方的“购买“按钮，进入“购买虚拟机集群“页面。
+2.  单击页面右上角“GPU集群“下方的“购买“按钮，进入“购买混合集群“页面。
 
     **图 1**  购买GPU集群<a name="fig8331155503518"></a>  
     ![](figures/购买GPU集群.png "购买GPU集群")
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >默认进入虚拟机集群配置页面。  
-    >为了创建GPU集群，通常情况下，Worker节点使用GPU类型的ECS。其他集群的参数配置，请参见[创建虚拟机集群](创建虚拟机集群.md)。  
+    >默认进入混合集群配置页面。  
+    >为了创建GPU集群，通常情况下，Worker节点使用GPU类型的ECS。其他集群的参数配置，请参见[创建混合集群](创建混合集群.md)。  
 
 3.  参照[表1](#table1156068114817)设置新增集群参数，其中带“\*”的参数为必填参数。
 
@@ -68,7 +68,7 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     <tr id="row57972528509"><td class="cellrowborder" valign="top" width="18.13%" headers="mcps1.2.3.1.1 "><p id="p1538501795514"><a name="p1538501795514"></a><a name="p1538501795514"></a>* 虚拟私有云</p>
     </td>
     <td class="cellrowborder" valign="top" width="81.87%" headers="mcps1.2.3.1.2 "><p id="p116393128265"><a name="p116393128265"></a><a name="p116393128265"></a>新建集群所在的虚拟私有云。</p>
-    <p id="p1063941211266"><a name="p1063941211266"></a><a name="p1063941211266"></a>若没有可选虚拟私有云，单击<span class="uicontrol" id="uicontrol162261618154315"><a name="uicontrol162261618154315"></a><a name="uicontrol162261618154315"></a>“<span id="text112261418174320"><a name="text112261418174320"></a><a name="text112261418174320"></a>创建虚拟</span>私有云”</span>进行创建，操作步骤请参见<a href="创建虚拟机集群.md#section725610233159">创建虚拟私有云</a>。</p>
+    <p id="p1063941211266"><a name="p1063941211266"></a><a name="p1063941211266"></a>若没有可选虚拟私有云，单击<span class="uicontrol" id="uicontrol162261618154315"><a name="uicontrol162261618154315"></a><a name="uicontrol162261618154315"></a>“<span id="text112261418174320"><a name="text112261418174320"></a><a name="text112261418174320"></a>创建虚拟</span>私有云”</span>进行创建，操作步骤请参见<a href="创建混合集群.md#section725610233159">创建虚拟私有云</a>。</p>
     </td>
     </tr>
     <tr id="row65621280481"><td class="cellrowborder" valign="top" width="18.13%" headers="mcps1.2.3.1.1 "><p id="p1679675214559"><a name="p1679675214559"></a><a name="p1679675214559"></a>* 所在子网</p>
@@ -88,6 +88,13 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     </div></div>
     </td>
     </tr>
+    <tr id="row5298103814351"><td class="cellrowborder" valign="top" width="18.13%" headers="mcps1.2.3.1.1 "><p id="p1429918380352"><a name="p1429918380352"></a><a name="p1429918380352"></a>服务网段</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="81.87%" headers="mcps1.2.3.1.2 "><p id="p977633218244"><a name="p977633218244"></a><a name="p977633218244"></a>服务网段为kubernetes service ip网段，请根据业务需求选择该网段。</p>
+    <div class="notice" id="note2837135211258"><a name="note2837135211258"></a><a name="note2837135211258"></a><span class="noticetitle"> 注意： </span><div class="noticebody"><a name="ul18837252152517"></a><a name="ul18837252152517"></a><ul id="ul18837252152517"><li>此参数仅支持1.11.7及以上版本的集群。</li><li>创建集群前，请提前规划好网段，集群一旦创建，便无法更改服务网段，需要重新创建集群才能调整。</li><li>服务网段要设置合理的掩码，掩码决定集群内可用service ip数量。</li></ul>
+    </div></div>
+    </td>
+    </tr>
     <tr id="row322218685211"><td class="cellrowborder" valign="top" width="18.13%" headers="mcps1.2.3.1.1 "><p id="p5713152655617"><a name="p5713152655617"></a><a name="p5713152655617"></a>认证方式</p>
     </td>
     <td class="cellrowborder" valign="top" width="81.87%" headers="mcps1.2.3.1.2 "><p id="p933784218111"><a name="p933784218111"></a><a name="p933784218111"></a>认证机制主要用于对集群下的资源做权限控制。例如A用户只能对某个命名空间下的应用有读写权限，B用户对集群下的资源只有读权限等等。</p>
@@ -101,7 +108,10 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     </tr>
     <tr id="row15978941125217"><td class="cellrowborder" valign="top" width="18.13%" headers="mcps1.2.3.1.1 "><p id="p1077195045211"><a name="p1077195045211"></a><a name="p1077195045211"></a>高级配置</p>
     </td>
-    <td class="cellrowborder" valign="top" width="81.87%" headers="mcps1.2.3.1.2 "><a name="ul6798412532"></a><a name="ul6798412532"></a><ul id="ul6798412532"><li>暂不配置：不做任何高级配置选择。</li><li>现在配置：可开启<span class="uicontrol" id="uicontrol76881344165410"><a name="uicontrol76881344165410"></a><a name="uicontrol76881344165410"></a>“多可用区”</span>。多可用区模式支持集群管理面多可用区容灾，但是对于集群性能有所损耗。</li></ul>
+    <td class="cellrowborder" valign="top" width="81.87%" headers="mcps1.2.3.1.2 "><p id="p284112360275"><a name="p284112360275"></a><a name="p284112360275"></a>一些高级功能统一存放的位置，如果该区域（Region）不支持高级功能，则高级配置项隐藏。</p>
+    <a name="ul2309153715491"></a><a name="ul2309153715491"></a><ul id="ul2309153715491"><li>暂不设置：选择后不对高级功能做任何设置。</li><li>现在设置：选择后显示高级功能，并可对其进行设置。目前支持对<span class="uicontrol" id="uicontrol1733381515219"><a name="uicontrol1733381515219"></a><a name="uicontrol1733381515219"></a>“服务转发模式”</span>和<span class="uicontrol" id="uicontrol161981316152012"><a name="uicontrol161981316152012"></a><a name="uicontrol161981316152012"></a>“多可用区”</span>功能配置。<p id="p1670793614204"><a name="p1670793614204"></a><a name="p1670793614204"></a><strong id="b1164483412229"><a name="b1164483412229"></a><a name="b1164483412229"></a>服务转发模式：</strong></p>
+    <a name="ul13333115929"></a><a name="ul13333115929"></a><ul id="ul13333115929"><li>iptables：社区传统的kube-proxy模式。</li><li>ipvs：由华为主导开发并在社区获得广泛支持的kube-proxy模式，吞吐更高，速度更快。适用于大规模场景。</li></ul>
+    </li></ul>
     </td>
     </tr>
     <tr id="row0148101717229"><td class="cellrowborder" valign="top" width="18.13%" headers="mcps1.2.3.1.1 "><p id="p79871037171719"><a name="p79871037171719"></a><a name="p79871037171719"></a>* 购买时长</p>
@@ -168,13 +178,13 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
         -   登录方式为“密码“：请输入登录节点的密码，并确认密码。请牢记该密码，登录节点时需要使用该密码。
         -   登录方式为“密钥对“：选择登录节点的密钥对。
 
-            密钥对用于远程登录节点时的身份认证，若没有密钥对，可单击“创建密钥对”来新建。创建密钥对操作步骤请参见[创建密钥对](创建虚拟机集群.md#section395546121513)。
+            密钥对用于远程登录节点时的身份认证，若没有密钥对，可单击“创建密钥对”来新建。创建密钥对操作步骤请参见[创建密钥对](创建混合集群.md#section395546121513)。
 
             **图 4**  密钥对<a name="fig8513194014235"></a>  
             ![](figures/密钥对.jpg "密钥对")
 
 
-    -   高级配置 \> 文件注入：当您有如下需求时，请单击“现在配置“，使用文件注入功能将文件注入到节点。
+    -   高级配置：当您有如下需求时，请单击“现在配置“，使用文件注入功能将文件注入到节点。
 
         -   需要通过脚本简化弹性云服务器配置。
         -   通过脚本初始化系统。
@@ -212,7 +222,7 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     集群创建预计需要6-10分钟。请根据界面提示查看集群创建过程。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   在集群创建完成页面中，可以通过选择“启用Istio服务网格“，在虚拟机集群中使能Istio服务网格。详情请参见[5.2-启用服务网格](https://support.huaweicloud.com/usermanual-cce/cce_01_0036.html)。  
+    >-   在集群创建完成页面中，可以通过选择“启用Istio服务网格“，在混合集群中使能Istio服务网格。详情请参见[5.2-启用服务网格](https://support.huaweicloud.com/usermanual-cce/cce_01_0036.html)。  
     >-   若选择创建包年包月的集群，请根据界面提示进行付款操作。  
 
 

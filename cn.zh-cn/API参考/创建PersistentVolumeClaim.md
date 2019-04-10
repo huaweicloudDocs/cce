@@ -25,7 +25,8 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="12%" headers="mcps1.2.4.1.2 "><p id="p814518580186"><a name="p814518580186"></a><a name="p814518580186"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="68%" headers="mcps1.2.4.1.3 "><p id="p5145175891811"><a name="p5145175891811"></a><a name="p5145175891811"></a>指定PersistentVolumeClaim所在的命名空间。</p>
+<td class="cellrowborder" valign="top" width="68%" headers="mcps1.2.4.1.3 "><p id="p18341134117277"><a name="p18341134117277"></a><a name="p18341134117277"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。字符串必须满足正则表达式 [a-z0-9]([-a-z0-9]*[a-z0-9])?。可以任选其一使用：</p>
+<a name="ul75828215461"></a><a name="ul75828215461"></a><ul id="ul75828215461"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a></li><li>系统自带的namespace：default或kube-system</li></ul>
 </td>
 </tr>
 </tbody>
@@ -52,14 +53,15 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="p3980111103414"><a name="p3980111103414"></a><a name="p3980111103414"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p169801011203416"><a name="p169801011203416"></a><a name="p169801011203416"></a>消息体的类型（格式），使用application/json;charset=utf-8或者application/json。</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p2032514065313"><a name="p2032514065313"></a><a name="p2032514065313"></a>消息体的类型（格式），可任选其一使用。</p>
+<a name="ul7385444163617"></a><a name="ul7385444163617"></a><ul id="ul7385444163617"><li>application/json;charset=utf-8</li><li>application/json</li></ul>
 </td>
 </tr>
 <tr id="row3500125412260"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="p105001654202618"><a name="p105001654202618"></a><a name="p105001654202618"></a>X-Auth-Token</p>
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="p20500954182618"><a name="p20500954182618"></a><a name="p20500954182618"></a>使用token认证时必选</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1250055462618"><a name="p1250055462618"></a><a name="p1250055462618"></a>用户token。</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1148116013545"><a name="p1148116013545"></a><a name="p1148116013545"></a>调用接口的一种认证方式，使用时需要<a href="获取请求认证.md#section2417768214391">获取token</a>。</p>
 </td>
 </tr>
 </tbody>
@@ -102,7 +104,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p074532551518"><a name="p074532551518"></a><a name="p074532551518"></a><a href="#table6304105819164">表4</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p2745152519150"><a name="p2745152519150"></a><a name="p2745152519150"></a>-</p>
+<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p2745152519150"><a name="p2745152519150"></a><a name="p2745152519150"></a>metadata是集群对象的元数据定义，是集合类的元素类型，包含一组由不同名称定义的属性。（必须包含，不可缺少）</p>
 </td>
 </tr>
 <tr id="row2745725201512"><td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.1 "><p id="p8745025151519"><a name="p8745025151519"></a><a name="p8745025151519"></a>spec</p>
@@ -111,7 +113,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p1574522520158"><a name="p1574522520158"></a><a name="p1574522520158"></a><a href="#table3862152512246">表5</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p97458257151"><a name="p97458257151"></a><a name="p97458257151"></a>-</p>
+<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p10785112129"><a name="p10785112129"></a><a name="p10785112129"></a>spec是集合类的元素类型，用户对需要管理的集群对象进行详细描述的主体部分都在spec中给出。系统通过spec的描述来创建或更新对象。</p>
 </td>
 </tr>
 <tr id="row67451925181517"><td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.1 "><p id="p107451025111518"><a name="p107451025111518"></a><a name="p107451025111518"></a>status</p>
@@ -120,7 +122,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p874562561514"><a name="p874562561514"></a><a name="p874562561514"></a><a href="#table478913499397">表6</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p8745172518154"><a name="p8745172518154"></a><a name="p8745172518154"></a>-</p>
+<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p8745172518154"><a name="p8745172518154"></a><a name="p8745172518154"></a>status是当前persistent volume claim的状态信息，创建时不需要添加status参数</p>
 </td>
 </tr>
 </tbody>
@@ -145,7 +147,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p15193194192418"><a name="p15193194192418"></a><a name="p15193194192418"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p17193543245"><a name="p17193543245"></a><a name="p17193543245"></a>PersistentVolumeClaim名称</p>
+<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p17193543245"><a name="p17193543245"></a><a name="p17193543245"></a>PersistentVolumeClaim名称，可以包含小写字母、数字、连字符和点，开头和结尾必须是字母或数字，最长253个字符，同一namespace下name不能重复。例：my-pvc</p>
 </td>
 </tr>
 <tr id="row5304758171616"><td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.1 "><p id="p519318462411"><a name="p519318462411"></a><a name="p519318462411"></a>labels</p>
@@ -154,7 +156,9 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p1519316412248"><a name="p1519316412248"></a><a name="p1519316412248"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p319310432413"><a name="p319310432413"></a><a name="p319310432413"></a>PersistentVolumeClaim标签，key/value对格式</p>
+<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p418368504"><a name="p418368504"></a><a name="p418368504"></a>PersistentVolumeClaim标签，key/value对格式。</p>
+<a name="ul1736685012"></a><a name="ul1736685012"></a><ul id="ul1736685012"><li>Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key， DNS子域最长253个字符。</li><li>Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。</li></ul>
+<p id="p156295249512"><a name="p156295249512"></a><a name="p156295249512"></a>示例："foo": "bar"</p>
 </td>
 </tr>
 </tbody>
@@ -200,7 +204,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p5922162512248"><a name="p5922162512248"></a><a name="p5922162512248"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p1661119562"><a name="p1661119562"></a><a name="p1661119562"></a>云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。</p>
-<a name="ul1051832855611"></a><a name="ul1051832855611"></a><ul id="ul1051832855611"><li>bs：EVS云存储</li><li>nfs：SFS弹性文件存储</li><li>obs：OBS对象存储</li><li>efs：SFS Turbo极速文件存储</li></ul>
+<a name="ul1051832855611"></a><a name="ul1051832855611"></a><ul id="ul1051832855611"><li>bs：EVS云存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html" target="_blank" rel="noopener noreferrer">使用云硬盘存储卷</a> 。</li><li>nfs：SFS弹性文件存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html" target="_blank" rel="noopener noreferrer">使用文件存储卷</a> 。</li><li>obs：OBS对象存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html" target="_blank" rel="noopener noreferrer">使用对象存储卷</a> 。</li><li>efs：SFS Turbo极速文件存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html" target="_blank" rel="noopener noreferrer">使用极速文件存储卷</a>。</li></ul>
 </td>
 </tr>
 <tr id="row12922192592410"><td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.1 "><p id="p11922172552413"><a name="p11922172552413"></a><a name="p11922172552413"></a>accessModes</p>
@@ -209,7 +213,8 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p892302519247"><a name="p892302519247"></a><a name="p892302519247"></a>String array</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p9923162562416"><a name="p9923162562416"></a><a name="p9923162562416"></a>指定volume应该具有的访问模式</p>
+<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p9923162562416"><a name="p9923162562416"></a><a name="p9923162562416"></a>指定volume应该具有的访问模式，包括：</p>
+<a name="ul20281165712148"></a><a name="ul20281165712148"></a><ul id="ul20281165712148"><li>ReadWriteOnce：该卷可以被单个节点以读/写模式挂载</li><li>ReadOnlyMany：该卷可以被多个节点以只读模式挂载</li><li>ReadWriteMany：该卷可以被多个节点以读/写模式挂载</li></ul>
 </td>
 </tr>
 </tbody>

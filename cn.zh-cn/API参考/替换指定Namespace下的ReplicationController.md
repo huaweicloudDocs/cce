@@ -41,21 +41,21 @@ PUT /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615034_p27616715"><a name="zh-cn_topic_0079615034_p27616715"></a><a name="zh-cn_topic_0079615034_p27616715"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615034_p22361481"><a name="zh-cn_topic_0079615034_p22361481"></a><a name="zh-cn_topic_0079615034_p22361481"></a>If 'true', then the output is pretty printed.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p28675043"><a name="p28675043"></a><a name="p28675043"></a>设置为true后，会打印漂亮的输出结果。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615034_row54818237"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615034_p11092193"><a name="zh-cn_topic_0079615034_p11092193"></a><a name="zh-cn_topic_0079615034_p11092193"></a>namespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615034_p26052434"><a name="zh-cn_topic_0079615034_p26052434"></a><a name="zh-cn_topic_0079615034_p26052434"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615034_p29872375"><a name="zh-cn_topic_0079615034_p29872375"></a><a name="zh-cn_topic_0079615034_p29872375"></a>Object name and auth scope, such as for teams and projects.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615034_p29872375"><a name="zh-cn_topic_0079615034_p29872375"></a><a name="zh-cn_topic_0079615034_p29872375"></a><span id="ph10700343175010"><a name="ph10700343175010"></a><a name="ph10700343175010"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。</span></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615034_row415920"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615034_p33689599"><a name="zh-cn_topic_0079615034_p33689599"></a><a name="zh-cn_topic_0079615034_p33689599"></a>name</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615034_p44503031"><a name="zh-cn_topic_0079615034_p44503031"></a><a name="zh-cn_topic_0079615034_p44503031"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615034_p47975743"><a name="zh-cn_topic_0079615034_p47975743"></a><a name="zh-cn_topic_0079615034_p47975743"></a>Name of the ReplicationController.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615034_p47975743"><a name="zh-cn_topic_0079615034_p47975743"></a><a name="zh-cn_topic_0079615034_p47975743"></a>ReplicationController<span id="ph15785147205113"><a name="ph15785147205113"></a><a name="ph15785147205113"></a>名称</span></p>
 </td>
 </tr>
 </tbody>
@@ -190,7 +190,7 @@ PUT /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </thead>
 <tbody><tr id="zh-cn_topic_0079615034_row2482522"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615034_p66866633"><a name="zh-cn_topic_0079615034_p66866633"></a><a name="zh-cn_topic_0079615034_p66866633"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615034_p47488225"><a name="zh-cn_topic_0079615034_p47488225"></a><a name="zh-cn_topic_0079615034_p47488225"></a>This operation succeeds, and a ReplicationController resource object is returned.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615034_p47488225"><a name="zh-cn_topic_0079615034_p47488225"></a><a name="zh-cn_topic_0079615034_p47488225"></a><span id="ph1489102319516"><a name="ph1489102319516"></a><a name="ph1489102319516"></a>操作成功，返回ReplicationController资源对象</span></p>
 </td>
 </tr>
 </tbody>

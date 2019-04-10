@@ -1,4 +1,4 @@
-# listing APIResources of GroupVersion apiregistration.k8s.io/v1beta1<a name="cce_02_0188"></a>
+# listing APIResources of GroupVersion apiregistration.kubernetes.io/v1beta1<a name="cce_02_0188"></a>
 
 ## 功能介绍<a name="section42248057"></a>
 
@@ -6,7 +6,7 @@ This API is used to list APIGroups.
 
 ## URI<a name="section44688198"></a>
 
-GET /apis/apiregistration.k8s.io/v1beta1
+GET /apis/apiregistration.kubernetes.io/v1beta1
 
 ## 请求消息<a name="section66649469"></a>
 
@@ -122,7 +122,7 @@ N/A.
 {
     "kind": "APIResourceList",
     "apiVersion": "v1",
-    "groupVersion": "apiregistration.k8s.io/v1beta1",
+    "groupVersion": "apiregistration.kubernetes.io/v1beta1",
     "resources": [
         {
             "name": "apiservices",

@@ -6,7 +6,7 @@ This API is used to create a ClusterRoleBinding
 
 ## URL<a name="section22432013155911"></a>
 
-POST /apis/rbac.authorization.k8s.io/v1/clusterrolebindings
+POST /apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings
 
 [参数解释](#table1420670321)描述该API的参数。
 
@@ -194,7 +194,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterrolebindings
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p528613288229"><a name="p528613288229"></a><a name="p528613288229"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p72861289222"><a name="p72861289222"></a><a name="p72861289222"></a><a href="公共请求参数.md#t693768b66dfa47239c0f155ad4dd18e8">表14</a></p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p72861289222"><a name="p72861289222"></a><a name="p72861289222"></a><a href="公共请求参数.md#t693768b66dfa47239c0f155ad4dd18e8">表13</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p6875616152317"><a name="p6875616152317"></a><a name="p6875616152317"></a>An initializer is a controller which enforces some system invariant at object creation time. This field is a list of initializers that have not yet acted on this object. If nil or empty, this object has been completely initialized. Otherwise, the object is considered uninitialized and is hidden (in list/watch and get calls) from clients that haven't explicitly asked to observe uninitialized objects. When an object is created, the system will populate this list with the current set of initializers. Only privileged users may set or modify this list. Once it is empty, it may not be modified further by any user.</p>
 </td>
@@ -366,19 +366,19 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterrolebindings
 # 以下`ClusterRoleBinding`对象允许在用户组"manager"中的任何用户都可以读取集群中任何名字空间中的secret。
 {
    "kind": "ClusterRoleBinding",
-   "apiVersion": "rbac.authorization.k8s.io/v1beta1",
+   "apiVersion": "rbac.authorization.kubernetes.io/v1beta1",
    "metadata": {
        "name": "read-secrets-global"
 	},
    "subjects":[{
        "kind": "Group",
        "name": "manager",
-       "apiGroup": "rbac.authorization.k8s.io"
+       "apiGroup": "rbac.authorization.kubernetes.io"
 	}],
    "roleRef":{
        "kind": "ClusterRole",
        "name": "secret-reader",
-       "apiGroup": "rbac.authorization.k8s.io"}
+       "apiGroup": "rbac.authorization.kubernetes.io"}
 }
 ```
 
@@ -393,21 +393,21 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterrolebindings
 ```
 {
     "kind" : "ClusterRoleBinding",
-    "apiVersion" : "rbac.authorization.k8s.io/v1",
+    "apiVersion" : "rbac.authorization.kubernetes.io/v1",
     "metadata" : {
         "name" : "read-secrets-global",
-        "selfLink" : "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/read-secrets-global",
+        "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings/read-secrets-global",
         "uid" : "8e20ec38-f1e7-11e8-b449-fa163ec24e06",
         "resourceVersion" : "4625",
         "creationTimestamp" : "2018-11-27T01:55:45Z"
     },
     "subjects" : [ {
         "kind" : "Group",
-        "apiGroup" : "rbac.authorization.k8s.io",
+        "apiGroup" : "rbac.authorization.kubernetes.io",
         "name" : "manager"
     } ],
     "roleRef" : {
-        "apiGroup" : "rbac.authorization.k8s.io",
+        "apiGroup" : "rbac.authorization.kubernetes.io",
         "kind" : "ClusterRole",
         "name" : "secret-reader"
     }

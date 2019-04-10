@@ -1,6 +1,6 @@
 # Kubectl使用指南<a name="cce_01_0023"></a>
 
-使用Kubectl命令时，您需要具备Kubectl相关开发技能，了解Kubectl相关操作。详细请参考[Kubernetes API](https://kubernetes.io/docs/concepts/overview/kubernetes-api/)、[Kubetl CLI](https://kubernetes.io/docs/reference/kubectl/overview/)。
+使用Kubectl命令时，您需要具备Kubectl相关开发技能，了解Kubectl相关操作。详细请参考[Kubernetes API](https://kubernetes.io/docs/concepts/overview/kubernetes-api/)、[kubectl CLI](https://kubernetes.io/docs/reference/kubectl/overview/)。
 
 **表 1**  Kubectl使用指南
 
@@ -54,13 +54,13 @@
 <td class="cellrowborder" valign="top" width="79%" headers="mcps1.2.3.1.2 "><p id="p4182624982"><a name="p4182624982"></a><a name="p4182624982"></a><a href="集群内访问（ClusterIP）.md#section212517910573">通过kubectl命令实现集群内访问</a></p>
 </td>
 </tr>
-<tr id="row19182224388"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1018213241681"><a name="p1018213241681"></a><a name="p1018213241681"></a><a href="null.md#section1234016392534">通过kubectl命令实现VPC内访问</a></p>
+<tr id="row19182224388"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1018213241681"><a name="p1018213241681"></a><a name="p1018213241681"></a><a href="节点访问-(-NodePort-).md#section813715073217">通过kubectl命令实现VPC内访问</a></p>
 </td>
 </tr>
 <tr id="row466132092816"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p266212204289"><a name="p266212204289"></a><a name="p266212204289"></a><a href="负载均衡-(-LoadBalancer-).md#section1944313158364">通过kubectl命令行实现四层负载均衡</a></p>
 </td>
 </tr>
-<tr id="row1126165612109"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1312915681012"><a name="p1312915681012"></a><a name="p1312915681012"></a><a href="null.md#section1944313158364">通过kubectl命令实现弹性IP访问</a></p>
+<tr id="row1126165612109"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1312915681012"><a name="p1312915681012"></a><a name="p1312915681012"></a><a href="节点访问-(-NodePort-).md#section178584033417">通过kubectl命令实现弹性IP访问</a></p>
 </td>
 </tr>
 <tr id="row1160716228301"><td class="cellrowborder" valign="top" headers="mcps1.2.3.1.1 "><p id="p1560712212307"><a name="p1560712212307"></a><a name="p1560712212307"></a><a href="DNAT网关-(-DNAT-).md#section1944313158364">通过kubectl命令行实现NAT网关</a></p>

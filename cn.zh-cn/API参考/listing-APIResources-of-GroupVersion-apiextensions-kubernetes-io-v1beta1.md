@@ -1,12 +1,12 @@
-# listing APIResources of GroupVersion apiextensions.k8s.io/v1beta1<a name="cce_02_0205"></a>
+# listing APIResources of GroupVersion apiextensions.kubernetes.io/v1beta1<a name="cce_02_0205"></a>
 
 ## 功能介绍<a name="section41993139"></a>
 
-This API is used to list APIResources of GroupVersion "apiextensions.k8s.io/v1beta1".
+This API is used to list APIResources of GroupVersion "apiextensions.kubernetes.io/v1beta1".
 
 ## URI<a name="section42393933"></a>
 
-GET /apis/apiextensions.k8s.io/v1beta1
+GET /apis/apiextensions.kubernetes.io/v1beta1
 
 ## 请求消息<a name="section46001078"></a>
 
@@ -122,7 +122,7 @@ N/A.
 {
     "kind": "APIResourceList",
     "apiVersion": "v1",
-    "groupVersion": "apiextensions.k8s.io/v1beta1",
+    "groupVersion": "apiextensions.kubernetes.io/v1beta1",
     "resources": [
         {
             "name": "customresourcedefinitions",

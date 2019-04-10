@@ -1,12 +1,12 @@
-# listing APIResources of GroupVersion certificates.k8s.io/v1beta1<a name="cce_02_0197"></a>
+# listing APIResources of GroupVersion certificates.kubernetes.io/v1beta1<a name="cce_02_0197"></a>
 
 ## 功能介绍<a name="section41689235"></a>
 
-This API is used to list GroupVersion "certificates.k8s.io/v1beta1".
+This API is used to list GroupVersion "certificates.kubernetes.io/v1beta1".
 
 ## URI<a name="section39658796"></a>
 
-GET /apis/certificates.k8s.io/v1beta1
+GET /apis/certificates.kubernetes.io/v1beta1
 
 ## 请求消息<a name="section21384849"></a>
 
@@ -122,7 +122,7 @@ N/A.
 {
     "kind": "APIResourceList",
     "apiVersion": "v1",
-    "groupVersion": "certificates.k8s.io/v1beta1",
+    "groupVersion": "certificates.kubernetes.io/v1beta1",
     "resources": [
         {
             "name": "certificatesigningrequests",

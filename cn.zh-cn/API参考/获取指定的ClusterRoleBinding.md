@@ -6,7 +6,7 @@ This API is used to read the specified ClusterRoleBinding
 
 ## URL<a name="section10691121517"></a>
 
-GET /apis/rbac.authorization.k8s.io/v1/clusterrolebindings/\{name\}
+GET /apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -53,10 +53,10 @@ N/A
 ```
 {
     "kind" : "ClusterRole",
-    "apiVersion" : "rbac.authorization.k8s.io/v1",
+    "apiVersion" : "rbac.authorization.kubernetes.io/v1",
     "metadata" : {
         "name" : "secret-reader",
-        "selfLink" : "/apis/rbac.authorization.k8s.io/v1/clusterroles/secret-reader",
+        "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/clusterroles/secret-reader",
         "uid" : "f2cf199e-f1f0-11e8-b449-fa163ec24e06",
         "resourceVersion" : "13211",
         "creationTimestamp" : "2018-11-27T03:03:00Z"

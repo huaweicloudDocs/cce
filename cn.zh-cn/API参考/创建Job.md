@@ -357,7 +357,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084689%" headers="mcps1.2.5.1.2 "><p id="p47672192"><a name="p47672192"></a><a name="p47672192"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p36242321"><a name="p36242321"></a><a name="p36242321"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table66152725">表25</a></p>
+<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p36242321"><a name="p36242321"></a><a name="p36242321"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table66152725">表24</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="41.83581641835816%" headers="mcps1.2.5.1.4 "><p id="p46869096"><a name="p46869096"></a><a name="p46869096"></a>Specification of the desired behavior of the pod.</p>
 </td>

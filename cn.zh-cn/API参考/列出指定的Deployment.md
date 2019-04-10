@@ -263,7 +263,7 @@ N/A
                 "creationTimestamp": "2017-12-09T03:10:36Z",
                 "labels": {
                     "addonmanager.kubernetes.io/mode": "Reconcile",
-                    "k8s-app": "kube-dns",
+                    "kubernetes-app": "kube-dns",
                     "kubernetes.io/cluster-service": "true"
                 },
                 "annotations": {
@@ -275,7 +275,7 @@ N/A
                 "replicas": 1,
                 "selector": {
                     "matchLabels": {
-                        "k8s-app": "kube-dns",
+                        "kubernetes-app": "kube-dns",
                         "podaffinity": "kube-dns-pod"
                     }
                 },
@@ -283,7 +283,7 @@ N/A
                     "metadata": {
                         "creationTimestamp": null,
                         "labels": {
-                            "k8s-app": "kube-dns",
+                            "kubernetes-app": "kube-dns",
                             "podaffinity": "kube-dns-pod"
                         },
                         "annotations": {
@@ -451,7 +451,7 @@ N/A
                                 "command": [
                                     "/bin/sh",
                                     "-c",
-                                    "/dnsmasq-nanny 1>>/var/log/dnsmasq.log 2>&1 -v=2 -logtostderr -configDir=/etc/k8s/dns/dnsmasq-nanny -restartDnsmasq=true -- -k --port=5353 --cache-size=1000 --log-facility=- --server=/cluster.local/127.0.0.1#10053 --server=/in-addr.arpa/127.0.0.1#10053 --server=/ip6.arpa/127.0.0.1#10053"
+                                    "/dnsmasq-nanny 1>>/var/log/dnsmasq.log 2>&1 -v=2 -logtostderr -configDir=/etc/kubernetes/dns/dnsmasq-nanny -restartDnsmasq=true -- -k --port=5353 --cache-size=1000 --log-facility=- --server=/cluster.local/127.0.0.1#10053 --server=/in-addr.arpa/127.0.0.1#10053 --server=/ip6.arpa/127.0.0.1#10053"
                                 ],
                                 "ports": [
                                     {
@@ -483,7 +483,7 @@ N/A
                                     },
                                     {
                                         "name": "kube-dns-config",
-                                        "mountPath": "/etc/k8s/dns/dnsmasq-nanny"
+                                        "mountPath": "/etc/kubernetes/dns/dnsmasq-nanny"
                                     }
                                 ],
                                 "livenessProbe": {

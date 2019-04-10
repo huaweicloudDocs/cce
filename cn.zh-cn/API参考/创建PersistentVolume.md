@@ -29,14 +29,15 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="cce_02_0252_p3980111103414"><a name="cce_02_0252_p3980111103414"></a><a name="cce_02_0252_p3980111103414"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0252_p169801011203416"><a name="cce_02_0252_p169801011203416"></a><a name="cce_02_0252_p169801011203416"></a>消息体的类型（格式），使用application/json;charset=utf-8或者application/json。</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0252_p2032514065313"><a name="cce_02_0252_p2032514065313"></a><a name="cce_02_0252_p2032514065313"></a>消息体的类型（格式），可任选其一使用。</p>
+<a name="cce_02_0252_ul7385444163617"></a><a name="cce_02_0252_ul7385444163617"></a><ul id="cce_02_0252_ul7385444163617"><li>application/json;charset=utf-8</li><li>application/json</li></ul>
 </td>
 </tr>
 <tr id="cce_02_0252_row3500125412260"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="cce_02_0252_p105001654202618"><a name="cce_02_0252_p105001654202618"></a><a name="cce_02_0252_p105001654202618"></a>X-Auth-Token</p>
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="cce_02_0252_p20500954182618"><a name="cce_02_0252_p20500954182618"></a><a name="cce_02_0252_p20500954182618"></a>使用token认证时必选</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0252_p1250055462618"><a name="cce_02_0252_p1250055462618"></a><a name="cce_02_0252_p1250055462618"></a>用户token。</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0252_p1148116013545"><a name="cce_02_0252_p1148116013545"></a><a name="cce_02_0252_p1148116013545"></a>调用接口的一种认证方式，使用时需要<a href="获取请求认证.md#section2417768214391">获取token</a>。</p>
 </td>
 </tr>
 </tbody>
@@ -122,7 +123,7 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p15193194192418"><a name="p15193194192418"></a><a name="p15193194192418"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p17193543245"><a name="p17193543245"></a><a name="p17193543245"></a>PersistentVolume名称</p>
+<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p17193543245"><a name="p17193543245"></a><a name="p17193543245"></a>PersistentVolume名称，可以包含小写字母、数字、连字符和点，开头和结尾必须是字母或数字，最长253个字符，同一namespace下name不能重复。例：my-pv</p>
 </td>
 </tr>
 <tr id="row5304758171616"><td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.1 "><p id="p519318462411"><a name="p519318462411"></a><a name="p519318462411"></a>labels</p>
@@ -131,7 +132,9 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p1519316412248"><a name="p1519316412248"></a><a name="p1519316412248"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p319310432413"><a name="p319310432413"></a><a name="p319310432413"></a>PersistentVolume标签，key/value对格式</p>
+<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p319310432413"><a name="p319310432413"></a><a name="p319310432413"></a>PersistentVolume标签，key/value对格式。</p>
+<a name="ul1736685012"></a><a name="ul1736685012"></a><ul id="ul1736685012"><li>Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key， DNS子域最长253个字符。</li><li>Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。</li></ul>
+<p id="p156295249512"><a name="p156295249512"></a><a name="p156295249512"></a>示例："foo": "bar"</p>
 </td>
 </tr>
 </tbody>
@@ -165,7 +168,8 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p136213375242"><a name="p136213375242"></a><a name="p136213375242"></a>String array</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p12362837142418"><a name="p12362837142418"></a><a name="p12362837142418"></a>指定volume应该具有的访问模式</p>
+<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p12362837142418"><a name="p12362837142418"></a><a name="p12362837142418"></a>指定volume应该具有的访问模式，包括：</p>
+<a name="ul20281165712148"></a><a name="ul20281165712148"></a><ul id="ul20281165712148"><li>ReadWriteOnce：该卷可以被单个节点以读/写模式挂载</li><li>ReadOnlyMany：该卷可以被多个节点以只读模式挂载</li><li>ReadWriteMany：该卷可以被多个节点以读/写模式挂载</li></ul>
 </td>
 </tr>
 <tr id="row13922112515249"><td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.1 "><p id="p143621137182416"><a name="p143621137182416"></a><a name="p143621137182416"></a>persistentVolumeReclaimPolicy</p>
@@ -174,7 +178,8 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p036214370243"><a name="p036214370243"></a><a name="p036214370243"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p83621637192411"><a name="p83621637192411"></a><a name="p83621637192411"></a>PersistentVolume的回收策略</p>
+<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p83621637192411"><a name="p83621637192411"></a><a name="p83621637192411"></a>PersistentVolume的回收策略，包括：</p>
+<a name="ul6449173941614"></a><a name="ul6449173941614"></a><ul id="ul6449173941614"><li>Retain：保留策略允许手动回收资源。当 PersistentVolumeClaim 被删除时，PersistentVolume 仍然存在，volume 被视为“已释放”。</li><li>Recycle：回收策略会在 volume上执行基本擦除（rm -rf / thevolume / *），可被再次声明使用。</li><li>Delete：对于支持删除回收策略的卷插件，删除操作将从 Kubernetes 中删除 PersistentVolume 对象，并删除外部基础架构（如 AWS EBS、GCE PD、Azure Disk 或 Cinder 卷）中的关联存储资产。动态配置的卷继承其 StorageClass，默认为 Delete。</li></ul>
 </td>
 </tr>
 </tbody>
@@ -208,7 +213,8 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p1895044933913"><a name="p1895044933913"></a><a name="p1895044933913"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p159501649173914"><a name="p159501649173914"></a><a name="p159501649173914"></a>PersistentVolume当前所处的状态</p>
+<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p159501649173914"><a name="p159501649173914"></a><a name="p159501649173914"></a>PersistentVolume当前所处的状态，包括：</p>
+<a name="ul1051916493218"></a><a name="ul1051916493218"></a><ul id="ul1051916493218"><li>Available（可用）：还是空闲资源，没有被任何PVC绑定</li><li>Bound（已绑定）：卷已经被PVC绑定</li><li>Released（已释放）：之前绑定的PVC被删除，但是资源还未被集群重新声明</li><li>Failed（失败）：该卷的自动回收失败</li></ul>
 </td>
 </tr>
 </tbody>
@@ -234,7 +240,7 @@ POST /api/v1/cloudpersistentvolumes
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.3 "><p id="p1023513468266"><a name="p1023513468266"></a><a name="p1023513468266"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.5.1.4 "><p id="p1723544616263"><a name="p1723544616263"></a><a name="p1723544616263"></a>Flexvolume插件名称，请根据使用的存储类型填写：</p>
-<a name="ul16335122794614"></a><a name="ul16335122794614"></a><ul id="ul16335122794614"><li>huawei.com/fuxivol(EVS)</li><li>huawei.com/fuxinfs(SFS)</li><li>huawei.com/fuxiobs(OBS)</li><li>huawei.com/fuxiefs(SFS Turbo)</li></ul>
+<a name="ul16335122794614"></a><a name="ul16335122794614"></a><ul id="ul16335122794614"><li>huawei.com/fuxivol (EVS)</li><li>huawei.com/fuxinfs (SFS)</li><li>huawei.com/fuxiobs (OBS)</li><li>huawei.com/fuxiefs (SFS Turbo)</li></ul>
 </td>
 </tr>
 <tr id="row15677181962610"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p32351546112611"><a name="p32351546112611"></a><a name="p32351546112611"></a>fsType</p>
@@ -244,7 +250,7 @@ POST /api/v1/cloudpersistentvolumes
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.3 "><p id="p1023584614266"><a name="p1023584614266"></a><a name="p1023584614266"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.5.1.4 "><p id="p1123584642618"><a name="p1123584642618"></a><a name="p1123584642618"></a>文件系统类型，请根据使用的存储类型填写：</p>
-<a name="ul17722202534718"></a><a name="ul17722202534718"></a><ul id="ul17722202534718"><li>ext4 (EVS)</li><li>nfs(SFS)</li><li>obs(OBS)</li><li>efs(SFS Turbo)</li></ul>
+<a name="ul17722202534718"></a><a name="ul17722202534718"></a><ul id="ul17722202534718"><li>ext4： EVS云硬盘存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html" target="_blank" rel="noopener noreferrer">使用云硬盘存储卷</a> 。</li><li>nfs：SFS弹性文件存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html" target="_blank" rel="noopener noreferrer">使用文件存储卷</a> 。</li><li>obs：OBS对象存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html" target="_blank" rel="noopener noreferrer">使用对象存储卷</a> 。</li><li>efs：SFS Turbo极速文件存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html" target="_blank" rel="noopener noreferrer">使用极速文件存储卷</a>。</li></ul>
 </td>
 </tr>
 <tr id="row2678121972620"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p42353464268"><a name="p42353464268"></a><a name="p42353464268"></a>options</p>
@@ -279,7 +285,7 @@ POST /api/v1/cloudpersistentvolumes
 <td class="cellrowborder" valign="top" width="15.841584158415841%" headers="mcps1.2.5.1.3 "><p id="p1555511514222"><a name="p1555511514222"></a><a name="p1555511514222"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.43564356435643%" headers="mcps1.2.5.1.4 "><p id="p6555161522210"><a name="p6555161522210"></a><a name="p6555161522210"></a>文件系统类型，请根据使用的存储类型填写：</p>
-<a name="ul91631136124611"></a><a name="ul91631136124611"></a><ul id="ul91631136124611"><li>ext4 (EVS)</li><li>nfs(SFS)</li><li>obs(OBS)</li><li>efs(SFS Turbo)</li></ul>
+<a name="ul91631136124611"></a><a name="ul91631136124611"></a><ul id="ul91631136124611"><li>ext4 (EVS)</li><li>nfs (SFS)</li><li>obs (OBS)</li><li>efs (SFS Turbo)</li></ul>
 </td>
 </tr>
 <tr id="row1611562682718"><td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.1 "><p id="p1755518156223"><a name="p1755518156223"></a><a name="p1755518156223"></a>region</p>
@@ -288,7 +294,8 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="15.841584158415841%" headers="mcps1.2.5.1.3 "><p id="p1055591514222"><a name="p1055591514222"></a><a name="p1055591514222"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.43564356435643%" headers="mcps1.2.5.1.4 "><p id="p18555315122215"><a name="p18555315122215"></a><a name="p18555315122215"></a>云存储所在的region</p>
+<td class="cellrowborder" valign="top" width="56.43564356435643%" headers="mcps1.2.5.1.4 "><p id="p18555315122215"><a name="p18555315122215"></a><a name="p18555315122215"></a>云存储所在的region，例：</p>
+<a name="ul1744915063016"></a><a name="ul1744915063016"></a><ul id="ul1744915063016"><li>"southchina"</li></ul>
 </td>
 </tr>
 <tr id="row11156268277"><td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.1 "><p id="p175551115182210"><a name="p175551115182210"></a><a name="p175551115182210"></a>volumeID</p>
@@ -307,7 +314,7 @@ POST /api/v1/cloudpersistentvolumes
 <td class="cellrowborder" valign="top" width="15.841584158415841%" headers="mcps1.2.5.1.3 "><p id="p18559315162216"><a name="p18559315162216"></a><a name="p18559315162216"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="56.43564356435643%" headers="mcps1.2.5.1.4 "><p id="p95591315182219"><a name="p95591315182219"></a><a name="p95591315182219"></a>指定云存储的类型。</p>
-<a name="ul1396918418499"></a><a name="ul1396918418499"></a><ul id="ul1396918418499"><li>bs(EVS)</li><li>nfs(SFS)</li><li>obs(OBS)</li><li>efs(SFS Turbo)</li></ul>
+<a name="ul1396918418499"></a><a name="ul1396918418499"></a><ul id="ul1396918418499"><li>bs (EVS)</li><li>nfs (SFS)</li><li>obs (OBS)</li><li>efs (SFS Turbo)</li></ul>
 </td>
 </tr>
 </tbody>

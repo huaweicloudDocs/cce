@@ -216,7 +216,7 @@ N/A
                 "creationTimestamp": "2018-01-13T08:40:36Z",
                 "labels": {
                     "addonmanager.kubernetes.io/mode": "Reconcile",
-                    "k8s-app": "kube-dns",
+                    "kubernetes-app": "kube-dns",
                     "kubernetes.io/cluster-service": "true",
                     "kubernetes.io/name": "KubeDNS"
                 },

@@ -1,12 +1,12 @@
-# listing APIResources of GroupVersion networking.k8s.io/v1<a name="cce_02_0198"></a>
+# listing APIResources of GroupVersion networking.kubernetes.io/v1<a name="cce_02_0198"></a>
 
 ## 功能介绍<a name="section14441351"></a>
 
-This API is used to list APIResources of GroupVersion "networking.k8s.io/v1".
+This API is used to list APIResources of GroupVersion "networking.kubernetes.io/v1".
 
 ## URI<a name="section62863296"></a>
 
-GET /apis/networking.k8s.io/v1
+GET /apis/networking.kubernetes.io/v1
 
 ## 请求消息<a name="section28898760"></a>
 
@@ -122,7 +122,7 @@ N/A.
 {
     "kind": "APIResourceList",
     "apiVersion": "v1",
-    "groupVersion": "networking.k8s.io/v1",
+    "groupVersion": "networking.kubernetes.io/v1",
     "resources": [
         {
             "name": "networkpolicies",

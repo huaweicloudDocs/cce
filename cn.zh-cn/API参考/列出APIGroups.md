@@ -173,15 +173,15 @@ N/A.
     "apiVersion": "v1",
     "groups": [
         {
-            "name": "apiregistration.k8s.io",
+            "name": "apiregistration.kubernetes.io",
             "versions": [
                 {
-                    "groupVersion": "apiregistration.k8s.io/v1beta1",
+                    "groupVersion": "apiregistration.kubernetes.io/v1beta1",
                     "version": "v1beta1"
                 }
             ],
             "preferredVersion": {
-                "groupVersion": "apiregistration.k8s.io/v1beta1",
+                "groupVersion": "apiregistration.kubernetes.io/v1beta1",
                 "version": "v1beta1"
             },
             "serverAddressByClientCIDRs": null
@@ -215,37 +215,37 @@ N/A.
             "serverAddressByClientCIDRs": null
         },
         {
-            "name": "authentication.k8s.io",
+            "name": "authentication.kubernetes.io",
             "versions": [
                 {
-                    "groupVersion": "authentication.k8s.io/v1",
+                    "groupVersion": "authentication.kubernetes.io/v1",
                     "version": "v1"
                 },
                 {
-                    "groupVersion": "authentication.k8s.io/v1beta1",
+                    "groupVersion": "authentication.kubernetes.io/v1beta1",
                     "version": "v1beta1"
                 }
             ],
             "preferredVersion": {
-                "groupVersion": "authentication.k8s.io/v1",
+                "groupVersion": "authentication.kubernetes.io/v1",
                 "version": "v1"
             },
             "serverAddressByClientCIDRs": null
         },
         {
-            "name": "authorization.k8s.io",
+            "name": "authorization.kubernetes.io",
             "versions": [
                 {
-                    "groupVersion": "authorization.k8s.io/v1",
+                    "groupVersion": "authorization.kubernetes.io/v1",
                     "version": "v1"
                 },
                 {
-                    "groupVersion": "authorization.k8s.io/v1beta1",
+                    "groupVersion": "authorization.kubernetes.io/v1beta1",
                     "version": "v1beta1"
                 }
             ],
             "preferredVersion": {
-                "groupVersion": "authorization.k8s.io/v1",
+                "groupVersion": "authorization.kubernetes.io/v1",
                 "version": "v1"
             },
             "serverAddressByClientCIDRs": null
@@ -279,29 +279,29 @@ N/A.
             "serverAddressByClientCIDRs": null
         },
         {
-            "name": "certificates.k8s.io",
+            "name": "certificates.kubernetes.io",
             "versions": [
                 {
-                    "groupVersion": "certificates.k8s.io/v1beta1",
+                    "groupVersion": "certificates.kubernetes.io/v1beta1",
                     "version": "v1beta1"
                 }
             ],
             "preferredVersion": {
-                "groupVersion": "certificates.k8s.io/v1beta1",
+                "groupVersion": "certificates.kubernetes.io/v1beta1",
                 "version": "v1beta1"
             },
             "serverAddressByClientCIDRs": null
         },
         {
-            "name": "networking.k8s.io",
+            "name": "networking.kubernetes.io",
             "versions": [
                 {
-                    "groupVersion": "networking.k8s.io/v1",
+                    "groupVersion": "networking.kubernetes.io/v1",
                     "version": "v1"
                 }
             ],
             "preferredVersion": {
-                "groupVersion": "networking.k8s.io/v1",
+                "groupVersion": "networking.kubernetes.io/v1",
                 "version": "v1"
             },
             "serverAddressByClientCIDRs": null
@@ -321,65 +321,65 @@ N/A.
             "serverAddressByClientCIDRs": null
         },
         {
-            "name": "rbac.authorization.k8s.io",
+            "name": "rbac.authorization.kubernetes.io",
             "versions": [
                 {
-                    "groupVersion": "rbac.authorization.k8s.io/v1beta1",
+                    "groupVersion": "rbac.authorization.kubernetes.io/v1beta1",
                     "version": "v1beta1"
                 },
                 {
-                    "groupVersion": "rbac.authorization.k8s.io/v1alpha1",
+                    "groupVersion": "rbac.authorization.kubernetes.io/v1alpha1",
                     "version": "v1alpha1"
                 }
             ],
             "preferredVersion": {
-                "groupVersion": "rbac.authorization.k8s.io/v1beta1",
+                "groupVersion": "rbac.authorization.kubernetes.io/v1beta1",
                 "version": "v1beta1"
             },
             "serverAddressByClientCIDRs": null
         },
         {
-            "name": "settings.k8s.io",
+            "name": "settings.kubernetes.io",
             "versions": [
                 {
-                    "groupVersion": "settings.k8s.io/v1alpha1",
+                    "groupVersion": "settings.kubernetes.io/v1alpha1",
                     "version": "v1alpha1"
                 }
             ],
             "preferredVersion": {
-                "groupVersion": "settings.k8s.io/v1alpha1",
+                "groupVersion": "settings.kubernetes.io/v1alpha1",
                 "version": "v1alpha1"
             },
             "serverAddressByClientCIDRs": null
         },
         {
-            "name": "storage.k8s.io",
+            "name": "storage.kubernetes.io",
             "versions": [
                 {
-                    "groupVersion": "storage.k8s.io/v1",
+                    "groupVersion": "storage.kubernetes.io/v1",
                     "version": "v1"
                 },
                 {
-                    "groupVersion": "storage.k8s.io/v1beta1",
+                    "groupVersion": "storage.kubernetes.io/v1beta1",
                     "version": "v1beta1"
                 }
             ],
             "preferredVersion": {
-                "groupVersion": "storage.k8s.io/v1",
+                "groupVersion": "storage.kubernetes.io/v1",
                 "version": "v1"
             },
             "serverAddressByClientCIDRs": null
         },
         {
-            "name": "apiextensions.k8s.io",
+            "name": "apiextensions.kubernetes.io",
             "versions": [
                 {
-                    "groupVersion": "apiextensions.k8s.io/v1beta1",
+                    "groupVersion": "apiextensions.kubernetes.io/v1beta1",
                     "version": "v1beta1"
                 }
             ],
             "preferredVersion": {
-                "groupVersion": "apiextensions.k8s.io/v1beta1",
+                "groupVersion": "apiextensions.kubernetes.io/v1beta1",
                 "version": "v1beta1"
             },
             "serverAddressByClientCIDRs": null

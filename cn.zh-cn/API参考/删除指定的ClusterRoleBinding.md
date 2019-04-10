@@ -6,7 +6,7 @@ This API is used to delete a ClusterRoleBinding
 
 ## URL<a name="section88661324606"></a>
 
-DELETE /apis/rbac.authorization.k8s.io/v1/clusterrolebindings/\{name\}
+DELETE /apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -86,7 +86,7 @@ N/A
     "status" : "Success",
     "details" : {
         "name" : "read-secrets-global",
-        "group" : "rbac.authorization.k8s.io",
+        "group" : "rbac.authorization.kubernetes.io",
         "kind" : "clusterrolebindings",
         "uid" : "f32434e8-f1f0-11e8-b449-fa163ec24e06"
     }

@@ -6,7 +6,7 @@ This API is used to create a ClusterRole
 
 ## URL<a name="section1943132116"></a>
 
-POST /apis/rbac.authorization.k8s.io/v1/clusterroles
+POST /apis/rbac.authorization.kubernetes.io/v1/clusterroles
 
 [参数解释](#table161311441165415)描述该API的参数。
 
@@ -219,7 +219,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterroles
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p34102013317"><a name="p34102013317"></a><a name="p34102013317"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p14182011335"><a name="p14182011335"></a><a name="p14182011335"></a><a href="公共请求参数.md#t693768b66dfa47239c0f155ad4dd18e8">表14</a></p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p14182011335"><a name="p14182011335"></a><a name="p14182011335"></a><a href="公共请求参数.md#t693768b66dfa47239c0f155ad4dd18e8">表13</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p24220193314"><a name="p24220193314"></a><a name="p24220193314"></a>An initializer is a controller which enforces some system invariant at object creation time. This field is a list of initializers that have not yet acted on this object. If nil or empty, this object has been completely initialized. Otherwise, the object is considered uninitialized and is hidden (in list/watch and get calls) from clients that haven't explicitly asked to observe uninitialized objects. When an object is created, the system will populate this list with the current set of initializers. Only privileged users may set or modify this list. Once it is empty, it may not be modified further by any user.</p>
 </td>
@@ -356,7 +356,7 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterroles
 ```
 {
    "kind": "ClusterRole",
-   "apiVersion": "rbac.authorization.k8s.io/v1",
+   "apiVersion": "rbac.authorization.kubernetes.io/v1",
    "metadata": {
        # 鉴于ClusterRole是集群范围对象，所以这里不需要定义"namespace"字段
        "name": "secret-reader"
@@ -380,10 +380,10 @@ POST /apis/rbac.authorization.k8s.io/v1/clusterroles
 ```
 {
     "kind" : "ClusterRole",
-    "apiVersion" : "rbac.authorization.k8s.io/v1",
+    "apiVersion" : "rbac.authorization.kubernetes.io/v1",
     "metadata" : {
         "name" : "secret-reader",
-        "selfLink" : "/apis/rbac.authorization.k8s.io/v1/clusterroles/secret-reader",
+        "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/clusterroles/secret-reader",
         "uid" : "8d358854-f1e7-11e8-b449-fa163ec24e06",
         "resourceVersion" : "4619",
         "creationTimestamp" : "2018-11-27T01:55:44Z"

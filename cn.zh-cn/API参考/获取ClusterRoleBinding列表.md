@@ -6,7 +6,7 @@ This API is used to list or watch objects of kind ClusterRoleBinding
 
 ## URL<a name="section042716241518"></a>
 
-GET /apis/rbac.authorization.k8s.io/v1/clusterrolebindings
+GET /apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -102,26 +102,26 @@ N/A
 ```
 {
     "kind" : "ClusterRoleBindingList",
-    "apiVersion" : "rbac.authorization.k8s.io/v1",
+    "apiVersion" : "rbac.authorization.kubernetes.io/v1",
     "metadata" : {
-        "selfLink" : "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings",
+        "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings",
         "resourceVersion" : "4625"
     },
     "items" : [ {
         "metadata" : {
             "name" : "read-secrets-global",
-            "selfLink" : "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/read-secrets-global",
+            "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings/read-secrets-global",
             "uid" : "8e20ec38-f1e7-11e8-b449-fa163ec24e06",
             "resourceVersion" : "4625",
             "creationTimestamp" : "2018-11-27T01:55:45Z"
         },
         "subjects" : [ {
             "kind" : "Group",
-            "apiGroup" : "rbac.authorization.k8s.io",
+            "apiGroup" : "rbac.authorization.kubernetes.io",
             "name" : "manager"
         } ],
         "roleRef" : {
-            "apiGroup" : "rbac.authorization.k8s.io",
+            "apiGroup" : "rbac.authorization.kubernetes.io",
             "kind" : "ClusterRole",
             "name" : "secret-reader"
         }

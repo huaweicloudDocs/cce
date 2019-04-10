@@ -25,56 +25,56 @@ GET /api/v1/namespaces/\{namespace\}/replicationcontrollers
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615054_p15175522"><a name="zh-cn_topic_0079615054_p15175522"></a><a name="zh-cn_topic_0079615054_p15175522"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p21257750"><a name="zh-cn_topic_0079615054_p21257750"></a><a name="zh-cn_topic_0079615054_p21257750"></a>If 'true', then the output is pretty printed.</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p28675043"><a name="p28675043"></a><a name="p28675043"></a>设置为true后，会打印漂亮的输出结果。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615054_row57102025"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615054_p61861327"><a name="zh-cn_topic_0079615054_p61861327"></a><a name="zh-cn_topic_0079615054_p61861327"></a>labelSelector</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615054_p44711597"><a name="zh-cn_topic_0079615054_p44711597"></a><a name="zh-cn_topic_0079615054_p44711597"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p64869644"><a name="zh-cn_topic_0079615054_p64869644"></a><a name="zh-cn_topic_0079615054_p64869644"></a>A selector to restrict the list of returned objects by their labels. Defaults to everything.</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p1930564715251"><a name="p1930564715251"></a><a name="p1930564715251"></a>根据资源对象的label字段进行筛选，不设置该参数时默认选择所有资源对象。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615054_row46955892"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615054_p45330870"><a name="zh-cn_topic_0079615054_p45330870"></a><a name="zh-cn_topic_0079615054_p45330870"></a>fieldSelector</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615054_p47921869"><a name="zh-cn_topic_0079615054_p47921869"></a><a name="zh-cn_topic_0079615054_p47921869"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p56466209"><a name="zh-cn_topic_0079615054_p56466209"></a><a name="zh-cn_topic_0079615054_p56466209"></a>A selector to restrict the list of returned objects by their fields. Defaults to everything.</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p49874218"><a name="p49874218"></a><a name="p49874218"></a>根据资源对象的field字段进行筛选，不设置该参数时默认选择所有资源对象。</p>
 </td>
 </tr>
 <tr id="r2db43af1a5cc4b9aa0dbca7d708e30d5"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="a18e375bd668a48008cad678f18f6a747"><a name="a18e375bd668a48008cad678f18f6a747"></a><a name="a18e375bd668a48008cad678f18f6a747"></a>includeUninitialized</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="ade2c3b7bd21e47bfaaec460717e532a1"><a name="ade2c3b7bd21e47bfaaec460717e532a1"></a><a name="ade2c3b7bd21e47bfaaec460717e532a1"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="aba3f1dcb1fc04d0b9d8bc6428342c5d1"><a name="aba3f1dcb1fc04d0b9d8bc6428342c5d1"></a><a name="aba3f1dcb1fc04d0b9d8bc6428342c5d1"></a>If true, partially initialized resources are included in the response.</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="a163adfe9b2884ce09f91ddc74ec8c32a"><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a>设置为true后，未初始化完成的资源也会包含在删除列表里。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615054_row38433837"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615054_p26133094"><a name="zh-cn_topic_0079615054_p26133094"></a><a name="zh-cn_topic_0079615054_p26133094"></a>watch</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615054_p36405904"><a name="zh-cn_topic_0079615054_p36405904"></a><a name="zh-cn_topic_0079615054_p36405904"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p63197139"><a name="zh-cn_topic_0079615054_p63197139"></a><a name="zh-cn_topic_0079615054_p63197139"></a>Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p63197139"><a name="zh-cn_topic_0079615054_p63197139"></a><a name="zh-cn_topic_0079615054_p63197139"></a><span id="ph0343145716531"><a name="ph0343145716531"></a><a name="ph0343145716531"></a>监视指定资源的更改，并将添加、更新和删除通知的流返回。</span><span id="ph1700345414"><a name="ph1700345414"></a><a name="ph1700345414"></a>需要指定resourceVersion。</span></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615054_row31903341"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615054_p34033799"><a name="zh-cn_topic_0079615054_p34033799"></a><a name="zh-cn_topic_0079615054_p34033799"></a>resourceVersion</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615054_p5274317"><a name="zh-cn_topic_0079615054_p5274317"></a><a name="zh-cn_topic_0079615054_p5274317"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p24566569"><a name="zh-cn_topic_0079615054_p24566569"></a><a name="zh-cn_topic_0079615054_p24566569"></a>When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p24566569"><a name="zh-cn_topic_0079615054_p24566569"></a><a name="zh-cn_topic_0079615054_p24566569"></a><span id="ph14746102416396"><a name="ph14746102416396"></a><a name="ph14746102416396"></a>ResourceVersion表示该资源对象内部版本。</span></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615054_row19772529"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615054_p58071046"><a name="zh-cn_topic_0079615054_p58071046"></a><a name="zh-cn_topic_0079615054_p58071046"></a>timeoutSeconds</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615054_p6134308"><a name="zh-cn_topic_0079615054_p6134308"></a><a name="zh-cn_topic_0079615054_p6134308"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p27116914"><a name="zh-cn_topic_0079615054_p27116914"></a><a name="zh-cn_topic_0079615054_p27116914"></a>Timeout for the list/watch call.</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p27116914"><a name="zh-cn_topic_0079615054_p27116914"></a><a name="zh-cn_topic_0079615054_p27116914"></a><span id="ph527992517557"><a name="ph527992517557"></a><a name="ph527992517557"></a>表示调用list/watch的超时时间。</span></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615054_row42725634"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615054_p38224348"><a name="zh-cn_topic_0079615054_p38224348"></a><a name="zh-cn_topic_0079615054_p38224348"></a>namespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615054_p9164474"><a name="zh-cn_topic_0079615054_p9164474"></a><a name="zh-cn_topic_0079615054_p9164474"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p4124933"><a name="zh-cn_topic_0079615054_p4124933"></a><a name="zh-cn_topic_0079615054_p4124933"></a>Object name and auth scope, such as for teams and projects.</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p658610593411"><a name="p658610593411"></a><a name="p658610593411"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。</p>
 </td>
 </tr>
 </tbody>
@@ -179,7 +179,7 @@ N/A
 </thead>
 <tbody><tr id="zh-cn_topic_0079615054_row6247673"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615054_p36299500"><a name="zh-cn_topic_0079615054_p36299500"></a><a name="zh-cn_topic_0079615054_p36299500"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615054_p54578396"><a name="zh-cn_topic_0079615054_p54578396"></a><a name="zh-cn_topic_0079615054_p54578396"></a>This operation succeeds, and a group of ReplicationController resource objects is returned.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615054_p54578396"><a name="zh-cn_topic_0079615054_p54578396"></a><a name="zh-cn_topic_0079615054_p54578396"></a><span id="ph17344310175615"><a name="ph17344310175615"></a><a name="ph17344310175615"></a>操作成功，返回一组ReplicationController的资源对象。</span></p>
 </td>
 </tr>
 </tbody>

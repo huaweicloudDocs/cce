@@ -71,10 +71,10 @@ PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(C
 
 “Content-Type“消息头说明请参见[PATCH请求方法操作说明](PATCH请求方法操作说明.md)。
 
-**请求示例：**
+**请求示例1，使用json-patch类型：**
 
 ```
-Content-Type: application/merge-patch+json
+Content-Type: application/json-patch+json
 [
     {
         "op": "add",
@@ -82,6 +82,26 @@ Content-Type: application/merge-patch+json
         "value": "172.16.5.235:20202/test/redis:latest"
     }
 ]
+```
+
+**请求示例2，使用merge-patch类型：**
+
+```
+Content-Type: application/merge-patch+json
+{
+    "spec": {
+        "template": {
+            "spec": {
+                "containers": [
+                    {
+                        "name": "deploycon-12130306",
+                        "image": "172.16.5.235:20202/test/redis:latest"
+                    }
+                ]
+            }
+        }
+    }
+}
 ```
 
 ## 响应消息<a name="section22022822"></a>

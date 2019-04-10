@@ -2,7 +2,7 @@
 
 若您需要从客户端机器访问kubernetes集群，可以选择使用kubernetes命令行工具kubectl。
 
-本章以虚拟机集群为例，Windows集群和裸金属集群操作方式与其相同。
+本章以混合集群为例，Windows集群和裸金属集群操作方式与其相同。
 
 ## 前提条件<a name="section3271162319436"></a>
 

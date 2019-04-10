@@ -4,7 +4,7 @@
 
 kube-dns/CoreDNS为集群提供了DNS服务。若集群中只部署了单个kube-dns/CoreDNS，则存在kube-dns/CoreDNS故障后影响整个集群运作的风险，因此建议为集群配置多个kube-dns/CoreDNS。
 
-本章以虚拟机集群为例，裸金属集群操作方式与其相同。
+本章以混合集群为例，裸金属集群操作方式与其相同。
 
 ## 前提条件<a name="s749b044f6e864a919f0c0616cfad1dab"></a>
 

@@ -377,7 +377,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084689%" headers="mcps1.2.5.1.2 "><p id="p23283829"><a name="p23283829"></a><a name="p23283829"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p6941992"><a name="p6941992"></a><a name="p6941992"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table66152725">表25</a></p>
+<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p6941992"><a name="p6941992"></a><a name="p6941992"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table66152725">表24</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="41.83581641835816%" headers="mcps1.2.5.1.4 "><p id="p27547802"><a name="p27547802"></a><a name="p27547802"></a>Specification of the desired behavior of the pod.</p>
 </td>

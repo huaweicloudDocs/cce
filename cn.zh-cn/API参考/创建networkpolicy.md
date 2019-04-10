@@ -6,7 +6,7 @@ This API is used to create a NetworkPolicy.
 
 ## URL<a name="section114001717323"></a>
 
-POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
+POST /apis/networking.kubernetes.io/v1/namespaces/\{namespace\}/networkpolicies
 
 [参数解释](#table1420670321)描述该API的参数。
 
@@ -192,7 +192,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p528613288229"><a name="p528613288229"></a><a name="p528613288229"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p72861289222"><a name="p72861289222"></a><a name="p72861289222"></a><a href="公共请求参数.md#t693768b66dfa47239c0f155ad4dd18e8">表14</a></p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p72861289222"><a name="p72861289222"></a><a name="p72861289222"></a><a href="公共请求参数.md#t693768b66dfa47239c0f155ad4dd18e8">表13</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p6875616152317"><a name="p6875616152317"></a><a name="p6875616152317"></a>An initializer is a controller which enforces some system invariant at object creation time. This field is a list of initializers that have not yet acted on this object. If nil or empty, this object has been completely initialized. Otherwise, the object is considered uninitialized and is hidden (in list/watch and get calls) from clients that haven't explicitly asked to observe uninitialized objects. When an object is created, the system will populate this list with the current set of initializers. Only privileged users may set or modify this list. Once it is empty, it may not be modified further by any user.</p>
 </td>
@@ -446,7 +446,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 
 ```
 {
-	"apiVersion": "networking.k8s.io/v1",
+	"apiVersion": "networking.kubernetes.io/v1",
 	"kind": "NetworkPolicy",
 	"metadata": {
 		"name": "test-network-policy",
@@ -489,11 +489,11 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 ```
 {
     "kind": "NetworkPolicy",
-    "apiVersion": "networking.k8s.io/v1",
+    "apiVersion": "networking.kubernetes.io/v1",
     "metadata": {
 	    "name": "test-network-policy",
 		"namespace": "default",
-		"selfLink": "/apis/networking.k8s.io/v1/namespaces/default/networkpolicies/test-network-policy",
+		"selfLink": "/apis/networking.kubernetes.io/v1/namespaces/default/networkpolicies/test-network-policy",
 		"uid": "be347ddd-e8af-11e8-b187-fa163e3cca63",
 		"resourceVersion": "213982",
 		"generation": 1,

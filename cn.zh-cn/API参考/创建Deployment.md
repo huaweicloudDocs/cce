@@ -204,7 +204,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p19619176142914"><a name="p19619176142914"></a><a name="p19619176142914"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1849772214710"><a name="p1849772214710"></a><a name="p1849772214710"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table52089545">表23</a></p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1849772214710"><a name="p1849772214710"></a><a name="p1849772214710"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table52089545">表22</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.5.1.4 "><p id="p361914615293"><a name="p361914615293"></a><a name="p361914615293"></a>Template describes the pods that will be created.</p>
 </td>

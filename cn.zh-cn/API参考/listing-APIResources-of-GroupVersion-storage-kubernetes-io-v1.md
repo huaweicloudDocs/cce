@@ -1,12 +1,12 @@
-# listing APIResources of GroupVersion storage.k8s.io/v1<a name="cce_02_0203"></a>
+# listing APIResources of GroupVersion storage.kubernetes.io/v1<a name="cce_02_0203"></a>
 
 ## 功能介绍<a name="section49039760"></a>
 
-This API is used to list APIResources of GroupVersion "storage.k8s.io/v1".
+This API is used to list APIResources of GroupVersion "storage.kubernetes.io/v1".
 
 ## URI<a name="section38704658"></a>
 
-GET /apis/storage.k8s.io/v1
+GET /apis/storage.kubernetes.io/v1
 
 ## 请求消息<a name="section12797610"></a>
 
@@ -122,7 +122,7 @@ N/A.
 {
     "kind": "APIResourceList",
     "apiVersion": "v1",
-    "groupVersion": "storage.k8s.io/v1",
+    "groupVersion": "storage.kubernetes.io/v1",
     "resources": [
         {
             "name": "storageclasses",

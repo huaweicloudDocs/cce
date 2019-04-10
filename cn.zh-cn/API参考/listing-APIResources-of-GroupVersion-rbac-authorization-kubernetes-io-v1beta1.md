@@ -1,12 +1,12 @@
-# listing APIResources of GroupVersion rbac.authorization.k8s.io/v1beta1<a name="cce_02_0200"></a>
+# listing APIResources of GroupVersion rbac.authorization.kubernetes.io/v1beta1<a name="cce_02_0200"></a>
 
 ## 功能介绍<a name="section39062201"></a>
 
-This API is used to list APIResources of GroupVersion "rbac.authorization.k8s.io/v1beta1".
+This API is used to list APIResources of GroupVersion "rbac.authorization.kubernetes.io/v1beta1".
 
 ## URI<a name="section16015489"></a>
 
-GET /apis/rbac.authorization.k8s.io/v1beta1
+GET /apis/rbac.authorization.kubernetes.io/v1beta1
 
 ## 请求消息<a name="section9921673"></a>
 
@@ -122,7 +122,7 @@ N/A.
 {
     "kind": "APIResourceList",
     "apiVersion": "v1",
-    "groupVersion": "rbac.authorization.k8s.io/v1beta1",
+    "groupVersion": "rbac.authorization.kubernetes.io/v1beta1",
     "resources": [
         {
             "name": "clusterrolebindings",

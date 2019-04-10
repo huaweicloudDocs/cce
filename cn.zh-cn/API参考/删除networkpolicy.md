@@ -6,7 +6,7 @@ This API is used to delete a NetworkPolicy.
 
 ## URL<a name="section219412719263"></a>
 
-DELETE /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
+DELETE /apis/networking.kubernetes.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -70,7 +70,7 @@ N/A
 	"code": 200	
 	"details": {
 	    "name": "aqws", 
-	    "group": "networking.k8s.io", 
+	    "group": "networking.kubernetes.io", 
 	    "kind": "networkpolicies"
             "uid" : "0eea113a-ebb6-11e8-889b-fa163ecbd381"
 	},

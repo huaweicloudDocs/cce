@@ -41,21 +41,22 @@ PUT /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615031_p5724764"><a name="zh-cn_topic_0079615031_p5724764"></a><a name="zh-cn_topic_0079615031_p5724764"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615031_p61052759"><a name="zh-cn_topic_0079615031_p61052759"></a><a name="zh-cn_topic_0079615031_p61052759"></a>If 'true', then the output is pretty printed.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p28675043"><a name="p28675043"></a><a name="p28675043"></a>设置为true后，会打印漂亮的输出结果。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615031_row20549736"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615031_p53915901"><a name="zh-cn_topic_0079615031_p53915901"></a><a name="zh-cn_topic_0079615031_p53915901"></a>namespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615031_p5111875"><a name="zh-cn_topic_0079615031_p5111875"></a><a name="zh-cn_topic_0079615031_p5111875"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615031_p11408737"><a name="zh-cn_topic_0079615031_p11408737"></a><a name="zh-cn_topic_0079615031_p11408737"></a>Object name and auth scope, such as for teams and projects.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p658610593411"><a name="p658610593411"></a><a name="p658610593411"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。可以任选其一使用：</p>
+<a name="ul75828215461"></a><a name="ul75828215461"></a><ul id="ul75828215461"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a></li><li>系统自带的namespace：default或kube-system</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615031_row35569777"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615031_p62579720"><a name="zh-cn_topic_0079615031_p62579720"></a><a name="zh-cn_topic_0079615031_p62579720"></a>name</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615031_p35792522"><a name="zh-cn_topic_0079615031_p35792522"></a><a name="zh-cn_topic_0079615031_p35792522"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615031_p13513185"><a name="zh-cn_topic_0079615031_p13513185"></a><a name="zh-cn_topic_0079615031_p13513185"></a>Name of the Secret.</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614900_p168024282424"><a name="zh-cn_topic_0079614900_p168024282424"></a><a name="zh-cn_topic_0079614900_p168024282424"></a>Secret名称。</p>
 </td>
 </tr>
 </tbody>
@@ -143,7 +144,7 @@ PUT /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </thead>
 <tbody><tr id="zh-cn_topic_0079615031_row10603493"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615031_p53576637"><a name="zh-cn_topic_0079615031_p53576637"></a><a name="zh-cn_topic_0079615031_p53576637"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615031_p44740325"><a name="zh-cn_topic_0079615031_p44740325"></a><a name="zh-cn_topic_0079615031_p44740325"></a>This operation succeeds, and a secret resource object is returned.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615031_p44740325"><a name="zh-cn_topic_0079615031_p44740325"></a><a name="zh-cn_topic_0079615031_p44740325"></a><span id="ph93661510113714"><a name="ph93661510113714"></a><a name="ph93661510113714"></a>操作成功，返回更新后的secret资源对象</span></p>
 </td>
 </tr>
 </tbody>

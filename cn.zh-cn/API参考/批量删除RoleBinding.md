@@ -6,7 +6,7 @@ This API is used to delete collection of RoleBinding
 
 ## URL<a name="section128415243558"></a>
 
-DELETE /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/rolebindings
+DELETE /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/rolebindings
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -109,9 +109,9 @@ N/A
 ```
 {
 	"kind": "RoleBindingList",
-	"apiVersion": "rbac.authorization.k8s.io/v1",
+	"apiVersion": "rbac.authorization.kubernetes.io/v1",
 	"metadata": {
-		"selfLink": "/apis/rbac.authorization.k8s.io/v1/namespaces/default/rolebindings",
+		"selfLink": "/apis/rbac.authorization.kubernetes.io/v1/namespaces/default/rolebindings",
 		"resourceVersion": "16613"
 	},
 	"items": null

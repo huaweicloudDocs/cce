@@ -1,12 +1,12 @@
-# listing APIResources of GroupVersion authorization.k8s.io/v1beta1<a name="cce_02_0194"></a>
+# listing APIResources of GroupVersion authorization.kubernetes.io/v1beta1<a name="cce_02_0194"></a>
 
 ## 功能介绍<a name="section24060969"></a>
 
-This API is used to list APIResources of GroupVersion "authorization.k8s.io/v1beta1".
+This API is used to list APIResources of GroupVersion "authorization.kubernetes.io/v1beta1".
 
 ## URI<a name="section15222134"></a>
 
-GET /apis/authorization.k8s.io/v1beta1
+GET /apis/authorization.kubernetes.io/v1beta1
 
 ## 请求消息<a name="section2781482"></a>
 
@@ -122,7 +122,7 @@ N/A.
 {
     "kind": "APIResourceList",
     "apiVersion": "v1",
-    "groupVersion": "authorization.k8s.io/v1beta1",
+    "groupVersion": "authorization.kubernetes.io/v1beta1",
     "resources": [
         {
             "name": "localsubjectaccessreviews",

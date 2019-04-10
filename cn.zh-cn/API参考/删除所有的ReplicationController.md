@@ -2,7 +2,7 @@
 
 ## 功能介绍<a name="section8059889"></a>
 
-This API is used to delete collection of ReplicationController.
+该API用于批量删除ReplicationController。
 
 ## URI<a name="section5430140"></a>
 
@@ -25,56 +25,57 @@ DELETE /api/v1/namespaces/\{namespace\}/replicationcontrollers
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p49021830"><a name="p49021830"></a><a name="p49021830"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p11345303"><a name="p11345303"></a><a name="p11345303"></a>object name and auth scope, such as for teams and projects</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p166752264459"><a name="p166752264459"></a><a name="p166752264459"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。可以任选其一使用：</p>
+<a name="ul75828215461"></a><a name="ul75828215461"></a><ul id="ul75828215461"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a></li><li>系统自带的namespace：default或kube-system</li></ul>
 </td>
 </tr>
 <tr id="row34998867"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p16335992"><a name="p16335992"></a><a name="p16335992"></a>pretty</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p48146961"><a name="p48146961"></a><a name="p48146961"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p7589767"><a name="p7589767"></a><a name="p7589767"></a>If 'true', then the output is pretty printed.</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p28675043"><a name="p28675043"></a><a name="p28675043"></a>设置为true后，会打印漂亮的输出结果。</p>
 </td>
 </tr>
 <tr id="row1199040"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p30013387"><a name="p30013387"></a><a name="p30013387"></a>fieldSelector</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p15165287"><a name="p15165287"></a><a name="p15165287"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p20428731"><a name="p20428731"></a><a name="p20428731"></a>A selector to restrict the list of returned objects by their fields. Defaults to everything.</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p49874218"><a name="p49874218"></a><a name="p49874218"></a>根据资源对象的field字段进行筛选，不设置该参数时默认选择所有资源对象。</p>
 </td>
 </tr>
 <tr id="row49640858"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p61486582"><a name="p61486582"></a><a name="p61486582"></a>includeUninitialized</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p14357279"><a name="p14357279"></a><a name="p14357279"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p22088956"><a name="p22088956"></a><a name="p22088956"></a>If true, partially initialized resources are included in the response.</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p22088956"><a name="p22088956"></a><a name="p22088956"></a><span id="ph984104618246"><a name="ph984104618246"></a><a name="ph984104618246"></a>设置为true后，未初始化完成的资源也会包含在删除列表里。</span></p>
 </td>
 </tr>
 <tr id="row64582882"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p63830953"><a name="p63830953"></a><a name="p63830953"></a>labelSelector</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p2924696"><a name="p2924696"></a><a name="p2924696"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p35573848"><a name="p35573848"></a><a name="p35573848"></a>A selector to restrict the list of returned objects by their labels. Defaults to everything.</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p1930564715251"><a name="p1930564715251"></a><a name="p1930564715251"></a>根据资源对象的label字段进行筛选，不设置该参数时默认选择所有资源对象。</p>
 </td>
 </tr>
 <tr id="row51729182"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p29314202"><a name="p29314202"></a><a name="p29314202"></a>resourceVersion</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p25640122"><a name="p25640122"></a><a name="p25640122"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p63583974"><a name="p63583974"></a><a name="p63583974"></a>When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614900_p1905570"><a name="zh-cn_topic_0079614900_p1905570"></a><a name="zh-cn_topic_0079614900_p1905570"></a>ResourceVersion表示该资源对象内部版本。</p>
 </td>
 </tr>
 <tr id="row35384861"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p47601479"><a name="p47601479"></a><a name="p47601479"></a>timeoutSeconds</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p30514610"><a name="p30514610"></a><a name="p30514610"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p55764358"><a name="p55764358"></a><a name="p55764358"></a>Timeout for the list/watch call.</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p2133200"><a name="p2133200"></a><a name="p2133200"></a>表示调用list/watch的超时时间。</p>
 </td>
 </tr>
 <tr id="row32117174"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p51354297"><a name="p51354297"></a><a name="p51354297"></a>watch</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p66057401"><a name="p66057401"></a><a name="p66057401"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p49049245"><a name="p49049245"></a><a name="p49049245"></a>Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p176837905310"><a name="p176837905310"></a><a name="p176837905310"></a>监视指定资源的更改，并将添加、更新和删除通知的流返回。需要指定resourceVersion。</p>
 </td>
 </tr>
 </tbody>
@@ -177,7 +178,7 @@ N/A
 </thead>
 <tbody><tr id="row48639485"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p47484180"><a name="p47484180"></a><a name="p47484180"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p21013392"><a name="p21013392"></a><a name="p21013392"></a>Delete a DaemonSet resource object successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p21013392"><a name="p21013392"></a><a name="p21013392"></a><span id="ph18293192104411"><a name="ph18293192104411"></a><a name="ph18293192104411"></a>删除ReplicationController资源对象成功。</span></p>
 </td>
 </tr>
 </tbody>

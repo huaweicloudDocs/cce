@@ -61,7 +61,12 @@
             -   选择自动创建时，若待创建负载均衡实例类型为“公网”，可单击“更改负载均衡规格”来修改待负载均衡实例的规格、计费模式和带宽。
 
         -   对外端口：开放在负载均衡服务地址的端口，可任意指定。
-        -   对外协议：支持HTTP和HTTPS。若选择HTTPS，请选择密钥证书。密钥证书需提前创建，密钥类型为IngressTLS。创建密钥的方法请参见[创建密钥](创建密钥.md)。
+        -   对外协议：支持HTTP和HTTPS。若选择HTTPS，请选择密钥证书。
+
+            >![](public_sys-resources/icon-note.gif) **说明：**   
+            >-   选择HTTPS协议时，才需要创建密钥证书ingress-test-secret.yaml。创建密钥的方法请参见[创建密钥](创建密钥.md)。  
+            >-   同一个ELB实例的同一个端口配置HTTPS时，选择的证书需要是一样的。  
+
         -   域名：实际访问的域名地址，对应负载均衡服务域名地址，需用户购买备案自己的域名，可选填。一旦配置了域名规则，则必须使用域名访问。
         -   路由配置：
             -   路由匹配规则：前缀匹配、精确匹配、正则匹配。
@@ -121,7 +126,8 @@
     ingress-test-deployment.yaml、ingress-test-svc.yaml、ingress-test-ingress.yaml、ingress-test-secret.yaml为自定义名称，您可以随意命名。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
-    >选择HTTPS协议时，才需要创建密钥证书ingress-test-secret.yaml。  
+    >-   选择HTTPS协议时，才需要创建密钥证书ingress-test-secret.yaml。创建密钥的方法请参见[创建密钥](创建密钥.md)。  
+    >-   同一个ELB实例的同一个端口配置HTTPS时，选择的证书需要是一样的。  
 
     **vi ingress-test-deployment.yaml**
 
