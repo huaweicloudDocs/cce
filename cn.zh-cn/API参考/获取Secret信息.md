@@ -32,7 +32,8 @@ GET /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614927_p36268402"><a name="zh-cn_topic_0079614927_p36268402"></a><a name="zh-cn_topic_0079614927_p36268402"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="p658610593411"><a name="p658610593411"></a><a name="p658610593411"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。可以任选其一使用：</p>
+<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p52059459"><a name="zh-cn_topic_0079614927_p52059459"></a><a name="zh-cn_topic_0079614927_p52059459"></a></p>
+<p id="p658610593411"><a name="p658610593411"></a><a name="p658610593411"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。可以任选其一使用：</p>
 <a name="ul75828215461"></a><a name="ul75828215461"></a><ul id="ul75828215461"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a></li><li>系统自带的namespace：default或kube-system</li></ul>
 </td>
 </tr>
@@ -47,14 +48,14 @@ GET /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.2 "><p id="a688fa776ec494137a4dc4d62383a2dc3"><a name="a688fa776ec494137a4dc4d62383a2dc3"></a><a name="a688fa776ec494137a4dc4d62383a2dc3"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p28969051618"><a name="zh-cn_topic_0079614927_p28969051618"></a><a name="zh-cn_topic_0079614927_p28969051618"></a><span id="ph9103531553"><a name="ph9103531553"></a><a name="ph9103531553"></a>表示查看的信息是否要精准导出，设置后导出信息会保持集群专属的字段，比如"Namespace"</span><span id="ph126113177593"><a name="ph126113177593"></a><a name="ph126113177593"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p28969051618"><a name="zh-cn_topic_0079614927_p28969051618"></a><a name="zh-cn_topic_0079614927_p28969051618"></a>表示查看的信息是否要精准导出，设置后导出信息会保持集群专属的字段，比如"Namespace"。</p>
 </td>
 </tr>
 <tr id="rd0a38f8b45ce43d4b33530c1fb363adb"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="acf120ad7b3464dd3afd59acac130d10a"><a name="acf120ad7b3464dd3afd59acac130d10a"></a><a name="acf120ad7b3464dd3afd59acac130d10a"></a>export</p>
 </td>
 <td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614927_p275914191162"><a name="zh-cn_topic_0079614927_p275914191162"></a><a name="zh-cn_topic_0079614927_p275914191162"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="a743d354f3c564a71bea87c0e96598b2d"><a name="a743d354f3c564a71bea87c0e96598b2d"></a><a name="a743d354f3c564a71bea87c0e96598b2d"></a><span id="ph2617954155713"><a name="ph2617954155713"></a><a name="ph2617954155713"></a>设置value值是否要导出，导出时会忽略用户无法指定的字段</span><span id="ph126451418205917"><a name="ph126451418205917"></a><a name="ph126451418205917"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="a743d354f3c564a71bea87c0e96598b2d"><a name="a743d354f3c564a71bea87c0e96598b2d"></a><a name="a743d354f3c564a71bea87c0e96598b2d"></a>设置value值是否要导出，导出时会忽略用户无法指定的字段。</p>
 </td>
 </tr>
 </tbody>
@@ -106,14 +107,14 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="a22ac63c8187b498d89bf40f317c194a4"><a name="a22ac63c8187b498d89bf40f317c194a4"></a><a name="a22ac63c8187b498d89bf40f317c194a4"></a>object</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="aa3f29c40161141a9bc895a80c070e251"><a name="aa3f29c40161141a9bc895a80c070e251"></a><a name="aa3f29c40161141a9bc895a80c070e251"></a><span id="ph103889526211"><a name="ph103889526211"></a><a name="ph103889526211"></a>Data表示secret的数据，是key/value对的格式。secret的数据是base64加密格式的字符串类型。</span></p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="aa3f29c40161141a9bc895a80c070e251"><a name="aa3f29c40161141a9bc895a80c070e251"></a><a name="aa3f29c40161141a9bc895a80c070e251"></a>Data表示secret的数据，是key/value对的格式。secret的数据是base64加密格式的字符串类型。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079614927_row28293786"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614927_p10095295"><a name="zh-cn_topic_0079614927_p10095295"></a><a name="zh-cn_topic_0079614927_p10095295"></a>type</p>
 </td>
 <td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614927_p12412544"><a name="zh-cn_topic_0079614927_p12412544"></a><a name="zh-cn_topic_0079614927_p12412544"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p65892039"><a name="zh-cn_topic_0079614927_p65892039"></a><a name="zh-cn_topic_0079614927_p65892039"></a><span id="ph4286141911516"><a name="ph4286141911516"></a><a name="ph4286141911516"></a>Type表示secret</span><span id="ph262412291056"><a name="ph262412291056"></a><a name="ph262412291056"></a>的类型</span></p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p65892039"><a name="zh-cn_topic_0079614927_p65892039"></a><a name="zh-cn_topic_0079614927_p65892039"></a>Type表示secret的类型</p>
 </td>
 </tr>
 </tbody>
@@ -134,14 +135,14 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614927_p24522460"><a name="zh-cn_topic_0079614927_p24522460"></a><a name="zh-cn_topic_0079614927_p24522460"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614900_p168024282424"><a name="zh-cn_topic_0079614900_p168024282424"></a><a name="zh-cn_topic_0079614900_p168024282424"></a>Secret名称，<span id="ph762911148347"><a name="ph762911148347"></a><a name="ph762911148347"></a>同一namespace下name不能重复</span>，无法被更新</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614900_p168024282424"><a name="zh-cn_topic_0079614900_p168024282424"></a><a name="zh-cn_topic_0079614900_p168024282424"></a>Secret名称，同一namespace下name不能重复，无法被更新</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079614927_row25915585"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614927_p18787663"><a name="zh-cn_topic_0079614927_p18787663"></a><a name="zh-cn_topic_0079614927_p18787663"></a>generateName</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614927_p45405709"><a name="zh-cn_topic_0079614927_p45405709"></a><a name="zh-cn_topic_0079614927_p45405709"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614900_p16098318"><a name="zh-cn_topic_0079614900_p16098318"></a><a name="zh-cn_topic_0079614900_p16098318"></a>GenerateName 是一个可选项，表示名字的前缀，当Name字段为空时，会自动使用该前缀生成一个集群内唯一存在的Name。<span id="ph19261056177"><a name="ph19261056177"></a><a name="ph19261056177"></a>只有当Name字段为空时才需要配置generateName，generateName</span><span id="ph1261135617717"><a name="ph1261135617717"></a><a name="ph1261135617717"></a>可以包含小写字母、数字、连字符和点，开头和结尾必须是字母或数字，最长253个字符</span><span id="ph82612564712"><a name="ph82612564712"></a><a name="ph82612564712"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614900_p16098318"><a name="zh-cn_topic_0079614900_p16098318"></a><a name="zh-cn_topic_0079614900_p16098318"></a>GenerateName 是一个可选项，表示名字的前缀，当Name字段为空时，会自动使用该前缀生成一个集群内唯一存在的Name。只有当Name字段为空时才需要配置generateName，generateName可以包含小写字母、数字、连字符和点，开头和结尾必须是字母或数字，最长253个字符。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079614927_row28380941"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614927_p17154888"><a name="zh-cn_topic_0079614927_p17154888"></a><a name="zh-cn_topic_0079614927_p17154888"></a>namespace</p>
@@ -170,7 +171,7 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614927_p34768937"><a name="zh-cn_topic_0079614927_p34768937"></a><a name="zh-cn_topic_0079614927_p34768937"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p64820527"><a name="zh-cn_topic_0079614927_p64820527"></a><a name="zh-cn_topic_0079614927_p64820527"></a><span id="ph516213221259"><a name="ph516213221259"></a><a name="ph516213221259"></a>ResourceVersion表示该资源对象内部版本</span><span id="ph188361713112614"><a name="ph188361713112614"></a><a name="ph188361713112614"></a>，可以用来优化并发性能和监视资源变化，</span><span id="ph173071947202820"><a name="ph173071947202820"></a><a name="ph173071947202820"></a>系统内部使用，只读项</span><span id="ph577585316285"><a name="ph577585316285"></a><a name="ph577585316285"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p64820527"><a name="zh-cn_topic_0079614927_p64820527"></a><a name="zh-cn_topic_0079614927_p64820527"></a>ResourceVersion表示该资源对象内部版本，可以用来优化并发性能和监视资源变化，系统内部使用，只读项。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079614927_row46513836"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614927_p9524349"><a name="zh-cn_topic_0079614927_p9524349"></a><a name="zh-cn_topic_0079614927_p9524349"></a>generation</p>
@@ -191,7 +192,7 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614927_p35872461"><a name="zh-cn_topic_0079614927_p35872461"></a><a name="zh-cn_topic_0079614927_p35872461"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p19988199"><a name="zh-cn_topic_0079614927_p19988199"></a><a name="zh-cn_topic_0079614927_p19988199"></a><span id="ph1064849121113"><a name="ph1064849121113"></a><a name="ph1064849121113"></a>DeletionTimestamp</span><span id="ph1156113054514"><a name="ph1156113054514"></a><a name="ph1156113054514"></a>是该资源对象</span><span id="ph441961574518"><a name="ph441961574518"></a><a name="ph441961574518"></a>即将被删除的时间戳，使用</span><span id="ph13651119131115"><a name="ph13651119131115"></a><a name="ph13651119131115"></a>RFC3339</span><span id="ph2085814444615"><a name="ph2085814444615"></a><a name="ph2085814444615"></a>格式。</span><span id="ph186513918118"><a name="ph186513918118"></a><a name="ph186513918118"></a> </span><span id="ph2719147144717"><a name="ph2719147144717"></a><a name="ph2719147144717"></a>只有当客户端请求优雅删除资源对象的时候，该参数才会被系统赋值，客户端无法直接设置该参数，资源对象会在该时间之后被删除（list无法看到以及通过名字无法查询到），该参数值设置后无法修改，只读项。</span></p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p19988199"><a name="zh-cn_topic_0079614927_p19988199"></a><a name="zh-cn_topic_0079614927_p19988199"></a>DeletionTimestamp是该资源对象即将被删除的时间戳，使用RFC3339格式。 只有当客户端请求优雅删除资源对象的时候，该参数才会被系统赋值，客户端无法直接设置该参数，资源对象会在该时间之后被删除（list无法看到以及通过名字无法查询到），该参数值设置后无法修改，只读项。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079614927_row45676065"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614927_p8773789"><a name="zh-cn_topic_0079614927_p8773789"></a><a name="zh-cn_topic_0079614927_p8773789"></a>deletionGracePeriodSeconds</p>
@@ -215,7 +216,7 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614927_p44628110"><a name="zh-cn_topic_0079614927_p44628110"></a><a name="zh-cn_topic_0079614927_p44628110"></a>Map[string]string</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p58107175"><a name="zh-cn_topic_0079614927_p58107175"></a><a name="zh-cn_topic_0079614927_p58107175"></a><span id="ph1116519213128"><a name="ph1116519213128"></a><a name="ph1116519213128"></a>Annotations</span><span id="ph18651246698"><a name="ph18651246698"></a><a name="ph18651246698"></a>是非结构化的键值对，通常用来保存任意外部定义的元数据。</span></p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614927_p58107175"><a name="zh-cn_topic_0079614927_p58107175"></a><a name="zh-cn_topic_0079614927_p58107175"></a>Annotations是非结构化的键值对，通常用来保存任意外部定义的元数据。</p>
 </td>
 </tr>
 <tr id="r9f8905c2e7b441419117d2bc6f46baea"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="a8a1e39bea6d94f2692a45140018e13b9"><a name="a8a1e39bea6d94f2692a45140018e13b9"></a><a name="a8a1e39bea6d94f2692a45140018e13b9"></a>ownerReferences</p>
@@ -229,7 +230,7 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614927_p742001917169"><a name="zh-cn_topic_0079614927_p742001917169"></a><a name="zh-cn_topic_0079614927_p742001917169"></a>String array</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="a69e1b2402dce4f358aeab4184e6cf280"><a name="a69e1b2402dce4f358aeab4184e6cf280"></a><a name="a69e1b2402dce4f358aeab4184e6cf280"></a><span id="ph15149582618"><a name="ph15149582618"></a><a name="ph15149582618"></a>在从注册表中删除对象之前，该参数必须为空。</span></p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="a69e1b2402dce4f358aeab4184e6cf280"><a name="a69e1b2402dce4f358aeab4184e6cf280"></a><a name="a69e1b2402dce4f358aeab4184e6cf280"></a>在从注册表中删除对象之前，该参数必须为空。</p>
 </td>
 </tr>
 </tbody>
@@ -271,14 +272,14 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="26.507349265073493%" headers="mcps1.2.4.1.2 "><p id="af80ffaeca49c45c4bebe2232602f1839"><a name="af80ffaeca49c45c4bebe2232602f1839"></a><a name="af80ffaeca49c45c4bebe2232602f1839"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.3950604939506%" headers="mcps1.2.4.1.3 "><p id="adf363898799a47238dca0df0d77a34a9"><a name="adf363898799a47238dca0df0d77a34a9"></a><a name="adf363898799a47238dca0df0d77a34a9"></a><span id="ph1028315231513"><a name="ph1028315231513"></a><a name="ph1028315231513"></a>资源对象的ID</span><span id="ph1579745518816"><a name="ph1579745518816"></a><a name="ph1579745518816"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="49.3950604939506%" headers="mcps1.2.4.1.3 "><p id="adf363898799a47238dca0df0d77a34a9"><a name="adf363898799a47238dca0df0d77a34a9"></a><a name="adf363898799a47238dca0df0d77a34a9"></a>资源对象的ID。</p>
 </td>
 </tr>
 <tr id="r5214e1f4f2e94d978714c841785db021"><td class="cellrowborder" valign="top" width="24.0975902409759%" headers="mcps1.2.4.1.1 "><p id="a0fb4b24dfe864a43aa57576a47b62d6b"><a name="a0fb4b24dfe864a43aa57576a47b62d6b"></a><a name="a0fb4b24dfe864a43aa57576a47b62d6b"></a>controller</p>
 </td>
 <td class="cellrowborder" valign="top" width="26.507349265073493%" headers="mcps1.2.4.1.2 "><p id="a88772f0c557f4e3c9326a539c9aea94f"><a name="a88772f0c557f4e3c9326a539c9aea94f"></a><a name="a88772f0c557f4e3c9326a539c9aea94f"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.3950604939506%" headers="mcps1.2.4.1.3 "><p id="a7001fc303bc94b8fab380110d692be60"><a name="a7001fc303bc94b8fab380110d692be60"></a><a name="a7001fc303bc94b8fab380110d692be60"></a><span id="ph1818843935119"><a name="ph1818843935119"></a><a name="ph1818843935119"></a>如果是true，则表示该资源对象被controller管理</span><span id="ph8171179919"><a name="ph8171179919"></a><a name="ph8171179919"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="49.3950604939506%" headers="mcps1.2.4.1.3 "><p id="a7001fc303bc94b8fab380110d692be60"><a name="a7001fc303bc94b8fab380110d692be60"></a><a name="a7001fc303bc94b8fab380110d692be60"></a>如果是true，则表示该资源对象被controller管理。</p>
 </td>
 </tr>
 </tbody>

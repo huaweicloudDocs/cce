@@ -46,7 +46,7 @@ GET /api/v1/namespaces/\{namespace\}/secrets
 </td>
 <td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="aab3047b805ad4854aeefd8db47cf4d99"><a name="aab3047b805ad4854aeefd8db47cf4d99"></a><a name="aab3047b805ad4854aeefd8db47cf4d99"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="a163adfe9b2884ce09f91ddc74ec8c32a"><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a><span id="ph984104618246"><a name="ph984104618246"></a><a name="ph984104618246"></a>设置为true后，未初始化的资源也会包含在删除列表里。</span></p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="a163adfe9b2884ce09f91ddc74ec8c32a"><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a>设置为true后，未初始化的资源也会包含在删除列表里。</p>
 </td>
 </tr>
 <tr id="r3e03b3ed19724be4b39fe666ed7011f5"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="a43a73c63fa9546e080760e7e88d5ecf2"><a name="a43a73c63fa9546e080760e7e88d5ecf2"></a><a name="a43a73c63fa9546e080760e7e88d5ecf2"></a>labelSelector</p>
@@ -60,7 +60,7 @@ GET /api/v1/namespaces/\{namespace\}/secrets
 </td>
 <td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="a09235cc3ced749dcbb2940e0d05fb814"><a name="a09235cc3ced749dcbb2940e0d05fb814"></a><a name="a09235cc3ced749dcbb2940e0d05fb814"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="a5267faf2beb54f448afd8d0566d2e815"><a name="a5267faf2beb54f448afd8d0566d2e815"></a><a name="a5267faf2beb54f448afd8d0566d2e815"></a><span id="ph14746102416396"><a name="ph14746102416396"></a><a name="ph14746102416396"></a>ResourceVersion表示该资源对象内部版本。</span></p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="a5267faf2beb54f448afd8d0566d2e815"><a name="a5267faf2beb54f448afd8d0566d2e815"></a><a name="a5267faf2beb54f448afd8d0566d2e815"></a>ResourceVersion表示该资源对象内部版本。</p>
 </td>
 </tr>
 <tr id="r905443bc04e941289138dc2173e87bc7"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="acce97a3e928a45deb3f0d61bcd998746"><a name="acce97a3e928a45deb3f0d61bcd998746"></a><a name="acce97a3e928a45deb3f0d61bcd998746"></a>timeoutSeconds</p>
@@ -103,7 +103,7 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.320000000000004%" headers="mcps1.2.4.1.2 "><p id="a8602a93578634e13b9187d318ed342ff"><a name="a8602a93578634e13b9187d318ed342ff"></a><a name="a8602a93578634e13b9187d318ed342ff"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="aa56cd02ff7f54177b717d0f5bb3b3a15"><a name="aa56cd02ff7f54177b717d0f5bb3b3a15"></a><a name="aa56cd02ff7f54177b717d0f5bb3b3a15"></a><span id="ph717617234412"><a name="ph717617234412"></a><a name="ph717617234412"></a>表示API版本。</span></p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="aa56cd02ff7f54177b717d0f5bb3b3a15"><a name="aa56cd02ff7f54177b717d0f5bb3b3a15"></a><a name="aa56cd02ff7f54177b717d0f5bb3b3a15"></a>表示API版本。</p>
 </td>
 </tr>
 <tr id="rfa10b724cdbc4eef815c3d3d64260ede"><td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.4.1.1 "><p id="a7192cf844ba34d6b912e4aaf50781fd9"><a name="a7192cf844ba34d6b912e4aaf50781fd9"></a><a name="a7192cf844ba34d6b912e4aaf50781fd9"></a>kind</p>
@@ -117,14 +117,14 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.320000000000004%" headers="mcps1.2.4.1.2 "><p id="a7af91f6187e54c6ea63970053896337e"><a name="a7af91f6187e54c6ea63970053896337e"></a><a name="a7af91f6187e54c6ea63970053896337e"></a><a href="#tff9df0051888403eb0196353f3feb3b6">表3</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="ad95d3dbaaae4478a8cd5e6242f1a1331"><a name="ad95d3dbaaae4478a8cd5e6242f1a1331"></a><a name="ad95d3dbaaae4478a8cd5e6242f1a1331"></a><span id="ph1432974819413"><a name="ph1432974819413"></a><a name="ph1432974819413"></a>-</span></p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="ad95d3dbaaae4478a8cd5e6242f1a1331"><a name="ad95d3dbaaae4478a8cd5e6242f1a1331"></a><a name="ad95d3dbaaae4478a8cd5e6242f1a1331"></a>-</p>
 </td>
 </tr>
 <tr id="r341420eda4f94280a331ac7a3cfc6215"><td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.4.1.1 "><p id="a289ba9b3f09f4b6dbe5490422a339709"><a name="a289ba9b3f09f4b6dbe5490422a339709"></a><a name="a289ba9b3f09f4b6dbe5490422a339709"></a>items</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.320000000000004%" headers="mcps1.2.4.1.2 "><p id="abce9149f44ba43009cc66ac939990e96"><a name="abce9149f44ba43009cc66ac939990e96"></a><a name="abce9149f44ba43009cc66ac939990e96"></a><a href="创建Secret.md#zh-cn_topic_0079614900_ref458786458">表2</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="a87a75aac697743dfb099e359013633d9"><a name="a87a75aac697743dfb099e359013633d9"></a><a name="a87a75aac697743dfb099e359013633d9"></a><span id="ph13603175894114"><a name="ph13603175894114"></a><a name="ph13603175894114"></a>-</span></p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="a87a75aac697743dfb099e359013633d9"><a name="a87a75aac697743dfb099e359013633d9"></a><a name="a87a75aac697743dfb099e359013633d9"></a>-</p>
 </td>
 </tr>
 </tbody>
@@ -145,14 +145,14 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.509999999999998%" headers="mcps1.2.4.1.2 "><p id="a25845db8f0d44529ab7a01fc6d5403be"><a name="a25845db8f0d44529ab7a01fc6d5403be"></a><a name="a25845db8f0d44529ab7a01fc6d5403be"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="a308d721c66be49d380e37fb00f8ef4a4"><a name="a308d721c66be49d380e37fb00f8ef4a4"></a><a name="a308d721c66be49d380e37fb00f8ef4a4"></a><span id="ph516213221259"><a name="ph516213221259"></a><a name="ph516213221259"></a>ResourceVersion表示该资源对象内部版本</span><span id="ph188361713112614"><a name="ph188361713112614"></a><a name="ph188361713112614"></a>，可以用来优化并发性能和监视资源变化，</span><span id="ph173071947202820"><a name="ph173071947202820"></a><a name="ph173071947202820"></a>系统内部使用，只读项</span><span id="ph577585316285"><a name="ph577585316285"></a><a name="ph577585316285"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="a308d721c66be49d380e37fb00f8ef4a4"><a name="a308d721c66be49d380e37fb00f8ef4a4"></a><a name="a308d721c66be49d380e37fb00f8ef4a4"></a>ResourceVersion表示该资源对象内部版本，可以用来优化并发性能和监视资源变化，系统内部使用，只读项。</p>
 </td>
 </tr>
 <tr id="r7353b3d91e5b42338bc6ddbfa8d7f715"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="a0b0e25db45a44218be3e42b910afdd08"><a name="a0b0e25db45a44218be3e42b910afdd08"></a><a name="a0b0e25db45a44218be3e42b910afdd08"></a>selfLink</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.509999999999998%" headers="mcps1.2.4.1.2 "><p id="a4f1ceb0744f04795b0879ccc02fca6a9"><a name="a4f1ceb0744f04795b0879ccc02fca6a9"></a><a name="a4f1ceb0744f04795b0879ccc02fca6a9"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="a818ff19e70cd4d8c9d4a7acea7bc59fb"><a name="a818ff19e70cd4d8c9d4a7acea7bc59fb"></a><a name="a818ff19e70cd4d8c9d4a7acea7bc59fb"></a><span id="ph12354153614421"><a name="ph12354153614421"></a><a name="ph12354153614421"></a>SelfLink 是该资源对象的 URL。 系统内部使用，只读项。.</span></p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="a818ff19e70cd4d8c9d4a7acea7bc59fb"><a name="a818ff19e70cd4d8c9d4a7acea7bc59fb"></a><a name="a818ff19e70cd4d8c9d4a7acea7bc59fb"></a>SelfLink 是该资源对象的 URL。 系统内部使用，只读项。.</p>
 </td>
 </tr>
 </tbody>
@@ -239,7 +239,7 @@ N/A
 </thead>
 <tbody><tr id="r5ad486edb0db460294cdd49a495f30a6"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="a16bfcc1de96142f6a2f458546b8722ed"><a name="a16bfcc1de96142f6a2f458546b8722ed"></a><a name="a16bfcc1de96142f6a2f458546b8722ed"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614896_p815332217101"><a name="zh-cn_topic_0079614896_p815332217101"></a><a name="zh-cn_topic_0079614896_p815332217101"></a><span id="ph08511419154315"><a name="ph08511419154315"></a><a name="ph08511419154315"></a>操作成功，返回secret资源对象</span><span id="ph76249463430"><a name="ph76249463430"></a><a name="ph76249463430"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614896_p815332217101"><a name="zh-cn_topic_0079614896_p815332217101"></a><a name="zh-cn_topic_0079614896_p815332217101"></a>操作成功，返回secret资源对象。</p>
 </td>
 </tr>
 </tbody>

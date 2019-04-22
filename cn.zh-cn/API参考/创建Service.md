@@ -47,7 +47,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615000_p44315844"><a name="zh-cn_topic_0079615000_p44315844"></a><a name="zh-cn_topic_0079615000_p44315844"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615000_p32813593"><a name="zh-cn_topic_0079615000_p32813593"></a><a name="zh-cn_topic_0079615000_p32813593"></a><span id="ph17235553135916"><a name="ph17235553135916"></a><a name="ph17235553135916"></a>设置为true后，会打印漂亮的输出结果。</span></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615000_p32813593"><a name="zh-cn_topic_0079615000_p32813593"></a><a name="zh-cn_topic_0079615000_p32813593"></a>设置为true后，会打印漂亮的输出结果。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615000_row41865316"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615000_p35647420"><a name="zh-cn_topic_0079615000_p35647420"></a><a name="zh-cn_topic_0079615000_p35647420"></a>namespace</p>
@@ -86,7 +86,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p28555728"><a name="zh-cn_topic_0079615000_p28555728"></a><a name="zh-cn_topic_0079615000_p28555728"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p31312592"><a name="zh-cn_topic_0079615000_p31312592"></a><a name="zh-cn_topic_0079615000_p31312592"></a><span id="ph1174310195614"><a name="ph1174310195614"></a><a name="ph1174310195614"></a>API类型，固定值</span><span id="ph67530461539"><a name="ph67530461539"></a><a name="ph67530461539"></a>＂Service＂</span><span id="ph168222575562"><a name="ph168222575562"></a><a name="ph168222575562"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p31312592"><a name="zh-cn_topic_0079615000_p31312592"></a><a name="zh-cn_topic_0079615000_p31312592"></a>API类型，固定值＂Service＂。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615000_row9865923"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p60942285"><a name="zh-cn_topic_0079615000_p60942285"></a><a name="zh-cn_topic_0079615000_p60942285"></a>apiVersion</p>
@@ -166,7 +166,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.67%" headers="mcps1.2.5.1.3 "><p id="a50f457b14c8a4bcbb8c8d6560a2724ff"><a name="a50f457b14c8a4bcbb8c8d6560a2724ff"></a><a name="a50f457b14c8a4bcbb8c8d6560a2724ff"></a><a href="公共请求参数.md#t693768b66dfa47239c0f155ad4dd18e8">表13</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p161812183116"><a name="zh-cn_topic_0079615000_p161812183116"></a><a name="zh-cn_topic_0079615000_p161812183116"></a><span id="ph164173313143"><a name="ph164173313143"></a><a name="ph164173313143"></a>Initializers是一个准入控制器，可以用来方便地扩展准入控制</span><span id="ph8942182207"><a name="ph8942182207"></a><a name="ph8942182207"></a>。</span><span id="ph114009203203"><a name="ph114009203203"></a><a name="ph114009203203"></a>如果该参数为零或空，则表示该对象已完全初始化，</span><span id="ph8348121118213"><a name="ph8348121118213"></a><a name="ph8348121118213"></a>只有特权用户可以设置或修改此列表。一旦它被设置为空，则不能被任何用户进一步修改。</span></p>
+<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p161812183116"><a name="zh-cn_topic_0079615000_p161812183116"></a><a name="zh-cn_topic_0079615000_p161812183116"></a>Initializers是一个准入控制器，可以用来方便地扩展准入控制。如果该参数为零或空，则表示该对象已完全初始化，只有特权用户可以设置或修改此列表。一旦它被设置为空，则不能被任何用户进一步修改。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615000_row40758985"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p13143484"><a name="zh-cn_topic_0079615000_p13143484"></a><a name="zh-cn_topic_0079615000_p13143484"></a>generateName</p>
@@ -175,7 +175,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.67%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p66621056"><a name="zh-cn_topic_0079615000_p66621056"></a><a name="zh-cn_topic_0079615000_p66621056"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p52261031"><a name="zh-cn_topic_0079615000_p52261031"></a><a name="zh-cn_topic_0079615000_p52261031"></a><span id="ph106714519341"><a name="ph106714519341"></a><a name="ph106714519341"></a>GenerateName</span><span id="ph16754593420"><a name="ph16754593420"></a><a name="ph16754593420"></a> is an optional prefix</span><span id="ph4670458344"><a name="ph4670458344"></a><a name="ph4670458344"></a> 是一个可选项，表示名字的前缀，当Name字段为空时，会自动使用该前缀生成一个集群内唯一存在的Name。</span><span id="ph067134543416"><a name="ph067134543416"></a><a name="ph067134543416"></a>只有当Name字段为空时才需要配置generateName，generateName</span><span id="ph13671145143415"><a name="ph13671145143415"></a><a name="ph13671145143415"></a>可以包含小写字母、数字、连字符和点，开头和结尾必须是字母或数字，最长24个字符</span><span id="ph867104573413"><a name="ph867104573413"></a><a name="ph867104573413"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p52261031"><a name="zh-cn_topic_0079615000_p52261031"></a><a name="zh-cn_topic_0079615000_p52261031"></a>GenerateName is an optional prefix 是一个可选项，表示名字的前缀，当Name字段为空时，会自动使用该前缀生成一个集群内唯一存在的Name。只有当Name字段为空时才需要配置generateName，generateName可以包含小写字母、数字、连字符和点，开头和结尾必须是字母或数字，最长24个字符。</p>
 <a name="ul28516562248"></a><a name="ul28516562248"></a><ul id="ul28516562248"><li>字符串必须满足正则表达式： [a-z0-9]([-a-z0-9]*[a-z0-9])?</li></ul>
 </td>
 </tr>
@@ -185,7 +185,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.67%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p42842038"><a name="zh-cn_topic_0079615000_p42842038"></a><a name="zh-cn_topic_0079615000_p42842038"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p26224387"><a name="zh-cn_topic_0079615000_p26224387"></a><a name="zh-cn_topic_0079615000_p26224387"></a><span id="ph2076915358349"><a name="ph2076915358349"></a><a name="ph2076915358349"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。字符串必须满足正则表达式</span><span> [a-z0-9]([-a-z0-9]</span><span>*[a-z0-9])?</span><span id="ph8769173513340"><a name="ph8769173513340"></a><a name="ph8769173513340"></a>。可以任选其一使用：</span></p>
+<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p26224387"><a name="zh-cn_topic_0079615000_p26224387"></a><a name="zh-cn_topic_0079615000_p26224387"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。字符串必须满足正则表达式 [a-z0-9]([-a-z0-9]*[a-z0-9])?。可以任选其一使用：</p>
 <a name="ul2786250175914"></a><a name="ul2786250175914"></a><ul id="ul2786250175914"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a></li><li>系统自带的namespace：default或kube-system</li></ul>
 </td>
 </tr>
@@ -195,7 +195,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.67%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p62767729"><a name="zh-cn_topic_0079615000_p62767729"></a><a name="zh-cn_topic_0079615000_p62767729"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p51021271"><a name="zh-cn_topic_0079615000_p51021271"></a><a name="zh-cn_topic_0079615000_p51021271"></a><span id="ph1878720433220"><a name="ph1878720433220"></a><a name="ph1878720433220"></a>SelfLink </span><span id="ph2354174512018"><a name="ph2354174512018"></a><a name="ph2354174512018"></a>是该资源对象的</span><span id="ph10788124103213"><a name="ph10788124103213"></a><a name="ph10788124103213"></a>URL</span><span id="ph736813855616"><a name="ph736813855616"></a><a name="ph736813855616"></a>。</span><span id="ph51072115113"><a name="ph51072115113"></a><a name="ph51072115113"></a>系统内部使用，只读项</span><span id="ph3332102416321"><a name="ph3332102416321"></a><a name="ph3332102416321"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p51021271"><a name="zh-cn_topic_0079615000_p51021271"></a><a name="zh-cn_topic_0079615000_p51021271"></a>SelfLink 是该资源对象的URL。系统内部使用，只读项。</p>
 <div class="note" id="zh-cn_topic_0079615000_note56538263"><a name="zh-cn_topic_0079615000_note56538263"></a><a name="zh-cn_topic_0079615000_note56538263"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0079614900_p31368204"><a name="zh-cn_topic_0079614900_p31368204"></a><a name="zh-cn_topic_0079614900_p31368204"></a>该参数是系统自动生成的，不能手动配置，否则会导致接口调用失败。</p>
 </div></div>
 </td>
@@ -206,8 +206,8 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.67%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p13735244"><a name="zh-cn_topic_0079615000_p13735244"></a><a name="zh-cn_topic_0079615000_p13735244"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p38812946"><a name="zh-cn_topic_0079615000_p38812946"></a><a name="zh-cn_topic_0079615000_p38812946"></a><span id="ph99203463328"><a name="ph99203463328"></a><a name="ph99203463328"></a>UID</span><span id="ph1095010917420"><a name="ph1095010917420"></a><a name="ph1095010917420"></a>是赋值给该资源对象全局唯一的ID</span><span id="ph1749880154"><a name="ph1749880154"></a><a name="ph1749880154"></a>。系统自动生成以及提供系统内部使用，只读项。</span></p>
-<div class="note" id="zh-cn_topic_0079615000_note13772198"><a name="zh-cn_topic_0079615000_note13772198"></a><a name="zh-cn_topic_0079615000_note13772198"></a><span class="notetitle"> 说明： </span><div class="notebody"><p class="textintable" id="zh-cn_topic_0079615000_p56840921"><a name="zh-cn_topic_0079615000_p56840921"></a><a name="zh-cn_topic_0079615000_p56840921"></a><span id="ph329517182331"><a name="ph329517182331"></a><a name="ph329517182331"></a>该参数是系统自动生成的，不能手动配置，否则会导致接口调用失败。</span></p>
+<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p38812946"><a name="zh-cn_topic_0079615000_p38812946"></a><a name="zh-cn_topic_0079615000_p38812946"></a>UID是赋值给该资源对象全局唯一的ID。系统自动生成以及提供系统内部使用，只读项。</p>
+<div class="note" id="zh-cn_topic_0079615000_note13772198"><a name="zh-cn_topic_0079615000_note13772198"></a><a name="zh-cn_topic_0079615000_note13772198"></a><span class="notetitle"> 说明： </span><div class="notebody"><p class="textintable" id="zh-cn_topic_0079615000_p56840921"><a name="zh-cn_topic_0079615000_p56840921"></a><a name="zh-cn_topic_0079615000_p56840921"></a>该参数是系统自动生成的，不能手动配置，否则会导致接口调用失败。</p>
 </div></div>
 </td>
 </tr>
@@ -217,7 +217,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.67%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p22123082"><a name="zh-cn_topic_0079615000_p22123082"></a><a name="zh-cn_topic_0079615000_p22123082"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p47139178"><a name="zh-cn_topic_0079615000_p47139178"></a><a name="zh-cn_topic_0079615000_p47139178"></a><span id="ph516213221259"><a name="ph516213221259"></a><a name="ph516213221259"></a>ResourceVersion表示该资源对象内部版本</span><span id="ph188361713112614"><a name="ph188361713112614"></a><a name="ph188361713112614"></a>，可以用来优化并发性能和监视资源变化，</span><span id="ph173071947202820"><a name="ph173071947202820"></a><a name="ph173071947202820"></a>系统内部使用，只读项</span><span id="ph577585316285"><a name="ph577585316285"></a><a name="ph577585316285"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p47139178"><a name="zh-cn_topic_0079615000_p47139178"></a><a name="zh-cn_topic_0079615000_p47139178"></a>ResourceVersion表示该资源对象内部版本，可以用来优化并发性能和监视资源变化，系统内部使用，只读项。</p>
 <div class="note" id="zh-cn_topic_0079615000_note21599419"><a name="zh-cn_topic_0079615000_note21599419"></a><a name="zh-cn_topic_0079615000_note21599419"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p84114143351"><a name="p84114143351"></a><a name="p84114143351"></a>该参数是系统自动生成的，不能手动配置，否则会导致接口调用失败。</p>
 </div></div>
 </td>
@@ -237,7 +237,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.67%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p35748734"><a name="zh-cn_topic_0079615000_p35748734"></a><a name="zh-cn_topic_0079615000_p35748734"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p9966307"><a name="zh-cn_topic_0079615000_p9966307"></a><a name="zh-cn_topic_0079615000_p9966307"></a><span id="ph18301048361"><a name="ph18301048361"></a><a name="ph18301048361"></a>CreationTimestamp</span><span id="ph118191040123920"><a name="ph118191040123920"></a><a name="ph118191040123920"></a>是该资源对象创建的时间戳，UTC时间，使用RFC3339格式。</span></p>
+<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p9966307"><a name="zh-cn_topic_0079615000_p9966307"></a><a name="zh-cn_topic_0079615000_p9966307"></a>CreationTimestamp是该资源对象创建的时间戳，UTC时间，使用RFC3339格式。</p>
 <div class="note" id="zh-cn_topic_0079615000_note22587900"><a name="zh-cn_topic_0079615000_note22587900"></a><a name="zh-cn_topic_0079615000_note22587900"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0079614900_p37815307"><a name="zh-cn_topic_0079614900_p37815307"></a><a name="zh-cn_topic_0079614900_p37815307"></a>该参数是系统自动生成的，不能手动配置，否则会导致接口调用失败。</p>
 </div></div>
 </td>
@@ -278,7 +278,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.67%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p34260401"><a name="zh-cn_topic_0079615000_p34260401"></a><a name="zh-cn_topic_0079615000_p34260401"></a>Map[string]string</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p23629100"><a name="zh-cn_topic_0079615000_p23629100"></a><a name="zh-cn_topic_0079615000_p23629100"></a><span id="ph1116519213128"><a name="ph1116519213128"></a><a name="ph1116519213128"></a>Annotations</span><span id="ph18651246698"><a name="ph18651246698"></a><a name="ph18651246698"></a>是非结构化的键值对，通常用来保存任意外部定义的元数据。</span></p>
+<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p23629100"><a name="zh-cn_topic_0079615000_p23629100"></a><a name="zh-cn_topic_0079615000_p23629100"></a>Annotations是非结构化的键值对，通常用来保存任意外部定义的元数据。</p>
 </td>
 </tr>
 <tr id="r7a1239227d8c4999a488e54b7405613f"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="a4ac11975cfca47d4a172ea9b2c1bbd8c"><a name="a4ac11975cfca47d4a172ea9b2c1bbd8c"></a><a name="a4ac11975cfca47d4a172ea9b2c1bbd8c"></a>ownerReferences</p>
@@ -287,7 +287,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.67%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p439439618162"><a name="zh-cn_topic_0079615000_p439439618162"></a><a name="zh-cn_topic_0079615000_p439439618162"></a><a href="#tf1f749652c974a92b9e9cf83deb8d111">表6</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="a9587edde5d2447baad8fc20f25e98936"><a name="a9587edde5d2447baad8fc20f25e98936"></a><a name="a9587edde5d2447baad8fc20f25e98936"></a><span id="ph1694511301564"><a name="ph1694511301564"></a><a name="ph1694511301564"></a>OwnerReferences是所有依赖当前资源对象的其他资源对象列表，如果列表里资源都已经被删除，则当前资源会被垃圾回收。如果当前资源被controller管理，则列表中有一项指向该controller，该项中controller字段被设置为true，controller不会超过一个。</span></p>
+<td class="cellrowborder" valign="top" width="39.36%" headers="mcps1.2.5.1.4 "><p id="a9587edde5d2447baad8fc20f25e98936"><a name="a9587edde5d2447baad8fc20f25e98936"></a><a name="a9587edde5d2447baad8fc20f25e98936"></a>OwnerReferences是所有依赖当前资源对象的其他资源对象列表，如果列表里资源都已经被删除，则当前资源会被垃圾回收。如果当前资源被controller管理，则列表中有一项指向该controller，该项中controller字段被设置为true，controller不会超过一个。</p>
 </td>
 </tr>
 <tr id="r375d22b85d2e49f8a4c776f12c7be3c6"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="ad7058987bd734754a40cb402767e2b63"><a name="ad7058987bd734754a40cb402767e2b63"></a><a name="ad7058987bd734754a40cb402767e2b63"></a>finalizers</p>
@@ -321,7 +321,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p24964816"><a name="zh-cn_topic_0079615000_p24964816"></a><a name="zh-cn_topic_0079615000_p24964816"></a><a href="#zh-cn_topic_0079615000_table13394413">表7</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p12848880"><a name="zh-cn_topic_0079615000_p12848880"></a><a name="zh-cn_topic_0079615000_p12848880"></a><span id="ph1598712521573"><a name="ph1598712521573"></a><a name="ph1598712521573"></a>该服务暴露的端口号列表。</span></p>
+<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p12848880"><a name="zh-cn_topic_0079615000_p12848880"></a><a name="zh-cn_topic_0079615000_p12848880"></a>该服务暴露的端口号列表。</p>
 </td>
 </tr>
 <tr id="r84d3b4cd4c354a7b8d2c2d8e643f2eb2"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="a20c290dec91e461f9806ac7ddb64b32e"><a name="a20c290dec91e461f9806ac7ddb64b32e"></a><a name="a20c290dec91e461f9806ac7ddb64b32e"></a>selector</p>
@@ -330,7 +330,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a9fd3a2cf6b17488ebf787d90dcdd4806"><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a>object</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="aaca6cae38740430c8d9c48adc947545c"><a name="aaca6cae38740430c8d9c48adc947545c"></a><a name="aaca6cae38740430c8d9c48adc947545c"></a><span id="ph1150142819016"><a name="ph1150142819016"></a><a name="ph1150142819016"></a>该服务会将流量转发到匹配该selector的后端Pod。后端Pod</span><span id="ph1125913186216"><a name="ph1125913186216"></a><a name="ph1125913186216"></a>标签的Key和Value值都必须相匹配才能接受到转发的流量</span><span id="ph242718138316"><a name="ph242718138316"></a><a name="ph242718138316"></a>。如果该参数为空，则所有的Pod都会被选择到，必须手动配置endpoints。</span></p>
+<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="aaca6cae38740430c8d9c48adc947545c"><a name="aaca6cae38740430c8d9c48adc947545c"></a><a name="aaca6cae38740430c8d9c48adc947545c"></a>该服务会将流量转发到匹配该selector的后端Pod。后端Pod标签的Key和Value值都必须相匹配才能接受到转发的流量。如果该参数为空，则所有的Pod都会被选择到，必须手动配置endpoints。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615000_row48531064"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p38702074"><a name="zh-cn_topic_0079615000_p38702074"></a><a name="zh-cn_topic_0079615000_p38702074"></a>clusterIP</p>
@@ -339,9 +339,9 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p51479525"><a name="zh-cn_topic_0079615000_p51479525"></a><a name="zh-cn_topic_0079615000_p51479525"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p9091997"><a name="zh-cn_topic_0079615000_p9091997"></a><a name="zh-cn_topic_0079615000_p9091997"></a><span id="ph109864372817"><a name="ph109864372817"></a><a name="ph109864372817"></a>ClusterIP通常是由系统内部</span><span id="ph131342450915"><a name="ph131342450915"></a><a name="ph131342450915"></a>分配的，表示该服务的IP地址。可以把指定的IP分配给该服务，指定IP时必须保证该IP未被使用，否则会创建服务失败。该参数可以是：</span></p>
+<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p9091997"><a name="zh-cn_topic_0079615000_p9091997"></a><a name="zh-cn_topic_0079615000_p9091997"></a>ClusterIP通常是由系统内部分配的，表示该服务的IP地址。可以把指定的IP分配给该服务，指定IP时必须保证该IP未被使用，否则会创建服务失败。该参数可以是：</p>
 <a name="ul3900911171219"></a><a name="ul3900911171219"></a><ul id="ul3900911171219"><li>None</li><li>空字符串（""）</li><li>有效的IP地址</li></ul>
-<p id="zh-cn_topic_0079615000_p14719114"><a name="zh-cn_topic_0079615000_p14719114"></a><a name="zh-cn_topic_0079615000_p14719114"></a><span id="ph1157184971312"><a name="ph1157184971312"></a><a name="ph1157184971312"></a>当不需要代理时，可以配置该参数为None，此时会将该Service的域名直接解析为Pod</span><span id="ph176152014171515"><a name="ph176152014171515"></a><a name="ph176152014171515"></a>的IP地址</span><span id="ph196741226131518"><a name="ph196741226131518"></a><a name="ph196741226131518"></a>。</span></p>
+<p id="zh-cn_topic_0079615000_p14719114"><a name="zh-cn_topic_0079615000_p14719114"></a><a name="zh-cn_topic_0079615000_p14719114"></a>当不需要代理时，可以配置该参数为None，此时会将该Service的域名直接解析为Pod的IP地址。</p>
 <p id="p48521034131316"><a name="p48521034131316"></a><a name="p48521034131316"></a></p>
 </td>
 </tr>
@@ -351,9 +351,9 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p18968549"><a name="zh-cn_topic_0079615000_p18968549"></a><a name="zh-cn_topic_0079615000_p18968549"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p60057505"><a name="zh-cn_topic_0079615000_p60057505"></a><a name="zh-cn_topic_0079615000_p60057505"></a><span id="ph11959747111715"><a name="ph11959747111715"></a><a name="ph11959747111715"></a>服务的类型，</span><span id="ph1332110596177"><a name="ph1332110596177"></a><a name="ph1332110596177"></a>必须是：</span></p>
+<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p60057505"><a name="zh-cn_topic_0079615000_p60057505"></a><a name="zh-cn_topic_0079615000_p60057505"></a>服务的类型，必须是：</p>
 <a name="ul14623172361812"></a><a name="ul14623172361812"></a><ul id="ul14623172361812"><li>ClusterIP</li><li>NodePort</li><li>LoadBalancer</li></ul>
-<p id="p105861922191810"><a name="p105861922191810"></a><a name="p105861922191810"></a><span id="ph627113711814"><a name="ph627113711814"></a><a name="ph627113711814"></a>默认是ClusterIP。使用</span> <span class="parmname" id="p142747974e2045eea6c2862545e07ed2"><a name="p142747974e2045eea6c2862545e07ed2"></a><a name="p142747974e2045eea6c2862545e07ed2"></a>“LoadBalancer”</span><span id="ph246821515196"><a name="ph246821515196"></a><a name="ph246821515196"></a>时表示会使用弹性负载均衡器</span>(ELB) <span id="ph1311115719191"><a name="ph1311115719191"></a><a name="ph1311115719191"></a>。</span> <span id="ph181038136201"><a name="ph181038136201"></a><a name="ph181038136201"></a>详情见</span>&nbsp;<a href="集群中使用ELB的操作方法.md">集群中使用ELB的操作方法</a>。</p>
+<p id="p105861922191810"><a name="p105861922191810"></a><a name="p105861922191810"></a>默认是ClusterIP。使用 <span class="parmname" id="p142747974e2045eea6c2862545e07ed2"><a name="p142747974e2045eea6c2862545e07ed2"></a><a name="p142747974e2045eea6c2862545e07ed2"></a>“LoadBalancer”</span>时表示会使用弹性负载均衡器(ELB) 。 详情见&nbsp;<a href="集群中使用ELB的操作方法.md">集群中使用ELB的操作方法</a>。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615000_row45038152"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p24211670"><a name="zh-cn_topic_0079615000_p24211670"></a><a name="zh-cn_topic_0079615000_p24211670"></a>externalIPs</p>
@@ -362,7 +362,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p6086307"><a name="zh-cn_topic_0079615000_p6086307"></a><a name="zh-cn_topic_0079615000_p6086307"></a>Array[string]</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p23228850"><a name="zh-cn_topic_0079615000_p23228850"></a><a name="zh-cn_topic_0079615000_p23228850"></a><span id="ph18225151192412"><a name="ph18225151192412"></a><a name="ph18225151192412"></a>ExternalIPs是一个IP地址列表，表示集群中哪些node节点会接受到该服务的流量。这些IP地址不是由kubernetes来管理的，用户必须自己保证流量可以到达这些节点。常见的场景是使用外部负载均衡器，这些负载均衡器并不是kubernetes系统的一部分。该功能之前在deprecatedPublicIPs字段里配置，当使用externalIPs参数时，必须清空</span><span id="ph1145517571273"><a name="ph1145517571273"></a><a name="ph1145517571273"></a>deprecatedPublicIPs字段。</span></p>
+<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p23228850"><a name="zh-cn_topic_0079615000_p23228850"></a><a name="zh-cn_topic_0079615000_p23228850"></a>ExternalIPs是一个IP地址列表，表示集群中哪些node节点会接受到该服务的流量。这些IP地址不是由kubernetes来管理的，用户必须自己保证流量可以到达这些节点。常见的场景是使用外部负载均衡器，这些负载均衡器并不是kubernetes系统的一部分。该功能之前在deprecatedPublicIPs字段里配置，当使用externalIPs参数时，必须清空deprecatedPublicIPs字段。</p>
 </td>
 </tr>
 <tr id="r8c13c2686b9b4cd4b6524cd9424a33ea"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="aea7cc907862a434a926b2ae1ada48056"><a name="aea7cc907862a434a926b2ae1ada48056"></a><a name="aea7cc907862a434a926b2ae1ada48056"></a>externalTrafficPolicy</p>

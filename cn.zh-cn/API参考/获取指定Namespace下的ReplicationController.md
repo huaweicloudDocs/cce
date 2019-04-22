@@ -40,7 +40,8 @@ GET /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614960_p51624983"><a name="zh-cn_topic_0079614960_p51624983"></a><a name="zh-cn_topic_0079614960_p51624983"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p35684724"><a name="zh-cn_topic_0079615047_p35684724"></a><a name="zh-cn_topic_0079615047_p35684724"></a>指定ReplicationController的名称。</p>
+<td class="cellrowborder" valign="top" width="47.474747474747474%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614960_p20874133"><a name="zh-cn_topic_0079614960_p20874133"></a><a name="zh-cn_topic_0079614960_p20874133"></a></p>
+<p id="zh-cn_topic_0079615047_p35684724"><a name="zh-cn_topic_0079615047_p35684724"></a><a name="zh-cn_topic_0079615047_p35684724"></a>指定ReplicationController的名称。</p>
 </td>
 </tr>
 <tr id="reff3cd4d8cfc450b9b40f31a9d5e8279"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="a717ab34c546d40cba900500dba3da03d"><a name="a717ab34c546d40cba900500dba3da03d"></a><a name="a717ab34c546d40cba900500dba3da03d"></a>exact</p>
@@ -146,7 +147,7 @@ N/A
 </thead>
 <tbody><tr id="zh-cn_topic_0079614960_row17120881"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079614960_p44614122"><a name="zh-cn_topic_0079614960_p44614122"></a><a name="zh-cn_topic_0079614960_p44614122"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614960_p56974164"><a name="zh-cn_topic_0079614960_p56974164"></a><a name="zh-cn_topic_0079614960_p56974164"></a><span id="ph1258619294492"><a name="ph1258619294492"></a><a name="ph1258619294492"></a>操作成功，返回ReplicationController资源对象。</span></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614960_p56974164"><a name="zh-cn_topic_0079614960_p56974164"></a><a name="zh-cn_topic_0079614960_p56974164"></a>操作成功，返回ReplicationController资源对象。</p>
 </td>
 </tr>
 </tbody>

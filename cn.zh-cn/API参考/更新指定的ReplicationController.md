@@ -41,21 +41,21 @@ PATCH /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615044_p25327909"><a name="zh-cn_topic_0079615044_p25327909"></a><a name="zh-cn_topic_0079615044_p25327909"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615044_p38294768"><a name="zh-cn_topic_0079615044_p38294768"></a><a name="zh-cn_topic_0079615044_p38294768"></a><span id="ph15533204417588"><a name="ph15533204417588"></a><a name="ph15533204417588"></a>设置为true后，会打印漂亮的输出结果。</span></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615044_p38294768"><a name="zh-cn_topic_0079615044_p38294768"></a><a name="zh-cn_topic_0079615044_p38294768"></a>设置为true后，会打印漂亮的输出结果。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615044_row9108597"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615044_p66707780"><a name="zh-cn_topic_0079615044_p66707780"></a><a name="zh-cn_topic_0079615044_p66707780"></a>namespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615044_p34621095"><a name="zh-cn_topic_0079615044_p34621095"></a><a name="zh-cn_topic_0079615044_p34621095"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615044_p52845319"><a name="zh-cn_topic_0079615044_p52845319"></a><a name="zh-cn_topic_0079615044_p52845319"></a><span id="ph14771351145813"><a name="ph14771351145813"></a><a name="ph14771351145813"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。</span></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615044_p52845319"><a name="zh-cn_topic_0079615044_p52845319"></a><a name="zh-cn_topic_0079615044_p52845319"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615044_row5845825"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615044_p3749798"><a name="zh-cn_topic_0079615044_p3749798"></a><a name="zh-cn_topic_0079615044_p3749798"></a>name</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615044_p35298236"><a name="zh-cn_topic_0079615044_p35298236"></a><a name="zh-cn_topic_0079615044_p35298236"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615044_p40584874"><a name="zh-cn_topic_0079615044_p40584874"></a><a name="zh-cn_topic_0079615044_p40584874"></a>ReplicationController<span id="ph997418565588"><a name="ph997418565588"></a><a name="ph997418565588"></a>的名称</span></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615044_p40584874"><a name="zh-cn_topic_0079615044_p40584874"></a><a name="zh-cn_topic_0079615044_p40584874"></a>ReplicationController的名称</p>
 </td>
 </tr>
 </tbody>
@@ -179,7 +179,7 @@ Content-Type: application/strategic-merge-patch+json
 </thead>
 <tbody><tr id="zh-cn_topic_0079615044_row62212303"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615044_p6031802"><a name="zh-cn_topic_0079615044_p6031802"></a><a name="zh-cn_topic_0079615044_p6031802"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615044_p18813966"><a name="zh-cn_topic_0079615044_p18813966"></a><a name="zh-cn_topic_0079615044_p18813966"></a><span id="ph155604675919"><a name="ph155604675919"></a><a name="ph155604675919"></a>操作成功，返回ReplicationController资源对象。</span></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615044_p18813966"><a name="zh-cn_topic_0079615044_p18813966"></a><a name="zh-cn_topic_0079615044_p18813966"></a>操作成功，返回ReplicationController资源对象。</p>
 </td>
 </tr>
 </tbody>

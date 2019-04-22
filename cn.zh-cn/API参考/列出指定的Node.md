@@ -246,19 +246,19 @@ N/A
                     },
                     {
                         "names": [
-                            "100.125.5.235:20202/fwx342626/apache-php:latest"
+                            "10.125.5.235:20202/test/apache-php:latest"
                         ],
                         "sizeBytes": 244663227
                     },
                     {
                         "names": [
-                            "100.125.5.235:20202/fwx342626/redis:latest"
+                            "10.125.5.235:20202/test/redis:latest"
                         ],
                         "sizeBytes": 182837415
                     },
                     {
                         "names": [
-                            "100.125.5.235:20202/fwx342626/redis:v1"
+                            "10.125.5.235:20202/test/redis:v1"
                         ],
                         "sizeBytes": 109208225
                     },
