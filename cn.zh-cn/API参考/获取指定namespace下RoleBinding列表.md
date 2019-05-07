@@ -6,7 +6,7 @@ This API is used to list or watch objects of kind RoleBinding
 
 ## URL<a name="section132720155618"></a>
 
-GET /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/rolebindings
+GET /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/rolebindings
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -109,27 +109,27 @@ N/A
 ```
 {
     "kind" : "RoleBindingList",
-    "apiVersion" : "rbac.authorization.kubernetes.io/v1",
+    "apiVersion" : "rbac.authorization.k8s.io/v1",
     "metadata" : {
-        "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/namespaces/default/rolebindings",
+        "selfLink" : "/apis/rbac.authorization.k8s.io/v1/namespaces/default/rolebindings",
         "resourceVersion" : "16611"
     },
     "items" : [ {
         "metadata" : {
             "name" : "read-pods",
             "namespace" : "default",
-            "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/namespaces/default/rolebindings/secret-reader",
+            "selfLink" : "/apis/rbac.authorization.k8s.io/v1/namespaces/default/rolebindings/secret-reader",
             "uid" : "b3d1a49a-f1f4-11e8-b449-fa163ec24e06",
             "resourceVersion" : "16611",
             "creationTimestamp" : "2018-11-27T03:29:52Z"
         },
         "subjects" : [ {
             "kind" : "User",
-            "apiGroup" : "rbac.authorization.kubernetes.io",
+            "apiGroup" : "rbac.authorization.k8s.io",
             "name" : "jane"
         } ],
         "roleRef" : {
-            "apiGroup" : "rbac.authorization.kubernetes.io",
+            "apiGroup" : "rbac.authorization.k8s.io",
             "kind" : "Role",
             "name" : "pod-reader"
         }

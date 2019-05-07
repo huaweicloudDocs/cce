@@ -6,7 +6,7 @@ This API is used to partially update the specified Role
 
 ## URL<a name="section0723417178"></a>
 
-PATCH /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/roles/\{name\}
+PATCH /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/roles/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -67,7 +67,7 @@ PATCH /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/roles/\
 	"metadata": {
 		"name": "pod-reader",
 		"namespace": "default",
-		"selfLink": "/apis/rbac.authorization.kubernetes.io/v1/namespaces/default/roles/secret-reader",
+		"selfLink": "/apis/rbac.authorization.k8s.io/v1/namespaces/default/roles/secret-reader",
 		"uid": "6320bedb-f220-11e8-b449-fa163ec24e06",
 		"resourceVersion": "56532",
 		"creationTimestamp": "2018-11-27T08:42:35Z"
@@ -91,11 +91,11 @@ PATCH /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/roles/\
 ```
 {
 	"kind": "Role",
-	"apiVersion": "rbac.authorization.kubernetes.io/v1",
+	"apiVersion": "rbac.authorization.k8s.io/v1",
 	"metadata": {
 		"name": "pod-reader",
 		"namespace": "default",
-		"selfLink": "/apis/rbac.authorization.kubernetes.io/v1/namespaces/default/roles/secret-reader",
+		"selfLink": "/apis/rbac.authorization.k8s.io/v1/namespaces/default/roles/secret-reader",
 		"uid": "6320bedb-f220-11e8-b449-fa163ec24e06",
 		"resourceVersion": "56532",
 		"creationTimestamp": "2018-11-27T08:42:35Z"

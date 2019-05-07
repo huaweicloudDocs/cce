@@ -6,7 +6,7 @@ This API is used to partially update the specified RoleBinding
 
 ## URL<a name="section1528921725420"></a>
 
-PATCH /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/rolebindings/\{name\}
+PATCH /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/rolebindings/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -66,11 +66,11 @@ PATCH /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/rolebin
 {
 	"subjects": [{
 		"kind": "User",
-		"apiGroup": "rbac.authorization.kubernetes.io",
+		"apiGroup": "rbac.authorization.k8s.io",
 		"name": "hecapi"
 	}],
 	"roleRef": {
-		"apiGroup": "rbac.authorization.kubernetes.io",
+		"apiGroup": "rbac.authorization.k8s.io",
 		"kind": "Role",
 		"name": "pod-reader"
 	}
@@ -88,22 +88,22 @@ PATCH /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/rolebin
 ```
 {
 	"kind": "RoleBinding",
-	"apiVersion": "rbac.authorization.kubernetes.io/v1",
+	"apiVersion": "rbac.authorization.k8s.io/v1",
 	"metadata": {
 		"name": "read-pods",
 		"namespace": "default",
-		"selfLink": "/apis/rbac.authorization.kubernetes.io/v1/namespaces/default/rolebindings/read-pods",
+		"selfLink": "/apis/rbac.authorization.k8s.io/v1/namespaces/default/rolebindings/read-pods",
 		"uid": "06cc94b7-f2bb-11e8-b449-fa163ec24e06",
 		"resourceVersion": "200072",
 		"creationTimestamp": "2018-11-28T03:09:32Z"
 	},
 	"subjects": [{
 		"kind": "User",
-		"apiGroup": "rbac.authorization.kubernetes.io",
+		"apiGroup": "rbac.authorization.k8s.io",
 		"name": "hecapi"
 	}],
 	"roleRef": {
-		"apiGroup": "rbac.authorization.kubernetes.io",
+		"apiGroup": "rbac.authorization.k8s.io",
 		"kind": "Role",
 		"name": "pod-reader"
 	}

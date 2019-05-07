@@ -53,7 +53,7 @@ GET /api/v1/secrets
 </td>
 <td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="a87ef05ba3b5d4377916f8f72d96f5d57"><a name="a87ef05ba3b5d4377916f8f72d96f5d57"></a><a name="a87ef05ba3b5d4377916f8f72d96f5d57"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="aec20c0bba55141c0b8e5adba10582195"><a name="aec20c0bba55141c0b8e5adba10582195"></a><a name="aec20c0bba55141c0b8e5adba10582195"></a>ResourceVersion表示该资源对象内部版本。</p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="aec20c0bba55141c0b8e5adba10582195"><a name="aec20c0bba55141c0b8e5adba10582195"></a><a name="aec20c0bba55141c0b8e5adba10582195"></a><span id="ph14746102416396"><a name="ph14746102416396"></a><a name="ph14746102416396"></a>ResourceVersion表示该资源对象内部版本。</span></p>
 </td>
 </tr>
 <tr id="reddd9e93be244077809d70e6d8caaea0"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="ac6bb3e4dc0e547f3abc7c0442816766c"><a name="ac6bb3e4dc0e547f3abc7c0442816766c"></a><a name="ac6bb3e4dc0e547f3abc7c0442816766c"></a>timeoutSeconds</p>
@@ -67,7 +67,7 @@ GET /api/v1/secrets
 </td>
 <td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="a92aa84d4b2234088824460bc295a3247"><a name="a92aa84d4b2234088824460bc295a3247"></a><a name="a92aa84d4b2234088824460bc295a3247"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="a6784a1d0def944f0b380938fa95362d9"><a name="a6784a1d0def944f0b380938fa95362d9"></a><a name="a6784a1d0def944f0b380938fa95362d9"></a>监视指定资源的更改，并将添加、更新和删除通知的流返回。</p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="a6784a1d0def944f0b380938fa95362d9"><a name="a6784a1d0def944f0b380938fa95362d9"></a><a name="a6784a1d0def944f0b380938fa95362d9"></a><span id="ph10314174718456"><a name="ph10314174718456"></a><a name="ph10314174718456"></a>监视指定资源的更改，并将添加、更新和删除通知的流返回。</span></p>
 </td>
 </tr>
 </tbody>
@@ -110,14 +110,14 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="a57d16aa7ed944bc58d7b1d5ae2148b46"><a name="a57d16aa7ed944bc58d7b1d5ae2148b46"></a><a name="a57d16aa7ed944bc58d7b1d5ae2148b46"></a><a href="#t6ff895f91da8440685e472dac63f0547">表3</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="addcedf6afc794771a6b4f775844b2b27"><a name="addcedf6afc794771a6b4f775844b2b27"></a><a name="addcedf6afc794771a6b4f775844b2b27"></a>-</p>
+<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="addcedf6afc794771a6b4f775844b2b27"><a name="addcedf6afc794771a6b4f775844b2b27"></a><a name="addcedf6afc794771a6b4f775844b2b27"></a><span id="ph128511352184714"><a name="ph128511352184714"></a><a name="ph128511352184714"></a>-</span></p>
 </td>
 </tr>
 <tr id="r25f369b6a3f347c3b3a65563cdd6bb07"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="a07efeb8bbbe24f03b6d9f8bac65dab91"><a name="a07efeb8bbbe24f03b6d9f8bac65dab91"></a><a name="a07efeb8bbbe24f03b6d9f8bac65dab91"></a>items</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="ada6c495fd25b43428dcb7540584913fa"><a name="ada6c495fd25b43428dcb7540584913fa"></a><a name="ada6c495fd25b43428dcb7540584913fa"></a><a href="创建Secret.md#s08d56e5f4e57452da0a49400212440a4">响应消息</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="ad7d02c90609f4eb0ab27908e5cb543cf"><a name="ad7d02c90609f4eb0ab27908e5cb543cf"></a><a name="ad7d02c90609f4eb0ab27908e5cb543cf"></a>-</p>
+<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="ad7d02c90609f4eb0ab27908e5cb543cf"><a name="ad7d02c90609f4eb0ab27908e5cb543cf"></a><a name="ad7d02c90609f4eb0ab27908e5cb543cf"></a><span id="ph17951125418478"><a name="ph17951125418478"></a><a name="ph17951125418478"></a>-</span></p>
 </td>
 </tr>
 </tbody>

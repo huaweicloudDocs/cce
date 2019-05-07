@@ -6,7 +6,7 @@ This API is used to replace the specified ClusterRole
 
 ## URL<a name="section10610229154116"></a>
 
-PUT /apis/rbac.authorization.kubernetes.io/v1/clusterroles/\{name\}
+PUT /apis/rbac.authorization.k8s.io/v1/clusterroles/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -58,10 +58,10 @@ PUT /apis/rbac.authorization.kubernetes.io/v1/clusterroles/\{name\}
 ```
 {
 	"kind": "ClusterRole",
-	"apiVersion": "rbac.authorization.kubernetes.io/v1",
+	"apiVersion": "rbac.authorization.k8s.io/v1",
 	"metadata": {
 		"name": "secret-reader",
-		"selfLink": "/apis/rbac.authorization.kubernetes.io/v1/clusterroles/secret-reader",
+		"selfLink": "/apis/rbac.authorization.k8s.io/v1/clusterroles/secret-reader",
 		"uid": "6a044ac2-f213-11e8-b449-fa163ec24e06",
 		"resourceVersion": "44658",
 		"creationTimestamp": "2018-11-27T07:09:43Z"
@@ -85,10 +85,10 @@ PUT /apis/rbac.authorization.kubernetes.io/v1/clusterroles/\{name\}
 ```
 {
 	"kind": "ClusterRole",
-	"apiVersion": "rbac.authorization.kubernetes.io/v1",
+	"apiVersion": "rbac.authorization.k8s.io/v1",
 	"metadata": {
 		"name": "secret-reader",
-		"selfLink": "/apis/rbac.authorization.kubernetes.io/v1/clusterroles/secret-reader",
+		"selfLink": "/apis/rbac.authorization.k8s.io/v1/clusterroles/secret-reader",
 		"uid": "c5986470-f2d5-11e8-b449-fa163ec24e06",
 		"resourceVersion": "225013",
 		"creationTimestamp": "2018-11-28T06:20:59Z"

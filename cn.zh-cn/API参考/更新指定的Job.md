@@ -125,7 +125,7 @@ Content-Type: application/merge-patch+json
                 "containers": [
                     {
                         "name": "jobs-12130306",
-                        "image": "10.125.5.235:20202/test/redis:latest",
+                        "image": "100.125.5.235:20202/test/redis:latest",
                         "resources": {},
                         "terminationMessagePath": "/dev/termination-log",
                         "terminationMessagePolicy": "File",

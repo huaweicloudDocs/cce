@@ -17,27 +17,27 @@ POST /api/v1/cloudpersistentvolumes
 **表 1**  请求Header参数说明
 
 <a name="table31885335210"></a>
-<table><thead align="left"><tr id="cce_02_0252_row55001954122614"><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p id="cce_02_0252_p115009545264"><a name="cce_02_0252_p115009545264"></a><a name="cce_02_0252_p115009545264"></a>参数</p>
+<table><thead align="left"><tr id="r212c0ed067fb42488355ebb2220fad77"><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0118834958_p115009545264"><a name="zh-cn_topic_0118834958_p115009545264"></a><a name="zh-cn_topic_0118834958_p115009545264"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.4.1.2"><p id="cce_02_0252_p175001547265"><a name="cce_02_0252_p175001547265"></a><a name="cce_02_0252_p175001547265"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0118834958_p175001547265"><a name="zh-cn_topic_0118834958_p175001547265"></a><a name="zh-cn_topic_0118834958_p175001547265"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="61%" id="mcps1.2.4.1.3"><p id="cce_02_0252_p16500154162611"><a name="cce_02_0252_p16500154162611"></a><a name="cce_02_0252_p16500154162611"></a>描述</p>
+<th class="cellrowborder" valign="top" width="61%" id="mcps1.2.4.1.3"><p id="a0a040ea5a2214bf7bff04967b354b7d1"><a name="a0a040ea5a2214bf7bff04967b354b7d1"></a><a name="a0a040ea5a2214bf7bff04967b354b7d1"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="cce_02_0252_row199801811203412"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="cce_02_0252_p69808112344"><a name="cce_02_0252_p69808112344"></a><a name="cce_02_0252_p69808112344"></a>Content-Type</p>
+<tbody><tr id="r1cb8787375bb405489b590448d4e4366"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0118834958_p69808112344"><a name="zh-cn_topic_0118834958_p69808112344"></a><a name="zh-cn_topic_0118834958_p69808112344"></a>Content-Type</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="cce_02_0252_p3980111103414"><a name="cce_02_0252_p3980111103414"></a><a name="cce_02_0252_p3980111103414"></a>是</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="a5cef2e1ff31f45a89396106b5ef09c06"><a name="a5cef2e1ff31f45a89396106b5ef09c06"></a><a name="a5cef2e1ff31f45a89396106b5ef09c06"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0252_p2032514065313"><a name="cce_02_0252_p2032514065313"></a><a name="cce_02_0252_p2032514065313"></a>消息体的类型（格式），可任选其一使用。</p>
-<a name="cce_02_0252_ul7385444163617"></a><a name="cce_02_0252_ul7385444163617"></a><ul id="cce_02_0252_ul7385444163617"><li>application/json;charset=utf-8</li><li>application/json</li></ul>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="adce672fb931743049b0370c9985bc8d2"><a name="adce672fb931743049b0370c9985bc8d2"></a><a name="adce672fb931743049b0370c9985bc8d2"></a>消息体的类型（格式），可任选其一使用。</p>
+<a name="ub084ecc808b443679d0dcf3df1171081"></a><a name="ub084ecc808b443679d0dcf3df1171081"></a><ul id="ub084ecc808b443679d0dcf3df1171081"><li>application/json;charset=utf-8</li><li>application/json</li></ul>
 </td>
 </tr>
-<tr id="cce_02_0252_row3500125412260"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="cce_02_0252_p105001654202618"><a name="cce_02_0252_p105001654202618"></a><a name="cce_02_0252_p105001654202618"></a>X-Auth-Token</p>
+<tr id="r83a01b8ed5514177a2ce1347ee97bee4"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="adf676b97943f4ff4b146bfa5463d4441"><a name="adf676b97943f4ff4b146bfa5463d4441"></a><a name="adf676b97943f4ff4b146bfa5463d4441"></a>X-Auth-Token</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="cce_02_0252_p20500954182618"><a name="cce_02_0252_p20500954182618"></a><a name="cce_02_0252_p20500954182618"></a>使用token认证时必选</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="a5256266c89fb482881a0971bf4ef63d3"><a name="a5256266c89fb482881a0971bf4ef63d3"></a><a name="a5256266c89fb482881a0971bf4ef63d3"></a>使用token认证时必选</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0252_p1148116013545"><a name="cce_02_0252_p1148116013545"></a><a name="cce_02_0252_p1148116013545"></a>调用接口的一种认证方式，使用时需要<a href="获取请求认证.md#section2417768214391">获取token</a>。</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="ad930d1a3fa9c46fd99860a370cb7a1b6"><a name="ad930d1a3fa9c46fd99860a370cb7a1b6"></a><a name="ad930d1a3fa9c46fd99860a370cb7a1b6"></a>调用接口的一种认证方式，使用时需要<a href="获取请求认证.md#section2417768214391">获取token</a>。</p>
 </td>
 </tr>
 </tbody>

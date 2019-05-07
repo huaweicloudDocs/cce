@@ -77,13 +77,13 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 **表 2**  请求参数
 
 <a name="table191461259175715"></a>
-<table><thead align="left"><tr id="row55138935"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"><a name="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"></a><a name="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"></a>参数</p>
+<table><thead align="left"><tr id="row55138935"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.2.5.1.1"><p id="ae00f0941f2f84334b89540a79f202f53"><a name="ae00f0941f2f84334b89540a79f202f53"></a><a name="ae00f0941f2f84334b89540a79f202f53"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0083857388_p62904453205444"><a name="zh-cn_topic_0083857388_p62904453205444"></a><a name="zh-cn_topic_0083857388_p62904453205444"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.2.5.1.2"><p id="a109544678a6d496c8ab0ba9dc8865df8"><a name="a109544678a6d496c8ab0ba9dc8865df8"></a><a name="a109544678a6d496c8ab0ba9dc8865df8"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.202020202020204%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0083857388_p62095922205444"><a name="zh-cn_topic_0083857388_p62095922205444"></a><a name="zh-cn_topic_0083857388_p62095922205444"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.202020202020204%" id="mcps1.2.5.1.3"><p id="a13d54bf6b2e94a4baa09115f8f42914b"><a name="a13d54bf6b2e94a4baa09115f8f42914b"></a><a name="a13d54bf6b2e94a4baa09115f8f42914b"></a>类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="46.464646464646464%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0083857388_p63713767205444"><a name="zh-cn_topic_0083857388_p63713767205444"></a><a name="zh-cn_topic_0083857388_p63713767205444"></a>描述</p>
+<th class="cellrowborder" valign="top" width="46.464646464646464%" id="mcps1.2.5.1.4"><p id="a4492d78a4c58432cb14ce4c639d6df62"><a name="a4492d78a4c58432cb14ce4c639d6df62"></a><a name="a4492d78a4c58432cb14ce4c639d6df62"></a>描述</p>
 </th>
 </tr>
 </thead>
@@ -107,7 +107,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 </tr>
 <tr id="row18211246"><td class="cellrowborder" valign="top" width="18.18181818181818%" headers="mcps1.2.5.1.1 "><p id="p65824820"><a name="p65824820"></a><a name="p65824820"></a>kind</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p30210174"><a name="p30210174"></a><a name="p30210174"></a>Ye</p>
+<td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p30210174"><a name="p30210174"></a><a name="p30210174"></a>Yes</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p31105012"><a name="p31105012"></a><a name="p31105012"></a>string</p>
 </td>

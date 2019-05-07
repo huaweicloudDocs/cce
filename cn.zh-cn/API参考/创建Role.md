@@ -6,7 +6,7 @@ This API is used to create a Role.
 
 ## URL<a name="section21311131711"></a>
 
-POST /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/roles
+POST /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/roles
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -336,7 +336,7 @@ POST /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/roles
 ```
 {
    "kind": "Role",
-   "apiVersion": "rbac.authorization.kubernetes.io/v1beta1",
+   "apiVersion": "rbac.authorization.k8s.io/v1beta1",
    "metadata": {
        "name": "pod-reader",
 	   "namespace": "default"
@@ -360,11 +360,11 @@ POST /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/roles
 ```
 {
     "kind" : "Role",
-    "apiVersion" : "rbac.authorization.kubernetes.io/v1",
+    "apiVersion" : "rbac.authorization.k8s.io/v1",
     "metadata" : {
         "name" : "pod-reader",
         "namespace" : "default",
-        "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/namespaces/default/roles/secret-reader",
+        "selfLink" : "/apis/rbac.authorization.k8s.io/v1/namespaces/default/roles/secret-reader",
         "uid" : "8e7afa24-f1e7-11e8-b449-fa163ec24e06",
         "resourceVersion" : "4627",
         "creationTimestamp" : "2018-11-27T01:55:46Z"

@@ -6,7 +6,7 @@ This API is used to delete a RoleBinding
 
 ## URL<a name="section13120315512"></a>
 
-DELETE /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/rolebindings/\{name\}
+DELETE /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/rolebindings/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -95,7 +95,7 @@ N/A
 	"status": "Success",
 	"details": {
 		"name": "read-pods",
-		"group": "rbac.authorization.kubernetes.io",
+		"group": "rbac.authorization.k8s.io",
 		"kind": "rolebindings",
 		"uid": "b3d1a49a-f1f4-11e8-b449-fa163ec24e06"
 	}

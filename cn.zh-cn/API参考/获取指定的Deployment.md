@@ -147,20 +147,20 @@ N/A
 
 ## 状态码<a name="section164701657181718"></a>
 
-[表2](#zh-cn_topic_0079616894_zh-cn_topic_0079614986_table13421100171015)描述API的状态码。
+[表2](#t1c0ba28484254631aab4de9185dc9d85)描述API的状态码。
 
 **表 2**  状态码
 
-<a name="zh-cn_topic_0079616894_zh-cn_topic_0079614986_table13421100171015"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0079616894_zh-cn_topic_0079614986_row58580616171015"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p3324338133814"><a name="p3324338133814"></a><a name="p3324338133814"></a>状态码</p>
+<a name="t1c0ba28484254631aab4de9185dc9d85"></a>
+<table><thead align="left"><tr id="r41c7d8f4b833442d88b16ac319921b47"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p3324338133814"><a name="p3324338133814"></a><a name="p3324338133814"></a>状态码</p>
 </th>
 <th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p17324938123815"><a name="p17324938123815"></a><a name="p17324938123815"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0079616894_zh-cn_topic_0079614986_row3769153171015"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p34614774161656"><a name="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p34614774161656"></a><a name="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p34614774161656"></a>200</p>
+<tbody><tr id="rba1574bbdc8a4cc5b3d741c56781a389"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="a88cd3d3e21c542de8d4dc5c5318ecf2f"><a name="a88cd3d3e21c542de8d4dc5c5318ecf2f"></a><a name="a88cd3d3e21c542de8d4dc5c5318ecf2f"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"><a name="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"></a><a name="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"></a>This operation succeeds, and a deployment resource object is returned.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="a33a7137eb9484957bc44bc63637e52b9"><a name="a33a7137eb9484957bc44bc63637e52b9"></a><a name="a33a7137eb9484957bc44bc63637e52b9"></a>This operation succeeds, and a deployment resource object is returned.</p>
 </td>
 </tr>
 </tbody>

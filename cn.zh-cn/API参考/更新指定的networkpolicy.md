@@ -20,7 +20,7 @@ This API is used to partially update the specified NetworkPolicy
 
 ## URL<a name="section5845143395718"></a>
 
-PATCH /apis/networking.kubernetes.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
+PATCH /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -104,11 +104,11 @@ Content-Type: application/merge-patch+json
 ```
 {
     "kind": "NetworkPolicy",
-    "apiVersion": "networking.kubernetes.io/v1",
+    "apiVersion": "networking.k8s.io/v1",
     "metadata": {
 	    "name": "test-network-policy",
 		"namespace": "default",
-		"selfLink": "/apis/networking.kubernetes.io/v1/namespaces/default/networkpolicies/test-network-policy",
+		"selfLink": "/apis/networking.k8s.io/v1/namespaces/default/networkpolicies/test-network-policy",
 		"uid": "be347ddd-e8af-11e8-b187-fa163e3cca63",
 		"resourceVersion": "213982",
 		"generation": 1,

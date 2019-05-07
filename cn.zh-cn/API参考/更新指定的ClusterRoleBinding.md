@@ -6,7 +6,7 @@ This API is used to partially update the specified ClusterRoleBinding
 
 ## URL<a name="section16712174415911"></a>
 
-PATCH /apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings/\{name\}
+PATCH /apis/rbac.authorization.k8s.io/v1/clusterrolebindings/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -59,11 +59,11 @@ PATCH /apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings/\{name\}
 {
 	"subjects": [{
 		"kind": "Group",
-		"apiGroup": "rbac.authorization.kubernetes.io",
+		"apiGroup": "rbac.authorization.k8s.io",
 		"name": "pro-manager"
 	}],
 	"roleRef": {
-		"apiGroup": "rbac.authorization.kubernetes.io",
+		"apiGroup": "rbac.authorization.k8s.io",
 		"kind": "ClusterRole",
 		"name": "secret-reader"
 	}
@@ -81,21 +81,21 @@ PATCH /apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings/\{name\}
 ```
 {
 	"kind": "ClusterRoleBinding",
-	"apiVersion": "rbac.authorization.kubernetes.io/v1",
+	"apiVersion": "rbac.authorization.k8s.io/v1",
 	"metadata": {
 		"name": "read-secrets-global",
-		"selfLink": "/apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings/read-secrets-global",
+		"selfLink": "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/read-secrets-global",
 		"uid": "c384b02f-f2d7-11e8-b449-fa163ec24e06",
 		"resourceVersion": "226911",
 		"creationTimestamp": "2018-11-28T06:35:14Z"
 	},
 	"subjects": [{
 		"kind": "Group",
-		"apiGroup": "rbac.authorization.kubernetes.io",
+		"apiGroup": "rbac.authorization.k8s.io",
 		"name": "pro-manager"
 	}],
 	"roleRef": {
-		"apiGroup": "rbac.authorization.kubernetes.io",
+		"apiGroup": "rbac.authorization.k8s.io",
 		"kind": "ClusterRole",
 		"name": "secret-reader"
 	}

@@ -191,7 +191,7 @@ N/A
                             "app": "icagent"
                         },
                         "annotations": {
-                            "scheduler.alpha.kubernetes.io/tolerations": "[{\"key\":\"beta.kubernetes.io/accepted-app\",\"operator\":\"Exists\", \"effect\":\"NoSchedule\"}]"
+                            "scheduler.alpha.kubernetes.io/tolerations": "[{\"key\":\"beta.k8s.io/accepted-app\",\"operator\":\"Exists\", \"effect\":\"NoSchedule\"}]"
                         },
                         "enable": true
                     },

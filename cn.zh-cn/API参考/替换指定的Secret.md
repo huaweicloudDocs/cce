@@ -144,7 +144,7 @@ PUT /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </thead>
 <tbody><tr id="zh-cn_topic_0079615031_row10603493"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615031_p53576637"><a name="zh-cn_topic_0079615031_p53576637"></a><a name="zh-cn_topic_0079615031_p53576637"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615031_p44740325"><a name="zh-cn_topic_0079615031_p44740325"></a><a name="zh-cn_topic_0079615031_p44740325"></a>操作成功，返回更新后的secret资源对象</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615031_p44740325"><a name="zh-cn_topic_0079615031_p44740325"></a><a name="zh-cn_topic_0079615031_p44740325"></a><span id="ph93661510113714"><a name="ph93661510113714"></a><a name="ph93661510113714"></a>操作成功，返回更新后的secret资源对象</span></p>
 </td>
 </tr>
 </tbody>

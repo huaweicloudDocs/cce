@@ -6,7 +6,7 @@ This API is used to list or watch objects of kind NetworkPolicy
 
 ## URL<a name="section886311271361"></a>
 
-GET /apis/networking.kubernetes.io/v1/namespaces/\{namespace\}/networkpolicies
+GET /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -109,16 +109,16 @@ N/A
 ```
 {
 	"kind": "NetworkPolicyList",
-	"apiVersion": "networking.kubernetes.io/v1",
+	"apiVersion": "networking.k8s.io/v1",
 	"metadata": {
-	"selfLink": "/apis/networking.kubernetes.io/v1/namespaces/default/networkpolicies",
+	"selfLink": "/apis/networking.k8s.io/v1/namespaces/default/networkpolicies",
 	"resourceVersion": "231375"
 	},
 	"items": [{
 		"metadata": {
 			"name": "network-test",
 			"namespace": "default",
-			"selfLink": "/apis/networking.kubernetes.io/v1/namespaces/default/networkpolicies/network-test",
+			"selfLink": "/apis/networking.k8s.io/v1/namespaces/default/networkpolicies/network-test",
 			"uid": "be347ddd-e8af-11e8-b187-fa163e3cca63",
 			"resourceVersion": "213982",
 			"generation": 1,

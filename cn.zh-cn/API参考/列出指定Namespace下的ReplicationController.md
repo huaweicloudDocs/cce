@@ -46,29 +46,28 @@ GET /api/v1/namespaces/\{namespace\}/replicationcontrollers
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="ade2c3b7bd21e47bfaaec460717e532a1"><a name="ade2c3b7bd21e47bfaaec460717e532a1"></a><a name="ade2c3b7bd21e47bfaaec460717e532a1"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="aba3f1dcb1fc04d0b9d8bc6428342c5d1"><a name="aba3f1dcb1fc04d0b9d8bc6428342c5d1"></a><a name="aba3f1dcb1fc04d0b9d8bc6428342c5d1"></a></p>
-<p id="a163adfe9b2884ce09f91ddc74ec8c32a"><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a>设置为true后，未初始化完成的资源也会包含在删除列表里。</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="a163adfe9b2884ce09f91ddc74ec8c32a"><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a>设置为true后，未初始化完成的资源也会包含在删除列表里。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615054_row38433837"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615054_p26133094"><a name="zh-cn_topic_0079615054_p26133094"></a><a name="zh-cn_topic_0079615054_p26133094"></a>watch</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615054_p36405904"><a name="zh-cn_topic_0079615054_p36405904"></a><a name="zh-cn_topic_0079615054_p36405904"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p63197139"><a name="zh-cn_topic_0079615054_p63197139"></a><a name="zh-cn_topic_0079615054_p63197139"></a>监视指定资源的更改，并将添加、更新和删除通知的流返回。需要指定resourceVersion。</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p63197139"><a name="zh-cn_topic_0079615054_p63197139"></a><a name="zh-cn_topic_0079615054_p63197139"></a><span id="ph0343145716531"><a name="ph0343145716531"></a><a name="ph0343145716531"></a>监视指定资源的更改，并将添加、更新和删除通知的流返回。</span><span id="ph1700345414"><a name="ph1700345414"></a><a name="ph1700345414"></a>需要指定resourceVersion。</span></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615054_row31903341"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615054_p34033799"><a name="zh-cn_topic_0079615054_p34033799"></a><a name="zh-cn_topic_0079615054_p34033799"></a>resourceVersion</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615054_p5274317"><a name="zh-cn_topic_0079615054_p5274317"></a><a name="zh-cn_topic_0079615054_p5274317"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p24566569"><a name="zh-cn_topic_0079615054_p24566569"></a><a name="zh-cn_topic_0079615054_p24566569"></a>ResourceVersion表示该资源对象内部版本。</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p24566569"><a name="zh-cn_topic_0079615054_p24566569"></a><a name="zh-cn_topic_0079615054_p24566569"></a><span id="ph14746102416396"><a name="ph14746102416396"></a><a name="ph14746102416396"></a>ResourceVersion表示该资源对象内部版本。</span></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615054_row19772529"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615054_p58071046"><a name="zh-cn_topic_0079615054_p58071046"></a><a name="zh-cn_topic_0079615054_p58071046"></a>timeoutSeconds</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615054_p6134308"><a name="zh-cn_topic_0079615054_p6134308"></a><a name="zh-cn_topic_0079615054_p6134308"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p27116914"><a name="zh-cn_topic_0079615054_p27116914"></a><a name="zh-cn_topic_0079615054_p27116914"></a>表示调用list/watch的超时时间。</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615054_p27116914"><a name="zh-cn_topic_0079615054_p27116914"></a><a name="zh-cn_topic_0079615054_p27116914"></a><span id="ph527992517557"><a name="ph527992517557"></a><a name="ph527992517557"></a>表示调用list/watch的超时时间。</span></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615054_row42725634"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615054_p38224348"><a name="zh-cn_topic_0079615054_p38224348"></a><a name="zh-cn_topic_0079615054_p38224348"></a>namespace</p>
@@ -180,7 +179,7 @@ N/A
 </thead>
 <tbody><tr id="zh-cn_topic_0079615054_row6247673"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615054_p36299500"><a name="zh-cn_topic_0079615054_p36299500"></a><a name="zh-cn_topic_0079615054_p36299500"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615054_p54578396"><a name="zh-cn_topic_0079615054_p54578396"></a><a name="zh-cn_topic_0079615054_p54578396"></a>操作成功，返回一组ReplicationController的资源对象。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615054_p54578396"><a name="zh-cn_topic_0079615054_p54578396"></a><a name="zh-cn_topic_0079615054_p54578396"></a><span id="ph17344310175615"><a name="ph17344310175615"></a><a name="ph17344310175615"></a>操作成功，返回一组ReplicationController的资源对象。</span></p>
 </td>
 </tr>
 </tbody>

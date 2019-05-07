@@ -4,6 +4,8 @@
 
 -   **[存储管理](存储管理.md)**  
 
+-   **[插件管理](插件管理.md)**  
+
 -   **[Secret](Secret.md)**  
 
 -   **[ReplicationController](ReplicationController.md)**  

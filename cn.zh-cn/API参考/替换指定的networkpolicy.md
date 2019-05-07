@@ -6,7 +6,7 @@ This API is used to replace the specified NetworkPolicy.
 
 ## URL<a name="section1823219891718"></a>
 
-PUT /apis/networking.kubernetes.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
+PUT /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
 
 其中以下字段支持更新：
 
@@ -79,7 +79,7 @@ PUT /apis/networking.kubernetes.io/v1/namespaces/\{namespace\}/networkpolicies/\
 ```
 {
     "kind": "NetworkPolicy",
-    "apiVersion": "networking.kubernetes.io/v1",
+    "apiVersion": "networking.k8s.io/v1",
     "metadata": {
 	    "name": "test-network-policy",
 		"namespace": "default",
@@ -126,11 +126,11 @@ PUT /apis/networking.kubernetes.io/v1/namespaces/\{namespace\}/networkpolicies/\
 ```
 {
     "kind": "NetworkPolicy",
-    "apiVersion": "networking.kubernetes.io/v1",
+    "apiVersion": "networking.k8s.io/v1",
     "metadata": {
 	    "name": "test-network-policy",
 		"namespace": "default",
-		"selfLink": "/apis/networking.kubernetes.io/v1/namespaces/default/networkpolicies/test-network-policy",
+		"selfLink": "/apis/networking.k8s.io/v1/namespaces/default/networkpolicies/test-network-policy",
 		"uid": "be347ddd-e8af-11e8-b187-fa163e3cca63",
 		"resourceVersion": "213982",
 		"generation": 1,

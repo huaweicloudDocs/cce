@@ -6,7 +6,7 @@ This API is used to create a ClusterRoleBinding
 
 ## URL<a name="section22432013155911"></a>
 
-POST /apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings
+POST /apis/rbac.authorization.k8s.io/v1/clusterrolebindings
 
 [参数解释](#table1420670321)描述该API的参数。
 
@@ -366,19 +366,19 @@ POST /apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings
 # 以下`ClusterRoleBinding`对象允许在用户组"manager"中的任何用户都可以读取集群中任何名字空间中的secret。
 {
    "kind": "ClusterRoleBinding",
-   "apiVersion": "rbac.authorization.kubernetes.io/v1beta1",
+   "apiVersion": "rbac.authorization.k8s.io/v1beta1",
    "metadata": {
        "name": "read-secrets-global"
 	},
    "subjects":[{
        "kind": "Group",
        "name": "manager",
-       "apiGroup": "rbac.authorization.kubernetes.io"
+       "apiGroup": "rbac.authorization.k8s.io"
 	}],
    "roleRef":{
        "kind": "ClusterRole",
        "name": "secret-reader",
-       "apiGroup": "rbac.authorization.kubernetes.io"}
+       "apiGroup": "rbac.authorization.k8s.io"}
 }
 ```
 
@@ -393,21 +393,21 @@ POST /apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings
 ```
 {
     "kind" : "ClusterRoleBinding",
-    "apiVersion" : "rbac.authorization.kubernetes.io/v1",
+    "apiVersion" : "rbac.authorization.k8s.io/v1",
     "metadata" : {
         "name" : "read-secrets-global",
-        "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/clusterrolebindings/read-secrets-global",
+        "selfLink" : "/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/read-secrets-global",
         "uid" : "8e20ec38-f1e7-11e8-b449-fa163ec24e06",
         "resourceVersion" : "4625",
         "creationTimestamp" : "2018-11-27T01:55:45Z"
     },
     "subjects" : [ {
         "kind" : "Group",
-        "apiGroup" : "rbac.authorization.kubernetes.io",
+        "apiGroup" : "rbac.authorization.k8s.io",
         "name" : "manager"
     } ],
     "roleRef" : {
-        "apiGroup" : "rbac.authorization.kubernetes.io",
+        "apiGroup" : "rbac.authorization.k8s.io",
         "kind" : "ClusterRole",
         "name" : "secret-reader"
     }

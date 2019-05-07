@@ -33,7 +33,7 @@ PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Co
 **表 1**  参数
 
 <a name="table14970324122818"></a>
-<table><thead align="left"><tr id="row0971162417289"><th class="cellrowborder" valign="top" width="33%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079616860_zh-cn_topic_0079614957_p54329699"><a name="zh-cn_topic_0079616860_zh-cn_topic_0079614957_p54329699"></a><a name="zh-cn_topic_0079616860_zh-cn_topic_0079614957_p54329699"></a>参数</p>
+<table><thead align="left"><tr id="row0971162417289"><th class="cellrowborder" valign="top" width="33%" id="mcps1.2.4.1.1"><p id="a976d4718ebbf43e691f355b454666ba3"><a name="a976d4718ebbf43e691f355b454666ba3"></a><a name="a976d4718ebbf43e691f355b454666ba3"></a>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="10%" id="mcps1.2.4.1.2"><p id="p6151164282819"><a name="p6151164282819"></a><a name="p6151164282819"></a>是否必选</p>
 </th>
@@ -248,20 +248,20 @@ PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Co
 
 状态码
 
-[表2](#zh-cn_topic_0079616860_zh-cn_topic_0079614957_table12683857)描述API的状态码。
+[表2](#tba7e7375aafb4111a16990b2ada529cb)描述API的状态码。
 
 **表 2**  状态码
 
-<a name="zh-cn_topic_0079616860_zh-cn_topic_0079614957_table12683857"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0079616860_zh-cn_topic_0079614957_row49320909"><th class="cellrowborder" valign="top" width="47%" id="mcps1.2.3.1.1"><p id="p7478104103014"><a name="p7478104103014"></a><a name="p7478104103014"></a>状态码</p>
+<a name="tba7e7375aafb4111a16990b2ada529cb"></a>
+<table><thead align="left"><tr id="re5fb2a906b384aa288601fcc449b33f1"><th class="cellrowborder" valign="top" width="47%" id="mcps1.2.3.1.1"><p id="p7478104103014"><a name="p7478104103014"></a><a name="p7478104103014"></a>状态码</p>
 </th>
 <th class="cellrowborder" valign="top" width="53%" id="mcps1.2.3.1.2"><p id="p1847954163013"><a name="p1847954163013"></a><a name="p1847954163013"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0079616860_zh-cn_topic_0079614957_row41609976"><td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079616860_zh-cn_topic_0079614957_p14964925"><a name="zh-cn_topic_0079616860_zh-cn_topic_0079614957_p14964925"></a><a name="zh-cn_topic_0079616860_zh-cn_topic_0079614957_p14964925"></a>200</p>
+<tbody><tr id="ra2f69c00f8444dff82e2c6ae35c9c214"><td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.3.1.1 "><p id="a945d7039505e4e87bbff604606492324"><a name="a945d7039505e4e87bbff604606492324"></a><a name="a945d7039505e4e87bbff604606492324"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"><a name="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"></a><a name="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"></a>This operation succeeds, and a  Development resource object is returned.</p>
+<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.3.1.2 "><p id="a33a7137eb9484957bc44bc63637e52b9"><a name="a33a7137eb9484957bc44bc63637e52b9"></a><a name="a33a7137eb9484957bc44bc63637e52b9"></a>This operation succeeds, and a  Development resource object is returned.</p>
 </td>
 </tr>
 </tbody>

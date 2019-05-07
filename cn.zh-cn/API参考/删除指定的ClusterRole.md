@@ -6,7 +6,7 @@ This API is used to delete a ClusterRole
 
 ## URL<a name="section975933164218"></a>
 
-DELETE /apis/rbac.authorization.kubernetes.io/v1/clusterroles/\{name\}
+DELETE /apis/rbac.authorization.k8s.io/v1/clusterroles/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -86,7 +86,7 @@ N/A
     "status" : "Success",
     "details" : {
         "name" : "secret-reader",
-        "group" : "rbac.authorization.kubernetes.io",
+        "group" : "rbac.authorization.k8s.io",
         "kind" : "clusterroles",
         "uid" : "f2cf199e-f1f0-11e8-b449-fa163ec24e06"
     }

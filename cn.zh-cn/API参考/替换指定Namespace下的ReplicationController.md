@@ -48,14 +48,14 @@ PUT /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615034_p26052434"><a name="zh-cn_topic_0079615034_p26052434"></a><a name="zh-cn_topic_0079615034_p26052434"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615034_p29872375"><a name="zh-cn_topic_0079615034_p29872375"></a><a name="zh-cn_topic_0079615034_p29872375"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615034_p29872375"><a name="zh-cn_topic_0079615034_p29872375"></a><a name="zh-cn_topic_0079615034_p29872375"></a><span id="ph10700343175010"><a name="ph10700343175010"></a><a name="ph10700343175010"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。</span></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615034_row415920"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615034_p33689599"><a name="zh-cn_topic_0079615034_p33689599"></a><a name="zh-cn_topic_0079615034_p33689599"></a>name</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615034_p44503031"><a name="zh-cn_topic_0079615034_p44503031"></a><a name="zh-cn_topic_0079615034_p44503031"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615034_p47975743"><a name="zh-cn_topic_0079615034_p47975743"></a><a name="zh-cn_topic_0079615034_p47975743"></a>ReplicationController名称</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615034_p47975743"><a name="zh-cn_topic_0079615034_p47975743"></a><a name="zh-cn_topic_0079615034_p47975743"></a>ReplicationController<span id="ph15785147205113"><a name="ph15785147205113"></a><a name="ph15785147205113"></a>名称</span></p>
 </td>
 </tr>
 </tbody>
@@ -190,7 +190,7 @@ PUT /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </thead>
 <tbody><tr id="zh-cn_topic_0079615034_row2482522"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615034_p66866633"><a name="zh-cn_topic_0079615034_p66866633"></a><a name="zh-cn_topic_0079615034_p66866633"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615034_p47488225"><a name="zh-cn_topic_0079615034_p47488225"></a><a name="zh-cn_topic_0079615034_p47488225"></a>操作成功，返回ReplicationController资源对象</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615034_p47488225"><a name="zh-cn_topic_0079615034_p47488225"></a><a name="zh-cn_topic_0079615034_p47488225"></a><span id="ph1489102319516"><a name="ph1489102319516"></a><a name="ph1489102319516"></a>操作成功，返回ReplicationController资源对象</span></p>
 </td>
 </tr>
 </tbody>

@@ -66,13 +66,13 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 **表 2**  请求参数
 
 <a name="table12862324102610"></a>
-<table><thead align="left"><tr id="row68631424102610"><th class="cellrowborder" valign="top" width="17.01829817018298%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"><a name="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"></a><a name="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"></a>参数</p>
+<table><thead align="left"><tr id="row68631424102610"><th class="cellrowborder" valign="top" width="17.01829817018298%" id="mcps1.2.5.1.1"><p id="ae00f0941f2f84334b89540a79f202f53"><a name="ae00f0941f2f84334b89540a79f202f53"></a><a name="ae00f0941f2f84334b89540a79f202f53"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="16.07839216078392%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0083857388_p62904453205444"><a name="zh-cn_topic_0083857388_p62904453205444"></a><a name="zh-cn_topic_0083857388_p62904453205444"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="16.07839216078392%" id="mcps1.2.5.1.2"><p id="a109544678a6d496c8ab0ba9dc8865df8"><a name="a109544678a6d496c8ab0ba9dc8865df8"></a><a name="a109544678a6d496c8ab0ba9dc8865df8"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.92810718928107%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0083857388_p62095922205444"><a name="zh-cn_topic_0083857388_p62095922205444"></a><a name="zh-cn_topic_0083857388_p62095922205444"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.92810718928107%" id="mcps1.2.5.1.3"><p id="a13d54bf6b2e94a4baa09115f8f42914b"><a name="a13d54bf6b2e94a4baa09115f8f42914b"></a><a name="a13d54bf6b2e94a4baa09115f8f42914b"></a>类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="47.97520247975203%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0083857388_p63713767205444"><a name="zh-cn_topic_0083857388_p63713767205444"></a><a name="zh-cn_topic_0083857388_p63713767205444"></a>描述</p>
+<th class="cellrowborder" valign="top" width="47.97520247975203%" id="mcps1.2.5.1.4"><p id="a4492d78a4c58432cb14ce4c639d6df62"><a name="a4492d78a4c58432cb14ce4c639d6df62"></a><a name="a4492d78a4c58432cb14ce4c639d6df62"></a>描述</p>
 </th>
 </tr>
 </thead>

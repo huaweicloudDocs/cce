@@ -214,14 +214,14 @@ N/A
             },
             {
                 "names": [
-                    "10.125.5.235:20202/test/apache-php:latest"
+                    "100.125.5.235:20202/test/apache-php:latest"
                 ],
                 "sizeBytes": 244663227
             },
             {
                 "names": [
-                    "10.125.5.235:20202/test/redis:latest",
-                    "10.125.5.235:20202/test/redis:v1"
+                    "100.125.5.235:20202/test/redis:latest",
+                    "100.125.5.235:20202/test/redis:v1"
                 ],
                 "sizeBytes": 109208225
             },

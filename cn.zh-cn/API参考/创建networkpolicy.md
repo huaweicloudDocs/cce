@@ -6,7 +6,7 @@ This API is used to create a NetworkPolicy.
 
 ## URL<a name="section114001717323"></a>
 
-POST /apis/networking.kubernetes.io/v1/namespaces/\{namespace\}/networkpolicies
+POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 
 [参数解释](#table1420670321)描述该API的参数。
 
@@ -446,7 +446,7 @@ POST /apis/networking.kubernetes.io/v1/namespaces/\{namespace\}/networkpolicies
 
 ```
 {
-	"apiVersion": "networking.kubernetes.io/v1",
+	"apiVersion": "networking.k8s.io/v1",
 	"kind": "NetworkPolicy",
 	"metadata": {
 		"name": "test-network-policy",
@@ -489,11 +489,11 @@ POST /apis/networking.kubernetes.io/v1/namespaces/\{namespace\}/networkpolicies
 ```
 {
     "kind": "NetworkPolicy",
-    "apiVersion": "networking.kubernetes.io/v1",
+    "apiVersion": "networking.k8s.io/v1",
     "metadata": {
 	    "name": "test-network-policy",
 		"namespace": "default",
-		"selfLink": "/apis/networking.kubernetes.io/v1/namespaces/default/networkpolicies/test-network-policy",
+		"selfLink": "/apis/networking.k8s.io/v1/namespaces/default/networkpolicies/test-network-policy",
 		"uid": "be347ddd-e8af-11e8-b187-fa163e3cca63",
 		"resourceVersion": "213982",
 		"generation": 1,

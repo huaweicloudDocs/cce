@@ -6,7 +6,7 @@ This API is used to delete collection of NetworkPolicy
 
 ## URL<a name="section46638526260"></a>
 
-DELETE /apis/networking.kubernetes.io/v1/namespaces/\{namespace\}/networkpolicies
+DELETE /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 
 [参数解释](#d0e42906)描述该API的参数。
 

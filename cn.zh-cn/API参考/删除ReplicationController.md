@@ -40,7 +40,6 @@ DELETE /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 <td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615022_p6802298"><a name="zh-cn_topic_0079615022_p6802298"></a><a name="zh-cn_topic_0079615022_p6802298"></a>Yes</p>
 </td>
 <td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p35684724"><a name="zh-cn_topic_0079615047_p35684724"></a><a name="zh-cn_topic_0079615047_p35684724"></a>指定删除的ReplicationController的名称。</p>
-<p id="zh-cn_topic_0079615022_p14115254"><a name="zh-cn_topic_0079615022_p14115254"></a><a name="zh-cn_topic_0079615022_p14115254"></a></p>
 </td>
 </tr>
 <tr id="r8b29b3b239eb400f83ccef6a61165277"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615022_p79721228245"><a name="zh-cn_topic_0079615022_p79721228245"></a><a name="zh-cn_topic_0079615022_p79721228245"></a>gracePeriodSeconds</p>
@@ -54,14 +53,14 @@ DELETE /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.4.1.2 "><p id="aa3bfc37083f145c6805eece45694b24e"><a name="aa3bfc37083f145c6805eece45694b24e"></a><a name="aa3bfc37083f145c6805eece45694b24e"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.3 "><p id="a50711542a8084997a27a5bc58aba7434"><a name="a50711542a8084997a27a5bc58aba7434"></a><a name="a50711542a8084997a27a5bc58aba7434"></a>该参数表示依赖的资源对象是否被设置为孤儿（orphan），ture表示设置，false则不设置。默认为false。该参数不能和PropagationPolicy参数同时使用。 </p>
+<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.3 "><p id="a50711542a8084997a27a5bc58aba7434"><a name="a50711542a8084997a27a5bc58aba7434"></a><a name="a50711542a8084997a27a5bc58aba7434"></a><span id="ph12505131493910"><a name="ph12505131493910"></a><a name="ph12505131493910"></a>该参数表示依赖的</span><span id="ph13896125518393"><a name="ph13896125518393"></a><a name="ph13896125518393"></a>资源对象是否被设置为孤儿（orphan），ture表示设置，false则不设置。默认为false。</span><span id="ph111371352191111"><a name="ph111371352191111"></a><a name="ph111371352191111"></a>该参数不能和</span><span id="ph5198165912114"><a name="ph5198165912114"></a><a name="ph5198165912114"></a>PropagationPolicy参数同时使用。</span> </p>
 </td>
 </tr>
 <tr id="rf3b9e4c9947e4bada04136b8e630fe42"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="a1b08c853484943eb964954083aa19e02"><a name="a1b08c853484943eb964954083aa19e02"></a><a name="a1b08c853484943eb964954083aa19e02"></a>propagationPolicy</p>
 </td>
 <td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.4.1.2 "><p id="a5cae07739953470386addabe6deee858"><a name="a5cae07739953470386addabe6deee858"></a><a name="a5cae07739953470386addabe6deee858"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.3 "><p id="ae2c50bbee2be48138a3a09de3925f667"><a name="ae2c50bbee2be48138a3a09de3925f667"></a><a name="ae2c50bbee2be48138a3a09de3925f667"></a>该参数表示是否以及如何执行垃圾回收，不能和orphanDependents参数同时使用，默认策略由metadata.finalizers字段以及特定资源的默认策略决定。</p>
+<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.4.1.3 "><p id="ae2c50bbee2be48138a3a09de3925f667"><a name="ae2c50bbee2be48138a3a09de3925f667"></a><a name="ae2c50bbee2be48138a3a09de3925f667"></a><span id="ph148339991514"><a name="ph148339991514"></a><a name="ph148339991514"></a>该参数表示是否以及如何执行垃圾回收，不能和</span><span id="ph542053961514"><a name="ph542053961514"></a><a name="ph542053961514"></a>orphanDependents</span><span id="ph58031842201510"><a name="ph58031842201510"></a><a name="ph58031842201510"></a>参数同时使用，默认策略由metadata.finalizers字段以及特定资源的默认策略决定。</span></p>
 </td>
 </tr>
 </tbody>
@@ -92,7 +91,7 @@ DELETE /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.73802619738026%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615022_p51813463"><a name="zh-cn_topic_0079615022_p51813463"></a><a name="zh-cn_topic_0079615022_p51813463"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.28607139286072%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615022_p56833404"><a name="zh-cn_topic_0079615022_p56833404"></a><a name="zh-cn_topic_0079615022_p56833404"></a>API类型，固定值：“DeleteOptions”。</p>
+<td class="cellrowborder" valign="top" width="39.28607139286072%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615022_p56833404"><a name="zh-cn_topic_0079615022_p56833404"></a><a name="zh-cn_topic_0079615022_p56833404"></a><span id="ph278219711497"><a name="ph278219711497"></a><a name="ph278219711497"></a>API类型，固定值：“DeleteOptions”。</span></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615022_row40103025"><td class="cellrowborder" valign="top" width="21.23787621237876%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615022_p27119578"><a name="zh-cn_topic_0079615022_p27119578"></a><a name="zh-cn_topic_0079615022_p27119578"></a>apiVersion</p>
@@ -103,7 +102,6 @@ DELETE /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 <p id="zh-cn_topic_0079615047_p38446647"><a name="zh-cn_topic_0079615047_p38446647"></a><a name="zh-cn_topic_0079615047_p38446647"></a>API版本。</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.28607139286072%" headers="mcps1.2.5.1.4 "><p id="p1356111111263"><a name="p1356111111263"></a><a name="p1356111111263"></a>API版本，固定值：“v1”。</p>
-<p id="zh-cn_topic_0079615022_p64247400"><a name="zh-cn_topic_0079615022_p64247400"></a><a name="zh-cn_topic_0079615022_p64247400"></a></p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615022_row36656908"><td class="cellrowborder" valign="top" width="21.23787621237876%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615022_p16419601"><a name="zh-cn_topic_0079615022_p16419601"></a><a name="zh-cn_topic_0079615022_p16419601"></a>gracePeriodSeconds</p>
@@ -112,7 +110,7 @@ DELETE /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.73802619738026%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615022_p19280477"><a name="zh-cn_topic_0079615022_p19280477"></a><a name="zh-cn_topic_0079615022_p19280477"></a>Integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.28607139286072%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615022_p18214771"><a name="zh-cn_topic_0079615022_p18214771"></a><a name="zh-cn_topic_0079615022_p18214771"></a>该参数设置多少秒后删除该资源对象，必须是非负整数，设置为0表示立即删除。</p>
+<td class="cellrowborder" valign="top" width="39.28607139286072%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615022_p18214771"><a name="zh-cn_topic_0079615022_p18214771"></a><a name="zh-cn_topic_0079615022_p18214771"></a><span id="ph17552131828"><a name="ph17552131828"></a><a name="ph17552131828"></a>该参数设置多少秒后删除该资源对象，必须是非负整数，设置为0表示立即删除</span><span id="ph558414556314"><a name="ph558414556314"></a><a name="ph558414556314"></a>。</span></p>
 </td>
 </tr>
 <tr id="r6b97a7c8cc7d4409bd1531959bf711b7"><td class="cellrowborder" valign="top" width="21.23787621237876%" headers="mcps1.2.5.1.1 "><p id="acc6d9b41f92341aaba4c9a4800898eaa"><a name="acc6d9b41f92341aaba4c9a4800898eaa"></a><a name="acc6d9b41f92341aaba4c9a4800898eaa"></a>preconditions</p>
@@ -213,7 +211,7 @@ DELETE /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </thead>
 <tbody><tr id="zh-cn_topic_0079615022_row34146301"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615022_p14387025"><a name="zh-cn_topic_0079615022_p14387025"></a><a name="zh-cn_topic_0079615022_p14387025"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615022_p24498377"><a name="zh-cn_topic_0079615022_p24498377"></a><a name="zh-cn_topic_0079615022_p24498377"></a>删除ReplicationController资源对象成功。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615022_p24498377"><a name="zh-cn_topic_0079615022_p24498377"></a><a name="zh-cn_topic_0079615022_p24498377"></a><span id="ph173382020173015"><a name="ph173382020173015"></a><a name="ph173382020173015"></a>删除ReplicationController资源对象成功。</span></p>
 </td>
 </tr>
 </tbody>

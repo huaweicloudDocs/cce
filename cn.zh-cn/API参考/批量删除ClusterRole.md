@@ -6,7 +6,7 @@ This API is used to delete collection of ClusterRole
 
 ## URL<a name="section12718172813431"></a>
 
-DELETE /apis/rbac.authorization.kubernetes.io/v1/clusterroles
+DELETE /apis/rbac.authorization.k8s.io/v1/clusterroles
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -102,15 +102,15 @@ N/A
 ```
 {
     "kind" : "ClusterRoleList",
-    "apiVersion" : "rbac.authorization.kubernetes.io/v1",
+    "apiVersion" : "rbac.authorization.k8s.io/v1",
     "metadata" : {
-        "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/clusterroles",
+        "selfLink" : "/apis/rbac.authorization.k8s.io/v1/clusterroles",
         "resourceVersion" : "4622"
     },
     "items" : [ {
         "metadata" : {
             "name" : "secret-reader",
-            "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/clusterroles/secret-reader",
+            "selfLink" : "/apis/rbac.authorization.k8s.io/v1/clusterroles/secret-reader",
             "uid" : "8d358854-f1e7-11e8-b449-fa163ec24e06",
             "resourceVersion" : "4619",
             "creationTimestamp" : "2018-11-27T01:55:44Z"

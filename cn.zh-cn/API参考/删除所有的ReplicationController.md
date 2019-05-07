@@ -47,7 +47,7 @@ DELETE /api/v1/namespaces/\{namespace\}/replicationcontrollers
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p14357279"><a name="p14357279"></a><a name="p14357279"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p22088956"><a name="p22088956"></a><a name="p22088956"></a>设置为true后，未初始化完成的资源也会包含在删除列表里。</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p22088956"><a name="p22088956"></a><a name="p22088956"></a><span id="ph984104618246"><a name="ph984104618246"></a><a name="ph984104618246"></a>设置为true后，未初始化完成的资源也会包含在删除列表里。</span></p>
 </td>
 </tr>
 <tr id="row64582882"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p63830953"><a name="p63830953"></a><a name="p63830953"></a>labelSelector</p>
@@ -178,7 +178,7 @@ N/A
 </thead>
 <tbody><tr id="row48639485"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p47484180"><a name="p47484180"></a><a name="p47484180"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p21013392"><a name="p21013392"></a><a name="p21013392"></a>删除ReplicationController资源对象成功。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p21013392"><a name="p21013392"></a><a name="p21013392"></a><span id="ph18293192104411"><a name="ph18293192104411"></a><a name="ph18293192104411"></a>删除ReplicationController资源对象成功。</span></p>
 </td>
 </tr>
 </tbody>

@@ -205,41 +205,41 @@ HTTP方法（也称为操作或动词），它告诉服务你正在请求什么�
 响应消息头包含如下两部分。
 
 -   一个HTTP状态代码，从2xx成功代码到4xx或5xx错误代码。 或者，可以返回服务定义的状态码，如API文档中所示。
--   附加响应头字段，如支持请求的响应所需，如Content-type响应消息头。详细的公共响应消息头字段请参见[表5](#zh-cn_topic_0035614305_table431633395935)。
+-   附加响应头字段，如支持请求的响应所需，如Content-type响应消息头。详细的公共响应消息头字段请参见[表5](#tda489e30bd874a4bbee32aa3b2a28ccd)。
 
     **表 5**  响应消息头
 
-    <a name="zh-cn_topic_0035614305_table431633395935"></a>
-    <table><thead align="left"><tr id="zh-cn_topic_0035614305_row5838132395935"><th class="cellrowborder" valign="top" width="23%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0035614305_p2208706210115"><a name="zh-cn_topic_0035614305_p2208706210115"></a><a name="zh-cn_topic_0035614305_p2208706210115"></a>名称</p>
+    <a name="tda489e30bd874a4bbee32aa3b2a28ccd"></a>
+    <table><thead align="left"><tr id="r94d5b3eddaf0427c90f77ee04e69be43"><th class="cellrowborder" valign="top" width="23%" id="mcps1.2.4.1.1"><p id="a666bcbc416764fbcbee55148ab962d76"><a name="a666bcbc416764fbcbee55148ab962d76"></a><a name="a666bcbc416764fbcbee55148ab962d76"></a>名称</p>
     </th>
-    <th class="cellrowborder" valign="top" width="44%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0035614305_p4259252810115"><a name="zh-cn_topic_0035614305_p4259252810115"></a><a name="zh-cn_topic_0035614305_p4259252810115"></a>描述</p>
+    <th class="cellrowborder" valign="top" width="44%" id="mcps1.2.4.1.2"><p id="a7a0771a206894fc7aeb9632cd42023da"><a name="a7a0771a206894fc7aeb9632cd42023da"></a><a name="a7a0771a206894fc7aeb9632cd42023da"></a>描述</p>
     </th>
-    <th class="cellrowborder" valign="top" width="33%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0035614305_p4178727010115"><a name="zh-cn_topic_0035614305_p4178727010115"></a><a name="zh-cn_topic_0035614305_p4178727010115"></a>示例</p>
+    <th class="cellrowborder" valign="top" width="33%" id="mcps1.2.4.1.3"><p id="ad6b6953ebcb84db288e20ff06b4df731"><a name="ad6b6953ebcb84db288e20ff06b4df731"></a><a name="ad6b6953ebcb84db288e20ff06b4df731"></a>示例</p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="zh-cn_topic_0035614305_row1643024095935"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p59963253104610"><a name="p59963253104610"></a><a name="p59963253104610"></a>Date</p>
+    <tbody><tr id="r62cd841270e142759f0c115930b7b72d"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p59963253104610"><a name="p59963253104610"></a><a name="p59963253104610"></a>Date</p>
     </td>
     <td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.2 "><p id="p25185323104610"><a name="p25185323104610"></a><a name="p25185323104610"></a>HTTP协议标准报头。表示消息发送的时间，时间的描述格式由rfc822定义。</p>
     </td>
     <td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.3 "><p id="p26745253104610"><a name="p26745253104610"></a><a name="p26745253104610"></a>Mon，12 Nov 2007 15:55:01 GMT</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0035614305_row6136471495935"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p35719083104610"><a name="p35719083104610"></a><a name="p35719083104610"></a>Server</p>
+    <tr id="read84aea15924ef19d905ec37d71506a"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p35719083104610"><a name="p35719083104610"></a><a name="p35719083104610"></a>Server</p>
     </td>
     <td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.2 "><p id="p7564607104610"><a name="p7564607104610"></a><a name="p7564607104610"></a>HTTP协议标准报头。包含了服务器用来处理请求的软件信息。</p>
     </td>
     <td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.3 "><p id="p8753460104610"><a name="p8753460104610"></a><a name="p8753460104610"></a>Apache</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0035614305_row5278388395935"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p5930819104610"><a name="p5930819104610"></a><a name="p5930819104610"></a>Content-Length</p>
+    <tr id="ref8088753fd648cfb7c150c6fefb8134"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p5930819104610"><a name="p5930819104610"></a><a name="p5930819104610"></a>Content-Length</p>
     </td>
     <td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.2 "><p id="p10634336104610"><a name="p10634336104610"></a><a name="p10634336104610"></a>HTTP协议标准报头。用于指明实体正文的长度，以字节方式存储的十进制数字来表示。</p>
     </td>
     <td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.3 "><p id="p56074906104610"><a name="p56074906104610"></a><a name="p56074906104610"></a>xxx</p>
     </td>
     </tr>
-    <tr id="zh-cn_topic_0035614305_row6263177095935"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p9308572104610"><a name="p9308572104610"></a><a name="p9308572104610"></a>Content-Type</p>
+    <tr id="ra466c099bd564fa2acd73582e646289c"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.4.1.1 "><p id="p9308572104610"><a name="p9308572104610"></a><a name="p9308572104610"></a>Content-Type</p>
     </td>
     <td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.4.1.2 "><p id="p15796892104610"><a name="p15796892104610"></a><a name="p15796892104610"></a>HTTP协议标准报头。用于指明发送给接收者的实体正文的媒体类型。</p>
     </td>

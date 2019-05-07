@@ -6,7 +6,7 @@ This API is used to read the specified Role.
 
 ## URL<a name="section1033615710188"></a>
 
-GET /apis/rbac.authorization.kubernetes.io/v1/namespaces/\{namespace\}/roles/\{name\}
+GET /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/roles/\{name\}
 
 [参数解释](#d0e42906)描述该API的参数。
 
@@ -60,11 +60,11 @@ N/A
 ```
 {
     "kind" : "Role",
-    "apiVersion" : "rbac.authorization.kubernetes.io/v1",
+    "apiVersion" : "rbac.authorization.k8s.io/v1",
     "metadata" : {
         "name" : "pod-reader",
         "namespace" : "default",
-        "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/namespaces/default/roles/secret-reader",
+        "selfLink" : "/apis/rbac.authorization.k8s.io/v1/namespaces/default/roles/secret-reader",
         "uid" : "f379007e-f1f0-11e8-b449-fa163ec24e06",
         "resourceVersion" : "13218",
         "creationTimestamp" : "2018-11-27T03:03:01Z"

@@ -172,7 +172,7 @@ N/A
 </thead>
 <tbody><tr id="zh-cn_topic_0079614978_row57348967"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079614978_p14754764"><a name="zh-cn_topic_0079614978_p14754764"></a><a name="zh-cn_topic_0079614978_p14754764"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614978_p54285221"><a name="zh-cn_topic_0079614978_p54285221"></a><a name="zh-cn_topic_0079614978_p54285221"></a>操作成功，返回一组ReplicationController资源对象。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614978_p54285221"><a name="zh-cn_topic_0079614978_p54285221"></a><a name="zh-cn_topic_0079614978_p54285221"></a><span id="ph173491217165810"><a name="ph173491217165810"></a><a name="ph173491217165810"></a>操作成功，返回一组ReplicationController资源对象。</span></p>
 </td>
 </tr>
 </tbody>

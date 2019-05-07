@@ -33,21 +33,21 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p28523165"><a name="p28523165"></a><a name="p28523165"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p28675043"><a name="p28675043"></a><a name="p28675043"></a>设置为true后，会打印漂亮的输出结果。</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p28675043"><a name="p28675043"></a><a name="p28675043"></a><span id="ph7733184012197"><a name="ph7733184012197"></a><a name="ph7733184012197"></a>设置为true后，会打印漂亮的输出结果</span>。</p>
 </td>
 </tr>
 <tr id="row56748800"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p33250065"><a name="p33250065"></a><a name="p33250065"></a>fieldSelector</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p8900776"><a name="p8900776"></a><a name="p8900776"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p49874218"><a name="p49874218"></a><a name="p49874218"></a>根据资源对象的field字段进行筛选，不设置该参数时默认选择所有资源对象。</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p49874218"><a name="p49874218"></a><a name="p49874218"></a><span id="ph1234541913216"><a name="ph1234541913216"></a><a name="ph1234541913216"></a>根据资源对象的field字段进行筛选，不设置该参数时默认选择所有资源对象</span><span id="ph933071114227"><a name="ph933071114227"></a><a name="ph933071114227"></a>。</span></p>
 </td>
 </tr>
 <tr id="row46214784"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p52410000"><a name="p52410000"></a><a name="p52410000"></a>includeUninitialized</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p17351617"><a name="p17351617"></a><a name="p17351617"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p63303738"><a name="p63303738"></a><a name="p63303738"></a>设置为true后，未初始化的资源也会包含在删除列表里。</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p63303738"><a name="p63303738"></a><a name="p63303738"></a><span id="ph984104618246"><a name="ph984104618246"></a><a name="ph984104618246"></a>设置为true后，未初始化的资源也会包含在删除列表里。</span></p>
 </td>
 </tr>
 <tr id="row32862738"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p44636107"><a name="p44636107"></a><a name="p44636107"></a>labelSelector</p>
@@ -68,7 +68,7 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p11625398"><a name="p11625398"></a><a name="p11625398"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p2133200"><a name="p2133200"></a><a name="p2133200"></a>表示调用list/watch的超时时间</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p2133200"><a name="p2133200"></a><a name="p2133200"></a><span id="ph15918394528"><a name="ph15918394528"></a><a name="ph15918394528"></a>表示</span><span id="ph133731748115218"><a name="ph133731748115218"></a><a name="ph133731748115218"></a>调用list/watch的超时时间</span></p>
 </td>
 </tr>
 <tr id="row19198803"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p11599202"><a name="p11599202"></a><a name="p11599202"></a>watch</p>
@@ -158,7 +158,7 @@ N/A
 </thead>
 <tbody><tr id="row29799334"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p64935873"><a name="p64935873"></a><a name="p64935873"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p25314373"><a name="p25314373"></a><a name="p25314373"></a>批量删除secrets成功。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p25314373"><a name="p25314373"></a><a name="p25314373"></a><span id="ph9841510175419"><a name="ph9841510175419"></a><a name="ph9841510175419"></a>批量删除secrets成功。</span></p>
 </td>
 </tr>
 </tbody>

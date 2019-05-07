@@ -6,7 +6,7 @@ This API is used to create a ClusterRole
 
 ## URL<a name="section1943132116"></a>
 
-POST /apis/rbac.authorization.kubernetes.io/v1/clusterroles
+POST /apis/rbac.authorization.k8s.io/v1/clusterroles
 
 [参数解释](#table161311441165415)描述该API的参数。
 
@@ -356,7 +356,7 @@ POST /apis/rbac.authorization.kubernetes.io/v1/clusterroles
 ```
 {
    "kind": "ClusterRole",
-   "apiVersion": "rbac.authorization.kubernetes.io/v1",
+   "apiVersion": "rbac.authorization.k8s.io/v1",
    "metadata": {
        # 鉴于ClusterRole是集群范围对象，所以这里不需要定义"namespace"字段
        "name": "secret-reader"
@@ -380,10 +380,10 @@ POST /apis/rbac.authorization.kubernetes.io/v1/clusterroles
 ```
 {
     "kind" : "ClusterRole",
-    "apiVersion" : "rbac.authorization.kubernetes.io/v1",
+    "apiVersion" : "rbac.authorization.k8s.io/v1",
     "metadata" : {
         "name" : "secret-reader",
-        "selfLink" : "/apis/rbac.authorization.kubernetes.io/v1/clusterroles/secret-reader",
+        "selfLink" : "/apis/rbac.authorization.k8s.io/v1/clusterroles/secret-reader",
         "uid" : "8d358854-f1e7-11e8-b449-fa163ec24e06",
         "resourceVersion" : "4619",
         "creationTimestamp" : "2018-11-27T01:55:44Z"
