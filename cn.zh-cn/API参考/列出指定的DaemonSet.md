@@ -88,7 +88,7 @@ N/A
 <a name="table42857549"></a>
 <table><thead align="left"><tr id="row21951350"><th class="cellrowborder" valign="top" width="21%" id="mcps1.2.4.1.1"><p id="p33228892"><a name="p33228892"></a><a name="p33228892"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="18%" id="mcps1.2.4.1.2"><p id="p7185731"><a name="p7185731"></a><a name="p7185731"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18%" id="mcps1.2.4.1.2"><p id="p7185731"><a name="p7185731"></a><a name="p7185731"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="61%" id="mcps1.2.4.1.3"><p id="p45173330"><a name="p45173330"></a><a name="p45173330"></a>描述</p>
 </th>
@@ -96,28 +96,28 @@ N/A
 </thead>
 <tbody><tr id="row35161138"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.1 "><p id="p29479947"><a name="p29479947"></a><a name="p29479947"></a>apiVersion</p>
 </td>
-<td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.4.1.2 "><p id="p39065476"><a name="p39065476"></a><a name="p39065476"></a>string</p>
+<td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.4.1.2 "><p id="p39065476"><a name="p39065476"></a><a name="p39065476"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p10186949"><a name="p10186949"></a><a name="p10186949"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</p>
 </td>
 </tr>
 <tr id="row24573680"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.1 "><p id="p44311089"><a name="p44311089"></a><a name="p44311089"></a>items</p>
 </td>
-<td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.4.1.2 "><p id="p32428495"><a name="p32428495"></a><a name="p32428495"></a>array</p>
+<td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.4.1.2 "><p id="p32428495"><a name="p32428495"></a><a name="p32428495"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p9462449"><a name="p9462449"></a><a name="p9462449"></a>A list of daemon sets.</p>
 </td>
 </tr>
 <tr id="row18053184"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.1 "><p id="p53021763"><a name="p53021763"></a><a name="p53021763"></a>kind</p>
 </td>
-<td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.4.1.2 "><p id="p66904448"><a name="p66904448"></a><a name="p66904448"></a>string</p>
+<td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.4.1.2 "><p id="p66904448"><a name="p66904448"></a><a name="p66904448"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p50551197"><a name="p50551197"></a><a name="p50551197"></a>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.</p>
 </td>
 </tr>
 <tr id="row52307591"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.4.1.1 "><p id="p9056472"><a name="p9056472"></a><a name="p9056472"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.4.1.2 "><p id="p62485597"><a name="p62485597"></a><a name="p62485597"></a><a href="#table1384381715515">表3</a></p>
+<td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.4.1.2 "><p id="p62485597"><a name="p62485597"></a><a name="p62485597"></a><a href="#table1384381715515">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p52190581"><a name="p52190581"></a><a name="p52190581"></a>Standard list metadata.</p>
 </td>
@@ -130,7 +130,7 @@ N/A
 <a name="table1384381715515"></a>
 <table><thead align="left"><tr id="row46876118"><th class="cellrowborder" valign="top" width="20.41%" id="mcps1.2.4.1.1"><p id="p38869215"><a name="p38869215"></a><a name="p38869215"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.37%" id="mcps1.2.4.1.2"><p id="p61398745"><a name="p61398745"></a><a name="p61398745"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.37%" id="mcps1.2.4.1.2"><p id="p61398745"><a name="p61398745"></a><a name="p61398745"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="61.22%" id="mcps1.2.4.1.3"><p id="p7242476"><a name="p7242476"></a><a name="p7242476"></a>描述</p>
 </th>
@@ -138,14 +138,14 @@ N/A
 </thead>
 <tbody><tr id="row49769663"><td class="cellrowborder" valign="top" width="20.41%" headers="mcps1.2.4.1.1 "><p id="p4810874"><a name="p4810874"></a><a name="p4810874"></a>resourceVersion</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.37%" headers="mcps1.2.4.1.2 "><p id="p54136518"><a name="p54136518"></a><a name="p54136518"></a>string</p>
+<td class="cellrowborder" valign="top" width="18.37%" headers="mcps1.2.4.1.2 "><p id="p54136518"><a name="p54136518"></a><a name="p54136518"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p22981834"><a name="p22981834"></a><a name="p22981834"></a>String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only.</p>
 </td>
 </tr>
 <tr id="row5509921"><td class="cellrowborder" valign="top" width="20.41%" headers="mcps1.2.4.1.1 "><p id="p43650477"><a name="p43650477"></a><a name="p43650477"></a>selfLink</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.37%" headers="mcps1.2.4.1.2 "><p id="p46027782"><a name="p46027782"></a><a name="p46027782"></a>string</p>
+<td class="cellrowborder" valign="top" width="18.37%" headers="mcps1.2.4.1.2 "><p id="p46027782"><a name="p46027782"></a><a name="p46027782"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p37262867"><a name="p37262867"></a><a name="p37262867"></a>SelfLink is a URL representing this object. Populated by the system. Read-only.</p>
 </td>

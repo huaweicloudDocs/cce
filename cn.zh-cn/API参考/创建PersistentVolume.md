@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="section155195145312"></a>
 
-该API用于通过指定华为云存储服务中的云存储（如EVS、SFS、OBS）去创建PersistentVolume。
+该API用于通过指定云存储服务中的云存储（如EVS、SFS、OBS）去创建PersistentVolume。
 
 ## URI<a name="section1975393831219"></a>
 
@@ -17,27 +17,27 @@ POST /api/v1/cloudpersistentvolumes
 **表 1**  请求Header参数说明
 
 <a name="table31885335210"></a>
-<table><thead align="left"><tr id="r212c0ed067fb42488355ebb2220fad77"><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0118834958_p115009545264"><a name="zh-cn_topic_0118834958_p115009545264"></a><a name="zh-cn_topic_0118834958_p115009545264"></a>参数</p>
+<table><thead align="left"><tr id="cce_02_0252_row55001954122614"><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p id="cce_02_0252_p115009545264"><a name="cce_02_0252_p115009545264"></a><a name="cce_02_0252_p115009545264"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.4.1.2"><p id="zh-cn_topic_0118834958_p175001547265"><a name="zh-cn_topic_0118834958_p175001547265"></a><a name="zh-cn_topic_0118834958_p175001547265"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.4.1.2"><p id="cce_02_0252_p175001547265"><a name="cce_02_0252_p175001547265"></a><a name="cce_02_0252_p175001547265"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="61%" id="mcps1.2.4.1.3"><p id="a0a040ea5a2214bf7bff04967b354b7d1"><a name="a0a040ea5a2214bf7bff04967b354b7d1"></a><a name="a0a040ea5a2214bf7bff04967b354b7d1"></a>描述</p>
+<th class="cellrowborder" valign="top" width="61%" id="mcps1.2.4.1.3"><p id="cce_02_0252_p16500154162611"><a name="cce_02_0252_p16500154162611"></a><a name="cce_02_0252_p16500154162611"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="r1cb8787375bb405489b590448d4e4366"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0118834958_p69808112344"><a name="zh-cn_topic_0118834958_p69808112344"></a><a name="zh-cn_topic_0118834958_p69808112344"></a>Content-Type</p>
+<tbody><tr id="cce_02_0252_row199801811203412"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="cce_02_0252_p69808112344"><a name="cce_02_0252_p69808112344"></a><a name="cce_02_0252_p69808112344"></a>Content-Type</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="a5cef2e1ff31f45a89396106b5ef09c06"><a name="a5cef2e1ff31f45a89396106b5ef09c06"></a><a name="a5cef2e1ff31f45a89396106b5ef09c06"></a>是</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="cce_02_0252_p3980111103414"><a name="cce_02_0252_p3980111103414"></a><a name="cce_02_0252_p3980111103414"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="adce672fb931743049b0370c9985bc8d2"><a name="adce672fb931743049b0370c9985bc8d2"></a><a name="adce672fb931743049b0370c9985bc8d2"></a>消息体的类型（格式），可任选其一使用。</p>
-<a name="ub084ecc808b443679d0dcf3df1171081"></a><a name="ub084ecc808b443679d0dcf3df1171081"></a><ul id="ub084ecc808b443679d0dcf3df1171081"><li>application/json;charset=utf-8</li><li>application/json</li></ul>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0252_p2032514065313"><a name="cce_02_0252_p2032514065313"></a><a name="cce_02_0252_p2032514065313"></a>消息体的类型（格式），可任选其一使用。</p>
+<a name="cce_02_0252_ul7385444163617"></a><a name="cce_02_0252_ul7385444163617"></a><ul id="cce_02_0252_ul7385444163617"><li>application/json;charset=utf-8</li><li>application/json</li></ul>
 </td>
 </tr>
-<tr id="r83a01b8ed5514177a2ce1347ee97bee4"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="adf676b97943f4ff4b146bfa5463d4441"><a name="adf676b97943f4ff4b146bfa5463d4441"></a><a name="adf676b97943f4ff4b146bfa5463d4441"></a>X-Auth-Token</p>
+<tr id="cce_02_0252_row3500125412260"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="cce_02_0252_p105001654202618"><a name="cce_02_0252_p105001654202618"></a><a name="cce_02_0252_p105001654202618"></a>X-Auth-Token</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="a5256266c89fb482881a0971bf4ef63d3"><a name="a5256266c89fb482881a0971bf4ef63d3"></a><a name="a5256266c89fb482881a0971bf4ef63d3"></a>使用token认证时必选</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="cce_02_0252_p20500954182618"><a name="cce_02_0252_p20500954182618"></a><a name="cce_02_0252_p20500954182618"></a>使用token认证时必选</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="ad930d1a3fa9c46fd99860a370cb7a1b6"><a name="ad930d1a3fa9c46fd99860a370cb7a1b6"></a><a name="ad930d1a3fa9c46fd99860a370cb7a1b6"></a>调用接口的一种认证方式，使用时需要<a href="获取请求认证.md#section2417768214391">获取token</a>。</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0252_p1148116013545"><a name="cce_02_0252_p1148116013545"></a><a name="cce_02_0252_p1148116013545"></a>调用接口的一种认证方式，使用时需要<a href="认证鉴权.md#section2417768214391">获取token</a>.</p>
 </td>
 </tr>
 </tbody>
@@ -50,7 +50,7 @@ POST /api/v1/cloudpersistentvolumes
 </th>
 <th class="cellrowborder" valign="top" width="18.81188118811881%" id="mcps1.2.5.1.2"><p id="p11744152514157"><a name="p11744152514157"></a><a name="p11744152514157"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.81188118811881%" id="mcps1.2.5.1.3"><p id="p14744172517156"><a name="p14744172517156"></a><a name="p14744172517156"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.81188118811881%" id="mcps1.2.5.1.3"><p id="p14744172517156"><a name="p14744172517156"></a><a name="p14744172517156"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.57425742574257%" id="mcps1.2.5.1.4"><p id="p1474411256156"><a name="p1474411256156"></a><a name="p1474411256156"></a>描述</p>
 </th>
@@ -78,7 +78,7 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p1062853354013"><a name="p1062853354013"></a><a name="p1062853354013"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p074532551518"><a name="p074532551518"></a><a name="p074532551518"></a><a href="#table6304105819164">表3</a></p>
+<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p074532551518"><a name="p074532551518"></a><a name="p074532551518"></a><a href="#table6304105819164">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p2745152519150"><a name="p2745152519150"></a><a name="p2745152519150"></a>-</p>
 </td>
@@ -87,7 +87,7 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p8581153624016"><a name="p8581153624016"></a><a name="p8581153624016"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p1574522520158"><a name="p1574522520158"></a><a name="p1574522520158"></a><a href="#table3862152512246">表4</a></p>
+<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p1574522520158"><a name="p1574522520158"></a><a name="p1574522520158"></a><a href="#table3862152512246">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p97458257151"><a name="p97458257151"></a><a name="p97458257151"></a>-</p>
 </td>
@@ -96,7 +96,7 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p1574516258158"><a name="p1574516258158"></a><a name="p1574516258158"></a>否</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p874562561514"><a name="p874562561514"></a><a name="p874562561514"></a><a href="#table478913499397">表5</a></p>
+<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p874562561514"><a name="p874562561514"></a><a name="p874562561514"></a><a href="#table478913499397">status</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p8745172518154"><a name="p8745172518154"></a><a name="p8745172518154"></a>-</p>
 </td>
@@ -123,7 +123,7 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p15193194192418"><a name="p15193194192418"></a><a name="p15193194192418"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p17193543245"><a name="p17193543245"></a><a name="p17193543245"></a>PersistentVolume名称，可以包含小写字母、数字、连字符和点，开头和结尾必须是字母或数字，最长253个字符，同一namespace下name不能重复。例：my-pv</p>
+<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p17193543245"><a name="p17193543245"></a><a name="p17193543245"></a>PersistentVolume名称，可以包含小写字母、数字、连字符和点，开头和结尾必须是字母或数字，最长253个字符，同一namespace下name不能重复。</p>
 </td>
 </tr>
 <tr id="row5304758171616"><td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.1 "><p id="p519318462411"><a name="p519318462411"></a><a name="p519318462411"></a>labels</p>
@@ -147,7 +147,7 @@ POST /api/v1/cloudpersistentvolumes
 </th>
 <th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.2.5.1.2"><p id="p199221125112412"><a name="p199221125112412"></a><a name="p199221125112412"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.19191919191919%" id="mcps1.2.5.1.3"><p id="p1592252520243"><a name="p1592252520243"></a><a name="p1592252520243"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.19191919191919%" id="mcps1.2.5.1.3"><p id="p1592252520243"><a name="p1592252520243"></a><a name="p1592252520243"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.42424242424242%" id="mcps1.2.5.1.4"><p id="p19225259247"><a name="p19225259247"></a><a name="p19225259247"></a>描述</p>
 </th>
@@ -157,7 +157,7 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="18.18181818181818%" headers="mcps1.2.5.1.2 "><p id="p18362173742410"><a name="p18362173742410"></a><a name="p18362173742410"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p163629375243"><a name="p163629375243"></a><a name="p163629375243"></a><a href="#table11677121919263">表6</a></p>
+<td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p163629375243"><a name="p163629375243"></a><a name="p163629375243"></a><a href="#table11677121919263">flexVolume</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p636233719244"><a name="p636233719244"></a><a name="p636233719244"></a>Kubernetes的flexvolume存储插件</p>
 </td>
@@ -166,10 +166,12 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="18.18181818181818%" headers="mcps1.2.5.1.2 "><p id="p5362337112412"><a name="p5362337112412"></a><a name="p5362337112412"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p136213375242"><a name="p136213375242"></a><a name="p136213375242"></a>String array</p>
+<td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p136213375242"><a name="p136213375242"></a><a name="p136213375242"></a>Array of strings</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p12362837142418"><a name="p12362837142418"></a><a name="p12362837142418"></a>指定volume应该具有的访问模式，包括：</p>
-<a name="ul20281165712148"></a><a name="ul20281165712148"></a><ul id="ul20281165712148"><li>ReadWriteOnce：该卷可以被单个节点以读/写模式挂载</li><li>ReadOnlyMany：该卷可以被多个节点以只读模式挂载</li><li>ReadWriteMany：该卷可以被多个节点以读/写模式挂载</li></ul>
+<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p12362837142418"><a name="p12362837142418"></a><a name="p12362837142418"></a>指定volume应该具有的访问模式。</p>
+<a name="ul20281165712148"></a><a name="ul20281165712148"></a><ul id="ul20281165712148"><li>ReadWriteOnce：该卷可以被单个节点以读/写模式挂载<div class="note" id="note1348319103139"><a name="note1348319103139"></a><a name="note1348319103139"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p19484810151313"><a name="p19484810151313"></a><a name="p19484810151313"></a>集群版本为v1.13.10且storage-driver版本为1.0.19时，才支持此功能。</p>
+</div></div>
+</li><li>ReadOnlyMany：该卷可以被多个节点以只读模式挂载</li><li>ReadWriteMany：该卷可以被多个节点以读/写模式挂载</li></ul>
 </td>
 </tr>
 <tr id="row13922112515249"><td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.1 "><p id="p143621137182416"><a name="p143621137182416"></a><a name="p143621137182416"></a>persistentVolumeReclaimPolicy</p>
@@ -179,7 +181,7 @@ POST /api/v1/cloudpersistentvolumes
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p036214370243"><a name="p036214370243"></a><a name="p036214370243"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p83621637192411"><a name="p83621637192411"></a><a name="p83621637192411"></a>PersistentVolume的回收策略，包括：</p>
-<a name="ul6449173941614"></a><a name="ul6449173941614"></a><ul id="ul6449173941614"><li>Retain：保留策略允许手动回收资源。当 PersistentVolumeClaim 被删除时，PersistentVolume 仍然存在，volume 被视为“已释放”。</li><li>Recycle：回收策略会在 volume上执行基本擦除（rm -rf / thevolume / *），可被再次声明使用。</li><li>Delete：对于支持删除回收策略的卷插件，删除操作将从 Kubernetes 中删除 PersistentVolume 对象，并删除外部基础架构（如 AWS EBS、GCE PD、Azure Disk 或 Cinder 卷）中的关联存储资产。动态配置的卷继承其 StorageClass，默认为 Delete。</li></ul>
+<a name="ul6449173941614"></a><a name="ul6449173941614"></a><ul id="ul6449173941614"><li>Retain：保留策略允许手动回收资源。当 PersistentVolumeClaim 被删除时，PersistentVolume 仍然存在，volume 被视为“已释放”。</li><li>Recycle：回收策略会在 volume上执行基本擦除（rm -rf / thevolume / *），可被再次声明使用。</li><li>Delete：对于支持删除回收策略的卷插件，删除操作将从 Kubernetes 中删除 PersistentVolume 对象，并删除外部基础架构中的关联存储资产。动态配置的卷继承其 StorageClass，默认为 Delete。</li></ul>
 </td>
 </tr>
 </tbody>
@@ -192,7 +194,7 @@ POST /api/v1/cloudpersistentvolumes
 </th>
 <th class="cellrowborder" valign="top" width="17.348265173482652%" id="mcps1.2.5.1.2"><p id="p14949149203910"><a name="p14949149203910"></a><a name="p14949149203910"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p18949124916399"><a name="p18949124916399"></a><a name="p18949124916399"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p18949124916399"><a name="p18949124916399"></a><a name="p18949124916399"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.85571442855714%" id="mcps1.2.5.1.4"><p id="p14949124923919"><a name="p14949124923919"></a><a name="p14949124923919"></a>描述</p>
 </th>
@@ -202,7 +204,7 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.5.1.2 "><p id="p19494490396"><a name="p19494490396"></a><a name="p19494490396"></a>否</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p494924973913"><a name="p494924973913"></a><a name="p494924973913"></a>String array</p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p494924973913"><a name="p494924973913"></a><a name="p494924973913"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p894919493396"><a name="p894919493396"></a><a name="p894919493396"></a>显示volume实际具有的访问模式</p>
 </td>
@@ -227,7 +229,7 @@ POST /api/v1/cloudpersistentvolumes
 </th>
 <th class="cellrowborder" valign="top" width="15%" id="mcps1.2.5.1.2"><p id="p3800134052614"><a name="p3800134052614"></a><a name="p3800134052614"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="22%" id="mcps1.2.5.1.3"><p id="p12800144010269"><a name="p12800144010269"></a><a name="p12800144010269"></a>类型</p>
+<th class="cellrowborder" valign="top" width="22%" id="mcps1.2.5.1.3"><p id="p12800144010269"><a name="p12800144010269"></a><a name="p12800144010269"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="47%" id="mcps1.2.5.1.4"><p id="p1480064015266"><a name="p1480064015266"></a><a name="p1480064015266"></a>描述</p>
 </th>
@@ -257,7 +259,7 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p1723518464266"><a name="p1723518464266"></a><a name="p1723518464266"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.3 "><p id="p223574612612"><a name="p223574612612"></a><a name="p223574612612"></a><a href="#table311414269276">表7</a></p>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.3 "><p id="p223574612612"><a name="p223574612612"></a><a name="p223574612612"></a><a href="#table311414269276">options</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.5.1.4 "><p id="p323524616269"><a name="p323524616269"></a><a name="p323524616269"></a>-</p>
 </td>
@@ -272,7 +274,7 @@ POST /api/v1/cloudpersistentvolumes
 </th>
 <th class="cellrowborder" valign="top" width="13.861386138613863%" id="mcps1.2.5.1.2"><p id="p17168162412227"><a name="p17168162412227"></a><a name="p17168162412227"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="15.841584158415841%" id="mcps1.2.5.1.3"><p id="p1168624112210"><a name="p1168624112210"></a><a name="p1168624112210"></a>类型</p>
+<th class="cellrowborder" valign="top" width="15.841584158415841%" id="mcps1.2.5.1.3"><p id="p1168624112210"><a name="p1168624112210"></a><a name="p1168624112210"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="56.43564356435643%" id="mcps1.2.5.1.4"><p id="p141691324182211"><a name="p141691324182211"></a><a name="p141691324182211"></a>描述</p>
 </th>
@@ -294,8 +296,7 @@ POST /api/v1/cloudpersistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="15.841584158415841%" headers="mcps1.2.5.1.3 "><p id="p1055591514222"><a name="p1055591514222"></a><a name="p1055591514222"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.43564356435643%" headers="mcps1.2.5.1.4 "><p id="p18555315122215"><a name="p18555315122215"></a><a name="p18555315122215"></a>云存储所在的region，例：</p>
-<a name="ul1744915063016"></a><a name="ul1744915063016"></a><ul id="ul1744915063016"><li>"southchina"</li></ul>
+<td class="cellrowborder" valign="top" width="56.43564356435643%" headers="mcps1.2.5.1.4 "><p id="p18555315122215"><a name="p18555315122215"></a><a name="p18555315122215"></a>云存储所在的region。</p>
 </td>
 </tr>
 <tr id="row11156268277"><td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.1 "><p id="p175551115182210"><a name="p175551115182210"></a><a name="p175551115182210"></a>volumeID</p>
@@ -356,7 +357,7 @@ POST /api/v1/cloudpersistentvolumes
     }
     ```
 
-    1.11版本集群样例：
+    1.11及以上版本集群样例：
 
     ```
     { 
@@ -421,7 +422,7 @@ POST /api/v1/cloudpersistentvolumes
     }
     ```
 
-    1.11版本集群样例：
+    1.11及以上版本集群样例：
 
     ```
     { 
@@ -486,7 +487,7 @@ POST /api/v1/cloudpersistentvolumes
     }
     ```
 
-    1.11版本集群样例：
+    1.11及以上版本集群样例：
 
     ```
     { 

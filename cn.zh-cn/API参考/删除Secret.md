@@ -25,15 +25,14 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="18.21182118211821%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p58610051"><a name="zh-cn_topic_0079615047_p58610051"></a><a name="zh-cn_topic_0079615047_p58610051"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.3064306430643%" headers="mcps1.2.4.1.3 "><p id="p166752264459"><a name="p166752264459"></a><a name="p166752264459"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。可以任选其一使用：</p>
-<a name="ul75828215461"></a><a name="ul75828215461"></a><ul id="ul75828215461"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a></li><li>系统自带的namespace：default或kube-system</li></ul>
+<td class="cellrowborder" valign="top" width="64.3064306430643%" headers="mcps1.2.4.1.3 "><p id="p9404112815234"><a name="p9404112815234"></a><a name="p9404112815234"></a>Object name and auth scope, such as for teams and projects.</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615047_row45490280"><td class="cellrowborder" valign="top" width="17.481748174817483%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p60834034"><a name="zh-cn_topic_0079615047_p60834034"></a><a name="zh-cn_topic_0079615047_p60834034"></a>name</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.21182118211821%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p28609704"><a name="zh-cn_topic_0079615047_p28609704"></a><a name="zh-cn_topic_0079615047_p28609704"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="64.3064306430643%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p35684724"><a name="zh-cn_topic_0079615047_p35684724"></a><a name="zh-cn_topic_0079615047_p35684724"></a><span id="ph787510237582"><a name="ph787510237582"></a><a name="ph787510237582"></a>指定删除的secret的名称</span></p>
+<td class="cellrowborder" valign="top" width="64.3064306430643%" headers="mcps1.2.4.1.3 "><p id="p37971831132312"><a name="p37971831132312"></a><a name="p37971831132312"></a>Name of the Secret.</p>
 </td>
 </tr>
 </tbody>
@@ -43,64 +42,67 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 
 **请求参数：**
 
-请求参数如[表2](#zh-cn_topic_0079615047_table10894532)所示。
+请求参数如[表2](#table13766144711235)所示。
 
 **表 2**  参数描述
 
-<a name="zh-cn_topic_0079615047_table10894532"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0079615047_row27851360"><th class="cellrowborder" valign="top" width="21.8%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0079615047_p41367663"><a name="zh-cn_topic_0079615047_p41367663"></a><a name="zh-cn_topic_0079615047_p41367663"></a>参数</p>
+<a name="table13766144711235"></a>
+<table><thead align="left"><tr id="row7767104712314"><th class="cellrowborder" valign="top" width="21.8%" id="mcps1.2.5.1.1"><p id="p16767547192317"><a name="p16767547192317"></a><a name="p16767547192317"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.18%" id="mcps1.2.5.1.2"><p id="p11434212203257"><a name="p11434212203257"></a><a name="p11434212203257"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="19.18%" id="mcps1.2.5.1.2"><p id="p117671547102319"><a name="p117671547102319"></a><a name="p117671547102319"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p53755986203257"><a name="p53755986203257"></a><a name="p53755986203257"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p177671347152314"><a name="p177671347152314"></a><a name="p177671347152314"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="39.28%" id="mcps1.2.5.1.4"><p id="p59267649203257"><a name="p59267649203257"></a><a name="p59267649203257"></a>描述</p>
+<th class="cellrowborder" valign="top" width="39.28%" id="mcps1.2.5.1.4"><p id="p3767104711236"><a name="p3767104711236"></a><a name="p3767104711236"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0079615047_row33398680"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615047_p20938598"><a name="zh-cn_topic_0079615047_p20938598"></a><a name="zh-cn_topic_0079615047_p20938598"></a>kind</p>
+<tbody><tr id="row19767144713233"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="p1776774712312"><a name="p1776774712312"></a><a name="p1776774712312"></a>kind</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615047_p18304888"><a name="zh-cn_topic_0079615047_p18304888"></a><a name="zh-cn_topic_0079615047_p18304888"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="p19767154719236"><a name="p19767154719236"></a><a name="p19767154719236"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615047_p6300983"><a name="zh-cn_topic_0079615047_p6300983"></a><a name="zh-cn_topic_0079615047_p6300983"></a>String</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p18767154710235"><a name="p18767154710235"></a><a name="p18767154710235"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.28%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615047_p30014175"><a name="zh-cn_topic_0079615047_p30014175"></a><a name="zh-cn_topic_0079615047_p30014175"></a><span id="ph3486163216592"><a name="ph3486163216592"></a><a name="ph3486163216592"></a>API类型，固定值</span> <span id="ph67530461539"><a name="ph67530461539"></a><a name="ph67530461539"></a>＂<strong id="b145971171807"><a name="b145971171807"></a><a name="b145971171807"></a>DeleteOptions</strong>＂</span><span id="ph54971620013"><a name="ph54971620013"></a><a name="ph54971620013"></a>。</span></p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0079615047_row15229100"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615047_p25597569"><a name="zh-cn_topic_0079615047_p25597569"></a><a name="zh-cn_topic_0079615047_p25597569"></a>apiVersion</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615047_p60137223"><a name="zh-cn_topic_0079615047_p60137223"></a><a name="zh-cn_topic_0079615047_p60137223"></a>Yes</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615047_p39276901"><a name="zh-cn_topic_0079615047_p39276901"></a><a name="zh-cn_topic_0079615047_p39276901"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="39.28%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615047_p44485484"><a name="zh-cn_topic_0079615047_p44485484"></a><a name="zh-cn_topic_0079615047_p44485484"></a><span id="ph12159122911015"><a name="ph12159122911015"></a><a name="ph12159122911015"></a>API版本，固定值</span> <span id="ph18254116012"><a name="ph18254116012"></a><a name="ph18254116012"></a>＂</span><strong id="zh-cn_topic_0079615047_b64825036"><a name="zh-cn_topic_0079615047_b64825036"></a><a name="zh-cn_topic_0079615047_b64825036"></a>v1<span id="ph179884431303"><a name="ph179884431303"></a><a name="ph179884431303"></a>＂</span></strong><span id="ph490911474016"><a name="ph490911474016"></a><a name="ph490911474016"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="39.28%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615047_p40617610"><a name="zh-cn_topic_0079615047_p40617610"></a><a name="zh-cn_topic_0079615047_p40617610"></a>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.</p>
+<p id="p1767164717231"><a name="p1767164717231"></a><a name="p1767164717231"></a>The value of this parameter is <strong id="b15675857202818"><a name="b15675857202818"></a><a name="b15675857202818"></a>DeleteOptions</strong>.</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0079615047_row46554414"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615047_p12811205"><a name="zh-cn_topic_0079615047_p12811205"></a><a name="zh-cn_topic_0079615047_p12811205"></a>gracePeriodSeconds</p>
+<tr id="row9767124717239"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="p117671473237"><a name="p117671473237"></a><a name="p117671473237"></a>apiVersion</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615047_p31074713"><a name="zh-cn_topic_0079615047_p31074713"></a><a name="zh-cn_topic_0079615047_p31074713"></a>No</p>
+<td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="p5767184710233"><a name="p5767184710233"></a><a name="p5767184710233"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615047_p34023825"><a name="zh-cn_topic_0079615047_p34023825"></a><a name="zh-cn_topic_0079615047_p34023825"></a>Integer</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p197676474235"><a name="p197676474235"></a><a name="p197676474235"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.28%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615047_p4466454"><a name="zh-cn_topic_0079615047_p4466454"></a><a name="zh-cn_topic_0079615047_p4466454"></a><span id="ph17552131828"><a name="ph17552131828"></a><a name="ph17552131828"></a>该参数设置多少秒后删除该资源对象，必须是非负整数，设置为0表示立即删除</span><span id="ph558414556314"><a name="ph558414556314"></a><a name="ph558414556314"></a>。</span></p>
-</td>
-</tr>
-<tr id="r5127218248e44810aef8009970b099fe"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="af2819716cf77473687ccab24616a578e"><a name="af2819716cf77473687ccab24616a578e"></a><a name="af2819716cf77473687ccab24616a578e"></a>preconditions</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="a641ed44081304841a5fd30190451fa21"><a name="a641ed44081304841a5fd30190451fa21"></a><a name="a641ed44081304841a5fd30190451fa21"></a>No</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a38577330aabe498982d7e5570c56ca61"><a name="a38577330aabe498982d7e5570c56ca61"></a><a name="a38577330aabe498982d7e5570c56ca61"></a><a href="#t3a3f9a21f2254ea1a37ab173af770d4b">表3</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="39.28%" headers="mcps1.2.5.1.4 "><p id="add861d80e28b4c3abeb4aaba2bc1656e"><a name="add861d80e28b4c3abeb4aaba2bc1656e"></a><a name="add861d80e28b4c3abeb4aaba2bc1656e"></a><span id="ph19118164713414"><a name="ph19118164713414"></a><a name="ph19118164713414"></a>该参数设置必须在删除执行前完成的项，如果不能完成则会返回409冲突的状态码。</span></p>
+<td class="cellrowborder" valign="top" width="39.28%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615047_p27312452"><a name="zh-cn_topic_0079615047_p27312452"></a><a name="zh-cn_topic_0079615047_p27312452"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</p>
+<p id="p8767547202311"><a name="p8767547202311"></a><a name="p8767547202311"></a>The value of this parameter is <strong id="b97676478235"><a name="b97676478235"></a><a name="b97676478235"></a>v1</strong>.</p>
 </td>
 </tr>
-<tr id="r280ac76ab36f441a9340fd44c7c18eca"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="a0bf8df19415f4b5bacf092be129b8cdd"><a name="a0bf8df19415f4b5bacf092be129b8cdd"></a><a name="a0bf8df19415f4b5bacf092be129b8cdd"></a>orphanDependents</p>
+<tr id="row18767747112320"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="p15767124717231"><a name="p15767124717231"></a><a name="p15767124717231"></a>gracePeriodSeconds</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="ad17b008e7916427d97b66618d77c9284"><a name="ad17b008e7916427d97b66618d77c9284"></a><a name="ad17b008e7916427d97b66618d77c9284"></a>No</p>
+<td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="p1076715471239"><a name="p1076715471239"></a><a name="p1076715471239"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a44d8e6006792468ab7322ab1cfa791ef"><a name="a44d8e6006792468ab7322ab1cfa791ef"></a><a name="a44d8e6006792468ab7322ab1cfa791ef"></a>Boolean</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p076794722315"><a name="p076794722315"></a><a name="p076794722315"></a>Integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.28%" headers="mcps1.2.5.1.4 "><p id="a81268fbf98a84f07a0a4492319b5b36a"><a name="a81268fbf98a84f07a0a4492319b5b36a"></a><a name="a81268fbf98a84f07a0a4492319b5b36a"></a><span id="ph12505131493910"><a name="ph12505131493910"></a><a name="ph12505131493910"></a>该参数表示依赖的</span><span id="ph13896125518393"><a name="ph13896125518393"></a><a name="ph13896125518393"></a>资源对象是否被设置为孤儿（orphan），ture表示设置，false则不设置。默认为false。</span></p>
+<td class="cellrowborder" valign="top" width="39.28%" headers="mcps1.2.5.1.4 "><p id="p1276784742313"><a name="p1276784742313"></a><a name="p1276784742313"></a>The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.</p>
+<p id="zh-cn_topic_0079615047_p40198088"><a name="zh-cn_topic_0079615047_p40198088"></a><a name="zh-cn_topic_0079615047_p40198088"></a>Value range of this parameter: &gt; 0.</p>
+</td>
+</tr>
+<tr id="row10768194714236"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="p776884714239"><a name="p776884714239"></a><a name="p776884714239"></a>preconditions</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="p2076894712235"><a name="p2076894712235"></a><a name="p2076894712235"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p1276884752317"><a name="p1276884752317"></a><a name="p1276884752317"></a><a href="#t3a3f9a21f2254ea1a37ab173af770d4b">preconditions</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="39.28%" headers="mcps1.2.5.1.4 "><p id="p676874711234"><a name="p676874711234"></a><a name="p676874711234"></a>Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.</p>
+</td>
+</tr>
+<tr id="row18768194717233"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="p67683479237"><a name="p67683479237"></a><a name="p67683479237"></a>orphanDependents</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="p18768124710237"><a name="p18768124710237"></a><a name="p18768124710237"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p37681447112316"><a name="p37681447112316"></a><a name="p37681447112316"></a>Boolean</p>
+</td>
+<td class="cellrowborder" valign="top" width="39.28%" headers="mcps1.2.5.1.4 "><p id="p137681474239"><a name="p137681474239"></a><a name="p137681474239"></a>Should the dependent objects be orphaned. If true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list.</p>
 </td>
 </tr>
 </tbody>
@@ -113,7 +115,7 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </th>
 <th class="cellrowborder" valign="top" width="19.17%" id="mcps1.2.5.1.2"><p id="p6896990203257"><a name="p6896990203257"></a><a name="p6896990203257"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p21785280203257"><a name="p21785280203257"></a><a name="p21785280203257"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p21785280203257"><a name="p21785280203257"></a><a name="p21785280203257"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.290000000000006%" id="mcps1.2.5.1.4"><p id="p19777271203257"><a name="p19777271203257"></a><a name="p19777271203257"></a>描述</p>
 </th>
@@ -123,9 +125,9 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="a7afebb3677e84e6d9567a2e465b8c2d9"><a name="a7afebb3677e84e6d9567a2e465b8c2d9"></a><a name="a7afebb3677e84e6d9567a2e465b8c2d9"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a4623a62cb6324c1c900e9a92971f774d"><a name="a4623a62cb6324c1c900e9a92971f774d"></a><a name="a4623a62cb6324c1c900e9a92971f774d"></a>types.UID</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a22ac63c8187b498d89bf40f317c194a4"><a name="a22ac63c8187b498d89bf40f317c194a4"></a><a name="a22ac63c8187b498d89bf40f317c194a4"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="a065c010ac9d74729897e30c457cae2bd"><a name="a065c010ac9d74729897e30c457cae2bd"></a><a name="a065c010ac9d74729897e30c457cae2bd"></a><span id="ph297004517482"><a name="ph297004517482"></a><a name="ph297004517482"></a>指定的UID</span><span id="ph1281317349490"><a name="ph1281317349490"></a><a name="ph1281317349490"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="p426585314246"><a name="p426585314246"></a><a name="p426585314246"></a>Specifies the target UID.</p>
 </td>
 </tr>
 </tbody>
@@ -141,78 +143,77 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
  }
 ```
 
-## 响应消息<a name="s00e4933458e84b218d5369e1c39bfae6"></a>
+## 响应消息<a name="section1087613914251"></a>
 
 **响应参数：**
 
-响应参数如[表4](#zh-cn_topic_0079615047_table30941925)所示。
+响应参数如[表4](#table13877539132512)所示。
 
 **表 4**  参数描述
 
-<a name="zh-cn_topic_0079615047_table30941925"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0079615047_row37328119"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079615047_p3678790"><a name="zh-cn_topic_0079615047_p3678790"></a><a name="zh-cn_topic_0079615047_p3678790"></a>参数</p>
+<a name="table13877539132512"></a>
+<table><thead align="left"><tr id="row587743922513"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="p587712393259"><a name="p587712393259"></a><a name="p587712393259"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p56650888203257"><a name="p56650888203257"></a><a name="p56650888203257"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p2877539102515"><a name="p2877539102515"></a><a name="p2877539102515"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.3"><p id="p25319233203257"><a name="p25319233203257"></a><a name="p25319233203257"></a>描述</p>
+<th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.3"><p id="p187713912254"><a name="p187713912254"></a><a name="p187713912254"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0079615047_row44834872"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p7745977"><a name="zh-cn_topic_0079615047_p7745977"></a><a name="zh-cn_topic_0079615047_p7745977"></a>kind</p>
+<tbody><tr id="row16877439182511"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p687793916253"><a name="p687793916253"></a><a name="p687793916253"></a>kind</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p23444395"><a name="zh-cn_topic_0079615047_p23444395"></a><a name="zh-cn_topic_0079615047_p23444395"></a>String</p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p118771139192510"><a name="p118771139192510"></a><a name="p118771139192510"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p19947829"><a name="zh-cn_topic_0079615047_p19947829"></a><a name="zh-cn_topic_0079615047_p19947829"></a><span id="ph278219711497"><a name="ph278219711497"></a><a name="ph278219711497"></a>API类型</span><span id="ph14610336154920"><a name="ph14610336154920"></a><a name="ph14610336154920"></a>。</span></p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0079615047_row45312739"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p46453253"><a name="zh-cn_topic_0079615047_p46453253"></a><a name="zh-cn_topic_0079615047_p46453253"></a>apiVersion</p>
-</td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p4617172"><a name="zh-cn_topic_0079615047_p4617172"></a><a name="zh-cn_topic_0079615047_p4617172"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p38446647"><a name="zh-cn_topic_0079615047_p38446647"></a><a name="zh-cn_topic_0079615047_p38446647"></a><span id="ph20688181413493"><a name="ph20688181413493"></a><a name="ph20688181413493"></a>API版本</span><span id="ph141513814499"><a name="ph141513814499"></a><a name="ph141513814499"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p19877203922511"><a name="p19877203922511"></a><a name="p19877203922511"></a>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated.</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0079615047_row10475508"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p43209809"><a name="zh-cn_topic_0079615047_p43209809"></a><a name="zh-cn_topic_0079615047_p43209809"></a>metadata</p>
+<tr id="row1887753919258"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p8877133919255"><a name="p8877133919255"></a><a name="p8877133919255"></a>apiVersion</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p10333622"><a name="zh-cn_topic_0079615047_p10333622"></a><a name="zh-cn_topic_0079615047_p10333622"></a><a href="#zh-cn_topic_0079615047_table10041872">表5</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p178771639202519"><a name="p178771639202519"></a><a name="p178771639202519"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p31717068"><a name="zh-cn_topic_0079615047_p31717068"></a><a name="zh-cn_topic_0079615047_p31717068"></a>-</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0079615047_row17018161"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p36293778"><a name="zh-cn_topic_0079615047_p36293778"></a><a name="zh-cn_topic_0079615047_p36293778"></a>status</p>
-</td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p54114937"><a name="zh-cn_topic_0079615047_p54114937"></a><a name="zh-cn_topic_0079615047_p54114937"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p9503344503"><a name="p9503344503"></a><a name="p9503344503"></a>表示操作的状态，可以为：</p>
-<a name="ul534113018509"></a><a name="ul534113018509"></a><ul id="ul534113018509"><li>"Success"：成功</li><li>"Failure"：失败</li></ul>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p13877639162518"><a name="p13877639162518"></a><a name="p13877639162518"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0079615047_row56885929"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p44357513"><a name="zh-cn_topic_0079615047_p44357513"></a><a name="zh-cn_topic_0079615047_p44357513"></a>message</p>
+<tr id="row787716394254"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p58772039172513"><a name="p58772039172513"></a><a name="p58772039172513"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p36188810"><a name="zh-cn_topic_0079615047_p36188810"></a><a name="zh-cn_topic_0079615047_p36188810"></a>String</p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p128771339172515"><a name="p128771339172515"></a><a name="p128771339172515"></a><a href="#table12878113992515">metadata</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p45612499"><a name="zh-cn_topic_0079615047_p45612499"></a><a name="zh-cn_topic_0079615047_p45612499"></a><span id="ph1637745165210"><a name="ph1637745165210"></a><a name="ph1637745165210"></a>具体描述</span><span id="ph530016229519"><a name="ph530016229519"></a><a name="ph530016229519"></a>该操作的状态</span><span id="ph10489624205317"><a name="ph10489624205317"></a><a name="ph10489624205317"></a>。</span></p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0079615047_row7859315"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p32624764"><a name="zh-cn_topic_0079615047_p32624764"></a><a name="zh-cn_topic_0079615047_p32624764"></a>reason</p>
-</td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p25360226"><a name="zh-cn_topic_0079615047_p25360226"></a><a name="zh-cn_topic_0079615047_p25360226"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p40912396"><a name="zh-cn_topic_0079615047_p40912396"></a><a name="zh-cn_topic_0079615047_p40912396"></a><span id="ph9412234125312"><a name="ph9412234125312"></a><a name="ph9412234125312"></a>具体描述操作失败的原因，如果该字段为空，表示没有可用信息。</span></p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p188781539162517"><a name="p188781539162517"></a><a name="p188781539162517"></a>-</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0079615047_row32667246"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p28801274"><a name="zh-cn_topic_0079615047_p28801274"></a><a name="zh-cn_topic_0079615047_p28801274"></a>details</p>
+<tr id="row3878153911251"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p11878113916254"><a name="p11878113916254"></a><a name="p11878113916254"></a>status</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p51201854"><a name="zh-cn_topic_0079615047_p51201854"></a><a name="zh-cn_topic_0079615047_p51201854"></a><a href="#zh-cn_topic_0079615047_table23267991">表6</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p78781239102519"><a name="p78781239102519"></a><a name="p78781239102519"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p53709539"><a name="zh-cn_topic_0079615047_p53709539"></a><a name="zh-cn_topic_0079615047_p53709539"></a>-</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p21233739"><a name="zh-cn_topic_0079615047_p21233739"></a><a name="zh-cn_topic_0079615047_p21233739"></a>Status of the operation. One of: "Success" or "Failure".</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0079615047_row13623809"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p29786778"><a name="zh-cn_topic_0079615047_p29786778"></a><a name="zh-cn_topic_0079615047_p29786778"></a>code</p>
+<tr id="row1187843915255"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p88781839172511"><a name="p88781839172511"></a><a name="p88781839172511"></a>message</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p63918823"><a name="zh-cn_topic_0079615047_p63918823"></a><a name="zh-cn_topic_0079615047_p63918823"></a>Integer</p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p1387883914254"><a name="p1387883914254"></a><a name="p1387883914254"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p10042193"><a name="zh-cn_topic_0079615047_p10042193"></a><a name="zh-cn_topic_0079615047_p10042193"></a><span id="ph108671583547"><a name="ph108671583547"></a><a name="ph108671583547"></a>表示操作的返回码</span><span id="ph1821161610565"><a name="ph1821161610565"></a><a name="ph1821161610565"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p4878163982511"><a name="p4878163982511"></a><a name="p4878163982511"></a>A human-readable description of the status of this operation.</p>
+</td>
+</tr>
+<tr id="row13878133982513"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p13878739122513"><a name="p13878739122513"></a><a name="p13878739122513"></a>reason</p>
+</td>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p11878839172516"><a name="p11878839172516"></a><a name="p11878839172516"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p58781639162513"><a name="p58781639162513"></a><a name="p58781639162513"></a>A machine-readable description of why this operation is in the "Failure" status. If this value is empty there is no information available. A Reason clarifies an HTTP status code but does not override it.</p>
+</td>
+</tr>
+<tr id="row168789399259"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p387893972513"><a name="p387893972513"></a><a name="p387893972513"></a>details</p>
+</td>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p3878143913252"><a name="p3878143913252"></a><a name="p3878143913252"></a><a href="#table17879339152516">details</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p4878339172519"><a name="p4878339172519"></a><a name="p4878339172519"></a>-</p>
+</td>
+</tr>
+<tr id="row7878039132513"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p1787803916252"><a name="p1787803916252"></a><a name="p1787803916252"></a>code</p>
+</td>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p5878439192519"><a name="p5878439192519"></a><a name="p5878439192519"></a>Integer</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p12878539192515"><a name="p12878539192515"></a><a name="p12878539192515"></a>Suggested HTTP return code for this status, 0 if not set.</p>
 </td>
 </tr>
 </tbody>
@@ -220,27 +221,27 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 
 **表 5**  metadata字段数据结构说明
 
-<a name="zh-cn_topic_0079615047_table10041872"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0079615047_row4239285"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079615047_p7837765"><a name="zh-cn_topic_0079615047_p7837765"></a><a name="zh-cn_topic_0079615047_p7837765"></a>参数</p>
+<a name="table12878113992515"></a>
+<table><thead align="left"><tr id="row178791039172515"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="p138791239112519"><a name="p138791239112519"></a><a name="p138791239112519"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p16832548203257"><a name="p16832548203257"></a><a name="p16832548203257"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p8879639132514"><a name="p8879639132514"></a><a name="p8879639132514"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p21259186203257"><a name="p21259186203257"></a><a name="p21259186203257"></a>描述</p>
+<th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p1287943922519"><a name="p1287943922519"></a><a name="p1287943922519"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0079615047_row63891552"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p7833234"><a name="zh-cn_topic_0079615047_p7833234"></a><a name="zh-cn_topic_0079615047_p7833234"></a>selfLink</p>
+<tbody><tr id="row987963962518"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="p14879143912513"><a name="p14879143912513"></a><a name="p14879143912513"></a>selfLink</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p30512241"><a name="zh-cn_topic_0079615047_p30512241"></a><a name="zh-cn_topic_0079615047_p30512241"></a>String</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="p138797394259"><a name="p138797394259"></a><a name="p138797394259"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614900_p14471838"><a name="zh-cn_topic_0079614900_p14471838"></a><a name="zh-cn_topic_0079614900_p14471838"></a>SelfLink 是该资源对象的 URL。系统内部使用，只读项。</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p55572452"><a name="zh-cn_topic_0079615047_p55572452"></a><a name="zh-cn_topic_0079615047_p55572452"></a>SelfLink is a URL representing this object. Populated by the system. Read-only.</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0079615047_row30390025"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p45672950"><a name="zh-cn_topic_0079615047_p45672950"></a><a name="zh-cn_topic_0079615047_p45672950"></a>resourceVersion</p>
+<tr id="row38791539122517"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="p1087903982519"><a name="p1087903982519"></a><a name="p1087903982519"></a>resourceVersion</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p8521451"><a name="zh-cn_topic_0079615047_p8521451"></a><a name="zh-cn_topic_0079615047_p8521451"></a>String</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="p587933922513"><a name="p587933922513"></a><a name="p587933922513"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614900_p1905570"><a name="zh-cn_topic_0079614900_p1905570"></a><a name="zh-cn_topic_0079614900_p1905570"></a>ResourceVersion表示该资源对象内部版本，可以用来优化并发性能和监视资源变化，系统内部使用，只读项。</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p19148945"><a name="zh-cn_topic_0079615047_p19148945"></a><a name="zh-cn_topic_0079615047_p19148945"></a>String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only.</p>
 </td>
 </tr>
 </tbody>
@@ -248,55 +249,55 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 
 **表 6**  details字段数据结构说明
 
-<a name="zh-cn_topic_0079615047_table23267991"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0079615047_row467118"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079615047_p37836574"><a name="zh-cn_topic_0079615047_p37836574"></a><a name="zh-cn_topic_0079615047_p37836574"></a>参数</p>
+<a name="table17879339152516"></a>
+<table><thead align="left"><tr id="row16879183992516"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="p17879193911255"><a name="p17879193911255"></a><a name="p17879193911255"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p32915338203257"><a name="p32915338203257"></a><a name="p32915338203257"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p1787963932517"><a name="p1787963932517"></a><a name="p1787963932517"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p48896756203257"><a name="p48896756203257"></a><a name="p48896756203257"></a>描述</p>
+<th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p1288063920251"><a name="p1288063920251"></a><a name="p1288063920251"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0079615047_row11018834"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p20110389"><a name="zh-cn_topic_0079615047_p20110389"></a><a name="zh-cn_topic_0079615047_p20110389"></a>name</p>
+<tbody><tr id="row188011397257"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="p18802396256"><a name="p18802396256"></a><a name="p18802396256"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p18328792"><a name="zh-cn_topic_0079615047_p18328792"></a><a name="zh-cn_topic_0079615047_p18328792"></a>String</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="p688011397258"><a name="p688011397258"></a><a name="p688011397258"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p8237155"><a name="zh-cn_topic_0079615047_p8237155"></a><a name="zh-cn_topic_0079615047_p8237155"></a><span id="ph770054917410"><a name="ph770054917410"></a><a name="ph770054917410"></a>与StatusReason关联的资源</span><span id="ph104962551348"><a name="ph104962551348"></a><a name="ph104962551348"></a>名称。</span></p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0079615047_row7025535"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p32197499"><a name="zh-cn_topic_0079615047_p32197499"></a><a name="zh-cn_topic_0079615047_p32197499"></a>kind</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p57860594"><a name="zh-cn_topic_0079615047_p57860594"></a><a name="zh-cn_topic_0079615047_p57860594"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p56196558"><a name="zh-cn_topic_0079615047_p56196558"></a><a name="zh-cn_topic_0079615047_p56196558"></a><span id="ph178911178515"><a name="ph178911178515"></a><a name="ph178911178515"></a>与StatusReason关联的资源</span><span id="ph8292172415519"><a name="ph8292172415519"></a><a name="ph8292172415519"></a>类型</span></p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="p168808393251"><a name="p168808393251"></a><a name="p168808393251"></a>The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described).</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0079615047_row36006982"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p30884404"><a name="zh-cn_topic_0079615047_p30884404"></a><a name="zh-cn_topic_0079615047_p30884404"></a>causes</p>
+<tr id="row88801039162517"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="p888013972516"><a name="p888013972516"></a><a name="p888013972516"></a>kind</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p18608762"><a name="zh-cn_topic_0079615047_p18608762"></a><a name="zh-cn_topic_0079615047_p18608762"></a><a href="#zh-cn_topic_0079615047_table8085329">表7</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="p28801639112511"><a name="p28801639112511"></a><a name="p28801639112511"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p30914753"><a name="zh-cn_topic_0079615047_p30914753"></a><a name="zh-cn_topic_0079615047_p30914753"></a>-</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0079615047_row9797324"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p55385783"><a name="zh-cn_topic_0079615047_p55385783"></a><a name="zh-cn_topic_0079615047_p55385783"></a>retryAfterSeconds</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p57063414"><a name="zh-cn_topic_0079615047_p57063414"></a><a name="zh-cn_topic_0079615047_p57063414"></a>Integer</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p58733810"><a name="zh-cn_topic_0079615047_p58733810"></a><a name="zh-cn_topic_0079615047_p58733810"></a><span id="ph126371048157"><a name="ph126371048157"></a><a name="ph126371048157"></a>该参数设置删除重试的时间，单位为秒。</span></p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="p5880113911259"><a name="p5880113911259"></a><a name="p5880113911259"></a>The kind attribute of the resource associated with the status StatusReason. On some operations may differ from the requested resource Kind.</p>
 </td>
 </tr>
-<tr id="r0d1d58b07bd040818c28c28ba70ade83"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="a37b4a7b3504040c8b24983f9f034d212"><a name="a37b4a7b3504040c8b24983f9f034d212"></a><a name="a37b4a7b3504040c8b24983f9f034d212"></a>uid</p>
+<tr id="row1888063922514"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="p10880103918253"><a name="p10880103918253"></a><a name="p10880103918253"></a>causes</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p198842574110"><a name="zh-cn_topic_0079615047_p198842574110"></a><a name="zh-cn_topic_0079615047_p198842574110"></a>String</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="p1788083912515"><a name="p1788083912515"></a><a name="p1788083912515"></a><a href="#table1688123912516">causes</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="aa4615c1a43234eb19bfd9f0ad4658d5e"><a name="aa4615c1a43234eb19bfd9f0ad4658d5e"></a><a name="aa4615c1a43234eb19bfd9f0ad4658d5e"></a><span id="ph618635111616"><a name="ph618635111616"></a><a name="ph618635111616"></a>资源对象的UID</span></p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="p0880839162514"><a name="p0880839162514"></a><a name="p0880839162514"></a>-</p>
 </td>
 </tr>
-<tr id="rc0e343be5f114feeaa79e099c6662dbe"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p199461439422"><a name="zh-cn_topic_0079615047_p199461439422"></a><a name="zh-cn_topic_0079615047_p199461439422"></a>group</p>
+<tr id="row1788013916254"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="p19880203912511"><a name="p19880203912511"></a><a name="p19880203912511"></a>retryAfterSeconds</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p094619316422"><a name="zh-cn_topic_0079615047_p094619316422"></a><a name="zh-cn_topic_0079615047_p094619316422"></a>String</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="p1788023919257"><a name="p1788023919257"></a><a name="p1788023919257"></a>Integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="p143112091679"><a name="p143112091679"></a><a name="p143112091679"></a>与StatusReason关联的组属性。</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="p1588016392259"><a name="p1588016392259"></a><a name="p1588016392259"></a>If specified, the time in seconds before the operation should be retried.</p>
+</td>
+</tr>
+<tr id="row6880113911259"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="p8880239152513"><a name="p8880239152513"></a><a name="p8880239152513"></a>uid</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="p16880173962514"><a name="p16880173962514"></a><a name="p16880173962514"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="p1688193920259"><a name="p1688193920259"></a><a name="p1688193920259"></a>UID of the resource. (when there is a single resource which can be described).</p>
+</td>
+</tr>
+<tr id="row3881103920259"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="p19881133942513"><a name="p19881133942513"></a><a name="p19881133942513"></a>group</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="p38812390254"><a name="p38812390254"></a><a name="p38812390254"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="ac139fb12d76c4626b1a8e77f2eaf561a"><a name="ac139fb12d76c4626b1a8e77f2eaf561a"></a><a name="ac139fb12d76c4626b1a8e77f2eaf561a"></a>The group attribute of the resource associated with the status StatusReason.</p>
 </td>
 </tr>
 </tbody>
@@ -304,34 +305,34 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 
 **表 7**  causes字段数据结构说明
 
-<a name="zh-cn_topic_0079615047_table8085329"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0079615047_row2488285"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079615047_p224543"><a name="zh-cn_topic_0079615047_p224543"></a><a name="zh-cn_topic_0079615047_p224543"></a>参数</p>
+<a name="table1688123912516"></a>
+<table><thead align="left"><tr id="row208811439132512"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="p1088133962516"><a name="p1088133962516"></a><a name="p1088133962516"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p40819061203257"><a name="p40819061203257"></a><a name="p40819061203257"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p0881539122513"><a name="p0881539122513"></a><a name="p0881539122513"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p18009654203257"><a name="p18009654203257"></a><a name="p18009654203257"></a>描述</p>
+<th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p288113902516"><a name="p288113902516"></a><a name="p288113902516"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0079615047_row12212497"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p49688181"><a name="zh-cn_topic_0079615047_p49688181"></a><a name="zh-cn_topic_0079615047_p49688181"></a>reason</p>
+<tbody><tr id="row588120390253"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="p8881143992512"><a name="p8881143992512"></a><a name="p8881143992512"></a>reason</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p65319718"><a name="zh-cn_topic_0079615047_p65319718"></a><a name="zh-cn_topic_0079615047_p65319718"></a>String</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="p488119393250"><a name="p488119393250"></a><a name="p488119393250"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p56405771"><a name="zh-cn_topic_0079615047_p56405771"></a><a name="zh-cn_topic_0079615047_p56405771"></a><span id="ph17921481811"><a name="ph17921481811"></a><a name="ph17921481811"></a>具体描述错误的原因，如果该字段为空，表示没有可用信息。</span></p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0079615047_row37889892"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p49182451"><a name="zh-cn_topic_0079615047_p49182451"></a><a name="zh-cn_topic_0079615047_p49182451"></a>message</p>
-</td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p24355627"><a name="zh-cn_topic_0079615047_p24355627"></a><a name="zh-cn_topic_0079615047_p24355627"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p26648755"><a name="zh-cn_topic_0079615047_p26648755"></a><a name="zh-cn_topic_0079615047_p26648755"></a><span id="ph147844411812"><a name="ph147844411812"></a><a name="ph147844411812"></a>具体描述错误的原因，</span><span id="ph13301114105"><a name="ph13301114105"></a><a name="ph13301114105"></a>可读性更好。</span></p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="p388111398258"><a name="p388111398258"></a><a name="p388111398258"></a>A machine-readable description of the cause of the error. If this value is empty there is no information available.</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0079615047_row38512204"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615047_p32480848"><a name="zh-cn_topic_0079615047_p32480848"></a><a name="zh-cn_topic_0079615047_p32480848"></a>field</p>
+<tr id="row148811739132516"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="p58811539162512"><a name="p58811539162512"></a><a name="p58811539162512"></a>message</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615047_p13703032"><a name="zh-cn_topic_0079615047_p13703032"></a><a name="zh-cn_topic_0079615047_p13703032"></a>String</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="p48821439192514"><a name="p48821439192514"></a><a name="p48821439192514"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="p04861744111015"><a name="p04861744111015"></a><a name="p04861744111015"></a>表示导致此错误的资源对象数组，数组成员是序列化的JSON格式。数组索引从0开始，由于某个资源对象可能有多个错误，所以在该数组里可能多次出现该资源对象。</p>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="p58829393251"><a name="p58829393251"></a><a name="p58829393251"></a>A human-readable description of the cause of the error. This field may be presented as-is to a reader.</p>
+</td>
+</tr>
+<tr id="row58829391253"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="p388203910254"><a name="p388203910254"></a><a name="p388203910254"></a>field</p>
+</td>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="p1788243952514"><a name="p1788243952514"></a><a name="p1788243952514"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p36203821"><a name="zh-cn_topic_0079615047_p36203821"></a><a name="zh-cn_topic_0079615047_p36203821"></a>The field of the resource that has caused this error, as named by its JSON serialization. May include dot and postfix notation for nested attributes. Arrays are zero-indexed. Fields may appear more than once in an array of causes due to fields having multiple errors.</p>
 </td>
 </tr>
 </tbody>
@@ -364,7 +365,7 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </thead>
 <tbody><tr id="zh-cn_topic_0079615047_row4146549"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615047_p326206"><a name="zh-cn_topic_0079615047_p326206"></a><a name="zh-cn_topic_0079615047_p326206"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615047_p26422695"><a name="zh-cn_topic_0079615047_p26422695"></a><a name="zh-cn_topic_0079615047_p26422695"></a><span id="ph1196922160"><a name="ph1196922160"></a><a name="ph1196922160"></a>删除secret资源对象成功。</span></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p188922206273"><a name="p188922206273"></a><a name="p188922206273"></a>Delete a secret resource objectre successfully.</p>
 </td>
 </tr>
 </tbody>

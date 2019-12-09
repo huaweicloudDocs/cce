@@ -25,7 +25,7 @@ GET /apis/extensions/v1beta1/ingresses
 </td>
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.4.1.2 "><p id="p578231710205"><a name="p578231710205"></a><a name="p578231710205"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p978261710207"><a name="p978261710207"></a><a name="p978261710207"></a>The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p978261710207"><a name="p978261710207"></a><a name="p978261710207"></a><span>The continue option should be set when retrieving more results from the server. Since this value is server defined, clients may only use the continue value from a previous query result with identical query parameters (except for the value of continue) and the server may reject a continue value it does not recognize. If the specified continue value is no longer valid whether due to expiration (generally five to fifteen minutes) or a configuration change on the server the server will respond with a 410 ResourceExpired error indicating the client must restart their list without the continue field. This field is not supported when watch is true. Clients may start a watch from the last resourceVersion value returned by the server and not miss any modifications.</span></p>
 </td>
 </tr>
 <tr id="row19095777"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p3254085"><a name="p3254085"></a><a name="p3254085"></a>fieldSelector</p>
@@ -39,7 +39,7 @@ GET /apis/extensions/v1beta1/ingresses
 </td>
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.4.1.2 "><p id="p10523163603012"><a name="p10523163603012"></a><a name="p10523163603012"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p281014399014"><a name="p281014399014"></a><a name="p281014399014"></a>If true, partially initialized resources are included in the response.</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p281014399014"><a name="p281014399014"></a><a name="p281014399014"></a><span>If true, partially initialized resources are included in the response.</span></p>
 </td>
 </tr>
 <tr id="row624413343302"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p13244133414304"><a name="p13244133414304"></a><a name="p13244133414304"></a>labelSelector</p>
@@ -68,7 +68,7 @@ GET /apis/extensions/v1beta1/ingresses
 </td>
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.4.1.2 "><p id="p1280215381514"><a name="p1280215381514"></a><a name="p1280215381514"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1580220385118"><a name="p1580220385118"></a><a name="p1580220385118"></a>When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it’s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1580220385118"><a name="p1580220385118"></a><a name="p1580220385118"></a><span>When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it’s 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.</span></p>
 </td>
 </tr>
 <tr id="row693613351015"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p89361435115"><a name="p89361435115"></a><a name="p89361435115"></a>timeoutSeconds</p>
@@ -82,7 +82,7 @@ GET /apis/extensions/v1beta1/ingresses
 </td>
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.4.1.2 "><p id="p136281335117"><a name="p136281335117"></a><a name="p136281335117"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p136281833912"><a name="p136281833912"></a><a name="p136281833912"></a>Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p136281833912"><a name="p136281833912"></a><a name="p136281833912"></a><span>Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.</span></p>
 </td>
 </tr>
 </tbody>

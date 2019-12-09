@@ -2,7 +2,7 @@
 
 ## 功能描述<a name="section155195145312"></a>
 
-该API用于在指定的Namespace下通过华为云存储服务中的云存储（EVS、SFS、OBS）去创建PersistentVolumeClaim。
+该API用于在指定的Namespace下通过云存储服务中的云存储（EVS、SFS、OBS）去创建PersistentVolumeClaim。
 
 ## URI<a name="section1975393831219"></a>
 
@@ -26,7 +26,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 <td class="cellrowborder" valign="top" width="12%" headers="mcps1.2.4.1.2 "><p id="p814518580186"><a name="p814518580186"></a><a name="p814518580186"></a>是</p>
 </td>
 <td class="cellrowborder" valign="top" width="68%" headers="mcps1.2.4.1.3 "><p id="p18341134117277"><a name="p18341134117277"></a><a name="p18341134117277"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。字符串必须满足正则表达式 [a-z0-9]([-a-z0-9]*[a-z0-9])?。可以任选其一使用：</p>
-<a name="ul75828215461"></a><a name="ul75828215461"></a><ul id="ul75828215461"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a></li><li>系统自带的namespace：default或kube-system</li></ul>
+<a name="ul75828215461"></a><a name="ul75828215461"></a><ul id="ul75828215461"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a>。</li><li>系统自带的namespace：default或kube-system。</li></ul>
 </td>
 </tr>
 </tbody>
@@ -61,7 +61,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="p20500954182618"><a name="p20500954182618"></a><a name="p20500954182618"></a>使用token认证时必选</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1148116013545"><a name="p1148116013545"></a><a name="p1148116013545"></a>调用接口的一种认证方式，使用时需要<a href="获取请求认证.md#section2417768214391">获取token</a>。</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1148116013545"><a name="p1148116013545"></a><a name="p1148116013545"></a>调用接口的一种认证方式，使用时需要<a href="认证鉴权.md#section2417768214391">获取token</a>.</p>
 </td>
 </tr>
 </tbody>
@@ -74,7 +74,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </th>
 <th class="cellrowborder" valign="top" width="18.81188118811881%" id="mcps1.2.5.1.2"><p id="p11744152514157"><a name="p11744152514157"></a><a name="p11744152514157"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.81188118811881%" id="mcps1.2.5.1.3"><p id="p14744172517156"><a name="p14744172517156"></a><a name="p14744172517156"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.81188118811881%" id="mcps1.2.5.1.3"><p id="p14744172517156"><a name="p14744172517156"></a><a name="p14744172517156"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.57425742574257%" id="mcps1.2.5.1.4"><p id="p1474411256156"><a name="p1474411256156"></a><a name="p1474411256156"></a>描述</p>
 </th>
@@ -102,16 +102,16 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p1062853354013"><a name="p1062853354013"></a><a name="p1062853354013"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p074532551518"><a name="p074532551518"></a><a name="p074532551518"></a><a href="#table6304105819164">表4</a></p>
+<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p074532551518"><a name="p074532551518"></a><a name="p074532551518"></a><a href="#table6304105819164">metadata</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p2745152519150"><a name="p2745152519150"></a><a name="p2745152519150"></a>metadata是集群对象的元数据定义，是集合类的元素类型，包含一组由不同名称定义的属性。（必须包含，不可缺少）</p>
+<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p2745152519150"><a name="p2745152519150"></a><a name="p2745152519150"></a>metadata是集群对象的元数据定义，是集合类的元素类型，包含一组由不同名称定义的属性。</p>
 </td>
 </tr>
 <tr id="row2745725201512"><td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.1 "><p id="p8745025151519"><a name="p8745025151519"></a><a name="p8745025151519"></a>spec</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p8581153624016"><a name="p8581153624016"></a><a name="p8581153624016"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p1574522520158"><a name="p1574522520158"></a><a name="p1574522520158"></a><a href="#table3862152512246">表5</a></p>
+<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p1574522520158"><a name="p1574522520158"></a><a name="p1574522520158"></a><a href="#table3862152512246">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p10785112129"><a name="p10785112129"></a><a name="p10785112129"></a>spec是集合类的元素类型，用户对需要管理的集群对象进行详细描述的主体部分都在spec中给出。系统通过spec的描述来创建或更新对象。</p>
 </td>
@@ -120,9 +120,9 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p1574516258158"><a name="p1574516258158"></a><a name="p1574516258158"></a>否</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p874562561514"><a name="p874562561514"></a><a name="p874562561514"></a><a href="#table478913499397">表6</a></p>
+<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p874562561514"><a name="p874562561514"></a><a name="p874562561514"></a><a href="#table478913499397">status</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p8745172518154"><a name="p8745172518154"></a><a name="p8745172518154"></a>status是当前persistent volume claim的状态信息，创建时不需要添加status参数</p>
+<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p8745172518154"><a name="p8745172518154"></a><a name="p8745172518154"></a>status是当前persistent volume claim的状态信息，创建时不需要添加status参数。</p>
 </td>
 </tr>
 </tbody>
@@ -171,7 +171,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </th>
 <th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.2.5.1.2"><p id="p199221125112412"><a name="p199221125112412"></a><a name="p199221125112412"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.19191919191919%" id="mcps1.2.5.1.3"><p id="p1592252520243"><a name="p1592252520243"></a><a name="p1592252520243"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.19191919191919%" id="mcps1.2.5.1.3"><p id="p1592252520243"><a name="p1592252520243"></a><a name="p1592252520243"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.42424242424242%" id="mcps1.2.5.1.4"><p id="p19225259247"><a name="p19225259247"></a><a name="p19225259247"></a>描述</p>
 </th>
@@ -194,7 +194,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p10922525152419"><a name="p10922525152419"></a><a name="p10922525152419"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p6922192513245"><a name="p6922192513245"></a><a name="p6922192513245"></a>云存储卷ID</p>
+<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p6922192513245"><a name="p6922192513245"></a><a name="p6922192513245"></a>云存储卷ID（云硬盘的ID）</p>
 </td>
 </tr>
 <tr id="row13922112515249"><td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.1 "><p id="p99221625132417"><a name="p99221625132417"></a><a name="p99221625132417"></a>storageType</p>
@@ -211,10 +211,12 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="18.18181818181818%" headers="mcps1.2.5.1.2 "><p id="p19635185624011"><a name="p19635185624011"></a><a name="p19635185624011"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p892302519247"><a name="p892302519247"></a><a name="p892302519247"></a>String array</p>
+<td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p892302519247"><a name="p892302519247"></a><a name="p892302519247"></a>Array of strings</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p9923162562416"><a name="p9923162562416"></a><a name="p9923162562416"></a>指定volume应该具有的访问模式，包括：</p>
-<a name="ul20281165712148"></a><a name="ul20281165712148"></a><ul id="ul20281165712148"><li>ReadWriteOnce：该卷可以被单个节点以读/写模式挂载</li><li>ReadOnlyMany：该卷可以被多个节点以只读模式挂载</li><li>ReadWriteMany：该卷可以被多个节点以读/写模式挂载</li></ul>
+<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p9923162562416"><a name="p9923162562416"></a><a name="p9923162562416"></a>指定volume应该具有的访问模式。</p>
+<a name="ul8320115773216"></a><a name="ul8320115773216"></a><ul id="ul8320115773216"><li>ReadWriteOnce：该卷可以被单个节点以读/写模式挂载<div class="note" id="note1348319103139"><a name="note1348319103139"></a><a name="note1348319103139"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p19484810151313"><a name="p19484810151313"></a><a name="p19484810151313"></a>集群版本为v1.13.10且storage-driver版本为1.0.19时，才支持此功能。</p>
+</div></div>
+</li><li>ReadOnlyMany：该卷可以被多个节点以只读模式挂载</li><li>ReadWriteMany：该卷可以被多个节点以读/写模式挂载</li></ul>
 </td>
 </tr>
 </tbody>
@@ -227,7 +229,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </th>
 <th class="cellrowborder" valign="top" width="17.348265173482652%" id="mcps1.2.5.1.2"><p id="p14949149203910"><a name="p14949149203910"></a><a name="p14949149203910"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p18949124916399"><a name="p18949124916399"></a><a name="p18949124916399"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p18949124916399"><a name="p18949124916399"></a><a name="p18949124916399"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.85571442855714%" id="mcps1.2.5.1.4"><p id="p14949124923919"><a name="p14949124923919"></a><a name="p14949124923919"></a>描述</p>
 </th>
@@ -237,9 +239,9 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.5.1.2 "><p id="p19494490396"><a name="p19494490396"></a><a name="p19494490396"></a>否</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p494924973913"><a name="p494924973913"></a><a name="p494924973913"></a>String array</p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p494924973913"><a name="p494924973913"></a><a name="p494924973913"></a>Array of strings</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p894919493396"><a name="p894919493396"></a><a name="p894919493396"></a>显示volume实际具有的访问模式</p>
+<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p894919493396"><a name="p894919493396"></a><a name="p894919493396"></a>显示volume实际具有的访问模式。</p>
 </td>
 </tr>
 <tr id="row6949114953916"><td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.1 "><p id="p895020494399"><a name="p895020494399"></a><a name="p895020494399"></a>capacity</p>
@@ -321,6 +323,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
             "accessModes": [ 
                 "ReadWriteMany" 
             ]
+        }
     }
     ```
 
@@ -341,6 +344,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
             "accessModes": [  
                 "ReadWriteMany"  
             ] 
+        }
     }
     ```
 

@@ -25,7 +25,7 @@ GET /apis/batch/v1beta1/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.2 "><p id="p15101720153810"><a name="p15101720153810"></a><a name="p15101720153810"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="p13100220203815"><a name="p13100220203815"></a><a name="p13100220203815"></a>object name and auth scope, such as for teams and projects.</p>
+<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="p13100220203815"><a name="p13100220203815"></a><a name="p13100220203815"></a><span>object name and auth scope, such as for teams and projects.</span></p>
 </td>
 </tr>
 <tr id="row2670901"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="p5982020133817"><a name="p5982020133817"></a><a name="p5982020133817"></a>continue</p>
@@ -39,7 +39,7 @@ GET /apis/batch/v1beta1/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.2 "><p id="p09117202383"><a name="p09117202383"></a><a name="p09117202383"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="p789620143819"><a name="p789620143819"></a><a name="p789620143819"></a>A selector to restrict the list of returned objects by their fields. Defaults to everything.</p>
+<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="p789620143819"><a name="p789620143819"></a><a name="p789620143819"></a><span>A selector to restrict the list of returned objects by their fields. Defaults to everything.</span></p>
 </td>
 </tr>
 <tr id="row47296321"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="p288420103817"><a name="p288420103817"></a><a name="p288420103817"></a>includeUninitialized</p>
@@ -53,7 +53,7 @@ GET /apis/batch/v1beta1/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.2 "><p id="p98132033812"><a name="p98132033812"></a><a name="p98132033812"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="p8795207385"><a name="p8795207385"></a><a name="p8795207385"></a>A selector to restrict the list of returned objects by their labels. Defaults to everything.</p>
+<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="p8795207385"><a name="p8795207385"></a><a name="p8795207385"></a><span>A selector to restrict the list of returned objects by their labels. Defaults to everything.</span></p>
 </td>
 </tr>
 <tr id="row65613080"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="p197815202386"><a name="p197815202386"></a><a name="p197815202386"></a>limit</p>
@@ -68,7 +68,7 @@ GET /apis/batch/v1beta1/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.2 "><p id="p573920103811"><a name="p573920103811"></a><a name="p573920103811"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="p572142011381"><a name="p572142011381"></a><a name="p572142011381"></a>If <em id="i42947113443"><a name="i42947113443"></a><a name="i42947113443"></a>true</em>, then the output is pretty printed.</p>
+<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="p572142011381"><a name="p572142011381"></a><a name="p572142011381"></a><span>If </span><em id="i42947113443"><a name="i42947113443"></a><a name="i42947113443"></a>true</em><span>, then the output is pretty printed.</span></p>
 </td>
 </tr>
 <tr id="row10366920153911"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="p20367122011394"><a name="p20367122011394"></a><a name="p20367122011394"></a>resourceVersion</p>
@@ -82,7 +82,7 @@ GET /apis/batch/v1beta1/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="26%" headers="mcps1.2.4.1.2 "><p id="p163819204391"><a name="p163819204391"></a><a name="p163819204391"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="p1163812201398"><a name="p1163812201398"></a><a name="p1163812201398"></a>Timeout for the list/watch call.</p>
+<td class="cellrowborder" valign="top" width="41%" headers="mcps1.2.4.1.3 "><p id="p1163812201398"><a name="p1163812201398"></a><a name="p1163812201398"></a><span>Timeout for the list/watch call.</span></p>
 </td>
 </tr>
 <tr id="row1905102011390"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="p6905132010396"><a name="p6905132010396"></a><a name="p6905132010396"></a>watch</p>
@@ -103,7 +103,7 @@ N/A
 
 **响应参数：**
 
-响应参数的详细描述请参见[表4](公共响应参数.md#zh-cn_topic_0079614930_table6622802)。
+响应参数的详细描述请参见[表4](响应数据结构.md#zh-cn_topic_0079614930_table6622802)。
 
 **响应示例：**
 

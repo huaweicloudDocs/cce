@@ -94,7 +94,7 @@ PATCH /apis/rbac.authorization.k8s.io/v1/clusterroles/\{name\}
 		"creationTimestamp": "2018-11-28T06:20:59Z"
 	},
 	"rules": [{
-		"verbs": ["get",list"],
+		"verbs": ["get","list"],
 		"apiGroups": [""],
 		"resources": ["secrets"]
 	}]

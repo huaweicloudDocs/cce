@@ -24,39 +24,38 @@
 
 PUT /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 
-[表1](#zh-cn_topic_0079615031_table22030964)  描述该API的参数。
+[表1](#table195518420539)  描述该API的参数。
 
 **表 1**  参数描述
 
-<a name="zh-cn_topic_0079615031_table22030964"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0079615031_row15494477"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079615031_p47093149"><a name="zh-cn_topic_0079615031_p47093149"></a><a name="zh-cn_topic_0079615031_p47093149"></a>参数</p>
+<a name="table195518420539"></a>
+<table><thead align="left"><tr id="row1895516485313"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p49558415538"><a name="p49558415538"></a><a name="p49558415538"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p3516329201621"><a name="p3516329201621"></a><a name="p3516329201621"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p495518435314"><a name="p495518435314"></a><a name="p495518435314"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="zh-cn_topic_0079615031_p8945359"><a name="zh-cn_topic_0079615031_p8945359"></a><a name="zh-cn_topic_0079615031_p8945359"></a>描述</p>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p395615465319"><a name="p395615465319"></a><a name="p395615465319"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0079615031_row53485440"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615031_p37353378"><a name="zh-cn_topic_0079615031_p37353378"></a><a name="zh-cn_topic_0079615031_p37353378"></a>pretty</p>
+<tbody><tr id="row159562040536"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p395612415535"><a name="p395612415535"></a><a name="p395612415535"></a>pretty</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615031_p5724764"><a name="zh-cn_topic_0079615031_p5724764"></a><a name="zh-cn_topic_0079615031_p5724764"></a>No</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p119561495319"><a name="p119561495319"></a><a name="p119561495319"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p28675043"><a name="p28675043"></a><a name="p28675043"></a>设置为true后，会打印漂亮的输出结果。</p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0079615031_row20549736"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615031_p53915901"><a name="zh-cn_topic_0079615031_p53915901"></a><a name="zh-cn_topic_0079615031_p53915901"></a>namespace</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615031_p5111875"><a name="zh-cn_topic_0079615031_p5111875"></a><a name="zh-cn_topic_0079615031_p5111875"></a>Yes</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p658610593411"><a name="p658610593411"></a><a name="p658610593411"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。可以任选其一使用：</p>
-<a name="ul75828215461"></a><a name="ul75828215461"></a><ul id="ul75828215461"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a></li><li>系统自带的namespace：default或kube-system</li></ul>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615031_p61052759"><a name="zh-cn_topic_0079615031_p61052759"></a><a name="zh-cn_topic_0079615031_p61052759"></a>If 'true', then the output is pretty printed.</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0079615031_row35569777"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615031_p62579720"><a name="zh-cn_topic_0079615031_p62579720"></a><a name="zh-cn_topic_0079615031_p62579720"></a>name</p>
+<tr id="row1795634105314"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1195619465319"><a name="p1195619465319"></a><a name="p1195619465319"></a>namespace</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615031_p35792522"><a name="zh-cn_topic_0079615031_p35792522"></a><a name="zh-cn_topic_0079615031_p35792522"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p169561249530"><a name="p169561249530"></a><a name="p169561249530"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614900_p168024282424"><a name="zh-cn_topic_0079614900_p168024282424"></a><a name="zh-cn_topic_0079614900_p168024282424"></a>Secret名称。</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615031_p11408737"><a name="zh-cn_topic_0079615031_p11408737"></a><a name="zh-cn_topic_0079615031_p11408737"></a>Object name and auth scope, such as for teams and projects.</p>
+</td>
+</tr>
+<tr id="row195616417532"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p9956104155314"><a name="p9956104155314"></a><a name="p9956104155314"></a>name</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p795619475316"><a name="p795619475316"></a><a name="p795619475316"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615031_p13513185"><a name="zh-cn_topic_0079615031_p13513185"></a><a name="zh-cn_topic_0079615031_p13513185"></a>Name of the Secret.</p>
 </td>
 </tr>
 </tbody>
@@ -144,7 +143,7 @@ PUT /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </thead>
 <tbody><tr id="zh-cn_topic_0079615031_row10603493"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615031_p53576637"><a name="zh-cn_topic_0079615031_p53576637"></a><a name="zh-cn_topic_0079615031_p53576637"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615031_p44740325"><a name="zh-cn_topic_0079615031_p44740325"></a><a name="zh-cn_topic_0079615031_p44740325"></a><span id="ph93661510113714"><a name="ph93661510113714"></a><a name="ph93661510113714"></a>操作成功，返回更新后的secret资源对象</span></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615031_p44740325"><a name="zh-cn_topic_0079615031_p44740325"></a><a name="zh-cn_topic_0079615031_p44740325"></a>操作成功，返回更新后的secret资源对象</p>
 </td>
 </tr>
 </tbody>

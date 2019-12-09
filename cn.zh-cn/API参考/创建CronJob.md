@@ -51,7 +51,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </th>
 <th class="cellrowborder" valign="top" width="14.288571142885711%" id="mcps1.2.5.1.2"><p id="p43346336"><a name="p43346336"></a><a name="p43346336"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.407959204079592%" id="mcps1.2.5.1.3"><p id="p21392359"><a name="p21392359"></a><a name="p21392359"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.407959204079592%" id="mcps1.2.5.1.3"><p id="p21392359"><a name="p21392359"></a><a name="p21392359"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.85571442855714%" id="mcps1.2.5.1.4"><p id="p55059481"><a name="p55059481"></a><a name="p55059481"></a>描述</p>
 </th>
@@ -63,7 +63,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p24577473"><a name="p24577473"></a><a name="p24577473"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p44618282"><a name="p44618282"></a><a name="p44618282"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</p>
+<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p44618282"><a name="p44618282"></a><a name="p44618282"></a><span>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</span></p>
 </td>
 </tr>
 <tr id="row66020222"><td class="cellrowborder" valign="top" width="22.447755224477554%" headers="mcps1.2.5.1.1 "><p id="p46037745"><a name="p46037745"></a><a name="p46037745"></a>kind</p>
@@ -79,7 +79,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p26683112"><a name="p26683112"></a><a name="p26683112"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p13848469"><a name="p13848469"></a><a name="p13848469"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table47756489">表11</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p13848469"><a name="p13848469"></a><a name="p13848469"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p29204826"><a name="p29204826"></a><a name="p29204826"></a>Standard list metadata.</p>
 </td>
@@ -88,7 +88,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p19315447"><a name="p19315447"></a><a name="p19315447"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p21047363"><a name="p21047363"></a><a name="p21047363"></a><a href="#table51402650">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p21047363"><a name="p21047363"></a><a name="p21047363"></a><a href="#table51402650">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p42706636"><a name="p42706636"></a><a name="p42706636"></a>Specification of the desired behavior of a cron job, including the schedule.</p>
 </td>
@@ -97,9 +97,9 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p34391662"><a name="p34391662"></a><a name="p34391662"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p34261248"><a name="p34261248"></a><a name="p34261248"></a><a href="#table28665255">表4</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p34261248"><a name="p34261248"></a><a name="p34261248"></a><a href="#table28665255">status</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p11952954"><a name="p11952954"></a><a name="p11952954"></a>Current status of a cron job.</p>
+<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p11952954"><a name="p11952954"></a><a name="p11952954"></a><span>Current status of a cron job.</span></p>
 </td>
 </tr>
 </tbody>
@@ -112,7 +112,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </th>
 <th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.2.5.1.2"><p id="p59462043"><a name="p59462043"></a><a name="p59462043"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="21%" id="mcps1.2.5.1.3"><p id="p51696213"><a name="p51696213"></a><a name="p51696213"></a>类型</p>
+<th class="cellrowborder" valign="top" width="21%" id="mcps1.2.5.1.3"><p id="p51696213"><a name="p51696213"></a><a name="p51696213"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42%" id="mcps1.2.5.1.4"><p id="p26643752"><a name="p26643752"></a><a name="p26643752"></a>描述</p>
 </th>
@@ -122,16 +122,16 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.2 "><p id="p270813244402"><a name="p270813244402"></a><a name="p270813244402"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p48343558"><a name="p48343558"></a><a name="p48343558"></a>String</p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p48343558"><a name="p48343558"></a><a name="p48343558"></a><span>String</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p8335102813362"><a name="p8335102813362"></a><a name="p8335102813362"></a>Specifies how to treat concurrent executions of a Job. Valid values are: - "Allow" (default): allows CronJobs to run concurrently; - "Forbid": forbids concurrent runs, skipping next run if previous run hasn’t finished yet; - "Replace": cancels currently running job and replaces it with a new one.</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p8335102813362"><a name="p8335102813362"></a><a name="p8335102813362"></a><span>Specifies how to treat concurrent executions of a Job. Valid values are: - "Allow" (default): allows CronJobs to run concurrently; - "Forbid": forbids concurrent runs, skipping next run if previous run hasn’t finished yet; - "Replace": cancels currently running job and replaces it with a new one</span>.</p>
 </td>
 </tr>
 <tr id="row10300809"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.5.1.1 "><p id="p197193233615"><a name="p197193233615"></a><a name="p197193233615"></a>failedJobsHistoryLimit</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.2 "><p id="p270652414011"><a name="p270652414011"></a><a name="p270652414011"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p1355353"><a name="p1355353"></a><a name="p1355353"></a>Integer(int32)</p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p1355353"><a name="p1355353"></a><a name="p1355353"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p0334192817366"><a name="p0334192817366"></a><a name="p0334192817366"></a>The number of failed finished jobs to retain. This is a pointer to distinguish between explicit zero and not specified. Defaults to 1.</p>
 </td>
@@ -140,16 +140,16 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.2 "><p id="p14704102404010"><a name="p14704102404010"></a><a name="p14704102404010"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p19240909"><a name="p19240909"></a><a name="p19240909"></a><a href="#table928061144217">表5</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p19240909"><a name="p19240909"></a><a name="p19240909"></a><a href="#table928061144217">jobTemplate</a>  object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p933322823614"><a name="p933322823614"></a><a name="p933322823614"></a>Specifies the job that will be created when executing a CronJob.</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p933322823614"><a name="p933322823614"></a><a name="p933322823614"></a><span>Specifies the job that will be created when executing a CronJob.</span></p>
 </td>
 </tr>
 <tr id="row7831802"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.5.1.1 "><p id="p1694193283616"><a name="p1694193283616"></a><a name="p1694193283616"></a>schedule</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.2 "><p id="p4703142494015"><a name="p4703142494015"></a><a name="p4703142494015"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p49457273"><a name="p49457273"></a><a name="p49457273"></a>String</p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p49457273"><a name="p49457273"></a><a name="p49457273"></a><span>String</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p8331928143612"><a name="p8331928143612"></a><a name="p8331928143612"></a>The schedule in Cron format.</p>
 </td>
@@ -158,16 +158,16 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.2 "><p id="p77021224134014"><a name="p77021224134014"></a><a name="p77021224134014"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p1758932144016"><a name="p1758932144016"></a><a name="p1758932144016"></a>Integer(int64)</p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p1758932144016"><a name="p1758932144016"></a><a name="p1758932144016"></a>Integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p1330102803616"><a name="p1330102803616"></a><a name="p1330102803616"></a>Optional deadline in seconds for starting the job if it misses scheduled time for any reason. Missed jobs executions will be counted as failed ones.</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p1330102803616"><a name="p1330102803616"></a><a name="p1330102803616"></a><span>Optional deadline in seconds for starting the job if it misses scheduled time for any reason. Missed jobs executions will be counted as failed ones.</span></p>
 </td>
 </tr>
 <tr id="row24881422"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.5.1.1 "><p id="p79383211361"><a name="p79383211361"></a><a name="p79383211361"></a>successfulJobsHistoryLimit</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.2 "><p id="p19699162454018"><a name="p19699162454018"></a><a name="p19699162454018"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p19571328409"><a name="p19571328409"></a><a name="p19571328409"></a>Integer(int32)</p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p19571328409"><a name="p19571328409"></a><a name="p19571328409"></a>Intege</p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p63296288365"><a name="p63296288365"></a><a name="p63296288365"></a>The number of successful finished jobs to retain. This is a pointer to distinguish between explicit zero and not specified. Defaults to 3.</p>
 </td>
@@ -178,7 +178,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p1770917913713"><a name="p1770917913713"></a><a name="p1770917913713"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p187091194376"><a name="p187091194376"></a><a name="p187091194376"></a>This flag tells the controller to suspend subsequent executions, it does not apply to already started executions. Defaults to false.</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p187091194376"><a name="p187091194376"></a><a name="p187091194376"></a><span>This flag tells the controller to suspend subsequent executions, it does not apply to already started executions. Defaults to false.</span></p>
 </td>
 </tr>
 </tbody>
@@ -191,7 +191,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </th>
 <th class="cellrowborder" valign="top" width="14.430000000000001%" id="mcps1.2.5.1.2"><p id="p45480180"><a name="p45480180"></a><a name="p45480180"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.59%" id="mcps1.2.5.1.3"><p id="p60015926"><a name="p60015926"></a><a name="p60015926"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.59%" id="mcps1.2.5.1.3"><p id="p60015926"><a name="p60015926"></a><a name="p60015926"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="43.3%" id="mcps1.2.5.1.4"><p id="p29451853"><a name="p29451853"></a><a name="p29451853"></a>描述</p>
 </th>
@@ -201,9 +201,9 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="14.430000000000001%" headers="mcps1.2.5.1.2 "><p id="p15879111544318"><a name="p15879111544318"></a><a name="p15879111544318"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.59%" headers="mcps1.2.5.1.3 "><p id="p2878161564312"><a name="p2878161564312"></a><a name="p2878161564312"></a><a href="创建PersistentVolume-1.md#t5fe2db24d4ee4588b001da6f826e3d3a">表5</a></p>
+<td class="cellrowborder" valign="top" width="19.59%" headers="mcps1.2.5.1.3 "><p id="p2878161564312"><a name="p2878161564312"></a><a name="p2878161564312"></a><a href="创建PersistentVolume-0.md#t5fe2db24d4ee4588b001da6f826e3d3a">claimRef</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.3%" headers="mcps1.2.5.1.4 "><p id="p28761915184314"><a name="p28761915184314"></a><a name="p28761915184314"></a>A list of pointers to currently running jobs.</p>
+<td class="cellrowborder" valign="top" width="43.3%" headers="mcps1.2.5.1.4 "><p id="p28761915184314"><a name="p28761915184314"></a><a name="p28761915184314"></a><span>A list of pointers to currently running jobs.</span></p>
 </td>
 </tr>
 <tr id="row29065558"><td class="cellrowborder" valign="top" width="22.68%" headers="mcps1.2.5.1.1 "><p id="p5499969"><a name="p5499969"></a><a name="p5499969"></a>lastScheduleTime</p>
@@ -225,7 +225,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </th>
 <th class="cellrowborder" valign="top" width="15.308469153084694%" id="mcps1.2.5.1.2"><p id="p15304101134219"><a name="p15304101134219"></a><a name="p15304101134219"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p10308181104215"><a name="p10308181104215"></a><a name="p10308181104215"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p10308181104215"><a name="p10308181104215"></a><a name="p10308181104215"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.85571442855714%" id="mcps1.2.5.1.4"><p id="p16311181134212"><a name="p16311181134212"></a><a name="p16311181134212"></a>描述</p>
 </th>
@@ -235,16 +235,16 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084694%" headers="mcps1.2.5.1.2 "><p id="p672712490460"><a name="p672712490460"></a><a name="p672712490460"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p1132719134215"><a name="p1132719134215"></a><a name="p1132719134215"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table47756489">表11</a></p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p1132719134215"><a name="p1132719134215"></a><a name="p1132719134215"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p833416174219"><a name="p833416174219"></a><a name="p833416174219"></a>Standard object’s metadata of the jobs created from this template.</p>
+<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p833416174219"><a name="p833416174219"></a><a name="p833416174219"></a><span>Standard object’s metadata of the jobs created from this template.</span></p>
 </td>
 </tr>
 <tr id="row153356134215"><td class="cellrowborder" valign="top" width="22.447755224477554%" headers="mcps1.2.5.1.1 "><p id="p933919116429"><a name="p933919116429"></a><a name="p933919116429"></a>spec</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084694%" headers="mcps1.2.5.1.2 "><p id="p572394914610"><a name="p572394914610"></a><a name="p572394914610"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p203474194211"><a name="p203474194211"></a><a name="p203474194211"></a><a href="创建Job.md#table51402650">表4</a></p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p203474194211"><a name="p203474194211"></a><a name="p203474194211"></a><a href="创建Job.md#table51402650">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p1335141134213"><a name="p1335141134213"></a><a name="p1335141134213"></a>Specification of the desired behavior of the job.</p>
 </td>

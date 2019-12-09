@@ -23,7 +23,7 @@ N/A.
 <a name="d0e49649"></a>
 <table><thead align="left"><tr id="row30477758"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="p52779343"><a name="p52779343"></a><a name="p52779343"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p47268392"><a name="p47268392"></a><a name="p47268392"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p47268392"><a name="p47268392"></a><a name="p47268392"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.3"><p id="p3534578"><a name="p3534578"></a><a name="p3534578"></a>描述</p>
 </th>
@@ -45,7 +45,7 @@ N/A.
 </tr>
 <tr id="row43654868"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p46383386"><a name="p46383386"></a><a name="p46383386"></a>resources</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p66066785"><a name="p66066785"></a><a name="p66066785"></a><a href="#d0e49699">表2</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p66066785"><a name="p66066785"></a><a name="p66066785"></a><a href="#d0e49699">resources</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p45631063"><a name="p45631063"></a><a name="p45631063"></a>Standard list resource</p>
 </td>
@@ -58,7 +58,7 @@ N/A.
 <a name="d0e49699"></a>
 <table><thead align="left"><tr id="row55139806"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.2.4.1.1"><p id="p37139327"><a name="p37139327"></a><a name="p37139327"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p55495549"><a name="p55495549"></a><a name="p55495549"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p55495549"><a name="p55495549"></a><a name="p55495549"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.44444444444445%" id="mcps1.2.4.1.3"><p id="p65954495"><a name="p65954495"></a><a name="p65954495"></a>描述</p>
 </th>
@@ -66,7 +66,7 @@ N/A.
 </thead>
 <tbody><tr id="row40713902"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p9491761"><a name="p9491761"></a><a name="p9491761"></a>categories</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p30635185"><a name="p30635185"></a><a name="p30635185"></a>String array</p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p30635185"><a name="p30635185"></a><a name="p30635185"></a>Array&nbsp;of&nbsp;strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p65530901"><a name="p65530901"></a><a name="p65530901"></a>categories is a list of the grouped resources this resource belongs to (e.g. 'all')</p>
 </td>
@@ -94,7 +94,7 @@ N/A.
 </tr>
 <tr id="row37489148"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p16722118"><a name="p16722118"></a><a name="p16722118"></a>shortNames</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p12314300"><a name="p12314300"></a><a name="p12314300"></a>String array</p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p12314300"><a name="p12314300"></a><a name="p12314300"></a>Array&nbsp;of&nbsp;strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p57934280"><a name="p57934280"></a><a name="p57934280"></a>shortNames is a list of suggested short names of the resource.</p>
 </td>
@@ -108,7 +108,7 @@ N/A.
 </tr>
 <tr id="row45238369"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p40429291"><a name="p40429291"></a><a name="p40429291"></a>verbs</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p53547129"><a name="p53547129"></a><a name="p53547129"></a>String array</p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p53547129"><a name="p53547129"></a><a name="p53547129"></a>Array&nbsp;of&nbsp;strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p42350196"><a name="p42350196"></a><a name="p42350196"></a>verbs is a list of supported kube verbs (this includes get, list, watch, create, update, patch, delete, deletecollection, and proxy)</p>
 </td>

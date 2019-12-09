@@ -95,7 +95,7 @@ N/A
 <a name="zh-cn_topic_0079614930_table5881294"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0079614930_row24610089"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079614930_p47260226"><a name="zh-cn_topic_0079614930_p47260226"></a><a name="zh-cn_topic_0079614930_p47260226"></a>名称</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p7409181214712"><a name="p7409181214712"></a><a name="p7409181214712"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p7409181214712"><a name="p7409181214712"></a><a name="p7409181214712"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p441081218475"><a name="p441081218475"></a><a name="p441081218475"></a>描述</p>
 </th>
@@ -117,14 +117,14 @@ N/A
 </tr>
 <tr id="zh-cn_topic_0079614930_row3521800"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614930_p16830394"><a name="zh-cn_topic_0079614930_p16830394"></a><a name="zh-cn_topic_0079614930_p16830394"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="ae27c756c3e8c4d7b8b72cbd440b20c9e"><a name="ae27c756c3e8c4d7b8b72cbd440b20c9e"></a><a name="ae27c756c3e8c4d7b8b72cbd440b20c9e"></a><a href="公共响应参数.md#zh-cn_topic_0079614930_table66688435">表15</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="ae27c756c3e8c4d7b8b72cbd440b20c9e"><a name="ae27c756c3e8c4d7b8b72cbd440b20c9e"></a><a name="ae27c756c3e8c4d7b8b72cbd440b20c9e"></a><a href="响应数据结构.md#zh-cn_topic_0079614930_table66688435">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614930_p30138892"><a name="zh-cn_topic_0079614930_p30138892"></a><a name="zh-cn_topic_0079614930_p30138892"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079614930_row2814577"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614930_p26654174"><a name="zh-cn_topic_0079614930_p26654174"></a><a name="zh-cn_topic_0079614930_p26654174"></a>items</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="a65502d1935b94750b218e45e0b2d6903"><a name="a65502d1935b94750b218e45e0b2d6903"></a><a name="a65502d1935b94750b218e45e0b2d6903"></a><a href="#table10772055194814">表3</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="a65502d1935b94750b218e45e0b2d6903"><a name="a65502d1935b94750b218e45e0b2d6903"></a><a name="a65502d1935b94750b218e45e0b2d6903"></a><a href="#table10772055194814">items</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614930_p59446649"><a name="zh-cn_topic_0079614930_p59446649"></a><a name="zh-cn_topic_0079614930_p59446649"></a>List of replication controllers.</p>
 </td>
@@ -137,7 +137,7 @@ N/A
 <a name="table10772055194814"></a>
 <table><thead align="left"><tr id="row167885524818"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="p78916181114"><a name="p78916181114"></a><a name="p78916181114"></a>名称</p>
 </th>
-<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p119191613116"><a name="p119191613116"></a><a name="p119191613116"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p119191613116"><a name="p119191613116"></a><a name="p119191613116"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.3"><p id="p16101716191111"><a name="p16101716191111"></a><a name="p16101716191111"></a>描述</p>
 </th>
@@ -145,14 +145,14 @@ N/A
 </thead>
 <tbody><tr id="row12781955104810"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p107855517487"><a name="p107855517487"></a><a name="p107855517487"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p117825519482"><a name="p117825519482"></a><a name="p117825519482"></a><a href="获取指定的Service.md#zh-cn_topic_0079614941_ref458764998">表3</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p117825519482"><a name="p117825519482"></a><a name="p117825519482"></a><a href="获取指定的Service.md#zh-cn_topic_0079614941_ref458764998">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p678955174816"><a name="p678955174816"></a><a name="p678955174816"></a>Standard object's metadata.</p>
 </td>
 </tr>
 <tr id="row1878135516485"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p378145584816"><a name="p378145584816"></a><a name="p378145584816"></a>involvedObject</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p167815551483"><a name="p167815551483"></a><a name="p167815551483"></a><a href="#table7744122481514">表4</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p167815551483"><a name="p167815551483"></a><a name="p167815551483"></a><a href="#table7744122481514">involvedObject</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p979125554813"><a name="p979125554813"></a><a name="p979125554813"></a>The object that this event is about.</p>
 </td>
@@ -180,7 +180,7 @@ N/A
 </tr>
 <tr id="row579115517489"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p27918554489"><a name="p27918554489"></a><a name="p27918554489"></a>source</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p1791552481"><a name="p1791552481"></a><a name="p1791552481"></a><a href="#table3940111613552">表5</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p1791552481"><a name="p1791552481"></a><a name="p1791552481"></a><a href="#table3940111613552">source</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p127985584815"><a name="p127985584815"></a><a name="p127985584815"></a>The component reporting this event. Should be a short machine understandable string.</p>
 </td>
@@ -221,7 +221,7 @@ N/A
 <a name="table7744122481514"></a>
 <table><thead align="left"><tr id="row6750202431514"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="p075122413152"><a name="p075122413152"></a><a name="p075122413152"></a>名称</p>
 </th>
-<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p1575312411156"><a name="p1575312411156"></a><a name="p1575312411156"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p1575312411156"><a name="p1575312411156"></a><a name="p1575312411156"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.3"><p id="p375692421513"><a name="p375692421513"></a><a name="p375692421513"></a>描述</p>
 </th>
@@ -284,7 +284,7 @@ N/A
 <a name="table3940111613552"></a>
 <table><thead align="left"><tr id="row194671675514"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="p13949916165512"><a name="p13949916165512"></a><a name="p13949916165512"></a>名称</p>
 </th>
-<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p19538161559"><a name="p19538161559"></a><a name="p19538161559"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p19538161559"><a name="p19538161559"></a><a name="p19538161559"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.3"><p id="p13955141614557"><a name="p13955141614557"></a><a name="p13955141614557"></a>描述</p>
 </th>

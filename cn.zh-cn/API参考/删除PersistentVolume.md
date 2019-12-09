@@ -29,7 +29,9 @@ DELETE /api/v1/cloudpersistentvolumes/\{name\}
 <p id="p1735311268328"><a name="p1735311268328"></a><a name="p1735311268328"></a>name格式为：Volume名称[?deleteVolume=BOOLEAN&amp;storageType=云存储类型]，中括号内可省略，示例：</p>
 <a name="ul1619719362324"></a><a name="ul1619719362324"></a><ul id="ul1619719362324"><li>volume-49f1?deleteVolume=true&amp;storageType=bs</li><li>volume-49f1</li></ul>
 <p id="p62371018179"><a name="p62371018179"></a><a name="p62371018179"></a>其中：</p>
-<a name="ul0576131593"></a><a name="ul0576131593"></a><ul id="ul0576131593"><li>deleteVolume：删除PersistentVolume后是否保留后端关联的云存储。false表示不删除，ture表示删除，默认为false。（注：当为efs时，不支持删除存储，所以不能设为true）</li></ul>
+<a name="ul0576131593"></a><a name="ul0576131593"></a><ul id="ul0576131593"><li>deleteVolume：删除PersistentVolume后是否保留后端关联的云存储。false表示不删除，ture表示删除，默认为false。<div class="note" id="note1012319234363"><a name="note1012319234363"></a><a name="note1012319234363"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p412492323616"><a name="p412492323616"></a><a name="p412492323616"></a>当为efs时，不支持删除存储，所以不能设为true。</p>
+</div></div>
+</li></ul>
 <a name="ul197198369911"></a><a name="ul197198369911"></a><ul id="ul197198369911"><li>storageType：云存储的类型，和deleteVolume搭配使用。即deleteVolume和storageType必须同时配置。<a name="ul91497416910"></a><a name="ul91497416910"></a><ul id="ul91497416910"><li>bs：EVS云存储</li><li>nfs：SFS弹性文件存储</li><li>obs：OBS对象存储</li><li>efs：SFS Turbo极速文件存储</li></ul>
 </li></ul>
 </td>
@@ -46,27 +48,27 @@ DELETE /api/v1/cloudpersistentvolumes/\{name\}
 **表 2**  请求Header参数说明
 
 <a name="table1355761351720"></a>
-<table><thead align="left"><tr id="r9a0229645c8f47ca9b46a6b75a174818"><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p id="aab2ca938eee647e79be00a338e087253"><a name="aab2ca938eee647e79be00a338e087253"></a><a name="aab2ca938eee647e79be00a338e087253"></a>参数</p>
+<table><thead align="left"><tr id="cce_02_0253_cce_02_0252_row55001954122614"><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p id="cce_02_0253_cce_02_0252_p115009545264"><a name="cce_02_0253_cce_02_0252_p115009545264"></a><a name="cce_02_0253_cce_02_0252_p115009545264"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.4.1.2"><p id="addf4b7464453400f89b227ca78b0f2fd"><a name="addf4b7464453400f89b227ca78b0f2fd"></a><a name="addf4b7464453400f89b227ca78b0f2fd"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.4.1.2"><p id="cce_02_0253_cce_02_0252_p175001547265"><a name="cce_02_0253_cce_02_0252_p175001547265"></a><a name="cce_02_0253_cce_02_0252_p175001547265"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="61%" id="mcps1.2.4.1.3"><p id="ab1e108672ee74ec18d742141289b59bb"><a name="ab1e108672ee74ec18d742141289b59bb"></a><a name="ab1e108672ee74ec18d742141289b59bb"></a>描述</p>
+<th class="cellrowborder" valign="top" width="61%" id="mcps1.2.4.1.3"><p id="cce_02_0253_cce_02_0252_p16500154162611"><a name="cce_02_0253_cce_02_0252_p16500154162611"></a><a name="cce_02_0253_cce_02_0252_p16500154162611"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="r32e8d16e0468477b9e064ac3949f2da8"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="a21bc0e90bb8743e2b09f9937dad6a780"><a name="a21bc0e90bb8743e2b09f9937dad6a780"></a><a name="a21bc0e90bb8743e2b09f9937dad6a780"></a>Content-Type</p>
+<tbody><tr id="cce_02_0253_cce_02_0252_row199801811203412"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="cce_02_0253_cce_02_0252_p69808112344"><a name="cce_02_0253_cce_02_0252_p69808112344"></a><a name="cce_02_0253_cce_02_0252_p69808112344"></a>Content-Type</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="a4fb42e1174354931b3fafdf15b91f068"><a name="a4fb42e1174354931b3fafdf15b91f068"></a><a name="a4fb42e1174354931b3fafdf15b91f068"></a>是</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="cce_02_0253_cce_02_0252_p3980111103414"><a name="cce_02_0253_cce_02_0252_p3980111103414"></a><a name="cce_02_0253_cce_02_0252_p3980111103414"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="aa9f12ed2eefa49c5a8e984662640f67d"><a name="aa9f12ed2eefa49c5a8e984662640f67d"></a><a name="aa9f12ed2eefa49c5a8e984662640f67d"></a>消息体的类型（格式），可任选其一使用。</p>
-<a name="u5830119e3f7a4299b91de766322f8f09"></a><a name="u5830119e3f7a4299b91de766322f8f09"></a><ul id="u5830119e3f7a4299b91de766322f8f09"><li>application/json;charset=utf-8</li><li>application/json</li></ul>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0253_cce_02_0252_p2032514065313"><a name="cce_02_0253_cce_02_0252_p2032514065313"></a><a name="cce_02_0253_cce_02_0252_p2032514065313"></a>消息体的类型（格式），可任选其一使用。</p>
+<a name="cce_02_0253_cce_02_0252_ul7385444163617"></a><a name="cce_02_0253_cce_02_0252_ul7385444163617"></a><ul id="cce_02_0253_cce_02_0252_ul7385444163617"><li>application/json;charset=utf-8</li><li>application/json</li></ul>
 </td>
 </tr>
-<tr id="r988b7b35e0de42a4b68af826cd26d64b"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="afcd3b2a8f3ea4ae19f4f0fc576b825db"><a name="afcd3b2a8f3ea4ae19f4f0fc576b825db"></a><a name="afcd3b2a8f3ea4ae19f4f0fc576b825db"></a>X-Auth-Token</p>
+<tr id="cce_02_0253_cce_02_0252_row3500125412260"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="cce_02_0253_cce_02_0252_p105001654202618"><a name="cce_02_0253_cce_02_0252_p105001654202618"></a><a name="cce_02_0253_cce_02_0252_p105001654202618"></a>X-Auth-Token</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="a0acf0687b97a4e4181430e7d1677f1e2"><a name="a0acf0687b97a4e4181430e7d1677f1e2"></a><a name="a0acf0687b97a4e4181430e7d1677f1e2"></a>使用token认证时必选</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="cce_02_0253_cce_02_0252_p20500954182618"><a name="cce_02_0253_cce_02_0252_p20500954182618"></a><a name="cce_02_0253_cce_02_0252_p20500954182618"></a>使用token认证时必选</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="a3c7e91d0310d401caca17aced28970aa"><a name="a3c7e91d0310d401caca17aced28970aa"></a><a name="a3c7e91d0310d401caca17aced28970aa"></a>调用接口的一种认证方式，使用时需要<a href="获取请求认证.md#section2417768214391">获取token</a>。</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0253_cce_02_0252_p1148116013545"><a name="cce_02_0253_cce_02_0252_p1148116013545"></a><a name="cce_02_0253_cce_02_0252_p1148116013545"></a>调用接口的一种认证方式，使用时需要<a href="认证鉴权.md#section2417768214391">获取token</a>.</p>
 </td>
 </tr>
 </tbody>
@@ -89,7 +91,7 @@ NA
 </th>
 <th class="cellrowborder" valign="top" width="18.55814418558144%" id="mcps1.2.5.1.2"><p id="p14825164011586"><a name="p14825164011586"></a><a name="p14825164011586"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.55814418558144%" id="mcps1.2.5.1.3"><p id="p48258403584"><a name="p48258403584"></a><a name="p48258403584"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.55814418558144%" id="mcps1.2.5.1.3"><p id="p48258403584"><a name="p48258403584"></a><a name="p48258403584"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="43.295670432956705%" id="mcps1.2.5.1.4"><p id="p5825540125816"><a name="p5825540125816"></a><a name="p5825540125816"></a>描述</p>
 </th>
@@ -117,7 +119,7 @@ NA
 </td>
 <td class="cellrowborder" valign="top" width="18.55814418558144%" headers="mcps1.2.5.1.2 "><p id="p14825124065817"><a name="p14825124065817"></a><a name="p14825124065817"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.55814418558144%" headers="mcps1.2.5.1.3 "><p id="p128252400587"><a name="p128252400587"></a><a name="p128252400587"></a><a href="#table59658333596">表4</a></p>
+<td class="cellrowborder" valign="top" width="18.55814418558144%" headers="mcps1.2.5.1.3 "><p id="p128252400587"><a name="p128252400587"></a><a name="p128252400587"></a><a href="#table59658333596">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.295670432956705%" headers="mcps1.2.5.1.4 "><p id="p78257406588"><a name="p78257406588"></a><a name="p78257406588"></a>-</p>
 </td>
@@ -126,7 +128,7 @@ NA
 </td>
 <td class="cellrowborder" valign="top" width="18.55814418558144%" headers="mcps1.2.5.1.2 "><p id="p782534015585"><a name="p782534015585"></a><a name="p782534015585"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.55814418558144%" headers="mcps1.2.5.1.3 "><p id="p10825240135814"><a name="p10825240135814"></a><a name="p10825240135814"></a><a href="#table74541616408">表5</a></p>
+<td class="cellrowborder" valign="top" width="18.55814418558144%" headers="mcps1.2.5.1.3 "><p id="p10825240135814"><a name="p10825240135814"></a><a name="p10825240135814"></a><a href="#table74541616408">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.295670432956705%" headers="mcps1.2.5.1.4 "><p id="p10825144075818"><a name="p10825144075818"></a><a name="p10825144075818"></a>-</p>
 </td>
@@ -135,7 +137,7 @@ NA
 </td>
 <td class="cellrowborder" valign="top" width="18.55814418558144%" headers="mcps1.2.5.1.2 "><p id="p18252406585"><a name="p18252406585"></a><a name="p18252406585"></a>否</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.55814418558144%" headers="mcps1.2.5.1.3 "><p id="p0825240175819"><a name="p0825240175819"></a><a name="p0825240175819"></a><a href="#table1497912571012">表6</a></p>
+<td class="cellrowborder" valign="top" width="18.55814418558144%" headers="mcps1.2.5.1.3 "><p id="p0825240175819"><a name="p0825240175819"></a><a name="p0825240175819"></a><a href="#table1497912571012">status</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.295670432956705%" headers="mcps1.2.5.1.4 "><p id="p1682594065810"><a name="p1682594065810"></a><a name="p1682594065810"></a>-</p>
 </td>
@@ -162,7 +164,7 @@ NA
 </td>
 <td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.5.1.3 "><p id="p119034105917"><a name="p119034105917"></a><a name="p119034105917"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="49%" headers="mcps1.2.5.1.4 "><p id="p69234125916"><a name="p69234125916"></a><a name="p69234125916"></a>PersistentVolume名称，可以包含小写字母、数字、连字符和点，开头和结尾必须是字母或数字，最长253个字符，同一namespace下name不能重复。例：my-pv</p>
+<td class="cellrowborder" valign="top" width="49%" headers="mcps1.2.5.1.4 "><p id="p69234125916"><a name="p69234125916"></a><a name="p69234125916"></a>PersistentVolume名称，可以包含小写字母、数字、连字符和点，开头和结尾必须是字母或数字，最长253个字符，同一namespace下name不能重复。</p>
 </td>
 </tr>
 <tr id="row1598346595"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p id="p09434155916"><a name="p09434155916"></a><a name="p09434155916"></a>labels</p>
@@ -186,7 +188,7 @@ NA
 </th>
 <th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.2.5.1.2"><p id="p24931916207"><a name="p24931916207"></a><a name="p24931916207"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.19191919191919%" id="mcps1.2.5.1.3"><p id="p949315163013"><a name="p949315163013"></a><a name="p949315163013"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.19191919191919%" id="mcps1.2.5.1.3"><p id="p949315163013"><a name="p949315163013"></a><a name="p949315163013"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.42424242424242%" id="mcps1.2.5.1.4"><p id="p1049317161300"><a name="p1049317161300"></a><a name="p1049317161300"></a>描述</p>
 </th>
@@ -207,10 +209,12 @@ NA
 </td>
 <td class="cellrowborder" valign="top" width="18.18181818181818%" headers="mcps1.2.5.1.2 "><p id="p749315161203"><a name="p749315161203"></a><a name="p749315161203"></a>是</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p0493716705"><a name="p0493716705"></a><a name="p0493716705"></a>String array</p>
+<td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p0493716705"><a name="p0493716705"></a><a name="p0493716705"></a>Array of strings</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p1449315169018"><a name="p1449315169018"></a><a name="p1449315169018"></a>指定volume应该具有的访问模式，包括：</p>
-<a name="ul20281165712148"></a><a name="ul20281165712148"></a><ul id="ul20281165712148"><li>ReadWriteOnce：该卷可以被单个节点以读/写模式挂载</li><li>ReadOnlyMany：该卷可以被多个节点以只读模式挂载</li><li>ReadWriteMany：该卷可以被多个节点以读/写模式挂载</li></ul>
+<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p1449315169018"><a name="p1449315169018"></a><a name="p1449315169018"></a>指定volume应该具有的访问模式。</p>
+<a name="ul20281165712148"></a><a name="ul20281165712148"></a><ul id="ul20281165712148"><li>ReadWriteOnce：该卷可以被单个节点以读/写模式挂载<div class="note" id="note1348319103139"><a name="note1348319103139"></a><a name="note1348319103139"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p19484810151313"><a name="p19484810151313"></a><a name="p19484810151313"></a>集群版本为v1.13.10且storage-driver版本为1.0.19时，才支持此功能。</p>
+</div></div>
+</li><li>ReadOnlyMany：该卷可以被多个节点以只读模式挂载</li><li>ReadWriteMany：该卷可以被多个节点以读/写模式挂载</li></ul>
 </td>
 </tr>
 </tbody>
@@ -223,7 +227,7 @@ NA
 </th>
 <th class="cellrowborder" valign="top" width="17.348265173482652%" id="mcps1.2.5.1.2"><p id="p22213588014"><a name="p22213588014"></a><a name="p22213588014"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p142245819016"><a name="p142245819016"></a><a name="p142245819016"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p142245819016"><a name="p142245819016"></a><a name="p142245819016"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.85571442855714%" id="mcps1.2.5.1.4"><p id="p152265811018"><a name="p152265811018"></a><a name="p152265811018"></a>描述</p>
 </th>
@@ -233,7 +237,7 @@ NA
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.5.1.2 "><p id="p172218581408"><a name="p172218581408"></a><a name="p172218581408"></a>否</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p16221958407"><a name="p16221958407"></a><a name="p16221958407"></a>String array</p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p16221958407"><a name="p16221958407"></a><a name="p16221958407"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p22216583013"><a name="p22216583013"></a><a name="p22216583013"></a>显示volume实际具有的访问模式</p>
 </td>
@@ -244,8 +248,7 @@ NA
 </td>
 <td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p172225812019"><a name="p172225812019"></a><a name="p172225812019"></a>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p112235812020"><a name="p112235812020"></a><a name="p112235812020"></a>底层卷的实际存储空间大小，例：</p>
-<a name="ul83971634395"></a><a name="ul83971634395"></a><ul id="ul83971634395"><li>"storage": "1Gi"</li></ul>
+<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p112235812020"><a name="p112235812020"></a><a name="p112235812020"></a>底层卷的实际存储空间大小，例："storage": "1Gi"</p>
 </td>
 </tr>
 <tr id="row822158705"><td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.1 "><p id="p122155818015"><a name="p122155818015"></a><a name="p122155818015"></a>phase</p>

@@ -79,7 +79,7 @@ DELETE /api/v1/namespaces/\{namespace\}/endpoints/\{name\}
 </th>
 <th class="cellrowborder" valign="top" width="19.18%" id="mcps1.2.5.1.2"><p id="p832688021524"><a name="p832688021524"></a><a name="p832688021524"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.11%" id="mcps1.2.5.1.3"><p id="p338864621524"><a name="p338864621524"></a><a name="p338864621524"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.11%" id="mcps1.2.5.1.3"><p id="p338864621524"><a name="p338864621524"></a><a name="p338864621524"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="38.91%" id="mcps1.2.5.1.4"><p id="p604490921524"><a name="p604490921524"></a><a name="p604490921524"></a>描述</p>
 </th>
@@ -128,7 +128,7 @@ DELETE /api/v1/namespaces/\{namespace\}/endpoints/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.18%" headers="mcps1.2.5.1.2 "><p id="af73d5beb343c4017b1ec86b74c2f1f61"><a name="af73d5beb343c4017b1ec86b74c2f1f61"></a><a name="af73d5beb343c4017b1ec86b74c2f1f61"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.11%" headers="mcps1.2.5.1.3 "><p id="a68b7d1fcf9b248b690d47a5eaf5a0df7"><a name="a68b7d1fcf9b248b690d47a5eaf5a0df7"></a><a name="a68b7d1fcf9b248b690d47a5eaf5a0df7"></a><a href="#td963eecea01d406f99bfcb0ca63e8c82">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.11%" headers="mcps1.2.5.1.3 "><p id="a68b7d1fcf9b248b690d47a5eaf5a0df7"><a name="a68b7d1fcf9b248b690d47a5eaf5a0df7"></a><a name="a68b7d1fcf9b248b690d47a5eaf5a0df7"></a><a href="#td963eecea01d406f99bfcb0ca63e8c82">preconditions</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="38.91%" headers="mcps1.2.5.1.4 "><p id="ac72ee0a8d8434bd1b9382129b472a7dd"><a name="ac72ee0a8d8434bd1b9382129b472a7dd"></a><a name="ac72ee0a8d8434bd1b9382129b472a7dd"></a>Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.</p>
 </td>
@@ -152,7 +152,7 @@ DELETE /api/v1/namespaces/\{namespace\}/endpoints/\{name\}
 </th>
 <th class="cellrowborder" valign="top" width="19.17%" id="mcps1.2.5.1.2"><p id="p2967165521524"><a name="p2967165521524"></a><a name="p2967165521524"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p5459388021524"><a name="p5459388021524"></a><a name="p5459388021524"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p5459388021524"><a name="p5459388021524"></a><a name="p5459388021524"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.290000000000006%" id="mcps1.2.5.1.4"><p id="p6002819821524"><a name="p6002819821524"></a><a name="p6002819821524"></a>描述</p>
 </th>
@@ -162,7 +162,7 @@ DELETE /api/v1/namespaces/\{namespace\}/endpoints/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="a2964f66ffe55445c81669b72ca80ea4f"><a name="a2964f66ffe55445c81669b72ca80ea4f"></a><a name="a2964f66ffe55445c81669b72ca80ea4f"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="afd11f896b6684b72976391abbf92db01"><a name="afd11f896b6684b72976391abbf92db01"></a><a name="afd11f896b6684b72976391abbf92db01"></a>types.UID</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="afd11f896b6684b72976391abbf92db01"><a name="afd11f896b6684b72976391abbf92db01"></a><a name="afd11f896b6684b72976391abbf92db01"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="a38457e838f0d42a5a1458e7bb9a86630"><a name="a38457e838f0d42a5a1458e7bb9a86630"></a><a name="a38457e838f0d42a5a1458e7bb9a86630"></a>Specifies the target UID.</p>
 </td>
@@ -184,7 +184,7 @@ DELETE /api/v1/namespaces/\{namespace\}/endpoints/\{name\}
 
 **响应参数：**
 
-响应参数的详细描述请参见[表4](删除Secret.md#zh-cn_topic_0079615047_table30941925)。
+响应参数的详细描述请参见[表2](删除Secret.md#table13766144711235)。
 
 **响应示例：**
 

@@ -6,12 +6,11 @@
 
 如果要将创建的Deployment对象在CCE工作负载界面上正常显示，则必须给创建的Deployment资源对象添加labels标签。
 
-设置请求消息体中的“metadata.labels“参数键值如下内容：
+设置请求消息体中的“metadata.labels“参数键值示例如下：
 
 ```
 labels:
     app: deploymentname
-    
 ```
 
 其中：
@@ -66,13 +65,13 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 **表 2**  请求参数
 
 <a name="table12862324102610"></a>
-<table><thead align="left"><tr id="row68631424102610"><th class="cellrowborder" valign="top" width="17.01829817018298%" id="mcps1.2.5.1.1"><p id="ae00f0941f2f84334b89540a79f202f53"><a name="ae00f0941f2f84334b89540a79f202f53"></a><a name="ae00f0941f2f84334b89540a79f202f53"></a>参数</p>
+<table><thead align="left"><tr id="row68631424102610"><th class="cellrowborder" valign="top" width="17.01829817018298%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"><a name="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"></a><a name="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="16.07839216078392%" id="mcps1.2.5.1.2"><p id="a109544678a6d496c8ab0ba9dc8865df8"><a name="a109544678a6d496c8ab0ba9dc8865df8"></a><a name="a109544678a6d496c8ab0ba9dc8865df8"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="16.07839216078392%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0083857388_p62904453205444"><a name="zh-cn_topic_0083857388_p62904453205444"></a><a name="zh-cn_topic_0083857388_p62904453205444"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.92810718928107%" id="mcps1.2.5.1.3"><p id="a13d54bf6b2e94a4baa09115f8f42914b"><a name="a13d54bf6b2e94a4baa09115f8f42914b"></a><a name="a13d54bf6b2e94a4baa09115f8f42914b"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.92810718928107%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0083857388_p62095922205444"><a name="zh-cn_topic_0083857388_p62095922205444"></a><a name="zh-cn_topic_0083857388_p62095922205444"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="47.97520247975203%" id="mcps1.2.5.1.4"><p id="a4492d78a4c58432cb14ce4c639d6df62"><a name="a4492d78a4c58432cb14ce4c639d6df62"></a><a name="a4492d78a4c58432cb14ce4c639d6df62"></a>描述</p>
+<th class="cellrowborder" valign="top" width="47.97520247975203%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0083857388_p63713767205444"><a name="zh-cn_topic_0083857388_p63713767205444"></a><a name="zh-cn_topic_0083857388_p63713767205444"></a>描述</p>
 </th>
 </tr>
 </thead>
@@ -80,7 +79,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16.07839216078392%" headers="mcps1.2.5.1.2 "><p id="p1486362472612"><a name="p1486362472612"></a><a name="p1486362472612"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.92810718928107%" headers="mcps1.2.5.1.3 "><p id="p148631124192613"><a name="p148631124192613"></a><a name="p148631124192613"></a>string</p>
+<td class="cellrowborder" valign="top" width="18.92810718928107%" headers="mcps1.2.5.1.3 "><p id="p148631124192613"><a name="p148631124192613"></a><a name="p148631124192613"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.97520247975203%" headers="mcps1.2.5.1.4 "><p id="p38631024132612"><a name="p38631024132612"></a><a name="p38631024132612"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</p>
 </td>
@@ -89,7 +88,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16.07839216078392%" headers="mcps1.2.5.1.2 "><p id="p76386914116"><a name="p76386914116"></a><a name="p76386914116"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.92810718928107%" headers="mcps1.2.5.1.3 "><p id="p1486372472613"><a name="p1486372472613"></a><a name="p1486372472613"></a>string</p>
+<td class="cellrowborder" valign="top" width="18.92810718928107%" headers="mcps1.2.5.1.3 "><p id="p1486372472613"><a name="p1486372472613"></a><a name="p1486372472613"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.97520247975203%" headers="mcps1.2.5.1.4 "><p id="p1863112415264"><a name="p1863112415264"></a><a name="p1863112415264"></a>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.</p>
 </td>
@@ -98,7 +97,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16.07839216078392%" headers="mcps1.2.5.1.2 "><p id="p1312651084112"><a name="p1312651084112"></a><a name="p1312651084112"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.92810718928107%" headers="mcps1.2.5.1.3 "><p id="p8864172472616"><a name="p8864172472616"></a><a name="p8864172472616"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table47756489">表11</a></p>
+<td class="cellrowborder" valign="top" width="18.92810718928107%" headers="mcps1.2.5.1.3 "><p id="p8864172472616"><a name="p8864172472616"></a><a name="p8864172472616"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.97520247975203%" headers="mcps1.2.5.1.4 "><p id="p6864112411261"><a name="p6864112411261"></a><a name="p6864112411261"></a>Standard object metadata.</p>
 </td>
@@ -107,7 +106,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16.07839216078392%" headers="mcps1.2.5.1.2 "><p id="p4986110104112"><a name="p4986110104112"></a><a name="p4986110104112"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.92810718928107%" headers="mcps1.2.5.1.3 "><p id="p8864142422612"><a name="p8864142422612"></a><a name="p8864142422612"></a><a href="#table15570752102811">表3</a></p>
+<td class="cellrowborder" valign="top" width="18.92810718928107%" headers="mcps1.2.5.1.3 "><p id="p8864142422612"><a name="p8864142422612"></a><a name="p8864142422612"></a><a href="#table15570752102811">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.97520247975203%" headers="mcps1.2.5.1.4 "><p id="p086472482619"><a name="p086472482619"></a><a name="p086472482619"></a>Specification of the desired behavior of the Deployment.</p>
 </td>
@@ -116,7 +115,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16.07839216078392%" headers="mcps1.2.5.1.2 "><p id="p3864112482611"><a name="p3864112482611"></a><a name="p3864112482611"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.92810718928107%" headers="mcps1.2.5.1.3 "><p id="p586492412263"><a name="p586492412263"></a><a name="p586492412263"></a><a href="#table3226535203116">表4</a></p>
+<td class="cellrowborder" valign="top" width="18.92810718928107%" headers="mcps1.2.5.1.3 "><p id="p586492412263"><a name="p586492412263"></a><a name="p586492412263"></a><a href="#table3226535203116">status</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.97520247975203%" headers="mcps1.2.5.1.4 "><p id="p9864162417264"><a name="p9864162417264"></a><a name="p9864162417264"></a>Most recently observed status of the Deployment.</p>
 </td>
@@ -131,7 +130,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </th>
 <th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.2"><p id="p046512488820"><a name="p046512488820"></a><a name="p046512488820"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p104741648481"><a name="p104741648481"></a><a name="p104741648481"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p104741648481"><a name="p104741648481"></a><a name="p104741648481"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.2.5.1.4"><p id="p15491184819810"><a name="p15491184819810"></a><a name="p15491184819810"></a>描述</p>
 </th>
@@ -141,7 +140,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p196171162291"><a name="p196171162291"></a><a name="p196171162291"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1461720642920"><a name="p1461720642920"></a><a name="p1461720642920"></a>integer</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1461720642920"><a name="p1461720642920"></a><a name="p1461720642920"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.5.1.4 "><p id="p961746112911"><a name="p961746112911"></a><a name="p961746112911"></a>Minimum number of seconds for which a newly created pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready)</p>
 </td>
@@ -150,7 +149,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p26171263291"><a name="p26171263291"></a><a name="p26171263291"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p66174617297"><a name="p66174617297"></a><a name="p66174617297"></a>boolean</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p66174617297"><a name="p66174617297"></a><a name="p66174617297"></a>Boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.5.1.4 "><p id="p1261715618295"><a name="p1261715618295"></a><a name="p1261715618295"></a>Indicates that the deployment is paused.</p>
 </td>
@@ -159,7 +158,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p136185612293"><a name="p136185612293"></a><a name="p136185612293"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1161815622910"><a name="p1161815622910"></a><a name="p1161815622910"></a>integer</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1161815622910"><a name="p1161815622910"></a><a name="p1161815622910"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.5.1.4 "><p id="p17618961297"><a name="p17618961297"></a><a name="p17618961297"></a>The maximum time in seconds for a deployment to make progress before it is considered to be failed. The deployment controller will continue to process failed deployments and a condition with a ProgressDeadlineExceeded reason will be surfaced in the deployment status. Once autoRollback is implemented, the deployment controller will automatically rollback failed deployments. Note that progress will not be estimated during the time a deployment is paused. Defaults to 600s.</p>
 </td>
@@ -168,7 +167,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p156184692916"><a name="p156184692916"></a><a name="p156184692916"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p19618156152920"><a name="p19618156152920"></a><a name="p19618156152920"></a>integer</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p19618156152920"><a name="p19618156152920"></a><a name="p19618156152920"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.5.1.4 "><p id="p761818692914"><a name="p761818692914"></a><a name="p761818692914"></a>Number of desired pods. This is a pointer to distinguish between explicit zero and not specified. Defaults to 1.</p>
 </td>
@@ -177,7 +176,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p96181069296"><a name="p96181069296"></a><a name="p96181069296"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p961836122910"><a name="p961836122910"></a><a name="p961836122910"></a>integer</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p961836122910"><a name="p961836122910"></a><a name="p961836122910"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.5.1.4 "><p id="p1761815614291"><a name="p1761815614291"></a><a name="p1761815614291"></a>The number of old ReplicaSets to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 2.</p>
 </td>
@@ -186,7 +185,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p10619126192913"><a name="p10619126192913"></a><a name="p10619126192913"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p138907188364"><a name="p138907188364"></a><a name="p138907188364"></a><a href="#table5344134293516">表6</a></p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p138907188364"><a name="p138907188364"></a><a name="p138907188364"></a><a href="#table5344134293516">selector</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.5.1.4 "><p id="p156190611293"><a name="p156190611293"></a><a name="p156190611293"></a>Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment.</p>
 </td>
@@ -195,7 +194,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p361936172916"><a name="p361936172916"></a><a name="p361936172916"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1619116122915"><a name="p1619116122915"></a><a name="p1619116122915"></a><a href="#table10348336183618">表7</a></p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1619116122915"><a name="p1619116122915"></a><a name="p1619116122915"></a><a href="#table10348336183618">strategy</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.5.1.4 "><p id="p361915616297"><a name="p361915616297"></a><a name="p361915616297"></a>The deployment strategy to use to replace existing pods with new ones.</p>
 </td>
@@ -204,7 +203,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p19619176142914"><a name="p19619176142914"></a><a name="p19619176142914"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1849772214710"><a name="p1849772214710"></a><a name="p1849772214710"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table52089545">表22</a></p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1849772214710"><a name="p1849772214710"></a><a name="p1849772214710"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table52089545">template</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.5.1.4 "><p id="p361914615293"><a name="p361914615293"></a><a name="p361914615293"></a>Template describes the pods that will be created.</p>
 </td>
@@ -219,7 +218,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </th>
 <th class="cellrowborder" valign="top" width="15.828417158284172%" id="mcps1.2.5.1.2"><p id="p107515551089"><a name="p107515551089"></a><a name="p107515551089"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.998100189981002%" id="mcps1.2.5.1.3"><p id="p15881655682"><a name="p15881655682"></a><a name="p15881655682"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.998100189981002%" id="mcps1.2.5.1.3"><p id="p15881655682"><a name="p15881655682"></a><a name="p15881655682"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="47.795220477952206%" id="mcps1.2.5.1.4"><p id="p69835516817"><a name="p69835516817"></a><a name="p69835516817"></a>描述</p>
 </th>
@@ -229,7 +228,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.828417158284172%" headers="mcps1.2.5.1.2 "><p id="p77701754123116"><a name="p77701754123116"></a><a name="p77701754123116"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p15770754123114"><a name="p15770754123114"></a><a name="p15770754123114"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p15770754123114"><a name="p15770754123114"></a><a name="p15770754123114"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.795220477952206%" headers="mcps1.2.5.1.4 "><p id="p17706543314"><a name="p17706543314"></a><a name="p17706543314"></a>Total number of available pods (ready for at least minReadySeconds) targeted by this deployment.</p>
 </td>
@@ -238,7 +237,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.828417158284172%" headers="mcps1.2.5.1.2 "><p id="p1770105416310"><a name="p1770105416310"></a><a name="p1770105416310"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p13770854193119"><a name="p13770854193119"></a><a name="p13770854193119"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p13770854193119"><a name="p13770854193119"></a><a name="p13770854193119"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.795220477952206%" headers="mcps1.2.5.1.4 "><p id="p1477014546311"><a name="p1477014546311"></a><a name="p1477014546311"></a>Count of hash collisions for the Deployment. The Deployment controller uses this field as a collision avoidance mechanism when it needs to create the name for the newest ReplicaSet.</p>
 </td>
@@ -247,7 +246,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.828417158284172%" headers="mcps1.2.5.1.2 "><p id="p377012542314"><a name="p377012542314"></a><a name="p377012542314"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p5707133213438"><a name="p5707133213438"></a><a name="p5707133213438"></a><a href="#table2173152418384">表8</a></p>
+<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p5707133213438"><a name="p5707133213438"></a><a name="p5707133213438"></a><a href="#table2173152418384">conditions</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.795220477952206%" headers="mcps1.2.5.1.4 "><p id="p15770105413316"><a name="p15770105413316"></a><a name="p15770105413316"></a>Represents the latest available observations of a deployment's current state.</p>
 </td>
@@ -256,7 +255,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.828417158284172%" headers="mcps1.2.5.1.2 "><p id="p13770105419318"><a name="p13770105419318"></a><a name="p13770105419318"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p17770154183118"><a name="p17770154183118"></a><a name="p17770154183118"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p17770154183118"><a name="p17770154183118"></a><a name="p17770154183118"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.795220477952206%" headers="mcps1.2.5.1.4 "><p id="p197709544316"><a name="p197709544316"></a><a name="p197709544316"></a>The generation observed by the deployment controller</p>
 </td>
@@ -265,7 +264,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.828417158284172%" headers="mcps1.2.5.1.2 "><p id="p11770154173115"><a name="p11770154173115"></a><a name="p11770154173115"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p13770145483112"><a name="p13770145483112"></a><a name="p13770145483112"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p13770145483112"><a name="p13770145483112"></a><a name="p13770145483112"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.795220477952206%" headers="mcps1.2.5.1.4 "><p id="p14770145414316"><a name="p14770145414316"></a><a name="p14770145414316"></a>Total number of ready pods targeted by this deployment</p>
 </td>
@@ -274,7 +273,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.828417158284172%" headers="mcps1.2.5.1.2 "><p id="p577112540319"><a name="p577112540319"></a><a name="p577112540319"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p17771195414319"><a name="p17771195414319"></a><a name="p17771195414319"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p17771195414319"><a name="p17771195414319"></a><a name="p17771195414319"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.795220477952206%" headers="mcps1.2.5.1.4 "><p id="p8771185414313"><a name="p8771185414313"></a><a name="p8771185414313"></a>Total number of non-terminated pods targeted by this deployment (their labels match the selector).</p>
 </td>
@@ -283,7 +282,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.828417158284172%" headers="mcps1.2.5.1.2 "><p id="p2077110546313"><a name="p2077110546313"></a><a name="p2077110546313"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p37711154163115"><a name="p37711154163115"></a><a name="p37711154163115"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p37711154163115"><a name="p37711154163115"></a><a name="p37711154163115"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.795220477952206%" headers="mcps1.2.5.1.4 "><p id="p6771115483111"><a name="p6771115483111"></a><a name="p6771115483111"></a>Total number of unavailable pods targeted by this deployment.</p>
 </td>
@@ -292,7 +291,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.828417158284172%" headers="mcps1.2.5.1.2 "><p id="p1777155423110"><a name="p1777155423110"></a><a name="p1777155423110"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p277185413115"><a name="p277185413115"></a><a name="p277185413115"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.998100189981002%" headers="mcps1.2.5.1.3 "><p id="p277185413115"><a name="p277185413115"></a><a name="p277185413115"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.795220477952206%" headers="mcps1.2.5.1.4 "><p id="p10771105413317"><a name="p10771105413317"></a><a name="p10771105413317"></a>Total number of non-terminated pods targeted by this deployment that have the desired template spec.</p>
 </td>
@@ -307,7 +306,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </th>
 <th class="cellrowborder" valign="top" width="16.258374162583742%" id="mcps1.2.5.1.2"><p id="p338415916810"><a name="p338415916810"></a><a name="p338415916810"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.95810418958104%" id="mcps1.2.5.1.3"><p id="p93912591082"><a name="p93912591082"></a><a name="p93912591082"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.95810418958104%" id="mcps1.2.5.1.3"><p id="p93912591082"><a name="p93912591082"></a><a name="p93912591082"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="47.7052294770523%" id="mcps1.2.5.1.4"><p id="p1400185912814"><a name="p1400185912814"></a><a name="p1400185912814"></a>描述</p>
 </th>
@@ -317,7 +316,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16.258374162583742%" headers="mcps1.2.5.1.2 "><p id="p2014218504328"><a name="p2014218504328"></a><a name="p2014218504328"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.95810418958104%" headers="mcps1.2.5.1.3 "><p id="p714216500323"><a name="p714216500323"></a><a name="p714216500323"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.95810418958104%" headers="mcps1.2.5.1.3 "><p id="p714216500323"><a name="p714216500323"></a><a name="p714216500323"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.7052294770523%" headers="mcps1.2.5.1.4 "><p id="p81425509322"><a name="p81425509322"></a><a name="p81425509322"></a>The revision to rollback to. If set to 0, rollback to the last revision.</p>
 </td>
@@ -332,7 +331,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </th>
 <th class="cellrowborder" valign="top" width="16.2016201620162%" id="mcps1.2.5.1.2"><p id="p172011251691"><a name="p172011251691"></a><a name="p172011251691"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.801880188018803%" id="mcps1.2.5.1.3"><p id="p4212351298"><a name="p4212351298"></a><a name="p4212351298"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.801880188018803%" id="mcps1.2.5.1.3"><p id="p4212351298"><a name="p4212351298"></a><a name="p4212351298"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="47.92479247924793%" id="mcps1.2.5.1.4"><p id="p5221851899"><a name="p5221851899"></a><a name="p5221851899"></a>描述</p>
 </th>
@@ -342,7 +341,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16.2016201620162%" headers="mcps1.2.5.1.2 "><p id="p1144815011368"><a name="p1144815011368"></a><a name="p1144815011368"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.801880188018803%" headers="mcps1.2.5.1.3 "><p id="p1744810113613"><a name="p1744810113613"></a><a name="p1744810113613"></a><a href="#table175828716396">表9</a></p>
+<td class="cellrowborder" valign="top" width="18.801880188018803%" headers="mcps1.2.5.1.3 "><p id="p1744810113613"><a name="p1744810113613"></a><a name="p1744810113613"></a><a href="#table175828716396">matchExpressions</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.92479247924793%" headers="mcps1.2.5.1.4 "><p id="p744813073619"><a name="p744813073619"></a><a name="p744813073619"></a>matchExpressions is a list of label selector requirements. The requirements are ANDed.</p>
 </td>
@@ -351,7 +350,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16.2016201620162%" headers="mcps1.2.5.1.2 "><p id="p184481017368"><a name="p184481017368"></a><a name="p184481017368"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.801880188018803%" headers="mcps1.2.5.1.3 "><p id="p2044820153610"><a name="p2044820153610"></a><a name="p2044820153610"></a>object</p>
+<td class="cellrowborder" valign="top" width="18.801880188018803%" headers="mcps1.2.5.1.3 "><p id="p2044820153610"><a name="p2044820153610"></a><a name="p2044820153610"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.92479247924793%" headers="mcps1.2.5.1.4 "><p id="p154481302365"><a name="p154481302365"></a><a name="p154481302365"></a>matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.</p>
 </td>
@@ -366,7 +365,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </th>
 <th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.2"><p id="p583310141595"><a name="p583310141595"></a><a name="p583310141595"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p68451414897"><a name="p68451414897"></a><a name="p68451414897"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p68451414897"><a name="p68451414897"></a><a name="p68451414897"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="48%" id="mcps1.2.5.1.4"><p id="p14859814891"><a name="p14859814891"></a><a name="p14859814891"></a>描述</p>
 </th>
@@ -376,7 +375,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p97843653716"><a name="p97843653716"></a><a name="p97843653716"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p19720175165913"><a name="p19720175165913"></a><a name="p19720175165913"></a><a href="#table890691614586">表10</a></p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p19720175165913"><a name="p19720175165913"></a><a name="p19720175165913"></a><a href="#table890691614586">RollingUpateDeployment</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.5.1.4 "><p id="p17842616373"><a name="p17842616373"></a><a name="p17842616373"></a>Rolling update config params. Present only if DeploymentStrategyType = RollingUpdate.</p>
 </td>
@@ -385,7 +384,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p127848613719"><a name="p127848613719"></a><a name="p127848613719"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p778436123715"><a name="p778436123715"></a><a name="p778436123715"></a>string</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p778436123715"><a name="p778436123715"></a><a name="p778436123715"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="48%" headers="mcps1.2.5.1.4 "><p id="p37841653711"><a name="p37841653711"></a><a name="p37841653711"></a>Type of deployment. Can be "Recreate" or "RollingUpdate". Default is RollingUpdate.</p>
 </td>
@@ -400,7 +399,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </th>
 <th class="cellrowborder" valign="top" width="15.959999999999999%" id="mcps1.2.5.1.2"><p id="p192215171194"><a name="p192215171194"></a><a name="p192215171194"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.17%" id="mcps1.2.5.1.3"><p id="p923313171796"><a name="p923313171796"></a><a name="p923313171796"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.17%" id="mcps1.2.5.1.3"><p id="p923313171796"><a name="p923313171796"></a><a name="p923313171796"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="47.64%" id="mcps1.2.5.1.4"><p id="p924521711912"><a name="p924521711912"></a><a name="p924521711912"></a>描述</p>
 </th>
@@ -410,7 +409,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.959999999999999%" headers="mcps1.2.5.1.2 "><p id="p1464617388382"><a name="p1464617388382"></a><a name="p1464617388382"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p76461238143813"><a name="p76461238143813"></a><a name="p76461238143813"></a>Time</p>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p76461238143813"><a name="p76461238143813"></a><a name="p76461238143813"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.64%" headers="mcps1.2.5.1.4 "><p id="p8646838173813"><a name="p8646838173813"></a><a name="p8646838173813"></a>Last time the condition transitioned from one status to another.</p>
 </td>
@@ -419,7 +418,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.959999999999999%" headers="mcps1.2.5.1.2 "><p id="p1564633813385"><a name="p1564633813385"></a><a name="p1564633813385"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p1864615387381"><a name="p1864615387381"></a><a name="p1864615387381"></a>Time</p>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p1864615387381"><a name="p1864615387381"></a><a name="p1864615387381"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.64%" headers="mcps1.2.5.1.4 "><p id="p12646173816383"><a name="p12646173816383"></a><a name="p12646173816383"></a>The last time this condition was updated.</p>
 </td>
@@ -428,7 +427,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.959999999999999%" headers="mcps1.2.5.1.2 "><p id="p11646163893819"><a name="p11646163893819"></a><a name="p11646163893819"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p2647173811388"><a name="p2647173811388"></a><a name="p2647173811388"></a>string</p>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p2647173811388"><a name="p2647173811388"></a><a name="p2647173811388"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.64%" headers="mcps1.2.5.1.4 "><p id="p1064773843816"><a name="p1064773843816"></a><a name="p1064773843816"></a>A human readable message indicating details about the transition.</p>
 </td>
@@ -437,7 +436,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.959999999999999%" headers="mcps1.2.5.1.2 "><p id="p156471038143813"><a name="p156471038143813"></a><a name="p156471038143813"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p5647103816385"><a name="p5647103816385"></a><a name="p5647103816385"></a>string</p>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p5647103816385"><a name="p5647103816385"></a><a name="p5647103816385"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.64%" headers="mcps1.2.5.1.4 "><p id="p6647143815384"><a name="p6647143815384"></a><a name="p6647143815384"></a>The reason for the condition's last transition.</p>
 </td>
@@ -446,7 +445,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.959999999999999%" headers="mcps1.2.5.1.2 "><p id="p3647113833811"><a name="p3647113833811"></a><a name="p3647113833811"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p20647638173812"><a name="p20647638173812"></a><a name="p20647638173812"></a>string</p>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p20647638173812"><a name="p20647638173812"></a><a name="p20647638173812"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.64%" headers="mcps1.2.5.1.4 "><p id="p16471338163813"><a name="p16471338163813"></a><a name="p16471338163813"></a>Status of the condition, one of True, False, Unknown.</p>
 </td>
@@ -455,7 +454,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.959999999999999%" headers="mcps1.2.5.1.2 "><p id="p16647113814389"><a name="p16647113814389"></a><a name="p16647113814389"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p18647638153813"><a name="p18647638153813"></a><a name="p18647638153813"></a>string</p>
+<td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.3 "><p id="p18647638153813"><a name="p18647638153813"></a><a name="p18647638153813"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.64%" headers="mcps1.2.5.1.4 "><p id="p20647143817386"><a name="p20647143817386"></a><a name="p20647143817386"></a>Type of deployment condition.</p>
 </td>
@@ -470,7 +469,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </th>
 <th class="cellrowborder" valign="top" width="15.93%" id="mcps1.2.5.1.2"><p id="p153690201997"><a name="p153690201997"></a><a name="p153690201997"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.12%" id="mcps1.2.5.1.3"><p id="p183818201399"><a name="p183818201399"></a><a name="p183818201399"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.12%" id="mcps1.2.5.1.3"><p id="p183818201399"><a name="p183818201399"></a><a name="p183818201399"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="47.52%" id="mcps1.2.5.1.4"><p id="p2390142012911"><a name="p2390142012911"></a><a name="p2390142012911"></a>描述</p>
 </th>
@@ -480,7 +479,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.93%" headers="mcps1.2.5.1.2 "><p id="p18676181773911"><a name="p18676181773911"></a><a name="p18676181773911"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.12%" headers="mcps1.2.5.1.3 "><p id="p1567691743916"><a name="p1567691743916"></a><a name="p1567691743916"></a>string</p>
+<td class="cellrowborder" valign="top" width="19.12%" headers="mcps1.2.5.1.3 "><p id="p1567691743916"><a name="p1567691743916"></a><a name="p1567691743916"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.52%" headers="mcps1.2.5.1.4 "><p id="p7676101711397"><a name="p7676101711397"></a><a name="p7676101711397"></a>key is the label key that the selector applies to.</p>
 </td>
@@ -489,7 +488,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.93%" headers="mcps1.2.5.1.2 "><p id="p14676117203913"><a name="p14676117203913"></a><a name="p14676117203913"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.12%" headers="mcps1.2.5.1.3 "><p id="p86761317183918"><a name="p86761317183918"></a><a name="p86761317183918"></a>string</p>
+<td class="cellrowborder" valign="top" width="19.12%" headers="mcps1.2.5.1.3 "><p id="p86761317183918"><a name="p86761317183918"></a><a name="p86761317183918"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.52%" headers="mcps1.2.5.1.4 "><p id="p5676171783913"><a name="p5676171783913"></a><a name="p5676171783913"></a>operator represents a key's relationship to a set of values. Valid operators ard In, NotIn, Exists and DoesNotExist.</p>
 </td>
@@ -498,7 +497,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.93%" headers="mcps1.2.5.1.2 "><p id="p1167671703912"><a name="p1167671703912"></a><a name="p1167671703912"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.12%" headers="mcps1.2.5.1.3 "><p id="p76764177390"><a name="p76764177390"></a><a name="p76764177390"></a>string array</p>
+<td class="cellrowborder" valign="top" width="19.12%" headers="mcps1.2.5.1.3 "><p id="p76764177390"><a name="p76764177390"></a><a name="p76764177390"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.52%" headers="mcps1.2.5.1.4 "><p id="p1567618173394"><a name="p1567618173394"></a><a name="p1567618173394"></a>values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.</p>
 </td>
@@ -513,7 +512,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </th>
 <th class="cellrowborder" valign="top" width="15.93%" id="mcps1.2.5.1.2"><p id="p20924224396"><a name="p20924224396"></a><a name="p20924224396"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.12%" id="mcps1.2.5.1.3"><p id="p19934202412920"><a name="p19934202412920"></a><a name="p19934202412920"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.12%" id="mcps1.2.5.1.3"><p id="p19934202412920"><a name="p19934202412920"></a><a name="p19934202412920"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="47.52%" id="mcps1.2.5.1.4"><p id="p4948102417917"><a name="p4948102417917"></a><a name="p4948102417917"></a>描述</p>
 </th>
@@ -523,7 +522,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.93%" headers="mcps1.2.5.1.2 "><p id="p11955121645820"><a name="p11955121645820"></a><a name="p11955121645820"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.12%" headers="mcps1.2.5.1.3 "><p id="p1295919168584"><a name="p1295919168584"></a><a name="p1295919168584"></a>integer</p>
+<td class="cellrowborder" valign="top" width="19.12%" headers="mcps1.2.5.1.3 "><p id="p1295919168584"><a name="p1295919168584"></a><a name="p1295919168584"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.52%" headers="mcps1.2.5.1.4 "><p id="p5963121610580"><a name="p5963121610580"></a><a name="p5963121610580"></a>The maximum number of pods that can be scheduled above the desired number of pods. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). This can not be 0 if MaxUnavailable is 0. Absolute number is calculated from percentage by rounding up. Defaults to 25%. Example: when this is set to 30%, the new RC can be scaled up immediately when the rolling update starts, such that the total number of old and new pods do not exceed 130% of desired pods. Once old pods have been killed, new RC can be scaled up further, ensuring that total number of pods running at any time during the update is atmost 130% of desired pods.</p>
 </td>
@@ -532,7 +531,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
 </td>
 <td class="cellrowborder" valign="top" width="15.93%" headers="mcps1.2.5.1.2 "><p id="p4975161635818"><a name="p4975161635818"></a><a name="p4975161635818"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.12%" headers="mcps1.2.5.1.3 "><p id="p497801645820"><a name="p497801645820"></a><a name="p497801645820"></a>integer</p>
+<td class="cellrowborder" valign="top" width="19.12%" headers="mcps1.2.5.1.3 "><p id="p497801645820"><a name="p497801645820"></a><a name="p497801645820"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="47.52%" headers="mcps1.2.5.1.4 "><p id="p66201122115917"><a name="p66201122115917"></a><a name="p66201122115917"></a>The maximum number of pods that can be unavailable during the update. Value can be an absolute number (ex: 5) or a percentage of desired pods (ex: 10%). Absolute number is calculated from percentage by rounding down. This can not be 0 if MaxSurge is 0. Defaults to 25%. Example: when this is set to 30%, the old RC can be scaled down to 70% of desired pods immediately when the rolling update starts. Once new pods are ready, old RC can be scaled down further, followed by scaling up the new RC, ensuring that the total number of pods available at all times during the update is at least 70% of desired pods.</p>
 </td>
@@ -562,7 +561,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\
         "template": {
             "metadata": {
                 "labels": {
-                    app": "deployment-test"
+                    "app": "deployment-test"
                 }
             },
             "spec": {

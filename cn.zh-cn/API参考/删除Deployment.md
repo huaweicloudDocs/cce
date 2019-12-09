@@ -113,7 +113,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(
 
 **响应参数：**
 
-响应参数的详细描述请参见[表4](删除Secret.md#zh-cn_topic_0079615047_table30941925)。
+响应参数的详细描述请参见[表2](删除Secret.md#table13766144711235)。
 
 **响应示例：**
 

@@ -104,6 +104,25 @@ Content-Type: application/merge-patch+json
 }
 ```
 
+**请求示例3，使用strategic-merge-patch类型：**
+
+```
+Content-Type: application/strategic-merge-patch+json
+{
+    "spec": {
+        "template": {
+            "spec": {
+                "containers": [
+                    {
+                        "name": "deploycon-12130306",
+                    }
+                ]
+            }
+        }
+    }
+}
+```
+
 ## 响应消息<a name="section22022822"></a>
 
 **响应参数：**

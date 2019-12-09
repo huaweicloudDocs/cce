@@ -39,7 +39,7 @@ PUT /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p578231710205"><a name="p578231710205"></a><a name="p578231710205"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p978261710207"><a name="p978261710207"></a><a name="p978261710207"></a>Name of the NetworkPolicy.</p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p978261710207"><a name="p978261710207"></a><a name="p978261710207"></a><span>Name of the NetworkPolicy</span>.</p>
 </td>
 </tr>
 <tr id="row19095777"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p3254085"><a name="p3254085"></a><a name="p3254085"></a>namespace</p>
@@ -86,9 +86,9 @@ PUT /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
 		"resourceVersion": "213982",
 		"generation": 1,
             "labels": {
-		"app": "nginx",
+		"app": "nginx"
 			}
-	}
+	},
     "spec": {
 	    "podSelector": {
 		"matchLabels": {
@@ -108,9 +108,9 @@ PUT /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
 		"port": 6379
 		}]
 	    }],
-	    "policyTypes":{ 
+	    "policyTypes":[
 		"Ingress"
-        }
+        ]
     }
 }
 ```

@@ -79,7 +79,7 @@ DELETE /api/v1/namespaces/\{namespace\}/pods/\{name\}
 </th>
 <th class="cellrowborder" valign="top" width="19.548045195480455%" id="mcps1.2.5.1.2"><p id="p30994462203046"><a name="p30994462203046"></a><a name="p30994462203046"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.73802619738026%" id="mcps1.2.5.1.3"><p id="p27523455203046"><a name="p27523455203046"></a><a name="p27523455203046"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.73802619738026%" id="mcps1.2.5.1.3"><p id="p27523455203046"><a name="p27523455203046"></a><a name="p27523455203046"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.28607139286072%" id="mcps1.2.5.1.4"><p id="p14807377203046"><a name="p14807377203046"></a><a name="p14807377203046"></a>描述</p>
 </th>
@@ -119,7 +119,7 @@ DELETE /api/v1/namespaces/\{namespace\}/pods/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.548045195480455%" headers="mcps1.2.5.1.2 "><p id="a38ccfeab36664ea9a4721c54895bf3d0"><a name="a38ccfeab36664ea9a4721c54895bf3d0"></a><a name="a38ccfeab36664ea9a4721c54895bf3d0"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.73802619738026%" headers="mcps1.2.5.1.3 "><p id="a6c2825385ff64f5185b992b264a53265"><a name="a6c2825385ff64f5185b992b264a53265"></a><a name="a6c2825385ff64f5185b992b264a53265"></a><a href="#te7bcdc459ad245a4b6c9a5be1cfbc24f">表3</a></p>
+<td class="cellrowborder" valign="top" width="19.73802619738026%" headers="mcps1.2.5.1.3 "><p id="a6c2825385ff64f5185b992b264a53265"><a name="a6c2825385ff64f5185b992b264a53265"></a><a name="a6c2825385ff64f5185b992b264a53265"></a><a href="#te7bcdc459ad245a4b6c9a5be1cfbc24f">preconditions</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.28607139286072%" headers="mcps1.2.5.1.4 "><p id="a72d2875166ad476b8c4f9f40113297d8"><a name="a72d2875166ad476b8c4f9f40113297d8"></a><a name="a72d2875166ad476b8c4f9f40113297d8"></a>Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.</p>
 </td>
@@ -152,7 +152,7 @@ DELETE /api/v1/namespaces/\{namespace\}/pods/\{name\}
 </th>
 <th class="cellrowborder" valign="top" width="19.548045195480455%" id="mcps1.2.5.1.2"><p id="p53426314203046"><a name="p53426314203046"></a><a name="p53426314203046"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.73802619738026%" id="mcps1.2.5.1.3"><p id="p32564158203046"><a name="p32564158203046"></a><a name="p32564158203046"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.73802619738026%" id="mcps1.2.5.1.3"><p id="p32564158203046"><a name="p32564158203046"></a><a name="p32564158203046"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.28607139286072%" id="mcps1.2.5.1.4"><p id="p20451135203046"><a name="p20451135203046"></a><a name="p20451135203046"></a>描述</p>
 </th>
@@ -162,7 +162,7 @@ DELETE /api/v1/namespaces/\{namespace\}/pods/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.548045195480455%" headers="mcps1.2.5.1.2 "><p id="a607f700011a9424b994100759d5f31fb"><a name="a607f700011a9424b994100759d5f31fb"></a><a name="a607f700011a9424b994100759d5f31fb"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.73802619738026%" headers="mcps1.2.5.1.3 "><p id="a40fd1d52f6394b74b93e0d31bc9d8c0d"><a name="a40fd1d52f6394b74b93e0d31bc9d8c0d"></a><a name="a40fd1d52f6394b74b93e0d31bc9d8c0d"></a>types.UID</p>
+<td class="cellrowborder" valign="top" width="19.73802619738026%" headers="mcps1.2.5.1.3 "><p id="p19841840244"><a name="p19841840244"></a><a name="p19841840244"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.28607139286072%" headers="mcps1.2.5.1.4 "><p id="ad13b53d1e88a48a69ecafbfa92063a74"><a name="ad13b53d1e88a48a69ecafbfa92063a74"></a><a name="ad13b53d1e88a48a69ecafbfa92063a74"></a>Specifies the target UID.</p>
 </td>
@@ -184,7 +184,7 @@ DELETE /api/v1/namespaces/\{namespace\}/pods/\{name\}
 
 **响应参数：**
 
-请求参数的详细描述请参见[表4](删除Secret.md#zh-cn_topic_0079615047_table30941925)。
+请求参数的详细描述请参见[表2](删除Secret.md#table13766144711235)。
 
 **响应示例：**
 

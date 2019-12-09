@@ -53,7 +53,7 @@ GET /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p42651667523"><a name="p42651667523"></a><a name="p42651667523"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p026514655219"><a name="p026514655219"></a><a name="p026514655219"></a>A selector to restrict the list of returned objects by their labels. Defaults to everything.</p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p026514655219"><a name="p026514655219"></a><a name="p026514655219"></a><span>A selector to restrict the list of returned objects by their labels. Defaults to everything.</span></p>
 </td>
 </tr>
 <tr id="row12294495524"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p8294159145215"><a name="p8294159145215"></a><a name="p8294159145215"></a>limit</p>
@@ -67,7 +67,7 @@ GET /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p14959239527"><a name="p14959239527"></a><a name="p14959239527"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p095963165216"><a name="p095963165216"></a><a name="p095963165216"></a>If <em id="i181451410125315"><a name="i181451410125315"></a><a name="i181451410125315"></a>true</em>, then the output is pretty printed.</p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p095963165216"><a name="p095963165216"></a><a name="p095963165216"></a><span>If </span><em id="i181451410125315"><a name="i181451410125315"></a><a name="i181451410125315"></a>true</em><span>, then the output is pretty printed.</span></p>
 </td>
 </tr>
 <tr id="row1217618188539"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p917681815533"><a name="p917681815533"></a><a name="p917681815533"></a>resourceVersion</p>
@@ -81,7 +81,7 @@ GET /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p10624172015313"><a name="p10624172015313"></a><a name="p10624172015313"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p106249202539"><a name="p106249202539"></a><a name="p106249202539"></a>Timeout for the list/watch call.</p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p106249202539"><a name="p106249202539"></a><a name="p106249202539"></a><span>Timeout for the list/watch call.</span></p>
 </td>
 </tr>
 <tr id="row15910162255313"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p18910822105320"><a name="p18910822105320"></a><a name="p18910822105320"></a>watch</p>
@@ -124,7 +124,7 @@ N/A
 			"generation": 1,
 			"creationTimestamp": "2018-11-15T08:23:34Z",
 			"labels": {
-				"app": "nginx",
+				"app": "nginx"
 			}
 		},
 		"spec": {
@@ -147,9 +147,10 @@ N/A
 			    }
 		
 		    },
-		    "policyTypes": {
+		    "policyTypes": [
 			    "Ingress"
-		    }	
+		    ]
+              }
 	}]
 }
 ```

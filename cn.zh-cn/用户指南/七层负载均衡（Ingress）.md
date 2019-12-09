@@ -6,42 +6,44 @@
 
 通过配置公网类型和私网类型的负载均衡实例可以实现公网的七层路由转发和内网（同一VPC内）的七层路由转发。
 
-## 前提条件<a name="section2042610683912"></a>
+## 准备工作<a name="section2042610683912"></a>
 
 已在华为云控制台中创建“弹性负载均衡“实例。
 
-1.  登录华为云控制台首页，在服务列表中选择“网络  \> 弹性负载均衡“。
-2.  单击右上角的“购买增强型负载均衡“，详细操作步骤请参见[创建增强型负载均衡器](https://support.huaweicloud.com/qs-elb/zh-cn_topic_0052569751.html)。
+1.  登录华为云控制台首页，在服务列表中选择“网络  \> 弹性负载均衡 ELB“。
+2.  单击右上角的“购买增强型负载均衡“，详细操作步骤请参见[创建增强型负载均衡器](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0015479967.html)。
 
-## 添加方式<a name="section10392205822818"></a>
+>![](public_sys-resources/icon-note.gif) **说明：**   
+>CCE中的负载均衡 \( LoadBalancer \)访问类型使用[弹性负载均衡 ELB](https://support.huaweicloud.com/productdesc-elb/zh-cn_topic_0015479966.html)提供网络访问，存在如下产品约束：  
+>-   自动创建的ELB实例建议不要被其他资源使用，否则会在删除时被占用，导致资源残留。  
+>-   正在使用的ELB实例请不要修改监听器名称，否则可能导致无法正常访问。  
+>-   正在使用的ELB实例，其监听器请不要在ELB控制台中添加自定义转发规则，未通过CCE“网络管理“中的Ingress所管理的转发规则，将在更新ingress的时被清理掉。  
 
-您可以在创建工作负载时设置访问方式，也可以工作负载创建完成后添加访问方式。
+## 通过控制台操作<a name="section744117150366"></a>
 
--   方式一：创建工作负载时配置，请参见[通过界面创建](#section744117150366)和[kubectl命令行创建](#section1944313158364)。
--   方式二：工作负载创建完成后配置，此配置对工作负载状态无影响，且实时生效。
+您可以在创建工作负载时通过CCE控制台设置访问方式，本节以ingress-test工作负载为例进行说明。
 
-## 通过界面创建<a name="section744117150366"></a>
-
-本节以ingress-test工作负载为例进行说明。
-
-1.  创建工作负载，详细步骤请参见[创建无状态工作负载](创建无状态工作负载.md)或[创建有状态工作负载](创建有状态工作负载.md)。
+1.  创建工作负载，详细步骤请参见[创建无状态工作负载\(Deployment\)](创建无状态工作负载(Deployment).md)或[创建有状态工作负载\(StatefulSet\)](创建有状态工作负载(StatefulSet).md)。
     -   若创建工作负载时，配置了工作负载访问方式，且设置为“节点访问 \( NodePort \)”，请直接执行[3](#li45981923161059)。
     -   若创建工作负载未设置访问方式，请先执行[2](#li248013365354)。
 
 2.  <a name="li248013365354"></a>（可选）若创建工作负载时，未配置“节点访问 \( NodePort \)”，请执行如下操作。
-    1.  单击CCE左侧导航栏的“资源管理 \> 网络管理”。
+    1.  登录CCE控制台，在左侧导航栏中选择“资源管理 \> 网络管理”。
     2.  在Service页签下，单击“添加Service”。选择类型为“节点访问 \( NodePort \)”。
-        -   服务名称：自定义服务名称，可与工作负载名称保持一致。
-        -   集群名称：选择需要添加Service的集群。
-        -   命名空间：选择需要添加Service的命名空间。
-        -   关联工作负载：单击“选择工作负载”，选择需要配置节点访问 \( NodePort \)的工作负载名称，单击“确定”。
-        -   端口配置：
+        -   **服务名称：**自定义服务名称，可与工作负载名称保持一致。
+        -   **集群名称：**选择需要添加Service的集群。
+        -   **命名空间：**选择需要添加Service的命名空间。
+        -   **关联工作负载：**单击“选择工作负载”，选择需要配置节点访问 \( NodePort \)的工作负载名称，单击“确定”。
+        -   **服务亲和：**
+            -   集群级别：将外部流量路由到集群下所有的节点，并且隐藏客户端源IP。
+            -   节点级别：将外部流量路由到服务关联的负载所在的节点，并且保留客户端源IP。
+
+        -   **端口配置：**
             -   协议：请根据业务的协议类型选择。
             -   容器端口：容器镜像中工作负载实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
             -   访问端口：容器端口映射到节点私有IP上的端口，用私有IP访问工作负载时使用，端口范围为30000-32767，建议选择“自动生成”。
                 -   自动生成：系统会自动分配端口号。
                 -   指定端口：指定固定的节点端口，默认取值范围为30000-32767。若指定端口时，请确保同个集群内的端口唯一性。
-
 
 
     3.  单击“创建”，节点访问方式设置成功。
@@ -53,22 +55,66 @@
         **图 1**  添加Ingress<a name="fig1625112413916"></a>  
         ![](figures/添加Ingress.png "添加Ingress")
 
-        -   Ingress名称：自定义Ingress名称，例如ingress-demo。
-        -   集群名称：选择需要添加Ingress的集群。
-        -   命名空间：选择需要添加Ingress的命名空间。
-        -   增强型负载均衡实例：支持使用已有负载均衡实例和自动创建两种方式。
-            -   选择已有的负载均衡实例时，请确保此负载均衡实例和所选集群处于相同的VPC和子网。
-            -   选择自动创建时，若待创建负载均衡实例类型为“公网”，可单击“更改负载均衡规格”来修改待负载均衡实例的规格、计费模式和带宽。
+        -   **Ingress名称：**自定义Ingress名称，例如ingress-demo。
+        -   **集群名称：**选择需要添加Ingress的集群。
+        -   **命名空间：**选择需要添加Ingress的命名空间。
+        -   **对接Nginx插件：**集群中已安装[nginx-ingress](nginx-ingress.md)插件后显示此参数，未安装[nginx-ingress](nginx-ingress.md)插件不显示。
 
-        -   对外端口：开放在负载均衡服务地址的端口，可任意指定。
-        -   对外协议：支持HTTP和HTTPS。若选择HTTPS，请选择密钥证书。
+            单击![](figures/zh-cn_image_0183600214.png)开启后可填写如下参数：
+
+            **表 1**  对接Nginx插件参数设置
+
+            <a name="table05328482472"></a>
+            <table><thead align="left"><tr id="row14537184814714"><th class="cellrowborder" valign="top" width="23.400000000000002%" id="mcps1.2.3.1.1"><p id="p453714481473"><a name="p453714481473"></a><a name="p453714481473"></a>参数</p>
+            </th>
+            <th class="cellrowborder" valign="top" width="76.6%" id="mcps1.2.3.1.2"><p id="p553714824714"><a name="p553714824714"></a><a name="p553714824714"></a>参数说明</p>
+            </th>
+            </tr>
+            </thead>
+            <tbody><tr id="row205371848144711"><td class="cellrowborder" valign="top" width="23.400000000000002%" headers="mcps1.2.3.1.1 "><p id="p195381848164718"><a name="p195381848164718"></a><a name="p195381848164718"></a>超时时间</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p253884810475"><a name="p253884810475"></a><a name="p253884810475"></a>描述客户端与代理服务器建立连接的超时时间。</p>
+            </td>
+            </tr>
+            <tr id="row25383486478"><td class="cellrowborder" valign="top" width="23.400000000000002%" headers="mcps1.2.3.1.1 "><p id="p5538194844713"><a name="p5538194844713"></a><a name="p5538194844713"></a>重定向地址</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p75381148174713"><a name="p75381148174713"></a><a name="p75381148174713"></a>将所有的内容重定向到指定地址，例如输入"https://www.huaweicloud.com/"。</p>
+            </td>
+            </tr>
+            <tr id="row1153816485478"><td class="cellrowborder" valign="top" width="23.400000000000002%" headers="mcps1.2.3.1.1 "><p id="p453864864712"><a name="p453864864712"></a><a name="p453864864712"></a>自定义配置</p>
+            </td>
+            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p1642633205019"><a name="p1642633205019"></a><a name="p1642633205019"></a>Ingress通过Annotations设置来修改nginx.conf里面的配置，如需设置key: value，可通过<a href="https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/" target="_blank" rel="noopener noreferrer">Annotations</a>查询。</p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+
+        -   **负载均衡：**可以将互联网访问流量自动分发到工作负载所在的多个节点上。负载均衡实例需与当前集群处于相同VPC且为相同公私网类型。
+
+            请根据业务需求选择“公网“或“私网“，详情请参见[公网和私网负载均衡器](https://support.huaweicloud.com/productdesc-elb/zh_cn_elb_01_0004.html)。
+
+            -   公网：支持自动创建和使用已有负载均衡实例两种方式。
+
+                规格配置：选择“公网 \> 自动创建“时，单击规格配置下的“更改配置”，可修改待创建的负载均衡实例的名称、规格、计费模式和带宽。
+
+                增强型负载均衡配额不足时，请通过新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
+
+            -   私网：支持自动创建和使用已有负载均衡实例两种方式。
+
+            若选择启用“对接Nginx插件“后，将使用Nginx插件中配置的负载均衡设置，**此处“负载均衡“参数区域将不显示。**
+
+        -   **对外端口：**开放在负载均衡服务地址的端口，可任意指定。
+
+            若选择启用“对接Nginx插件“后，将默认开启80和443端口，此处“对外端口“参数项将不显示。
+
+        -   **对外协议：**支持HTTP和HTTPS。若选择HTTPS，请选择密钥证书，格式说明请参见[证书格式](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0092382555.html)。
 
             >![](public_sys-resources/icon-note.gif) **说明：**   
             >-   选择HTTPS协议时，才需要创建密钥证书ingress-test-secret.yaml。创建密钥的方法请参见[创建密钥](创建密钥.md)。  
-            >-   同一个ELB实例的同一个端口配置HTTPS时，选择的证书需要是一样的。  
+            >-   同一个ELB实例的同一个端口配置HTTPS时，一个监听器只支持配置一个密钥证书。若使用两个不同的密钥证书将两个Ingress添加到同一个ELB下的同一个监听器，ELB侧实际只生效最初的证书。  
 
-        -   域名：实际访问的域名地址，对应负载均衡服务域名地址，需用户购买备案自己的域名，可选填。一旦配置了域名规则，则必须使用域名访问。
-        -   路由配置：
+        -   **域名：**可选填。实际访问的域名地址，该域名需用户购买并备案，并确保所填域名能解析到所选负载均衡实例的服务地址。一旦配置了域名规则，则必须使用域名访问。
+        -   **路由配置：**
             -   路由匹配规则：前缀匹配、精确匹配、正则匹配。
                 -   前缀匹配：例如映射URL为/healthz，只要符合此前缀的URL均可访问。例如/healthz/v1，/healthz/v2。
                 -   精确匹配：表示精准匹配，只有完全匹配上才能生效。例如映射URL为/healthz，则必须为此URL才能访问。
@@ -79,8 +125,7 @@
             -   容器端口：容器镜像中容器实际监听端口，需用户确定。例如：defaultbackend程序实际监听的端口为8080。
 
 
-
-4.  单击“创建“。
+4.  配置完成后，单击“创建“。
 
     创建完成后，在Ingress列表可查看到已创建成功的Ingress。
 
@@ -98,7 +143,6 @@
         **图 3**  访问defaultbackend“/healthz”接口<a name="fig17115192714367"></a>  
         ![](figures/访问defaultbackend-healthz-接口.png "访问defaultbackend-healthz-接口")
 
-
     方式二：域名访问
 
     以ingress中已配置域名ingress.com为例。
@@ -108,17 +152,19 @@
         **图 4**  获取域名与访问地址<a name="fig1992172383117"></a>  
         ![](figures/获取域名与访问地址.png "获取域名与访问地址")
 
-    2.  在本地主机的  C:\\Windows\\System32\\drivers\\etc\\hosts中配置访问地址的IP和域名，如：49.4.78.159 ingress.com。
+    2.  在本地主机的  C:\\Windows\\System32\\drivers\\etc\\hosts中配置访问地址的IP和域名。
     3.  在浏览器中输入http://域名:访问地址端口/映射url，如：http://ingress.com:81/iamwangbo。
 
 
-## kubectl命令行创建<a name="section1944313158364"></a>
+## 通过kubectl命令行创建<a name="section1944313158364"></a>
 
 本节以nginx为例，说明kubectl命令实现ingress访问的方法。
 
 **前提条件**
 
-请参见[通过Kubectl连接集群](通过Kubectl连接集群.md)配置kubectl命令，使弹性云服务器连接集群。
+请参见[通过kubectl连接集群](通过kubectl连接集群.md)配置kubectl命令，使弹性云服务器连接集群。
+
+**操作步骤**
 
 1.  登录已配置好kubectl命令的弹性云服务器。登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
 2.  创建ingress-test-deployment.yaml、ingress-test-svc.yaml、ingress-test-ingress.yaml以及ingress-test-secret.yaml文件。
@@ -153,8 +199,8 @@
           - image: ingress  
             imagePullPolicy: Always
             name: ingress
-          imagePullSecrets:
-          -name:default-secret
+            imagePullSecrets:
+            - name: default-secret
     ```
 
     **vi ingress-test-svc.yaml**
@@ -169,63 +215,313 @@
     spec: 
       ports: 
       - name: service0 
-        port: 8888            #集群虚拟IP的访问端口 
+        port: 8888
         protocol: TCP 
-        targetPort: 8888       #对应界面上的容器端口，应用程序实际监听的端口 
-      #若需要设置多个端口，可依次填写，如下展示
+        targetPort: 8888       #若需要设置多个端口，可依次填写，如下展示
       - name: service1 
         port: 8081 
         protocol: TCP 
         targetPort: 8081
       selector: 
         app: ingress-test-deployment
-      type:  NodePort         #采用Nodeport的访问类型连接负载均衡
+      type:  NodePort
     ```
+
+    **表 2**  关键参数说明
+
+    <a name="table1819001615355"></a>
+    <table><thead align="left"><tr id="row1519121663519"><th class="cellrowborder" valign="top" width="30.316968303169684%" id="mcps1.2.4.1.1"><p id="p18191161619356"><a name="p18191161619356"></a><a name="p18191161619356"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="18.088191180881914%" id="mcps1.2.4.1.2"><p id="p1191141613357"><a name="p1191141613357"></a><a name="p1191141613357"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="51.594840515948405%" id="mcps1.2.4.1.3"><p id="p1919116161353"><a name="p1919116161353"></a><a name="p1919116161353"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row15191171618357"><td class="cellrowborder" valign="top" width="30.316968303169684%" headers="mcps1.2.4.1.1 "><p id="p5788113218236"><a name="p5788113218236"></a><a name="p5788113218236"></a>port</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.088191180881914%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615000_p54093956"><a name="zh-cn_topic_0079615000_p54093956"></a><a name="zh-cn_topic_0079615000_p54093956"></a>Integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p167881320237"><a name="p167881320237"></a><a name="p167881320237"></a>集群虚拟IP的访问端口，取值范围为1 ~ 65535。</p>
+    </td>
+    </tr>
+    <tr id="row81941516153513"><td class="cellrowborder" valign="top" width="30.316968303169684%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615000_p11039195"><a name="zh-cn_topic_0079615000_p11039195"></a><a name="zh-cn_topic_0079615000_p11039195"></a>protocol</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.088191180881914%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615000_p17699892"><a name="zh-cn_topic_0079615000_p17699892"></a><a name="zh-cn_topic_0079615000_p17699892"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p835181810259"><a name="p835181810259"></a><a name="p835181810259"></a>该端口的IP协议，支持“TCP”和“UDP”。</p>
+    </td>
+    </tr>
+    <tr id="row201957167350"><td class="cellrowborder" valign="top" width="30.316968303169684%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615000_p53639231"><a name="zh-cn_topic_0079615000_p53639231"></a><a name="zh-cn_topic_0079615000_p53639231"></a>targetPort</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.088191180881914%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615000_p8117426"><a name="zh-cn_topic_0079615000_p8117426"></a><a name="zh-cn_topic_0079615000_p8117426"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1262218433513"><a name="p1262218433513"></a><a name="p1262218433513"></a>对应界面上的容器端口，应用程序实际监听的端口，取值范围为1 ~ 65535。</p>
+    </td>
+    </tr>
+    <tr id="row02694357138"><td class="cellrowborder" valign="top" width="30.316968303169684%" headers="mcps1.2.4.1.1 "><p id="p6716134816295"><a name="p6716134816295"></a><a name="p6716134816295"></a>type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.088191180881914%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615000_p18968549"><a name="zh-cn_topic_0079615000_p18968549"></a><a name="zh-cn_topic_0079615000_p18968549"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p13717148202913"><a name="p13717148202913"></a><a name="p13717148202913"></a>采用Nodeport的访问类型连接负载均衡，NodePort表示“节点私有IP”。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
     **vi ingress-test-ingress.yaml**
 
-    ```
-    apiVersion: extensions/v1beta1 
-    kind: Ingress 
-    metadata: 
-      annotations: 
-        kubernetes.io/elb.id: f7891f9a-49f2-4ee2-b1ae-f019cd84eb4f        #必填，为负载均衡增强型实例的ID
-        kubernetes.io/elb.ip: 192.168.0.39        #必填，为负载均衡增强型实例的服务地址，公网ELB配置为公网IP，私网ELB配置为私网IP
-        kubernetes.io/elb.subnet-id: 29a0567e-96f1-4227-91cc-64f54d0b064d        #可选，但自动创建时必填
-        kubernetes.io/elb.autocreate: "{\"type\":\"public\",\"bandwidth_name\":\"cce-bandwidth-1551163379627\",\"bandwidth_chargemode\":\"bandwidth\",\"bandwidth_size\":5,\"bandwidth_sharetype\":\"PER\",\"eip_type\":\"5_bgp\"}"   #可选，但公网自动创建必填，自动创建ELB所绑定的EIP
-        kubernetes.io/elb.autocreate: "{\"type\":\"inner\"}"      #可选，但私网自动创建必填，自动创建ELB
-        kubernetes.io/elb.port: "80"              #必填，界面上的对外端口，为注册到负载均衡服务地址上的端口
-      name: ingress-test-ingress
-    spec:
-      tls:                             #可选，HTTPS协议时，需添加此参数
-      - secretName: ingress-test-secret        #可选，HTTPS协议时添加，配置为创建的密钥证书名称
-      rules: 
-      - http: 
-          paths: 
-          - backend: 
-              serviceName: ingress-test-svc   #为ingress-test-svc.yaml的服务名称
-              servicePort: 8888           #为ingress-test-svc.yaml的targetPort，即容器端口
-            property:
-              ingress.beta.kubernetes.io/url-match-mode: EQUAL_TO    #路由匹配策略，可选值为EQUAL_TO（精确匹配）、STARTS_WITH(前缀匹配)、REGEX（正则匹配）
-            path: "/healthz"              #为路由，用户自定义设置
-        host: ingress.com       #可选，域名配置
-    ```
+    -   自动创建ELB
 
-    **vi ingress-test-secret.yaml**
+        ```
+        apiVersion: extensions/v1beta1 
+        kind: Ingress 
+        metadata: 
+          annotations: 
+            kubernetes.io/elb.subnet-id: 29a0567e-96f1-4227-91cc-64f54d0b064d
+            kubernetes.io/elb.autocreate: "{\"type\":\"public\",\"bandwidth_name\":\"cce-bandwidth-1551163379627\",\"bandwidth_chargemode\":\"bandwidth\",\"bandwidth_size\":5,\"bandwidth_sharetype\":\"PER\",\"eip_type\":\"5_bgp\",\"name\":\"james\"}"
+            kubernetes.io/elb.port: "80"
+            kubernetes.io/ingress.class: cce
+          name: ingress-test-ingress
+        spec:
+          tls:
+          - secretName: ingress-test-secret
+          rules: 
+          - http: 
+              paths: 
+              - backend: 
+                  serviceName: ingress-test-svc
+                  servicePort: 8888
+                property:
+                  ingress.beta.kubernetes.io/url-match-mode: EQUAL_TO
+                path: "/healthz"
+            host: ingress.com
+        ```
 
-    ```
-    apiVersion: v1
-    data:
-      tls.crt: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUd4RENDQkt5Z0F3SUJBZ0lJVFdXQ0lRZjgvVkl3RFFZSktvWklodmNOQVFFTEJRQXdnWkl4Q3pBSkJnTlYKQkFZVEFrTk9NUkl3RUFZRFZRUUlEQWxIZFdGdVowUnZibWN4RVRBUEJnTlZCQWNNQ0ZOb1pXNWFhR1Z1TVNVdwpJd1lEVlFRS0RCeElkV0YzWldrZ1ZHVmphRzV2Ykc5bmFXVnpJRU52TGl3Z1RIUmtNU0V3SHdZRFZRUUxEQmhQClUxTWdKaUJUWlhKMmFXTmxJRlJ2YjJ4eklFUmxjSFF4RWpBUUJnTlZCQU1NQ1U5VFV6TXVNQ0JEUVRBZUZ3MHgKT0RBeU1qTXhOVFE1TXpsYUZ3MHlNREF5TWpNeE5UUTVNemxhTUlIcU1Rc3dDUVlEVlFRR0V3SkRUakVTTUJBRwpBMVVFQ0JNSlIzVmhibWRFYjI1bk1SRXdEd1lEVlFRSEV3aFRhR1Z1V21obGJqRWxNQ01HQTFVRUNoTWNTSFZoCmQyVnBJRlJsWTJodWIyeHZaMmxsY3lCRGJ5NHNJRXgwWkRFaE1COEdBMVVFQ3d3WVQxTlRJQ1lnVTJWeWRtbGoKWlNCVWIyOXNjeUJFWlhCME1SSXdFQVlEVlFRREV3bFBVMU16TGpBZ1EwRXhFREFPQmdNcEFRRVRCMlJsWm1GMQpiSFF4S2pBb0JnTXBBUUlNSVdSbFptRjFiSFE2WkdWbVlYVnNkRHB2Y0Y5alptVmZZMjl1ZEhKdmJHeGxjakVZCk1CWUdBeWtCQXhNUFpHVm1ZWFZzZERwa1pXWmhkV3gwTUlJQ0lqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FnOEEKTUlJQ0NnS0NBZ0VBNmV1R2tRR1p2UHlQcitVZThwdk9rMG5lMEhDRkZyajhJNU9aNEh2NlZVanI5Q2JYenVySApQNmdhb3pqRHdxc3BnT2oyemdtTlpsS1RZdWZUckYxUGZzNUJEZUZoeXpMcWlvclowTnZUSDQ2ZWxhbllBYm4zCm1GV1hyNW51L2NoWHl2UU5XZ3RIdFh3WXZtNjRMUk1McFFBVGZHTnpSYTN6eFRVcnJ3aVgvQnJvMVpneHhpREgKZ1RlUndrT0kzZUZ4SWhDTXBaRk0wdDJjNjJGanF0SmhrQS9PZGxESVFaSnRTSUgxSGZMSG92YzNpK3pnYzJmZAozU2FXeit4dWJiYWx1a3BEaXEzYUg1UXAyWlRkU1V3WGNaS2VvQjZGZFc4eElJUWpVbTZQY3Jyd3dkMTdwK1RPCkxZaXBpSDVHTjZlbG5tdnZTdHZWWEpleVRuUE1pZlNSNXZxZTZDMUxMc1haSUtlLzZNUnhzSGNVMkc1N0g5TTkKbWE1WUoxOHJFZjBKc3Q1dHhWL1RZVnJyMzFWdTVUWjZaUisva3BRWjdyZTZLTjZMT1k5VVRPZTVqeFE3L2puSgoxQ3N5eERtU3Zxb3Q3REFlRnNRTUwrck12VjBDVktKMTQwOGpSTzNEaElYRm9vOXMxOThWKzZHK0hnZzhTaEp6ClNveFJDWnNYdHBXT1hLS09Nek1DTkY3ZEVwK1FpQjdGSjZrV1QxZUxUZTgrWTR3TEs5ejRtRUhJRkpKSEhxVUsKTDFrVEU2a1Q0ZTlobkhCeHd0WXVnWHhBYWxXMkNzM1IyQklEemhtT3dHRmF3OVArRDlTOGowa0FmQlJLZ2gvTAp5SUlKaUpTck40M2tHYXBpMDRwNjhhNzV6b1hKcGZCTlphUXZVR09TaG0vZlVQbHBtUVZJdWZFQ0F3RUFBYU9CCnd6Q0J3REFPQmdOVkhROEJBZjhFQkFNQ0FxUXdIUVlEVlIwbEJCWXdGQVlJS3dZQkJRVUhBd0lHQ0NzR0FRVUYKQndNQk1Bd0dBMVVkRXdFQi93UUNNQUF3SHdZRFZSMGpCQmd3Rm9BVUo5RGcvRWp1NTRVOVNNQWpkdWhNSDRlcwo1Z1V3WUFZRFZSMFJCRmt3VjRJYktpNWtaV1poZFd4MExuTjJZeTVqYkhWemRHVnlMbXh2WTJGc2dpQXFMbVYwClkyUXVaR1ZtWVhWc2RDNXpkbU11WTJ4MWMzUmxjaTVzYjJOaGJJY0Vmd0FBQVljRWZ3QUFBWWNFQ3ZjQUFZY0UKQ3ZjQUFqQU5CZ2txaGtpRzl3MEJBUXNGQUFPQ0FnRUF5bGhEMmExeWNZSVd1L0l1dzBMc2JGY1YzSnVUTG9OOQpXNEJVblgxSVV1dUtBYnd0NkNKeHI4VGtlNFlJRU1YQTFxRGo0N0R5R3dXYkF5S1N2ekU1WWYrRkF5Z0tUVDAzCjZhelNFMWoyczR6VFMrc1hXc1QzMWtxTVBVZHl5ZVRTQnJYV1B5S1RaaGpxRzJZZU9KM1RURGJKaG9QM0FPS0MKTkZ2eXVHUmNGZGo5VmtsWWhsazJ2ejBsRGMyWkR6MmkyUk9rOCtjcUJOdC91YnJXYmQzTTBxTmVmWDJuODNmZQpnQ2NXWjB5ZTdQdkdlWkNLNWRhWFNKZFVtWWNLaUpDR1pVSGtYV1VTL3krdm1Ra0xyYmF1T0tWMTBYbjN0TU1vCjdydVNMUFVIQWNMWVpkUG1LMkw1Z3owWXpNVG9uUFo2c2EvaXpBTzRxTmdHUlFoSW9RNno0RjNrSTRhd0tmRSsKajg1VVlWWCtJWTM0a3hOcnBXU3lmZTJLdnFlcFVaYk5wZXQ3Qk9neEpOcUJkUW5peG9oVEhhOU9nTmhTN0JZKwp1R1JDekFGOHd0OStzUEE0MTRlaW4xQ0dQY3FCNE5jZWVnZHBuVm96K2dzSzlOb0t6Y3lMZzI1a1lycm42dFM4CjM3TC9FLzJabFhSNGdKdDJIVlFoYjR0SThlaGgrVklJNzg3R3VRUTB0RmpETmw0MER4MCtzVDJsUGwrSWdyQ2oKRjhDTllOT1NsS2x0Y1VicTdIbjhzanlJalJTLzYxWHM2NGxsSkcvdElVZEkvaTJrL1A2bVl0c1d4T1hQNlRzNQpISktBWXNFTC8wdGtHZ2NCMUNENGpUaFVwOERLUVZZK1ZySEJUTmZBK3ArK2VQRS9SdXB5WGF1NWhYZEs4dldNCnE0RmFSWUdsbXc4PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
-      tls.key: LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlKS1FJQkFBS0NBZ0VBNmV1R2tRR1p2UHlQcitVZThwdk9rMG5lMEhDRkZyajhJNU9aNEh2NlZVanI5Q2JYCnp1ckhQNmdhb3pqRHdxc3BnT2oyemdtTlpsS1RZdWZUckYxUGZzNUJEZUZoeXpMcWlvclowTnZUSDQ2ZWxhblkKQWJuM21GV1hyNW51L2NoWHl2UU5XZ3RIdFh3WXZtNjRMUk1McFFBVGZHTnpSYTN6eFRVcnJ3aVgvQnJvMVpneAp4aURIZ1RlUndrT0kzZUZ4SWhDTXBaRk0wdDJjNjJGanF0SmhrQS9PZGxESVFaSnRTSUgxSGZMSG92YzNpK3pnCmMyZmQzU2FXeit4dWJiYWx1a3BEaXEzYUg1UXAyWlRkU1V3WGNaS2VvQjZGZFc4eElJUWpVbTZQY3Jyd3dkMTcKcCtUT0xZaXBpSDVHTjZlbG5tdnZTdHZWWEpleVRuUE1pZlNSNXZxZTZDMUxMc1haSUtlLzZNUnhzSGNVMkc1NwpIOU05bWE1WUoxOHJFZjBKc3Q1dHhWL1RZVnJyMzFWdTVUWjZaUisva3BRWjdyZTZLTjZMT1k5VVRPZTVqeFE3Ci9qbkoxQ3N5eERtU3Zxb3Q3REFlRnNRTUwrck12VjBDVktKMTQwOGpSTzNEaElYRm9vOXMxOThWKzZHK0hnZzgKU2hKelNveFJDWnNYdHBXT1hLS09Nek1DTkY3ZEVwK1FpQjdGSjZrV1QxZUxUZTgrWTR3TEs5ejRtRUhJRkpKSApIcVVLTDFrVEU2a1Q0ZTlobkhCeHd0WXVnWHhBYWxXMkNzM1IyQklEemhtT3dHRmF3OVArRDlTOGowa0FmQlJLCmdoL0x5SUlKaUpTck40M2tHYXBpMDRwNjhhNzV6b1hKcGZCTlphUXZVR09TaG0vZlVQbHBtUVZJdWZFQ0F3RUEKQVFLQ0FnQUpyRG1XU1hDb0JmR1RIbkJYSytZdzVQOFhzMjl0Ynh6T0E4NTdIK1ZNSFlYVVJMN3J5WDJQdmszTApyZzg2UDRXcDFQaFBzTWx1RDhBVWVPMmgxUUh5aG1qZVFCR2hLMnZUYXNaekFvUUtiQVZXdnYwMXBSRDk5WndlCklNbG5LUitvUHN0R2kremRMbEovbldoMFJMTllrVlk4OElmVnU4bTJ2K29jaE1oMEhsQytkRnFxakxSelBXOEQKajNOYmFYVWFLWUVIWDZqRGwzSmpzVlZEdlF0WHY2K1Q2T2MrL3VVUitIM0FUVWZBRDJUMm5rYnh2cnZINTA2WgpMbmVxaGNENG9SV0Y2SVo2Zzgvdk5WNnBKMEpZNmUweFJkSFM5MVFhdWh3VHpvcVQvZkx5c1V2cHQyWm5MNTJECkRXV3Q2M3JId0VMVzM1eEZCZWpUb2FvMWtpMXVRWEtlQ0ZhNzk1RjhrV3BJZEQ0USt0OHhxUlU0Z1dNcm1YZUkKYk02b1VnbnZoZFJHWDdQMU9OVDcveEs2RkMyUkw0MnRlbFhzODdCWjdBMmFOT0JHN01xSEM4SkZrWGZlNFBMZApDaHRIa1NteVNQLzVOMTJ4QXNkdVBUb1BnTzJNL3RUTGVqeCtBb2V6RzYzc1h5WEJFSGErN0VqTzJEejcrczVTCnNzZXVSaXVIOWJwSFJTbmd6Z1ZMSXJ2L1V2UVlYVEE2NGZmVVcyOHhhcTc4OE9lbE9HV21maUZrRERXWktNbnMKQ3NPRjQxYy9MZEV0c290d1ptNmJGM09paWZ6TU80NkNvdmx1dk9zeUt2RFBhK1pPVU50bkNjeXM5bmVPMTJUawpBQldMaGp1YXNzSVZIc0I2Z09GcjJhRUNuNUpwWU8ycnNtaThUeC9WNjNuRWdtaklvUUtDQVFFQS9YTWRFMVozCklUcEVtSEI2QlpmbEx5eWR1Q0VkL1haZDg5L3hENGFHNGU5M2ZabGRVUHZkSFVFbU1nYzN6VW9VYlJxcG42RUQKUXBaK1hBYnNkeUVSSUZCN3V3RHZkdWQzNXVKbyt6VFR0cHBPQUNvQ0NDTUxFZWtZRXV2SkYzU3JFV1JXZERwNwo5L1VpQUpzVkpwbm1tVGw2OGRkUmFRZ3hKaEdrZlRoZmYyNDRRVnZXdFM2bHRNUEdBUlZ0MDlGbkpkSkJtOElEClBqei83Z0Z2ZVAybHlOaW9JZDgyM2xEcThSaHdxY3libTdIclhRa0lLRmd6ZVp2eXova2EzejBHL0ZySzlIYjcKaG1CcTVOMWxuV3RSZmZaZ29SUml4d2dNeHFOcUszRG13TzNSTVUzQU8vcG5SeThaaU9jME9ycGUrMFROWkJ6bAp0d1BDUFdvS2pXNk5wUUtDQVFFQTdFWWFqUEVaU28xM0ZnZ0hpa2R5WlN6Q3R6YUcrU09HM0w5eTdPdEpHb0x3CnhlMGpHY1M1b2loNDVZNTg5WmphZ3NOclVMbjZtNzh4TGJ0eHM2VE1sbGNrZzUyTnZ5aWNERG5mK0Q1bHRzK1AKa3UyakQ0VmFkWGh0SFhqb2w1QS9NZzFPNjZiY2I4MVRGWjR0amNaUHhSYU1nZXZDdDhzT0ZWdG5SNWNSdzJTRgp2Nk9mL2dCV0x4aWZqb0QwT21HVnNYOWU5R1hpU0dGNVd4NWRYbkltYkpLVE1MOWM4MWczaGJwU2NzRnpaa2g4CnBFallqbDRPV21aYW5GZExPSVA3THJlN0JibFV5V25tL3hnZy9HV2dIYURpRnpyR0VGcnhURlZjZWhYam5zR3MKTVpmVGp2Y1I3Y0FPMGJvdG83ZVdyODZ1RVAwMkxjcWs1M3RPbDlraFhRS0NBUUVBKzNnNDFCUUpkV1Y3NUFoTgplYmxCUTNJd054NWN4RHlxY2F1ellhVW50WXJFODFDMDN3SlhYSXhrbW1UQkFDWk5hQWQ1WDVJQlN4Tkk0b1JZCklNY2xWL3VqR0dPUU5WanFoYUlGYWFIN29nVXQrVW0wNUYvb3Z1ZVk1RVVnSys2dFFUOWQ3RXFPNy9JL3Yzd2cKRzBHK0pDOTlCZkdPcS9qZDB4alVMUTQrNm8vd3J5Q3hRdW02cmtWRTg1UlFlVWNlNGM3aEcrci9Ec1MxWm0vMApLNGIzOC9UTHRYZmsxK1pQaGRHckR6NmM4bmt3dndtVUYzdVQ3MGhGUGdhNm05N1FUSmpGSUpQaGNtMitBY0NOCjd3Z3BQaUt6czM4bmxyVXMvL1hxQkpvcnlpYnNWZEFBT1VKMU1KTFI4aHo4bkh5SWV5VEQ2VjRtcWxUSForb0wKK0ZKRnBRS0NBUUVBcHhKelY5SnN0ZUVPb2srUE5XS01LNnJaRFVETGRJU0FxcnZlQWxYbDNZOVZ2aitQSUh1UgpZRzhKL2hraGwzRThvbGFaSGY1RWpibEdoellTa3BzbjUrODY3SzZPT3V2MlhGYllYdXVRZFJLVVRhc29NS04xCmNiZDBRUERzVjdBeVg2dzFjRUVQZ3lkSFp2UHc5bDJTcnFUaE9rV0I3UUR5dG50cHJwL09lY0l0S1hRRWdGR3cKbjZEandwckJHRDlFNEx4V1lxOWdzUm5yL0ZpZVlWaUtmeCt1WVR3UCtDc2JKNzYyNmxxTXhYamdXak1BbnJzMwpud2pkYmN2MGJzUTA2N1lUMDFwWDhBeW93UjFJeGZEK3BiVEw2dTB1ZlFZeHRtNXQ5QTVpWkRKREZ0WnJUSjY4CjJNZUVNeDFaaEhrZlhyWGhORFk1QjJ4UjZ6V3dQNFBVS1FLQ0FRQVlNNTNPYWE3UEJpV1JlNTJkQ0IxTkJMdzIKNmpYR2VkWjlZZ29MbE4xZW9PYTRrSkZTMEZhQkVkWm1sRzZ3bHVCZVZHZ0tHK2hpVG5oVjdrVHBQWVp5M291YgpRNFRCRzRhb2FuakJySDFUbW1kZ21ITFYwbE05UnhLSVBMV3hjcytEaDBPbmVCMGZINUVGcUVzUDZwYlkybGptCnhSc1VaZDFLYmpnNE50MytWOGszekJ3SVFQV3VYWnFjeU5DZlUvaDZMYVBRTmNHdlVma2d2SUh1ak1GVk1MTGcKeWRkV0F5VXlXTm9Db0JwbUdzdVFGdW9reHlFazFsdkNyelRISzBBZ21ndGxNQ1ZKQWFBRHhTYnFtdlQ2eFY0RQpHQ2JmZi9EN1U2MVYvaFMzeFgwUjFWWFhDc0xiUkNBMlE2ZXRjbDBjQzlGWWQ1OXhuZmxTc1Fya3hWOEwKLS0tLS1FTkQgUlNBIFBSSVZBVEUgS0VZLS0tLS0K
-    kind: Secret
-    metadata:
-      annotations:
-        description: test for ingressTLS secrets
-      name: ingress-test-secret
-      namespace: default
-    type: IngressTLS
-    ```
+    -   使用已有ELB
+
+        ```
+        apiVersion: extensions/v1beta1 
+        kind: Ingress 
+        metadata: 
+          annotations: 
+            kubernetes.io/elb.id: f7891f9a-49f2-4ee2-b1ae-f019cd84eb4f
+            kubernetes.io/elb.ip: 192.168.0.39
+            kubernetes.io/elb.subnet-id: 29a0567e-96f1-4227-91cc-64f54d0b064d
+            kubernetes.io/elb.port: "80"
+            kubernetes.io/ingress.class: cce
+          name: ingress-test-ingress
+        spec:
+          tls:
+          - secretName: ingress-test-secret
+          rules: 
+          - http: 
+              paths: 
+              - backend: 
+                  serviceName: ingress-test-svc
+                  servicePort: 8888
+                property:
+                  ingress.beta.kubernetes.io/url-match-mode: EQUAL_TO
+                path: "/healthz"
+            host: ingress.com
+        ```
+
+        **表 3**  关键参数说明
+
+        <a name="table1732315519222"></a>
+        <table><thead align="left"><tr id="row43239510228"><th class="cellrowborder" valign="top" width="29.727027297270276%" id="mcps1.2.4.1.1"><p id="p3323185142214"><a name="p3323185142214"></a><a name="p3323185142214"></a>参数</p>
+        </th>
+        <th class="cellrowborder" valign="top" width="18.678132186781323%" id="mcps1.2.4.1.2"><p id="p1632315162219"><a name="p1632315162219"></a><a name="p1632315162219"></a>参数类型</p>
+        </th>
+        <th class="cellrowborder" valign="top" width="51.594840515948405%" id="mcps1.2.4.1.3"><p id="p2323105202212"><a name="p2323105202212"></a><a name="p2323105202212"></a>描述</p>
+        </th>
+        </tr>
+        </thead>
+        <tbody><tr id="row1932315519221"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p11323551220"><a name="p11323551220"></a><a name="p11323551220"></a>kubernetes.io/elb.id</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p43232502212"><a name="p43232502212"></a><a name="p43232502212"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1532419502210"><a name="p1532419502210"></a><a name="p1532419502210"></a>可选，但使用已有ELB时必填。</p>
+        <p id="p1832435142216"><a name="p1832435142216"></a><a name="p1832435142216"></a>为增强型负载均衡实例的ID。</p>
+        </td>
+        </tr>
+        <tr id="row19324185132210"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p143241054227"><a name="p143241054227"></a><a name="p143241054227"></a>kubernetes.io/elb.ip</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p63241755223"><a name="p63241755223"></a><a name="p63241755223"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1232410519221"><a name="p1232410519221"></a><a name="p1232410519221"></a>可选，但当elb自动创建时不填。</p>
+        <p id="p123246513225"><a name="p123246513225"></a><a name="p123246513225"></a>为负载均衡增强型实例的服务地址，公网ELB配置为公网IP，私网ELB配置为私网IP。</p>
+        </td>
+        </tr>
+        <tr id="row113242512217"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1332415102211"><a name="p1332415102211"></a><a name="p1332415102211"></a>kubernetes.io/elb.subnet-id</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p16324185192216"><a name="p16324185192216"></a><a name="p16324185192216"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6324185202213"><a name="p6324185202213"></a><a name="p6324185202213"></a>可选，但自动创建时必填，Kubernetes v1.11.7-r0以上版本的集群可不填。</p>
+        </td>
+        </tr>
+        <tr id="row14324115112219"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p163241552218"><a name="p163241552218"></a><a name="p163241552218"></a>kubernetes.io/elb.autocreate</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p163247517229"><a name="p163247517229"></a><a name="p163247517229"></a><a href="#table19417184671919">elb.autocreate</a> object</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p03246532210"><a name="p03246532210"></a><a name="p03246532210"></a>可选，但公网自动创建时必填，将自动创建ELB所绑定的EIP。私网自动创建时必填，将自动创建ELB。</p>
+        <p id="p13324858222"><a name="p13324858222"></a><a name="p13324858222"></a><strong id="b932418520225"><a name="b932418520225"></a><a name="b932418520225"></a>示例：</strong></p>
+        <a name="ul16324853220"></a><a name="ul16324853220"></a><ul id="ul16324853220"><li>公网自动创建：值为 "{\"type\":\"public\",\"bandwidth_name\":\"cce-bandwidth-1551163379627\",\"bandwidth_chargemode\":\"bandwidth\",\"bandwidth_size\":5,\"bandwidth_sharetype\":\"PER\",\"eip_type\":\"5_bgp\",\"name\":\"james\"}"</li><li>私网自动创建：值为 "{\"type\":\"inner\"}"</li></ul>
+        </td>
+        </tr>
+        <tr id="row332514515229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p232519512211"><a name="p232519512211"></a><a name="p232519512211"></a>kubernetes.io/elb.port</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p173251458226"><a name="p173251458226"></a><a name="p173251458226"></a>Integer</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p93251554223"><a name="p93251554223"></a><a name="p93251554223"></a>必填，界面上的对外端口，为注册到负载均衡服务地址上的端口。</p>
+        </td>
+        </tr>
+        <tr id="row1432518511224"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1432565182214"><a name="p1432565182214"></a><a name="p1432565182214"></a>kubernetes.io/ingress.class</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1232514542215"><a name="p1232514542215"></a><a name="p1232514542215"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p13251456223"><a name="p13251456223"></a><a name="p13251456223"></a>默认，cce时表示使用增强型负载均衡实例，nginx时表示启用nginx-ingress插件。但通过API接口创建Ingress时必须增加该参数。</p>
+        </td>
+        </tr>
+        <tr id="row143251551229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p18325951228"><a name="p18325951228"></a><a name="p18325951228"></a>tls</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1832513582216"><a name="p1832513582216"></a><a name="p1832513582216"></a>Array of strings</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p53262562220"><a name="p53262562220"></a><a name="p53262562220"></a>可选，HTTPS协议时，需添加此参数。</p>
+        </td>
+        </tr>
+        <tr id="row6326185152213"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p5326145202219"><a name="p5326145202219"></a><a name="p5326145202219"></a>secretName</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p5326135162216"><a name="p5326135162216"></a><a name="p5326135162216"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1732645172213"><a name="p1732645172213"></a><a name="p1732645172213"></a>可选，HTTPS协议时添加，配置为创建的密钥证书名称。</p>
+        </td>
+        </tr>
+        <tr id="row33265552211"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1432685102213"><a name="p1432685102213"></a><a name="p1432685102213"></a>serviceName</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1632617511229"><a name="p1632617511229"></a><a name="p1632617511229"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p17326135102219"><a name="p17326135102219"></a><a name="p17326135102219"></a>为ingress-test-svc.yaml的服务名称。</p>
+        </td>
+        </tr>
+        <tr id="row1232616516229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p16326052225"><a name="p16326052225"></a><a name="p16326052225"></a>servicePort</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p23264582215"><a name="p23264582215"></a><a name="p23264582215"></a>Integer</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p53261152221"><a name="p53261152221"></a><a name="p53261152221"></a>为ingress-test-svc.yaml的Port。</p>
+        </td>
+        </tr>
+        <tr id="row1732620510228"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p12326195152216"><a name="p12326195152216"></a><a name="p12326195152216"></a>ingress.beta.kubernetes.io/url-match-mode</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1232675172211"><a name="p1232675172211"></a><a name="p1232675172211"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p16327755228"><a name="p16327755228"></a><a name="p16327755228"></a>路由匹配策略，可选值为EQUAL_TO（精确匹配）、STARTS_WITH(前缀匹配)、REGEX（正则匹配）。</p>
+        </td>
+        </tr>
+        <tr id="row19327205202214"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p83279511221"><a name="p83279511221"></a><a name="p83279511221"></a>path</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p932711582211"><a name="p932711582211"></a><a name="p932711582211"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p173278515229"><a name="p173278515229"></a><a name="p173278515229"></a>为路由，用户自定义设置。</p>
+        </td>
+        </tr>
+        <tr id="row16327451221"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p832714513227"><a name="p832714513227"></a><a name="p832714513227"></a>host</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1532718517223"><a name="p1532718517223"></a><a name="p1532718517223"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p53272572218"><a name="p53272572218"></a><a name="p53272572218"></a>可选，域名配置。</p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+
+        **表 4**  elb.autocreate字段数据结构说明
+
+        <a name="table19417184671919"></a>
+        <table><thead align="left"><tr id="row14418174611912"><th class="cellrowborder" valign="top" width="29.727027297270276%" id="mcps1.2.4.1.1"><p id="p1141924611199"><a name="p1141924611199"></a><a name="p1141924611199"></a>参数</p>
+        </th>
+        <th class="cellrowborder" valign="top" width="18.678132186781323%" id="mcps1.2.4.1.2"><p id="p1641911466191"><a name="p1641911466191"></a><a name="p1641911466191"></a>参数类型</p>
+        </th>
+        <th class="cellrowborder" valign="top" width="51.594840515948405%" id="mcps1.2.4.1.3"><p id="p1941920463197"><a name="p1941920463197"></a><a name="p1941920463197"></a>描述</p>
+        </th>
+        </tr>
+        </thead>
+        <tbody><tr id="row194191846181915"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p152321411112318"><a name="p152321411112318"></a><a name="p152321411112318"></a>name</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p7419646171920"><a name="p7419646171920"></a><a name="p7419646171920"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p87791494919"><a name="p87791494919"></a><a name="p87791494919"></a>自动创建的负载均衡的名称。</p>
+        <p id="p9912132016296"><a name="p9912132016296"></a><a name="p9912132016296"></a>取值范围：1-64个字符，中英文，数字，下划线，中划线。</p>
+        </td>
+        </tr>
+        <tr id="row142064681919"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p20862285225"><a name="p20862285225"></a><a name="p20862285225"></a>type</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p8420746101918"><a name="p8420746101918"></a><a name="p8420746101918"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p4703183013491"><a name="p4703183013491"></a><a name="p4703183013491"></a>负载均衡实例网络类型，公网或者私网。</p>
+        <a name="ul152311045124913"></a><a name="ul152311045124913"></a><ul id="ul152311045124913"><li>public：公网型负载均衡</li><li>inner：私网型负载均衡</li></ul>
+        </td>
+        </tr>
+        <tr id="row194201046151910"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p128042817221"><a name="p128042817221"></a><a name="p128042817221"></a>bandwidth_name</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1142084619195"><a name="p1142084619195"></a><a name="p1142084619195"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6964103318220"><a name="p6964103318220"></a><a name="p6964103318220"></a>带宽的名称，默认值为：cce-bandwidth-******。</p>
+        <p id="p1236952875020"><a name="p1236952875020"></a><a name="p1236952875020"></a>1-64 字符，中文、英文字符、数字、下划线、中划线或点组成。</p>
+        </td>
+        </tr>
+        <tr id="row942194619199"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p77502811221"><a name="p77502811221"></a><a name="p77502811221"></a>bandwidth_chargemode</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p11421446191914"><a name="p11421446191914"></a><a name="p11421446191914"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p3178181495216"><a name="p3178181495216"></a><a name="p3178181495216"></a>带宽付费模式。</p>
+        <a name="ul567215235528"></a><a name="ul567215235528"></a><ul id="ul567215235528"><li>bandwidth：按带宽计费</li><li>traffic：按流量计费</li></ul>
+        </td>
+        </tr>
+        <tr id="row124211046101910"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p187492819229"><a name="p187492819229"></a><a name="p187492819229"></a>bandwidth_size</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p114229463196"><a name="p114229463196"></a><a name="p114229463196"></a>Integer</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p12958233152218"><a name="p12958233152218"></a><a name="p12958233152218"></a>带宽大小，请根据具体region带宽支持范围设置，详情请参考<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b198591928137"><a name="b198591928137"></a><a name="b198591928137"></a>表4 bandwidth字段说明中size字段</strong>。</p>
+        </td>
+        </tr>
+        <tr id="row1942224601917"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p16731228202214"><a name="p16731228202214"></a><a name="p16731228202214"></a>bandwidth_sharetype</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p84221246111913"><a name="p84221246111913"></a><a name="p84221246111913"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p188864421731"><a name="p188864421731"></a><a name="p188864421731"></a>带宽共享方式。</p>
+        <a name="ul51872412"></a><a name="ul51872412"></a><ul id="ul51872412"><li>PER：共享带宽</li><li>WHOLE：共享带宽</li></ul>
+        </td>
+        </tr>
+        <tr id="row1242219461193"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1972102872220"><a name="p1972102872220"></a><a name="p1972102872220"></a>eip_type</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p132201811174611"><a name="p132201811174611"></a><a name="p132201811174611"></a>String</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p11956103372218"><a name="p11956103372218"></a><a name="p11956103372218"></a>弹性公网IP类型，请参考ELB支持的弹性公网IP类型，详情请参考<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b11814520410"><a name="b11814520410"></a><a name="b11814520410"></a>表3 publicip字段说明type字段</strong>。</p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+
+        **vi ingress-test-secret.yaml**
+
+        ```
+        apiVersion: v1
+        data:
+          tls.crt: LS0******tLS0tCg==
+          tls.key: LS0tL******0tLS0K
+        kind: Secret
+        metadata:
+          annotations:
+            description: test for ingressTLS secrets
+          name: ingress-test-secret
+          namespace: default
+        type: IngressTLS
+        ```
+
+        >![](public_sys-resources/icon-note.gif) **说明：**   
+        >此处tls.crt和tls.key为示例，请获取真实密钥进行替换。  
+
 
 3.  创建工作负载。
 
@@ -309,9 +605,33 @@
 
 6.  在浏览器中输入访问地址http://10.154.76.63/healthz。
 
-    其中10.154.76.63为统一负载均衡实例的IP地址。
+    其中，10.154.76.63为统一负载均衡实例的IP地址。
 
     **图 5**  访问healthz<a name="fig1526153112115"></a>  
     ![](figures/访问healthz.png "访问healthz")
 
+
+## 更新Ingress<a name="section1071722525415"></a>
+
+您可以在添加完Ingress后，更新此Ingress的端口、域名和路由配置。操作如下：
+
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 网络管理”。在**Ingress**页签下，选择对应的集群和命名空间，单击待更新Ingress后方的“更新”。
+2.  在“更新Ingress“页面，更新如下参数：
+    -   **对外端口：**开放在负载均衡服务地址的端口，可任意指定。
+    -   **域名：**可选填。实际访问的域名地址，该域名需用户购买并备案，并确保所填域名能解析到所选负载均衡实例的服务地址。一旦配置了域名规则，则必须使用域名访问。
+    -   **路由配置：**可单击“添加映射”增加新的路由配置。
+        -   路由匹配规则：前缀匹配、精确匹配、正则匹配。
+            -   前缀匹配：例如映射URL为/healthz，只要符合此前缀的URL均可访问。例如/healthz/v1，/healthz/v2。
+            -   精确匹配：表示精准匹配，只有完全匹配上才能生效。例如映射URL为/healthz，则必须为此URL才能访问。
+            -   正则匹配：可设定映射URL规范，例如规范为**/\[A-Za-z0-9\_.-\]+/test**。只要符合此规则的URL均可访问，例如/abcA9/test，/v1-Ab/test。正则匹配规则支持POSIX与Perl两种标准。
+
+        -   映射URL：需要注册的访问路径，例如：/healthz。
+        -   服务名称：选择需要添加Ingress的服务，该服务访问类型为VPC内网服务。
+        -   容器端口：容器镜像中容器实际监听端口，需用户确定。例如：defaultbackend程序实际监听的端口为8080。
+
+3.  单击“提交”。工作负载已更新Ingress。
+
+## 相关操作<a name="section132063911129"></a>
+
+由于社区Ingress结构体中没有property属性，用户使用client-go调用创建ingress的api接口时，创建的Ingress中没有property属性。为了与社区的client-go兼容，CCE提供了相关解决方案，详情请参见[Ingress中的property字段与社区client-go兼容](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0042.html)。
 

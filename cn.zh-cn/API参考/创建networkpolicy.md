@@ -39,7 +39,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p1941911703216"><a name="p1941911703216"></a><a name="p1941911703216"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p14419107123212"><a name="p14419107123212"></a><a name="p14419107123212"></a><a href="#d0e42951">表2</a></p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p14419107123212"><a name="p14419107123212"></a><a name="p14419107123212"></a>请参见<a href="#d0e42951">表2</a>。</p>
 </td>
 </tr>
 </tbody>
@@ -58,7 +58,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </th>
 <th class="cellrowborder" valign="top" width="14.141414141414144%" id="mcps1.2.5.1.2"><p id="p46488660"><a name="p46488660"></a><a name="p46488660"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.202020202020204%" id="mcps1.2.5.1.3"><p id="p7485112"><a name="p7485112"></a><a name="p7485112"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.202020202020204%" id="mcps1.2.5.1.3"><p id="p7485112"><a name="p7485112"></a><a name="p7485112"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="43.43434343434344%" id="mcps1.2.5.1.4"><p id="p2314365"><a name="p2314365"></a><a name="p2314365"></a>描述</p>
 </th>
@@ -68,7 +68,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p16725132617134"><a name="p16725132617134"></a><a name="p16725132617134"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p17725142619139"><a name="p17725142619139"></a><a name="p17725142619139"></a>string</p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p17725142619139"><a name="p17725142619139"></a><a name="p17725142619139"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p1772519266135"><a name="p1772519266135"></a><a name="p1772519266135"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</p>
 </td>
@@ -77,7 +77,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p13790153101115"><a name="p13790153101115"></a><a name="p13790153101115"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p10789155381112"><a name="p10789155381112"></a><a name="p10789155381112"></a>string</p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p10789155381112"><a name="p10789155381112"></a><a name="p10789155381112"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p978795341120"><a name="p978795341120"></a><a name="p978795341120"></a>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.</p>
 </td>
@@ -86,7 +86,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p1378375321115"><a name="p1378375321115"></a><a name="p1378375321115"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p1578195321111"><a name="p1578195321111"></a><a name="p1578195321111"></a><a href="#zh-cn_topic_0079615000_table43837055">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p1578195321111"><a name="p1578195321111"></a><a name="p1578195321111"></a><a href="#zh-cn_topic_0079615000_table43837055">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p1977810533112"><a name="p1977810533112"></a><a name="p1977810533112"></a>Standard object’s metadata.</p>
 </td>
@@ -95,7 +95,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="14.141414141414144%" headers="mcps1.2.5.1.2 "><p id="p4774175316112"><a name="p4774175316112"></a><a name="p4774175316112"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p157721753151112"><a name="p157721753151112"></a><a name="p157721753151112"></a><a href="#zh-cn_topic_0079615000_table58989182">表4</a></p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p157721753151112"><a name="p157721753151112"></a><a name="p157721753151112"></a><a href="#zh-cn_topic_0079615000_table58989182">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.43434343434344%" headers="mcps1.2.5.1.4 "><p id="p19771175311119"><a name="p19771175311119"></a><a name="p19771175311119"></a>Specification of the desired behavior for this NetworkPolicy.</p>
 </td>
@@ -110,7 +110,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </th>
 <th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.2"><p id="p19758610205444"><a name="p19758610205444"></a><a name="p19758610205444"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p id="p56943584205444"><a name="p56943584205444"></a><a name="p56943584205444"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p id="p56943584205444"><a name="p56943584205444"></a><a name="p56943584205444"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39%" id="mcps1.2.5.1.4"><p id="p49027631205444"><a name="p49027631205444"></a><a name="p49027631205444"></a>描述</p>
 </th>
@@ -120,7 +120,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615000_p16964616"><a name="zh-cn_topic_0079615000_p16964616"></a><a name="zh-cn_topic_0079615000_p16964616"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p31956642"><a name="zh-cn_topic_0079615000_p31956642"></a><a name="zh-cn_topic_0079615000_p31956642"></a>object</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p31956642"><a name="zh-cn_topic_0079615000_p31956642"></a><a name="zh-cn_topic_0079615000_p31956642"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p19441857"><a name="zh-cn_topic_0079615000_p19441857"></a><a name="zh-cn_topic_0079615000_p19441857"></a>Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.</p>
 </td>
@@ -147,7 +147,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p1711354211191"><a name="p1711354211191"></a><a name="p1711354211191"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p11113942101915"><a name="p11113942101915"></a><a name="p11113942101915"></a>integer(int64)</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p11113942101915"><a name="p11113942101915"></a><a name="p11113942101915"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p71132042121912"><a name="p71132042121912"></a><a name="p71132042121912"></a>Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.</p>
 </td>
@@ -165,7 +165,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p2238153619213"><a name="p2238153619213"></a><a name="p2238153619213"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1023883616213"><a name="p1023883616213"></a><a name="p1023883616213"></a>&lt; string &gt; array</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1023883616213"><a name="p1023883616213"></a><a name="p1023883616213"></a>Array&nbsp;of&nbsp;strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p16238736112120"><a name="p16238736112120"></a><a name="p16238736112120"></a>Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed.</p>
 </td>
@@ -174,7 +174,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p154421962217"><a name="p154421962217"></a><a name="p154421962217"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p13441219182217"><a name="p13441219182217"></a><a name="p13441219182217"></a>string</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p13441219182217"><a name="p13441219182217"></a><a name="p13441219182217"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p111961949132220"><a name="p111961949132220"></a><a name="p111961949132220"></a>GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header). Applied only if Name is not specified.</p>
 </td>
@@ -183,7 +183,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p138972692215"><a name="p138972692215"></a><a name="p138972692215"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p938919263228"><a name="p938919263228"></a><a name="p938919263228"></a>integer(int64)</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p938919263228"><a name="p938919263228"></a><a name="p938919263228"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p20389102617222"><a name="p20389102617222"></a><a name="p20389102617222"></a>A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.</p>
 </td>
@@ -192,7 +192,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p528613288229"><a name="p528613288229"></a><a name="p528613288229"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p72861289222"><a name="p72861289222"></a><a name="p72861289222"></a><a href="公共请求参数.md#t693768b66dfa47239c0f155ad4dd18e8">表13</a></p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p72861289222"><a name="p72861289222"></a><a name="p72861289222"></a><a href="请求数据结构.md#t693768b66dfa47239c0f155ad4dd18e8">initializers</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p6875616152317"><a name="p6875616152317"></a><a name="p6875616152317"></a>An initializer is a controller which enforces some system invariant at object creation time. This field is a list of initializers that have not yet acted on this object. If nil or empty, this object has been completely initialized. Otherwise, the object is considered uninitialized and is hidden (in list/watch and get calls) from clients that haven't explicitly asked to observe uninitialized objects. When an object is created, the system will populate this list with the current set of initializers. Only privileged users may set or modify this list. Once it is empty, it may not be modified further by any user.</p>
 </td>
@@ -201,7 +201,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p147083418238"><a name="p147083418238"></a><a name="p147083418238"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p6470634132312"><a name="p6470634132312"></a><a name="p6470634132312"></a>object</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p6470634132312"><a name="p6470634132312"></a><a name="p6470634132312"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p104717345234"><a name="p104717345234"></a><a name="p104717345234"></a>Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.</p>
 </td>
@@ -210,7 +210,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p12491442236"><a name="p12491442236"></a><a name="p12491442236"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p2024954412311"><a name="p2024954412311"></a><a name="p2024954412311"></a>string</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p2024954412311"><a name="p2024954412311"></a><a name="p2024954412311"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p9249154482310"><a name="p9249154482310"></a><a name="p9249154482310"></a>Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.</p>
 </td>
@@ -219,7 +219,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p19444540122316"><a name="p19444540122316"></a><a name="p19444540122316"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p144417403230"><a name="p144417403230"></a><a name="p144417403230"></a>string</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p144417403230"><a name="p144417403230"></a><a name="p144417403230"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p3732154619242"><a name="p3732154619242"></a><a name="p3732154619242"></a>Namespace defines the space within each name must be unique. An empty namespace is equivalent to the "default" namespace, but "default" is the canonical representation. Not all objects are required to be scoped to a namespace - the value of this field for those objects will be empty. Must be a DNS_LABEL. Cannot be updated.</p>
 </td>
@@ -228,7 +228,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p12617133782317"><a name="p12617133782317"></a><a name="p12617133782317"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p261773702319"><a name="p261773702319"></a><a name="p261773702319"></a>array</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p261773702319"><a name="p261773702319"></a><a name="p261773702319"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p11617183710234"><a name="p11617183710234"></a><a name="p11617183710234"></a>List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.</p>
 </td>
@@ -237,7 +237,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p532215242511"><a name="p532215242511"></a><a name="p532215242511"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p12322321251"><a name="p12322321251"></a><a name="p12322321251"></a>string</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p12322321251"><a name="p12322321251"></a><a name="p12322321251"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p107851058122512"><a name="p107851058122512"></a><a name="p107851058122512"></a>An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources. Populated by the system. Read-only. Value must be treated as opaque by clients and .</p>
 </td>
@@ -246,7 +246,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p6173016255"><a name="p6173016255"></a><a name="p6173016255"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p81813052517"><a name="p81813052517"></a><a name="p81813052517"></a>string</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p81813052517"><a name="p81813052517"></a><a name="p81813052517"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p11811013257"><a name="p11811013257"></a><a name="p11811013257"></a>SelfLink is a URL representing this object. Populated by the system. Read-only.</p>
 </td>
@@ -255,7 +255,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.2 "><p id="p12738145682415"><a name="p12738145682415"></a><a name="p12738145682415"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p67382567242"><a name="p67382567242"></a><a name="p67382567242"></a>string</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p67382567242"><a name="p67382567242"></a><a name="p67382567242"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p149248782613"><a name="p149248782613"></a><a name="p149248782613"></a>UID is the unique in time and space value for this object. It is typically generated by the server on successful creation of a resource and is not allowed to change on PUT operations. Populated by the system. Read-only.</p>
 </td>
@@ -270,7 +270,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </th>
 <th class="cellrowborder" valign="top" width="19.17%" id="mcps1.2.5.1.2"><p id="p38367937205444"><a name="p38367937205444"></a><a name="p38367937205444"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p20795188205444"><a name="p20795188205444"></a><a name="p20795188205444"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p20795188205444"><a name="p20795188205444"></a><a name="p20795188205444"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.290000000000006%" id="mcps1.2.5.1.4"><p id="p6688676205444"><a name="p6688676205444"></a><a name="p6688676205444"></a>描述</p>
 </th>
@@ -280,7 +280,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615000_p6107739"><a name="zh-cn_topic_0079615000_p6107739"></a><a name="zh-cn_topic_0079615000_p6107739"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p24964816"><a name="zh-cn_topic_0079615000_p24964816"></a><a name="zh-cn_topic_0079615000_p24964816"></a><a href="#table1180112213109">NetworkPolicyIngressRule字段数据结构说明</a> array</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p24964816"><a name="zh-cn_topic_0079615000_p24964816"></a><a name="zh-cn_topic_0079615000_p24964816"></a><a href="#table1180112213109">NetworkPolicyIngressRule</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="p97961317123012"><a name="p97961317123012"></a><a name="p97961317123012"></a>List of ingress rules to be applied to the selected pods. Traffic is allowed to a pod if there are no NetworkPolicies selecting the pod (and cluster policy otherwise allows the traffic), OR if the traffic source is the pod's local node, OR if the traffic matches at least one ingress rule across all of the NetworkPolicy objects whose podSelector matches the pod. If this field is empty then this NetworkPolicy does not allow any traffic (and serves solely to ensure that the pods it selects are isolated by default)</p>
 </td>
@@ -289,7 +289,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="a792005b9cc9c4b62aa05ca6ba72edb1b"><a name="a792005b9cc9c4b62aa05ca6ba72edb1b"></a><a name="a792005b9cc9c4b62aa05ca6ba72edb1b"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a9fd3a2cf6b17488ebf787d90dcdd4806"><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a><a href="#table1156984163517">LabelSelector字段数据结构说明</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a9fd3a2cf6b17488ebf787d90dcdd4806"><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a><a href="#table1156984163517">LabelSelector</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="aaca6cae38740430c8d9c48adc947545c"><a name="aaca6cae38740430c8d9c48adc947545c"></a><a name="aaca6cae38740430c8d9c48adc947545c"></a>Selects the pods to which this NetworkPolicy object applies. The array of ingress rules is applied to any pods selected by this field. Multiple network policies can select the same set of pods. In this case, the ingress rules for each are combined additively. This field is NOT optional and follows standard label selector semantics. An empty podSelector matches all pods in this namespace.</p>
 </td>
@@ -298,7 +298,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p52382510302"><a name="p52382510302"></a><a name="p52382510302"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p323813563014"><a name="p323813563014"></a><a name="p323813563014"></a>string array</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p323813563014"><a name="p323813563014"></a><a name="p323813563014"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="p2023814519307"><a name="p2023814519307"></a><a name="p2023814519307"></a>List of rule types that the NetworkPolicy relates to. Valid options are Ingress, Egress, or Ingress,Egress. If this field is not specified, it will default based on the existence of Ingress or Egress rules; policies that contain an Egress section are assumed to affect Egress, and all policies (whether or not they contain an Ingress section) are assumed to affect Ingress. If you want to write an egress-only policy, you must explicitly specify policyTypes [ "Egress" ]. Likewise, if you want to write a policy that specifies that no egress is allowed, you must specify a policyTypes value that include "Egress" (since such a policy would not include an Egress section and would otherwise default to just [ "Ingress" ]). This field is beta-level in 1.8</p>
 </td>
@@ -313,7 +313,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </th>
 <th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.2"><p id="p6822182211010"><a name="p6822182211010"></a><a name="p6822182211010"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p128259227100"><a name="p128259227100"></a><a name="p128259227100"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p128259227100"><a name="p128259227100"></a><a name="p128259227100"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p17829202218107"><a name="p17829202218107"></a><a name="p17829202218107"></a>描述</p>
 </th>
@@ -323,7 +323,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p683532221013"><a name="p683532221013"></a><a name="p683532221013"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p9837422201016"><a name="p9837422201016"></a><a name="p9837422201016"></a><a href="#table1062420317129">Networkpolicypeer字段数据结构说明</a> array</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p9837422201016"><a name="p9837422201016"></a><a name="p9837422201016"></a><a href="#table1062420317129">Networkpolicypeer</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p15839722101013"><a name="p15839722101013"></a><a name="p15839722101013"></a>List of sources which should be able to access the pods selected for this rule. Items in this list are combined using a logical OR operation. If this field is empty or missing, this rule matches all sources (traffic not restricted by source). If this field is present and contains at least on item, this rule allows traffic only if the traffic matches at least one item in the from list.</p>
 </td>
@@ -332,7 +332,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p14846222191019"><a name="p14846222191019"></a><a name="p14846222191019"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p752121821519"><a name="p752121821519"></a><a name="p752121821519"></a><a href="#table1882263321214">NetworkPolicyPort字段数据结构说明</a> array</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p752121821519"><a name="p752121821519"></a><a name="p752121821519"></a><a href="#table1882263321214">NetworkPolicyPort</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p10850722101014"><a name="p10850722101014"></a><a name="p10850722101014"></a>List of ports which should be made accessible on the pods selected for this rule. Each item in this list is combined using a logical OR. If this field is empty or missing, this rule matches all ports (traffic not restricted by port). If this field is present and contains at least one item, then this rule allows traffic only if the traffic matches at least one port in the list.</p>
 </td>
@@ -347,7 +347,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </th>
 <th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.2"><p id="p428117143356"><a name="p428117143356"></a><a name="p428117143356"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p928401414359"><a name="p928401414359"></a><a name="p928401414359"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p928401414359"><a name="p928401414359"></a><a name="p928401414359"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p11286111423514"><a name="p11286111423514"></a><a name="p11286111423514"></a>描述</p>
 </th>
@@ -357,7 +357,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p957074203517"><a name="p957074203517"></a><a name="p957074203517"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p11570347355"><a name="p11570347355"></a><a name="p11570347355"></a>array</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p11570347355"><a name="p11570347355"></a><a name="p11570347355"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p1557019411355"><a name="p1557019411355"></a><a name="p1557019411355"></a>matchExpressions is a list of label selector requirements. The requirements are ANDed.</p>
 </td>
@@ -366,7 +366,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p057024183514"><a name="p057024183514"></a><a name="p057024183514"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p05701410355"><a name="p05701410355"></a><a name="p05701410355"></a>object</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p05701410355"><a name="p05701410355"></a><a name="p05701410355"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p9570154123518"><a name="p9570154123518"></a><a name="p9570154123518"></a>matchLabels is a map of {key,value} pairs. A single {key,value} in the matchLabels map is equivalent to an element of matchExpressions, whose key field is "key", the operator is "In", and the values array contains only "value". The requirements are ANDed.</p>
 </td>
@@ -381,7 +381,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </th>
 <th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.2"><p id="p7640103118129"><a name="p7640103118129"></a><a name="p7640103118129"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p1864323131219"><a name="p1864323131219"></a><a name="p1864323131219"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p1864323131219"><a name="p1864323131219"></a><a name="p1864323131219"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p7647031131213"><a name="p7647031131213"></a><a name="p7647031131213"></a>描述</p>
 </th>
@@ -391,7 +391,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p865513112129"><a name="p865513112129"></a><a name="p865513112129"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p12658123181216"><a name="p12658123181216"></a><a name="p12658123181216"></a><a href="#table1156984163517">LabelSelector字段数据结构说明</a></p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p12658123181216"><a name="p12658123181216"></a><a name="p12658123181216"></a><a href="#table1156984163517">LabelSelector</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p4662103171214"><a name="p4662103171214"></a><a name="p4662103171214"></a>Selects Namespaces using cluster scoped-labels. This matches all pods in all namespaces selected by this label selector. This field follows standard label selector semantics. If present but empty, this selector selects all namespaces.</p>
 </td>
@@ -400,7 +400,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p136681131131213"><a name="p136681131131213"></a><a name="p136681131131213"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p19669123191213"><a name="p19669123191213"></a><a name="p19669123191213"></a><a href="#table1156984163517">LabelSelector字段数据结构说明</a></p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p19669123191213"><a name="p19669123191213"></a><a name="p19669123191213"></a><a href="#table1156984163517">LabelSelector</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p111295542419"><a name="p111295542419"></a><a name="p111295542419"></a>This is a label selector which selects Pods in this namespace. This field follows standard label selector semantics. If present but empty, this selector selects all pods in this namespace.</p>
 </td>
@@ -415,7 +415,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </th>
 <th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.2"><p id="p158392033181214"><a name="p158392033181214"></a><a name="p158392033181214"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p108411733111212"><a name="p108411733111212"></a><a name="p108411733111212"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p108411733111212"><a name="p108411733111212"></a><a name="p108411733111212"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p684416332126"><a name="p684416332126"></a><a name="p684416332126"></a>描述</p>
 </th>
@@ -425,7 +425,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p4853133101218"><a name="p4853133101218"></a><a name="p4853133101218"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p38575333129"><a name="p38575333129"></a><a name="p38575333129"></a>string</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p38575333129"><a name="p38575333129"></a><a name="p38575333129"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p1859233141213"><a name="p1859233141213"></a><a name="p1859233141213"></a>matchExpressions is a list of label selector requirements. The requirements are ANDed.</p>
 </td>
@@ -434,7 +434,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p15865173341212"><a name="p15865173341212"></a><a name="p15865173341212"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p14869173321219"><a name="p14869173321219"></a><a name="p14869173321219"></a>string</p>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p14869173321219"><a name="p14869173321219"></a><a name="p14869173321219"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p5872163311214"><a name="p5872163311214"></a><a name="p5872163311214"></a>The protocol (TCP or UDP) which traffic must match. If not specified, this field defaults to TCP.</p>
 </td>
@@ -499,9 +499,9 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 		"generation": 1,
 		"creationTimestamp": "2018-11-15T08:23:34Z",
             "labels": {
-		"app": "nginx",
+		"app": "nginx"
 			}
-	}
+	},
     "spec": {
 	    "podSelector": {
 		"matchLabels": {
@@ -521,9 +521,9 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 		"port": 6379
 		}]
 	    }],
-	    "policyTypes":{ 
+	    "policyTypes":[
 		"Ingress"
-        }
+        ]
     }
 }
 ```

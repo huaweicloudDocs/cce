@@ -15,9 +15,9 @@ DELETE /api/v1/persistentvolumes/\{name\}
 <a name="tb28ffaf3c906456da48c0127534b7818"></a>
 <table><thead align="left"><tr id="r617d4bc7c4ac43fe898c44ba988d2619"><th class="cellrowborder" valign="top" width="22.06%" id="mcps1.2.4.1.1"><p id="a4a0a77c892d74d0a9ef81d4be1fc0142"><a name="a4a0a77c892d74d0a9ef81d4be1fc0142"></a><a name="a4a0a77c892d74d0a9ef81d4be1fc0142"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.67%" id="mcps1.2.4.1.2"><p>是否必选</p>
+<th class="cellrowborder" valign="top" width="18.67%" id="mcps1.2.4.1.2"><p id="p91114513387"><a name="p91114513387"></a><a name="p91114513387"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="59.27%" id="mcps1.2.4.1.3"><p>描述</p>
+<th class="cellrowborder" valign="top" width="59.27%" id="mcps1.2.4.1.3"><p id="p181294515385"><a name="p181294515385"></a><a name="p181294515385"></a>描述</p>
 </th>
 </tr>
 </thead>
@@ -79,7 +79,7 @@ DELETE /api/v1/persistentvolumes/\{name\}
 
 **响应参数：**
 
-响应参数的详细描述请参见[表4](删除Secret.md#zh-cn_topic_0079615047_table30941925).
+响应参数的详细描述请参见[表2](删除Secret.md#table13766144711235)。
 
 **响应示例：**
 
@@ -140,9 +140,9 @@ DELETE /api/v1/persistentvolumes/\{name\}
 **表 2**  状态码
 
 <a name="tafa4ae9910f84780a85f7b111bdafea6"></a>
-<table><thead align="left"><tr id="r33076ffa4db14dd78ee7ce04e2eecf58"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p>状态码</p>
+<table><thead align="left"><tr id="r33076ffa4db14dd78ee7ce04e2eecf58"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p81111145113814"><a name="p81111145113814"></a><a name="p81111145113814"></a>状态码</p>
 </th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p>描述</p>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p91132454381"><a name="p91132454381"></a><a name="p91132454381"></a>描述</p>
 </th>
 </tr>
 </thead>

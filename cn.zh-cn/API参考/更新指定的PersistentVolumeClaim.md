@@ -78,7 +78,7 @@ Content-Type: application/merge-patch+json
 
 **响应参数：**
 
-响应参数的详细描述请参见[表2](创建PersistentVolumeClaim-0.md#t8268aeafde034542ab17a36c7fca65c3).
+响应参数的详细描述请参见[表2](创建PersistentVolumeClaim-1.md#t8268aeafde034542ab17a36c7fca65c3).
 
 **响应示例：**
 

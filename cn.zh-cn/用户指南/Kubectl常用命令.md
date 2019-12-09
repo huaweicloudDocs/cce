@@ -8,7 +8,7 @@ get命令用于获取集群的一个或一些resource信息。
 
 该命令可以列出集群所有资源的详细信息，resource包括集群节点、运行的pod、Replication Controller、service等。
 
->![](public_sys-resources/icon-notice.gif) **注意：**   
+>![](public_sys-resources/icon-notice.gif) **须知：**   
 >集群中可以创建多个namespace，未指定namespace的情况下，所有操作都是针对--namespace=default。  
 
 例如：
@@ -350,7 +350,7 @@ replace命令用于对已有资源进行更新、替换。当我们需要更新r
 kubectl replace -f filename
 ```
 
->![](public_sys-resources/icon-notice.gif) **注意：**   
+>![](public_sys-resources/icon-notice.gif) **须知：**   
 >名字不能被更新。另外，如果是更新label，原有标签的pod将会与更新label后的rc断开联系，有新label的rc将会创建指定副本数的新的pod，但是默认并不会删除原来的pod。所以此时如果使用get po将会发现pod数翻倍，进一步check会发现原来的pod已经不会被新rc控制。  
 
 **apply\***
@@ -415,7 +415,7 @@ kubectl api-resources
 
 **config\***
 
-修改kubeconfig文件：用于访问api，比如配置文件信息。
+修改kubeconfig文件：用于访问api，比如配置认证信息。
 
 **help**
 

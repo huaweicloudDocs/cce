@@ -53,7 +53,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="14.288571142885711%" id="mcps1.2.5.1.2"><p id="p33848965"><a name="p33848965"></a><a name="p33848965"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.407959204079592%" id="mcps1.2.5.1.3"><p id="p57411641"><a name="p57411641"></a><a name="p57411641"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.407959204079592%" id="mcps1.2.5.1.3"><p id="p57411641"><a name="p57411641"></a><a name="p57411641"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.85571442855714%" id="mcps1.2.5.1.4"><p id="p19831374"><a name="p19831374"></a><a name="p19831374"></a>描述</p>
 </th>
@@ -81,7 +81,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p55702032"><a name="p55702032"></a><a name="p55702032"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p15570756"><a name="p15570756"></a><a name="p15570756"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table47756489">表11</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p15570756"><a name="p15570756"></a><a name="p15570756"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p9683143"><a name="p9683143"></a><a name="p9683143"></a>Standard list metadata.</p>
 </td>
@@ -90,7 +90,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p12424902"><a name="p12424902"></a><a name="p12424902"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p66893020"><a name="p66893020"></a><a name="p66893020"></a><a href="#d0e37783">表4</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p66893020"><a name="p66893020"></a><a name="p66893020"></a><a href="#d0e37783">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p43976738"><a name="p43976738"></a><a name="p43976738"></a>Spec defines the desired identities of pods in this set.</p>
 </td>
@@ -99,7 +99,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p4961465"><a name="p4961465"></a><a name="p4961465"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p66334361"><a name="p66334361"></a><a name="p66334361"></a><a href="#d0e37659">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p66334361"><a name="p66334361"></a><a name="p66334361"></a><a href="#d0e37659">status</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p39367534"><a name="p39367534"></a><a name="p39367534"></a>Status is the current status of Pods in this StatefulSet. This data may be out of date by some window of time.</p>
 </td>
@@ -114,7 +114,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="14.430000000000001%" id="mcps1.2.5.1.2"><p id="p50202190"><a name="p50202190"></a><a name="p50202190"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.59%" id="mcps1.2.5.1.3"><p id="p39845619"><a name="p39845619"></a><a name="p39845619"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.59%" id="mcps1.2.5.1.3"><p id="p39845619"><a name="p39845619"></a><a name="p39845619"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="43.3%" id="mcps1.2.5.1.4"><p id="p6269729"><a name="p6269729"></a><a name="p6269729"></a>描述</p>
 </th>
@@ -193,7 +193,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="15%" id="mcps1.2.5.1.2"><p id="p28407365"><a name="p28407365"></a><a name="p28407365"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="21%" id="mcps1.2.5.1.3"><p id="p19295215"><a name="p19295215"></a><a name="p19295215"></a>类型</p>
+<th class="cellrowborder" valign="top" width="21%" id="mcps1.2.5.1.3"><p id="p19295215"><a name="p19295215"></a><a name="p19295215"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42%" id="mcps1.2.5.1.4"><p id="p19408602"><a name="p19408602"></a><a name="p19408602"></a>描述</p>
 </th>
@@ -230,7 +230,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p34045100"><a name="p34045100"></a><a name="p34045100"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p6189752"><a name="p6189752"></a><a name="p6189752"></a><a href="#d0e38083">表8</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p6189752"><a name="p6189752"></a><a name="p6189752"></a><a href="#d0e38083">updateStrategy</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p10100779"><a name="p10100779"></a><a name="p10100779"></a>updateStrategy indicates the StatefulSetUpdateStrategy that will be employed to update Pods in the StatefulSet when a revision is made to Template.</p>
 </td>
@@ -248,16 +248,16 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p6908863"><a name="p6908863"></a><a name="p6908863"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p22746991"><a name="p22746991"></a><a name="p22746991"></a><a href="获取指定的PersistentVolumeClaim.md#t7aa9de1153e9466cbfcaa9af17a24772">表2</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p22746991"><a name="p22746991"></a><a name="p22746991"></a>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p6667146"><a name="p6667146"></a><a name="p6667146"></a>VolumeClaimTemplates is a list of claims that pods are allowed to reference. The StatefulSet controller is responsible for mapping network identities to claims in a way that maintains the identity of a pod. Every claim in this list must have at least one matching (by name) volumeMount in one container in the template. A claim in this list takes precedence over any volumes in the template, with the same name.</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p6667146"><a name="p6667146"></a><a name="p6667146"></a>VolumeClaimTemplates is a list of claims that pods are allowed to reference. The StatefulSet controller is responsible for mapping network identities to claims in a way that maintains the identity of a pod. Every claim in this list must have at least one matching (by name) volumeMount in one container in the template. A claim in this list takes precedence over any volumes in the template, with the same name.详情请参见<a href="获取指定的PersistentVolumeClaim.md#t7aa9de1153e9466cbfcaa9af17a24772">表2</a>。</p>
 </td>
 </tr>
 <tr id="row60004316"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="p28511466"><a name="p28511466"></a><a name="p28511466"></a>selector</p>
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p27727420"><a name="p27727420"></a><a name="p27727420"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p31328571"><a name="p31328571"></a><a name="p31328571"></a><a href="#d0e37920">表5</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p31328571"><a name="p31328571"></a><a name="p31328571"></a><a href="#d0e37920">selector</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p21514819"><a name="p21514819"></a><a name="p21514819"></a>Selector is a label query over pods that should match the replica count. If empty, defaulted to labels on the pod template.</p>
 </td>
@@ -266,7 +266,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p57772947"><a name="p57772947"></a><a name="p57772947"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p49097096"><a name="p49097096"></a><a name="p49097096"></a><a href="#d0e38032">表7</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p49097096"><a name="p49097096"></a><a name="p49097096"></a><a href="#d0e38032">PodTemplateSpec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p22758632"><a name="p22758632"></a><a name="p22758632"></a>Template is the object that describes the pod that will be created if insufficient replicas are detected. Each pod stamped out by the StatefulSet will fulfill this Template, but have a unique identity from the rest of the StatefulSet.</p>
 </td>
@@ -281,7 +281,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="15.308469153084694%" id="mcps1.2.5.1.2"><p id="p15239763"><a name="p15239763"></a><a name="p15239763"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p26461289"><a name="p26461289"></a><a name="p26461289"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p26461289"><a name="p26461289"></a><a name="p26461289"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.85571442855714%" id="mcps1.2.5.1.4"><p id="p62989635"><a name="p62989635"></a><a name="p62989635"></a>描述</p>
 </th>
@@ -291,7 +291,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084694%" headers="mcps1.2.5.1.2 "><p id="p31224060"><a name="p31224060"></a><a name="p31224060"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p46120952"><a name="p46120952"></a><a name="p46120952"></a><a href="#d0e37970">表6</a></p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p46120952"><a name="p46120952"></a><a name="p46120952"></a><a href="#d0e37970">matchExpressions</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p633806"><a name="p633806"></a><a name="p633806"></a>matchExpressions is a list of label selector requirements. The requirements are ANDed.</p>
 </td>
@@ -315,7 +315,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="15.308469153084689%" id="mcps1.2.5.1.2"><p id="p64358168"><a name="p64358168"></a><a name="p64358168"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.40795920407959%" id="mcps1.2.5.1.3"><p id="p45629083"><a name="p45629083"></a><a name="p45629083"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.40795920407959%" id="mcps1.2.5.1.3"><p id="p45629083"><a name="p45629083"></a><a name="p45629083"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="41.83581641835816%" id="mcps1.2.5.1.4"><p id="p4968280"><a name="p4968280"></a><a name="p4968280"></a>描述</p>
 </th>
@@ -358,7 +358,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="15.308469153084689%" id="mcps1.2.5.1.2"><p id="p13295317"><a name="p13295317"></a><a name="p13295317"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.40795920407959%" id="mcps1.2.5.1.3"><p id="p3178883"><a name="p3178883"></a><a name="p3178883"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.40795920407959%" id="mcps1.2.5.1.3"><p id="p3178883"><a name="p3178883"></a><a name="p3178883"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="41.83581641835816%" id="mcps1.2.5.1.4"><p id="p56162974"><a name="p56162974"></a><a name="p56162974"></a>描述</p>
 </th>
@@ -368,7 +368,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084689%" headers="mcps1.2.5.1.2 "><p id="p35922441"><a name="p35922441"></a><a name="p35922441"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p24036581"><a name="p24036581"></a><a name="p24036581"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table47756489">表11</a></p>
+<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p24036581"><a name="p24036581"></a><a name="p24036581"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.83581641835816%" headers="mcps1.2.5.1.4 "><p id="p7254638"><a name="p7254638"></a><a name="p7254638"></a>Standard object's metadata.</p>
 </td>
@@ -377,7 +377,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084689%" headers="mcps1.2.5.1.2 "><p id="p23283829"><a name="p23283829"></a><a name="p23283829"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p6941992"><a name="p6941992"></a><a name="p6941992"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table66152725">表24</a></p>
+<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p6941992"><a name="p6941992"></a><a name="p6941992"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table66152725">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.83581641835816%" headers="mcps1.2.5.1.4 "><p id="p27547802"><a name="p27547802"></a><a name="p27547802"></a>Specification of the desired behavior of the pod.</p>
 </td>
@@ -392,7 +392,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="16.328367163283673%" id="mcps1.2.5.1.2"><p id="p28521827"><a name="p28521827"></a><a name="p28521827"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="23.46765323467653%" id="mcps1.2.5.1.3"><p id="p28566679"><a name="p28566679"></a><a name="p28566679"></a>类型</p>
+<th class="cellrowborder" valign="top" width="23.46765323467653%" id="mcps1.2.5.1.3"><p id="p28566679"><a name="p28566679"></a><a name="p28566679"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.796020397960206%" id="mcps1.2.5.1.4"><p id="p32199663"><a name="p32199663"></a><a name="p32199663"></a>描述</p>
 </th>
@@ -402,7 +402,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.5.1.2 "><p id="p65113955"><a name="p65113955"></a><a name="p65113955"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="23.46765323467653%" headers="mcps1.2.5.1.3 "><p id="p39738973"><a name="p39738973"></a><a name="p39738973"></a><a href="#table102371729161619">表9</a></p>
+<td class="cellrowborder" valign="top" width="23.46765323467653%" headers="mcps1.2.5.1.3 "><p id="p39738973"><a name="p39738973"></a><a name="p39738973"></a><a href="#table102371729161619">rollingUpdate</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.796020397960206%" headers="mcps1.2.5.1.4 "><p id="p9467071"><a name="p9467071"></a><a name="p9467071"></a>RollingUpdate is used to communicate parameters when Type is RollingUpdateStatefulSetStrategyType.</p>
 </td>
@@ -426,7 +426,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="16.328367163283673%" id="mcps1.2.5.1.2"><p id="p35116889"><a name="p35116889"></a><a name="p35116889"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="23.46765323467653%" id="mcps1.2.5.1.3"><p id="p25895747"><a name="p25895747"></a><a name="p25895747"></a>类型</p>
+<th class="cellrowborder" valign="top" width="23.46765323467653%" id="mcps1.2.5.1.3"><p id="p25895747"><a name="p25895747"></a><a name="p25895747"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.796020397960206%" id="mcps1.2.5.1.4"><p id="p17180782"><a name="p17180782"></a><a name="p17180782"></a>描述</p>
 </th>

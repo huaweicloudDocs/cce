@@ -74,7 +74,7 @@ N/A
 <a name="zh-cn_topic_0079614941_ref458765062"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0079614941_row38964390"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079614941_p1999044"><a name="zh-cn_topic_0079614941_p1999044"></a><a name="zh-cn_topic_0079614941_p1999044"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p60550309195332"><a name="p60550309195332"></a><a name="p60550309195332"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p60550309195332"><a name="p60550309195332"></a><a name="p60550309195332"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.3"><p id="p5627969195332"><a name="p5627969195332"></a><a name="p5627969195332"></a>描述</p>
 </th>
@@ -96,21 +96,21 @@ N/A
 </tr>
 <tr id="zh-cn_topic_0079614941_row8537373"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p20438632"><a name="zh-cn_topic_0079614941_p20438632"></a><a name="zh-cn_topic_0079614941_p20438632"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p44916508"><a name="zh-cn_topic_0079614941_p44916508"></a><a name="zh-cn_topic_0079614941_p44916508"></a><a href="#zh-cn_topic_0079614941_ref458764998">表3</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p44916508"><a name="zh-cn_topic_0079614941_p44916508"></a><a name="zh-cn_topic_0079614941_p44916508"></a><a href="#zh-cn_topic_0079614941_ref458764998">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614941_p62117599"><a name="zh-cn_topic_0079614941_p62117599"></a><a name="zh-cn_topic_0079614941_p62117599"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079614941_row22187484"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p52355769"><a name="zh-cn_topic_0079614941_p52355769"></a><a name="zh-cn_topic_0079614941_p52355769"></a>spec</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p12958878"><a name="zh-cn_topic_0079614941_p12958878"></a><a name="zh-cn_topic_0079614941_p12958878"></a><a href="#zh-cn_topic_0079614941_table60222542">表4</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p12958878"><a name="zh-cn_topic_0079614941_p12958878"></a><a name="zh-cn_topic_0079614941_p12958878"></a><a href="#zh-cn_topic_0079614941_table60222542">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614941_p51781593"><a name="zh-cn_topic_0079614941_p51781593"></a><a name="zh-cn_topic_0079614941_p51781593"></a>-</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079614941_row63381154"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p33599889"><a name="zh-cn_topic_0079614941_p33599889"></a><a name="zh-cn_topic_0079614941_p33599889"></a>status</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p37236521"><a name="zh-cn_topic_0079614941_p37236521"></a><a name="zh-cn_topic_0079614941_p37236521"></a><a href="#zh-cn_topic_0079614941_table5131967">表5</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p37236521"><a name="zh-cn_topic_0079614941_p37236521"></a><a name="zh-cn_topic_0079614941_p37236521"></a><a href="#zh-cn_topic_0079614941_table5131967">status</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614941_p33442970"><a name="zh-cn_topic_0079614941_p33442970"></a><a name="zh-cn_topic_0079614941_p33442970"></a>-</p>
 </td>
@@ -123,7 +123,7 @@ N/A
 <a name="zh-cn_topic_0079614941_ref458764998"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0079614941_row38043720"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079614941_p61642459"><a name="zh-cn_topic_0079614941_p61642459"></a><a name="zh-cn_topic_0079614941_p61642459"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p3061210195332"><a name="p3061210195332"></a><a name="p3061210195332"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p3061210195332"><a name="p3061210195332"></a><a name="p3061210195332"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p46631457195332"><a name="p46631457195332"></a><a name="p46631457195332"></a>描述</p>
 </th>
@@ -145,7 +145,7 @@ N/A
 </tr>
 <tr id="r3854f4b6d14c4d528607b630afccb48f"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="a0ae58910b8da4a0297e9a6ae4c066679"><a name="a0ae58910b8da4a0297e9a6ae4c066679"></a><a name="a0ae58910b8da4a0297e9a6ae4c066679"></a>initializers</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="a199187bb15a94798be9ceff3e50a1701"><a name="a199187bb15a94798be9ceff3e50a1701"></a><a name="a199187bb15a94798be9ceff3e50a1701"></a><a href="公共响应参数.md#t050e77dc2b1644c895d89f389e46d859">表20</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="a199187bb15a94798be9ceff3e50a1701"><a name="a199187bb15a94798be9ceff3e50a1701"></a><a name="a199187bb15a94798be9ceff3e50a1701"></a><a href="响应数据结构.md#t050e77dc2b1644c895d89f389e46d859">initializers</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="a0ce09cd1010e405aa6363e10cdc6908c"><a name="a0ce09cd1010e405aa6363e10cdc6908c"></a><a name="a0ce09cd1010e405aa6363e10cdc6908c"></a>An initializer is a controller which enforces some system invariant at object creation time. This field is a list of initializers that have not yet acted on this object. If nil or empty, this object has been completely initialized. Otherwise, the object is considered uninitialized and is hidden (in list/watch and get calls) from clients that haven't explicitly asked to observe uninitialized objects. When an object is created, the system will populate this list with the current set of initializers. Only privileged users may set or modify this list. Once it is empty, it may not be modified further by any user.</p>
 </td>
@@ -217,28 +217,28 @@ N/A
 </tr>
 <tr id="zh-cn_topic_0079614941_row21811810"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p21926185"><a name="zh-cn_topic_0079614941_p21926185"></a><a name="zh-cn_topic_0079614941_p21926185"></a>labels</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p31190552"><a name="zh-cn_topic_0079614941_p31190552"></a><a name="zh-cn_topic_0079614941_p31190552"></a>Map[string]string</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p31190552"><a name="zh-cn_topic_0079614941_p31190552"></a><a name="zh-cn_topic_0079614941_p31190552"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614941_p43406808"><a name="zh-cn_topic_0079614941_p43406808"></a><a name="zh-cn_topic_0079614941_p43406808"></a>Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and services.</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079614941_row55116958"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p35288602"><a name="zh-cn_topic_0079614941_p35288602"></a><a name="zh-cn_topic_0079614941_p35288602"></a>Annotations</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p39804474"><a name="zh-cn_topic_0079614941_p39804474"></a><a name="zh-cn_topic_0079614941_p39804474"></a>Map[string]string</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p39804474"><a name="zh-cn_topic_0079614941_p39804474"></a><a name="zh-cn_topic_0079614941_p39804474"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614941_p2936934"><a name="zh-cn_topic_0079614941_p2936934"></a><a name="zh-cn_topic_0079614941_p2936934"></a>Annotations is an unstructured key value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.</p>
 </td>
 </tr>
 <tr id="r2feaee3b298b45c5bf6d2c10a248a241"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p555409218048"><a name="zh-cn_topic_0079614941_p555409218048"></a><a name="zh-cn_topic_0079614941_p555409218048"></a>ownerReferences</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="aa9fd857ab00a48298e3fe2e5afab75be"><a name="aa9fd857ab00a48298e3fe2e5afab75be"></a><a name="aa9fd857ab00a48298e3fe2e5afab75be"></a><a href="#ta7d3233a62ea4c8a98f6ade04f4fb53b">表6</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="aa9fd857ab00a48298e3fe2e5afab75be"><a name="aa9fd857ab00a48298e3fe2e5afab75be"></a><a name="aa9fd857ab00a48298e3fe2e5afab75be"></a><a href="#ta7d3233a62ea4c8a98f6ade04f4fb53b">ownerReferences</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="aba65636a2bce42bd9745719f9cf6ed9a"><a name="aba65636a2bce42bd9745719f9cf6ed9a"></a><a name="aba65636a2bce42bd9745719f9cf6ed9a"></a>List of objects depended by this object. If ALL objects in the list have been deleted, this object will be garbage collected. If this object is managed by a controller, then an entry in this list will point to this controller, with the controller field set to true. There cannot be more than one managing controller.</p>
 </td>
 </tr>
 <tr id="r6fcc72de7a7942ab85a1b97640bd7fde"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p734471418048"><a name="zh-cn_topic_0079614941_p734471418048"></a><a name="zh-cn_topic_0079614941_p734471418048"></a>finalizers</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="aa8dd99bd7f2841bb88425a9813c1b885"><a name="aa8dd99bd7f2841bb88425a9813c1b885"></a><a name="aa8dd99bd7f2841bb88425a9813c1b885"></a>String array</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="aa8dd99bd7f2841bb88425a9813c1b885"><a name="aa8dd99bd7f2841bb88425a9813c1b885"></a><a name="aa8dd99bd7f2841bb88425a9813c1b885"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="a37178eacb11e4c7e9ea8539ab3bbfe1d"><a name="a37178eacb11e4c7e9ea8539ab3bbfe1d"></a><a name="a37178eacb11e4c7e9ea8539ab3bbfe1d"></a>Must be empty before the object is deleted from the registry. Each entry is an identifier for the responsible component that will remove the entry from the list. If the deletionTimestamp of the object is non-nil, entries in this list can only be removed.</p>
 </td>
@@ -251,7 +251,7 @@ N/A
 <a name="zh-cn_topic_0079614941_table60222542"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0079614941_row13231337"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079614941_p65105414"><a name="zh-cn_topic_0079614941_p65105414"></a><a name="zh-cn_topic_0079614941_p65105414"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p63399386195332"><a name="p63399386195332"></a><a name="p63399386195332"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p63399386195332"><a name="p63399386195332"></a><a name="p63399386195332"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p35076659195332"><a name="p35076659195332"></a><a name="p35076659195332"></a>描述</p>
 </th>
@@ -259,7 +259,7 @@ N/A
 </thead>
 <tbody><tr id="zh-cn_topic_0079614941_row33956798"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p66146124"><a name="zh-cn_topic_0079614941_p66146124"></a><a name="zh-cn_topic_0079614941_p66146124"></a>ports</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p56235867"><a name="zh-cn_topic_0079614941_p56235867"></a><a name="zh-cn_topic_0079614941_p56235867"></a><a href="#zh-cn_topic_0079614941_table46187709">表7</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p56235867"><a name="zh-cn_topic_0079614941_p56235867"></a><a name="zh-cn_topic_0079614941_p56235867"></a><a href="#zh-cn_topic_0079614941_table46187709">ports</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614941_p59540653"><a name="zh-cn_topic_0079614941_p59540653"></a><a name="zh-cn_topic_0079614941_p59540653"></a>The list of ports that are exposed by this service.</p>
 </td>
@@ -287,7 +287,7 @@ N/A
 </tr>
 <tr id="zh-cn_topic_0079614941_row29102400"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p8484204"><a name="zh-cn_topic_0079614941_p8484204"></a><a name="zh-cn_topic_0079614941_p8484204"></a>externalIPs</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p16131920"><a name="zh-cn_topic_0079614941_p16131920"></a><a name="zh-cn_topic_0079614941_p16131920"></a>Array[string]</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p16131920"><a name="zh-cn_topic_0079614941_p16131920"></a><a name="zh-cn_topic_0079614941_p16131920"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614941_p31617173"><a name="zh-cn_topic_0079614941_p31617173"></a><a name="zh-cn_topic_0079614941_p31617173"></a>externalIPs is a list of IP addresses for which nodes in the cluster will also accept traffic for this service. These IPs are not managed by Kubernetes. The user is responsible for ensuring that traffic arrives at a node with this IP. A common example is external load-balancers that are not part of the Kubernetes system. A previous form of this functionality exists as the deprecatedPublicIPs field. When using this field, callers should also clear the deprecatedPublicIPs field.</p>
 </td>
@@ -301,7 +301,7 @@ N/A
 </tr>
 <tr id="rf079e1b02a394209a2ee54522967f6e2"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p581113313462"><a name="zh-cn_topic_0079614941_p581113313462"></a><a name="zh-cn_topic_0079614941_p581113313462"></a>loadBalancerSourceRanges</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="a99c1692ff1e2455ebb84aad24f2696a2"><a name="a99c1692ff1e2455ebb84aad24f2696a2"></a><a name="a99c1692ff1e2455ebb84aad24f2696a2"></a>Array[string]</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="a99c1692ff1e2455ebb84aad24f2696a2"><a name="a99c1692ff1e2455ebb84aad24f2696a2"></a><a name="a99c1692ff1e2455ebb84aad24f2696a2"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="a8b4988d66da84be79c2bf73d1b7e9fc4"><a name="a8b4988d66da84be79c2bf73d1b7e9fc4"></a><a name="a8b4988d66da84be79c2bf73d1b7e9fc4"></a>If specified and supported by the platform, this will restrict traffic through the cloud-provider load-balancer will be restricted to the specified client IPs. This field will be ignored if the cloud-provider does not support the feature.</p>
 </td>
@@ -315,7 +315,7 @@ N/A
 </tr>
 <tr id="zh-cn_topic_0079614941_row16119107"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p30579324"><a name="zh-cn_topic_0079614941_p30579324"></a><a name="zh-cn_topic_0079614941_p30579324"></a>deprecatedPublicIPs</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p61006185"><a name="zh-cn_topic_0079614941_p61006185"></a><a name="zh-cn_topic_0079614941_p61006185"></a>Array[string]</p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p61006185"><a name="zh-cn_topic_0079614941_p61006185"></a><a name="zh-cn_topic_0079614941_p61006185"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614941_p42553971"><a name="zh-cn_topic_0079614941_p42553971"></a><a name="zh-cn_topic_0079614941_p42553971"></a>deprecatedPublicIPs is deprecated and replaced by the externalIPs field with almost the exact same semantics. This field is retained in the v1 API for compatibility until at least 8/20/2016. It will be removed from any new API revisions. If both deprecatedPublicIPs and externalIPs are set, deprecatedPublicIPs is used.</p>
 </td>
@@ -342,7 +342,7 @@ N/A
 <a name="zh-cn_topic_0079614941_table5131967"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0079614941_row123163"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079614941_p9976232"><a name="zh-cn_topic_0079614941_p9976232"></a><a name="zh-cn_topic_0079614941_p9976232"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p31169058195332"><a name="p31169058195332"></a><a name="p31169058195332"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p31169058195332"><a name="p31169058195332"></a><a name="p31169058195332"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p41665746195332"><a name="p41665746195332"></a><a name="p41665746195332"></a>描述</p>
 </th>
@@ -350,7 +350,7 @@ N/A
 </thead>
 <tbody><tr id="zh-cn_topic_0079614941_row44378785"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p37911872"><a name="zh-cn_topic_0079614941_p37911872"></a><a name="zh-cn_topic_0079614941_p37911872"></a>loadBalancer</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p50962824"><a name="zh-cn_topic_0079614941_p50962824"></a><a name="zh-cn_topic_0079614941_p50962824"></a><a href="#zh-cn_topic_0079614941_table13036200">表8</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p50962824"><a name="zh-cn_topic_0079614941_p50962824"></a><a name="zh-cn_topic_0079614941_p50962824"></a><a href="#zh-cn_topic_0079614941_table13036200">loadBalancer</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614941_p40697121"><a name="zh-cn_topic_0079614941_p40697121"></a><a name="zh-cn_topic_0079614941_p40697121"></a>-</p>
 </td>
@@ -363,7 +363,7 @@ N/A
 <a name="ta7d3233a62ea4c8a98f6ade04f4fb53b"></a>
 <table><thead align="left"><tr id="r1615626fe7364f95828ccaca388dfcc1"><th class="cellrowborder" valign="top" width="24%" id="mcps1.2.4.1.1"><p id="a40471e2c1e5546f6b0b1c3d0447f81bf"><a name="a40471e2c1e5546f6b0b1c3d0447f81bf"></a><a name="a40471e2c1e5546f6b0b1c3d0447f81bf"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="31%" id="mcps1.2.4.1.2"><p id="p17445963195332"><a name="p17445963195332"></a><a name="p17445963195332"></a>类型</p>
+<th class="cellrowborder" valign="top" width="31%" id="mcps1.2.4.1.2"><p id="p17445963195332"><a name="p17445963195332"></a><a name="p17445963195332"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.3"><p id="p3836904195332"><a name="p3836904195332"></a><a name="p3836904195332"></a>描述</p>
 </th>
@@ -419,7 +419,7 @@ N/A
 <a name="zh-cn_topic_0079614941_table46187709"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0079614941_row15879623"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079614941_p11181066"><a name="zh-cn_topic_0079614941_p11181066"></a><a name="zh-cn_topic_0079614941_p11181066"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p40842415195332"><a name="p40842415195332"></a><a name="p40842415195332"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p40842415195332"><a name="p40842415195332"></a><a name="p40842415195332"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p19901293195332"><a name="p19901293195332"></a><a name="p19901293195332"></a>描述</p>
 </th>
@@ -468,7 +468,7 @@ N/A
 <a name="zh-cn_topic_0079614941_table13036200"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0079614941_row39333461"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079614941_p31893735"><a name="zh-cn_topic_0079614941_p31893735"></a><a name="zh-cn_topic_0079614941_p31893735"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p58736464195332"><a name="p58736464195332"></a><a name="p58736464195332"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p58736464195332"><a name="p58736464195332"></a><a name="p58736464195332"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p60033171195332"><a name="p60033171195332"></a><a name="p60033171195332"></a>描述</p>
 </th>
@@ -476,7 +476,7 @@ N/A
 </thead>
 <tbody><tr id="zh-cn_topic_0079614941_row20116922"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614941_p18857999"><a name="zh-cn_topic_0079614941_p18857999"></a><a name="zh-cn_topic_0079614941_p18857999"></a>ingress</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p51102936"><a name="zh-cn_topic_0079614941_p51102936"></a><a name="zh-cn_topic_0079614941_p51102936"></a><a href="#zh-cn_topic_0079614941_table50216937">表9</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614941_p51102936"><a name="zh-cn_topic_0079614941_p51102936"></a><a name="zh-cn_topic_0079614941_p51102936"></a><a href="#zh-cn_topic_0079614941_table50216937">ingress</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614941_p8621167"><a name="zh-cn_topic_0079614941_p8621167"></a><a name="zh-cn_topic_0079614941_p8621167"></a>Ingress is a list containing ingress points for the load-balancer. Traffic intended for the service should be sent to these ingress points.</p>
 </td>
@@ -489,7 +489,7 @@ N/A
 <a name="zh-cn_topic_0079614941_table50216937"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0079614941_row38913757"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079614941_p65006646"><a name="zh-cn_topic_0079614941_p65006646"></a><a name="zh-cn_topic_0079614941_p65006646"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p5916613195332"><a name="p5916613195332"></a><a name="p5916613195332"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p5916613195332"><a name="p5916613195332"></a><a name="p5916613195332"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p9483620195332"><a name="p9483620195332"></a><a name="p9483620195332"></a>描述</p>
 </th>

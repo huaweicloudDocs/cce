@@ -138,7 +138,7 @@ DELETE /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 
 **响应参数：**
 
-响应参数的详细描述请参见[表22](公共响应参数.md#t6c6ba0cfa7084a419291c2d12d305875)。
+响应参数的详细描述请参见[表22](响应数据结构.md#t6c6ba0cfa7084a419291c2d12d305875)。
 
 **响应示例：**
 

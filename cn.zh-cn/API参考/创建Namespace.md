@@ -44,7 +44,7 @@ POST /api/v1/namespaces
 </th>
 <th class="cellrowborder" valign="top" width="19.17%" id="mcps1.2.5.1.2"><p id="p4475307021059"><a name="p4475307021059"></a><a name="p4475307021059"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p112003821059"><a name="p112003821059"></a><a name="p112003821059"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p112003821059"><a name="p112003821059"></a><a name="p112003821059"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.290000000000006%" id="mcps1.2.5.1.4"><p id="p2361423021059"><a name="p2361423021059"></a><a name="p2361423021059"></a>描述</p>
 </th>
@@ -74,7 +74,7 @@ POST /api/v1/namespaces
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615062_p13700797"><a name="zh-cn_topic_0079615062_p13700797"></a><a name="zh-cn_topic_0079615062_p13700797"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a3467669217d84b4c81c113d5e2da8569"><a name="a3467669217d84b4c81c113d5e2da8569"></a><a name="a3467669217d84b4c81c113d5e2da8569"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table47756489">表11</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a3467669217d84b4c81c113d5e2da8569"><a name="a3467669217d84b4c81c113d5e2da8569"></a><a name="a3467669217d84b4c81c113d5e2da8569"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615062_p32162181"><a name="zh-cn_topic_0079615062_p32162181"></a><a name="zh-cn_topic_0079615062_p32162181"></a>-</p>
 </td>
@@ -83,7 +83,7 @@ POST /api/v1/namespaces
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615062_p30919631"><a name="zh-cn_topic_0079615062_p30919631"></a><a name="zh-cn_topic_0079615062_p30919631"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a06e8700df468433aa540a2f15c58b358"><a name="a06e8700df468433aa540a2f15c58b358"></a><a name="a06e8700df468433aa540a2f15c58b358"></a><a href="#zh-cn_topic_0079615062_table19390540">表3</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a06e8700df468433aa540a2f15c58b358"><a name="a06e8700df468433aa540a2f15c58b358"></a><a name="a06e8700df468433aa540a2f15c58b358"></a><a href="#zh-cn_topic_0079615062_table19390540">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615062_p60714046"><a name="zh-cn_topic_0079615062_p60714046"></a><a name="zh-cn_topic_0079615062_p60714046"></a>-</p>
 </td>
@@ -92,7 +92,7 @@ POST /api/v1/namespaces
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615062_p13977142"><a name="zh-cn_topic_0079615062_p13977142"></a><a name="zh-cn_topic_0079615062_p13977142"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a3336b15d7dc74a08a73e99cd75f4058f"><a name="a3336b15d7dc74a08a73e99cd75f4058f"></a><a name="a3336b15d7dc74a08a73e99cd75f4058f"></a><a href="#zh-cn_topic_0079615062_table40297137">表4</a></p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a3336b15d7dc74a08a73e99cd75f4058f"><a name="a3336b15d7dc74a08a73e99cd75f4058f"></a><a name="a3336b15d7dc74a08a73e99cd75f4058f"></a><a href="#zh-cn_topic_0079615062_table40297137">status</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615062_p33323423"><a name="zh-cn_topic_0079615062_p33323423"></a><a name="zh-cn_topic_0079615062_p33323423"></a>-</p>
 </td>
@@ -107,7 +107,7 @@ POST /api/v1/namespaces
 </th>
 <th class="cellrowborder" valign="top" width="19.17%" id="mcps1.2.5.1.2"><p id="p6641927621059"><a name="p6641927621059"></a><a name="p6641927621059"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p1125227721059"><a name="p1125227721059"></a><a name="p1125227721059"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p1125227721059"><a name="p1125227721059"></a><a name="p1125227721059"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.290000000000006%" id="mcps1.2.5.1.4"><p id="p3901927921059"><a name="p3901927921059"></a><a name="p3901927921059"></a>描述</p>
 </th>
@@ -117,7 +117,7 @@ POST /api/v1/namespaces
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615062_p29915412"><a name="zh-cn_topic_0079615062_p29915412"></a><a name="zh-cn_topic_0079615062_p29915412"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615062_p7229285"><a name="zh-cn_topic_0079615062_p7229285"></a><a name="zh-cn_topic_0079615062_p7229285"></a>Array[String]</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615062_p7229285"><a name="zh-cn_topic_0079615062_p7229285"></a><a name="zh-cn_topic_0079615062_p7229285"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615062_p48701244"><a name="zh-cn_topic_0079615062_p48701244"></a><a name="zh-cn_topic_0079615062_p48701244"></a>Finalizers is an opaque list of values that must be empty to permanently remove object from storage.</p>
 </td>
@@ -132,7 +132,7 @@ POST /api/v1/namespaces
 </th>
 <th class="cellrowborder" valign="top" width="19.17%" id="mcps1.2.5.1.2"><p id="p935719621059"><a name="p935719621059"></a><a name="p935719621059"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p1973538721059"><a name="p1973538721059"></a><a name="p1973538721059"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p1973538721059"><a name="p1973538721059"></a><a name="p1973538721059"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.290000000000006%" id="mcps1.2.5.1.4"><p id="p5506250321059"><a name="p5506250321059"></a><a name="p5506250321059"></a>描述</p>
 </th>

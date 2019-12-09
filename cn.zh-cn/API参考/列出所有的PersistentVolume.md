@@ -86,7 +86,7 @@ N/A
 <a name="t96eb17162dc541b0ac14da07f10d4a59"></a>
 <table><thead align="left"><tr id="r9b876eed979f4d8d95cc73130bdcef0c"><th class="cellrowborder" valign="top" width="25.069999999999997%" id="mcps1.2.4.1.1"><p id="a25728619ecab48b6953dc2a9d523978f"><a name="a25728619ecab48b6953dc2a9d523978f"></a><a name="a25728619ecab48b6953dc2a9d523978f"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.130000000000003%" id="mcps1.2.4.1.2"><p id="p9344806201939"><a name="p9344806201939"></a><a name="p9344806201939"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.130000000000003%" id="mcps1.2.4.1.2"><p id="p9344806201939"><a name="p9344806201939"></a><a name="p9344806201939"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p18731826201939"><a name="p18731826201939"></a><a name="p18731826201939"></a>描述</p>
 </th>
@@ -101,9 +101,10 @@ N/A
 </tr>
 <tr id="ra3b61a1c18234ae5895fce21580fa7cf"><td class="cellrowborder" valign="top" width="25.069999999999997%" headers="mcps1.2.4.1.1 "><p id="ae197de9e4fdd41a5bb2b36da2741624f"><a name="ae197de9e4fdd41a5bb2b36da2741624f"></a><a name="ae197de9e4fdd41a5bb2b36da2741624f"></a>items</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.130000000000003%" headers="mcps1.2.4.1.2 "><p id="aeed7e4fc9cb046bb8a31f51a08a01ba3"><a name="aeed7e4fc9cb046bb8a31f51a08a01ba3"></a><a name="aeed7e4fc9cb046bb8a31f51a08a01ba3"></a><a href="创建PersistentVolume-1.md#tfdb73431f39846d4a56ec4eb558e1617">表2</a></p>
+<td class="cellrowborder" valign="top" width="30.130000000000003%" headers="mcps1.2.4.1.2 "><p id="aeed7e4fc9cb046bb8a31f51a08a01ba3"><a name="aeed7e4fc9cb046bb8a31f51a08a01ba3"></a><a name="aeed7e4fc9cb046bb8a31f51a08a01ba3"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="a6f1336d639b14f52aefdbed32248f795"><a name="a6f1336d639b14f52aefdbed32248f795"></a><a name="a6f1336d639b14f52aefdbed32248f795"></a>List of persistent volumes.</p>
+<p id="p43239512330"><a name="p43239512330"></a><a name="p43239512330"></a>详情请参见<a href="创建PersistentVolume-0.md#tfdb73431f39846d4a56ec4eb558e1617">表2</a>。</p>
 </td>
 </tr>
 <tr id="r1eae1b232e4a40a282f48a6c5dcfd2de"><td class="cellrowborder" valign="top" width="25.069999999999997%" headers="mcps1.2.4.1.1 "><p id="a7a01181f00f44f6ab8f5a7308e2962bf"><a name="a7a01181f00f44f6ab8f5a7308e2962bf"></a><a name="a7a01181f00f44f6ab8f5a7308e2962bf"></a>kind</p>
@@ -115,7 +116,7 @@ N/A
 </tr>
 <tr id="rf8a0ebda4114493e87e8ed92cdb6f07b"><td class="cellrowborder" valign="top" width="25.069999999999997%" headers="mcps1.2.4.1.1 "><p id="aca8ab7d645b34ec883c36ed5ce5a61f9"><a name="aca8ab7d645b34ec883c36ed5ce5a61f9"></a><a name="aca8ab7d645b34ec883c36ed5ce5a61f9"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.130000000000003%" headers="mcps1.2.4.1.2 "><p id="a431bb762c443456daa7cbcbc93a1b21e"><a name="a431bb762c443456daa7cbcbc93a1b21e"></a><a name="a431bb762c443456daa7cbcbc93a1b21e"></a><a href="#t0259714600444a569592dde7d2f11c77">表3</a></p>
+<td class="cellrowborder" valign="top" width="30.130000000000003%" headers="mcps1.2.4.1.2 "><p id="a431bb762c443456daa7cbcbc93a1b21e"><a name="a431bb762c443456daa7cbcbc93a1b21e"></a><a name="a431bb762c443456daa7cbcbc93a1b21e"></a><a href="#t0259714600444a569592dde7d2f11c77">ListMeta</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="a22186cc4bee94b23aa645545743ffbd1"><a name="a22186cc4bee94b23aa645545743ffbd1"></a><a name="a22186cc4bee94b23aa645545743ffbd1"></a>Standard list metadata.</p>
 </td>
@@ -128,7 +129,7 @@ N/A
 <a name="t0259714600444a569592dde7d2f11c77"></a>
 <table><thead align="left"><tr id="r62083060c9ac4d788389dfaff36156f6"><th class="cellrowborder" valign="top" width="25.069999999999997%" id="mcps1.2.4.1.1"><p id="a17fd4491bed6482ca1cb9a83c977e093"><a name="a17fd4491bed6482ca1cb9a83c977e093"></a><a name="a17fd4491bed6482ca1cb9a83c977e093"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.130000000000003%" id="mcps1.2.4.1.2"><p id="p55506439201939"><a name="p55506439201939"></a><a name="p55506439201939"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.130000000000003%" id="mcps1.2.4.1.2"><p id="p55506439201939"><a name="p55506439201939"></a><a name="p55506439201939"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p66836606201939"><a name="p66836606201939"></a><a name="p66836606201939"></a>描述</p>
 </th>

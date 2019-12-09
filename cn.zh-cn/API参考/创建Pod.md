@@ -42,7 +42,7 @@ POST /api/v1/namespaces/\{namespace\}/pods
 
 **请求参数：**
 
-请求参数的详细描述请参见[表3](公共请求参数.md#zh-cn_topic_0079614925_table60388168)。
+请求参数的详细描述请参见[表3](请求数据结构.md#zh-cn_topic_0079614925_table60388168)。
 
 **请求示例：**
 

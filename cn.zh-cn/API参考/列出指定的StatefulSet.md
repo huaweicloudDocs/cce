@@ -88,7 +88,7 @@ N/A
 <a name="table44321378"></a>
 <table><thead align="left"><tr id="row4467942"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.2.4.1.1"><p id="p26359045"><a name="p26359045"></a><a name="p26359045"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p54707896"><a name="p54707896"></a><a name="p54707896"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p54707896"><a name="p54707896"></a><a name="p54707896"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.44444444444445%" id="mcps1.2.4.1.3"><p id="p2154600"><a name="p2154600"></a><a name="p2154600"></a>描述</p>
 </th>
@@ -110,14 +110,14 @@ N/A
 </tr>
 <tr id="row59958055"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p24764287"><a name="p24764287"></a><a name="p24764287"></a>items</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p59750244"><a name="p59750244"></a><a name="p59750244"></a><a href="创建StatefulSet.md#d0e37568">表2</a></p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p59750244"><a name="p59750244"></a><a name="p59750244"></a>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p4275369"><a name="p4275369"></a><a name="p4275369"></a>List of StatefulSets.</p>
+<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p4275369"><a name="p4275369"></a><a name="p4275369"></a>List of StatefulSets.详情请参见<a href="创建StatefulSet.md#d0e37568">表2</a>。</p>
 </td>
 </tr>
 <tr id="row38478323"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p29736429"><a name="p29736429"></a><a name="p29736429"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p59840531"><a name="p59840531"></a><a name="p59840531"></a><a href="#d0e39691">表3</a></p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p59840531"><a name="p59840531"></a><a name="p59840531"></a><a href="#d0e39691">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p2986183"><a name="p2986183"></a><a name="p2986183"></a>Standard list metadata.</p>
 </td>
@@ -130,7 +130,7 @@ N/A
 <a name="d0e39691"></a>
 <table><thead align="left"><tr id="row5154030"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="p14823285"><a name="p14823285"></a><a name="p14823285"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="31%" id="mcps1.2.4.1.2"><p id="p59835428"><a name="p59835428"></a><a name="p59835428"></a>类型</p>
+<th class="cellrowborder" valign="top" width="31%" id="mcps1.2.4.1.2"><p id="p59835428"><a name="p59835428"></a><a name="p59835428"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44%" id="mcps1.2.4.1.3"><p id="p14831524"><a name="p14831524"></a><a name="p14831524"></a>描述</p>
 </th>

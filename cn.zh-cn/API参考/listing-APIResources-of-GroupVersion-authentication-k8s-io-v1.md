@@ -2,7 +2,7 @@
 
 ## 功能介绍<a name="section24640658"></a>
 
-This API is used to list APIResources of GroupVersion "authentication.kubernetes.io/v1".
+This API is used to list APIResources of GroupVersion "authentication.k8s.io/v1".
 
 ## URI<a name="section20439338"></a>
 
@@ -23,7 +23,7 @@ N/A.
 <a name="d0e46889"></a>
 <table><thead align="left"><tr id="row23309850"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="p9049715"><a name="p9049715"></a><a name="p9049715"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p61938284"><a name="p61938284"></a><a name="p61938284"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p61938284"><a name="p61938284"></a><a name="p61938284"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.3"><p id="p50945069"><a name="p50945069"></a><a name="p50945069"></a>描述</p>
 </th>
@@ -45,7 +45,7 @@ N/A.
 </tr>
 <tr id="row44444202"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p43210624"><a name="p43210624"></a><a name="p43210624"></a>resources</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p10399662"><a name="p10399662"></a><a name="p10399662"></a><a href="#d0e46939">表2</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p10399662"><a name="p10399662"></a><a name="p10399662"></a><a href="#d0e46939">resources</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p65161549"><a name="p65161549"></a><a name="p65161549"></a>Standard list resource</p>
 </td>
@@ -58,7 +58,7 @@ N/A.
 <a name="d0e46939"></a>
 <table><thead align="left"><tr id="row23729842"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.2.4.1.1"><p id="p43069063"><a name="p43069063"></a><a name="p43069063"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p66042064"><a name="p66042064"></a><a name="p66042064"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p66042064"><a name="p66042064"></a><a name="p66042064"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.44444444444445%" id="mcps1.2.4.1.3"><p id="p47806966"><a name="p47806966"></a><a name="p47806966"></a>描述</p>
 </th>
@@ -66,7 +66,7 @@ N/A.
 </thead>
 <tbody><tr id="row47159008"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p61783286"><a name="p61783286"></a><a name="p61783286"></a>categories</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p38390306"><a name="p38390306"></a><a name="p38390306"></a>String array</p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p38390306"><a name="p38390306"></a><a name="p38390306"></a>Array&nbsp;of&nbsp;strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p22607049"><a name="p22607049"></a><a name="p22607049"></a>categories is a list of the grouped resources this resource belongs to (e.g. 'all')</p>
 </td>
@@ -94,7 +94,7 @@ N/A.
 </tr>
 <tr id="row15823046"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p6598388"><a name="p6598388"></a><a name="p6598388"></a>shortNames</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p64707430"><a name="p64707430"></a><a name="p64707430"></a>String array</p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p64707430"><a name="p64707430"></a><a name="p64707430"></a>Array&nbsp;of&nbsp;strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p6810501"><a name="p6810501"></a><a name="p6810501"></a>shortNames is a list of suggested short names of the resource.</p>
 </td>
@@ -108,7 +108,7 @@ N/A.
 </tr>
 <tr id="row52438621"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p19669874"><a name="p19669874"></a><a name="p19669874"></a>verbs</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p49755939"><a name="p49755939"></a><a name="p49755939"></a>String array</p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p49755939"><a name="p49755939"></a><a name="p49755939"></a>Array&nbsp;of&nbsp;strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p3699290"><a name="p3699290"></a><a name="p3699290"></a>verbs is a list of supported kube verbs (this includes get, list, watch, create, update, patch, delete, deletecollection, and proxy)</p>
 </td>

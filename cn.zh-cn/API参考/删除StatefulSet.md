@@ -62,8 +62,7 @@ DELETE /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\} \(Compa
 </td>
 <td class="cellrowborder" valign="top" width="16.16%" headers="mcps1.2.4.1.2 "><p id="p3621310"><a name="p3621310"></a><a name="p3621310"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.629999999999995%" headers="mcps1.2.4.1.3 "><p id="p22689637"><a name="p22689637"></a><a name="p22689637"></a></p>
-<p id="p2044017414610"><a name="p2044017414610"></a><a name="p2044017414610"></a>Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.</p>
+<td class="cellrowborder" valign="top" width="62.629999999999995%" headers="mcps1.2.4.1.3 "><p id="p2044017414610"><a name="p2044017414610"></a><a name="p2044017414610"></a>Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.</p>
 </td>
 </tr>
 </tbody>
@@ -112,7 +111,7 @@ DELETE /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\} \(Compa
 
 **响应参数：**
 
-响应参数的详细描述请参见[表4](删除Secret.md#zh-cn_topic_0079615047_table30941925)。
+响应参数的详细描述请参见[表2](删除Secret.md#table13766144711235)。
 
 **响应示例**：
 

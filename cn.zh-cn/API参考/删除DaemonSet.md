@@ -77,13 +77,13 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 **表 2**  请求参数
 
 <a name="table191461259175715"></a>
-<table><thead align="left"><tr id="row55138935"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.2.5.1.1"><p id="ae00f0941f2f84334b89540a79f202f53"><a name="ae00f0941f2f84334b89540a79f202f53"></a><a name="ae00f0941f2f84334b89540a79f202f53"></a>参数</p>
+<table><thead align="left"><tr id="row55138935"><th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.2.5.1.1"><p id="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"><a name="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"></a><a name="zh-cn_topic_0083857388_zh-cn_topic_0079615000_p19784972"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.2.5.1.2"><p id="a109544678a6d496c8ab0ba9dc8865df8"><a name="a109544678a6d496c8ab0ba9dc8865df8"></a><a name="a109544678a6d496c8ab0ba9dc8865df8"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="15.151515151515152%" id="mcps1.2.5.1.2"><p id="zh-cn_topic_0083857388_p62904453205444"><a name="zh-cn_topic_0083857388_p62904453205444"></a><a name="zh-cn_topic_0083857388_p62904453205444"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.202020202020204%" id="mcps1.2.5.1.3"><p id="a13d54bf6b2e94a4baa09115f8f42914b"><a name="a13d54bf6b2e94a4baa09115f8f42914b"></a><a name="a13d54bf6b2e94a4baa09115f8f42914b"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.202020202020204%" id="mcps1.2.5.1.3"><p id="zh-cn_topic_0083857388_p62095922205444"><a name="zh-cn_topic_0083857388_p62095922205444"></a><a name="zh-cn_topic_0083857388_p62095922205444"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="46.464646464646464%" id="mcps1.2.5.1.4"><p id="a4492d78a4c58432cb14ce4c639d6df62"><a name="a4492d78a4c58432cb14ce4c639d6df62"></a><a name="a4492d78a4c58432cb14ce4c639d6df62"></a>描述</p>
+<th class="cellrowborder" valign="top" width="46.464646464646464%" id="mcps1.2.5.1.4"><p id="zh-cn_topic_0083857388_p63713767205444"><a name="zh-cn_topic_0083857388_p63713767205444"></a><a name="zh-cn_topic_0083857388_p63713767205444"></a>描述</p>
 </th>
 </tr>
 </thead>
@@ -91,7 +91,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 </td>
 <td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p50624612"><a name="p50624612"></a><a name="p50624612"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p6952939"><a name="p6952939"></a><a name="p6952939"></a>string</p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p6952939"><a name="p6952939"></a><a name="p6952939"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.464646464646464%" headers="mcps1.2.5.1.4 "><p id="p26317149"><a name="p26317149"></a><a name="p26317149"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</p>
 </td>
@@ -100,16 +100,16 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 </td>
 <td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p28517228"><a name="p28517228"></a><a name="p28517228"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p28194133"><a name="p28194133"></a><a name="p28194133"></a>integer</p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p28194133"><a name="p28194133"></a><a name="p28194133"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.464646464646464%" headers="mcps1.2.5.1.4 "><p id="p2023471"><a name="p2023471"></a><a name="p2023471"></a>The duration in seconds before the object should be deleted. Value must be non-negative integer. The value zero indicates delete immediately. If this value is nil, the default grace period for the specified type will be used. Defaults to a per object value if not specified. zero means delete immediately.</p>
 </td>
 </tr>
 <tr id="row18211246"><td class="cellrowborder" valign="top" width="18.18181818181818%" headers="mcps1.2.5.1.1 "><p id="p65824820"><a name="p65824820"></a><a name="p65824820"></a>kind</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p30210174"><a name="p30210174"></a><a name="p30210174"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p30210174"><a name="p30210174"></a><a name="p30210174"></a>Ye</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p31105012"><a name="p31105012"></a><a name="p31105012"></a>string</p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p31105012"><a name="p31105012"></a><a name="p31105012"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.464646464646464%" headers="mcps1.2.5.1.4 "><p id="p36478080"><a name="p36478080"></a><a name="p36478080"></a>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.</p>
 </td>
@@ -118,7 +118,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 </td>
 <td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p943763"><a name="p943763"></a><a name="p943763"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p9335953"><a name="p9335953"></a><a name="p9335953"></a>boolean</p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p9335953"><a name="p9335953"></a><a name="p9335953"></a>Boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.464646464646464%" headers="mcps1.2.5.1.4 "><p id="p18014695"><a name="p18014695"></a><a name="p18014695"></a>Deprecated: please use the PropagationPolicy, this field will be deprecated in 1.7. Should the dependent objects be orphaned. If true/false, the "orphan" finalizer will be added to/removed from the object's finalizers list. Either this field or PropagationPolicy may be set, but not both.</p>
 </td>
@@ -127,7 +127,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 </td>
 <td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p7150508"><a name="p7150508"></a><a name="p7150508"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p42320251"><a name="p42320251"></a><a name="p42320251"></a><a href="#table27213123546">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p42320251"><a name="p42320251"></a><a name="p42320251"></a><a href="#table27213123546">preconditions</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.464646464646464%" headers="mcps1.2.5.1.4 "><p id="p48494655"><a name="p48494655"></a><a name="p48494655"></a>Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.</p>
 </td>
@@ -136,7 +136,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 </td>
 <td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p25657252"><a name="p25657252"></a><a name="p25657252"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p64971570"><a name="p64971570"></a><a name="p64971570"></a>string</p>
+<td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p64971570"><a name="p64971570"></a><a name="p64971570"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.464646464646464%" headers="mcps1.2.5.1.4 "><p id="p36716510426"><a name="p36716510426"></a><a name="p36716510426"></a>Whether and how garbage collection will be performed. Either this field or OrphanDependents may be set, but not both. The default policy is decided by the existing finalizer set in the metadata.finalizers and the resource-specific default policy. Acceptable values are: 'Orphan' - orphan the dependents; 'Background' - allow the garbage collector to delete the dependents in the background; 'Foreground' - a cascading policy that deletes all dependents in the foreground.</p>
 </td>
@@ -151,7 +151,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 </th>
 <th class="cellrowborder" valign="top" width="15.308469153084694%" id="mcps1.2.5.1.2"><p id="p2741420163416"><a name="p2741420163416"></a><a name="p2741420163416"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.407959204079592%" id="mcps1.2.5.1.3"><p id="p197662010344"><a name="p197662010344"></a><a name="p197662010344"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.407959204079592%" id="mcps1.2.5.1.3"><p id="p197662010344"><a name="p197662010344"></a><a name="p197662010344"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="46.93530646935306%" id="mcps1.2.5.1.4"><p id="p1578162011343"><a name="p1578162011343"></a><a name="p1578162011343"></a>描述</p>
 </th>
@@ -161,7 +161,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084694%" headers="mcps1.2.5.1.2 "><p id="p29942301"><a name="p29942301"></a><a name="p29942301"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p9407330"><a name="p9407330"></a><a name="p9407330"></a>string</p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p9407330"><a name="p9407330"></a><a name="p9407330"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.93530646935306%" headers="mcps1.2.5.1.4 "><p id="p23796251"><a name="p23796251"></a><a name="p23796251"></a>Specifies the target UID.</p>
 </td>
@@ -206,7 +206,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 
 **响应参数：**
 
-响应参数的详细描述请参见[Table 5-9](删除Secret.md#zh-cn_topic_0079615047_table30941925)。
+响应参数的详细描述请参见[Table 5-9](删除Secret.md#table13766144711235)。
 
 **响应示例：**
 

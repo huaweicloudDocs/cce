@@ -39,7 +39,7 @@ GET /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p10523163603012"><a name="p10523163603012"></a><a name="p10523163603012"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p1852311367308"><a name="p1852311367308"></a><a name="p1852311367308"></a>Should the export be exact. Exact export maintains cluster-specific fields like <em id="i137019818451"><a name="i137019818451"></a><a name="i137019818451"></a>'Namespace'</em>.</p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p1852311367308"><a name="p1852311367308"></a><a name="p1852311367308"></a><span>Should the export be exact. Exact export maintains cluster-specific fields like </span><em id="i137019818451"><a name="i137019818451"></a><a name="i137019818451"></a>'Namespace'</em><span>.</span></p>
 </td>
 </tr>
 <tr id="row624413343302"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p13244133414304"><a name="p13244133414304"></a><a name="p13244133414304"></a>export</p>
@@ -84,9 +84,9 @@ N/A
 	    "generation": 1,
 	    "creationTimestamp": "2018-11-15T08:23:34Z",
             "labels": {
-		"app": "nginx",
+		"app": "nginx"
 			}
-	}
+	},
     "spec": {
 	    "podSelector": {
 		"matchLabels": {
@@ -106,9 +106,9 @@ N/A
 		"port": 6379
 		}]
 	    }],
-	    "policyTypes":{ 
+	    "policyTypes":[
 		"Ingress"
-        }
+        ]
     }
 }
 ```

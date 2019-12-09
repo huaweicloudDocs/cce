@@ -1,10 +1,10 @@
-# 通过Kubectl连接集群<a name="cce_01_0107"></a>
+# 通过kubectl连接集群<a name="cce_01_0107"></a>
 
 若您需要从客户端机器访问kubernetes集群，可以选择使用kubernetes命令行工具kubectl。
 
-本章以混合集群为例，Windows集群和裸金属集群操作方式与其相同。
+本章以混合集群为例，GPU集群和裸金属集群操作方式与其相同。
 
-## 前提条件<a name="section3271162319436"></a>
+## 准备工作<a name="section3271162319436"></a>
 
 CCE支持VPC网络内访问集群和互联网方式访问集群。
 
@@ -13,10 +13,14 @@ CCE支持VPC网络内访问集群和互联网方式访问集群。
 
 ## 操作步骤<a name="section37321625113110"></a>
 
-1.  登录CCE控制台，选择“资源管理 \> 集群管理”，单击待连接集群下的“kubectl”。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 集群管理”，单击待连接集群下的“命令行工具 \>  kubectl”。
+
+    **图 1**  单击kubectl<a name="fig118327236614"></a>  
+    ![](figures/单击kubectl.png "单击kubectl")
+
 2.  请参照界面中的提示信息完成集群连接。
 
-    **图 1**  通过kubectl连接集群<a name="fig1366811551535"></a>  
+    **图 2**  通过kubectl连接集群<a name="fig1366811551535"></a>  
     ![](figures/通过kubectl连接集群.png "通过kubectl连接集群")
 
 

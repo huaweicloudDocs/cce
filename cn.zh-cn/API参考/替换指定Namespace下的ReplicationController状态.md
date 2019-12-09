@@ -8,38 +8,38 @@
 
 PUT /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}/status
 
-[表1](#zh-cn_topic_0079614898_table55442294)  描述该API的参数。
+[表1](#table2042316458519)  描述该API的参数。
 
 **表 1**  参数描述
 
-<a name="zh-cn_topic_0079614898_table55442294"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0079614898_row16283894"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="zh-cn_topic_0079614898_p43927036"><a name="zh-cn_topic_0079614898_p43927036"></a><a name="zh-cn_topic_0079614898_p43927036"></a>参数</p>
+<a name="table2042316458519"></a>
+<table><thead align="left"><tr id="row1342317451054"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p10423134517519"><a name="p10423134517519"></a><a name="p10423134517519"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p22501634194649"><a name="p22501634194649"></a><a name="p22501634194649"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.2"><p id="p1842319451516"><a name="p1842319451516"></a><a name="p1842319451516"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p10693081194649"><a name="p10693081194649"></a><a name="p10693081194649"></a>描述</p>
+<th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.3"><p id="p164231145250"><a name="p164231145250"></a><a name="p164231145250"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0079614898_row4357576"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614898_p17419343"><a name="zh-cn_topic_0079614898_p17419343"></a><a name="zh-cn_topic_0079614898_p17419343"></a>pretty</p>
+<tbody><tr id="row12423545659"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p174238451758"><a name="p174238451758"></a><a name="p174238451758"></a>pretty</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614898_p1680699"><a name="zh-cn_topic_0079614898_p1680699"></a><a name="zh-cn_topic_0079614898_p1680699"></a>No</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p134241645554"><a name="p134241645554"></a><a name="p134241645554"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614898_p1918964"><a name="zh-cn_topic_0079614898_p1918964"></a><a name="zh-cn_topic_0079614898_p1918964"></a><span id="ph8671155216517"><a name="ph8671155216517"></a><a name="ph8671155216517"></a>设置为true后，会打印漂亮的输出结果。</span></p>
-</td>
-</tr>
-<tr id="zh-cn_topic_0079614898_row26210932"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614898_p42710723"><a name="zh-cn_topic_0079614898_p42710723"></a><a name="zh-cn_topic_0079614898_p42710723"></a>namespace</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614898_p37016527"><a name="zh-cn_topic_0079614898_p37016527"></a><a name="zh-cn_topic_0079614898_p37016527"></a>Yes</p>
-</td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614898_p45548671"><a name="zh-cn_topic_0079614898_p45548671"></a><a name="zh-cn_topic_0079614898_p45548671"></a><span id="ph16644125965110"><a name="ph16644125965110"></a><a name="ph16644125965110"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。</span></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1342454518512"><a name="p1342454518512"></a><a name="p1342454518512"></a>If 'true', then the output is pretty printed.</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0079614898_row7284856"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614898_p53202458"><a name="zh-cn_topic_0079614898_p53202458"></a><a name="zh-cn_topic_0079614898_p53202458"></a>name</p>
+<tr id="row194241345955"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p642419453510"><a name="p642419453510"></a><a name="p642419453510"></a>namespace</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614898_p14431828"><a name="zh-cn_topic_0079614898_p14431828"></a><a name="zh-cn_topic_0079614898_p14431828"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p124248451510"><a name="p124248451510"></a><a name="p124248451510"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614898_p28127439"><a name="zh-cn_topic_0079614898_p28127439"></a><a name="zh-cn_topic_0079614898_p28127439"></a>ReplicationController<span id="ph114986222521"><a name="ph114986222521"></a><a name="ph114986222521"></a>的名称</span></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p642417451453"><a name="p642417451453"></a><a name="p642417451453"></a>Object name and auth scope, such as for teams and projects.</p>
+</td>
+</tr>
+<tr id="row84241945755"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p542419452056"><a name="p542419452056"></a><a name="p542419452056"></a>name</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p442418451352"><a name="p442418451352"></a><a name="p442418451352"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p142411451954"><a name="p142411451954"></a><a name="p142411451954"></a>Name of the ReplicationController.</p>
 </td>
 </tr>
 </tbody>
@@ -49,7 +49,7 @@ PUT /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}/status
 
 **请求参数：**
 
-请求参数的详细描述请参见[表1](公共请求参数.md#zh-cn_topic_0079614925_table51284307)。
+请求参数的详细描述请参见[表1](请求数据结构.md#zh-cn_topic_0079614925_table51284307)。
 
 **请求示例：**
 
@@ -160,7 +160,7 @@ PUT /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}/status
 </thead>
 <tbody><tr id="zh-cn_topic_0079614898_row38731835"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079614898_p50270949"><a name="zh-cn_topic_0079614898_p50270949"></a><a name="zh-cn_topic_0079614898_p50270949"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614898_p45415059"><a name="zh-cn_topic_0079614898_p45415059"></a><a name="zh-cn_topic_0079614898_p45415059"></a><span id="ph2081415357529"><a name="ph2081415357529"></a><a name="ph2081415357529"></a>操作成功，返回ReplicationController资源对象</span></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p133631213613"><a name="p133631213613"></a><a name="p133631213613"></a>This operation succeeds, and a ReplicationController resource object is returned.</p>
 </td>
 </tr>
 </tbody>

@@ -23,7 +23,7 @@ N/A.
 <a name="d0e45895"></a>
 <table><thead align="left"><tr id="row2745633"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.4.1.1"><p id="p21069736"><a name="p21069736"></a><a name="p21069736"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p28927084"><a name="p28927084"></a><a name="p28927084"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30%" id="mcps1.2.4.1.2"><p id="p28927084"><a name="p28927084"></a><a name="p28927084"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="45%" id="mcps1.2.4.1.3"><p id="p61392468"><a name="p61392468"></a><a name="p61392468"></a>描述</p>
 </th>
@@ -45,7 +45,7 @@ N/A.
 </tr>
 <tr id="row37826679"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.4.1.1 "><p id="p44062192"><a name="p44062192"></a><a name="p44062192"></a>groups</p>
 </td>
-<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p12267805"><a name="p12267805"></a><a name="p12267805"></a><a href="#d0e45945">表2</a></p>
+<td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="p12267805"><a name="p12267805"></a><a name="p12267805"></a><a href="#d0e45945">groups</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p17751458"><a name="p17751458"></a><a name="p17751458"></a>Standard list APIGroup</p>
 </td>
@@ -58,7 +58,7 @@ N/A.
 <a name="d0e45945"></a>
 <table><thead align="left"><tr id="row17510563"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.2.4.1.1"><p id="p9069460"><a name="p9069460"></a><a name="p9069460"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p63537654"><a name="p63537654"></a><a name="p63537654"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p63537654"><a name="p63537654"></a><a name="p63537654"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.44444444444445%" id="mcps1.2.4.1.3"><p id="p46276336"><a name="p46276336"></a><a name="p46276336"></a>描述</p>
 </th>
@@ -87,21 +87,21 @@ N/A.
 </tr>
 <tr id="row61753813"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p36002985"><a name="p36002985"></a><a name="p36002985"></a>preferredVersion</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p30560673"><a name="p30560673"></a><a name="p30560673"></a><a href="#table1222101911189">表4</a></p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p30560673"><a name="p30560673"></a><a name="p30560673"></a><a href="#table1222101911189">preferredVersion</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p65697112"><a name="p65697112"></a><a name="p65697112"></a>preferredVersion is the version preferred by the API server, which probably is the storage version.</p>
 </td>
 </tr>
 <tr id="row54403103"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p44575221"><a name="p44575221"></a><a name="p44575221"></a>serverAddressByClientCIDRs</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p53823119"><a name="p53823119"></a><a name="p53823119"></a><a href="#table1531151619177">表3</a></p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p53823119"><a name="p53823119"></a><a name="p53823119"></a><a href="#table1531151619177">serverAddressByClientCIDRs</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p45477381"><a name="p45477381"></a><a name="p45477381"></a>a map of client CIDR to server address that is serving this group. This is to help clients reach servers in the most network-efficient way possible. Clients can use the appropriate server address as per the CIDR that they match. In case of multiple matches, clients should use the longest matching CIDR. The server returns only those CIDRs that it thinks that the client can match. For example: the master will return an internal IP CIDR only, if the client reaches the server using an internal IP. Server looks at X-Forwarded-For header or X-Real-Ip header or request.RemoteAddr (in that order) to get the client IP.</p>
 </td>
 </tr>
 <tr id="row6643249"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p1232264"><a name="p1232264"></a><a name="p1232264"></a>versions</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p32704580"><a name="p32704580"></a><a name="p32704580"></a><a href="#table1222101911189">表4</a></p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p32704580"><a name="p32704580"></a><a name="p32704580"></a><a href="#table1222101911189">preferredVersion</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p17992762"><a name="p17992762"></a><a name="p17992762"></a>versions are the versions supported in this group.</p>
 </td>
@@ -114,7 +114,7 @@ N/A.
 <a name="table1531151619177"></a>
 <table><thead align="left"><tr id="row38726134"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.2.4.1.1"><p id="p49809167"><a name="p49809167"></a><a name="p49809167"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p8010696"><a name="p8010696"></a><a name="p8010696"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p8010696"><a name="p8010696"></a><a name="p8010696"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.44444444444445%" id="mcps1.2.4.1.3"><p id="p44886601"><a name="p44886601"></a><a name="p44886601"></a>描述</p>
 </th>
@@ -142,7 +142,7 @@ N/A.
 <a name="table1222101911189"></a>
 <table><thead align="left"><tr id="row63835785"><th class="cellrowborder" valign="top" width="25.252525252525253%" id="mcps1.2.4.1.1"><p id="p3316059"><a name="p3316059"></a><a name="p3316059"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p165378"><a name="p165378"></a><a name="p165378"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.303030303030305%" id="mcps1.2.4.1.2"><p id="p165378"><a name="p165378"></a><a name="p165378"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.44444444444445%" id="mcps1.2.4.1.3"><p id="p13395686"><a name="p13395686"></a><a name="p13395686"></a>描述</p>
 </th>

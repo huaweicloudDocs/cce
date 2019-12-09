@@ -8,74 +8,73 @@
 
 DELETE /api/v1/namespaces/\{namespace\}/secrets
 
-[表1](#d0e14442)描述该API的参数。
+[表1](#table891810242912)描述该API的参数。
 
 **表 1**  参数解释
 
-<a name="d0e14442"></a>
-<table><thead align="left"><tr id="row49778871"><th class="cellrowborder" valign="top" width="22.45%" id="mcps1.2.4.1.1"><p id="p5556711"><a name="p5556711"></a><a name="p5556711"></a>参数</p>
+<a name="table891810242912"></a>
+<table><thead align="left"><tr id="row179181214298"><th class="cellrowborder" valign="top" width="22.45%" id="mcps1.2.4.1.1"><p id="p1791819211292"><a name="p1791819211292"></a><a name="p1791819211292"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="16.33%" id="mcps1.2.4.1.2"><p id="p47440419"><a name="p47440419"></a><a name="p47440419"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="16.33%" id="mcps1.2.4.1.2"><p id="p10918192162916"><a name="p10918192162916"></a><a name="p10918192162916"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="61.22%" id="mcps1.2.4.1.3"><p id="p17468756"><a name="p17468756"></a><a name="p17468756"></a>描述</p>
+<th class="cellrowborder" valign="top" width="61.22%" id="mcps1.2.4.1.3"><p id="p791832162913"><a name="p791832162913"></a><a name="p791832162913"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row5683170"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p57683636"><a name="p57683636"></a><a name="p57683636"></a>namespace</p>
+<tbody><tr id="row99181520293"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p1691815211296"><a name="p1691815211296"></a><a name="p1691815211296"></a>namespace</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p41862963"><a name="p41862963"></a><a name="p41862963"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p1791817211297"><a name="p1791817211297"></a><a name="p1791817211297"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p166752264459"><a name="p166752264459"></a><a name="p166752264459"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。可以任选其一使用：</p>
-<a name="ul75828215461"></a><a name="ul75828215461"></a><ul id="ul75828215461"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a></li><li>系统自带的namespace：default或kube-system</li></ul>
-</td>
-</tr>
-<tr id="row50676091"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p11122696"><a name="p11122696"></a><a name="p11122696"></a>pretty</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p28523165"><a name="p28523165"></a><a name="p28523165"></a>No</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p28675043"><a name="p28675043"></a><a name="p28675043"></a><span id="ph7733184012197"><a name="ph7733184012197"></a><a name="ph7733184012197"></a>设置为true后，会打印漂亮的输出结果</span>。</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p35456838"><a name="p35456838"></a><a name="p35456838"></a>object name and auth scope, such as for teams and projects</p>
 </td>
 </tr>
-<tr id="row56748800"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p33250065"><a name="p33250065"></a><a name="p33250065"></a>fieldSelector</p>
+<tr id="row091816242917"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p1891815212913"><a name="p1891815212913"></a><a name="p1891815212913"></a>pretty</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p8900776"><a name="p8900776"></a><a name="p8900776"></a>No</p>
+<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p1991811242919"><a name="p1991811242919"></a><a name="p1991811242919"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p49874218"><a name="p49874218"></a><a name="p49874218"></a><span id="ph1234541913216"><a name="ph1234541913216"></a><a name="ph1234541913216"></a>根据资源对象的field字段进行筛选，不设置该参数时默认选择所有资源对象</span><span id="ph933071114227"><a name="ph933071114227"></a><a name="ph933071114227"></a>。</span></p>
-</td>
-</tr>
-<tr id="row46214784"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p52410000"><a name="p52410000"></a><a name="p52410000"></a>includeUninitialized</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p17351617"><a name="p17351617"></a><a name="p17351617"></a>No</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p63303738"><a name="p63303738"></a><a name="p63303738"></a><span id="ph984104618246"><a name="ph984104618246"></a><a name="ph984104618246"></a>设置为true后，未初始化的资源也会包含在删除列表里。</span></p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p159181023297"><a name="p159181023297"></a><a name="p159181023297"></a>If 'true', then the output is pretty printed.</p>
 </td>
 </tr>
-<tr id="row32862738"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p44636107"><a name="p44636107"></a><a name="p44636107"></a>labelSelector</p>
+<tr id="row15918322299"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p2919028297"><a name="p2919028297"></a><a name="p2919028297"></a>fieldSelector</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p58754913"><a name="p58754913"></a><a name="p58754913"></a>No</p>
+<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p7919182152913"><a name="p7919182152913"></a><a name="p7919182152913"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p1930564715251"><a name="p1930564715251"></a><a name="p1930564715251"></a>根据资源对象的label字段进行筛选，不设置该参数时默认选择所有资源对象。</p>
-</td>
-</tr>
-<tr id="row16876437"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p24814161"><a name="p24814161"></a><a name="p24814161"></a>resourceVersion</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p63790021"><a name="p63790021"></a><a name="p63790021"></a>No</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614900_p1905570"><a name="zh-cn_topic_0079614900_p1905570"></a><a name="zh-cn_topic_0079614900_p1905570"></a>ResourceVersion表示该资源对象内部版本。</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p149194242915"><a name="p149194242915"></a><a name="p149194242915"></a>A selector to restrict the list of returned objects by their fields. Defaults to everything.</p>
 </td>
 </tr>
-<tr id="row63592048"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p50682297"><a name="p50682297"></a><a name="p50682297"></a>timeoutSeconds</p>
+<tr id="row5919720298"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p109199217294"><a name="p109199217294"></a><a name="p109199217294"></a>includeUninitialized</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p11625398"><a name="p11625398"></a><a name="p11625398"></a>No</p>
+<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p791952152916"><a name="p791952152916"></a><a name="p791952152916"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p2133200"><a name="p2133200"></a><a name="p2133200"></a><span id="ph15918394528"><a name="ph15918394528"></a><a name="ph15918394528"></a>表示</span><span id="ph133731748115218"><a name="ph133731748115218"></a><a name="ph133731748115218"></a>调用list/watch的超时时间</span></p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p99198222912"><a name="p99198222912"></a><a name="p99198222912"></a>If true, partially initialized resources are included in the response.</p>
 </td>
 </tr>
-<tr id="row19198803"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p11599202"><a name="p11599202"></a><a name="p11599202"></a>watch</p>
+<tr id="row169191272918"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p1791912219294"><a name="p1791912219294"></a><a name="p1791912219294"></a>labelSelector</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p11330"><a name="p11330"></a><a name="p11330"></a>No</p>
+<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p79199212297"><a name="p79199212297"></a><a name="p79199212297"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p176837905310"><a name="p176837905310"></a><a name="p176837905310"></a>监视指定资源的更改，并将添加、更新和删除通知的流返回。</p>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p61527483"><a name="p61527483"></a><a name="p61527483"></a>A selector to restrict the list of returned objects by their labels. Defaults to everything.</p>
+</td>
+</tr>
+<tr id="row091912214299"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p1491922112915"><a name="p1491922112915"></a><a name="p1491922112915"></a>resourceVersion</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p1391962152918"><a name="p1391962152918"></a><a name="p1391962152918"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p66718106"><a name="p66718106"></a><a name="p66718106"></a>When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.</p>
+</td>
+</tr>
+<tr id="row2919429292"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p491916272919"><a name="p491916272919"></a><a name="p491916272919"></a>timeoutSeconds</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p491922112914"><a name="p491922112914"></a><a name="p491922112914"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p2091912222913"><a name="p2091912222913"></a><a name="p2091912222913"></a>Timeout for the list/watch call.</p>
+</td>
+</tr>
+<tr id="row1091914216297"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p691962102910"><a name="p691962102910"></a><a name="p691962102910"></a>watch</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p4919152142916"><a name="p4919152142916"></a><a name="p4919152142916"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p917787"><a name="p917787"></a><a name="p917787"></a>Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.</p>
 </td>
 </tr>
 </tbody>
@@ -158,7 +157,7 @@ N/A
 </thead>
 <tbody><tr id="row29799334"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p64935873"><a name="p64935873"></a><a name="p64935873"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p25314373"><a name="p25314373"></a><a name="p25314373"></a><span id="ph9841510175419"><a name="ph9841510175419"></a><a name="ph9841510175419"></a>批量删除secrets成功。</span></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p25314373"><a name="p25314373"></a><a name="p25314373"></a>批量删除secrets成功。</p>
 </td>
 </tr>
 </tbody>

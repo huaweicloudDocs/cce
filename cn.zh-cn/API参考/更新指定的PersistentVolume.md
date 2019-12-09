@@ -69,7 +69,7 @@ Content-Type: application/json-patch+json
 
 **响应参数：**
 
-响应参数的详细描述请参见[表2](创建PersistentVolume-1.md#tfdb73431f39846d4a56ec4eb558e1617).
+响应参数的详细描述请参见[表2](创建PersistentVolume-0.md#tfdb73431f39846d4a56ec4eb558e1617).
 
 **响应示例**：
 

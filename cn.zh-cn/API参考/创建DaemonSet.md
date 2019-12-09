@@ -53,7 +53,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="16.328367163283673%" id="mcps1.2.5.1.2"><p id="p1194511281367"><a name="p1194511281367"></a><a name="p1194511281367"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.36816318368163%" id="mcps1.2.5.1.3"><p id="p15946172811365"><a name="p15946172811365"></a><a name="p15946172811365"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.36816318368163%" id="mcps1.2.5.1.3"><p id="p15946172811365"><a name="p15946172811365"></a><a name="p15946172811365"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.85571442855714%" id="mcps1.2.5.1.4"><p id="a02ec96a8fd6a472b99e398797499857f"><a name="a02ec96a8fd6a472b99e398797499857f"></a><a name="a02ec96a8fd6a472b99e398797499857f"></a>描述</p>
 </th>
@@ -81,7 +81,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.5.1.2 "><p id="p29840242"><a name="p29840242"></a><a name="p29840242"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p1140498"><a name="p1140498"></a><a name="p1140498"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table47756489">表11</a></p>
+<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p1140498"><a name="p1140498"></a><a name="p1140498"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p26116789"><a name="p26116789"></a><a name="p26116789"></a>Standard object's metadata.</p>
 </td>
@@ -90,7 +90,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.5.1.2 "><p id="p8598431"><a name="p8598431"></a><a name="p8598431"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p25384334"><a name="p25384334"></a><a name="p25384334"></a><a href="#table109924514514">表3</a></p>
+<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p25384334"><a name="p25384334"></a><a name="p25384334"></a><a href="#table109924514514">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p50242206"><a name="p50242206"></a><a name="p50242206"></a>The desired behavior of this daemon set.</p>
 </td>
@@ -99,7 +99,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.5.1.2 "><p id="p3383718"><a name="p3383718"></a><a name="p3383718"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p5645707"><a name="p5645707"></a><a name="p5645707"></a><a href="#table423617231387">表4</a></p>
+<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p5645707"><a name="p5645707"></a><a name="p5645707"></a><a href="#table423617231387">status</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p22079859"><a name="p22079859"></a><a name="p22079859"></a>The current status of this daemon set. This data may be out of date by some window of time. Populated by the system. Read-only.</p>
 </td>
@@ -114,7 +114,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="16.49%" id="mcps1.2.5.1.2"><p id="p659875817369"><a name="p659875817369"></a><a name="p659875817369"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.56%" id="mcps1.2.5.1.3"><p id="p19599858183612"><a name="p19599858183612"></a><a name="p19599858183612"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.56%" id="mcps1.2.5.1.3"><p id="p19599858183612"><a name="p19599858183612"></a><a name="p19599858183612"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.27%" id="mcps1.2.5.1.4"><p id="p126028584368"><a name="p126028584368"></a><a name="p126028584368"></a>描述</p>
 </th>
@@ -124,7 +124,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p7615279"><a name="p7615279"></a><a name="p7615279"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p12857883"><a name="p12857883"></a><a name="p12857883"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p12857883"><a name="p12857883"></a><a name="p12857883"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p34855636"><a name="p34855636"></a><a name="p34855636"></a>The minimum number of seconds for which a newly created DaemonSet pod should be ready without any of its container crashing, for it to be considered available. Defaults to 0 (pod will be considered available as soon as it is ready).</p>
 </td>
@@ -133,7 +133,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p28733478"><a name="p28733478"></a><a name="p28733478"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p45710373"><a name="p45710373"></a><a name="p45710373"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p45710373"><a name="p45710373"></a><a name="p45710373"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p36865955"><a name="p36865955"></a><a name="p36865955"></a>The number of old history to retain to allow rollback. This is a pointer to distinguish between explicit zero and not specified. Defaults to 10.</p>
 </td>
@@ -142,7 +142,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p20466776"><a name="p20466776"></a><a name="p20466776"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p47196154"><a name="p47196154"></a><a name="p47196154"></a><a href="创建PersistentVolumeClaim-0.md#t87a0b25af7d2428182ec8bb2b4416a12">表6</a></p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p47196154"><a name="p47196154"></a><a name="p47196154"></a><a href="创建PersistentVolumeClaim-1.md#t87a0b25af7d2428182ec8bb2b4416a12">selector</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p46258138"><a name="p46258138"></a><a name="p46258138"></a>A label query over pods that are managed by the daemon set. Must match in order to be controlled. If empty, defaulted to labels on Pod template.</p>
 </td>
@@ -151,7 +151,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p31845254"><a name="p31845254"></a><a name="p31845254"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p29328819"><a name="p29328819"></a><a name="p29328819"></a><a href="#table82651956102317">表5</a></p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p29328819"><a name="p29328819"></a><a name="p29328819"></a><a href="#table82651956102317">template</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p40090562"><a name="p40090562"></a><a name="p40090562"></a>An object that describes the pod that will be created. The DaemonSet will create exactly one copy of this pod on every node that matches the template's node selector (or on every node if no node selector is specified).</p>
 </td>
@@ -160,7 +160,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p42442041"><a name="p42442041"></a><a name="p42442041"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p15253336"><a name="p15253336"></a><a name="p15253336"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p15253336"><a name="p15253336"></a><a name="p15253336"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p27560736"><a name="p27560736"></a><a name="p27560736"></a>DEPRECATED. A sequence number representing a specific generation of the template. Populated by the system. It can be set only during the creation.</p>
 </td>
@@ -169,7 +169,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p43965709"><a name="p43965709"></a><a name="p43965709"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p4452677"><a name="p4452677"></a><a name="p4452677"></a><a href="#table2082584572918">表6</a></p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p4452677"><a name="p4452677"></a><a name="p4452677"></a><a href="#table2082584572918">updateStrategy</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p24776540"><a name="p24776540"></a><a name="p24776540"></a>An update strategy to replace existing DaemonSet pods with new pods.</p>
 </td>
@@ -184,7 +184,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="16.49%" id="mcps1.2.5.1.2"><p id="p204151420379"><a name="p204151420379"></a><a name="p204151420379"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.56%" id="mcps1.2.5.1.3"><p id="p341710253710"><a name="p341710253710"></a><a name="p341710253710"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.56%" id="mcps1.2.5.1.3"><p id="p341710253710"><a name="p341710253710"></a><a name="p341710253710"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.27%" id="mcps1.2.5.1.4"><p id="p1442142113714"><a name="p1442142113714"></a><a name="p1442142113714"></a>描述</p>
 </th>
@@ -194,7 +194,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p62250865"><a name="p62250865"></a><a name="p62250865"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p9155280"><a name="p9155280"></a><a name="p9155280"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p9155280"><a name="p9155280"></a><a name="p9155280"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p3380204"><a name="p3380204"></a><a name="p3380204"></a>Count of hash collisions for the DaemonSet. The DaemonSet controller uses this field as a collision avoidance mechanism when it needs to create the name for the newest ControllerRevision.</p>
 </td>
@@ -203,7 +203,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p15904575"><a name="p15904575"></a><a name="p15904575"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p13202185"><a name="p13202185"></a><a name="p13202185"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p13202185"><a name="p13202185"></a><a name="p13202185"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p62744084"><a name="p62744084"></a><a name="p62744084"></a>The number of nodes that are running at least 1 daemon pod and are supposed to run the daemon pod.</p>
 </td>
@@ -212,7 +212,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p29290347"><a name="p29290347"></a><a name="p29290347"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p23707915"><a name="p23707915"></a><a name="p23707915"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p23707915"><a name="p23707915"></a><a name="p23707915"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p41292943"><a name="p41292943"></a><a name="p41292943"></a>The total number of nodes that should be running the daemon pod (including nodes correctly running the daemon pod).</p>
 </td>
@@ -221,7 +221,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p40659598"><a name="p40659598"></a><a name="p40659598"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p5093181"><a name="p5093181"></a><a name="p5093181"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p5093181"><a name="p5093181"></a><a name="p5093181"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p9894549"><a name="p9894549"></a><a name="p9894549"></a>The number of nodes that should be running the daemon pod and have one or more of the daemon pod running and available (ready for at least spec.minReadySeconds)</p>
 </td>
@@ -230,7 +230,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p13471562"><a name="p13471562"></a><a name="p13471562"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p17454738"><a name="p17454738"></a><a name="p17454738"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p17454738"><a name="p17454738"></a><a name="p17454738"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p4547687"><a name="p4547687"></a><a name="p4547687"></a>The number of nodes that are running the daemon pod, but are not supposed to run the daemon pod.</p>
 </td>
@@ -239,7 +239,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p33823367"><a name="p33823367"></a><a name="p33823367"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p55338178"><a name="p55338178"></a><a name="p55338178"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p55338178"><a name="p55338178"></a><a name="p55338178"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p53207438"><a name="p53207438"></a><a name="p53207438"></a>The number of nodes that should be running the daemon pod and have one or more of the daemon pod running and ready.</p>
 </td>
@@ -248,7 +248,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p10347445"><a name="p10347445"></a><a name="p10347445"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p32836750"><a name="p32836750"></a><a name="p32836750"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p32836750"><a name="p32836750"></a><a name="p32836750"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p42531099"><a name="p42531099"></a><a name="p42531099"></a>The number of nodes that should be running the daemon pod and have none of the daemon pod running and available (ready for at least spec.minReadySeconds)</p>
 </td>
@@ -257,7 +257,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p3889935"><a name="p3889935"></a><a name="p3889935"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p46649343"><a name="p46649343"></a><a name="p46649343"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p46649343"><a name="p46649343"></a><a name="p46649343"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p20500456"><a name="p20500456"></a><a name="p20500456"></a>The most recent generation observed by the daemon set controller.</p>
 </td>
@@ -266,7 +266,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p21744085"><a name="p21744085"></a><a name="p21744085"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p16440486"><a name="p16440486"></a><a name="p16440486"></a>integer</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p16440486"><a name="p16440486"></a><a name="p16440486"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p56611028"><a name="p56611028"></a><a name="p56611028"></a>The total number of nodes that are running updated daemon pod</p>
 </td>
@@ -281,7 +281,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="16.49%" id="mcps1.2.5.1.2"><p id="p1994225173711"><a name="p1994225173711"></a><a name="p1994225173711"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.56%" id="mcps1.2.5.1.3"><p id="p094415163719"><a name="p094415163719"></a><a name="p094415163719"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.56%" id="mcps1.2.5.1.3"><p id="p094415163719"><a name="p094415163719"></a><a name="p094415163719"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.27%" id="mcps1.2.5.1.4"><p id="p14947105103712"><a name="p14947105103712"></a><a name="p14947105103712"></a>描述</p>
 </th>
@@ -291,7 +291,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p40743922"><a name="p40743922"></a><a name="p40743922"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p11923395"><a name="p11923395"></a><a name="p11923395"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table47756489">表11</a></p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p11923395"><a name="p11923395"></a><a name="p11923395"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p35111876"><a name="p35111876"></a><a name="p35111876"></a>Standard object's metadata.</p>
 </td>
@@ -300,7 +300,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p59940076"><a name="p59940076"></a><a name="p59940076"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p23307959"><a name="p23307959"></a><a name="p23307959"></a>PodSpec</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p23307959"><a name="p23307959"></a><a name="p23307959"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p8896531"><a name="p8896531"></a><a name="p8896531"></a>Specification of the desired behavior of the pod.</p>
 </td>
@@ -315,7 +315,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </th>
 <th class="cellrowborder" valign="top" width="17.348265173482652%" id="mcps1.2.5.1.2"><p id="p2974384376"><a name="p2974384376"></a><a name="p2974384376"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.36816318368163%" id="mcps1.2.5.1.3"><p id="p14976782378"><a name="p14976782378"></a><a name="p14976782378"></a>类型</p>
+<th class="cellrowborder" valign="top" width="18.36816318368163%" id="mcps1.2.5.1.3"><p id="p14976782378"><a name="p14976782378"></a><a name="p14976782378"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="41.835816418358164%" id="mcps1.2.5.1.4"><p id="p69781811374"><a name="p69781811374"></a><a name="p69781811374"></a>描述</p>
 </th>
@@ -325,7 +325,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.5.1.2 "><p id="p4969010"><a name="p4969010"></a><a name="p4969010"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p66945555"><a name="p66945555"></a><a name="p66945555"></a>RollingUpateDaemonSet</p>
+<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p98640246501"><a name="p98640246501"></a><a name="p98640246501"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.835816418358164%" headers="mcps1.2.5.1.4 "><p id="p53880913"><a name="p53880913"></a><a name="p53880913"></a>Rolling update config params. Present only if type = "RollingUpdate".</p>
 </td>
@@ -334,7 +334,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.5.1.2 "><p id="p49935381"><a name="p49935381"></a><a name="p49935381"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p18234098"><a name="p18234098"></a><a name="p18234098"></a>string</p>
+<td class="cellrowborder" valign="top" width="18.36816318368163%" headers="mcps1.2.5.1.3 "><p id="p18234098"><a name="p18234098"></a><a name="p18234098"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.835816418358164%" headers="mcps1.2.5.1.4 "><p id="p5102633"><a name="p5102633"></a><a name="p5102633"></a>Type of daemon set update. Can be "RollingUpdate" or "OnDelete". Default is OnDelete.</p>
 </td>

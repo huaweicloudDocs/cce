@@ -25,15 +25,14 @@ POST /api/v1/namespaces/\{namespace\}/replicationcontrollers
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615078_p51999621"><a name="zh-cn_topic_0079615078_p51999621"></a><a name="zh-cn_topic_0079615078_p51999621"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615078_p51219733"><a name="zh-cn_topic_0079615078_p51219733"></a><a name="zh-cn_topic_0079615078_p51219733"></a><span id="ph7733184012197"><a name="ph7733184012197"></a><a name="ph7733184012197"></a>设置为true后，会打印漂亮的输出结果</span><span id="ph1175312504813"><a name="ph1175312504813"></a><a name="ph1175312504813"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p161723320581"><a name="p161723320581"></a><a name="p161723320581"></a>If 'true', then the output is pretty printed.</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615078_row36003682"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615078_p30617153"><a name="zh-cn_topic_0079615078_p30617153"></a><a name="zh-cn_topic_0079615078_p30617153"></a>namespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615078_p64070324"><a name="zh-cn_topic_0079615078_p64070324"></a><a name="zh-cn_topic_0079615078_p64070324"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p166752264459"><a name="p166752264459"></a><a name="p166752264459"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。可以任选其一使用：</p>
-<a name="ul75828215461"></a><a name="ul75828215461"></a><ul id="ul75828215461"><li>用户自定义的namespace，使用前必须先<a href="创建Namespace.md">创建Namespace</a></li><li>系统自带的namespace：default或kube-system</li></ul>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p798973795815"><a name="p798973795815"></a><a name="p798973795815"></a>Object name and auth scope, such as for teams and projects.</p>
 </td>
 </tr>
 </tbody>
@@ -43,7 +42,7 @@ POST /api/v1/namespaces/\{namespace\}/replicationcontrollers
 
 **请求参数：**
 
-请求参数的详细描述请参见[表1](公共请求参数.md#zh-cn_topic_0079614925_table51284307)。
+请求参数的详细描述请参见[表1](请求数据结构.md#zh-cn_topic_0079614925_table51284307)。
 
 **请求示例：**
 
@@ -181,7 +180,7 @@ POST /api/v1/namespaces/\{namespace\}/replicationcontrollers
 </thead>
 <tbody><tr id="zh-cn_topic_0079615078_row7199758"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615078_p46309534"><a name="zh-cn_topic_0079615078_p46309534"></a><a name="zh-cn_topic_0079615078_p46309534"></a>201</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615078_p60084754"><a name="zh-cn_topic_0079615078_p60084754"></a><a name="zh-cn_topic_0079615078_p60084754"></a><span id="ph134117311299"><a name="ph134117311299"></a><a name="ph134117311299"></a>操作成功，返回ReplicationController资源对象</span><span id="ph1444946899"><a name="ph1444946899"></a><a name="ph1444946899"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615078_p60084754"><a name="zh-cn_topic_0079615078_p60084754"></a><a name="zh-cn_topic_0079615078_p60084754"></a>操作成v功，返回ReplicationController资源对象。</p>
 </td>
 </tr>
 </tbody>

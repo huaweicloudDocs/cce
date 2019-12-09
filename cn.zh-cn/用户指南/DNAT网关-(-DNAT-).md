@@ -7,25 +7,11 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
 **图 1**  DNAT网关 \( DNAT \)<a name="fig1623231054319"></a>  
 ![](figures/DNAT网关-(-DNAT-).png "DNAT网关-(-DNAT-)")
 
-## 添加方式<a name="section10392205822818"></a>
+## 前提条件<a name="section33871214153614"></a>
 
-您可以在创建工作负载时设置访问方式，也可以工作负载创建完成后添加访问方式。
+你需要提前创建NAT网关实例和弹性IP，具体操作步骤如下：
 
--   方式一：创建工作负载时配置，请参见[通过界面创建](#section744117150366)和[kubectl命令行创建](#section1944313158364)。
--   方式二：工作负载创建完成后配置，此配置对工作负载状态无影响，且实时生效。具体步骤如下：
-    1.  单击CCE左侧导航栏的“工作负载”，单击“工作负载 \> 无状态（Deployment）“或“工作负载 \> 有状态（StatefulSet）“，在工作负载列表中单击工作负载名称，进入工作负载详情页面。选择“访问方式“页签，单击“添加服务“。
-    2.  参照[通过界面创建](#section744117150366)的配置参数添加访问方式。
-
-
-## 更新方式<a name="section1377882410819"></a>
-
-您可以在添加完Service后，更新此Service的端口配置，请参见[更新Service端口配置](#section1465316915912)。
-
-## 前提条件-创建NAT网关实例和弹性IP<a name="section33871214153614"></a>
-
-创建NAT网关实例和弹性IP的具体操作步骤为：
-
-1.  登录华为云控制台首页，选择“网络 \> NAT网关”，单击页面右上角的“购买NAT网关“。下图是购买NAT网关的案例，请根据实际业务需求填写相关内容。
+1.  登录华为云控制台，在服务列表中选择“网络 \> NAT网关”，单击页面右上角的“购买NAT网关“。下图是购买NAT网关的案例，请根据实际业务需求填写相关内容。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >购买NAT网关，选择VPC和子网时，请确保与CCE中运行业务的集群VPC和子网一致。  
@@ -33,29 +19,32 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
     **图 2**  购买NAT网关<a name="fig65141147164317"></a>  
     ![](figures/购买NAT网关.png "购买NAT网关")
 
-2.  在华为云控制台首页，选择“网络 \> 弹性公网IP”，单击右上角的“购买弹性公网IP”。下图是购买弹性IP的案例，请根据实际业务需求填写相关内容。
+2.  在华为云控制台，在服务列表中选择“网络 \> 弹性公网IP”，单击右上角的“购买弹性公网IP”。下图是购买弹性IP的案例，请根据实际业务需求填写相关内容。
 
     **图 3**  购买弹性公网IP<a name="fig1665717534483"></a>  
     ![](figures/购买弹性公网IP.png "购买弹性公网IP")
 
 
-## 通过界面创建<a name="section744117150366"></a>
+## 通过控制台操作<a name="section744117150366"></a>
 
-本节以nginx为例进行说明。
+您可以在创建工作负载时通过CCE控制台设置Service访问方式，本节以nginx为例进行说明。具体操作如下：
 
-1.  参考[创建无状态工作负载](创建无状态工作负载.md)或[创建有状态工作负载](创建有状态工作负载.md)，在“工作负载访问设置“步骤，单击“添加服务“。
-    -   访问类型：选择“DNAT网关 \( DNAT \)“。
-    -   服务名称：自定义服务名称，可与工作负载名称保持一致。
-    -   NAT网关：
-        -   请选择对应的NAT网关，若没有请单击“创建NAT网关”创建。
-        -   请选择对应的弹性公网IP，若没有请单击“创建弹性公网IP”创建。
-        -   单击“NAT网关使用约束“完成阅读后，勾选“我已阅读和同意“前面的选项。
+1.  参考[创建无状态工作负载\(Deployment\)](创建无状态工作负载(Deployment).md)或[创建有状态工作负载\(StatefulSet\)](创建有状态工作负载(StatefulSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
+    -   **访问类型：**选择“DNAT网关 \( DNAT \)“。
+    -   **服务名称：**自定义服务名称，可与工作负载名称保持一致。
+    -   **服务亲和：**
+        -   集群级别：将外部流量路由到集群下所有的节点，并且隐藏客户端源IP。
+        -   节点级别：将外部流量路由到服务关联的负载所在的节点，并且保留客户端源IP。
 
-    -   端口配置：
+    -   **NAT网关：**
+        -   请选择对应的NAT网关，若没有请单击“创建NAT网关”。NAT网关需与当前集群处于相同VPC。
+        -   请选择对应的弹性公网IP，若没有请单击“创建弹性公网IP”。
+        -   阅读并确认“NAT网关使用约束“后，单击勾选“我已阅读和同意“。
+
+    -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
         -   容器端口：容器镜像中工作负载实际监听端口，需用户确定。nginx程序实际监听的端口为80。
         -   访问端口：容器端口映射端口，访问工作负载时使用，端口范围为1-65535，可任意指定。
-
 
 2.  完成配置后，直接单击“确定“。
 3.  单击“下一步“进入“高级设置“页面，直接单击“创建“。
@@ -66,34 +55,15 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
     ![](figures/通过NAT网关访问nginx（一）.png "通过NAT网关访问nginx（一）")
 
 
-## 工作负载创建完成后设置<a name="section156711537124016"></a>
+## 通过kubectl命令行创建<a name="section9206192110206"></a>
 
-1.  登录CCE控制台，选择左侧导航栏的“资源管理 \> 网络管理”，在**Service**页签下，单击“添加Service”。访问类型选择“DNAT网关 \( DNAT \)”。
-2.  设置公网访问参数。
-    -   服务名称：自定义服务名称，可与工作负载名称保持一致。
-    -   集群名称：服务所在集群。
-    -   命名空间：服务所在命名空间。
-    -   关联工作负载：选择需要添加Service的工作负载。
-    -   NAT网关：
-        -   请选择对应的NAT网关，若没有请单击“创建NAT网关”创建。
-        -   请选择对应的弹性公网IP，若没有请单击“创建弹性公网IP”创建。
-        -   单击“NAT网关使用约束“完成阅读并确认后，勾选“我已阅读和同意“前面的选项。
-
-    -   端口配置：
-        -   协议：请根据业务的协议类型选择。
-        -   容器端口：容器镜像中工作负载程序实际监听端口，需用户确定。nginx程序实际监听的端口为80。
-        -   访问端口：容器端口映射端口，访问工作负载时使用，端口范围为1-65535，可任意指定。
-
-
-3.  单击“创建”。工作负载已添加“DNAT网关 \( DNAT \)”的服务。
-
-## kubectl命令行创建<a name="section1944313158364"></a>
-
-本节以nginx为例，说明kubectl命令实现集群内访问的方法。
+您可以在创建工作负载时通过kubectl命令行设置Service访问方式。本节以nginx为例，说明kubectl命令实现集群内访问的方法。
 
 **前提条件**
 
-请参见[通过Kubectl连接集群](通过Kubectl连接集群.md)配置kubectl命令，使弹性云服务器连接集群。
+请参见[通过kubectl连接集群](通过kubectl连接集群.md)配置kubectl命令，使弹性云服务器连接集群。
+
+**操作步骤**
 
 1.  登录已配置好kubectl命令的弹性云服务器。登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
 2.  创建并编辑nginx-deployment.yaml以及nginx-nat-svc.yaml文件。
@@ -127,7 +97,7 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
           - name: default-secret
     ```
 
-    以上字段的解释请参见[表3](创建无状态工作负载.md#table132326831016)。
+    以上字段的解释请参见[表3](创建无状态工作负载(Deployment).md#table132326831016)。
 
     **vi nginx-nat-svc.yaml**
 
@@ -139,19 +109,75 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
         app: nginx 
       name: nginx 
       annotations:
-        kubernetes.io/elb.class: dnat        #该参数配置为dnat用于对接nat网关服务添加dnat规则
-        kubernetes.io/natgateway.id: e4a1cfcf-29df-4ab8-a4ea-c05dc860f554       #指定nat网关ID
+        kubernetes.io/elb.class: dnat
+        kubernetes.io/natgateway.id: e4a1cfcf-29df-4ab8-a4ea-c05dc860f554
     spec: 
-      loadBalancerIP: 10.78.42.242   #公网弹性IP
+      loadBalancerIP: 10.78.42.242
       ports: 
       - name: service0 
-        port: 80             #对应界面上的访问端口 
+        port: 80 
         protocol: TCP 
-        targetPort: 80       #对应界面上的容器端口 
+        targetPort: 80 
       selector: 
         app: nginx 
-      type: LoadBalancer     #NAT网关服务需要配置为LoadBalancer类型
+      type: LoadBalancer
     ```
+
+    **表 1**  关键参数说明
+
+    <a name="table1819001615355"></a>
+    <table><thead align="left"><tr id="row1519121663519"><th class="cellrowborder" valign="top" width="30.416958304169583%" id="mcps1.2.4.1.1"><p id="p18191161619356"><a name="p18191161619356"></a><a name="p18191161619356"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="17.98820117988201%" id="mcps1.2.4.1.2"><p id="p1191141613357"><a name="p1191141613357"></a><a name="p1191141613357"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="51.594840515948405%" id="mcps1.2.4.1.3"><p id="p1919116161353"><a name="p1919116161353"></a><a name="p1919116161353"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row15191171618357"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p102011514170"><a name="p102011514170"></a><a name="p102011514170"></a>kubernetes.io/elb.class</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p1090683224719"><a name="p1090683224719"></a><a name="p1090683224719"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p16904132104710"><a name="p16904132104710"></a><a name="p16904132104710"></a>该参数配置为DNAT用于对接NAT网关服务添加DNAT规则。</p>
+    </td>
+    </tr>
+    <tr id="row81941516153513"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p4764162894719"><a name="p4764162894719"></a><a name="p4764162894719"></a>kubernetes.io/natgateway.id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p77621528184710"><a name="p77621528184710"></a><a name="p77621528184710"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p416573016509"><a name="p416573016509"></a><a name="p416573016509"></a>用于指定NAT网关ID。</p>
+    </td>
+    </tr>
+    <tr id="row201957167350"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p18966182113208"><a name="p18966182113208"></a><a name="p18966182113208"></a>loadBalancerIP</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p336744055219"><a name="p336744055219"></a><a name="p336744055219"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p2075662814474"><a name="p2075662814474"></a><a name="p2075662814474"></a>公网弹性IP。</p>
+    </td>
+    </tr>
+    <tr id="row17773517113812"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p17120639161311"><a name="p17120639161311"></a><a name="p17120639161311"></a>port</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p1120939161311"><a name="p1120939161311"></a><a name="p1120939161311"></a>Integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1120163961310"><a name="p1120163961310"></a><a name="p1120163961310"></a>对应界面上的访问端口，取值范围为1 ~ 65535。</p>
+    </td>
+    </tr>
+    <tr id="row2339171473819"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p2022520488387"><a name="p2022520488387"></a><a name="p2022520488387"></a>targetPort</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p522534816381"><a name="p522534816381"></a><a name="p522534816381"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p52251448103812"><a name="p52251448103812"></a><a name="p52251448103812"></a>对应界面上的容器端口，取值范围为1 ~ 65535。</p>
+    </td>
+    </tr>
+    <tr id="row02694357138"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p627233515132"><a name="p627233515132"></a><a name="p627233515132"></a>type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p19272143531318"><a name="p19272143531318"></a><a name="p19272143531318"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p8272035161316"><a name="p8272035161316"></a><a name="p8272035161316"></a>NAT网关服务需要配置为LoadBalancer类型。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 3.  创建工作负载。
 
@@ -200,13 +226,35 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
     其中**10.154.74.98**为弹性IP地址，80为上一步中获取的节点端口号。
 
 
-## 更新Service端口配置<a name="section1465316915912"></a>
+## 工作负载创建完成后设置<a name="section156711537124016"></a>
 
-1.  登录CCE控制台，选择左侧导航栏的“资源管理 \> 网络管理”，在**Service**页签下，单击需要更新端口配置的Service的“更新”。
-2.  更新“端口配置“参数。
-    -   协议：请根据业务的协议类型选择。
-    -   容器端口：容器镜像中工作负载程序实际监听端口，需用户确定。nginx程序实际监听的端口为80。
-    -   访问端口：容器端口映射端口，访问工作负载时使用，端口范围为1-65535，可任意指定。
+您可以在工作负载创建完成后对Service进行配置，此配置对工作负载状态无影响，且实时生效。具体操作如下：
 
-3.  单击“更新”。工作负载已更新Service。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 无状态 \( Deployment \)”，在工作负载列表页单击要设置Service的工作负载名称。
+2.  在“访问方式“页签，单击“添加Service”。
+3.  在“添加Service“页面，访问类型选择“DNAT网关 \( DNAT \)”。
+4.  设置DNAT网关参数。
+    -   **服务名称：**自定义服务名称，可与工作负载名称保持一致。
+    -   **集群名称：**工作负载所在集群，此处不可修改。
+    -   **命名空间：**工作负载所在命名空间，此处不可修改。
+    -   **关联工作负载：**要添加Service的工作负载，此处不可修改。
+    -   **服务亲和：**
+        -   集群级别：将外部流量路由到集群下所有的节点，并且隐藏客户端源IP。
+        -   节点级别：将外部流量路由到服务关联的负载所在的节点，并且保留客户端源IP。
+
+    -   **NAT网关：**
+        -   请选择对应的NAT网关，若没有请单击“创建NAT网关”创建。NAT网关需与当前集群处于相同VPC。
+        -   请选择对应的弹性公网IP，若没有请单击“创建弹性公网IP”创建。
+        -   确认并阅读“NAT网关使用约束“后，单击勾选“我已阅读和同意“。
+
+    -   **端口配置：**
+        -   协议：请根据业务的协议类型选择。
+        -   容器端口：容器镜像中工作负载程序实际监听端口，需用户确定。nginx程序实际监听的端口为80。
+        -   访问端口：容器端口映射端口，访问工作负载时使用，端口范围为1-65535，可任意指定。
+
+5.  单击“创建”。工作负载已添加“DNAT网关 \( DNAT \)”的服务。
+
+## 更新Service<a name="section1335271211407"></a>
+
+暂不支持DNAT网关 \( DNAT \)的更新。
 

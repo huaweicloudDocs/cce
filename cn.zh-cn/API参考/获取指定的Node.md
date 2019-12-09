@@ -2,7 +2,7 @@
 
 ## 功能介绍<a name="section52726081"></a>
 
-This API is used to read the specified Node.
+该API用于获取指定的Node。
 
 ## URI<a name="section4772685"></a>
 
@@ -32,7 +32,7 @@ GET /api/v1/nodes/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p18391853"><a name="p18391853"></a><a name="p18391853"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.36363636363636%" headers="mcps1.2.4.1.3 "><p id="p13345138"><a name="p13345138"></a><a name="p13345138"></a>Name of the Node.</p>
+<td class="cellrowborder" valign="top" width="36.36363636363636%" headers="mcps1.2.4.1.3 "><p id="p13345138"><a name="p13345138"></a><a name="p13345138"></a>IP of the Node.</p>
 </td>
 </tr>
 <tr id="row52997380"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p64929415"><a name="p64929415"></a><a name="p64929415"></a>exact</p>
@@ -60,7 +60,7 @@ N/A
 
 **响应参数：**
 
-响应参数的详细描述请参见[表3](公共响应参数.md#zh-cn_topic_0079614930_table52931650)。
+响应参数的详细描述请参见[表3](响应数据结构.md#zh-cn_topic_0079614930_table52931650)。
 
 **响应示例：**
 
@@ -214,14 +214,14 @@ N/A
             },
             {
                 "names": [
-                    "100.125.5.235:20202/test/apache-php:latest"
+                    "10.125.5.235:20202/test/apache-php:latest"
                 ],
                 "sizeBytes": 244663227
             },
             {
                 "names": [
-                    "100.125.5.235:20202/test/redis:latest",
-                    "100.125.5.235:20202/test/redis:v1"
+                    "10.125.5.235:20202/test/redis:latest",
+                    "10.125.5.235:20202/test/redis:v1"
                 ],
                 "sizeBytes": 109208225
             },

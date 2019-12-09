@@ -8,73 +8,73 @@
 
 GET /api/v1/namespaces/\{namespace\}/secrets
 
-[表1](#t11883f44ee8e465e93615fe19d7d4f59)  描述该API的参数。
+[表1](#table18879133105311)  描述该API的参数。
 
 **表 1**  参数描述
 
-<a name="t11883f44ee8e465e93615fe19d7d4f59"></a>
-<table><thead align="left"><tr id="rad26db413d7d42108494dad8eb868789"><th class="cellrowborder" valign="top" width="22.06%" id="mcps1.2.4.1.1"><p id="a43f8f66ef278415a82e2ca2a7084290b"><a name="a43f8f66ef278415a82e2ca2a7084290b"></a><a name="a43f8f66ef278415a82e2ca2a7084290b"></a>参数</p>
+<a name="table18879133105311"></a>
+<table><thead align="left"><tr id="row118791033195317"><th class="cellrowborder" valign="top" width="22.06%" id="mcps1.2.4.1.1"><p id="p58794331533"><a name="p58794331533"></a><a name="p58794331533"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="15.1%" id="mcps1.2.4.1.2"><p id="p27344536201625"><a name="p27344536201625"></a><a name="p27344536201625"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="15.1%" id="mcps1.2.4.1.2"><p id="p10879163355311"><a name="p10879163355311"></a><a name="p10879163355311"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="62.839999999999996%" id="mcps1.2.4.1.3"><p id="p314980201625"><a name="p314980201625"></a><a name="p314980201625"></a>描述</p>
+<th class="cellrowborder" valign="top" width="62.839999999999996%" id="mcps1.2.4.1.3"><p id="p08791733185317"><a name="p08791733185317"></a><a name="p08791733185317"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="rc373bff7df694eaa9a1911f3ee9d056e"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="a8e10fa81959d42408405533bbecc2298"><a name="a8e10fa81959d42408405533bbecc2298"></a><a name="a8e10fa81959d42408405533bbecc2298"></a>namespace</p>
+<tbody><tr id="row1879193375310"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="p7879633155316"><a name="p7879633155316"></a><a name="p7879633155316"></a>namespace</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="ab3ab30f6f38a44cba2c77f92496078f6"><a name="ab3ab30f6f38a44cba2c77f92496078f6"></a><a name="ab3ab30f6f38a44cba2c77f92496078f6"></a>Yes</p>
+<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="p88791833195317"><a name="p88791833195317"></a><a name="p88791833195317"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p658610593411"><a name="p658610593411"></a><a name="p658610593411"></a>Namespace是对一组资源和对象的抽象集合，用来将系统内部的对象划分为不同的项目组或用户组。</p>
-</td>
-</tr>
-<tr id="r0f899f4f8ea54f2fa893c3e0cf87630c"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="a59bb22f28087453ca02324478ffbeacb"><a name="a59bb22f28087453ca02324478ffbeacb"></a><a name="a59bb22f28087453ca02324478ffbeacb"></a>pretty</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="a2efc413ffd07407c95e92b4e6d9a897e"><a name="a2efc413ffd07407c95e92b4e6d9a897e"></a><a name="a2efc413ffd07407c95e92b4e6d9a897e"></a>No</p>
-</td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p28675043"><a name="p28675043"></a><a name="p28675043"></a>设置为true后，会打印漂亮的输出结果。</p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="aff28fe9aebcf437cba4de7a9ead856e9"><a name="aff28fe9aebcf437cba4de7a9ead856e9"></a><a name="aff28fe9aebcf437cba4de7a9ead856e9"></a>Object name and auth scope, such as for teams and projects.</p>
 </td>
 </tr>
-<tr id="r7e813ae72466493da1ae3476c4217a9a"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="aa9c64e4ab78b4acd88c66b1e801ca35a"><a name="aa9c64e4ab78b4acd88c66b1e801ca35a"></a><a name="aa9c64e4ab78b4acd88c66b1e801ca35a"></a>fieldSelector</p>
+<tr id="row20879113316534"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="p4879433115313"><a name="p4879433115313"></a><a name="p4879433115313"></a>pretty</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="a0d4037ffde7e416fa83b9299a1a4a87a"><a name="a0d4037ffde7e416fa83b9299a1a4a87a"></a><a name="a0d4037ffde7e416fa83b9299a1a4a87a"></a>No</p>
+<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="p1387923345314"><a name="p1387923345314"></a><a name="p1387923345314"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p49874218"><a name="p49874218"></a><a name="p49874218"></a>根据资源对象的field字段进行筛选，不设置该参数时默认选择所有资源对象。</p>
-</td>
-</tr>
-<tr id="r3a7c2bd394cc4b38a62660d120d35a61"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079614896_p628523492519"><a name="zh-cn_topic_0079614896_p628523492519"></a><a name="zh-cn_topic_0079614896_p628523492519"></a>includeUninitialized</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="aab3047b805ad4854aeefd8db47cf4d99"><a name="aab3047b805ad4854aeefd8db47cf4d99"></a><a name="aab3047b805ad4854aeefd8db47cf4d99"></a>No</p>
-</td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="a163adfe9b2884ce09f91ddc74ec8c32a"><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a><a name="a163adfe9b2884ce09f91ddc74ec8c32a"></a><span id="ph984104618246"><a name="ph984104618246"></a><a name="ph984104618246"></a>设置为true后，未初始化的资源也会包含在删除列表里。</span></p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="a0a7b2841e1c7435eb425115739a1ce01"><a name="a0a7b2841e1c7435eb425115739a1ce01"></a><a name="a0a7b2841e1c7435eb425115739a1ce01"></a>If 'true', then the output is pretty printed.</p>
 </td>
 </tr>
-<tr id="r3e03b3ed19724be4b39fe666ed7011f5"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="a43a73c63fa9546e080760e7e88d5ecf2"><a name="a43a73c63fa9546e080760e7e88d5ecf2"></a><a name="a43a73c63fa9546e080760e7e88d5ecf2"></a>labelSelector</p>
+<tr id="row118791233185320"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="p9879123365318"><a name="p9879123365318"></a><a name="p9879123365318"></a>fieldSelector</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="abe9b1918c28c44a09ba2c13b3fdfac83"><a name="abe9b1918c28c44a09ba2c13b3fdfac83"></a><a name="abe9b1918c28c44a09ba2c13b3fdfac83"></a>No</p>
+<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="p2879933175312"><a name="p2879933175312"></a><a name="p2879933175312"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p1930564715251"><a name="p1930564715251"></a><a name="p1930564715251"></a>根据资源对象的label字段进行筛选，不设置该参数时默认选择所有资源对象。</p>
-</td>
-</tr>
-<tr id="rb24b664f262244d8817205f6426fc18d"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="ab92f7219f16340be9ae9a42c2702afc7"><a name="ab92f7219f16340be9ae9a42c2702afc7"></a><a name="ab92f7219f16340be9ae9a42c2702afc7"></a>resourceVersion</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="a09235cc3ced749dcbb2940e0d05fb814"><a name="a09235cc3ced749dcbb2940e0d05fb814"></a><a name="a09235cc3ced749dcbb2940e0d05fb814"></a>No</p>
-</td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="a5267faf2beb54f448afd8d0566d2e815"><a name="a5267faf2beb54f448afd8d0566d2e815"></a><a name="a5267faf2beb54f448afd8d0566d2e815"></a><span id="ph14746102416396"><a name="ph14746102416396"></a><a name="ph14746102416396"></a>ResourceVersion表示该资源对象内部版本。</span></p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="a276f514c7e054fe594be37cb743f5173"><a name="a276f514c7e054fe594be37cb743f5173"></a><a name="a276f514c7e054fe594be37cb743f5173"></a>A selector to restrict the list of returned objects by their fields. Defaults to everything.</p>
 </td>
 </tr>
-<tr id="r905443bc04e941289138dc2173e87bc7"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="acce97a3e928a45deb3f0d61bcd998746"><a name="acce97a3e928a45deb3f0d61bcd998746"></a><a name="acce97a3e928a45deb3f0d61bcd998746"></a>timeoutSeconds</p>
+<tr id="row98791533185313"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="p188799336537"><a name="p188799336537"></a><a name="p188799336537"></a>includeUninitialized</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="a4b9e930dbbf940d297016f43b9858f87"><a name="a4b9e930dbbf940d297016f43b9858f87"></a><a name="a4b9e930dbbf940d297016f43b9858f87"></a>No</p>
+<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="p0879133316539"><a name="p0879133316539"></a><a name="p0879133316539"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p2133200"><a name="p2133200"></a><a name="p2133200"></a>表示调用list/watch的超时时间。</p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p887911338531"><a name="p887911338531"></a><a name="p887911338531"></a>A selector to restrict the list of returned objects by their fields. Defaults to everything.</p>
 </td>
 </tr>
-<tr id="r76de6a58993848c7953e1d93a68eb6ac"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="ad538da99548e4303a160e21d889620a2"><a name="ad538da99548e4303a160e21d889620a2"></a><a name="ad538da99548e4303a160e21d889620a2"></a>watch</p>
+<tr id="row1587923315319"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="p3880333145318"><a name="p3880333145318"></a><a name="p3880333145318"></a>labelSelector</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="a064e1d3de451400dbb80b180df98254e"><a name="a064e1d3de451400dbb80b180df98254e"></a><a name="a064e1d3de451400dbb80b180df98254e"></a>No</p>
+<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="p1188033319536"><a name="p1188033319536"></a><a name="p1188033319536"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p176837905310"><a name="p176837905310"></a><a name="p176837905310"></a>监视指定资源的更改，并将添加、更新和删除通知的流返回。</p>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="ac0386b9e9729419d808bfc1e4da82d9c"><a name="ac0386b9e9729419d808bfc1e4da82d9c"></a><a name="ac0386b9e9729419d808bfc1e4da82d9c"></a>A selector to restrict the list of returned objects by their labels. Defaults to everything.</p>
+</td>
+</tr>
+<tr id="row138801333205316"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="p9880203385312"><a name="p9880203385312"></a><a name="p9880203385312"></a>resourceVersion</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="p1088093335315"><a name="p1088093335315"></a><a name="p1088093335315"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="p18880113318539"><a name="p18880113318539"></a><a name="p18880113318539"></a>When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history.</p>
+</td>
+</tr>
+<tr id="row5880113312536"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="p1388011337534"><a name="p1388011337534"></a><a name="p1388011337534"></a>timeoutSeconds</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="p1880193313532"><a name="p1880193313532"></a><a name="p1880193313532"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="a8e45bcc0a7704befb090dc6e70c7c134"><a name="a8e45bcc0a7704befb090dc6e70c7c134"></a><a name="a8e45bcc0a7704befb090dc6e70c7c134"></a>Timeout for the list/watch call.</p>
+</td>
+</tr>
+<tr id="row988083395314"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="p1088017337539"><a name="p1088017337539"></a><a name="p1088017337539"></a>watch</p>
+</td>
+<td class="cellrowborder" valign="top" width="15.1%" headers="mcps1.2.4.1.2 "><p id="p78808339539"><a name="p78808339539"></a><a name="p78808339539"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.839999999999996%" headers="mcps1.2.4.1.3 "><p id="ab64449bf39f74dfc8a50ec513c46f5bf"><a name="ab64449bf39f74dfc8a50ec513c46f5bf"></a><a name="ab64449bf39f74dfc8a50ec513c46f5bf"></a>Watch for changes to the described resources and return them as a stream of add, update, and remove notifications. Specify resourceVersion.</p>
 </td>
 </tr>
 </tbody>
@@ -93,7 +93,7 @@ N/A
 <a name="tc3c49e5e5dee441fb7a7f014a4c81900"></a>
 <table><thead align="left"><tr id="re436b46465e04931b74b88d37a1b9677"><th class="cellrowborder" valign="top" width="25.25%" id="mcps1.2.4.1.1"><p id="a28a2f98442b6474da3b695fefeb1cf3d"><a name="a28a2f98442b6474da3b695fefeb1cf3d"></a><a name="a28a2f98442b6474da3b695fefeb1cf3d"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.320000000000004%" id="mcps1.2.4.1.2"><p id="p6199478201625"><a name="p6199478201625"></a><a name="p6199478201625"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.320000000000004%" id="mcps1.2.4.1.2"><p id="p6199478201625"><a name="p6199478201625"></a><a name="p6199478201625"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.43%" id="mcps1.2.4.1.3"><p id="p32395734201625"><a name="p32395734201625"></a><a name="p32395734201625"></a>描述</p>
 </th>
@@ -103,28 +103,28 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.320000000000004%" headers="mcps1.2.4.1.2 "><p id="a8602a93578634e13b9187d318ed342ff"><a name="a8602a93578634e13b9187d318ed342ff"></a><a name="a8602a93578634e13b9187d318ed342ff"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="aa56cd02ff7f54177b717d0f5bb3b3a15"><a name="aa56cd02ff7f54177b717d0f5bb3b3a15"></a><a name="aa56cd02ff7f54177b717d0f5bb3b3a15"></a><span id="ph717617234412"><a name="ph717617234412"></a><a name="ph717617234412"></a>表示API版本。</span></p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="p114739177545"><a name="p114739177545"></a><a name="p114739177545"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</p>
 </td>
 </tr>
 <tr id="rfa10b724cdbc4eef815c3d3d64260ede"><td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.4.1.1 "><p id="a7192cf844ba34d6b912e4aaf50781fd9"><a name="a7192cf844ba34d6b912e4aaf50781fd9"></a><a name="a7192cf844ba34d6b912e4aaf50781fd9"></a>kind</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.320000000000004%" headers="mcps1.2.4.1.2 "><p id="abf2d542e2a384b5383b8357d555d1bed"><a name="abf2d542e2a384b5383b8357d555d1bed"></a><a name="abf2d542e2a384b5383b8357d555d1bed"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615047_p30014175"><a name="zh-cn_topic_0079615047_p30014175"></a><a name="zh-cn_topic_0079615047_p30014175"></a>表示API类型。</p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="a0bd2ec87801c43058b892f11b50d0f07"><a name="a0bd2ec87801c43058b892f11b50d0f07"></a><a name="a0bd2ec87801c43058b892f11b50d0f07"></a>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated.</p>
 </td>
 </tr>
 <tr id="r20a89a0b59b24dfc8956b125482f1421"><td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.4.1.1 "><p id="af34c3d5c8cfb4eb4890ba46998f81bce"><a name="af34c3d5c8cfb4eb4890ba46998f81bce"></a><a name="af34c3d5c8cfb4eb4890ba46998f81bce"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.320000000000004%" headers="mcps1.2.4.1.2 "><p id="a7af91f6187e54c6ea63970053896337e"><a name="a7af91f6187e54c6ea63970053896337e"></a><a name="a7af91f6187e54c6ea63970053896337e"></a><a href="#tff9df0051888403eb0196353f3feb3b6">表3</a></p>
+<td class="cellrowborder" valign="top" width="30.320000000000004%" headers="mcps1.2.4.1.2 "><p id="a7af91f6187e54c6ea63970053896337e"><a name="a7af91f6187e54c6ea63970053896337e"></a><a name="a7af91f6187e54c6ea63970053896337e"></a><a href="#tff9df0051888403eb0196353f3feb3b6">metadata</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="ad95d3dbaaae4478a8cd5e6242f1a1331"><a name="ad95d3dbaaae4478a8cd5e6242f1a1331"></a><a name="ad95d3dbaaae4478a8cd5e6242f1a1331"></a><span id="ph1432974819413"><a name="ph1432974819413"></a><a name="ph1432974819413"></a>-</span></p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="p16201547125414"><a name="p16201547125414"></a><a name="p16201547125414"></a>Standard list metadata.</p>
 </td>
 </tr>
 <tr id="r341420eda4f94280a331ac7a3cfc6215"><td class="cellrowborder" valign="top" width="25.25%" headers="mcps1.2.4.1.1 "><p id="a289ba9b3f09f4b6dbe5490422a339709"><a name="a289ba9b3f09f4b6dbe5490422a339709"></a><a name="a289ba9b3f09f4b6dbe5490422a339709"></a>items</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.320000000000004%" headers="mcps1.2.4.1.2 "><p id="abce9149f44ba43009cc66ac939990e96"><a name="abce9149f44ba43009cc66ac939990e96"></a><a name="abce9149f44ba43009cc66ac939990e96"></a><a href="创建Secret.md#zh-cn_topic_0079614900_ref458786458">表2</a></p>
+<td class="cellrowborder" valign="top" width="30.320000000000004%" headers="mcps1.2.4.1.2 "><p id="p616612559218"><a name="p616612559218"></a><a name="p616612559218"></a>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="a87a75aac697743dfb099e359013633d9"><a name="a87a75aac697743dfb099e359013633d9"></a><a name="a87a75aac697743dfb099e359013633d9"></a><span id="ph13603175894114"><a name="ph13603175894114"></a><a name="ph13603175894114"></a>-</span></p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="p0900115610545"><a name="p0900115610545"></a><a name="p0900115610545"></a>List of services.详情请参见<a href="创建Secret.md#zh-cn_topic_0079614900_ref458786458">表2</a>。</p>
 </td>
 </tr>
 </tbody>
@@ -135,7 +135,7 @@ N/A
 <a name="tff9df0051888403eb0196353f3feb3b6"></a>
 <table><thead align="left"><tr id="r12daa9f46eeb4a5c83aea6cda1f4e4c5"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="a84714f3753cc47eeb3d1a6df8ce5dc4b"><a name="a84714f3753cc47eeb3d1a6df8ce5dc4b"></a><a name="a84714f3753cc47eeb3d1a6df8ce5dc4b"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.509999999999998%" id="mcps1.2.4.1.2"><p id="p19301202201625"><a name="p19301202201625"></a><a name="p19301202201625"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.509999999999998%" id="mcps1.2.4.1.2"><p id="p19301202201625"><a name="p19301202201625"></a><a name="p19301202201625"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.43%" id="mcps1.2.4.1.3"><p id="p19893500201625"><a name="p19893500201625"></a><a name="p19893500201625"></a>描述</p>
 </th>
@@ -145,14 +145,14 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.509999999999998%" headers="mcps1.2.4.1.2 "><p id="a25845db8f0d44529ab7a01fc6d5403be"><a name="a25845db8f0d44529ab7a01fc6d5403be"></a><a name="a25845db8f0d44529ab7a01fc6d5403be"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="a308d721c66be49d380e37fb00f8ef4a4"><a name="a308d721c66be49d380e37fb00f8ef4a4"></a><a name="a308d721c66be49d380e37fb00f8ef4a4"></a><span id="ph516213221259"><a name="ph516213221259"></a><a name="ph516213221259"></a>ResourceVersion表示该资源对象内部版本</span><span id="ph188361713112614"><a name="ph188361713112614"></a><a name="ph188361713112614"></a>，可以用来优化并发性能和监视资源变化，</span><span id="ph173071947202820"><a name="ph173071947202820"></a><a name="ph173071947202820"></a>系统内部使用，只读项</span><span id="ph577585316285"><a name="ph577585316285"></a><a name="ph577585316285"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="p196130199554"><a name="p196130199554"></a><a name="p196130199554"></a>String that identifies the server's internal version of this object that can be used by clients to determine when objects have changed. Value must be treated as opaque by clients and passed unmodified back to the server. Populated by the system. Read-only.</p>
 </td>
 </tr>
 <tr id="r7353b3d91e5b42338bc6ddbfa8d7f715"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="a0b0e25db45a44218be3e42b910afdd08"><a name="a0b0e25db45a44218be3e42b910afdd08"></a><a name="a0b0e25db45a44218be3e42b910afdd08"></a>selfLink</p>
 </td>
 <td class="cellrowborder" valign="top" width="30.509999999999998%" headers="mcps1.2.4.1.2 "><p id="a4f1ceb0744f04795b0879ccc02fca6a9"><a name="a4f1ceb0744f04795b0879ccc02fca6a9"></a><a name="a4f1ceb0744f04795b0879ccc02fca6a9"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="a818ff19e70cd4d8c9d4a7acea7bc59fb"><a name="a818ff19e70cd4d8c9d4a7acea7bc59fb"></a><a name="a818ff19e70cd4d8c9d4a7acea7bc59fb"></a><span id="ph12354153614421"><a name="ph12354153614421"></a><a name="ph12354153614421"></a>SelfLink 是该资源对象的 URL。 系统内部使用，只读项。.</span></p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="p215613323556"><a name="p215613323556"></a><a name="p215613323556"></a>SelfLink is a URL representing this object. Populated by the system. Read-only.</p>
 </td>
 </tr>
 </tbody>
@@ -239,7 +239,7 @@ N/A
 </thead>
 <tbody><tr id="r5ad486edb0db460294cdd49a495f30a6"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="a16bfcc1de96142f6a2f458546b8722ed"><a name="a16bfcc1de96142f6a2f458546b8722ed"></a><a name="a16bfcc1de96142f6a2f458546b8722ed"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614896_p815332217101"><a name="zh-cn_topic_0079614896_p815332217101"></a><a name="zh-cn_topic_0079614896_p815332217101"></a><span id="ph08511419154315"><a name="ph08511419154315"></a><a name="ph08511419154315"></a>操作成功，返回secret资源对象</span><span id="ph76249463430"><a name="ph76249463430"></a><a name="ph76249463430"></a>。</span></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614896_p815332217101"><a name="zh-cn_topic_0079614896_p815332217101"></a><a name="zh-cn_topic_0079614896_p815332217101"></a>This operation succeeds, and a secret resource object is returned.</p>
 </td>
 </tr>
 </tbody>

@@ -49,7 +49,7 @@ PUT /api/v1/namespaces/\{namespace\}/pods/\{name\}/status
 
 **请求参数：**
 
-请求参数的详细描述请参见[表3](公共响应参数.md#zh-cn_topic_0079614930_table52931650)。
+请求参数的详细描述请参见[表3](响应数据结构.md#zh-cn_topic_0079614930_table52931650)。
 
 **请求示例：**
 

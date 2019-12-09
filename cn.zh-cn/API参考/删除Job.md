@@ -79,7 +79,7 @@ DELETE /apis/batch/v1/namespaces/\{namespace\}/jobs/\{name\}
 </th>
 <th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.2"><p id="p31242518"><a name="p31242518"></a><a name="p31242518"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p47616044"><a name="p47616044"></a><a name="p47616044"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p47616044"><a name="p47616044"></a><a name="p47616044"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.796020397960206%" id="mcps1.2.5.1.4"><p id="p31694362"><a name="p31694362"></a><a name="p31694362"></a>描述</p>
 </th>
@@ -119,7 +119,7 @@ DELETE /apis/batch/v1/namespaces/\{namespace\}/jobs/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.2 "><p id="p57652939"><a name="p57652939"></a><a name="p57652939"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p39376500"><a name="p39376500"></a><a name="p39376500"></a><a href="#d0e41122">表3</a></p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p39376500"><a name="p39376500"></a><a name="p39376500"></a><a href="#d0e41122">preconditions</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.796020397960206%" headers="mcps1.2.5.1.4 "><p id="p49983653"><a name="p49983653"></a><a name="p49983653"></a>Must be fulfilled before a deletion is carried out. If not possible, a 409 Conflict status will be returned.</p>
 </td>
@@ -152,7 +152,7 @@ DELETE /apis/batch/v1/namespaces/\{namespace\}/jobs/\{name\}
 </th>
 <th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.2"><p id="p47386251"><a name="p47386251"></a><a name="p47386251"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p13081136"><a name="p13081136"></a><a name="p13081136"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p13081136"><a name="p13081136"></a><a name="p13081136"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.796020397960206%" id="mcps1.2.5.1.4"><p id="p52939081"><a name="p52939081"></a><a name="p52939081"></a>描述</p>
 </th>
@@ -162,7 +162,7 @@ DELETE /apis/batch/v1/namespaces/\{namespace\}/jobs/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.2 "><p id="p16450015"><a name="p16450015"></a><a name="p16450015"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p57382875"><a name="p57382875"></a><a name="p57382875"></a>types.UID</p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p57382875"><a name="p57382875"></a><a name="p57382875"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.796020397960206%" headers="mcps1.2.5.1.4 "><p id="p17501266"><a name="p17501266"></a><a name="p17501266"></a>Specifies the target UID.</p>
 </td>
@@ -208,7 +208,7 @@ DELETE /apis/batch/v1/namespaces/\{namespace\}/jobs/\{name\}
 
 **响应参数：**
 
-响应参数的详细描述请参见[表4](删除Secret.md#zh-cn_topic_0079615047_table30941925)。
+响应参数的详细描述请参见[表2](删除Secret.md#table13766144711235)。
 
 **响应示例：**
 

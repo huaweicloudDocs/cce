@@ -72,7 +72,7 @@ N/A
 <a name="t7aa9de1153e9466cbfcaa9af17a24772"></a>
 <table><thead align="left"><tr id="rfd59f4d1ef4645dcbc00db38b6c54ec5"><th class="cellrowborder" valign="top" width="25.06%" id="mcps1.2.4.1.1"><p id="ac004438109724f0ea79da803b3ac44a9"><a name="ac004438109724f0ea79da803b3ac44a9"></a><a name="ac004438109724f0ea79da803b3ac44a9"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p66405260201657"><a name="p66405260201657"></a><a name="p66405260201657"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.14%" id="mcps1.2.4.1.2"><p id="p66405260201657"><a name="p66405260201657"></a><a name="p66405260201657"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.800000000000004%" id="mcps1.2.4.1.3"><p id="p10116961201657"><a name="p10116961201657"></a><a name="p10116961201657"></a>描述</p>
 </th>
@@ -94,21 +94,21 @@ N/A
 </tr>
 <tr id="rc9a4369ddb0a4e7585b3771ffdd62fad"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="abead9b50c38d480582f847f6c0cb2283"><a name="abead9b50c38d480582f847f6c0cb2283"></a><a name="abead9b50c38d480582f847f6c0cb2283"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="adf64868001c24986879cc87a8a78ef49"><a name="adf64868001c24986879cc87a8a78ef49"></a><a name="adf64868001c24986879cc87a8a78ef49"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table47756489">表11</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="adf64868001c24986879cc87a8a78ef49"><a name="adf64868001c24986879cc87a8a78ef49"></a><a name="adf64868001c24986879cc87a8a78ef49"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="a3b00398fdf784e649341b6eced5f23bd"><a name="a3b00398fdf784e649341b6eced5f23bd"></a><a name="a3b00398fdf784e649341b6eced5f23bd"></a>Standard object's metadata.</p>
 </td>
 </tr>
 <tr id="ra9f74d235b124f3fac54e4d37a087ccc"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="ad9286ff8d41c4f36be6d6027b7b2fcf0"><a name="ad9286ff8d41c4f36be6d6027b7b2fcf0"></a><a name="ad9286ff8d41c4f36be6d6027b7b2fcf0"></a>spec</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="ac8089743481d43f29e661eb361515a35"><a name="ac8089743481d43f29e661eb361515a35"></a><a name="ac8089743481d43f29e661eb361515a35"></a><a href="#t4164eafb5c9d4390ad675439f474a85e">表4</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="ac8089743481d43f29e661eb361515a35"><a name="ac8089743481d43f29e661eb361515a35"></a><a name="ac8089743481d43f29e661eb361515a35"></a><a href="#t4164eafb5c9d4390ad675439f474a85e">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="a4720c0b59b204bbd8a6df046152927a3"><a name="a4720c0b59b204bbd8a6df046152927a3"></a><a name="a4720c0b59b204bbd8a6df046152927a3"></a>Spec defines the desired characteristics of a volume requested by a pod author.</p>
 </td>
 </tr>
 <tr id="r4c629d1aa6b2423eb36f5f1ac054d93b"><td class="cellrowborder" valign="top" width="25.06%" headers="mcps1.2.4.1.1 "><p id="a21272588efee40558687df6d954e228c"><a name="a21272588efee40558687df6d954e228c"></a><a name="a21272588efee40558687df6d954e228c"></a>status</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="a9f722c132fc84336a6f7270ee364ec2c"><a name="a9f722c132fc84336a6f7270ee364ec2c"></a><a name="a9f722c132fc84336a6f7270ee364ec2c"></a><a href="#t1ca834ff62b74f3998c623e794646bf2">表3</a></p>
+<td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="a9f722c132fc84336a6f7270ee364ec2c"><a name="a9f722c132fc84336a6f7270ee364ec2c"></a><a name="a9f722c132fc84336a6f7270ee364ec2c"></a><a href="#t1ca834ff62b74f3998c623e794646bf2">status</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="a3f2dfa6a895348dfb0228b1ef4343a9a"><a name="a3f2dfa6a895348dfb0228b1ef4343a9a"></a><a name="a3f2dfa6a895348dfb0228b1ef4343a9a"></a>Status represents the current information/status of a persistent volume claim. Read-only.</p>
 </td>
@@ -121,7 +121,7 @@ N/A
 <a name="t1ca834ff62b74f3998c623e794646bf2"></a>
 <table><thead align="left"><tr id="r98c546e04cf543b5a561af4aabfcd61f"><th class="cellrowborder" valign="top" width="24.872487248724873%" id="mcps1.2.4.1.1"><p id="a242e237592044195919ed0df4e79a4f7"><a name="a242e237592044195919ed0df4e79a4f7"></a><a name="a242e237592044195919ed0df4e79a4f7"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.51305130513051%" id="mcps1.2.4.1.2"><p id="p18886373201657"><a name="p18886373201657"></a><a name="p18886373201657"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.51305130513051%" id="mcps1.2.4.1.2"><p id="p18886373201657"><a name="p18886373201657"></a><a name="p18886373201657"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.61446144614462%" id="mcps1.2.4.1.3"><p id="p53401283201657"><a name="p53401283201657"></a><a name="p53401283201657"></a>描述</p>
 </th>
@@ -129,7 +129,7 @@ N/A
 </thead>
 <tbody><tr id="r2f59ae4ae68046aea6ec46df95dd9c4e"><td class="cellrowborder" valign="top" width="24.872487248724873%" headers="mcps1.2.4.1.1 "><p id="aa0a7abc55eef456ab71e34dc390e859d"><a name="aa0a7abc55eef456ab71e34dc390e859d"></a><a name="aa0a7abc55eef456ab71e34dc390e859d"></a>accessModes</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.51305130513051%" headers="mcps1.2.4.1.2 "><p id="a460e0a5fa5874728b9fd427f0e23fc74"><a name="a460e0a5fa5874728b9fd427f0e23fc74"></a><a name="a460e0a5fa5874728b9fd427f0e23fc74"></a>String Array</p>
+<td class="cellrowborder" valign="top" width="30.51305130513051%" headers="mcps1.2.4.1.2 "><p id="a460e0a5fa5874728b9fd427f0e23fc74"><a name="a460e0a5fa5874728b9fd427f0e23fc74"></a><a name="a460e0a5fa5874728b9fd427f0e23fc74"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.61446144614462%" headers="mcps1.2.4.1.3 "><p id="a25062b3b263144f8b8d8a965cb00b8cd"><a name="a25062b3b263144f8b8d8a965cb00b8cd"></a><a name="a25062b3b263144f8b8d8a965cb00b8cd"></a>AccessModes contains the actual access modes the volume backing the PVC has.</p>
 </td>
@@ -156,7 +156,7 @@ N/A
 <a name="t4164eafb5c9d4390ad675439f474a85e"></a>
 <table><thead align="left"><tr id="r05376820b7ad45bf87dafc988b9c4cf8"><th class="cellrowborder" valign="top" width="24.69%" id="mcps1.2.4.1.1"><p id="a7bcbf99a8dce4bab9aa925d83daf6882"><a name="a7bcbf99a8dce4bab9aa925d83daf6882"></a><a name="a7bcbf99a8dce4bab9aa925d83daf6882"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="30.7%" id="mcps1.2.4.1.2"><p id="p62900204201657"><a name="p62900204201657"></a><a name="p62900204201657"></a>类型</p>
+<th class="cellrowborder" valign="top" width="30.7%" id="mcps1.2.4.1.2"><p id="p62900204201657"><a name="p62900204201657"></a><a name="p62900204201657"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.61%" id="mcps1.2.4.1.3"><p id="p61751746201657"><a name="p61751746201657"></a><a name="p61751746201657"></a>描述</p>
 </th>
@@ -171,7 +171,7 @@ N/A
 </tr>
 <tr id="rb0944447910642e0a84c9bde36fdc702"><td class="cellrowborder" valign="top" width="24.69%" headers="mcps1.2.4.1.1 "><p id="a527d10ee2d3e4df28aaa628a13cfad85"><a name="a527d10ee2d3e4df28aaa628a13cfad85"></a><a name="a527d10ee2d3e4df28aaa628a13cfad85"></a>accessModes</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.7%" headers="mcps1.2.4.1.2 "><p id="a17e1b834330845478dc85b2e47d598fe"><a name="a17e1b834330845478dc85b2e47d598fe"></a><a name="a17e1b834330845478dc85b2e47d598fe"></a>String Array</p>
+<td class="cellrowborder" valign="top" width="30.7%" headers="mcps1.2.4.1.2 "><p id="a17e1b834330845478dc85b2e47d598fe"><a name="a17e1b834330845478dc85b2e47d598fe"></a><a name="a17e1b834330845478dc85b2e47d598fe"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.61%" headers="mcps1.2.4.1.3 "><p id="a993289c826674b1c8ed8da69af22ab5b"><a name="a993289c826674b1c8ed8da69af22ab5b"></a><a name="a993289c826674b1c8ed8da69af22ab5b"></a>AccessModes contains the desired access modes the volume should have.</p>
 </td>
@@ -185,14 +185,14 @@ N/A
 </tr>
 <tr id="rd515c3debae84303875010efa59cc56c"><td class="cellrowborder" valign="top" width="24.69%" headers="mcps1.2.4.1.1 "><p id="a0e2ec7da8cdc4ddeb9bcb96d22c32f9d"><a name="a0e2ec7da8cdc4ddeb9bcb96d22c32f9d"></a><a name="a0e2ec7da8cdc4ddeb9bcb96d22c32f9d"></a>resources</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.7%" headers="mcps1.2.4.1.2 "><p id="ae293d86539c34ff5850ea69be84b1e0b"><a name="ae293d86539c34ff5850ea69be84b1e0b"></a><a name="ae293d86539c34ff5850ea69be84b1e0b"></a><a href="#t16d10e9c67874eceb0cdea4276fbca5b">表5</a></p>
+<td class="cellrowborder" valign="top" width="30.7%" headers="mcps1.2.4.1.2 "><p id="ae293d86539c34ff5850ea69be84b1e0b"><a name="ae293d86539c34ff5850ea69be84b1e0b"></a><a name="ae293d86539c34ff5850ea69be84b1e0b"></a><a href="#t16d10e9c67874eceb0cdea4276fbca5b">resources</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.61%" headers="mcps1.2.4.1.3 "><p id="ab31494d746694ff78a261f5899b45e41"><a name="ab31494d746694ff78a261f5899b45e41"></a><a name="ab31494d746694ff78a261f5899b45e41"></a>Resources represents the minimum resources the volume should have.</p>
 </td>
 </tr>
 <tr id="re90dd6dcb5954f12a9c14df9f118d4e2"><td class="cellrowborder" valign="top" width="24.69%" headers="mcps1.2.4.1.1 "><p id="adeeaf8036a1d4709b074e3f7fe962490"><a name="adeeaf8036a1d4709b074e3f7fe962490"></a><a name="adeeaf8036a1d4709b074e3f7fe962490"></a>selector</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.7%" headers="mcps1.2.4.1.2 "><p id="a9d6209db7163457498d96e34a7edee96"><a name="a9d6209db7163457498d96e34a7edee96"></a><a name="a9d6209db7163457498d96e34a7edee96"></a><a href="#td9cbaa76e2184972b05c85208ac2d425">表6</a></p>
+<td class="cellrowborder" valign="top" width="30.7%" headers="mcps1.2.4.1.2 "><p id="a9d6209db7163457498d96e34a7edee96"><a name="a9d6209db7163457498d96e34a7edee96"></a><a name="a9d6209db7163457498d96e34a7edee96"></a><a href="#td9cbaa76e2184972b05c85208ac2d425">selector</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.61%" headers="mcps1.2.4.1.3 "><p id="ad1dcc162e3e648d8adb50e8a7d3c3675"><a name="ad1dcc162e3e648d8adb50e8a7d3c3675"></a><a name="ad1dcc162e3e648d8adb50e8a7d3c3675"></a>A label query over volumes to consider for binding.</p>
 </td>
@@ -205,7 +205,7 @@ N/A
 <a name="t16d10e9c67874eceb0cdea4276fbca5b"></a>
 <table><thead align="left"><tr id="r375e8c94b3534239b5420fcde7a2202b"><th class="cellrowborder" valign="top" width="24.5%" id="mcps1.2.4.1.1"><p id="aaa378f1ef347456b8e805378805a624e"><a name="aaa378f1ef347456b8e805378805a624e"></a><a name="aaa378f1ef347456b8e805378805a624e"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="31.080000000000002%" id="mcps1.2.4.1.2"><p id="p63661054201657"><a name="p63661054201657"></a><a name="p63661054201657"></a>类型</p>
+<th class="cellrowborder" valign="top" width="31.080000000000002%" id="mcps1.2.4.1.2"><p id="p63661054201657"><a name="p63661054201657"></a><a name="p63661054201657"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.42%" id="mcps1.2.4.1.3"><p id="p56271759201657"><a name="p56271759201657"></a><a name="p56271759201657"></a>描述</p>
 </th>
@@ -237,7 +237,7 @@ N/A
 <a name="td9cbaa76e2184972b05c85208ac2d425"></a>
 <table><thead align="left"><tr id="r116b8572509245a5a5dd322eb2116244"><th class="cellrowborder" valign="top" width="24.122412241224122%" id="mcps1.2.4.1.1"><p id="a22993eb1e99b4207b2a1ecc8bdbcee61"><a name="a22993eb1e99b4207b2a1ecc8bdbcee61"></a><a name="a22993eb1e99b4207b2a1ecc8bdbcee61"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="31.643164316431644%" id="mcps1.2.4.1.2"><p id="p23662110201657"><a name="p23662110201657"></a><a name="p23662110201657"></a>类型</p>
+<th class="cellrowborder" valign="top" width="31.643164316431644%" id="mcps1.2.4.1.2"><p id="p23662110201657"><a name="p23662110201657"></a><a name="p23662110201657"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.23442344234424%" id="mcps1.2.4.1.3"><p id="p37582783201657"><a name="p37582783201657"></a><a name="p37582783201657"></a>描述</p>
 </th>
@@ -245,7 +245,7 @@ N/A
 </thead>
 <tbody><tr id="red5d01ac611d4526a6335cfa776ae9dd"><td class="cellrowborder" valign="top" width="24.122412241224122%" headers="mcps1.2.4.1.1 "><p id="ae4c86f3ae172409198db0287b18cd30e"><a name="ae4c86f3ae172409198db0287b18cd30e"></a><a name="ae4c86f3ae172409198db0287b18cd30e"></a>matchExpressions</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.643164316431644%" headers="mcps1.2.4.1.2 "><p id="a2b6f3af101bf4400b704612830e1e189"><a name="a2b6f3af101bf4400b704612830e1e189"></a><a name="a2b6f3af101bf4400b704612830e1e189"></a><a href="#td834f96ec8e541cc8500b3a2835675b9">表7</a></p>
+<td class="cellrowborder" valign="top" width="31.643164316431644%" headers="mcps1.2.4.1.2 "><p id="a2b6f3af101bf4400b704612830e1e189"><a name="a2b6f3af101bf4400b704612830e1e189"></a><a name="a2b6f3af101bf4400b704612830e1e189"></a><a href="#td834f96ec8e541cc8500b3a2835675b9">matchExpressions</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.23442344234424%" headers="mcps1.2.4.1.3 "><p id="ab33d6d16282e47d0828672db3d7f6e07"><a name="ab33d6d16282e47d0828672db3d7f6e07"></a><a name="ab33d6d16282e47d0828672db3d7f6e07"></a>MatchExpressions is a list of label selector requirements. The requirements are ANDed.</p>
 </td>
@@ -265,7 +265,7 @@ N/A
 <a name="td834f96ec8e541cc8500b3a2835675b9"></a>
 <table><thead align="left"><tr id="r4b21474fc42e44aeb1e99185caf8cd14"><th class="cellrowborder" valign="top" width="23.93760623937606%" id="mcps1.2.4.1.1"><p id="ad215139c7cb440b095ad6bf245a3894f"><a name="ad215139c7cb440b095ad6bf245a3894f"></a><a name="ad215139c7cb440b095ad6bf245a3894f"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="31.82681731826817%" id="mcps1.2.4.1.2"><p id="p52724056201657"><a name="p52724056201657"></a><a name="p52724056201657"></a>类型</p>
+<th class="cellrowborder" valign="top" width="31.82681731826817%" id="mcps1.2.4.1.2"><p id="p52724056201657"><a name="p52724056201657"></a><a name="p52724056201657"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="44.23557644235576%" id="mcps1.2.4.1.3"><p id="p42790157201657"><a name="p42790157201657"></a><a name="p42790157201657"></a>描述</p>
 </th>
@@ -287,7 +287,7 @@ N/A
 </tr>
 <tr id="r8668ebc5d382413c9c9d4c1aa9910a5e"><td class="cellrowborder" valign="top" width="23.93760623937606%" headers="mcps1.2.4.1.1 "><p id="a421dd971a54440b5836aeab0fae077a1"><a name="a421dd971a54440b5836aeab0fae077a1"></a><a name="a421dd971a54440b5836aeab0fae077a1"></a>values</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.82681731826817%" headers="mcps1.2.4.1.2 "><p id="a2ca033f469734e08bf8045bcafdaee59"><a name="a2ca033f469734e08bf8045bcafdaee59"></a><a name="a2ca033f469734e08bf8045bcafdaee59"></a>String Array</p>
+<td class="cellrowborder" valign="top" width="31.82681731826817%" headers="mcps1.2.4.1.2 "><p id="a2ca033f469734e08bf8045bcafdaee59"><a name="a2ca033f469734e08bf8045bcafdaee59"></a><a name="a2ca033f469734e08bf8045bcafdaee59"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.23557644235576%" headers="mcps1.2.4.1.3 "><p id="ad4f842c31a4b4c23bb8e56334db64093"><a name="ad4f842c31a4b4c23bb8e56334db64093"></a><a name="ad4f842c31a4b4c23bb8e56334db64093"></a>Values is an array of string values. If the operator is In or NotIn, the values array must be non-empty. If the operator is Exists or DoesNotExist, the values array must be empty. This array is replaced during a strategic merge patch.</p>
 </td>

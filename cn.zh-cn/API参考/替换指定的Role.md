@@ -101,7 +101,7 @@ PUT /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/roles/\{name\}
 		"creationTimestamp": "2018-11-27T08:42:35Z"
 	},
 	"rules": [{
-		"verbs": ["get",watch"],
+		"verbs": ["get","watch"],
 		"apiGroups": [""],
 		"resources": ["pods"]
 	}]

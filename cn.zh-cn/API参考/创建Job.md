@@ -51,7 +51,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </th>
 <th class="cellrowborder" valign="top" width="14.288571142885711%" id="mcps1.2.5.1.2"><p id="p43346336"><a name="p43346336"></a><a name="p43346336"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.407959204079592%" id="mcps1.2.5.1.3"><p id="p21392359"><a name="p21392359"></a><a name="p21392359"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.407959204079592%" id="mcps1.2.5.1.3"><p id="p21392359"><a name="p21392359"></a><a name="p21392359"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.85571442855714%" id="mcps1.2.5.1.4"><p id="p55059481"><a name="p55059481"></a><a name="p55059481"></a>描述</p>
 </th>
@@ -79,7 +79,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p26683112"><a name="p26683112"></a><a name="p26683112"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p13848469"><a name="p13848469"></a><a name="p13848469"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table47756489">表11</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p13848469"><a name="p13848469"></a><a name="p13848469"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p29204826"><a name="p29204826"></a><a name="p29204826"></a>Standard list metadata.</p>
 </td>
@@ -88,7 +88,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p19315447"><a name="p19315447"></a><a name="p19315447"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p21047363"><a name="p21047363"></a><a name="p21047363"></a><a href="#table51402650">表4</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p21047363"><a name="p21047363"></a><a name="p21047363"></a><a href="#table51402650">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p42706636"><a name="p42706636"></a><a name="p42706636"></a>Spec defines the desired identities of pods in this set.</p>
 </td>
@@ -97,7 +97,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="14.288571142885711%" headers="mcps1.2.5.1.2 "><p id="p34391662"><a name="p34391662"></a><a name="p34391662"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p34261248"><a name="p34261248"></a><a name="p34261248"></a><a href="#table28665255">表3</a></p>
+<td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p34261248"><a name="p34261248"></a><a name="p34261248"></a><a href="#table28665255">status</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p11952954"><a name="p11952954"></a><a name="p11952954"></a>Status is the current status of Pods in this StatefulSet. This data may be out of date by some window of time.</p>
 </td>
@@ -112,7 +112,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </th>
 <th class="cellrowborder" valign="top" width="14.430000000000001%" id="mcps1.2.5.1.2"><p id="p45480180"><a name="p45480180"></a><a name="p45480180"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.59%" id="mcps1.2.5.1.3"><p id="p60015926"><a name="p60015926"></a><a name="p60015926"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.59%" id="mcps1.2.5.1.3"><p id="p60015926"><a name="p60015926"></a><a name="p60015926"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="43.3%" id="mcps1.2.5.1.4"><p id="p29451853"><a name="p29451853"></a><a name="p29451853"></a>描述</p>
 </th>
@@ -131,7 +131,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="14.430000000000001%" headers="mcps1.2.5.1.2 "><p id="p42844349"><a name="p42844349"></a><a name="p42844349"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.59%" headers="mcps1.2.5.1.3 "><p id="p47840241"><a name="p47840241"></a><a name="p47840241"></a>Time</p>
+<td class="cellrowborder" valign="top" width="19.59%" headers="mcps1.2.5.1.3 "><p id="p47840241"><a name="p47840241"></a><a name="p47840241"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.3%" headers="mcps1.2.5.1.4 "><p id="p49854342"><a name="p49854342"></a><a name="p49854342"></a>Replicas is the number of actual replicas.</p>
 </td>
@@ -140,7 +140,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="14.430000000000001%" headers="mcps1.2.5.1.2 "><p id="p51657858"><a name="p51657858"></a><a name="p51657858"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.59%" headers="mcps1.2.5.1.3 "><p id="p23536988"><a name="p23536988"></a><a name="p23536988"></a><a href="#table38300416">表8</a></p>
+<td class="cellrowborder" valign="top" width="19.59%" headers="mcps1.2.5.1.3 "><p id="p23536988"><a name="p23536988"></a><a name="p23536988"></a><a href="#table38300416">JobCondition</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.3%" headers="mcps1.2.5.1.4 "><p id="p45704206"><a name="p45704206"></a><a name="p45704206"></a>The latest available observations of an object's current state. More info:</p>
 </td>
@@ -158,7 +158,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="14.430000000000001%" headers="mcps1.2.5.1.2 "><p id="p31363400"><a name="p31363400"></a><a name="p31363400"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.59%" headers="mcps1.2.5.1.3 "><p id="p57407484"><a name="p57407484"></a><a name="p57407484"></a>Time</p>
+<td class="cellrowborder" valign="top" width="19.59%" headers="mcps1.2.5.1.3 "><p id="p57407484"><a name="p57407484"></a><a name="p57407484"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="43.3%" headers="mcps1.2.5.1.4 "><p id="p19494591"><a name="p19494591"></a><a name="p19494591"></a>Represents time when the job was acknowledged by the job controller. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC.</p>
 </td>
@@ -182,7 +182,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </th>
 <th class="cellrowborder" valign="top" width="15%" id="mcps1.2.5.1.2"><p id="p59462043"><a name="p59462043"></a><a name="p59462043"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="21%" id="mcps1.2.5.1.3"><p id="p51696213"><a name="p51696213"></a><a name="p51696213"></a>类型</p>
+<th class="cellrowborder" valign="top" width="21%" id="mcps1.2.5.1.3"><p id="p51696213"><a name="p51696213"></a><a name="p51696213"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42%" id="mcps1.2.5.1.4"><p id="p26643752"><a name="p26643752"></a><a name="p26643752"></a>描述</p>
 </th>
@@ -201,7 +201,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p6418115515484"><a name="p6418115515484"></a><a name="p6418115515484"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p8418155574814"><a name="p8418155574814"></a><a name="p8418155574814"></a>Integer(int32)</p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p8418155574814"><a name="p8418155574814"></a><a name="p8418155574814"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p74187556484"><a name="p74187556484"></a><a name="p74187556484"></a>Specifies the number of retries before marking this job failed. Defaults to 6.</p>
 </td>
@@ -237,7 +237,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p38472785"><a name="p38472785"></a><a name="p38472785"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p29287846"><a name="p29287846"></a><a name="p29287846"></a><a href="#table21755034">表5</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p29287846"><a name="p29287846"></a><a name="p29287846"></a><a href="#table21755034">selector</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p10221142"><a name="p10221142"></a><a name="p10221142"></a>Selector is a label query over pods that should match the replica count. If empty, defaulted to labels on the pod template.</p>
 </td>
@@ -246,7 +246,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p38252711"><a name="p38252711"></a><a name="p38252711"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p11461915"><a name="p11461915"></a><a name="p11461915"></a><a href="#table7743895">表7</a></p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p11461915"><a name="p11461915"></a><a name="p11461915"></a><a href="#table7743895">template</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p34237264"><a name="p34237264"></a><a name="p34237264"></a>Template is the object that describes the pod that will be created if insufficient replicas are detected. Each pod stamped out by the StatefulSet will fulfill this Template, but have a unique identity from the rest of the StatefulSet.</p>
 </td>
@@ -261,7 +261,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </th>
 <th class="cellrowborder" valign="top" width="15.308469153084694%" id="mcps1.2.5.1.2"><p id="p63449850"><a name="p63449850"></a><a name="p63449850"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p39164246"><a name="p39164246"></a><a name="p39164246"></a>类型</p>
+<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p39164246"><a name="p39164246"></a><a name="p39164246"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="42.85571442855714%" id="mcps1.2.5.1.4"><p id="p18187391"><a name="p18187391"></a><a name="p18187391"></a>描述</p>
 </th>
@@ -271,7 +271,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084694%" headers="mcps1.2.5.1.2 "><p id="p37205076"><a name="p37205076"></a><a name="p37205076"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p60821183"><a name="p60821183"></a><a name="p60821183"></a><a href="#table27743911">表6</a></p>
+<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p60821183"><a name="p60821183"></a><a name="p60821183"></a><a href="#table27743911">matchExpressions</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p46792305"><a name="p46792305"></a><a name="p46792305"></a>matchExpressions is a list of label selector requirements. The requirements are ANDed.</p>
 </td>
@@ -295,7 +295,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </th>
 <th class="cellrowborder" valign="top" width="15.308469153084689%" id="mcps1.2.5.1.2"><p id="p65526430"><a name="p65526430"></a><a name="p65526430"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.40795920407959%" id="mcps1.2.5.1.3"><p id="p6040620"><a name="p6040620"></a><a name="p6040620"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.40795920407959%" id="mcps1.2.5.1.3"><p id="p6040620"><a name="p6040620"></a><a name="p6040620"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="41.83581641835816%" id="mcps1.2.5.1.4"><p id="p19528251"><a name="p19528251"></a><a name="p19528251"></a>描述</p>
 </th>
@@ -338,7 +338,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </th>
 <th class="cellrowborder" valign="top" width="15.308469153084689%" id="mcps1.2.5.1.2"><p id="p65550951"><a name="p65550951"></a><a name="p65550951"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="20.40795920407959%" id="mcps1.2.5.1.3"><p id="p8026787"><a name="p8026787"></a><a name="p8026787"></a>类型</p>
+<th class="cellrowborder" valign="top" width="20.40795920407959%" id="mcps1.2.5.1.3"><p id="p8026787"><a name="p8026787"></a><a name="p8026787"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="41.83581641835816%" id="mcps1.2.5.1.4"><p id="p46190036"><a name="p46190036"></a><a name="p46190036"></a>描述</p>
 </th>
@@ -348,7 +348,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084689%" headers="mcps1.2.5.1.2 "><p id="p64946099"><a name="p64946099"></a><a name="p64946099"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p26142662"><a name="p26142662"></a><a name="p26142662"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table47756489">表11</a></p>
+<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p26142662"><a name="p26142662"></a><a name="p26142662"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.83581641835816%" headers="mcps1.2.5.1.4 "><p id="p66192520"><a name="p66192520"></a><a name="p66192520"></a>Standard object's metadata.</p>
 </td>
@@ -357,7 +357,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="15.308469153084689%" headers="mcps1.2.5.1.2 "><p id="p47672192"><a name="p47672192"></a><a name="p47672192"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p36242321"><a name="p36242321"></a><a name="p36242321"></a><a href="公共请求参数.md#zh-cn_topic_0079614925_table66152725">表24</a></p>
+<td class="cellrowborder" valign="top" width="20.40795920407959%" headers="mcps1.2.5.1.3 "><p id="p36242321"><a name="p36242321"></a><a name="p36242321"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table66152725">spec</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="41.83581641835816%" headers="mcps1.2.5.1.4 "><p id="p46869096"><a name="p46869096"></a><a name="p46869096"></a>Specification of the desired behavior of the pod.</p>
 </td>
@@ -372,7 +372,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </th>
 <th class="cellrowborder" valign="top" width="16.328367163283673%" id="mcps1.2.5.1.2"><p id="p5337057"><a name="p5337057"></a><a name="p5337057"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="23.46765323467653%" id="mcps1.2.5.1.3"><p id="p29648443"><a name="p29648443"></a><a name="p29648443"></a>类型</p>
+<th class="cellrowborder" valign="top" width="23.46765323467653%" id="mcps1.2.5.1.3"><p id="p29648443"><a name="p29648443"></a><a name="p29648443"></a>参数类型</p>
 </th>
 <th class="cellrowborder" valign="top" width="39.796020397960206%" id="mcps1.2.5.1.4"><p id="p52713665"><a name="p52713665"></a><a name="p52713665"></a>描述</p>
 </th>
@@ -382,7 +382,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.5.1.2 "><p id="p10716912"><a name="p10716912"></a><a name="p10716912"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="23.46765323467653%" headers="mcps1.2.5.1.3 "><p id="p62763577"><a name="p62763577"></a><a name="p62763577"></a>Time</p>
+<td class="cellrowborder" valign="top" width="23.46765323467653%" headers="mcps1.2.5.1.3 "><p id="p62763577"><a name="p62763577"></a><a name="p62763577"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.796020397960206%" headers="mcps1.2.5.1.4 "><p id="p50684982"><a name="p50684982"></a><a name="p50684982"></a>Last time the condition was checked.</p>
 </td>
@@ -391,7 +391,7 @@ POST /apis/batch/v1/namespaces/\{namespace\}/jobs
 </td>
 <td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.5.1.2 "><p id="p43536866"><a name="p43536866"></a><a name="p43536866"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="23.46765323467653%" headers="mcps1.2.5.1.3 "><p id="p36825282"><a name="p36825282"></a><a name="p36825282"></a>Time</p>
+<td class="cellrowborder" valign="top" width="23.46765323467653%" headers="mcps1.2.5.1.3 "><p id="p36825282"><a name="p36825282"></a><a name="p36825282"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.796020397960206%" headers="mcps1.2.5.1.4 "><p id="p30057883"><a name="p30057883"></a><a name="p30057883"></a>Last time the condition transit from one status to another.</p>
 </td>
