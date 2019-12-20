@@ -12,7 +12,7 @@
 
 ## 准备工作<a name="s50bf087555b1437aa249c1259138706c"></a>
 
-已创建资源，具体操作请参见[购买节点（按需计费）](购买节点（按需计费）.md)。若已有集群和节点资源，无需重复操作。
+已创建资源，具体操作请参见[购买节点（按需计费）](购买节点.md)。若已有集群和节点资源，无需重复操作。
 
 ## 操作步骤<a name="sb8a02965b2624dbbabab320046ca4973"></a>
 
@@ -55,7 +55,7 @@
     </tr>
     <tr id="row65301051950"><td class="cellrowborder" valign="top" width="19.77%" headers="mcps1.2.3.1.1 "><p id="p4877104910012"><a name="p4877104910012"></a><a name="p4877104910012"></a>CCI弹性承载</p>
     </td>
-    <td class="cellrowborder" valign="top" width="80.23%" headers="mcps1.2.3.1.2 "><p id="p11595204219"><a name="p11595204219"></a><a name="p11595204219"></a>该参数仅在安装virtual kubelet插件后才显示，详情请参见<a href="virtual-kubelet.md">virtual kubelet</a>。</p>
+    <td class="cellrowborder" valign="top" width="80.23%" headers="mcps1.2.3.1.2 "><p id="p11595204219"><a name="p11595204219"></a><a name="p11595204219"></a>该参数仅在安装virtual kubelet插件后才显示，具体请参见<a href="virtual-kubelet.md">virtual kubelet</a>。</p>
     <p id="p118778495016"><a name="p118778495016"></a><a name="p118778495016"></a>勾选此选项后，当集群资源不足时，支持将Pod部署到CCI集群。</p>
     </td>
     </tr>
@@ -105,7 +105,7 @@
         </tr>
         <tr id="zh-cn_topic_0107283470_row152831345485"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p875325925918"><a name="zh-cn_topic_0107283470_p875325925918"></a><a name="zh-cn_topic_0107283470_p875325925918"></a>容器规格</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="zh-cn_topic_0107283470_p1825119142351"><a name="zh-cn_topic_0107283470_p1825119142351"></a><a name="zh-cn_topic_0107283470_p1825119142351"></a>申请和限制的含义如下，详情请参见<a href="设置容器规格.md">设置容器规格</a>。<a name="zh-cn_topic_0107283470_ul1674183414114"></a><a name="zh-cn_topic_0107283470_ul1674183414114"></a><ul id="zh-cn_topic_0107283470_ul1674183414114"><li>申请：表示容器运行所需最少资源。</li><li>限制：若担心容器超载，导致系统故障。建议设容器配额的最高限制。确保容器资源不会超额。</li><li>GPU设置：<div class="note" id="zh-cn_topic_0107283470_note118204916050"><a name="zh-cn_topic_0107283470_note118204916050"></a><a name="zh-cn_topic_0107283470_note118204916050"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0107283470_p1063844316050"><a name="zh-cn_topic_0107283470_p1063844316050"></a><a name="zh-cn_topic_0107283470_p1063844316050"></a>当集群中包含GPU节点时，才能设置GPU。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="zh-cn_topic_0107283470_p1825119142351"><a name="zh-cn_topic_0107283470_p1825119142351"></a><a name="zh-cn_topic_0107283470_p1825119142351"></a>申请和限制的含义如下，具体请参见<a href="设置容器规格.md">设置容器规格</a>。<a name="zh-cn_topic_0107283470_ul1674183414114"></a><a name="zh-cn_topic_0107283470_ul1674183414114"></a><ul id="zh-cn_topic_0107283470_ul1674183414114"><li>申请：表示容器运行所需最少资源。</li><li>限制：若担心容器超载，导致系统故障。建议设容器配额的最高限制。确保容器资源不会超额。</li><li>GPU设置：<div class="note" id="zh-cn_topic_0107283470_note118204916050"><a name="zh-cn_topic_0107283470_note118204916050"></a><a name="zh-cn_topic_0107283470_note118204916050"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0107283470_p1063844316050"><a name="zh-cn_topic_0107283470_p1063844316050"></a><a name="zh-cn_topic_0107283470_p1063844316050"></a>当集群中包含GPU节点时，才能设置GPU。</p>
         </div></div>
         <a name="zh-cn_topic_0107283470_ul2409689116041"></a><a name="zh-cn_topic_0107283470_ul2409689116041"></a><ul id="zh-cn_topic_0107283470_ul2409689116041"><li>GPU配额：勾选申请，并设置百分比，例如设置为10%，表示该容器需使用GPU资源的10%。若不勾选申请，或设置为0，则无法使用GPU资源。</li><li>GPU显卡：若勾选“不限制”，容器将会随机使用节点中的任一显卡。您也可以勾选某个显卡，容器将使用特定显卡。</li></ul>
         </li></ul>
@@ -134,7 +134,7 @@
         </tr>
         <tr id="r159688429d2c4ad5b55d2b63b5bc6a46"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="acab0841bbf1548e08722d5ec9fb378e9"><a name="acab0841bbf1548e08722d5ec9fb378e9"></a><a name="acab0841bbf1548e08722d5ec9fb378e9"></a>环境变<span>量</span></p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="p1033073311186"><a name="p1033073311186"></a><a name="p1033073311186"></a>在容器中添加环境变量，一般用于通过环境变量设置参数。在环境变量页签，单击<span class="uicontrol" id="uicontrol9842146626"><a name="uicontrol9842146626"></a><a name="uicontrol9842146626"></a>“添加环境变量”</span>。当前支持三种类型。<a name="ul145379401817"></a><a name="ul145379401817"></a><ul id="ul145379401817"><li>手动添加：输入变量名称、变量/变量引用。</li><li>密钥导入：输入变量名称，选择导入的密钥名称和数据。您需要提前创建密钥，详情请参见<a href="创建密钥.md">创建密钥</a>。</li><li>配置项导入：输入变量名称，选择导入的配置项名称和数据。您需要提前创建配置项，详情请参见<a href="创建配置项.md">创建配置项</a>。</li></ul>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="p1033073311186"><a name="p1033073311186"></a><a name="p1033073311186"></a>在容器中添加环境变量，一般用于通过环境变量设置参数。在环境变量页签，单击<span class="uicontrol" id="uicontrol9842146626"><a name="uicontrol9842146626"></a><a name="uicontrol9842146626"></a>“添加环境变量”</span>。当前支持三种类型。<a name="ul145379401817"></a><a name="ul145379401817"></a><ul id="ul145379401817"><li>手动添加：输入变量名称、变量/变量引用。</li><li>密钥导入：输入变量名称，选择导入的密钥名称和数据。您需要提前创建密钥，具体请参见<a href="创建密钥.md">创建密钥</a>。</li><li>配置项导入：输入变量名称，选择导入的配置项名称和数据。您需要提前创建配置项，具体请参见<a href="创建配置项.md">创建配置项</a>。</li></ul>
         </div>
         </td>
         </tr>

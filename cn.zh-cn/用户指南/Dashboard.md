@@ -14,7 +14,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 ## 安装步骤<a name="section46701613154319"></a>
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“中，单击dashboard插件下的“安装插件“。
-2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步”。
+2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置”。
 3.  在规格配置页面，配置以下参数。
     -   证书配置：dashboard服务端使用的证书。
         -   默认选中，可手动上传证书。
@@ -27,26 +27,65 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
             >dashboard默认生成的证书不合法，将影响浏览器正常访问，建议您选择手动上传合法证书，以便通过浏览器校验，保证连接的安全性，合法证书购买方法请参见[购买证书](https://support.huaweicloud.com/qs-scm/scm_07_0002.html)。  
 
 
-    -   访问类型：
-        -   节点访问：若集群没有绑定弹性IP，需点击  [此处](https://console.huaweicloud.com/vpc/#/vpc/vpcmanager/eips)  绑定弹性IP。
+    -   访问类型：可以选择节点访问（NodePort）和负载均衡（LoadBalancer）两种类型。
+        -   节点访问：
+            -   绑定弹性IP：若集群没有绑定弹性IP，需点击  [此处](https://console.huaweicloud.com/vpc/#/vpc/vpcmanager/eips)  绑定弹性IP，绑定后单击刷新按钮。
 
-            >![](public_sys-resources/icon-notice.gif) **须知：**   
-            >dashboard插件默认以NodePort形式提供访问，需为集群任意一个节点绑定弹性IP才能使用。  
+                该插件默认以NodePort形式提供访问，需为集群任意一个节点绑定弹性IP才能使用。
 
-        -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后点击刷新按钮。
+        -   负载均衡：
+            -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后点击刷新按钮。
 
-            >![](public_sys-resources/icon-note.gif) **说明：**   
-            >负载均衡实例需与当前集群处于相同VPC且为公网类型。  
+                >![](public_sys-resources/icon-note.gif) **说明：**   
+                >负载均衡实例需与当前集群处于相同VPC且为公网类型。  
+
+            -   端口配置：访问类型为负载均衡时，需端口配置。
+                -   协议：默认为TCP。
+                -   容器端口：默认为8443。
+                -   访问端口：容器端口最终映射到负载均衡服务地址的端口，用负载均衡服务地址访问工作负载时使用，端口范围为1-65535，可任意指定。
 
 
-    -   端口配置：访问类型为负载均衡时，需端口配置。
-        -   协议：默认为TCP。
-        -   容器端口：默认为8443。
-        -   访问端口：容器端口最终映射到负载均衡服务地址的端口，用负载均衡服务地址访问工作负载时使用，端口范围为1-65535，可任意指定。
 
 4.  单击“安装“。
 
     待插件安装完成后，单击“返回插件管理“，在“插件实例“页签中，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
+
+
+## 安装后续操作<a name="section174811341488"></a>
+
+成功安装dashboard后，需完成如下步骤才能使用：
+
+**Version 1.0.4及以上**
+
+1.  **获取认证token**
+
+    请于“插件管理”-\>“插件实例”-\>“dashboard”完成操作。
+
+2.  **访问dashboard**
+
+    “插件管理”-\>“插件实例”-\>“dashboard”，点击“访问地址”中的链接并通过token登录。
+
+
+**Version 1.0.3**
+
+1.  进入dashboard实例详情界面。
+2.  若访问类型为“节点访问”，需确认是否已为集群任意节点绑定弹性IP。若未绑定需根据界面引导进行绑定，若已绑定则跳过此步。
+3.  选择“说明”页签，单击“获取默认token”下的“操作”，复制“值”。
+4.  点击“访问地址”中的链接进入终端，选择“令牌”的登录方式，通过上一步获取的token值登录（当前只支持使用令牌方式进行登录）。
+
+**Version 1.0.2**
+
+1.  **绑定弹性IP**
+    -   在弹性公网服务的弹性公网IP界面，为插件所在集群的任意节点绑定弹性IP，若已有节点绑定弹性IP则跳过此步。
+    -   在工作负载页面，选择命名空间kube-system，复制工作负载kubernetes-dashboard对应的外部访问地址。用户在浏览器内输入相应的链接进行访问。链接的格式为：https://外部访问地址。
+
+2.  **获取认证token**
+
+    在“配置中心”-\>“密钥（Secret）”页面，选择实例所在集群，选择命名空间kube-system，选择密钥kubernetes-dashboard-token-XXXXX，查看密钥数据中键token对应的值。
+
+3.  **登陆终端**
+
+    将上一步获取到的Token值进行base64解密并复制到dashboard的登录界面中，完成登录（当前只支持使用令牌方式进行登录）。
 
 
 ## 访问dashboard<a name="section15288141117362"></a>

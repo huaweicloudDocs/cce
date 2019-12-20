@@ -9,10 +9,10 @@
 ## 安装插件<a name="section41861311141210"></a>
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“ 插件管理“，在“插件市场“中，单击**web-terminal**插件下的“安装插件“。
-2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步“。
+2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  在规格配置页面，配置以下参数。
     -   用户名：默认为root。
-    -   密码：登陆web-terminal的密码
+    -   密码：登录web-terminal的密码
     -   访问类型：
         -   节点访问：若集群没有绑定弹性IP，需绑定弹性IP。
         -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后点击刷新按钮。

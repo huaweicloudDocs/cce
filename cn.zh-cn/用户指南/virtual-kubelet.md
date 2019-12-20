@@ -21,7 +21,7 @@ Virtual Kubelet插件具体如下功能：
 ## 安装插件<a name="section2237175619515"></a>
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“中，单击virtual kubelet插件下的“安装插件“。
-2.  在“基本信息“步骤中，选择安装的集群和插件版本，单击“下一步“。
+2.  在“基本信息“步骤中，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  在“规格配置“步骤中，勾选“跨服务互通“后的选择框，可实现CCE集群中的Pod与CCI集群中的Pod通过Kubernetes Service互通。
 
     **图 1**  勾选“跨服务互通“<a name="fig14909180185319"></a>  

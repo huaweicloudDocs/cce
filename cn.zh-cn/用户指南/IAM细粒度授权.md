@@ -4,7 +4,7 @@
 
 >![](public_sys-resources/icon-notice.gif) **须知：**   
 >-   CCE提供了CCE Admin和CCE Viewer两种默认角色，建议您通过默认角色实现权限管理，关于CCE权限策略请参见[CCE系统策略](https://support.huaweicloud.com/productdesc-cce/cce_productdesc_0002.html)。  
->-   如果您需要使用自定义策略，请仔细阅读自定义策略中可以添加的授权项（Action），详情请参见[策略及授权项说明](https://support.huaweicloud.com/api-cce/cce_02_0327.html)，如遇问题[提交工单](https://console.huaweicloud.com/ticket/#/ticketindex/createIndex)处理。  
+>-   如果您需要使用自定义策略，请仔细阅读自定义策略中可以添加的授权项（Action），具体请参见[策略及授权项说明](https://support.huaweicloud.com/api-cce/cce_02_0327.html)，如遇问题[提交工单](https://console.huaweicloud.com/ticket/#/ticketindex/createIndex)处理。  
 
 ## 准备工作<a name="section16601203895318"></a>
 
@@ -34,34 +34,36 @@
 
 1.  使用注册的华为云账号登录华为云，登录时请选择“账号登录”。
 
-    ![](figures/中国站登录-11.png)
+    **图 2**  账号登录<a name="zh-cn_topic_0165292619_fig184406496424"></a>  
+    ![](figures/账号登录-12.png "账号登录-12")
 
 2.  在控制台首页菜单中单击“云容器引擎CCE“，进入[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)。
 
-    **图 2**  从控制台首页进入CCE Console<a name="fig2511103018531"></a>  
+    **图 3**  从控制台首页进入CCE Console<a name="fig2511103018531"></a>  
     ![](figures/从控制台首页进入CCE-Console.png "从控制台首页进入CCE-Console")
 
-3.  单击CCE控制台左侧导航栏中的“权限管理“，单击“集群权限“页签下的“创建用户组“，进入统一身份认证服务（IAM）控制台的“创建用户组“界面。
+3.  单击CCE控制台左侧导航栏中的“权限管理“，单击“集群权限“页签下的“创建用户组“。
 
-    **图 3**  创建用户组<a name="fig1991318433165"></a>  
+    **图 4**  创建用户组<a name="fig1991318433165"></a>  
     ![](figures/创建用户组.png "创建用户组")
 
-4.  输入“用户组名称”，单击“确定”。本例的名称以“开发人员组”为例。
+4.  进入“统一身份认证服务（IAM）“控制台的“创建用户组“界面，输入用户组名称（本例以“开发人员组”为例），单击“确定”。
 
-    **图 4**  创建用户组<a name="fig426114917188"></a>  
-    ![](figures/创建用户组-12.png "创建用户组-12")
+    **图 5**  创建用户组<a name="fig426114917188"></a>  
+    ![](figures/创建用户组-13.png "创建用户组-13")
 
     用户组创建完成，界面自动返回用户组列表，列表中显示新建的用户组。
 
-5.  单击新建用户组右侧的“权限配置”，在“用户组权限”页签中，基于需要授权的区域，单击“设置策略”。
+5.  单击新建用户组右侧的“权限配置”，在“用户组权限”页签中单击“配置权限”。
+
+    ![](figures/zh-cn_image_0213492558.png)
+
+6.  在“策略视图”下搜索“CCE”，策略名称列选择“CCE Viewer”为例，在“项目\[作用范围\]“列选择项目范围。CCE的系统策略说明，请参见：[CCE系统策略](https://support.huaweicloud.com/productdesc-cce/cce_productdesc_0002.html)。
 
     CCE为项目级服务，请确认用户需要使用CCE资源的项目，在对应项目中设置权限。设置完成后用户仅能访问授权项目中的CCE资源，无法访问其他项目中的CCE资源。
 
-    ![](figures/zh-cn_image_0209354255.png)
+    ![](figures/zh-cn_image_0213526912.png)
 
-    ![](figures/zh-cn_image_0209354256.png)
-
-6.  在“设置策略”中搜索“CCE”，选择“CCE Viewer”为例。CCE的系统策略说明，请参见：[CCE系统策略](https://support.huaweicloud.com/productdesc-cce/cce_productdesc_0002.html)。
 7.  单击“确定”，完成用户组授权。
 
 ## 步骤2：创建IAM用户<a name="section1535210160"></a>
@@ -71,7 +73,8 @@ IAM用户与企业中的实际员工或是应用程序相对应，有唯一的�
 1.  在统一身份认证服务，左侧导航窗格中，单击“用户”\>“创建用户”。
 2.  在“创建用户”页面填写“用户信息”。如需一次创建多个用户，可以单击“添加用户”进行批量创建，每次最多可创建10个用户。
 
-    ![](figures/创建用户.png)
+    **图 6**  创建用户-填写用户信息<a name="zh-cn_topic_0165292619_fig7809353105218"></a>  
+    ![](figures/创建用户-填写用户信息.png "创建用户-填写用户信息")
 
     -   用户名：用户登录华为云的用户名，以“James”为例。
     -   邮箱：IAM用户绑定的邮箱，仅“访问方式”选择“首次登录时设置”时必填，选择其他访问方式时选填。
@@ -80,7 +83,8 @@ IAM用户与企业中的实际员工或是应用程序相对应，有唯一的�
 
 3.  在“创建用户”页面选择“访问方式”，完成后单击“下一步”。
 
-    ![](figures/创建用户-访问方式.png)
+    **图 7**  创建用户-选择访问方式<a name="zh-cn_topic_0165292619_fig126071511105319"></a>  
+    ![](figures/创建用户-选择访问方式.png "创建用户-选择访问方式")
 
     -   编程访问：创建用户完成后即可下载本次创建的所有用户的[访问密钥](https://support.huaweicloud.com/usermanual-ca/zh-cn_topic_0046606340.html)。
     -   华为云管理控制台访问：用户可以使用账号密码登录到华为云管理控制台。
@@ -93,7 +97,8 @@ IAM用户与企业中的实际员工或是应用程序相对应，有唯一的�
 
 5.  IAM用户创建成功，用户列表中显示新创建的IAM用户。如果在访问方式中勾选了“编程访问”，可在此页面下载访问密钥，后续也可以在“我的凭证”中[管理访问密钥](https://support.huaweicloud.com/usermanual-ca/zh-cn_topic_0046606340.html)。
 
-    ![](figures/用户创建成功.png)
+    **图 8**  创建用户成功<a name="zh-cn_topic_0165292619_fig13398172212535"></a>  
+    ![](figures/创建用户成功.png "创建用户成功")
 
 
 ## 步骤三：使用IAM子用户登录并验证权限<a name="section1953761017615"></a>
@@ -102,7 +107,8 @@ IAM子用户创建完成后，可以使用新用户的用户名及身份凭证�
 
 1.  在华为云登录页面，单击右下角的“IAM用户登录”。
 
-    ![](figures/IAM用户中国站-13.png)
+    **图 9**  IAM用户登录<a name="zh-cn_topic_0165292619_fig448174815448"></a>  
+    ![](figures/IAM用户登录-14.png "IAM用户登录-14")
 
 2.  在“IAM用户登录”页面，输入账号名、用户名及用户密码，使用新创建的子用户登录。
 

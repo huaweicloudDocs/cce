@@ -20,10 +20,10 @@
     -   **访问类型：**选择“负载均衡 \( LoadBalancer \)“。
     -   **服务名称：**自定义服务名称，可与工作负载名称保持一致。
     -   **服务亲和：**
-        -   集群级别：将外部流量路由到集群下所有的节点，并且隐藏客户端源IP。
-        -   节点级别：将外部流量路由到服务关联的负载所在的节点，并且保留客户端源IP。
+        -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
+        -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
 
-    -   **负载均衡：**可以将互联网访问流量自动分发到工作负载所在的多个节点上。请根据业务需求选择“公网“或“私网“，详情请参见[公网和私网负载均衡器](https://support.huaweicloud.com/productdesc-elb/zh_cn_elb_01_0004.html)。
+    -   **负载均衡：**可以将互联网访问流量自动分发到工作负载所在的多个节点上。请根据业务需求选择“公网“或“私网“，具体请参见[公网和私网负载均衡器](https://support.huaweicloud.com/productdesc-elb/zh_cn_elb_01_0004.html)。
 
         -   公网：支持自动创建和使用已有负载均衡实例两种方式。
 
@@ -36,12 +36,11 @@
         **其他配置：**
 
         -   规格配置：选择“公网 \> 自动创建“时显示此配置项，单击“更改配置”可修改负载均衡实例的名称、规格、计费模式和带宽。
+        -   企业项目：请选择企业项目名称，选择后可以直接创建在具体的ELB企业项目下。
         -   分配策略类型：可选择加权轮询算法、加权最少连接或源IP算法，权重将根据Service关联的工作负载在每个节点上的实例数量进行动态调整。
-
-            >![](public_sys-resources/icon-note.gif) **说明：**   
-            >-   加权轮询算法：根据后端服务器的权重，按顺序依次将请求分发给不同的服务器。它用相应的权重表示服务器的处理性能，按照权重的高低以及轮询方式将请求分配给各服务器，相同权重的服务器处理相同数目的连接数。常用于短连接服务，例如HTTP等服务。  
-            >-   加权最少连接：最少连接是通过当前活跃的连接数来估计服务器负载情况的一种动态调度算法。加权最少连接就是在最少连接数的基础上，根据服务器的不同处理能力，给每个服务器分配不同的权重，使其能够接受相应权值数的服务请求。常用于长连接服务，例如数据库连接等服务。  
-            >-   源IP算法：将请求的源IP地址进行Hash运算，得到一个具体的数值，同时对后端服务器进行编号，按照运算结果将请求分发到对应编号的服务器上。这可以使得对不同源IP的访问进行负载分发，同时使得同一个客户端IP的请求始终被派发至某特定的服务器。该方式适合负载均衡无cookie功能的TCP协议。  
+            -   加权轮询算法：根据后端服务器的权重，按顺序依次将请求分发给不同的服务器。它用相应的权重表示服务器的处理性能，按照权重的高低以及轮询方式将请求分配给各服务器，相同权重的服务器处理相同数目的连接数。常用于短连接服务，例如HTTP等服务。
+            -   加权最少连接：最少连接是通过当前活跃的连接数来估计服务器负载情况的一种动态调度算法。加权最少连接就是在最少连接数的基础上，根据服务器的不同处理能力，给每个服务器分配不同的权重，使其能够接受相应权值数的服务请求。常用于长连接服务，例如数据库连接等服务。
+            -   源IP算法：将请求的源IP地址进行Hash运算，得到一个具体的数值，同时对后端服务器进行编号，按照运算结果将请求分发到对应编号的服务器上。这可以使得对不同源IP的访问进行负载分发，同时使得同一个客户端IP的请求始终被派发至某特定的服务器。该方式适合负载均衡无cookie功能的TCP协议。
 
         -   会话保持：负载均衡监听是基于IP地址的会话保持，即来自同一IP地址的访问请求转发到同一台后端服务器上。默认不开启，可选择“源IP地址“。
         -   健康检查：默认开启。请根据界面提示进行配置，更多参数说明请参见[配置健康检查](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0162227063.html)。
@@ -52,7 +51,7 @@
         -   访问端口：容器端口最终映射到负载均衡服务地址的端口，用负载均衡服务地址访问工作负载时使用，端口范围为1-65535，可任意指定。
 
 2.  完成配置后，直接单击“确定“。
-3.  单击“下一步“进入“高级设置“页面，直接单击“创建“。
+3.  单击“下一步：高级配置“进入高级设置页面，直接单击“创建“。
 4.  创建成功后，单击“工作负载 \> 无状态（Deployment）“或“工作负载 \> 有状态（StatefulSet）“，在工作负载列表页面，单击“工作负载名称“进入工作负载详情页，在“访问方式“页签下，即可获取方式地址，如[图2](#fig756114141119)。
 
     **图 2**  获取负载均衡访问地址<a name="fig756114141119"></a>  
@@ -107,7 +106,7 @@
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >若需要开启会话保持，需要满足如下条件：  
     >-   工作负载协议为TCP。  
-    >-   工作负载的各实例已设置反亲和部署，即所有的实例都部署在不同节点上。详情请参见[指定工作负载部署在不同节点](https://support.huaweicloud.com/usermanual-cce/cce_01_0051.html#section11)。  
+    >-   工作负载的各实例已设置反亲和部署，即所有的实例都部署在不同节点上。具体请参见[指定工作负载部署在不同节点](https://support.huaweicloud.com/usermanual-cce/cce_01_0051.html#section11)。  
 
     -   自动创建ELB：
 
@@ -119,7 +118,8 @@
             kubernetes.io/elb.class: union
             kubernetes.io/session-affinity-mode: SOURCE_IP
             kubernetes.io/elb.subnet-id: 5083f225-9bf8-48fa-9c8b-67bd9693c4c0
-            kubernetes.io/elb.autocreate: "{\"type\":\"public\",\"bandwidth_name\":\"cce-bandwidth-1551163379627\",\"bandwidth_chargemode\":\"bandwidth\",\"bandwidth_size\":5,\"bandwidth_sharetype\":\"PER\",\"eip_type\":\"5_bgp\",\"name\":\"james\"}"
+            kubernetes.io/elb.enterpriseID: debb7ae2-6d2f-4e6c-a0aa-1ccafd92b8eb
+            kubernetes.io/elb.autocreate: '{"type":"public","bandwidth_name":"cce-bandwidth-1551163379627","bandwidth_chargemode":"bandwidth","bandwidth_size":5,"bandwidth_sharetype":"PER","eip_type":"5_bgp","name":"james"}'
           labels: 
             app: nginx 
           name: nginx 
@@ -203,13 +203,23 @@
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p2075662814474"><a name="p2075662814474"></a><a name="p2075662814474"></a>可选，但自动创建时必填，Kubernetes v1.11.7-r0以上版本的集群可不填。</p>
     </td>
     </tr>
+    <tr id="row1543834613532"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p443916465535"><a name="p443916465535"></a><a name="p443916465535"></a>kubernetes.io/elb.enterpriseID</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p164393463532"><a name="p164393463532"></a><a name="p164393463532"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1843954617535"><a name="p1843954617535"></a><a name="p1843954617535"></a>可选，但公网或私网自动创建时必填。</p>
+    <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>为ELB企业项目名称，选择后可以直接创建在具体的ELB企业项目下。</p>
+    </td>
+    </tr>
     <tr id="row1719518169356"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p9754162844712"><a name="p9754162844712"></a><a name="p9754162844712"></a>kubernetes.io/elb.autocreate</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615000_p32706975"><a name="zh-cn_topic_0079615000_p32706975"></a><a name="zh-cn_topic_0079615000_p32706975"></a><a href="#table19417184671919">elb.autocreate</a> object</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p127521028194718"><a name="p127521028194718"></a><a name="p127521028194718"></a>可选，但公网自动创建时必填，将自动创建ELB所绑定的EIP。私网自动创建时必填，将自动创建ELB。</p>
     <p id="p115519391615"><a name="p115519391615"></a><a name="p115519391615"></a><strong id="b158091351266"><a name="b158091351266"></a><a name="b158091351266"></a>示例：</strong></p>
-    <a name="ul286913611614"></a><a name="ul286913611614"></a><ul id="ul286913611614"><li>公网自动创建：值为 "{\"type\":\"public\",\"bandwidth_name\":\"cce-bandwidth-1551163379627\",\"bandwidth_chargemode\":\"bandwidth\",\"bandwidth_size\":5,\"bandwidth_sharetype\":\"PER\",\"eip_type\":\"5_bgp\",\"name\":\"james\"}"</li><li>私网自动创建：值为 "{\"type\":\"inner\"}"</li></ul>
+    <a name="ul286913611614"></a><a name="ul286913611614"></a><ul id="ul286913611614"><li>公网自动创建：<p id="p1286493011369"><a name="p1286493011369"></a><a name="p1286493011369"></a>值为 '{"type":"public","bandwidth_name":"cce-bandwidth-1551163379627","bandwidth_chargemode":"bandwidth","bandwidth_size":5,"bandwidth_sharetype":"PER","eip_type":"5_bgp","name":"james"}'</p>
+    </li><li>私网自动创建：<p id="p13182133673615"><a name="p13182133673615"></a><a name="p13182133673615"></a>值为 '{"type":"inner", "name": "A-location-d-test"}'</p>
+    </li></ul>
     </td>
     </tr>
     <tr id="row121515334113"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p92162033131111"><a name="p92162033131111"></a><a name="p92162033131111"></a>loadBalancerIP</p>
@@ -290,7 +300,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p114229463196"><a name="p114229463196"></a><a name="p114229463196"></a>Integer</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p12958233152218"><a name="p12958233152218"></a><a name="p12958233152218"></a>带宽大小，请根据具体region带宽支持范围设置，详情请参考<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b198591928137"><a name="b198591928137"></a><a name="b198591928137"></a>表4 bandwidth字段说明中size字段</strong>。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p12958233152218"><a name="p12958233152218"></a><a name="p12958233152218"></a>带宽大小，请根据Region带宽支持范围设置，具体请参见<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b198591928137"><a name="b198591928137"></a><a name="b198591928137"></a>表4 bandwidth字段说明中size字段</strong>。</p>
     </td>
     </tr>
     <tr id="row1942224601917"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p16731228202214"><a name="p16731228202214"></a><a name="p16731228202214"></a>bandwidth_sharetype</p>
@@ -305,7 +315,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p132201811174611"><a name="p132201811174611"></a><a name="p132201811174611"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p11956103372218"><a name="p11956103372218"></a><a name="p11956103372218"></a>弹性公网IP类型，请参考ELB支持的弹性公网IP类型，详情请参考<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b11814520410"><a name="b11814520410"></a><a name="b11814520410"></a>表3 publicip字段说明type字段</strong>。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p11956103372218"><a name="p11956103372218"></a><a name="p11956103372218"></a>弹性公网IP类型，请参考ELB支持的弹性公网IP类型，具体请参见<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b11814520410"><a name="b11814520410"></a><a name="b11814520410"></a>表3 publicip字段说明type字段</strong>。</p>
     </td>
     </tr>
     </tbody>
@@ -374,10 +384,10 @@
     -   **命名空间：**工作负载所在命名空间，此处不可修改。
     -   **关联工作负载：**要添加Service的工作负载，此处不可修改。
     -   **服务亲和：**
-        -   集群级别：将外部流量路由到集群下所有的节点，并且隐藏客户端源IP。
-        -   节点级别：将外部流量路由到服务关联的负载所在的节点，并且保留客户端源IP。
+        -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
+        -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
 
-    -   **负载均衡：**可以将互联网访问流量自动分发到工作负载所在的多个节点上。请根据业务需求选择“公网“或“私网“，详情请参见[公网和私网负载均衡器](https://support.huaweicloud.com/productdesc-elb/zh_cn_elb_01_0004.html)。
+    -   **负载均衡：**可以将互联网访问流量自动分发到工作负载所在的多个节点上。请根据业务需求选择“公网“或“私网“，具体请参见[公网和私网负载均衡器](https://support.huaweicloud.com/productdesc-elb/zh_cn_elb_01_0004.html)。
 
         -   公网：支持自动创建和使用已有负载均衡实例两种方式。
 
@@ -390,6 +400,7 @@
         **其他配置：**
 
         -   规格配置：选择“公网 \> 自动创建“时显示此配置项，单击![](figures/zh-cn_image_0196372894.png)可修改负载均衡实例的名称、规格、计费模式和带宽。
+        -   企业项目：请选择企业项目名称，选择后可以直接创建在具体的ELB企业项目下。
         -   分配策略类型：可选择加权轮询算法、加权最少连接或源IP算法，权重将根据Service关联的工作负载在每个节点上的实例数量进行动态调整。
 
             >![](public_sys-resources/icon-note.gif) **说明：**   
@@ -397,8 +408,8 @@
             >-   加权最少连接：最少连接是通过当前活跃的连接数来估计服务器负载情况的一种动态调度算法。加权最少连接就是在最少连接数的基础上，根据服务器的不同处理能力，给每个服务器分配不同的权重，使其能够接受相应权值数的服务请求。常用于长连接服务，例如数据库连接等服务。  
             >-   源IP算法：将请求的源IP地址进行Hash运算，得到一个具体的数值，同时对后端服务器进行编号，按照运算结果将请求分发到对应编号的服务器上。这可以使得对不同源IP的访问进行负载分发，同时使得同一个客户端IP的请求始终被派发至某特定的服务器。该方式适合负载均衡无cookie功能的TCP协议。  
 
-        -   会话保持：负载均衡监听是基于IP地址的会话保持，即来自同一IP地址的访问请求转发到同一台后端服务器上。
-        -   健康检查：默认开启。请根据界面提示进行配置，部分参数请参考[设置容器健康检查](设置容器健康检查.md)。
+        -   会话保持：负载均衡监听是基于IP地址的会话保持，即来自同一IP地址的访问请求转发到同一台后端服务器上。当选择“源IP算法“时不显示该参数。
+        -   健康检查：默认开启。请根据界面提示进行配置，部分参数可参考[设置容器健康检查](设置容器健康检查.md)。
 
     -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
@@ -414,17 +425,14 @@
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 网络管理”，在**Service**页签下，选择对应的集群和命名空间，单击需要更新端口配置的Service的“更新”。
 2.  在“更新Service“页面，访问类型选择“负载均衡 \( LoadBalancer \)“。
 3.  更新负载均衡参数：
-    -   **集群名称：**工作负载所在集群的名称，此处不可修改。
-    -   **命名空间：**工作负载所在命名空间，此处不可修改。
-    -   **关联工作负载：**要添加Service的工作负载，此处不可修改。
+    -   **集群名称：**工作负载所在集群的名称，更新时此处不可修改。
+    -   **命名空间：**工作负载所在命名空间，更新时此处不可修改。
+    -   **关联工作负载：**要添加Service的工作负载，更新时此处不可修改。
     -   **服务亲和：**
-        -   集群级别：将外部流量路由到集群下所有的节点，并且隐藏客户端源IP。
-        -   节点级别：将外部流量路由到服务关联的负载所在的节点，并且保留客户端源IP。
+        -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
+        -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
 
-    -   **负载均衡：**可以将互联网访问流量自动分发到工作负载所在的多个节点上。
-
-        -   公网：选择已有负载均衡实例。
-        -   私网：选择已有负载均衡实例。
+    -   **负载均衡：**更新时此处不可修改。可以将互联网访问流量自动分发到工作负载所在的多个节点上。
 
         负载均衡实例需与当前集群处于相同VPC且为相同公私网类型。
 

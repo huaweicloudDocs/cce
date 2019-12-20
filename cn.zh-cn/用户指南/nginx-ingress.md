@@ -6,13 +6,13 @@ Nginx Ingress Controller插件是一款围绕Kubernetes Ingress资源构建的Ng
 
 ## 使用约束<a name="section3200193614201"></a>
 
--   集群为1.13以上版本时，才支持此功能。
+-   仅支持1.13版本的集群安装此插件。
 -   通过api调接口创建的Ingress annotation必须添加kubernetes.io/ingress.class: "nginx"，如果是对接老的Ingress，annotation需添加为kubernetes.io/ingress.class: "cce"。
 
 ## 安装插件<a name="section107137401254"></a>
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“中，单击nginx-ingress插件下的“安装插件“。
-2.  在安装插件页面，在“基本信息“步骤中选择集群和插件版本，单击“下一步“。
+2.  在安装插件页面，在“基本信息“步骤中选择集群和插件版本，单击“下一步：规格配置“。
 3.  在“规格配置“步骤中，参照[表1](#table924319911495)设置服务选型参数，其中带“\*”的参数为必填参数。
 
     **表 1**  Nginx Ingress插件参数配置
@@ -56,12 +56,6 @@ Nginx Ingress Controller插件是一款围绕Kubernetes Ingress资源构建的Ng
     <p id="p1324473455114"><a name="p1324473455114"></a><a name="p1324473455114"></a>该功能是使客户端到服务器端的连接在设定的时间内持续有效，当出现对服务器的后继请求时，该功能避免了建立或者重新建立连接。切记这个参数也不能设置过大！否则会导致许多无效的http连接占据着nginx的连接数，终nginx崩溃。</p>
     </td>
     </tr>
-    <tr id="row152444346519"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p6244334185118"><a name="p6244334185118"></a><a name="p6244334185118"></a>全局白名单</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p124311408416"><a name="p124311408416"></a><a name="p124311408416"></a>Console中暂不支持该参数设置，将于近期开放。</p>
-    <p id="p1853818487471"><a name="p1853818487471"></a><a name="p1853818487471"></a>如果您需要添加白名单功能，请自行安装TOA插件。安装方法请参见<a href="https://support.huaweicloud.com/usermanual-elb/zh_cn_elb_06_0001.html" target="_blank" rel="noopener noreferrer">TOA插件配置</a>。</p>
-    </td>
-    </tr>
     <tr id="row524420346511"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p112449344512"><a name="p112449344512"></a><a name="p112449344512"></a>定义nginx配置</p>
     </td>
     <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p9731184313503"><a name="p9731184313503"></a><a name="p9731184313503"></a>Nginx Ingress Controller通过ConfigMap来修改更新nginx.conf里的配置，全局的设置，直接配置nginx.conf的生成，影响管理的全部Ingress，如需配置可通过<a href="https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/" target="_blank" rel="noopener noreferrer">configmap</a>查找。</p>
@@ -77,9 +71,10 @@ Nginx Ingress Controller插件是一款围绕Kubernetes Ingress资源构建的Ng
     <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p192451534175116"><a name="p192451534175116"></a><a name="p192451534175116"></a>该插件默认提供了404后端服务，如果是用户自定义的404服务，输入格式示例如下：&lt;namespace/serviceName&gt;。</p>
     </td>
     </tr>
-    <tr id="row1824419144917"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p4244298493"><a name="p4244298493"></a><a name="p4244298493"></a>负载均衡服务</p>
+    <tr id="row1824419144917"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p4244298493"><a name="p4244298493"></a><a name="p4244298493"></a>负载均衡</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p624411914915"><a name="p624411914915"></a><a name="p624411914915"></a>该功能可让公网或者私网的流量能转发到该插件的service上。</p>
+    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p624411914915"><a name="p624411914915"></a><a name="p624411914915"></a>可选择已创建的公网或私网负载均衡实例，该功能可让公网或者私网的流量能转发到该插件的service上。</p>
+    <p id="p2122162582115"><a name="p2122162582115"></a><a name="p2122162582115"></a>负载均衡实例需与当前集群处于相同VPC ，需要拥有至少两个监听器配额，且端口80和443没有被监听器占用。</p>
     </td>
     </tr>
     </tbody>

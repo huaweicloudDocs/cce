@@ -6,19 +6,18 @@ CoreDNS插件是一款通过链式插件的方式为Kubernetes提供域名解析
 
 CoreDNS是由CNCF孵化的开源软件，用于Cloud-Native环境下的DNS服务器和服务发现解决方案。CoreDNS实现了插件链式架构，能够按需组合插件，运行效率高、配置灵活。在kubernetes集群中使用CoreDNS能够自动发现集群内的服务，并为这些服务提供域名解析。同时，通过级联华为云的DNS服务器，还能够为集群内的工作负载提供外部域名的解析服务。目前CoreDNS已经成为社区kubernetes 1.11及以上版本集群推荐的DNS服务器解决方案。
 
+**该插件为系统资源插件，kubernetes 1.11及以上版本的集群在创建时默认安装。**
+
 >![](public_sys-resources/icon-note.gif) **说明：**   
->-   在CCE中，仅支持在新建的kubernetes 1.11及以上版本的集群中默认安装CoreDNS插件。  
 >-   当CoreDNS插件有升级或者BUG修复时，您不必升级集群或新建集群，仅需安装或升级CoreDNS插件即可。  
 >-   DNS详细使用方法请参见[Kubernetes集群内置DNS使用指南](Kubernetes集群内置DNS使用指南.md)或[通过kubectl配置kube-dns/CoreDNS高可用](通过kubectl配置kube-dns-CoreDNS高可用.md)。  
 
 ## 安装插件<a name="section776571919194"></a>
 
-在云容器引擎CCE中，kubernetes 1.11及以上版本的新建集群，将会默认安装CoreDNS插件。
-
-未安装CoreDNS插件的集群，可参考如下步骤进行安装：
+本插件为系统默认安装，若因特殊情况卸载后，可参照如下步骤重新安装。
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件市场“中，单击**coredns**插件下的“安装插件“。
-2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步“。
+2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  在“规格配置“步骤中，可配置如下参数：
 
     **表 1**  cordns插件参数配置
@@ -52,7 +51,7 @@ CoreDNS是由CNCF孵化的开源软件，用于Cloud-Native环境下的DNS服务
     </tr>
     <tr id="row53701440125116"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p8370124035118"><a name="p8370124035118"></a><a name="p8370124035118"></a>存根域</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p1837104015118"><a name="p1837104015118"></a><a name="p1837104015118"></a>您可对自定义的域名配置域名服务器，格式为一个键值对，键为DNS后缀域名，值为一个或一组DNS IP地址，如"acme.local -- 1.2.3.4,6.7.8.9"。</p>
+    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p1837104015118"><a name="p1837104015118"></a><a name="p1837104015118"></a>单击<span class="uicontrol" id="uicontrol1158517458572"><a name="uicontrol1158517458572"></a><a name="uicontrol1158517458572"></a>“添加”</span>，您可对自定义的域名配置域名服务器，格式为一个键值对，键为DNS后缀域名，值为一个或一组DNS IP地址，如"acme.local -- 1.2.3.4,6.7.8.9"。</p>
     </td>
     </tr>
     </tbody>
@@ -111,7 +110,7 @@ metadata:
 
 ## kubernetes中的域名解析逻辑<a name="section1860523212152"></a>
 
-DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**Default、ClusterFirst、ClusterFirstWithHostNet和None**四种DNS策略，详情请参见[https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)。这些策略在pod-specific的**dnsPolicy**  字段中指定。
+DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**Default、ClusterFirst、ClusterFirstWithHostNet和None**四种DNS策略，具体请参见[https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)。这些策略在pod-specific的**dnsPolicy**  字段中指定。
 
 -   **“Default”**：如果dnsPolicy被设置为“Default”，则名称解析配置将从pod运行的节点继承。 自定义上游域名服务器和存根域不能够与这个策略一起使用。
 -   **“ClusterFirst”：**如果dnsPolicy被设置为“ClusterFirst”，任何与配置的集群域后缀不匹配的DNS查询（例如，www.kubernetes.io）将转发到从该节点继承的上游名称服务器。集群管理员可能配置了额外的存根域和上游DNS服务器。

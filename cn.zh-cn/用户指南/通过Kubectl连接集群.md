@@ -26,5 +26,5 @@ CCE支持VPC网络内访问集群和互联网方式访问集群。
 
 ## 相关操作<a name="section422912118536"></a>
 
-连接集群后，您可以使用Kubernetes管理工作负载，详情请参见[Kubectl使用指南](Kubectl使用指南.md)。
+连接集群后，您可以使用Kubernetes管理工作负载，具体请参见[Kubectl使用指南](Kubectl使用指南.md)。
 
