@@ -184,7 +184,7 @@
 
 
         **图 1**  Pod高级设置<a name="fig2225829163110"></a>  
-        ![](figures/Pod高级设置-3.png "Pod高级设置-3")
+        ![](figures/Pod高级设置-2.png "Pod高级设置-2")
 
     -   **客户端DNS配置**：CCE集群内置DNS插件CoreDNS，为集群内的工作负载提供域名解析服务。详细使用方法请参见[Kubernetes集群内置DNS使用指南](Kubernetes集群内置DNS使用指南.md)。
         -   DNS策略：

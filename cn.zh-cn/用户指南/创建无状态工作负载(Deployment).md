@@ -395,15 +395,23 @@
 
 4.  查看deployment状态。
 
-    **kubectl get po**
+    **kubectl get pods**
 
-    deploymen状态显示为Running，表示deploymen已创建成功。
+    deployment状态显示为Running，表示deployment已创建成功。
 
     ```
     NAME                     READY     STATUS    RESTARTS   AGE
     icagent-m9dkt            0/0       Running   0          3d
     nginx-1212400781-qv313   1/1       Running   0          3d
     ```
+
+    **参数解析：**
+
+    -   NAME：pod名
+    -   READY：准备好的副本数
+    -   STATUS：状态
+    -   RESTARTS：重启
+    -   AGE：已经运行的时间
 
 5.  若工作负载（即deployment）需要被访问（集群内访问或节点访问），您需要设置访问方式，具体请参见[网络管理](网络管理.md)创建对应服务。
 
