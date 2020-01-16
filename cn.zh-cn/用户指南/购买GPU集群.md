@@ -86,12 +86,18 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     <tr id="cce_01_0028_row15639412132615"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p36391812172618"><a name="cce_01_0028_p36391812172618"></a><a name="cce_01_0028_p36391812172618"></a>* 所在子网</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p1108371202"><a name="cce_01_0028_p1108371202"></a><a name="cce_01_0028_p1108371202"></a>节点虚拟机运行的子网环境，通过子网提供与其他网络隔离的、可以独享的网络资源，以提高网络安全。虚拟私有云、子网、集群的关系请参见<a href="集群概述.md">集群概述</a>。</p>
+    <p id="cce_01_0028_p1369519572172"><a name="cce_01_0028_p1369519572172"></a><a name="cce_01_0028_p1369519572172"></a><strong id="cce_01_0028_b13695957131719"><a name="cce_01_0028_b13695957131719"></a><a name="cce_01_0028_b13695957131719"></a>请确保子网下的DNS服务器可以解析OBS服务域名，否则无法创建节点。</strong></p>
     <p id="cce_01_0028_p41882822012"><a name="cce_01_0028_p41882822012"></a><a name="cce_01_0028_p41882822012"></a><strong id="cce_01_0028_b9136183821711"><a name="cce_01_0028_b9136183821711"></a><a name="cce_01_0028_b9136183821711"></a>集群创建后子网无法修改，请谨慎选择。</strong></p>
     </td>
     </tr>
     <tr id="cce_01_0028_row482955911270"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p9831659192715"><a name="cce_01_0028_p9831659192715"></a><a name="cce_01_0028_p9831659192715"></a>* 网络模型</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><a name="cce_01_0028_ul19705159132810"></a><a name="cce_01_0028_ul19705159132810"></a><ul id="cce_01_0028_ul19705159132810"><li>容器隧道网络（Overlay）：基于底层VPC网络，另构建了独立的VXLAN隧道化容器网络，适用于一般场景。VXLAN是将以太网报文封装成UDP报文进行隧道传输。容器网络是承载于VPC网络之上的Overlay网络平面，具有付出少量隧道封装性能损耗，获得了通用性强、互通性强、高级特性支持全面（例如Network Policy网络隔离）的优势，可以满足大多数应用需求。</li><li>VPC网络：采用VPC路由方式与底层网络深度整合，适用于高性能场景，节点数量受限于虚拟私有云VPC的路由配额。每个节点将会被分配固定大小的IP地址段。VPC网络由于没有隧道封装的消耗，容器网络性能相对于容器隧道网络有一定优势。VPC网络集群由于VPC路由中配置有容器网段与节点IP的路由，可以支持集群外直接访问容器实例等特殊场景。</li><li>Yangtse：深度整合VPC原生ENI弹性网卡能力，采用VPC网段分配容器地址，支持ELB直通容器，享有高性能。</li></ul>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p0724144517209"><a name="cce_01_0028_p0724144517209"></a><a name="cce_01_0028_p0724144517209"></a><strong id="cce_01_0028_b952205617204"><a name="cce_01_0028_b952205617204"></a><a name="cce_01_0028_b952205617204"></a>容器隧道网络</strong></p>
+    <a name="cce_01_0028_ul1221141842110"></a><a name="cce_01_0028_ul1221141842110"></a><ul id="cce_01_0028_ul1221141842110"><li>基于底层VPC网络，另构建了独立的VXLAN隧道化容器网络，适用于一般场景。</li><li>VXLAN是将以太网报文封装成UDP报文进行隧道传输。容器网络是承载于VPC网络之上的Overlay网络平面，具有付出少量隧道封装性能损耗，获得了通用性强、互通性强、高级特性支持全面（例如Network Policy网络隔离）的优势，可以满足大多数应用需求。</li><li>容器隧道网络下只能添加同一类型的节点，即全部为虚拟机节点或全部为裸金属节点。</li></ul>
+    <p id="cce_01_0028_p6806448162015"><a name="cce_01_0028_p6806448162015"></a><a name="cce_01_0028_p6806448162015"></a><strong id="cce_01_0028_b75401805214"><a name="cce_01_0028_b75401805214"></a><a name="cce_01_0028_b75401805214"></a>VPC网络</strong></p>
+    <a name="cce_01_0028_ul68480277225"></a><a name="cce_01_0028_ul68480277225"></a><ul id="cce_01_0028_ul68480277225"><li>采用VPC路由方式与底层网络深度整合，适用于高性能场景，节点数量受限于虚拟私有云VPC的路由配额。</li><li>VPC网络集群下的每个节点将会被分配固定大小的IP地址段，由于没有隧道封装的消耗，容器网络性能相对于容器隧道网络有一定优势。VPC网络集群由于VPC路由中配置有容器网段与节点IP的路由，可以支持集群外直接访问容器实例等特殊场景。</li><li>VPC网络模式下每个节点占用一条<a href="https://support.huaweicloud.com/usermanual-vpc/route_0002.html" target="_blank" rel="noopener noreferrer">VPC路由规则</a>，当前局点支持200条VPC路由规则。</li></ul>
+    <p id="cce_01_0028_p4145851202013"><a name="cce_01_0028_p4145851202013"></a><a name="cce_01_0028_p4145851202013"></a><strong id="cce_01_0028_b1266919520213"><a name="cce_01_0028_b1266919520213"></a><a name="cce_01_0028_b1266919520213"></a>Yangtse</strong></p>
+    <p id="cce_01_0028_p146421738102017"><a name="cce_01_0028_p146421738102017"></a><a name="cce_01_0028_p146421738102017"></a>深度整合VPC原生ENI弹性网卡能力，采用VPC网段分配容器地址，支持ELB直通容器，享有高性能。</p>
     </td>
     </tr>
     <tr id="cce_01_0028_row64648564171234"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p2042307171234"><a name="cce_01_0028_p2042307171234"></a><a name="cce_01_0028_p2042307171234"></a>* 容器网段</p>
@@ -111,7 +117,7 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     <tr id="cce_01_0028_row773511171567"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p37371717105616"><a name="cce_01_0028_p37371717105616"></a><a name="cce_01_0028_p37371717105616"></a>鉴权方式</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p2017413473382"><a name="cce_01_0028_p2017413473382"></a><a name="cce_01_0028_p2017413473382"></a><span class="uicontrol" id="cce_01_0028_uicontrol217464712384"><a name="cce_01_0028_uicontrol217464712384"></a><a name="cce_01_0028_uicontrol217464712384"></a>“RBAC”</span>默认勾选，不可取消。</p>
-    <p id="cce_01_0028_p16141515161117"><a name="cce_01_0028_p16141515161117"></a><a name="cce_01_0028_p16141515161117"></a>开启RBAC能力后，设置了细粒度权限的子用户使用集群下资源将受到权限控制。</p>
+    <p id="cce_01_0028_p16141515161117"><a name="cce_01_0028_p16141515161117"></a><a name="cce_01_0028_p16141515161117"></a>开启RBAC能力后，设置了细粒度权限的子用户使用集群下资源将受到权限控制。详细请参见<a href="kubernetes-RBAC授权.md">kubernetes RBAC授权</a>。</p>
     </td>
     </tr>
     <tr id="cce_01_0028_row1610917221609"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p6655100911"><a name="cce_01_0028_p6655100911"></a><a name="cce_01_0028_p6655100911"></a>认证方式</p>
@@ -149,6 +155,9 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     <p id="cce_01_0028_p658055813489"><a name="cce_01_0028_p658055813489"></a><a name="cce_01_0028_p658055813489"></a>该参数仅在v1.13.10-r0及以上版本的集群中显示。</p>
     <a name="cce_01_0028_ul14813182993518"></a><a name="cce_01_0028_ul14813182993518"></a><ul id="cce_01_0028_ul14813182993518"><li>开启：支持给工作负载实例配置CPU独占，适用于对CPU缓存和调度延迟敏感的工作负载。</li><li>关闭：关闭工作负载实例独占CPU核的功能，优点是CPU共享池的可分配核数较多。</li></ul>
     <p id="cce_01_0028_p1363818291491"><a name="cce_01_0028_p1363818291491"></a><a name="cce_01_0028_p1363818291491"></a>更多CPU管理策略内容请参见<a href="https://kubernetes.io/blog/2018/07/24/feature-highlight-cpu-manager/" target="_blank" rel="noopener noreferrer">Feature Highlight: CPU Manager</a>或<a href="https://bbs.huaweicloud.com/forum/thread-28901-1-1.html" target="_blank" rel="noopener noreferrer">深入理解 Kubernetes CPU Mangager</a>。</p>
+    <p id="cce_01_0028_p0904172120273"><a name="cce_01_0028_p0904172120273"></a><a name="cce_01_0028_p0904172120273"></a><strong id="cce_01_0028_b15232314276"><a name="cce_01_0028_b15232314276"></a><a name="cce_01_0028_b15232314276"></a>控制节点可用区：</strong></p>
+    <p id="cce_01_0028_p13827154032810"><a name="cce_01_0028_p13827154032810"></a><a name="cce_01_0028_p13827154032810"></a>可选择将控制节点分布到多个可用区。</p>
+    <p id="cce_01_0028_p44694192714"><a name="cce_01_0028_p44694192714"></a><a name="cce_01_0028_p44694192714"></a>多可用区模式支持集群管理面多可用区容灾，但是对于集群性能有所损耗。</p>
     </td>
     </tr>
     <tr id="cce_01_0028_row76532194177"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p79871037171719"><a name="cce_01_0028_p79871037171719"></a><a name="cce_01_0028_p79871037171719"></a>* 购买时长</p>
@@ -165,7 +174,7 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
 
             若您需要使用[应用服务网格ASM](https://support.huaweicloud.com/productdesc-istio/istio_productdesc_0001.html)功能，请选择“现在添加“，集群需要至少创建一个节点来安装Istio控制面。具体请参见[启用服务网格](https://support.huaweicloud.com/usermanual-istio/istio_01_0002.html)。
 
-        -   稍后添加：将仅创建一个集群，不会创建节点，请直接单击“下一步“。
+        -   稍后添加：将不会创建节点，仅创建一个空集群，请直接单击“下一步“。
 
     -   **计费模式：**支持“包年/包月“和“按需计费“两种计费类型。
 
@@ -194,7 +203,10 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
             >购买裸金属节点请参考[购买节点](购买节点.md)。  
 
 
-    -   **节点名称：**自定义节点名称。创建后如需修改请参考[修改云服务器名称](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0142266317.html)，修改后需要[同步节点信息](同步节点信息.md)。
+    -   **节点名称：**自定义节点名称。长度范围为4-32个字符，以小写字母开头，由小写字母、数字、中划线\(-\)组成，且不能以中划线\(-\)结尾。
+
+        创建后如需修改请参考[修改云服务器名称](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0142266317.html)，修改后需要[同步节点信息](同步节点信息.md)。
+
     -   **节点规格：**请根据业务需求选择**“GPU加速型“**下的节点规格。
 
         **图 3**  选择GPU节点规格<a name="fig715175671311"></a>  
@@ -305,5 +317,42 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     >在集群创建页面中，您可以通过选择“启用Istio服务网格“，在混合集群中开启应用服务网格功能。具体请参见[启用服务网格](https://support.huaweicloud.com/usermanual-istio/istio_01_0002.html)。  
 
     集群创建预计需要6-10分钟，您可以单击“返回集群管理“进行其他操作或单击“查看集群事件列表“后查看集群详情。
+
+
+## 相关操作<a name="section3667101120592"></a>
+
+-   通过命令行工具连接集群：请参见[通过kubectl或web-terminal插件连接CCE集群](通过kubectl或web-terminal插件连接CCE集群.md)。
+-   添加节点：集群创建完成后，若您需要为集群添加更多节点，请参见[购买节点](购买节点.md)。
+-   登录节点：请参见[登录节点](登录节点.md)。
+
+-   创建命名空间：同个集群内可创建多个命名空间，形成逻辑上的不同分组，便于不同的分组在共享使用集群资源时还能被分别管理。若您需要为集群创建命名空间，请参见[命名空间](命名空间.md)。
+-   单击已成功创建的集群名称，进入“集群详情“页可查看集群详情。
+
+    **表 2**  已创建的集群详情
+
+    <a name="cce_01_0028_table1642185503514"></a>
+    <table><thead align="left"><tr id="cce_01_0028_row1264365516359"><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.3.1.1"><p id="cce_01_0028_p76431955153512"><a name="cce_01_0028_p76431955153512"></a><a name="cce_01_0028_p76431955153512"></a>页签类别</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="80%" id="mcps1.2.3.1.2"><p id="cce_01_0028_p176431155163517"><a name="cce_01_0028_p176431155163517"></a><a name="cce_01_0028_p176431155163517"></a>说明</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="cce_01_0028_row5975069716956"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p796825616956"><a name="cce_01_0028_p796825616956"></a><a name="cce_01_0028_p796825616956"></a>集群详情</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p4144902016956"><a name="cce_01_0028_p4144902016956"></a><a name="cce_01_0028_p4144902016956"></a>可查看该集群的详情及运行状态等。</p>
+    </td>
+    </tr>
+    <tr id="cce_01_0028_row106431055133510"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p1364315552359"><a name="cce_01_0028_p1364315552359"></a><a name="cce_01_0028_p1364315552359"></a>监控</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p5583863516649"><a name="cce_01_0028_p5583863516649"></a><a name="cce_01_0028_p5583863516649"></a>查看集群近1小时、近3小时或近12小时的CPU和内存占用情况。</p>
+    </td>
+    </tr>
+    <tr id="cce_01_0028_row1464335593515"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p1264365518351"><a name="cce_01_0028_p1264365518351"></a><a name="cce_01_0028_p1264365518351"></a>事件</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><a name="cce_01_0028_ul42186174161243"></a><a name="cce_01_0028_ul42186174161243"></a><ul id="cce_01_0028_ul42186174161243"><li>可以直接在“事件”页签下查看集群的事件。</li><li>可以设置查询条件，比如设置事件产生的时间段或搜索事件名称，查看相关事件。</li></ul>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
 

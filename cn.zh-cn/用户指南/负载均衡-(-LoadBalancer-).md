@@ -16,7 +16,7 @@
 
 可以在创建工作负载时通过CCE控制台设置Service访问方式，本节以nginx为例进行说明。
 
-1.  参考[创建无状态工作负载\(Deployment\)](创建无状态工作负载(Deployment).md)或[创建有状态工作负载\(StatefulSet\)](创建有状态工作负载(StatefulSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
+1.  参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)或[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
     -   **访问类型：**选择“负载均衡 \( LoadBalancer \)“。
     -   **服务名称：**自定义服务名称，可与工作负载名称保持一致。
     -   **服务亲和：**
@@ -52,7 +52,7 @@
 
 2.  完成配置后，直接单击“确定“。
 3.  单击“下一步：高级配置“进入高级设置页面，直接单击“创建“。
-4.  创建成功后，单击“工作负载 \> 无状态（Deployment）“或“工作负载 \> 有状态（StatefulSet）“，在工作负载列表页面，单击“工作负载名称“进入工作负载详情页，在“访问方式“页签下，即可获取方式地址，如[图2](#fig756114141119)。
+4.  创建成功后，单击“工作负载 \> 无状态负载 Deployment“或“工作负载 \> 有状态负载 StatefulSet“，在工作负载列表页面，单击“工作负载名称“进入工作负载详情页，在“访问方式“页签下，即可获取方式地址，如[图2](#fig756114141119)。
 
     **图 2**  获取负载均衡访问地址<a name="fig756114141119"></a>  
     ![](figures/获取负载均衡访问地址.png "获取负载均衡访问地址")
@@ -65,7 +65,7 @@
 
 **前提条件**
 
-请参见[通过kubectl连接集群](通过kubectl连接集群.md)配置kubectl命令，使弹性云服务器连接集群。
+请参见[通过kubectl或web-terminal插件连接CCE集群](通过kubectl或web-terminal插件连接CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
 
 **操作步骤**
 
@@ -375,7 +375,7 @@
 
 您可以在工作负载创建完成后对Service进行配置，此配置对工作负载状态无影响，且实时生效。具体操作如下：
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 无状态 \( Deployment \)”或“工作负载 \> 有状态（StatefulSet）”，在工作负载列表页单击要设置Service的工作负载名称。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 无状态 \( Deployment \)”或“工作负载 \> 有状态负载 StatefulSet”，在工作负载列表页单击要设置Service的工作负载名称。
 2.  在“访问方式“页签，单击“添加Service”。
 3.  在“添加service“页面，访问类型选择“**负载均衡 \( LoadBalancer \)**”。
 4.  设置负载均衡参数。

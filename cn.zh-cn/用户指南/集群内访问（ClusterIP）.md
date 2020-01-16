@@ -13,7 +13,7 @@
 
 您可以在创建工作负载时通过CCE控制台设置Service访问方式，如下：
 
-1.  参考[创建无状态工作负载\(Deployment\)](创建无状态工作负载(Deployment).md)或[创建有状态工作负载\(StatefulSet\)](创建有状态工作负载(StatefulSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
+1.  参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)或[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
 
     -   **访问类型：**选择“集群内访问 \( ClusterIP \)“。
     -   **服务名称：**自定义服务名称，可与工作负载名称保持一致。
@@ -107,7 +107,7 @@
 
 **前提条件**
 
-请参见[通过kubectl连接集群](通过kubectl连接集群.md)配置kubectl命令，使弹性云服务器连接集群。
+请参见[通过kubectl或web-terminal插件连接CCE集群](通过kubectl或web-terminal插件连接CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
 
 **操作步骤**
 

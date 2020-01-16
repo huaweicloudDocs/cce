@@ -250,7 +250,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p22746991"><a name="p22746991"></a><a name="p22746991"></a>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p6667146"><a name="p6667146"></a><a name="p6667146"></a>VolumeClaimTemplates is a list of claims that pods are allowed to reference. The StatefulSet controller is responsible for mapping network identities to claims in a way that maintains the identity of a pod. Every claim in this list must have at least one matching (by name) volumeMount in one container in the template. A claim in this list takes precedence over any volumes in the template, with the same name.详情请参见<a href="获取指定的PersistentVolumeClaim.md#t7aa9de1153e9466cbfcaa9af17a24772">表2</a>。</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p6667146"><a name="p6667146"></a><a name="p6667146"></a>VolumeClaimTemplates is a list of claims that pods are allowed to reference. The StatefulSet controller is responsible for mapping network identities to claims in a way that maintains the identity of a pod. Every claim in this list must have at least one matching (by name) volumeMount in one container in the template. A claim in this list takes precedence over any volumes in the template, with the same name.具体请参见<a href="获取指定的PersistentVolumeClaim.md#t7aa9de1153e9466cbfcaa9af17a24772">表2</a>。</p>
 </td>
 </tr>
 <tr id="row60004316"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="p28511466"><a name="p28511466"></a><a name="p28511466"></a>selector</p>

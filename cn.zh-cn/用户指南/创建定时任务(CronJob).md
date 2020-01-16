@@ -22,7 +22,7 @@ CronJob的典型用法如下所示：
 
     镜像仓库的使用步骤请参考[上传镜像至容器镜像服务](https://support.huaweicloud.com/usermanual-swr/swr_01_0009.html)。
 
-2.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 定时任务（CronJob）“，单击“创建定时任务”_。_
+2.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 定时任务 CronJob“，单击“创建定时任务”_。_
 3.  参照[表1](#tfadd3a11520b424d9063fe347c9c8c46)配置定时任务基本信息，其中带“\*”标志的参数为必填参数。
 
     **表 1**  任务基本信息

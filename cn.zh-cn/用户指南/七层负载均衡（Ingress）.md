@@ -23,7 +23,7 @@
 
 您可以在创建工作负载时通过CCE控制台设置访问方式，本节以ingress-test工作负载为例进行说明。
 
-1.  创建工作负载，详细步骤请参见[创建无状态工作负载\(Deployment\)](创建无状态工作负载(Deployment).md)或[创建有状态工作负载\(StatefulSet\)](创建有状态工作负载(StatefulSet).md)。
+1.  创建工作负载，详细步骤请参见[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)或[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)。
     -   若创建工作负载时，配置了工作负载访问方式，且设置为“节点访问 \( NodePort \)”，请直接执行[3](#li45981923161059)。
     -   若创建工作负载未设置访问方式，请先执行[2](#li248013365354)。
 
@@ -58,7 +58,7 @@
         -   **Ingress名称：**自定义Ingress名称，例如ingress-demo。
         -   **集群名称：**选择需要添加Ingress的集群。
         -   **命名空间：**选择需要添加Ingress的命名空间。
-        -   **对接Nginx插件：**集群中已安装[nginx-ingress](nginx-ingress.md)插件后显示此参数，若未安装[nginx-ingress](nginx-ingress.md)插件本参数不显示。
+        -   <a name="li17417517134"></a>**对接Nginx插件：**集群中已安装[nginx-ingress](nginx-ingress.md)插件后显示此参数，若未安装[nginx-ingress](nginx-ingress.md)插件本参数不显示。
 
             单击![](figures/zh-cn_image_0183600214.png)开启后可配置如下Nginx参数：
 
@@ -73,12 +73,12 @@
             </thead>
             <tbody><tr id="row642311116124"><td class="cellrowborder" valign="top" width="23.400000000000002%" headers="mcps1.2.3.1.1 "><p id="p1242371171212"><a name="p1242371171212"></a><a name="p1242371171212"></a>对外协议</p>
             </td>
-            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p042318171215"><a name="p042318171215"></a><a name="p042318171215"></a>支持<span class="uicontrol" id="uicontrol1712440191315"><a name="uicontrol1712440191315"></a><a name="uicontrol1712440191315"></a>“HTTP”</span>和<span class="uicontrol" id="uicontrol192534211138"><a name="uicontrol192534211138"></a><a name="uicontrol192534211138"></a>“HTPPS”</span>两种协议。</p>
+            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p042318171215"><a name="p042318171215"></a><a name="p042318171215"></a>支持<span class="uicontrol" id="uicontrol1712440191315"><a name="uicontrol1712440191315"></a><a name="uicontrol1712440191315"></a>“HTTP”</span>和<span class="uicontrol" id="uicontrol192534211138"><a name="uicontrol192534211138"></a><a name="uicontrol192534211138"></a>“HTTPS”</span>两种协议。</p>
             </td>
             </tr>
             <tr id="row826304681311"><td class="cellrowborder" valign="top" width="23.400000000000002%" headers="mcps1.2.3.1.1 "><p id="p7263946111315"><a name="p7263946111315"></a><a name="p7263946111315"></a>对外端口</p>
             </td>
-            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p162631846111312"><a name="p162631846111312"></a><a name="p162631846111312"></a>安装nginx-ingress插件时预留的监听端口，HHTP为80，HTTPS为443。</p>
+            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p162631846111312"><a name="p162631846111312"></a><a name="p162631846111312"></a>安装nginx-ingress插件时预留的监听端口，HTTP为80，HTTPS为443。</p>
             </td>
             </tr>
             <tr id="row205371848144711"><td class="cellrowborder" valign="top" width="23.400000000000002%" headers="mcps1.2.3.1.1 "><p id="p195381848164718"><a name="p195381848164718"></a><a name="p195381848164718"></a>超时时间</p>
@@ -137,7 +137,7 @@
                 -   正则匹配：可设定映射URL规范，例如规范为**/\[A-Za-z0-9\_.-\]+/test**。只要符合此规则的URL均可访问，例如/abcA9/test，/v1-Ab/test。正则匹配规则支持POSIX与Perl两种标准。
 
             -   URL：需要注册的访问路径，例如：/healthz。
-            -   目标Service：请选择已有Service或新建Service，仅支持选择节点访问 \( NodePort \) 类型的Service，查询结果已自动过滤。
+            -   目标Service：请选择已有Service或新建Service。页面列表中仅支持选择“节点访问 \( NodePort \)“  类型的Service，该查询结果已自动过滤。若您[开启了Nginx插件](#li17417517134)，可以通过页面右侧的“YAML创建“功能对接“集群内访问 \( ClusterIP \)“类型的Service。
             -   Service访问端口：可选择目标Service的访问端口。
             -   服务负载均衡配置：该配置是基于服务的配置，若有多条路由使用当前服务，这些路由将使用相同的服务负载均衡配置。详细配置请参见[负载均衡配置](负载均衡-(-LoadBalancer-).md#li1242315120217)。
             -   操作：可单击“删除“按钮删除该配置。
@@ -167,13 +167,13 @@
 
     以ingress中已配置域名ingress.com为例。
 
-    1.  获取ingress-demo“/iamwangbo”接口的域名与访问地址的IP与端口。
+    1.  获取ingress-demo“/james”接口的域名与访问地址的IP与端口。
 
         **图 4**  获取域名与访问地址<a name="fig1992172383117"></a>  
         ![](figures/获取域名与访问地址.png "获取域名与访问地址")
 
     2.  在本地主机的  C:\\Windows\\System32\\drivers\\etc\\hosts中配置访问地址的IP和域名。
-    3.  在浏览器中输入http://域名:访问地址端口/映射url，如：http://ingress.com:81/iamwangbo。
+    3.  在浏览器中输入http://域名:访问地址端口/映射url，如：http://ingress.com:81/james。
 
 
 ## 通过kubectl命令行创建<a name="section1944313158364"></a>
@@ -182,7 +182,7 @@
 
 **前提条件**
 
-请参见[通过kubectl连接集群](通过kubectl连接集群.md)配置kubectl命令，使弹性云服务器连接集群。
+请参见[通过kubectl或web-terminal插件连接CCE集群](通过kubectl或web-terminal插件连接CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
 
 **操作步骤**
 

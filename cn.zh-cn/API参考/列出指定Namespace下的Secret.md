@@ -124,7 +124,7 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.320000000000004%" headers="mcps1.2.4.1.2 "><p id="p616612559218"><a name="p616612559218"></a><a name="p616612559218"></a>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="p0900115610545"><a name="p0900115610545"></a><a name="p0900115610545"></a>List of services.详情请参见<a href="创建Secret.md#zh-cn_topic_0079614900_ref458786458">表2</a>。</p>
+<td class="cellrowborder" valign="top" width="44.43%" headers="mcps1.2.4.1.3 "><p id="p0900115610545"><a name="p0900115610545"></a><a name="p0900115610545"></a>List of services.具体请参见<a href="创建Secret.md#zh-cn_topic_0079614900_ref458786458">表2</a>。</p>
 </td>
 </tr>
 </tbody>

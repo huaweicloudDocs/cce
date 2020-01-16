@@ -1,6 +1,6 @@
 # virtual kubelet<a name="cce_01_0135"></a>
 
-Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该插件支持用户在短时高负载场景下，将部署在CCE上的无状态工作负载（Deployment）、守护进程集（DaemonSet）、普通任务（Job）三种资源类型的容器实例（Pod），弹性创建到华为云[云容器实例CCI](https://support.huaweicloud.com/cci/index.html)服务上，以减少集群扩容带来的消耗。
+Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该插件支持用户在短时高负载场景下，将部署在CCE上的无状态负载（Deployment）、守护进程集（DaemonSet）、普通任务（Job）三种资源类型的容器实例（Pod），弹性创建到华为云[云容器实例CCI](https://support.huaweicloud.com/cci/index.html)服务上，以减少集群扩容带来的消耗。
 
 Virtual Kubelet插件具体如下功能：
 

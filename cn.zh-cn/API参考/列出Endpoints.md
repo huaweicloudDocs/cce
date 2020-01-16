@@ -120,7 +120,7 @@ N/A
 <td class="cellrowborder" valign="top" width="30.14%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614910_p44321808"><a name="zh-cn_topic_0079614910_p44321808"></a><a name="zh-cn_topic_0079614910_p44321808"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="p141911584228"><a name="p141911584228"></a><a name="p141911584228"></a>List of endpoints.</p>
-<p id="zh-cn_topic_0079614910_p31235064"><a name="zh-cn_topic_0079614910_p31235064"></a><a name="zh-cn_topic_0079614910_p31235064"></a>详情请参见<a href="创建Endpoints.md#zh-cn_topic_0079614955_ref458759912">表2</a>。</p>
+<p id="zh-cn_topic_0079614910_p31235064"><a name="zh-cn_topic_0079614910_p31235064"></a><a name="zh-cn_topic_0079614910_p31235064"></a>具体请参见<a href="创建Endpoints.md#zh-cn_topic_0079614955_ref458759912">表2</a>。</p>
 </td>
 </tr>
 </tbody>

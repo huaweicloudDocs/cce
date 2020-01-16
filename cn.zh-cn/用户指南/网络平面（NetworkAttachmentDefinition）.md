@@ -19,14 +19,17 @@
     **图 2**  添加网络平面<a name="fig1778184810539"></a>  
     ![](figures/添加网络平面.png "添加网络平面")
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >集群默认创建一个“default-network“，默认的network资源包含了tenant\_id、vpc\_id、subnet等等信息。  
-    >**图 3**  默认网络平面<a name="fig684420255312"></a>    
-    >![](figures/默认网络平面.png "默认网络平面")  
+    集群默认创建一个“default-network“，默认的network资源包含了tenant\_id、vpc\_id、subnet等等信息。
+
+    **图 3**  默认网络平面<a name="fig684420255312"></a>  
+    ![](figures/默认网络平面.png "默认网络平面")
 
 3.  在添加网络平面页面，设置基本信息。
 
     -   网络平面名称：自定义名称，请输入长度范围为4-63的字符。
+
+        default-network、default、mgnt0、mgnt1四个名称为系统预留，请勿使用。
+
     -   集群名称：请选择要添加网络平面的集群。
     -   安全组：安全组给弹性网卡提供访问策略，最多可以选择5条，未选择时默认使用缺省安全组。
     -   子网：请选择子网。若无子网可选请单击后方的“创建子网“进行创建，创建完成后单击刷新按钮。

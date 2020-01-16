@@ -11,11 +11,12 @@
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“ 插件管理“，在“插件市场“中，单击**web-terminal**插件下的“安装插件“。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  在规格配置页面，配置以下参数。
-    -   用户名：默认为root。
-    -   密码：登录web-terminal的密码
+    -   用户名：默认为root，不可修改。
+    -   密码：登录web-terminal的密码，请务必记住该密码。
+    -   确认密码：重新准确输入该密码。
     -   访问类型：
-        -   节点访问：若集群没有绑定弹性IP，需绑定弹性IP。
-        -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后点击刷新按钮。
+        -   节点访问：该插件默认以NodePort形式提供访问，需为集群任意一个节点绑定弹性IP才能使用。若集群没有绑定弹性IP，需绑定弹性IP。
+        -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后点击刷新按钮。负载均衡实例需与当前集群处于相同VPC且为公网类型。
 
     -   端口配置：访问类型为负载均衡时，需端口配置。
         -   协议：请根据业务的协议类型选择。
@@ -26,18 +27,38 @@
 
     待插件安装完成后，单击“返回插件管理“，在“插件实例“页签中，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
 
-5.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例”中，点击“web-terminal”进入详情页，点击“访问地址”中的链接即可登录。
+
+## 使用web-terminal插件连接集群<a name="section115151890220"></a>
+
+**方式一：**
+
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“资源管理 \> 集群管理“。
+2.  单击集群下方的“命令行工具 \> web-terminal“，即可登录。
+
+    **图 1**  使用web-terminal连接集群<a name="fig363789132816"></a>  
+    ![](figures/使用web-terminal连接集群.png "使用web-terminal连接集群")
+
+
+**方式二：**
+
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“。
+2.  在“插件实例”中，正确选择插件所在的集群，单击“web-terminal”进入详情页。
+3.  点击插件详情页中访问地址后的链接即可登录。
+
+    **图 2**  web-terminal插件访问地址<a name="fig20637104663012"></a>  
+    ![](figures/web-terminal插件访问地址.png "web-terminal插件访问地址")
+
 
 ## 配置插件<a name="section18673939131214"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
->该部分仅针对1.0.0版本的web-terminal进行说明，使用最新版本的用户无需阅读该部分的说明，使用老版本的用户建议尽早升级到最新版本提升使用体验。  
+>**该部分仅针对1.0.0版本的web-terminal进行说明**，使用最新版本的用户无需阅读该部分的说明，使用老版本的用户建议尽早升级到最新版本提升使用体验。  
 
 成功安装web-tertimal后, 仍需完成如下步骤才能使用。
 
 1.  为web-terminal添加service
 
-    -   在“工作负载 \> 无状态（Deployment）“界面单击“web-terminal”查看详情，然后单击“访问方式 \> 添加服务“进入service添加界面。
+    -   在“工作负载 \> 无状态负载 Deployment“界面单击“web-terminal”查看详情，然后单击“访问方式 \> 添加Service“进入Service添加界面。
     -   设置服务名称为“web-terminal-service”（可任取），选择“公网访问“作为访问方式，从“负载均衡“和“弹性IP“中选一种访问类型。
     -   端口配置中将容器端口设为3000，其余根据情况自行设定，确认设置后单击“创建“完成该步骤。
 

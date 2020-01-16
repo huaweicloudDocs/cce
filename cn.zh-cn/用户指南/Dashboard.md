@@ -83,7 +83,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
     在“配置中心”-\>“密钥（Secret）”页面，选择实例所在集群，选择命名空间kube-system，选择密钥kubernetes-dashboard-token-XXXXX，查看密钥数据中键token对应的值。
 
-3.  **登陆终端**
+3.  **登录终端**
 
     将上一步获取到的Token值进行base64解密并复制到dashboard的登录界面中，完成登录（当前只支持使用令牌方式进行登录）。
 
@@ -93,7 +93,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 确认dashboard插件状态为“运行中“后，单击“访问地址“中的链接并登录，详细操作如下：
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例”页签中，确认dashboard插件状态为“运行中“后，单击插件名称“dashboard“进入插件实例详情页。
-2.  在详情页下方的“说明”页签中，单击“获取默认token”右侧“操作”栏中的![](figures/zh-cn_image_0178554578.png)，复制“值”栏中的信息。
+2.  在详情页下方的“说明”页签中，单击“获取默认token”右侧的![](figures/zh-cn_image_0219106095.png)，复制“值”栏中的信息。
 
     **图 1**  复制token<a name="fig118242010184815"></a>  
     ![](figures/复制token.png "复制token")

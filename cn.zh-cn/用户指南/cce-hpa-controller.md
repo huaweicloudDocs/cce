@@ -15,7 +15,7 @@ cce-hpa-controller插件是一款CCE自研的插件，能够基于CPU利用率�
 
 ## 安装插件<a name="section046523415137"></a>
 
-安装本插件后，可在“弹性伸缩“页面的“工作负载伸缩“页签中，创建CustomedHPA策略，具体请参见[工作负载伸缩](工作负载伸缩-1.md)。
+安装本插件后，可在“弹性伸缩“页面的“工作负载伸缩“页签中，创建CustomedHPA策略，具体请参见[工作负载伸缩](工作负载伸缩.md)。
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签中，单击“cce-hpa-controller“下的“安装插件“按钮。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。

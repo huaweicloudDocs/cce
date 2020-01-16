@@ -126,7 +126,7 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614912_p46966292"><a name="zh-cn_topic_0079614912_p46966292"></a><a name="zh-cn_topic_0079614912_p46966292"></a>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614912_p12906742"><a name="zh-cn_topic_0079614912_p12906742"></a><a name="zh-cn_topic_0079614912_p12906742"></a>List of services，详情请参见<a href="获取指定的Service.md#zh-cn_topic_0079614941_ref458765062">表2</a>。</p>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079614912_p12906742"><a name="zh-cn_topic_0079614912_p12906742"></a><a name="zh-cn_topic_0079614912_p12906742"></a>List of services，具体请参见<a href="获取指定的Service.md#zh-cn_topic_0079614941_ref458765062">表2</a>。</p>
 </td>
 </tr>
 </tbody>

@@ -112,7 +112,7 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p59750244"><a name="p59750244"></a><a name="p59750244"></a>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p4275369"><a name="p4275369"></a><a name="p4275369"></a>List of StatefulSets.详情请参见<a href="创建StatefulSet.md#d0e37568">表2</a>。</p>
+<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p4275369"><a name="p4275369"></a><a name="p4275369"></a>List of StatefulSets.具体请参见<a href="创建StatefulSet.md#d0e37568">表2</a>。</p>
 </td>
 </tr>
 <tr id="row38478323"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p29736429"><a name="p29736429"></a><a name="p29736429"></a>metadata</p>

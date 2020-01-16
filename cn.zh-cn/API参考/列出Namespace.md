@@ -120,7 +120,7 @@ N/A
 <td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079614949_p14721100"><a name="zh-cn_topic_0079614949_p14721100"></a><a name="zh-cn_topic_0079614949_p14721100"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p18417182762216"><a name="p18417182762216"></a><a name="p18417182762216"></a>Items is the list of Namespace objects in the list.</p>
-<p id="zh-cn_topic_0079614949_p61373038"><a name="zh-cn_topic_0079614949_p61373038"></a><a name="zh-cn_topic_0079614949_p61373038"></a>详情请参见<a href="创建Namespace.md#zh-cn_topic_0079615062_ref458675483">请求消息</a>。</p>
+<p id="zh-cn_topic_0079614949_p61373038"><a name="zh-cn_topic_0079614949_p61373038"></a><a name="zh-cn_topic_0079614949_p61373038"></a>具体请参见<a href="创建Namespace.md#zh-cn_topic_0079615062_ref458675483">请求消息</a>。</p>
 </td>
 </tr>
 </tbody>

@@ -137,7 +137,7 @@ GET /apis/extensions/v1beta1/namespaces/\{namespace\}/replicasets/\{name\}
 </tr>
 <tr id="row20352153021812"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="p2357113016180"><a name="p2357113016180"></a><a name="p2357113016180"></a>items</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p id="p735717308182"><a name="p735717308182"></a><a name="p735717308182"></a>Array of  <a href="获取指定的ReplicaSet.md">io.k8s.api.core.v1.Namespace</a> objects</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p id="p735717308182"><a name="p735717308182"></a><a name="p735717308182"></a>Array of  io.k8s.api.core.v1.Namespace objects</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="p5358230111814"><a name="p5358230111814"></a><a name="p5358230111814"></a>Items is the list of Namespace objects in the list. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/</p>
 </td>
@@ -151,7 +151,7 @@ GET /apis/extensions/v1beta1/namespaces/\{namespace\}/replicasets/\{name\}
 </tr>
 <tr id="row1835213012185"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="p4362183021816"><a name="p4362183021816"></a><a name="p4362183021816"></a>metadata</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p id="p73621309182"><a name="p73621309182"></a><a name="p73621309182"></a>Array of <a href="获取指定的ReplicaSet.md">io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta</a> objects</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p id="p73621309182"><a name="p73621309182"></a><a name="p73621309182"></a>Array of io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta objects</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="p1436210305187"><a name="p1436210305187"></a><a name="p1436210305187"></a>Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</p>
 </td>

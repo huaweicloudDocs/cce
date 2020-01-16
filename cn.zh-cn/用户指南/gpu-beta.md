@@ -24,6 +24,9 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
     **图 1**  安装Nvidia驱动<a name="fig428916253011"></a>  
     ![](figures/安装Nvidia驱动.png "安装Nvidia驱动")
 
+    >![](public_sys-resources/icon-caution.gif) **注意：**   
+    >卸载GPU-BETA插件不会卸载驱动。若重新安装了驱动，需重启所有GPU节点。  
+
     1.  在“已验证驱动地址“页签下，选择华为云已经验证过的Nvidia驱动。
     2.  在“自定义驱动地址“页签下，输入您获取的Nvidia驱动链接。**如何获取驱动链接，请参考**[获取驱动链接方式](#section95451728192112)。
 

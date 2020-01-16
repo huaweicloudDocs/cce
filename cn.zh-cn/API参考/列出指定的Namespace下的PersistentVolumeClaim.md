@@ -125,7 +125,7 @@ N/A
 <td class="cellrowborder" valign="top" width="30.133013301330138%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615077_p960791745920"><a name="zh-cn_topic_0079615077_p960791745920"></a><a name="zh-cn_topic_0079615077_p960791745920"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.80448044804481%" headers="mcps1.2.4.1.3 "><p id="ac1b99f17181549ae885fa9e19b91b2d2"><a name="ac1b99f17181549ae885fa9e19b91b2d2"></a><a name="ac1b99f17181549ae885fa9e19b91b2d2"></a>A list of persistent volume claims.</p>
-<p id="p13804044296"><a name="p13804044296"></a><a name="p13804044296"></a>详情请参见<a href="创建PersistentVolumeClaim-1.md#t8268aeafde034542ab17a36c7fca65c3">14.2-Table2 Request parameters</a>。</p>
+<p id="p13804044296"><a name="p13804044296"></a><a name="p13804044296"></a>具体请参见<a href="创建PersistentVolumeClaim-1.md#t8268aeafde034542ab17a36c7fca65c3">14.2-Table2 Request parameters</a>。</p>
 </td>
 </tr>
 </tbody>

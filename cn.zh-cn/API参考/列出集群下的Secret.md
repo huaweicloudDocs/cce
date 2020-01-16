@@ -117,7 +117,7 @@ N/A
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="ada6c495fd25b43428dcb7540584913fa"><a name="ada6c495fd25b43428dcb7540584913fa"></a><a name="ada6c495fd25b43428dcb7540584913fa"></a>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p128013175711"><a name="p128013175711"></a><a name="p128013175711"></a>List of services.详情请参见<a href="创建Secret.md#s08d56e5f4e57452da0a49400212440a4">响应消息</a>。</p>
+<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p128013175711"><a name="p128013175711"></a><a name="p128013175711"></a>List of services.具体请参见<a href="创建Secret.md#s08d56e5f4e57452da0a49400212440a4">响应消息</a>。</p>
 </td>
 </tr>
 </tbody>

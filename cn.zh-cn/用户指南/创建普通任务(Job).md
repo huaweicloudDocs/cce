@@ -20,7 +20,7 @@
 
     镜像仓库的使用步骤请参考[上传镜像至容器镜像服务](https://support.huaweicloud.com/usermanual-swr/swr_01_0009.html)。
 
-2.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 普通任务（Job）“，单击“创建普通任务”_。_
+2.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 普通任务 Job“，单击“创建普通任务”_。_
 3.  参照[表1](#t70ce3a99637a44ce8f7274857fb245b1)配置任务基本信息，其中带“\*”标志的参数为必填参数。
 
     **表 1**  任务基本信息
