@@ -6,7 +6,7 @@ CCE集群版本更迭策略，请参见[Kubernetes版本支持机制](cce_01_023
 
 CCE集群新版本升级，请参见[集群版本升级说明](集群版本升级说明.md)。
 
-## V1.15公测版本<a name="section18351606577"></a>
+## V1.15版本<a name="section18351606577"></a>
 
 **表 1**  V1.15公测版本集群特性说明
 
@@ -19,10 +19,9 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 </thead>
 <tbody><tr id="row9819824154913"><td class="cellrowborder" valign="top" width="29.12%" headers="mcps1.2.3.1.1 "><p id="p181952410497"><a name="p181952410497"></a><a name="p181952410497"></a>v1.15.6-r0</p>
 </td>
-<td class="cellrowborder" valign="top" width="70.88%" headers="mcps1.2.3.1.2 "><p id="p989313443514"><a name="p989313443514"></a><a name="p989313443514"></a>测试版本，不建议用于商业场景。</p>
-<p id="p41121229115010"><a name="p41121229115010"></a><a name="p41121229115010"></a>1.15公测版本集群提供如下主要特性能力，欢迎测试体验。</p>
-<a name="ul9447153212409"></a><a name="ul9447153212409"></a><ul id="ul9447153212409"><li>支持Kubernetes参数动态配置。详情参见<a href="配置管理.md">配置管理</a>和<a href="管理节点池.md">管理节点池</a>。</li><li>支持IPV6访问。具体请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0022.html" target="_blank" rel="noopener noreferrer">搭建IPv4/IPv6双栈集群</a>。</li><li>CCE集群的容器网络支持纯ENI方案（Yangtse网络），支持IP可分配。请在<a href="购买混合集群.md">购买混合集群</a>时选择<span class="uicontrol" id="uicontrol1362773117325"><a name="uicontrol1362773117325"></a><a name="uicontrol1362773117325"></a>“Yangtse”</span>网络。</li><li>CCE存储支持基于CSI的云原生容器存储系统。具体请参见<a href="Everest（系统资源插件-必装）.md">Everest</a>插件。</li></ul>
-<p id="p112725161326"><a name="p112725161326"></a><a name="p112725161326"></a><strong id="b5572123163518"><a name="b5572123163518"></a><a name="b5572123163518"></a>1.15正式版发布后，已创建的公测版本集群需要升级或者删除重建，请务必谨慎试用。</strong></p>
+<td class="cellrowborder" valign="top" width="70.88%" headers="mcps1.2.3.1.2 "><p id="p989313443514"><a name="p989313443514"></a><a name="p989313443514"></a><strong id="b213552014167"><a name="b213552014167"></a><a name="b213552014167"></a>1.15版本已正式发布，欢迎使用。</strong></p>
+<p id="p41121229115010"><a name="p41121229115010"></a><a name="p41121229115010"></a>1.15版本集群提供如下主要特性能力:</p>
+<a name="ul9447153212409"></a><a name="ul9447153212409"></a><ul id="ul9447153212409"><li>支持Kubernetes参数动态配置。详情参见<a href="配置管理.md">配置管理</a>和<a href="管理节点池.md">管理节点池</a>。</li><li>支持IPV6访问。具体请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0022.html" target="_blank" rel="noopener noreferrer">搭建IPv4/IPv6双栈集群</a>。</li><li>CCE存储支持基于CSI的云原生容器存储系统。具体请参见<a href="Everest（系统资源插件-必装）.md">Everest</a>插件。</li></ul>
 </td>
 </tr>
 </tbody>
@@ -73,7 +72,7 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 <tr id="row190113461164"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p15901194614161"><a name="p15901194614161"></a><a name="p15901194614161"></a>v1.11.7-r0</p>
 </td>
 <td class="cellrowborder" valign="top" width="70.97%" headers="mcps1.2.3.1.2 "><p id="p10901164618166"><a name="p10901164618166"></a><a name="p10901164618166"></a>主要特性：</p>
-<a name="ul1513752874712"></a><a name="ul1513752874712"></a><ul id="ul1513752874712"><li>Kubernetes同步社区1.11.7版本</li><li>支持创建节点池（<span>nodepool</span>），虚拟机/鲲鹏ARM集群均支持</li><li>混合集群支持创建裸金属节点（vpc 网络），支持裸金属和虚机混合部署</li><li>GPU支持V100类型</li><li>1.11集群对接AOM告警通知机制</li><li>Service支持访问类型切换</li><li>支持服务网段</li><li>集群支持自定义每个节点分配的节点数（IP分配）</li></ul>
+<a name="ul1513752874712"></a><a name="ul1513752874712"></a><ul id="ul1513752874712"><li>Kubernetes同步社区1.11.7版本</li><li>支持创建节点池（<span>nodepool</span>），虚拟机/鲲鹏ARM集群均支持</li><li>混合集群支持创建裸金属节点（vpc 网络），支持裸金属和虚机混合部署</li><li>GPU支持V100类型</li><li>1.11集群对接AOM告警通知机制</li><li>Service支持访问类型切换</li><li>支持服务网段</li><li>集群支持自定义每个节点分配的IP数（IP分配）</li></ul>
 </td>
 </tr>
 <tr id="row1760182091416"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p15760320151412"><a name="p15760320151412"></a><a name="p15760320151412"></a>v1.11.3-r2</p>
@@ -91,7 +90,7 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 <tr id="row0226111212582"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p822671216588"><a name="p822671216588"></a><a name="p822671216588"></a>v1.11.3-r0</p>
 </td>
 <td class="cellrowborder" valign="top" width="70.97%" headers="mcps1.2.3.1.2 "><p id="p20226181211581"><a name="p20226181211581"></a><a name="p20226181211581"></a>主要特性：</p>
-<a name="ul169031946461"></a><a name="ul169031946461"></a><ul id="ul169031946461"><li>Kubernetes同步社区1.11.3版本</li><li>集群Master节点支持多可用区</li><li>容器存储支持对接EFS极速文件存储</li></ul>
+<a name="ul169031946461"></a><a name="ul169031946461"></a><ul id="ul169031946461"><li>Kubernetes同步社区1.11.3版本</li><li>集群Master节点支持多可用区</li><li>容器存储支持对接SFS Turbo极速文件存储</li></ul>
 </td>
 </tr>
 <tr id="row136651538121314"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p16652038131318"><a name="p16652038131318"></a><a name="p16652038131318"></a>v1.9.10-r2</p>
@@ -129,7 +128,7 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 <tr id="row244634610548"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p1073275354018"><a name="p1073275354018"></a><a name="p1073275354018"></a>v1.9.2-r3</p>
 </td>
 <td class="cellrowborder" valign="top" width="70.97%" headers="mcps1.2.3.1.2 "><p id="p7336195164511"><a name="p7336195164511"></a><a name="p7336195164511"></a>主要特性：</p>
-<a name="ul13013019154"></a><a name="ul13013019154"></a><ul id="ul13013019154"><li>集群支持创建/纳管CentOS7.4操作系统的节点</li><li>kubernetes的Service支持对接DNAT网关服务</li><li>NetworkPolicy能力开放</li><li>增强型ELB支持service配置多个端口</li></ul>
+<a name="ul13013019154"></a><a name="ul13013019154"></a><ul id="ul13013019154"><li>集群支持创建/纳管CentOS7.4操作系统的节点</li><li>kubernetes的Service支持对接DNAT网关服务</li><li>NetworkPolicy能力开放</li><li>增强型ELB支持Service配置多个端口</li></ul>
 <p id="p03473518458"><a name="p03473518458"></a><a name="p03473518458"></a>问题修复：</p>
 <a name="ul182521301519"></a><a name="ul182521301519"></a><ul id="ul182521301519"><li>修复kubernetes资源回收过程中连不上kube-apiserver导致pod残留的问题</li><li>修复节点弹性扩容数据不准确的问题</li></ul>
 </td>
@@ -137,7 +136,7 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 <tr id="row2044604619544"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p1973285324018"><a name="p1973285324018"></a><a name="p1973285324018"></a>v1.9.2-r2</p>
 </td>
 <td class="cellrowborder" valign="top" width="70.97%" headers="mcps1.2.3.1.2 "><p id="p1973215312400"><a name="p1973215312400"></a><a name="p1973215312400"></a>主要特性：</p>
-<a name="ul680672012154"></a><a name="ul680672012154"></a><ul id="ul680672012154"><li>经典型ELB支持自定义健康检查端口</li><li>经典型ELB性能优化</li><li>ELB四层负载均衡支持修改service的端口</li></ul>
+<a name="ul680672012154"></a><a name="ul680672012154"></a><ul id="ul680672012154"><li>经典型ELB支持自定义健康检查端口</li><li>经典型ELB性能优化</li><li>ELB四层负载均衡支持修改Service的端口</li></ul>
 <p id="p12072015598"><a name="p12072015598"></a><a name="p12072015598"></a>问题修复：</p>
 <a name="ul1546113081515"></a><a name="ul1546113081515"></a><ul id="ul1546113081515"><li>修复网络插件防止健康检查概率死锁问题</li><li>修复高可用集群haproxy连接数限制问题</li></ul>
 </td>
@@ -157,7 +156,7 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 <tr id="row7718776556"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p12734155319403"><a name="p12734155319403"></a><a name="p12734155319403"></a>v1.7.3-r12</p>
 </td>
 <td class="cellrowborder" valign="top" width="70.97%" headers="mcps1.2.3.1.2 "><p id="p3734744104115"><a name="p3734744104115"></a><a name="p3734744104115"></a>主要特性：</p>
-<a name="ul1220014718124"></a><a name="ul1220014718124"></a><ul id="ul1220014718124"><li>集群支持创建/纳管CentOS7.4操作系统的节点</li><li>kubernetes的Service支持对接DNAT网关服务</li><li>NetworkPolicy能力开放</li><li>增强型ELB支持service配置多个端口</li></ul>
+<a name="ul1220014718124"></a><a name="ul1220014718124"></a><ul id="ul1220014718124"><li>集群支持创建/纳管CentOS7.4操作系统的节点</li><li>kubernetes的Service支持对接DNAT网关服务</li><li>NetworkPolicy能力开放</li><li>增强型ELB支持Service配置多个端口</li></ul>
 <p id="p198333541432"><a name="p198333541432"></a><a name="p198333541432"></a>问题修复：</p>
 <a name="ul47184051216"></a><a name="ul47184051216"></a><ul id="ul47184051216"><li>修复kubernetes资源回收过程中连不上kube-apiserver导致pod残留的问题</li><li>修复节点弹性扩容数据不准确的问题</li><li>事件老化周期提示修正：集群老化周期为1小时</li></ul>
 </td>
@@ -165,7 +164,7 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 <tr id="row685121145914"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p1173425374014"><a name="p1173425374014"></a><a name="p1173425374014"></a>v1.7.3-r11</p>
 </td>
 <td class="cellrowborder" valign="top" width="70.97%" headers="mcps1.2.3.1.2 "><p id="p1542765013540"><a name="p1542765013540"></a><a name="p1542765013540"></a>主要特性：</p>
-<a name="ul1662182618123"></a><a name="ul1662182618123"></a><ul id="ul1662182618123"><li>经典型ELB支持自定义健康检查端口</li><li>经典型ELB性能优化</li><li>ELB四层负载均衡支持修改service的端口</li><li>支持删除命名空间</li><li>支持EVS云硬盘存储解绑</li><li>支持配置迁移策略</li></ul>
+<a name="ul1662182618123"></a><a name="ul1662182618123"></a><ul id="ul1662182618123"><li>经典型ELB支持自定义健康检查端口</li><li>经典型ELB性能优化</li><li>ELB四层负载均衡支持修改Service的端口</li><li>支持删除命名空间</li><li>支持EVS云硬盘存储解绑</li><li>支持配置迁移策略</li></ul>
 <p id="p111749433574"><a name="p111749433574"></a><a name="p111749433574"></a>问题修复：</p>
 <a name="ul13646619181212"></a><a name="ul13646619181212"></a><ul id="ul13646619181212"><li>修复网络插件防止健康检查概率死锁问题</li><li>修复高可用集群haproxy连接数限制问题</li></ul>
 </td>

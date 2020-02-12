@@ -4,7 +4,7 @@
 
 ## 配置说明<a name="section188449192496"></a>
 
--   您需要拥有一个华为云主账号，有一个或若干个用户组和子用户。
+-   您需要拥有一个华为云主账号，有一个或若干个用户组和IAM用户。
 -   本例将对用户和用户组授予操作不同命名空间资源的权限，在您的实际业务中，您可根据业务需求仅对用户或用户组授予不同的权限。
 -   本例仅用于给用户或用户组在未授权过的命名空间下新增权限，已授权的用户或用户组的权限可以在“权限管理 \> 命名空间权限“  的列表“操作“栏中单击“编辑权限“进行修改。
 -   当给用户或用户组添加多个权限时，多个权限会同时生效（取并集）；为用户组设置的权限将作用于用户组下的全部用户。
@@ -33,28 +33,28 @@ kubernetes RBAC的授权能力支持1.13版本集群。
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p18524164555119"><a name="p18524164555119"></a><a name="p18524164555119"></a>所有权限</p>
 </td>
 </tr>
-<tr id="row138631317205019"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p3878104075018"><a name="p3878104075018"></a><a name="p3878104075018"></a>赋予CCE Administrator权限的子用户</p>
+<tr id="row138631317205019"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p3878104075018"><a name="p3878104075018"></a><a name="p3878104075018"></a>赋予CCE Administrator权限的IAM用户</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p270032114512"><a name="p270032114512"></a><a name="p270032114512"></a>所有权限</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p053164611516"><a name="p053164611516"></a><a name="p053164611516"></a>所有权限</p>
 </td>
 </tr>
-<tr id="row1386412176506"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p187854025013"><a name="p187854025013"></a><a name="p187854025013"></a>赋予CCE Admin或者CCE Viewer权限的子用户</p>
+<tr id="row1386412176506"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p187854025013"><a name="p187854025013"></a><a name="p187854025013"></a>赋予CCE&nbsp;FullAccess或者CCE&nbsp;ReadOnlyAccess权限的IAM用户</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p12703172316516"><a name="p12703172316516"></a><a name="p12703172316516"></a>所有权限</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p986431775011"><a name="p986431775011"></a><a name="p986431775011"></a>按照权限管理界面设置的命名空间权限处理</p>
 </td>
 </tr>
-<tr id="row141962030123614"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p486412177509"><a name="p486412177509"></a><a name="p486412177509"></a>赋予Tenant Guest权限的子用户（未申请开启细粒度公测的账号）</p>
+<tr id="row141962030123614"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p486412177509"><a name="p486412177509"></a><a name="p486412177509"></a>赋予Tenant Guest权限的IAM用户（未申请开启细粒度公测的账号）</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p1886418177508"><a name="p1886418177508"></a><a name="p1886418177508"></a>只读权限</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p1186471717504"><a name="p1186471717504"></a><a name="p1186471717504"></a>只读权限</p>
 </td>
 </tr>
-<tr id="row28641117145019"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p11879440195014"><a name="p11879440195014"></a><a name="p11879440195014"></a>赋予Tenant Guest权限的子用户（已申请开启细粒度公测的账号）</p>
+<tr id="row28641117145019"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p11879440195014"><a name="p11879440195014"></a><a name="p11879440195014"></a>赋予Tenant Guest权限的IAM用户（已申请开启细粒度公测的账号）</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p118641617145015"><a name="p118641617145015"></a><a name="p118641617145015"></a>所有权限</p>
 <div class="note" id="note13531359163519"><a name="note13531359163519"></a><a name="note13531359163519"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p73541859183514"><a name="p73541859183514"></a><a name="p73541859183514"></a>开启细粒度公测后，行为有变，从只读变为所有权限</p>
@@ -70,14 +70,14 @@ kubernetes RBAC的授权能力支持1.13版本集群。
 
 命名空间是对一组资源和对象的抽象整合。在同一个集群内可创建不同的命名空间，不同命名空间中的数据彼此隔离，使得它们既可以共享同一个集群的服务，也能够互不干扰。命名空间的一个重要的作用是充当一个虚拟的集群，用于多种工作用途，满足多用户的使用需求。
 
-本章节将沿用[为子用户设置CCE权限](为子用户设置CCE权限.md)中创建的子用户“James”和用户组“开发人员组”进行示例，为子用户“James”和用户组“开发人员组”添加命名空间权限，可以参考如下操作：
+本章节将沿用[为IAM用户设置CCE权限](为IAM用户设置CCE权限.md)中创建的IAM用户“James”和用户组“开发人员组”进行示例，为IAM用户“James”和用户组“开发人员组”添加命名空间权限，可以参考如下操作：
 
 **图 1**  命名空间授权流程<a name="fig138211475517"></a>  
 ![](figures/命名空间授权流程.png "命名空间授权流程")
 
-## 步骤一：为子用户/用户组添加命名空间权限<a name="section39693318615"></a>
+## 步骤一：为IAM用户/用户组添加命名空间权限<a name="section39693318615"></a>
 
-本步骤将在CCE控制台中为子用户“James”以及用户组“开发人员组”授予某个集群命名空间下资源的操作权限，设置如下：
+本步骤将在CCE控制台中为IAM用户“James”以及用户组“开发人员组”授予某个集群命名空间下资源的操作权限，设置如下：
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“权限管理“，进入权限管理页面。
 2.  单击“命名空间权限“页签，在命名空间权限列表右上方选择要添加授权的集群，单击“添加授权“按钮，进入添加授权页面。
@@ -110,23 +110,23 @@ kubernetes RBAC的授权能力支持1.13版本集群。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >经过以上操作，授权结果如下：  
-    >-   由于“开发人员组”包含子用户“James”，因此子用户“James”也同时获得了在命名空间“default”的“admin“权限。  
-    >-   为子用户“James”增加了在命名空间“dev-test”的“view“权限。  
+    >-   由于“开发人员组”包含IAM用户“James”，因此IAM用户“James”也同时获得了在命名空间“default”的“admin“权限。  
+    >-   为IAM用户“James”增加了在命名空间“dev-test”的“view“权限。  
 
 
 ## 步骤二：用户登录并验证权限<a name="section191001533766"></a>
 
-使用子用户“James”登录云容器引擎控制台，验证授予的命名空间权限，验证步骤如下：
+使用IAM用户“James”登录云容器引擎控制台，验证授予的命名空间权限，验证步骤如下：
 
 1.  在华为云登录页面，单击右下角的“IAM用户登录”。
 
     **图 6**  IAM用户登录<a name="zh-cn_topic_0165292619_fig448174815448"></a>  
-    ![](figures/IAM用户登录-13.png "IAM用户登录-13")
+    ![](figures/IAM用户登录.png "IAM用户登录")
 
-2.  在“IAM用户登录”页面，输入账号名、用户名及用户密码，使用新创建的子用户登录。
+2.  在“IAM用户登录”页面，输入账号名、用户名及用户密码，使用新创建的IAM用户登录。
 
-    -   账号名为该IAM子用户所属华为云账号的名称。
-    -   用户名和密码为账号在IAM创建子用户James时输入的用户名和密码，首次登录时需要重置密码。
+    -   账号名为该IAM用户所属华为云账号的名称。
+    -   用户名和密码为创建IAM用户James时输入的用户名和密码，首次登录时需要重置密码。
 
     如果登录失败，您可以联系您的账号主体，确认用户名及密码是否正确，或是重置用户名及密码，重置方法请参见：[忘记IAM用户密码](https://support.huaweicloud.com/iam_faq/iam_01_0314.html#section1)。
 
@@ -134,5 +134,5 @@ kubernetes RBAC的授权能力支持1.13版本集群。
 
     ![](figures/zh-cn_image_0172728522.png)
 
-4.  在“服务列表”中选择“云容器引擎 CCE“，进入[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，对子用户James的命名空间权限进行验证。
+4.  在“服务列表”中选择“云容器引擎 CCE“，进入[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，对IAM用户James的命名空间权限进行验证。
 

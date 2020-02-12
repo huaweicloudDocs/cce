@@ -56,6 +56,14 @@
     <p id="p17713926910"><a name="p17713926910"></a><a name="p17713926910"></a>每个工作负载实例都由相同的容器部署而成。设置多个实例主要用于实现高可靠性，当某个实例故障时，工作负载还能正常运行。若使用单实例，节点异常或实例异常会导致服务异常。</p>
     </td>
     </tr>
+    <tr id="row1233713478354"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p15337247203514"><a name="p15337247203514"></a><a name="p15337247203514"></a>弹性网卡</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p476333074117"><a name="p476333074117"></a><a name="p476333074117"></a>Pod中的容器支持绑定弹性网卡，单击选中<span class="uicontrol" id="uicontrol187631230104117"><a name="uicontrol187631230104117"></a><a name="uicontrol187631230104117"></a>“绑定弹性网卡”</span>可以绑定已有的网络平面。更多网络平面信息请参见<a href="网络平面（NetworkAttachmentDefinition）.md">网络平面（NetworkAttachmentDefinition）</a>。</p>
+    <p id="p58611513174112"><a name="p58611513174112"></a><a name="p58611513174112"></a><strong id="b10861121314119"><a name="b10861121314119"></a><a name="b10861121314119"></a>仅v1.13.7-r0及以上版本且网络模型为VPC网络的混合集群才能绑定弹性网卡，不符合条件的集群将不显示<span class="uicontrol" id="uicontrol1986171319410"><a name="uicontrol1986171319410"></a><a name="uicontrol1986171319410"></a>“弹性网卡”</span>选项。</strong></p>
+    <div class="note" id="note124412587394"><a name="note124412587394"></a><a name="note124412587394"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul1444165810398"></a><a name="ul1444165810398"></a><ul id="ul1444165810398"><li>网络平面是CCE新增的一种crd资源，记录了租户ID，子网ID，安全组等的配置项，作为申请弹性网卡的配置信息。</li><li>创建工作负载时，在<a href="#li3580132418215">设置工作负载访问方式</a>步骤中如果添加了节点级别的Service，将无法绑定弹性网卡；同理，绑定了弹性网卡的工作负载，将无法添加节点级别的Service。</li></ul>
+    </div></div>
+    </td>
+    </tr>
     <tr id="row18442191224514"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p244261214513"><a name="p244261214513"></a><a name="p244261214513"></a>时区同步</p>
     </td>
     <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p644215125454"><a name="p644215125454"></a><a name="p644215125454"></a>勾选<span class="uicontrol" id="uicontrol3743418174611"><a name="uicontrol3743418174611"></a><a name="uicontrol3743418174611"></a>“开启”</span>，容器将和节点使用相同时区。</p>
@@ -65,8 +73,8 @@
     </tr>
     <tr id="row15877104919019"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p4877104910012"><a name="p4877104910012"></a><a name="p4877104910012"></a>CCI弹性承载</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p11595204219"><a name="p11595204219"></a><a name="p11595204219"></a><strong id="b17562201711376"><a name="b17562201711376"></a><a name="b17562201711376"></a>该参数仅在安装virtual kubelet插件后才显示</strong>，具体请参见<a href="virtual-kubelet.md">virtual kubelet</a>。</p>
-    <p id="p118778495016"><a name="p118778495016"></a><a name="p118778495016"></a>勾选此选项后，当集群资源不足时，支持将Pod部署到CCI集群。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p187282214438"><a name="p187282214438"></a><a name="p187282214438"></a>勾选此选项后，当集群资源不足时，支持将Pod部署到CCI集群。</p>
+    <p id="p11595204219"><a name="p11595204219"></a><a name="p11595204219"></a><strong id="b17562201711376"><a name="b17562201711376"></a><a name="b17562201711376"></a>该参数仅在安装virtual kubelet插件后才显示</strong>，具体请参见<a href="virtual-kubelet.md">virtual kubelet</a>。</p>
     </td>
     </tr>
     <tr id="row1027719414818"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p1527715418485"><a name="p1527715418485"></a><a name="p1527715418485"></a>工作负载描述</p>
@@ -191,13 +199,6 @@
     -   **Pod高级设置**
 
         -   Pod标签：内置app标签在工作负载创建时指定，暂不支持修改。您可以单击下方的“添加标签“增加标签。
-        -   弹性网卡：Pod中的容器支持绑定弹性网卡。单击选中“绑定弹性网卡“可以绑定已有的网络平面，如果没有可绑定的网络平面，请单击右侧的“添加网络平面“，完成添加后单击刷新按钮。更多网络平面信息请参见[网络平面（NetworkAttachmentDefinition）](网络平面（NetworkAttachmentDefinition）.md)。
-
-            >![](public_sys-resources/icon-note.gif) **说明：**   
-            >-   **仅v1.13.7-r0及以上版本且网络模型为VPC网络的混合集群才能绑定弹性网卡，不符合条件的集群将不显示“弹性网卡“选项。**  
-            >-   网络平面是CCE新增的一种crd资源，记录了租户ID，子网ID，安全组等的配置项，作为申请弹性网卡的配置信息。  
-            >-   创建工作负载时，在[设置工作负载访问方式](#li3580132418215)步骤中如果添加了节点级别的Service，将无法绑定弹性网卡；同理，绑定了弹性网卡的工作负载，将无法添加节点级别的Service。  
-
 
         **图 1**  Pod高级设置<a name="fig2225829163110"></a>  
         ![](figures/Pod高级设置.png "Pod高级设置")

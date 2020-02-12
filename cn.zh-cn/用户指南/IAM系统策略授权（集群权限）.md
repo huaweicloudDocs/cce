@@ -1,12 +1,12 @@
-# IAM细粒度授权（集群权限）<a name="cce_01_0168"></a>
+# IAM系统策略授权（集群权限）<a name="cce_01_0168"></a>
 
-集群权限是基于IAM细粒度的授权，可以通过用户组功能实现IAM子用户的授权，当前包含**CCE Admin**和**CCE Viewer**两种默认角色。
+集群权限是基于IAM系统策略的授权，可以通过用户组功能实现IAM用户的授权，当前包含**CCE FullAccess**和**CCE ReadOnlyAccess**两种策略。
 
-## CCE Admin角色的权限内容<a name="section118851125135817"></a>
+## CCE FullAccess策略的权限内容<a name="section118851125135817"></a>
 
-默认角色CCE Admin包含如下主要权限信息：
+CCE FullAccess策略包含如下主要权限信息：
 
-**表 1**  CCE Admin主要权限
+**表 1**  CCE FullAccess策略主要权限
 
 <a name="table65762630"></a>
 <table><thead align="left"><tr id="row64098000"><th class="cellrowborder" valign="top" width="20.4%" id="mcps1.2.4.1.1"><p id="p324219918470"><a name="p324219918470"></a><a name="p324219918470"></a>操作（Action）</p>
@@ -168,11 +168,11 @@
 </tbody>
 </table>
 
-## CCE Viewer角色的权限内容<a name="section20532642173311"></a>
+## CCE ReadOnlyAccess策略的权限内容<a name="section20532642173311"></a>
 
-默认角色CCE Viewer包含如下主要权限信息：
+CCE ReadOnlyAccess策略包含如下主要权限信息：
 
-**表 2**  CCE Viewer主要权限
+**表 2**  CCE ReadOnlyAccess策略主要权限
 
 <a name="table11562191511348"></a>
 <table><thead align="left"><tr id="row156351513348"><th class="cellrowborder" valign="top" width="19.97%" id="mcps1.2.4.1.1"><p id="p19661557182112"><a name="p19661557182112"></a><a name="p19661557182112"></a>操作（Action）</p>

@@ -36,7 +36,8 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     </thead>
     <tbody><tr id="cce_01_0028_row1922964644615"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p9231104613468"><a name="cce_01_0028_p9231104613468"></a><a name="cce_01_0028_p9231104613468"></a>* 计费模式</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><a name="cce_01_0028_ul463941414445"></a><a name="cce_01_0028_ul463941414445"></a><ul id="cce_01_0028_ul463941414445"><li><span class="keyword" id="cce_01_0028_keyword66602077459"><a name="cce_01_0028_keyword66602077459"></a><a name="cce_01_0028_keyword66602077459"></a>包年/包月</span>：包周期计费。包年/包月集群创建后不能删除，如需停止使用，请到<a href="https://account.huaweicloud.com/usercenter/#/userindex/retreatManagement" target="_blank" rel="noopener noreferrer">费用中心</a>执行退订操作。</li><li><span class="keyword" id="cce_01_0028_keyword1617519316453"><a name="cce_01_0028_keyword1617519316453"></a><a name="cce_01_0028_keyword1617519316453"></a>按需计费</span>：根据实际使用的资源按小时计费，本章讲解按需计费类型的操作。</li></ul>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><a name="cce_01_0028_ul463941414445"></a><a name="cce_01_0028_ul463941414445"></a><ul id="cce_01_0028_ul463941414445"><li><span class="keyword" id="cce_01_0028_keyword66602077459"><a name="cce_01_0028_keyword66602077459"></a><a name="cce_01_0028_keyword66602077459"></a>包年/包月</span>：预付费模式，按订单的购买周期计费，适用于可预估资源使用周期的场景，价格比按需计费模式更优惠。包年/包月集群创建后不能删除，如需停止使用，请到<a href="https://account.huaweicloud.com/usercenter/#/userindex/retreatManagement" target="_blank" rel="noopener noreferrer">费用中心</a>执行退订操作。</li><li><span class="keyword" id="cce_01_0028_keyword44309542597"><a name="cce_01_0028_keyword44309542597"></a><a name="cce_01_0028_keyword44309542597"></a>按需计费</span>：后付费模式，按资源的实际使用时长计费，可以随时开通/删除资源。</li></ul>
+    <p id="cce_01_0028_p0624127506"><a name="cce_01_0028_p0624127506"></a><a name="cce_01_0028_p0624127506"></a>本章以<span class="uicontrol" id="cce_01_0028_uicontrol8978171712013"><a name="cce_01_0028_uicontrol8978171712013"></a><a name="cce_01_0028_uicontrol8978171712013"></a>“按需计费”</span>类型为例进行讲解。</p>
     </td>
     </tr>
     <tr id="cce_01_0028_row42961494311"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p812874116011"><a name="cce_01_0028_p812874116011"></a><a name="cce_01_0028_p812874116011"></a>* 区域</p>
@@ -46,8 +47,8 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     </tr>
     <tr id="cce_01_0028_row12321131519262"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p14322181522614"><a name="cce_01_0028_p14322181522614"></a><a name="cce_01_0028_p14322181522614"></a>* 企业项目</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p73221815122618"><a name="cce_01_0028_p73221815122618"></a><a name="cce_01_0028_p73221815122618"></a>该参数仅对开通企业项目的企业客户账号显示。请确保选择的企业项目下有集群创建所需相关资源，如虚拟私有云。</p>
-    <p id="cce_01_0028_p1950113815188"><a name="cce_01_0028_p1950113815188"></a><a name="cce_01_0028_p1950113815188"></a>了解更多企业项目相关信息，请查看<a href="https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html" target="_blank" rel="noopener noreferrer">企业管理</a>。</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p1363744211114"><a name="cce_01_0028_p1363744211114"></a><a name="cce_01_0028_p1363744211114"></a>该参数仅对开通企业项目的企业客户账号显示。选择某企业项目（如：default）后，集群、集群下节点、集群安全组、节点安全组和自动创建的节点EIP将创建到所选企业项目下。</p>
+    <p id="cce_01_0028_p73221815122618"><a name="cce_01_0028_p73221815122618"></a><a name="cce_01_0028_p73221815122618"></a>企业项目是一种云资源管理方式，企业项目管理服务提供统一的云资源按项目管理，以及项目内的资源管理、成员管理。了解更多企业项目相关信息，请查看<a href="https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html" target="_blank" rel="noopener noreferrer">企业管理</a>。</p>
     </td>
     </tr>
     <tr id="cce_01_0028_row1063812126263"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p15639812122620"><a name="cce_01_0028_p15639812122620"></a><a name="cce_01_0028_p15639812122620"></a>* 集群名称</p>
@@ -59,35 +60,43 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     <tr id="cce_01_0028_row6649879161231"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p1769363161231"><a name="cce_01_0028_p1769363161231"></a><a name="cce_01_0028_p1769363161231"></a>* 版本</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p9100682161231"><a name="cce_01_0028_p9100682161231"></a><a name="cce_01_0028_p9100682161231"></a>Kubernetes社区基线版本，建议选择最新的版本。版本升级请参见<a href="集群版本升级说明.md">集群版本升级说明</a>。</p>
-    <p id="cce_01_0028_p1022520483"><a name="cce_01_0028_p1022520483"></a><a name="cce_01_0028_p1022520483"></a>若有Beta版本，您可以选择试用，但不建议用于商用场景。</p>
+    <p id="cce_01_0028_p1022520483"><a name="cce_01_0028_p1022520483"></a><a name="cce_01_0028_p1022520483"></a>若有<strong id="cce_01_0028_b20728225518"><a name="cce_01_0028_b20728225518"></a><a name="cce_01_0028_b20728225518"></a>Beta</strong>版本时，您可以选择试用，但不建议您将该版本用于商用场景。</p>
     </td>
     </tr>
     <tr id="cce_01_0028_row572593234714"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p14725432104718"><a name="cce_01_0028_p14725432104718"></a><a name="cce_01_0028_p14725432104718"></a>* 集群管理规模</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p14899102111550"><a name="cce_01_0028_p14899102111550"></a><a name="cce_01_0028_p14899102111550"></a>当前集群可以管理的最大<strong id="cce_01_0028_b19899112165516"><a name="cce_01_0028_b19899112165516"></a><a name="cce_01_0028_b19899112165516"></a>Node节点</strong>规模，请根据业务需求选择。</p>
-    <p id="cce_01_0028_p192696516218"><a name="cce_01_0028_p192696516218"></a><a name="cce_01_0028_p192696516218"></a>若选择<span class="uicontrol" id="cce_01_0028_uicontrol35596531909"><a name="cce_01_0028_uicontrol35596531909"></a><a name="cce_01_0028_uicontrol35596531909"></a>“50节点”</span>，表示当前集群最多可管理50个Node节点。集群管理规模在集群创建后不支持调整，请在创建时慎重选择。</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p14899102111550"><a name="cce_01_0028_p14899102111550"></a><a name="cce_01_0028_p14899102111550"></a>当前集群可以管理的最大节点规模（<strong id="cce_01_0028_b19899112165516"><a name="cce_01_0028_b19899112165516"></a><a name="cce_01_0028_b19899112165516"></a>Node节点</strong>），请根据业务需求选择。</p>
+    <p id="cce_01_0028_p192696516218"><a name="cce_01_0028_p192696516218"></a><a name="cce_01_0028_p192696516218"></a>若选择<span class="uicontrol" id="cce_01_0028_uicontrol35596531909"><a name="cce_01_0028_uicontrol35596531909"></a><a name="cce_01_0028_uicontrol35596531909"></a>“50节点”</span>，表示当前集群的Master最多可管理50个Node节点。由于不同管理规模的Master节点规格不同，因此配置费用会有差异。集群管理规模在集群创建后不支持调整，请在创建时慎重选择。</p>
     <div class="p" id="cce_01_0028_p102308301014"><a name="cce_01_0028_p102308301014"></a><a name="cce_01_0028_p102308301014"></a>任何一个集群中均包含<span class="uicontrol" id="cce_01_0028_uicontrol144772569118"><a name="cce_01_0028_uicontrol144772569118"></a><a name="cce_01_0028_uicontrol144772569118"></a>“Master节点”</span>和<span class="uicontrol" id="cce_01_0028_uicontrol1458610581110"><a name="cce_01_0028_uicontrol1458610581110"></a><a name="cce_01_0028_uicontrol1458610581110"></a>“Node节点”</span>，每一个节点对应一台云服务器。<a name="cce_01_0028_ul1045015327013"></a><a name="cce_01_0028_ul1045015327013"></a><ul id="cce_01_0028_ul1045015327013"><li>Master节点：集群的控制节点，在创建集群时会自动创建控制节点，负责整个集群的管理和调度。</li><li>Node节点：用户购买或纳管的节点是集群的Node节点，即工作负载节点。Node节点由管理节点分配，当某个Node节点宕机时，管理节点会将工作负载转移到其他Node节点上。</li></ul>
     </div>
     </td>
     </tr>
     <tr id="cce_01_0028_row680585841419"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p11786989141"><a name="cce_01_0028_p11786989141"></a><a name="cce_01_0028_p11786989141"></a>* 高可用</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><a name="cce_01_0028_ul97916871415"></a><a name="cce_01_0028_ul97916871415"></a><ul id="cce_01_0028_ul97916871415"><li>是：将创建一个高可用集群，高可用集群包含多个控制节点（一般为3个），单控制节点故障时，集群依然可用。</li><li>否：将创建一个普通集群，普通集群是单控制节点，当这个控制节点故障时，集群将不可用，但已运行的工作负载不受影响。</li></ul>
-    <div class="p" id="cce_01_0028_p1155010435554"><a name="cce_01_0028_p1155010435554"></a><a name="cce_01_0028_p1155010435554"></a>集群创建完成后，高可用模式及普通模式之间不可变更，需要重新创建集群才能调整。请按实际使用场景谨慎选择：<a name="cce_01_0028_ul20457121412567"></a><a name="cce_01_0028_ul20457121412567"></a><ul id="cce_01_0028_ul20457121412567"><li>针对生产环境，为提高集群容灾能力，建议开启<span class="uicontrol" id="cce_01_0028_uicontrol86797262814"><a name="cce_01_0028_uicontrol86797262814"></a><a name="cce_01_0028_uicontrol86797262814"></a>“高可用”</span>。</li><li>针对开发和测试环境等对可靠性要求不高的场景，可根据业务需求选择是否开启<span class="uicontrol" id="cce_01_0028_uicontrol080416821415"><a name="cce_01_0028_uicontrol080416821415"></a><a name="cce_01_0028_uicontrol080416821415"></a>“高可用”</span>。</li></ul>
-    </div>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p17736528151015"><a name="cce_01_0028_p17736528151015"></a><a name="cce_01_0028_p17736528151015"></a><span class="uicontrol" id="cce_01_0028_uicontrol31551633132819"><a name="cce_01_0028_uicontrol31551633132819"></a><a name="cce_01_0028_uicontrol31551633132819"></a>“高可用”</span>模式开启后将创建多个控制节点，在单个控制节点发生故障时集群可以继续使用，不影响业务功能。</p>
+    <div class="note" id="cce_01_0028_note1592591594019"><a name="cce_01_0028_note1592591594019"></a><a name="cce_01_0028_note1592591594019"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="cce_01_0028_ul1464620467243"></a><a name="cce_01_0028_ul1464620467243"></a><ul id="cce_01_0028_ul1464620467243"><li>在商用场景中，为提高集群容灾能力，建议您选择<span class="uicontrol" id="cce_01_0028_uicontrol10911327142811"><a name="cce_01_0028_uicontrol10911327142811"></a><a name="cce_01_0028_uicontrol10911327142811"></a>“高可用”</span>模式集群。</li><li>高可用模式开关在集群创建完成后不可变更，需要重新创建集群才能调整，请按实际使用场景谨慎选择。</li></ul>
+    </div></div>
     </td>
     </tr>
     <tr id="cce_01_0028_row1763991215268"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p15639181282617"><a name="cce_01_0028_p15639181282617"></a><a name="cce_01_0028_p15639181282617"></a>* 虚拟私有云</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p116393128265"><a name="cce_01_0028_p116393128265"></a><a name="cce_01_0028_p116393128265"></a>新建集群所在的虚拟私有云。虚拟私有云是通过逻辑方式进行网络隔离，提供安全、隔离的网络环境。</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p20558173114298"><a name="cce_01_0028_p20558173114298"></a><a name="cce_01_0028_p20558173114298"></a>新建集群所在的虚拟私有云。</p>
+    <p id="cce_01_0028_p116393128265"><a name="cce_01_0028_p116393128265"></a><a name="cce_01_0028_p116393128265"></a>虚拟私有云是通过逻辑方式进行网络隔离，提供安全、隔离的网络环境。</p>
     <p id="cce_01_0028_p1063941211266"><a name="cce_01_0028_p1063941211266"></a><a name="cce_01_0028_p1063941211266"></a>若没有可选虚拟私有云，单击<span class="uicontrol" id="cce_01_0028_uicontrol162261618154315"><a name="cce_01_0028_uicontrol162261618154315"></a><a name="cce_01_0028_uicontrol162261618154315"></a>“<span id="cce_01_0028_text112261418174320"><a name="cce_01_0028_text112261418174320"></a><a name="cce_01_0028_text112261418174320"></a>创建虚拟</span>私有云”</span>进行创建，完成创建后点击刷新按钮。操作步骤请参见<a href="https://support.huaweicloud.com/usermanual-vpc/zh-cn_topic_0013935842.html" target="_blank" rel="noopener noreferrer">创建虚拟私有云和子网</a>。</p>
     </td>
     </tr>
     <tr id="cce_01_0028_row15639412132615"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p36391812172618"><a name="cce_01_0028_p36391812172618"></a><a name="cce_01_0028_p36391812172618"></a>* 所在子网</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p1108371202"><a name="cce_01_0028_p1108371202"></a><a name="cce_01_0028_p1108371202"></a>节点虚拟机运行的子网环境，通过子网提供与其他网络隔离的、可以独享的网络资源，以提高网络安全。虚拟私有云、子网、集群的关系请参见<a href="集群概述.md">集群概述</a>。</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p924510014306"><a name="cce_01_0028_p924510014306"></a><a name="cce_01_0028_p924510014306"></a>节点虚拟机运行的子网环境。</p>
+    <p id="cce_01_0028_p1108371202"><a name="cce_01_0028_p1108371202"></a><a name="cce_01_0028_p1108371202"></a>通过子网提供与其他网络隔离的、可以独享的网络资源，以提高网络安全。虚拟私有云、子网、集群的关系请参见<a href="集群概述.md">集群概述</a>。</p>
     <p id="cce_01_0028_p1369519572172"><a name="cce_01_0028_p1369519572172"></a><a name="cce_01_0028_p1369519572172"></a><strong id="cce_01_0028_b13695957131719"><a name="cce_01_0028_b13695957131719"></a><a name="cce_01_0028_b13695957131719"></a>请确保子网下的DNS服务器可以解析OBS服务域名，否则无法创建节点。</strong></p>
     <p id="cce_01_0028_p41882822012"><a name="cce_01_0028_p41882822012"></a><a name="cce_01_0028_p41882822012"></a><strong id="cce_01_0028_b9136183821711"><a name="cce_01_0028_b9136183821711"></a><a name="cce_01_0028_b9136183821711"></a>集群创建后子网无法修改，请谨慎选择。</strong></p>
+    </td>
+    </tr>
+    <tr id="cce_01_0028_row115671413307"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p16567134113303"><a name="cce_01_0028_p16567134113303"></a><a name="cce_01_0028_p16567134113303"></a>IPv6双栈</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p36131511317"><a name="cce_01_0028_p36131511317"></a><a name="cce_01_0028_p36131511317"></a>默认不开启。</p>
+    <p id="cce_01_0028_p1656714414305"><a name="cce_01_0028_p1656714414305"></a><a name="cce_01_0028_p1656714414305"></a>开启后将自动创建IPv6地址的容器网段与服务网段，支持通过IPv6地址段访问集群资源，包括节点，工作负载等。具体请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0022.html" target="_blank" rel="noopener noreferrer">搭建IPv4/IPv6双栈集群（公测）</a>。</p>
     </td>
     </tr>
     <tr id="cce_01_0028_row482955911270"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p9831659192715"><a name="cce_01_0028_p9831659192715"></a><a name="cce_01_0028_p9831659192715"></a>* 网络模型</p>
@@ -95,15 +104,13 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p0724144517209"><a name="cce_01_0028_p0724144517209"></a><a name="cce_01_0028_p0724144517209"></a><strong id="cce_01_0028_b952205617204"><a name="cce_01_0028_b952205617204"></a><a name="cce_01_0028_b952205617204"></a>容器隧道网络</strong></p>
     <a name="cce_01_0028_ul1221141842110"></a><a name="cce_01_0028_ul1221141842110"></a><ul id="cce_01_0028_ul1221141842110"><li>基于底层VPC网络，另构建了独立的VXLAN隧道化容器网络，适用于一般场景。</li><li>VXLAN是将以太网报文封装成UDP报文进行隧道传输。容器网络是承载于VPC网络之上的Overlay网络平面，具有付出少量隧道封装性能损耗，获得了通用性强、互通性强、高级特性支持全面（例如Network Policy网络隔离）的优势，可以满足大多数应用需求。</li><li>容器隧道网络下只能添加同一类型的节点，即全部为虚拟机节点或全部为裸金属节点。</li></ul>
     <p id="cce_01_0028_p6806448162015"><a name="cce_01_0028_p6806448162015"></a><a name="cce_01_0028_p6806448162015"></a><strong id="cce_01_0028_b75401805214"><a name="cce_01_0028_b75401805214"></a><a name="cce_01_0028_b75401805214"></a>VPC网络</strong></p>
-    <a name="cce_01_0028_ul68480277225"></a><a name="cce_01_0028_ul68480277225"></a><ul id="cce_01_0028_ul68480277225"><li>采用VPC路由方式与底层网络深度整合，适用于高性能场景，节点数量受限于虚拟私有云VPC的路由配额。</li><li>VPC网络集群下的每个节点将会被分配固定大小的IP地址段，由于没有隧道封装的消耗，容器网络性能相对于容器隧道网络有一定优势。VPC网络集群由于VPC路由中配置有容器网段与节点IP的路由，可以支持集群外直接访问容器实例等特殊场景。</li><li>VPC网络模式下每个节点占用一条<a href="https://support.huaweicloud.com/usermanual-vpc/route_0002.html" target="_blank" rel="noopener noreferrer">VPC路由规则</a>，当前局点支持200条VPC路由规则。</li></ul>
-    <p id="cce_01_0028_p4145851202013"><a name="cce_01_0028_p4145851202013"></a><a name="cce_01_0028_p4145851202013"></a><strong id="cce_01_0028_b1266919520213"><a name="cce_01_0028_b1266919520213"></a><a name="cce_01_0028_b1266919520213"></a>Yangtse</strong></p>
-    <p id="cce_01_0028_p146421738102017"><a name="cce_01_0028_p146421738102017"></a><a name="cce_01_0028_p146421738102017"></a>深度整合VPC原生ENI弹性网卡能力，采用VPC网段分配容器地址，支持ELB直通容器，享有高性能。</p>
+    <a name="cce_01_0028_ul68480277225"></a><a name="cce_01_0028_ul68480277225"></a><ul id="cce_01_0028_ul68480277225"><li>采用VPC路由方式与底层网络深度整合，适用于高性能场景，节点数量受限于虚拟私有云VPC的路由配额。</li><li>VPC网络集群下的每个节点将会被分配固定大小的IP地址段，由于没有隧道封装的消耗，容器网络性能相对于容器隧道网络有一定优势。VPC网络集群由于VPC路由中配置有容器网段与节点IP的路由，可以支持集群外直接访问容器实例等特殊场景。</li><li>VPC网络模式下每个节点占用一条<a href="https://support.huaweicloud.com/usermanual-vpc/route_0002.html" target="_blank" rel="noopener noreferrer">VPC路由规则</a>，当前局点支持200条VPC路由规则。每个节点可供分配的容器IP个数（即可创建的Pod实例数目上限）可在界面中查看。</li></ul>
     </td>
     </tr>
     <tr id="cce_01_0028_row64648564171234"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p2042307171234"><a name="cce_01_0028_p2042307171234"></a><a name="cce_01_0028_p2042307171234"></a>* 容器网段</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p31209167171234"><a name="cce_01_0028_p31209167171234"></a><a name="cce_01_0028_p31209167171234"></a>请根据业务需求选择容器网段，确定容器网段后，容器实例将在规划的网段内分配IP。</p>
-    <a name="cce_01_0028_ul1423120351449"></a><a name="cce_01_0028_ul1423120351449"></a><ul id="cce_01_0028_ul1423120351449"><li>未勾选“自动选择”：请手动选择网段。若与子网网段有冲突时将有红色文字提示，请重新选择。建议使用网段：10.0.0.0/12~19，172.16.0.0/16~19，192.168.0.0/16~19。<p id="cce_01_0028_p158661543014"><a name="cce_01_0028_p158661543014"></a><a name="cce_01_0028_p158661543014"></a><strong id="cce_01_0028_b02629514118"><a name="cce_01_0028_b02629514118"></a><a name="cce_01_0028_b02629514118"></a>不同集群使用相同的容器网段，会导致容器IP冲突，应用访问异常。</strong></p>
+    <a name="cce_01_0028_ul1423120351449"></a><a name="cce_01_0028_ul1423120351449"></a><ul id="cce_01_0028_ul1423120351449"><li>“自动选择”未勾选：请手动选择网段。若与子网网段有冲突时将有红色文字提示，请重新选择。建议使用网段：10.0.0.0/12~19，172.16.0.0/16~19，192.168.0.0/16~19。<p id="cce_01_0028_p158661543014"><a name="cce_01_0028_p158661543014"></a><a name="cce_01_0028_p158661543014"></a><strong id="cce_01_0028_b02629514118"><a name="cce_01_0028_b02629514118"></a><a name="cce_01_0028_b02629514118"></a>不同集群使用相同的容器网段，会导致容器IP冲突，应用访问异常。</strong></p>
     </li><li>勾选“自动选择”：系统将自动分配与子网网段无冲突的网段。</li></ul>
     <p id="cce_01_0028_p873618346117"><a name="cce_01_0028_p873618346117"></a><a name="cce_01_0028_p873618346117"></a>容器网段要设置合理的掩码，掩码决定集群内可用节点数量。集群中容器网段掩码设置不合适，会导致集群实际可用的节点较少。设置掩码后，选项下方会有当前网段最多支持的实例估算值，请作参考。</p>
     </td>
@@ -117,7 +124,7 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     <tr id="cce_01_0028_row773511171567"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p37371717105616"><a name="cce_01_0028_p37371717105616"></a><a name="cce_01_0028_p37371717105616"></a>鉴权方式</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p2017413473382"><a name="cce_01_0028_p2017413473382"></a><a name="cce_01_0028_p2017413473382"></a><span class="uicontrol" id="cce_01_0028_uicontrol217464712384"><a name="cce_01_0028_uicontrol217464712384"></a><a name="cce_01_0028_uicontrol217464712384"></a>“RBAC”</span>默认勾选，不可取消。</p>
-    <p id="cce_01_0028_p16141515161117"><a name="cce_01_0028_p16141515161117"></a><a name="cce_01_0028_p16141515161117"></a>开启RBAC能力后，设置了细粒度权限的子用户使用集群下资源将受到权限控制。详细请参见<a href="kubernetes-RBAC授权.md">kubernetes RBAC授权</a>。</p>
+    <p id="cce_01_0028_p16141515161117"><a name="cce_01_0028_p16141515161117"></a><a name="cce_01_0028_p16141515161117"></a>开启RBAC能力后，设置了细粒度权限的IAM用户使用集群下资源将受到权限控制。详细请参见<a href="kubernetes-RBAC授权.md">kubernetes RBAC授权</a>。</p>
     </td>
     </tr>
     <tr id="cce_01_0028_row1610917221609"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p6655100911"><a name="cce_01_0028_p6655100911"></a><a name="cce_01_0028_p6655100911"></a>认证方式</p>
@@ -135,19 +142,12 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     </tr>
     <tr id="cce_01_0028_row96582533813"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p2285145420345"><a name="cce_01_0028_p2285145420345"></a><a name="cce_01_0028_p2285145420345"></a>高级设置</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p1911106205716"><a name="cce_01_0028_p1911106205716"></a><a name="cce_01_0028_p1911106205716"></a>单击<a name="cce_01_0028_image14616104482513"></a><a name="cce_01_0028_image14616104482513"></a><span><img id="cce_01_0028_image14616104482513" src="figures/zh-cn_image_0183237697.png"></span>展开后显示高级功能项目。</p>
-    <p id="cce_01_0028_p0742457132419"><a name="cce_01_0028_p0742457132419"></a><a name="cce_01_0028_p0742457132419"></a>在某些可用区（AZ）中，不支持的功能将隐藏。如：某个可用区中集群Master节点的flavor不支持<span class="uicontrol" id="cce_01_0028_uicontrol11801424193411"><a name="cce_01_0028_uicontrol11801424193411"></a><a name="cce_01_0028_uicontrol11801424193411"></a>“多可用区”</span>功能，则多可用区功能将不显示。</p>
-    <p id="cce_01_0028_p11404840532"><a name="cce_01_0028_p11404840532"></a><a name="cce_01_0028_p11404840532"></a>此处支持的功能参数如下：</p>
-    <p id="cce_01_0028_p14351726331"><a name="cce_01_0028_p14351726331"></a><a name="cce_01_0028_p14351726331"></a><strong id="cce_01_0028_b183512261134"><a name="cce_01_0028_b183512261134"></a><a name="cce_01_0028_b183512261134"></a>多可用区：</strong></p>
-    <p id="cce_01_0028_p103510261333"><a name="cce_01_0028_p103510261333"></a><a name="cce_01_0028_p103510261333"></a>多可用区模式支持集群管理面多可用区容灾，但是对于集群性能有所损耗。</p>
-    <a name="cce_01_0028_ul173561261313"></a><a name="cce_01_0028_ul173561261313"></a><ul id="cce_01_0028_ul173561261313"><li><a name="cce_01_0028_image17351426631"></a><a name="cce_01_0028_image17351426631"></a><span><img id="cce_01_0028_image17351426631" src="figures/zh-cn_image_0167296201.png"></span>：未开启状态。Master节点部署在同一个可用区中，如果对应可用区故障，集群将不可用，但已运行工作负载不受影响。</li><li><a name="cce_01_0028_image1335114262318"></a><a name="cce_01_0028_image1335114262318"></a><span><img id="cce_01_0028_image1335114262318" src="figures/zh-cn_image_0167295735.png"></span>：开启状态。Master节点分布在不同可用区中，单可用区故障，集群仍然可用。</li></ul>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p1911106205716"><a name="cce_01_0028_p1911106205716"></a><a name="cce_01_0028_p1911106205716"></a>单击<span class="uicontrol" id="cce_01_0028_uicontrol151802714513"><a name="cce_01_0028_uicontrol151802714513"></a><a name="cce_01_0028_uicontrol151802714513"></a>“高级设置”</span>后展开详细项目，支持的功能如下（不同可用区中不支持的功能将隐藏）：</p>
     <p id="cce_01_0028_p113568261434"><a name="cce_01_0028_p113568261434"></a><a name="cce_01_0028_p113568261434"></a><strong id="cce_01_0028_b193562261439"><a name="cce_01_0028_b193562261439"></a><a name="cce_01_0028_b193562261439"></a>服务转发模式：</strong></p>
-    <a name="cce_01_0028_ul1435618265318"></a><a name="cce_01_0028_ul1435618265318"></a><ul id="cce_01_0028_ul1435618265318"><li>iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。</li><li>ipvs：由华为主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。</li></ul>
+    <a name="cce_01_0028_ul1435618265318"></a><a name="cce_01_0028_ul1435618265318"></a><ul id="cce_01_0028_ul1435618265318"><li>iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。</li><li>ipvs：由华为主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。<p id="cce_01_0028_p52781357485"><a name="cce_01_0028_p52781357485"></a><a name="cce_01_0028_p52781357485"></a>ipvs模式下，ingress和service使用相同的ELB实例时，无法在集群内的节点和容器中访问ingress。</p>
+    </li></ul>
     <div class="note" id="cce_01_0028_note551324732117"><a name="cce_01_0028_note551324732117"></a><a name="cce_01_0028_note551324732117"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="cce_01_0028_ul2513447132113"></a><a name="cce_01_0028_ul2513447132113"></a><ul id="cce_01_0028_ul2513447132113"><li>ipvs为大型集群提供了更好的可扩展性和性能。</li><li>ipvs支持比iptables更复杂的负载平衡算法（最小负载，最少连接，位置，加权等）。</li><li>ipvs支持服务器健康检查和连接重试等。</li></ul>
     </div></div>
-    <p id="cce_01_0028_p172314431918"><a name="cce_01_0028_p172314431918"></a><a name="cce_01_0028_p172314431918"></a><strong id="cce_01_0028_b186071966103"><a name="cce_01_0028_b186071966103"></a><a name="cce_01_0028_b186071966103"></a>最大实例数：</strong></p>
-    <p id="cce_01_0028_p6292504102"><a name="cce_01_0028_p6292504102"></a><a name="cce_01_0028_p6292504102"></a>若创建集群的网络模型为<span class="uicontrol" id="cce_01_0028_uicontrol5322229121112"><a name="cce_01_0028_uicontrol5322229121112"></a><a name="cce_01_0028_uicontrol5322229121112"></a>“VPC网络”</span>时显示该参数。</p>
-    <p id="cce_01_0028_p17467114121213"><a name="cce_01_0028_p17467114121213"></a><a name="cce_01_0028_p17467114121213"></a>用于设置集群下节点可以创建的最大实例数，默认为256，参数设置后不可更改。集群创建完成后，在创建节点的高级配置中配置的最大实例数不超过此值。</p>
     <p id="cce_01_0028_p1530611329220"><a name="cce_01_0028_p1530611329220"></a><a name="cce_01_0028_p1530611329220"></a><strong id="cce_01_0028_b203061532132217"><a name="cce_01_0028_b203061532132217"></a><a name="cce_01_0028_b203061532132217"></a>资源标签：</strong></p>
     <p id="cce_01_0028_p153521813102212"><a name="cce_01_0028_p153521813102212"></a><a name="cce_01_0028_p153521813102212"></a>通过为资源添加标签，可以对资源进行自定义标记，实现资源的分类。</p>
     <p id="cce_01_0028_p1746516915228"><a name="cce_01_0028_p1746516915228"></a><a name="cce_01_0028_p1746516915228"></a>您可以在TMS中创建<span class="uicontrol" id="cce_01_0028_uicontrol9465129142213"><a name="cce_01_0028_uicontrol9465129142213"></a><a name="cce_01_0028_uicontrol9465129142213"></a>“预定义标签”</span>，预定义标签对所有支持标签功能的服务资源可见，通过使用预定义标签可以提升标签创建和迁移效率。具体请参见<a href="https://support.huaweicloud.com/usermanual-tms/zh-cn_topic_0144368884.html" target="_blank" rel="noopener noreferrer">创建预定义标签</a>。</p>
@@ -156,7 +156,8 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
     <a name="cce_01_0028_ul14813182993518"></a><a name="cce_01_0028_ul14813182993518"></a><ul id="cce_01_0028_ul14813182993518"><li>开启：支持给工作负载实例配置CPU独占，适用于对CPU缓存和调度延迟敏感的工作负载。</li><li>关闭：关闭工作负载实例独占CPU核的功能，优点是CPU共享池的可分配核数较多。</li></ul>
     <p id="cce_01_0028_p1363818291491"><a name="cce_01_0028_p1363818291491"></a><a name="cce_01_0028_p1363818291491"></a>更多CPU管理策略内容请参见<a href="https://kubernetes.io/blog/2018/07/24/feature-highlight-cpu-manager/" target="_blank" rel="noopener noreferrer">Feature Highlight: CPU Manager</a>或<a href="https://bbs.huaweicloud.com/forum/thread-28901-1-1.html" target="_blank" rel="noopener noreferrer">深入理解 Kubernetes CPU Mangager</a>。</p>
     <p id="cce_01_0028_p0904172120273"><a name="cce_01_0028_p0904172120273"></a><a name="cce_01_0028_p0904172120273"></a><strong id="cce_01_0028_b15232314276"><a name="cce_01_0028_b15232314276"></a><a name="cce_01_0028_b15232314276"></a>控制节点可用区：</strong></p>
-    <p id="cce_01_0028_p13827154032810"><a name="cce_01_0028_p13827154032810"></a><a name="cce_01_0028_p13827154032810"></a>可选择将控制节点分布到多个可用区。</p>
+    <p id="cce_01_0028_p187781327216"><a name="cce_01_0028_p187781327216"></a><a name="cce_01_0028_p187781327216"></a>选择控制节点分布在哪个可用区，高可用集群可选择多个可用区，非高可用集群只能选择一个可用区。</p>
+    <div class="fignone" id="cce_01_0028_fig19782959108"><a name="cce_01_0028_fig19782959108"></a><a name="cce_01_0028_fig19782959108"></a><span class="figcap"><b>图1 </b>控制节点可用区选择</span><br><a name="cce_01_0028_image0463648706"></a><a name="cce_01_0028_image0463648706"></a><span><img id="cce_01_0028_image0463648706" src="figures/控制节点可用区选择.png" width="523.6875" height="67.631564"></span></div>
     <p id="cce_01_0028_p44694192714"><a name="cce_01_0028_p44694192714"></a><a name="cce_01_0028_p44694192714"></a>多可用区模式支持集群管理面多可用区容灾，但是对于集群性能有所损耗。</p>
     </td>
     </tr>
@@ -187,7 +188,7 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
 
         如果您需要提高工作负载的高可靠性，建议您将云服务器创建在不同的可用区。
 
-        **图 2**  Node节点创建在不同可用区<a name="cce_01_0028_fig920914253210"></a>  
+        **图 3**  Node节点创建在不同可用区<a name="cce_01_0028_fig920914253210"></a>  
         ![](figures/Node节点创建在不同可用区.png "Node节点创建在不同可用区")
 
     -   **节点类型：**选择节点类型。
@@ -209,7 +210,7 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
 
     -   **节点规格：**请根据业务需求选择**“GPU加速型“**下的节点规格。
 
-        **图 3**  选择GPU节点规格<a name="fig715175671311"></a>  
+        **图 4**  选择GPU节点规格<a name="fig715175671311"></a>  
         ![](figures/选择GPU节点规格.png "选择GPU节点规格")
 
         >![](public_sys-resources/icon-note.gif) **说明：**   
@@ -224,10 +225,14 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
         -   系统盘：规格为\[40,1024\]GB，用户可以配置，缺省值为40GB。
         -   数据盘：规格为\[100,32678\]GB，用户可以配置，缺省值为100GB。
 
-            勾选“**资源分配自定义**”后，您可以对数据盘中的Docker和Kubelet资源占比进行自定义设置。Docker资源包含Docker镜像数据以及镜像元数据，Kubelet资源包含Pod配置文件、密钥以及临时存储EmptyDir等挂载数据。
+            单击“数据盘空间分配“后的![](figures/zh-cn_image_0220709079.png)，可以对数据盘中的“k8s空间“和“用户空间“进行自定义设置。
+
+            -   k8s空间：您可以自定义数据盘中Docker和Kubelet的资源占比。Docker资源包含Docker镜像数据以及镜像元数据；Kubelet资源包含Pod配置文件、密钥以及临时存储EmptyDir等挂载数据。
+            -   用户空间：定义本地盘中不分配给kubernetes使用的空间大小。
 
             >![](public_sys-resources/icon-notice.gif) **须知：**   
-            >磁盘使用direct-lvm模式，移除将使用loop-lvm模式，有影响系统稳定性的风险。详情请点此[了解更多](https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/)。  
+            >-   在本地磁盘中设置k8s空间和用户空间时，需满足k8s空间和用户空间总和为100%，设置后可单击![](figures/zh-cn_image_0220709080.png)自动调整数据。  
+            >-   磁盘使用direct-lvm模式，移除将使用loop-lvm模式，有影响系统稳定性的风险。详情请点此[了解更多](https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/)。  
 
 
         系统盘和数据盘均可提供以下性能规格的云硬盘：
@@ -262,7 +267,7 @@ GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支
 
             密钥对用于远程登录节点时的身份认证。若没有密钥对，可单击选项框右侧的“创建密钥对”来新建，创建密钥对操作步骤请参见[创建密钥对](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0014250631.html)。
 
-            **图 4**  密钥对<a name="cce_01_0028_fig82271742193213"></a>  
+            **图 5**  密钥对<a name="cce_01_0028_fig82271742193213"></a>  
             ![](figures/密钥对.png "密钥对")
 
     -   **云服务器高级设置：**（可选），单击![](figures/zh-cn_image_0183134608.png)展开后可对节点进行如下高级功能配置：

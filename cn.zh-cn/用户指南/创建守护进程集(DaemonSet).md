@@ -45,6 +45,14 @@
     <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p2511628354"><a name="p2511628354"></a><a name="p2511628354"></a>在单集群中，不同命名空间中的数据彼此隔离。使应用可以共享同个集群的服务，也能够互不干扰。若您不设置命名空间，系统会默认使用default命名空间。</p>
     </td>
     </tr>
+    <tr id="row32431417251"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p15337247203514"><a name="zh-cn_topic_0107283470_p15337247203514"></a><a name="zh-cn_topic_0107283470_p15337247203514"></a>弹性网卡</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p476333074117"><a name="zh-cn_topic_0107283470_p476333074117"></a><a name="zh-cn_topic_0107283470_p476333074117"></a>Pod中的容器支持绑定弹性网卡，单击选中<span class="uicontrol" id="zh-cn_topic_0107283470_uicontrol187631230104117"><a name="zh-cn_topic_0107283470_uicontrol187631230104117"></a><a name="zh-cn_topic_0107283470_uicontrol187631230104117"></a>“绑定弹性网卡”</span>可以绑定已有的网络平面。更多网络平面信息请参见<a href="网络平面（NetworkAttachmentDefinition）.md">网络平面（NetworkAttachmentDefinition）</a>。</p>
+    <p id="zh-cn_topic_0107283470_p58611513174112"><a name="zh-cn_topic_0107283470_p58611513174112"></a><a name="zh-cn_topic_0107283470_p58611513174112"></a><strong id="zh-cn_topic_0107283470_b10861121314119"><a name="zh-cn_topic_0107283470_b10861121314119"></a><a name="zh-cn_topic_0107283470_b10861121314119"></a>仅v1.13.7-r0及以上版本且网络模型为VPC网络的混合集群才能绑定弹性网卡，不符合条件的集群将不显示<span class="uicontrol" id="zh-cn_topic_0107283470_uicontrol1986171319410"><a name="zh-cn_topic_0107283470_uicontrol1986171319410"></a><a name="zh-cn_topic_0107283470_uicontrol1986171319410"></a>“弹性网卡”</span>选项。</strong></p>
+    <div class="note" id="zh-cn_topic_0107283470_note124412587394"><a name="zh-cn_topic_0107283470_note124412587394"></a><a name="zh-cn_topic_0107283470_note124412587394"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="zh-cn_topic_0107283470_ul1444165810398"></a><a name="zh-cn_topic_0107283470_ul1444165810398"></a><ul id="zh-cn_topic_0107283470_ul1444165810398"><li>网络平面是CCE新增的一种crd资源，记录了租户ID，子网ID，安全组等的配置项，作为申请弹性网卡的配置信息。</li><li>创建工作负载时，在<a href="创建无状态负载(Deployment).md#li3580132418215">设置工作负载访问方式</a>步骤中如果添加了节点级别的Service，将无法绑定弹性网卡；同理，绑定了弹性网卡的工作负载，将无法添加节点级别的Service。</li></ul>
+    </div></div>
+    </td>
+    </tr>
     <tr id="row15115217354"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p151122103514"><a name="p151122103514"></a><a name="p151122103514"></a>时区同步</p>
     </td>
     <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p14511926351"><a name="p14511926351"></a><a name="p14511926351"></a>勾选<span class="uicontrol" id="uicontrol751116223511"><a name="uicontrol751116223511"></a><a name="uicontrol751116223511"></a>“开启”</span>，容器将和节点使用相同时区。</p>
@@ -175,13 +183,6 @@
     -   **Pod高级设置**
 
         -   Pod标签：内置app标签在工作负载创建时指定，暂不支持修改。您可以单击下方的“添加标签“增加标签。
-        -   弹性网卡：Pod中的容器支持绑定弹性网卡。单击选中“绑定弹性网卡“可以绑定已有的网络平面，如果没有可绑定的网络平面，请单击右侧的“添加网络平面“，完成添加后单击刷新按钮。更多网络平面信息请参见[网络平面（NetworkAttachmentDefinition）](网络平面（NetworkAttachmentDefinition）.md)。
-
-            >![](public_sys-resources/icon-note.gif) **说明：**   
-            >-   **仅v1.13.7-r0及以上版本且网络模型为VPC网络的混合集群才能绑定弹性网卡，不符合条件的集群将不显示“弹性网卡“选项。**  
-            >-   网络平面是CCE新增的一种crd资源，记录了租户ID，子网ID，安全组等的配置项，作为申请弹性网卡的配置信息。  
-            >-   创建工作负载时，在[设置工作负载访问方式](创建无状态负载(Deployment).md#li3580132418215)步骤中如果添加了节点级别的Service，将无法绑定弹性网卡；同理，绑定了弹性网卡的工作负载，将无法添加节点级别的Service。  
-
 
         **图 1**  Pod高级设置<a name="cce_01_0047_fig2225829163110"></a>  
         ![](figures/Pod高级设置.png "Pod高级设置")

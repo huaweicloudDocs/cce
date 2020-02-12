@@ -161,14 +161,13 @@
 
 -   [权限管理](权限管理.md)
     -   [IAM权限管理说明](IAM权限管理说明.md)
-    -   [策略语法](策略语法.md)
     -   [CCE权限说明](CCE权限说明.md)
         -   [CCE权限管理概述](CCE权限管理概述.md)
-        -   [IAM细粒度授权（集群权限）](IAM细粒度授权（集群权限）.md)
+        -   [IAM系统策略授权（集群权限）](IAM系统策略授权（集群权限）.md)
         -   [kubernetes RBAC授权（命名空间权限）](kubernetes-RBAC授权（命名空间权限）.md)
 
-    -   [为子用户设置CCE权限](为子用户设置CCE权限.md)
-        -   [IAM细粒度授权](IAM细粒度授权.md)
+    -   [为IAM用户设置CCE权限](为IAM用户设置CCE权限.md)
+        -   [IAM系统策略授权](IAM系统策略授权.md)
         -   [kubernetes RBAC授权](kubernetes-RBAC授权.md)
 
     -   [CCE Console界面的权限依赖](CCE-Console界面的权限依赖.md)
