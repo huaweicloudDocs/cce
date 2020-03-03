@@ -1,4 +1,4 @@
-# Kubernetes集群内置DNS使用指南<a name="cce_01_0133"></a>
+# Kubernetes集群内置DNS配置说明<a name="cce_01_0133"></a>
 
 ## 工作负载的DNS配置介绍<a name="section119521837203315"></a>
 
