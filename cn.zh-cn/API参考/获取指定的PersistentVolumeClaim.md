@@ -297,51 +297,106 @@ N/A
 
 **响应示例：**
 
-```
-{
-    "kind": "PersistentVolumeClaim",
-    "apiVersion": "v1",
-    "metadata": {
-        "name": "db-mysql",
-        "namespace": "default",
-        "selfLink": "/api/v1/namespaces/default/persistentvolumeclaims/db-mysql",
-        "uid": "ac34af93-8cdd-11e8-8ee0-fa163e49263c",
-        "resourceVersion": "4197709",
-        "creationTimestamp": "2018-07-21T12:00:33Z",
-        "labels": {
-            "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-            "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+-   1.15及之后集群版本示例：
+
+    ```
+    {
+        "kind":"PersistentVolumeClaim",
+        "apiVersion":"v1",
+        "metadata":{
+            "name":"cce-evs-k6m131jj-i1px",
+            "namespace":"default",
+            "selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/cce-evs-k6m131jj-i1px",
+            "uid":"d34f6a93-9eba-4a33-9320-8fa4addd3753",
+            "resourceVersion":"2286592",
+            "creationTimestamp":"2020-02-14T10:27:43Z",
+            "labels":{
+                "failure-domain.beta.kubernetes.io/region":"cn-north-5",
+                "failure-domain.beta.kubernetes.io/zone":"cn-north-5a"
+            },
+            "annotations":{
+                "everest.io/disk-volume-type":"SATA",
+                "pv.kubernetes.io/bind-completed":"yes",
+                "pv.kubernetes.io/bound-by-controller":"yes",
+                "volume.beta.kubernetes.io/storage-provisioner":"everest-csi-provisioner"
+            },
+            "finalizers":[
+                "kubernetes.io/pvc-protection"
+            ]
         },
-        "annotations": {
-            "pv.kubernetes.io/bind-completed": "yes",
-            "pv.kubernetes.io/bound-by-controller": "yes",
-            "volume.beta.kubernetes.io/storage-class": "sata",
-            "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
-        }
-    },
-    "spec": {
-        "accessModes": [
-            "ReadWriteMany"
-        ],
-        "resources": {
-            "requests": {
-                "storage": "10Gi"
+        "spec":{
+            "accessModes":[
+                "ReadWriteOnce"
+            ],
+            "resources":{
+                "requests":{
+                    "storage":"10Gi"
+                }
+            },
+            "volumeName":"pvc-d34f6a93-9eba-4a33-9320-8fa4addd3753",
+            "storageClassName":"csi-disk",
+            "volumeMode":"Filesystem"
+        },
+        "status":{
+            "phase":"Bound",
+            "accessModes":[
+                "ReadWriteOnce"
+            ],
+            "capacity":{
+                "storage":"10Gi"
             }
-        },
-        "volumeName": "pvc-ac34af93-8cdd-11e8-8ee0-fa163e49263c",
-        "volumeNamespace": "default"
-    },
-    "status": {
-        "phase": "Bound",
-        "accessModes": [
-            "ReadWriteMany"
-        ],
-        "capacity": {
-            "storage": "10Gi"
         }
     }
-}
-```
+    ```
+
+-   1.13及之前集群版本示例：
+
+    ```
+    {
+        "kind": "PersistentVolumeClaim",
+        "apiVersion": "v1",
+        "metadata": {
+            "name": "db-mysql",
+            "namespace": "default",
+            "selfLink": "/api/v1/namespaces/default/persistentvolumeclaims/db-mysql",
+            "uid": "ac34af93-8cdd-11e8-8ee0-fa163e49263c",
+            "resourceVersion": "4197709",
+            "creationTimestamp": "2018-07-21T12:00:33Z",
+            "labels": {
+                "failure-domain.beta.kubernetes.io/region": "cn-north-1",
+                "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+            },
+            "annotations": {
+                "pv.kubernetes.io/bind-completed": "yes",
+                "pv.kubernetes.io/bound-by-controller": "yes",
+                "volume.beta.kubernetes.io/storage-class": "sata",
+                "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
+            }
+        },
+        "spec": {
+            "accessModes": [
+                "ReadWriteMany"
+            ],
+            "resources": {
+                "requests": {
+                    "storage": "10Gi"
+                }
+            },
+            "volumeName": "pvc-ac34af93-8cdd-11e8-8ee0-fa163e49263c",
+            "volumeNamespace": "default"
+        },
+        "status": {
+            "phase": "Bound",
+            "accessModes": [
+                "ReadWriteMany"
+            ],
+            "capacity": {
+                "storage": "10Gi"
+            }
+        }
+    }
+    ```
+
 
 ## 状态码<a name="s5e327306549c4e9883cffd48fd3dd116"></a>
 

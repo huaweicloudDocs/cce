@@ -322,7 +322,52 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 </tbody>
 </table>
 
--   **云硬盘存储卷请求示例：**
+**云硬盘存储卷请求示例**：
+
+-   1.15及之后集群版本请求示例：
+
+    ```
+    {
+        "kind":"PersistentVolumeClaim",
+        "apiVersion":"v1",
+        "metadata":{
+            "name":"cce-evs-k6m16atm-3ays",
+            "namespace":"default",
+            "selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/cce-evs-k6m16atm-3ays",
+            "uid":"80f111e7-7d7e-4841-bd73-7ef97df0ee51",
+            "resourceVersion":"2287083",
+            "creationTimestamp":"2020-02-14T10:30:20Z",
+            "labels":{
+                "failure-domain.beta.kubernetes.io/region":"cn-north-5",
+                "failure-domain.beta.kubernetes.io/zone":"cn-north-5a"
+            },
+            "annotations":{
+                "everest.io/crypt-key-id":"527cbece-428d-463b-a92c-936a11077b5d", //创建加密卷必需，若无或不全，则不加密；
+                "everest.io/disk-volume-type":"SATA"
+            },
+            "finalizers":[
+                "kubernetes.io/pvc-protection"
+            ]
+        },
+        "spec":{
+            "accessModes":[
+                "ReadWriteOnce"
+            ],
+            "resources":{
+                "requests":{
+                    "storage":"10Gi"
+                }
+            },
+            "storageClassName":"csi-disk",
+            "volumeMode":"Filesystem"
+        },
+        "status":{
+            "phase":"Pending"
+        }
+    }
+    ```
+
+-   1.13及之前版本示例：
 
     ```
     {
@@ -355,7 +400,47 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
     ```
 
 
--   **文件存储卷请求示例：**
+**文件存储卷请求示例**：
+
+-   1.15及之后集群版本示例
+
+    ```
+    {
+        "apiVersion": "v1",
+        "kind": "PersistentVolumeClaim",
+        "metadata": {
+            "annotations": {
+                "everest.io/crypt-key-id": "3cfaea47-eb9b-4c68-b108-86fe399aebaf",
+    	    "everest.io/crypt-domain-id": "fff357e41a3a4a0d88e821f35194d110",
+    	    "everest.io/crypt-alias": "sfs/default"
+            },
+            "creationTimestamp": "2020-02-14T08:54:08Z",
+            "finalizers": [
+                "kubernetes.io/pvc-protection"
+            ],
+            "labels": {
+                "app": "test-sfs"
+            },
+            "name": "pvc-158167040158916159-test-sfs-0",
+            "namespace": "default",
+        },
+        "spec": {
+            "accessModes": [
+                "ReadWriteMany"
+            ],
+            "resources": {
+                "requests": {
+                    "storage": "10Gi"
+                }
+            },
+            "storageClassName": "csi-nas",
+            "volumeMode": "Filesystem",
+            "volumeName": "pvc-1c933c44-1f47-41a4-9353-3800a21cab6b"
+        }
+    }
+    ```
+
+-   1.13及之前集群版本示例：
 
     ```
     {
@@ -398,52 +483,100 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 
 **云硬盘存储卷响应示例：**
 
-```
-{
-    "kind": "PersistentVolumeClaim",
-    "apiVersion": "v1",
-    "metadata": {
-        "name": "db-mysql",
-        "namespace": "default",
-        "selfLink": "/api/v1/namespaces/default/persistentvolumeclaims/db-mysql",
-        "uid": "ac34af93-8cdd-11e8-8ee0-fa163e49263c",
-        "resourceVersion": "4197709",
-        "creationTimestamp": "2018-07-21T12:00:33Z",
-        "labels": {
-            "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-            "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+-   1.15及之后集群版本yaml示例
+
+    ```
+    {
+        "kind":"PersistentVolumeClaim",
+        "apiVersion":"v1",
+        "metadata":{
+            "name":"cce-evs-k6m16atm-3ays",
+            "namespace":"default",
+            "selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/cce-evs-k6m16atm-3ays",
+            "uid":"80f111e7-7d7e-4841-bd73-7ef97df0ee51",
+            "resourceVersion":"2287083",
+            "creationTimestamp":"2020-02-14T10:30:20Z",
+            "labels":{
+                "failure-domain.beta.kubernetes.io/region":"cn-north-5",
+                "failure-domain.beta.kubernetes.io/zone":"cn-north-5a"
+            },
+            "annotations":{
+                "everest.io/crypt-key-id":"527cbece-428d-463b-a92c-936a11077b5d",//若为加密卷，则存在
+                "everest.io/disk-volume-type":"SATA"
+            },
+            "finalizers":[
+                "kubernetes.io/pvc-protection"
+            ]
         },
-        "annotations": {
-            "paas.storage.io/cryptKeyId": "1ed68cb7-b09b-423c-8d66-fdd2e063769d"   //若为加密卷，则存在
-            "pv.kubernetes.io/bind-completed": "yes",
-            "pv.kubernetes.io/bound-by-controller": "yes",
-            "volume.beta.kubernetes.io/storage-class": "sata",
-            "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
-        }
-    },
-    "spec": {
-        "accessModes": [
-            "ReadWriteMany"
-        ],
-        "resources": {
-            "requests": {
-                "storage": "10Gi"
-            }
+        "spec":{
+            "accessModes":[
+                "ReadWriteOnce"
+            ],
+            "resources":{
+                "requests":{
+                    "storage":"10Gi"
+                }
+            },
+            "storageClassName":"csi-disk",
+            "volumeName": "pvc-d34f6a93-9eba-4a33-9320-8fa4addd3753",
+            "volumeMode":"Filesystem"
         },
-        "volumeName": "pvc-ac34af93-8cdd-11e8-8ee0-fa163e49263c",
-        "volumeNamespace": "default"
-    },
-    "status": {
-        "phase": "Bound",
-        "accessModes": [
-            "ReadWriteMany"
-        ],
-        "capacity": {
-            "storage": "10Gi"
+        "status":{
+            "phase":"Pending"
         }
     }
-}
-```
+    ```
+
+
+-   1.13及之前版本yaml示例：
+
+    ```
+    {
+        "kind": "PersistentVolumeClaim",
+        "apiVersion": "v1",
+        "metadata": {
+            "name": "db-mysql",
+            "namespace": "default",
+            "selfLink": "/api/v1/namespaces/default/persistentvolumeclaims/db-mysql",
+            "uid": "ac34af93-8cdd-11e8-8ee0-fa163e49263c",
+            "resourceVersion": "4197709",
+            "creationTimestamp": "2018-07-21T12:00:33Z",
+            "labels": {
+                "failure-domain.beta.kubernetes.io/region": "cn-north-1",
+                "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+            },
+            "annotations": {
+                "paas.storage.io/cryptKeyId": "1ed68cb7-b09b-423c-8d66-fdd2e063769d"   //若为加密卷，则存在
+                "pv.kubernetes.io/bind-completed": "yes",
+                "pv.kubernetes.io/bound-by-controller": "yes",
+                "volume.beta.kubernetes.io/storage-class": "sata",
+                "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
+            }
+        },
+        "spec": {
+            "accessModes": [
+                "ReadWriteMany"
+            ],
+            "resources": {
+                "requests": {
+                    "storage": "10Gi"
+                }
+            },
+            "volumeName": "pvc-ac34af93-8cdd-11e8-8ee0-fa163e49263c",
+            "volumeNamespace": "default"
+        },
+        "status": {
+            "phase": "Bound",
+            "accessModes": [
+                "ReadWriteMany"
+            ],
+            "capacity": {
+                "storage": "10Gi"
+            }
+        }
+    }
+    ```
+
 
 ## 状态码<a name="s83847071f8aa4217be1335b90a09a193"></a>
 

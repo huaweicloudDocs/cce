@@ -182,7 +182,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9510182110610"><a name="p9510182110610"></a><a name="p9510182110610"></a>删除一个指定的集群。</p>
 </td>
 </tr>
-<tr id="row09137251369"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p49133251669"><a name="p49133251669"></a><a name="p49133251669"></a><a href="获取集群证书.md">获取集群证书</a></p>
+<tr id="row09137251369"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p49133251669"><a name="p49133251669"></a><a name="p49133251669"></a><a href="获取集群证书（已废弃）.md">获取集群证书</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1391314257610"><a name="p1391314257610"></a><a name="p1391314257610"></a>获取指定集群的证书信息。</p>
 </td>
@@ -210,11 +210,6 @@
 <tr id="row58991443201010"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1589912437109"><a name="p1589912437109"></a><a name="p1589912437109"></a><a href="删除节点.md">删除节点</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p12900174319104"><a name="p12900174319104"></a><a name="p12900174319104"></a>删除指定的节点。</p>
-</td>
-</tr>
-<tr id="row133629447107"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p6362744151018"><a name="p6362744151018"></a><a name="p6362744151018"></a><a href="cce_02_0249.md">删除集群下所有节点</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p6362744121011"><a name="p6362744121011"></a><a name="p6362744121011"></a>删除指定集群下的所有节点。</p>
 </td>
 </tr>
 <tr id="row8873184419100"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p187311442102"><a name="p187311442102"></a><a name="p187311442102"></a><a href="查询作业进度.md">查询作业进度</a></p>

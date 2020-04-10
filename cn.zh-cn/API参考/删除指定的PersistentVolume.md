@@ -83,6 +83,69 @@ DELETE /api/v1/persistentvolumes/\{name\}
 
 **响应示例：**
 
+1.15及之后集群版本示例：
+
+```
+{
+    "apiVersion": "v1",
+    "kind": "PersistentVolume",
+    "metadata": {
+        "annotations": {
+            "pv.kubernetes.io/namespace": "default",
+            "pv.kubernetes.io/provisioned-by": "everest-csi-provisioner"
+        },
+        "creationTimestamp": "2020-01-08T02:00:31Z",
+        "deletionGracePeriodSeconds": 0,
+        "deletionTimestamp": "2020-01-13T02:04:12Z",
+        "finalizers": [
+            "everest-csi-attacher/disk-csi-everest-io"
+        ],
+        "labels": {
+            "failure-domain.beta.kubernetes.io/region": "cn-north-7",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-7b"
+        },
+        "name": "pvc-efe92ec5-fb39-4e17-bb26-c5d336ce5c14",
+        "resourceVersion": "5025500",
+        "selfLink": "/api/v1/persistentvolumes/pvc-efe92ec5-fb39-4e17-bb26-c5d336ce5c14",
+        "uid": "b14a40bc-8be7-4b26-90e5-975261d470a2"
+    },
+    "spec": {
+        "accessModes": [
+            "ReadWriteOnce"
+        ],
+        "capacity": {
+            "storage": "20Gi"
+        },
+        "claimRef": {
+            "apiVersion": "v1",
+            "kind": "PersistentVolumeClaim",
+            "name": "cce-evs-k54nobs9-ljhc",
+            "namespace": "default",
+            "resourceVersion": "3578282",
+            "uid": "efe92ec5-fb39-4e17-bb26-c5d336ce5c14"
+        },
+        "csi": {
+            "driver": "disk.csi.everest.io",
+            "fsType": "ext4",
+            "volumeAttributes": {
+                "everest.io/disk-mode": "SCSI",
+                "everest.io/disk-volume-type": "SATA",
+                "storage.kubernetes.io/csiProvisionerIdentity": "everest-csi-provisioner"
+            },
+            "volumeHandle": "9c44d068-42ab-4fcf-bb8f-1609823da5bb"
+        },
+        "persistentVolumeReclaimPolicy": "Delete",
+        "storageClassName": "csi-disk",
+        "volumeMode": "Filesystem"
+    },
+    "status": {
+        "phase": "Released"
+    }
+}
+```
+
+1.13及之前集群版本示例：
+
 ```
 {
     "kind": "PersistentVolume",

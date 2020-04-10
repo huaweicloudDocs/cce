@@ -132,7 +132,7 @@ GET /apis/extensions/v1beta1/namespaces/\{namespace\}/replicasets/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p id="p113560309188"><a name="p113560309188"></a><a name="p113560309188"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="p13561730151811"><a name="p13561730151811"></a><a name="p13561730151811"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="p13561730151811"><a name="p13561730151811"></a><a name="p13561730151811"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</p>
 </td>
 </tr>
 <tr id="row20352153021812"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="p2357113016180"><a name="p2357113016180"></a><a name="p2357113016180"></a>items</p>
@@ -146,14 +146,14 @@ GET /apis/extensions/v1beta1/namespaces/\{namespace\}/replicasets/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p id="p16361030101820"><a name="p16361030101820"></a><a name="p16361030101820"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="p936173014186"><a name="p936173014186"></a><a name="p936173014186"></a>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="p936173014186"><a name="p936173014186"></a><a name="p936173014186"></a>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.</p>
 </td>
 </tr>
 <tr id="row1835213012185"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="p4362183021816"><a name="p4362183021816"></a><a name="p4362183021816"></a>metadata</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p id="p73621309182"><a name="p73621309182"></a><a name="p73621309182"></a>Array of io.k8s.apimachinery.pkg.apis.meta.v1.ListMeta objects</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="p1436210305187"><a name="p1436210305187"></a><a name="p1436210305187"></a>Standard list metadata. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="p1436210305187"><a name="p1436210305187"></a><a name="p1436210305187"></a>Standard list metadata.</p>
 </td>
 </tr>
 </tbody>

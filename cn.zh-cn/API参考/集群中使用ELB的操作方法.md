@@ -9,7 +9,7 @@
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >若需要开启会话保持，需要满足如下条件：  
 >-   工作负载协议为TCP。  
->-   工作负载的各实例已设置反亲和部署，即所有的实例都部署在不同节点上。详细请参见[指定工作负载部署在不同节点](https://support.huaweicloud.com/usermanual-cce/cce_01_0051.html#section11)。  
+>-   工作负载的各实例已设置反亲和部署，即所有的实例都部署在不同节点上。详细请参见[工作负载和节点的反亲和性](https://support.huaweicloud.com/usermanual-cce/cce_01_0226.html)。  
 
 自动创建ELB：
 

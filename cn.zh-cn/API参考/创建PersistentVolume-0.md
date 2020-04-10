@@ -373,6 +373,55 @@ POST /api/v1/persistentvolumes
 
 **请求示例：**
 
+1.15集群版本示例：
+
+```
+{
+    "apiVersion": "v1",
+    "kind": "PersistentVolume",
+    "metadata": {
+        "annotations": {
+            "pv.kubernetes.io/namespace": "default",
+            "pv.kubernetes.io/provisioned-by": "everest-csi-provisioner"
+        },
+        "creationTimestamp": "2020-01-08T02:00:31Z",
+        "deletionGracePeriodSeconds": 0,
+        "deletionTimestamp": "2020-01-13T02:04:12Z",
+        "finalizers": [
+            "everest-csi-attacher/disk-csi-everest-io"
+        ],
+        "labels": {
+            "failure-domain.beta.kubernetes.io/region": "cn-north-7",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-7b"
+        },
+        "name": "pvc-efe92ec5-fb39-4e17-bb26-c5d336ce5c14",
+    },
+    "spec": {
+        "accessModes": [
+            "ReadWriteOnce"
+        ],
+        "capacity": {
+            "storage": "20Gi"
+        },
+        "csi": {
+            "driver": "disk.csi.everest.io",
+            "fsType": "ext4",
+            "volumeAttributes": {
+                "everest.io/disk-mode": "SCSI",
+                "everest.io/disk-volume-type": "SATA",
+                "storage.kubernetes.io/csiProvisionerIdentity": "everest-csi-provisioner"
+            },
+            "volumeHandle": "9c44d068-42ab-4fcf-bb8f-1609823da5bb"
+        },
+        "persistentVolumeReclaimPolicy": "Delete",
+        "storageClassName": "csi-disk",
+        "volumeMode": "Filesystem"
+    }
+}
+```
+
+1.13及之前版本示例：
+
 ```
 { 
     "apiVersion": "v1", 
@@ -411,6 +460,50 @@ POST /api/v1/persistentvolumes
 响应参数的详细描述请参见[15.2-Table2 Request parameter](#tfdb73431f39846d4a56ec4eb558e1617).
 
 **响应示例：**
+
+1.15集群版本示例：
+
+```
+{
+    "kind":"PersistentVolumeClaim",
+    "apiVersion":"v1",
+    "metadata":{
+        "name":"cce-evs-k6m0pl2w-en9i",
+        "namespace":"default",
+        "selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/pv-test-02",
+        "uid":"67db6e01-d42f-45af-8abd-913f9aaca171",
+        "resourceVersion":"2284565",
+        "creationTimestamp":"2020-02-14T10:17:22Z",
+        "labels":{
+            "failure-domain.beta.kubernetes.io/region":"cn-north-5",
+            "failure-domain.beta.kubernetes.io/zone":"cn-north-5a"
+        },
+        "annotations":{
+            "everest.io/disk-volume-type":"SATA"
+        },
+        "finalizers":[
+            "kubernetes.io/pvc-protection"
+        ]
+    },
+    "spec":{
+        "accessModes":[
+            "ReadWriteOnce"
+        ],
+        "resources":{
+            "requests":{
+                "storage":"10Gi"
+            }
+        },
+        "storageClassName":"csi-disk",
+        "volumeMode":"Filesystem"
+    },
+    "status":{
+        "phase":"Pending"
+    }
+}
+```
+
+1.13及之前集群版本示例：
 
 ```
 {
