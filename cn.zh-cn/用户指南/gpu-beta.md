@@ -68,3 +68,8 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
     >卸载gpu-beta插件不会卸载驱动。若重新安装了驱动，需重启所有GPU节点。  
 
 
+## 相关链接<a name="section16392113515592"></a>
+
+-   [gpu-beta插件及GPU驱动相关问题的排查思路](https://support.huaweicloud.com/cce_faq/cce_faq_00020.html)
+-   [工作负载异常：GPU相关](https://support.huaweicloud.com/cce_faq/cce_faq_00109.html)
+

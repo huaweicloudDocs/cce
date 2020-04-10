@@ -10,7 +10,7 @@ CoreDNS是由CNCF孵化的开源软件，用于Cloud-Native环境下的DNS服务
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >-   当CoreDNS插件有升级或者BUG修复时，您不必升级集群或新建集群，仅需安装或升级CoreDNS插件即可。  
->-   DNS详细使用方法请参见[Kubernetes集群内置DNS使用指南](Kubernetes集群内置DNS使用指南.md)或[通过kubectl配置kube-dns/CoreDNS高可用](通过kubectl配置kube-dns-CoreDNS高可用.md)。  
+>-   DNS详细使用方法请参见[Kubernetes集群内置DNS配置说明](Kubernetes集群内置DNS配置说明.md)或[通过kubectl配置kube-dns/CoreDNS高可用](通过kubectl配置kube-dns-CoreDNS高可用.md)。  
 
 ## 安装插件<a name="section776571919194"></a>
 

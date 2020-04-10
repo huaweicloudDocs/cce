@@ -2,8 +2,6 @@
 
 为了能够更好地方便您使用容器服务，确保您使用稳定又可靠的Kubernetes版本，云容器引擎CCE推出Kubernetes版本支持机制，将在每半年发布一个版本，每个版本的支持周期为一年，请您务必在维护周期结束之前升级您的Kubernetes集群。
 
-CCE集群版本更迭策略，请参见[Kubernetes版本支持机制](cce_01_0237.md)。
-
 CCE集群新版本升级，请参见[集群版本升级说明](集群版本升级说明.md)。
 
 ## V1.15版本<a name="section18351606577"></a>
@@ -21,7 +19,7 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 </td>
 <td class="cellrowborder" valign="top" width="70.88%" headers="mcps1.2.3.1.2 "><p id="p989313443514"><a name="p989313443514"></a><a name="p989313443514"></a><strong id="b213552014167"><a name="b213552014167"></a><a name="b213552014167"></a>1.15版本已正式发布，欢迎使用。</strong></p>
 <p id="p41121229115010"><a name="p41121229115010"></a><a name="p41121229115010"></a>1.15版本集群提供如下主要特性能力:</p>
-<a name="ul9447153212409"></a><a name="ul9447153212409"></a><ul id="ul9447153212409"><li>支持Kubernetes参数动态配置。详情参见<a href="配置管理.md">配置管理</a>和<a href="管理节点池.md">管理节点池</a>。</li><li>支持IPV6访问。具体请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0022.html" target="_blank" rel="noopener noreferrer">搭建IPv4/IPv6双栈集群</a>。</li><li>CCE存储支持基于CSI的云原生容器存储系统。具体请参见<a href="Everest（系统资源插件-必装）.md">Everest</a>插件。</li></ul>
+<a name="ul9447153212409"></a><a name="ul9447153212409"></a><ul id="ul9447153212409"><li>支持Kubernetes参数动态配置。详情参见<a href="配置管理.md">配置管理</a>和<a href="管理节点池.md">管理节点池</a>。</li><li>支持IPV6访问。具体请参见<a href="https://support.huaweicloud.com/cce_faq/cce_faq_00222.html" target="_blank" rel="noopener noreferrer">如何通过CCE搭建IPv4/IPv6双栈集群？</a>。</li><li>CCE存储支持基于CSI的云原生容器存储系统。具体请参见<a href="Everest（系统资源插件-必装）.md">Everest</a>插件。</li></ul>
 </td>
 </tr>
 </tbody>

@@ -60,12 +60,6 @@
     </div></div>
     </td>
     </tr>
-    <tr id="row974912231659"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p4877104910012"><a name="p4877104910012"></a><a name="p4877104910012"></a>CCI弹性承载</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p11595204219"><a name="p11595204219"></a><a name="p11595204219"></a>该参数仅在安装virtual kubelet插件后才显示，具体请参见<a href="virtual-kubelet.md">virtual kubelet</a>。</p>
-    <p id="p118778495016"><a name="p118778495016"></a><a name="p118778495016"></a>勾选此选项后，当集群资源不足时，支持将Pod部署到CCI集群。</p>
-    </td>
-    </tr>
     <tr id="row135110233512"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p135111219354"><a name="p135111219354"></a><a name="p135111219354"></a>工作负载描述</p>
     </td>
     <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p1651112143513"><a name="p1651112143513"></a><a name="p1651112143513"></a>工作负载描述信息。</p>
@@ -130,7 +124,7 @@
         <p id="cce_01_0047_p9626154413340"><a name="cce_01_0047_p9626154413340"></a><a name="cce_01_0047_p9626154413340"></a><strong id="cce_01_0047_b423894943411"><a name="cce_01_0047_b423894943411"></a><a name="cce_01_0047_b423894943411"></a>GPU显卡：</strong>工作负载实例将被调度到GPU显卡类型为指定显卡的节点上。</p>
         <p id="cce_01_0047_p15765438173416"><a name="cce_01_0047_p15765438173416"></a><a name="cce_01_0047_p15765438173416"></a>若勾选“不限制”，容器将会随机使用节点中的任一显卡。您也可以勾选某个显卡，容器将使用特定显卡。</p>
         <p id="cce_01_0047_p58663964520"><a name="cce_01_0047_p58663964520"></a><a name="cce_01_0047_p58663964520"></a><strong id="cce_01_0047_b188666944516"><a name="cce_01_0047_b188666944516"></a><a name="cce_01_0047_b188666944516"></a>昇腾&nbsp;310配额：</strong>容器需要使用的昇腾 310芯片个数，此处须为整数。</p>
-        <p id="cce_01_0047_p2097772173513"><a name="cce_01_0047_p2097772173513"></a><a name="cce_01_0047_p2097772173513"></a>选用AI加速型节点并安装<strong id="cce_01_0047_b99085210250"><a name="cce_01_0047_b99085210250"></a><a name="cce_01_0047_b99085210250"></a>huawei-npu</strong>插件后该参数设置将生效。AI加速型节点目前已开放公测，该实例搭载高性能、低功耗的海思Ascend 310 AI处理器，适用于图像识别、视频处理、推理计算以及机器学习等场景，点此可<a href="https://account.huaweicloud.com/usercenter/#/userindex/betaManagement?serviceCode=ecs_ascend_ai1" target="_blank" rel="noopener noreferrer">立即申请</a>。</p>
+        <p id="cce_01_0047_p2097772173513"><a name="cce_01_0047_p2097772173513"></a><a name="cce_01_0047_p2097772173513"></a>选用AI加速型节点并安装<strong id="cce_01_0047_b99085210250"><a name="cce_01_0047_b99085210250"></a><a name="cce_01_0047_b99085210250"></a>huawei-npu</strong>插件后该参数设置将生效。AI加速型节点目前已开放公测，该节点搭载高性能、低功耗的海思Ascend 310 AI处理器，适用于图像识别、视频处理、推理计算以及机器学习等场景，点此可<a href="https://account.huaweicloud.com/usercenter/#/userindex/betaManagement?serviceCode=ecs_ascend_ai1" target="_blank" rel="noopener noreferrer">立即申请</a>。</p>
         </td>
         </tr>
         </tbody>
@@ -187,7 +181,7 @@
         **图 1**  Pod高级设置<a name="cce_01_0047_fig2225829163110"></a>  
         ![](figures/Pod高级设置.png "Pod高级设置")
 
-    -   **客户端DNS配置**：CCE集群内置DNS插件CoreDNS，为集群内的工作负载提供域名解析服务。详细使用方法请参见[Kubernetes集群内置DNS使用指南](Kubernetes集群内置DNS使用指南.md)。
+    -   **客户端DNS配置**：CCE集群内置DNS插件CoreDNS，为集群内的工作负载提供域名解析服务。详细使用方法请参见[Kubernetes集群内置DNS配置说明](Kubernetes集群内置DNS配置说明.md)。
         -   DNS策略：
             -   追加域名解析配置：选择该配置后，将保留默认配置，以下“IP地址“和“搜索域“配置可能不生效。
             -   替换域名解析配置：选择该配置后，将仅使用以下“IP地址“和“搜索域“配置进行域名解析。

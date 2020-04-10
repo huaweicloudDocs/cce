@@ -18,7 +18,7 @@
 
 CCE支持“VPC网络内访问“和“互联网访问“两种方式访问集群。
 
--   VPC网络内访问：您需要在[ECS控制台](https://console.huaweicloud.com/ecm/#/ecs/manager/vmList)购买一台云服务器，并确保和当前集群在同个VPC内。
+-   VPC网络内访问：您需要在[ECS控制台](https://console.huaweicloud.com/ecm/?locale=zh-cn#/ecs/manager/vmList)购买一台云服务器，并确保和当前集群在同个VPC内。
 -   互联网访问：您需要准备一台能连接公网的云服务器。
 
 **操作步骤**

@@ -21,7 +21,7 @@
 
 ## 通过控制台操作<a name="section744117150366"></a>
 
-您可以在创建工作负载时通过CCE控制台设置访问方式，本节以ingress-test工作负载为例进行说明。
+您可以在创建工作负载时通过CCE控制台设置访问方式，本节以创建一个nginx工作负载并添加Ingress类型的Service为例进行说明。
 
 1.  创建工作负载，详细步骤请参见[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)或[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)。
     -   若创建工作负载时，配置了工作负载访问方式，且设置为“节点访问 \( NodePort \)”，请直接执行[3](#li45981923161059)。
@@ -30,7 +30,7 @@
 2.  <a name="li248013365354"></a>（可选）若创建工作负载时，未配置“节点访问 \( NodePort \)”，请执行如下操作。
     1.  登录CCE控制台，在左侧导航栏中选择“资源管理 \> 网络管理”。
     2.  在Service页签下，单击“添加Service”。选择类型为“节点访问 \( NodePort \)”。
-        -   **服务名称：**自定义服务名称，可与工作负载名称保持一致。
+        -   **Service名称：**自定义服务名称，可与工作负载名称保持一致。
         -   **集群名称：**选择需要添加Service的集群。
         -   **命名空间：**选择需要添加Service的命名空间。
         -   **关联工作负载：**单击“选择工作负载”，选择需要配置节点访问 \( NodePort \)的工作负载名称，单击“确定”。
@@ -58,9 +58,9 @@
         -   **Ingress名称：**自定义Ingress名称，例如ingress-demo。
         -   **集群名称：**选择需要添加Ingress的集群。
         -   **命名空间：**选择需要添加Ingress的命名空间。
-        -   <a name="li17417517134"></a>**对接Nginx插件：**集群中已安装[nginx-ingress](nginx-ingress.md)插件后显示此参数，若未安装[nginx-ingress](nginx-ingress.md)插件本参数不显示。
+        -   <a name="li17417517134"></a>**对接Nginx：**集群中已安装[nginx-ingress模板](https://support.huaweicloud.com/cce_faq/cce_faq_00237.html)后显示此选项，未安装nginx-ingress模板时本选项不显示。
 
-            单击![](figures/zh-cn_image_0183600214.png)开启后可配置如下Nginx参数：
+            单击![](figures/zh-cn_image_0237468998.png)开启后将对接nginx-ingress提供7层访问，可配置如下参数：
 
             **表 1**  Nginx配置
 
@@ -101,7 +101,7 @@
 
         -   **负载均衡配置：**Ingress使用弹性负载均衡服务（ELB）的负载均衡器提供七层网络访问。
 
-            **开启“对接Nginx插件“后，将使用Nginx插件中配置的负载均衡设置，该配置区域将不显示。**
+            **开启“对接Nginx“后，将使用Nginx插件中配置的负载均衡设置，该配置区域将不显示。**
 
             负载均衡：可以将互联网访问流量自动分发到工作负载所在的多个节点上。负载均衡实例需与当前集群处于相同VPC且为相同公私网类型。
 
@@ -116,7 +116,7 @@
 
         -   **监听器配置：**Ingress为负载均衡器配置监听器，监听器对负载均衡器上的请求进行监听，并分发流量。
 
-            **开启“对接Nginx插件“后将不显示该配置。**
+            **开启“对接Nginx“后将不显示该配置。**
 
             -   对外协议：支持HTTP和HTTPS。若选择HTTPS，请选择密钥证书，格式说明请参见[证书格式](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0092382555.html)。
 
@@ -126,7 +126,7 @@
 
             -   对外端口：开放在负载均衡服务地址的端口，可任意指定。
 
-                若选择启用“对接Nginx插件“后，将默认开启80和443端口，此处“对外端口“参数项将不显示。
+                若选择启用“对接Nginx“后，将默认开启80和443端口，此处“对外端口“参数项将不显示。
 
         -   **转发策略配置：**请求的访问地址与转发规则匹配时（转发规则由域名、URL组成），此请求将被转发到对应的目标Service处理。
 
@@ -137,7 +137,7 @@
                 -   正则匹配：可设定映射URL规范，例如规范为**/\[A-Za-z0-9\_.-\]+/test**。只要符合此规则的URL均可访问，例如/abcA9/test，/v1-Ab/test。正则匹配规则支持POSIX与Perl两种标准。
 
             -   URL：需要注册的访问路径，例如：/healthz。
-            -   目标Service：请选择已有Service或新建Service。页面列表中仅支持选择“节点访问 \( NodePort \)“  类型的Service，该查询结果已自动过滤。若您[开启了Nginx插件](#li17417517134)，可以通过页面右侧的“YAML创建“功能对接“集群内访问 \( ClusterIP \)“类型的Service。
+            -   目标Service：请选择已有Service或新建Service。页面列表中仅支持选择“节点访问 \( NodePort \)“  类型的Service，该查询结果已自动过滤。若您[开启了Nginx](#li17417517134)，可以通过页面右侧的“YAML创建“功能对接“集群内访问 \( ClusterIP \)“类型的Service。
             -   Service访问端口：可选择目标Service的访问端口。
             -   服务负载均衡配置：该配置是基于服务的配置，若有多条路由使用当前服务，这些路由将使用相同的服务负载均衡配置。详细配置请参见[负载均衡配置](负载均衡-(-LoadBalancer-).md#li1242315120217)。
             -   操作：可单击“删除“按钮删除该配置。
@@ -196,6 +196,9 @@
     >-   同一个ELB实例的同一个端口配置HTTPS时，选择的证书需要是一样的。  
 
     **vi ingress-test-deployment.yaml**
+
+    -   1.15及以上集群版本中的apiVersion为: networking.k8s.io/v1beta1
+    -   1.13及以下集群版本中的apiVersion为: extensions/v1beta1
 
     ```
     apiVersion: extensions/v1beta1
@@ -291,268 +294,270 @@
 
     **vi ingress-test-ingress.yaml**
 
-    -   自动创建ELB
+    -   1.15及以上集群版本中的apiVersion为: networking.k8s.io/v1beta1
+    -   1.13及以下集群版本中的apiVersion为: extensions/v1beta1
 
-        ```
-        apiVersion: extensions/v1beta1 
-        kind: Ingress 
-        metadata: 
-          annotations: 
-            kubernetes.io/elb.subnet-id: 29a0567e-96f1-4227-91cc-64f54d0b064d
-            kubernetes.io/elb.enterpriseID: f6b9fffc-a9b7-4a50-a25e-364f587abe44
-            kubernetes.io/elb.autocreate: '{"type":"public","bandwidth_name":"cce-bandwidth-1551163379627","bandwidth_chargemode":"bandwidth","bandwidth_size":5,"bandwidth_sharetype":"PER","eip_type":"5_bgp","name":"james"}'
-            kubernetes.io/elb.port: "80"
-            kubernetes.io/ingress.class: cce
-          name: ingress-test-ingress
-        spec:
-          tls:
-          - secretName: ingress-test-secret
-          rules: 
-          - http: 
-              paths: 
-              - backend: 
-                  serviceName: ingress-test-svc
-                  servicePort: 8888
-                property:
-                  ingress.beta.kubernetes.io/url-match-mode: EQUAL_TO
-                path: "/healthz"
-            host: ingress.com
-        ```
+    自动创建ELB
 
-    -   使用已有ELB
+    ```
+    apiVersion: extensions/v1beta1 
+    kind: Ingress 
+    metadata: 
+      annotations: 
+        kubernetes.io/elb.subnet-id: 29a0567e-96f1-4227-91cc-64f54d0b064d
+        kubernetes.io/elb.enterpriseID: f6b9fffc-a9b7-4a50-a25e-364f587abe44
+        kubernetes.io/elb.autocreate: '{"type":"public","bandwidth_name":"cce-bandwidth-1551163379627","bandwidth_chargemode":"bandwidth","bandwidth_size":5,"bandwidth_sharetype":"PER","eip_type":"5_bgp","name":"james"}'
+        kubernetes.io/elb.port: "80"
+        kubernetes.io/ingress.class: cce
+      name: ingress-test-ingress
+    spec:
+      tls:
+      - secretName: ingress-test-secret
+      rules: 
+      - http: 
+          paths: 
+          - backend: 
+              serviceName: ingress-test-svc
+              servicePort: 8888
+            property:
+              ingress.beta.kubernetes.io/url-match-mode: EQUAL_TO
+            path: "/healthz"
+        host: ingress.com
+    ```
 
-        ```
-        apiVersion: extensions/v1beta1 
-        kind: Ingress 
-        metadata: 
-          annotations: 
-            kubernetes.io/elb.id: f7891f9a-49f2-4ee2-b1ae-f019cd84eb4f
-            kubernetes.io/elb.ip: 192.168.0.39
-            kubernetes.io/elb.subnet-id: 29a0567e-96f1-4227-91cc-64f54d0b064d
-            kubernetes.io/elb.port: "80"
-            kubernetes.io/ingress.class: cce
-          name: ingress-test-ingress
-        spec:
-          tls:
-          - secretName: ingress-test-secret
-          rules: 
-          - http: 
-              paths: 
-              - backend: 
-                  serviceName: ingress-test-svc
-                  servicePort: 8888
-                property:
-                  ingress.beta.kubernetes.io/url-match-mode: EQUAL_TO
-                path: "/healthz"
-            host: ingress.com
-        ```
+    使用已有ELB
 
-        **表 3**  关键参数说明
+    ```
+    apiVersion: extensions/v1beta1 
+    kind: Ingress 
+    metadata: 
+      annotations: 
+        kubernetes.io/elb.id: f7891f9a-49f2-4ee2-b1ae-f019cd84eb4f
+        kubernetes.io/elb.ip: 192.168.0.39
+        kubernetes.io/elb.subnet-id: 29a0567e-96f1-4227-91cc-64f54d0b064d
+        kubernetes.io/elb.port: "80"
+        kubernetes.io/ingress.class: cce
+      name: ingress-test-ingress
+    spec:
+      tls:
+      - secretName: ingress-test-secret
+      rules: 
+      - http: 
+          paths: 
+          - backend: 
+              serviceName: ingress-test-svc
+              servicePort: 8888
+            property:
+              ingress.beta.kubernetes.io/url-match-mode: EQUAL_TO
+            path: "/healthz"
+        host: ingress.com
+    ```
 
-        <a name="table1732315519222"></a>
-        <table><thead align="left"><tr id="row43239510228"><th class="cellrowborder" valign="top" width="29.727027297270276%" id="mcps1.2.4.1.1"><p id="p3323185142214"><a name="p3323185142214"></a><a name="p3323185142214"></a>参数</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="18.678132186781323%" id="mcps1.2.4.1.2"><p id="p1632315162219"><a name="p1632315162219"></a><a name="p1632315162219"></a>参数类型</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="51.594840515948405%" id="mcps1.2.4.1.3"><p id="p2323105202212"><a name="p2323105202212"></a><a name="p2323105202212"></a>描述</p>
-        </th>
-        </tr>
-        </thead>
-        <tbody><tr id="row1932315519221"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p11323551220"><a name="p11323551220"></a><a name="p11323551220"></a>kubernetes.io/elb.id</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p43232502212"><a name="p43232502212"></a><a name="p43232502212"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1532419502210"><a name="p1532419502210"></a><a name="p1532419502210"></a>可选，但使用已有ELB时必填。</p>
-        <p id="p1832435142216"><a name="p1832435142216"></a><a name="p1832435142216"></a>为增强型负载均衡实例的ID。</p>
-        </td>
-        </tr>
-        <tr id="row19324185132210"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p143241054227"><a name="p143241054227"></a><a name="p143241054227"></a>kubernetes.io/elb.ip</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p63241755223"><a name="p63241755223"></a><a name="p63241755223"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1232410519221"><a name="p1232410519221"></a><a name="p1232410519221"></a>可选，但当elb自动创建时不填。</p>
-        <p id="p123246513225"><a name="p123246513225"></a><a name="p123246513225"></a>为负载均衡增强型实例的服务地址，公网ELB配置为公网IP，私网ELB配置为私网IP。</p>
-        </td>
-        </tr>
-        <tr id="row113242512217"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1332415102211"><a name="p1332415102211"></a><a name="p1332415102211"></a>kubernetes.io/elb.subnet-id</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p16324185192216"><a name="p16324185192216"></a><a name="p16324185192216"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6324185202213"><a name="p6324185202213"></a><a name="p6324185202213"></a>可选，但自动创建时必填，Kubernetes v1.11.7-r0以上版本的集群可不填。</p>
-        </td>
-        </tr>
-        <tr id="row135515812311"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p443916465535"><a name="p443916465535"></a><a name="p443916465535"></a>kubernetes.io/elb.enterpriseID</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p164393463532"><a name="p164393463532"></a><a name="p164393463532"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1843954617535"><a name="p1843954617535"></a><a name="p1843954617535"></a>可选，但公网或私网自动创建时必填。</p>
-        <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>为ELB企业项目名称，选择后可以直接创建在具体的ELB企业项目下。</p>
-        </td>
-        </tr>
-        <tr id="row14324115112219"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p163241552218"><a name="p163241552218"></a><a name="p163241552218"></a>kubernetes.io/elb.autocreate</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p163247517229"><a name="p163247517229"></a><a name="p163247517229"></a><a href="#table19417184671919">elb.autocreate</a> object</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p03246532210"><a name="p03246532210"></a><a name="p03246532210"></a>可选，但公网自动创建时必填，将自动创建ELB所绑定的EIP。私网自动创建时必填，将自动创建ELB。</p>
-        <p id="p13324858222"><a name="p13324858222"></a><a name="p13324858222"></a><strong id="b932418520225"><a name="b932418520225"></a><a name="b932418520225"></a>示例：</strong></p>
-        <a name="ul16324853220"></a><a name="ul16324853220"></a><ul id="ul16324853220"><li>公网自动创建：<p id="p1675515917379"><a name="p1675515917379"></a><a name="p1675515917379"></a>值为 '{"type":"public","bandwidth_name":"cce-bandwidth-1551163379627","bandwidth_chargemode":"bandwidth","bandwidth_size":5,"bandwidth_sharetype":"PER","eip_type":"5_bgp","name":"james"}'</p>
-        </li><li>私网自动创建：<p id="p15211191416376"><a name="p15211191416376"></a><a name="p15211191416376"></a>值为 '{"type":"inner", "name": "A-location-d-test"}'</p>
-        </li></ul>
-        </td>
-        </tr>
-        <tr id="row332514515229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p232519512211"><a name="p232519512211"></a><a name="p232519512211"></a>kubernetes.io/elb.port</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p173251458226"><a name="p173251458226"></a><a name="p173251458226"></a>Integer</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p93251554223"><a name="p93251554223"></a><a name="p93251554223"></a>必填，界面上的对外端口，为注册到负载均衡服务地址上的端口。</p>
-        </td>
-        </tr>
-        <tr id="row1432518511224"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1432565182214"><a name="p1432565182214"></a><a name="p1432565182214"></a>kubernetes.io/ingress.class</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1232514542215"><a name="p1232514542215"></a><a name="p1232514542215"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p13251456223"><a name="p13251456223"></a><a name="p13251456223"></a>默认，cce时表示使用增强型负载均衡实例，nginx时表示启用nginx-ingress插件。但通过API接口创建Ingress时必须增加该参数。</p>
-        </td>
-        </tr>
-        <tr id="row143251551229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p18325951228"><a name="p18325951228"></a><a name="p18325951228"></a>tls</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1832513582216"><a name="p1832513582216"></a><a name="p1832513582216"></a>Array of strings</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p53262562220"><a name="p53262562220"></a><a name="p53262562220"></a>可选，HTTPS协议时，需添加此参数。</p>
-        </td>
-        </tr>
-        <tr id="row6326185152213"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p5326145202219"><a name="p5326145202219"></a><a name="p5326145202219"></a>secretName</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p5326135162216"><a name="p5326135162216"></a><a name="p5326135162216"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1732645172213"><a name="p1732645172213"></a><a name="p1732645172213"></a>可选，HTTPS协议时添加，配置为创建的密钥证书名称。</p>
-        </td>
-        </tr>
-        <tr id="row33265552211"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1432685102213"><a name="p1432685102213"></a><a name="p1432685102213"></a>serviceName</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1632617511229"><a name="p1632617511229"></a><a name="p1632617511229"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p17326135102219"><a name="p17326135102219"></a><a name="p17326135102219"></a>为ingress-test-svc.yaml的服务名称。</p>
-        </td>
-        </tr>
-        <tr id="row1232616516229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p16326052225"><a name="p16326052225"></a><a name="p16326052225"></a>servicePort</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p23264582215"><a name="p23264582215"></a><a name="p23264582215"></a>Integer</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p53261152221"><a name="p53261152221"></a><a name="p53261152221"></a>为ingress-test-svc.yaml的Port。</p>
-        </td>
-        </tr>
-        <tr id="row1732620510228"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p12326195152216"><a name="p12326195152216"></a><a name="p12326195152216"></a>ingress.beta.kubernetes.io/url-match-mode</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1232675172211"><a name="p1232675172211"></a><a name="p1232675172211"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p16327755228"><a name="p16327755228"></a><a name="p16327755228"></a>路由匹配策略，可选值为EQUAL_TO（精确匹配）、STARTS_WITH(前缀匹配)、REGEX（正则匹配）。</p>
-        </td>
-        </tr>
-        <tr id="row19327205202214"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p83279511221"><a name="p83279511221"></a><a name="p83279511221"></a>path</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p932711582211"><a name="p932711582211"></a><a name="p932711582211"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p173278515229"><a name="p173278515229"></a><a name="p173278515229"></a>为路由，用户自定义设置。</p>
-        </td>
-        </tr>
-        <tr id="row16327451221"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p832714513227"><a name="p832714513227"></a><a name="p832714513227"></a>host</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1532718517223"><a name="p1532718517223"></a><a name="p1532718517223"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p53272572218"><a name="p53272572218"></a><a name="p53272572218"></a>可选，域名配置。</p>
-        </td>
-        </tr>
-        </tbody>
-        </table>
+    **表 3**  关键参数说明
 
-        **表 4**  elb.autocreate字段数据结构说明
+    <a name="table1732315519222"></a>
+    <table><thead align="left"><tr id="row43239510228"><th class="cellrowborder" valign="top" width="29.727027297270276%" id="mcps1.2.4.1.1"><p id="p3323185142214"><a name="p3323185142214"></a><a name="p3323185142214"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="18.678132186781323%" id="mcps1.2.4.1.2"><p id="p1632315162219"><a name="p1632315162219"></a><a name="p1632315162219"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="51.594840515948405%" id="mcps1.2.4.1.3"><p id="p2323105202212"><a name="p2323105202212"></a><a name="p2323105202212"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row1932315519221"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p11323551220"><a name="p11323551220"></a><a name="p11323551220"></a>kubernetes.io/elb.id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p43232502212"><a name="p43232502212"></a><a name="p43232502212"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1532419502210"><a name="p1532419502210"></a><a name="p1532419502210"></a>可选，但使用已有ELB时必填。</p>
+    <p id="p1832435142216"><a name="p1832435142216"></a><a name="p1832435142216"></a>为增强型负载均衡实例的ID。</p>
+    </td>
+    </tr>
+    <tr id="row19324185132210"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p143241054227"><a name="p143241054227"></a><a name="p143241054227"></a>kubernetes.io/elb.ip</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p63241755223"><a name="p63241755223"></a><a name="p63241755223"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1232410519221"><a name="p1232410519221"></a><a name="p1232410519221"></a>可选，但当elb自动创建时不填。</p>
+    <p id="p123246513225"><a name="p123246513225"></a><a name="p123246513225"></a>为负载均衡增强型实例的服务地址，公网ELB配置为公网IP，私网ELB配置为私网IP。</p>
+    </td>
+    </tr>
+    <tr id="row113242512217"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1332415102211"><a name="p1332415102211"></a><a name="p1332415102211"></a>kubernetes.io/elb.subnet-id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p16324185192216"><a name="p16324185192216"></a><a name="p16324185192216"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6324185202213"><a name="p6324185202213"></a><a name="p6324185202213"></a>可选，但自动创建时必填，Kubernetes v1.11.7-r0以上版本的集群可不填。</p>
+    </td>
+    </tr>
+    <tr id="row135515812311"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p443916465535"><a name="p443916465535"></a><a name="p443916465535"></a>kubernetes.io/elb.enterpriseID</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p164393463532"><a name="p164393463532"></a><a name="p164393463532"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1843954617535"><a name="p1843954617535"></a><a name="p1843954617535"></a>可选，但公网或私网自动创建时必填。</p>
+    <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>为ELB企业项目名称，选择后可以直接创建在具体的ELB企业项目下。</p>
+    </td>
+    </tr>
+    <tr id="row14324115112219"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p163241552218"><a name="p163241552218"></a><a name="p163241552218"></a>kubernetes.io/elb.autocreate</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p163247517229"><a name="p163247517229"></a><a name="p163247517229"></a><a href="#table19417184671919">elb.autocreate</a> object</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p03246532210"><a name="p03246532210"></a><a name="p03246532210"></a>可选，但公网自动创建时必填，将自动创建ELB所绑定的EIP。私网自动创建时必填，将自动创建ELB。</p>
+    <p id="p13324858222"><a name="p13324858222"></a><a name="p13324858222"></a><strong id="b932418520225"><a name="b932418520225"></a><a name="b932418520225"></a>示例：</strong></p>
+    <a name="ul16324853220"></a><a name="ul16324853220"></a><ul id="ul16324853220"><li>公网自动创建：<p id="p1675515917379"><a name="p1675515917379"></a><a name="p1675515917379"></a>值为 '{"type":"public","bandwidth_name":"cce-bandwidth-1551163379627","bandwidth_chargemode":"bandwidth","bandwidth_size":5,"bandwidth_sharetype":"PER","eip_type":"5_bgp","name":"james"}'</p>
+    </li><li>私网自动创建：<p id="p15211191416376"><a name="p15211191416376"></a><a name="p15211191416376"></a>值为 '{"type":"inner", "name": "A-location-d-test"}'</p>
+    </li></ul>
+    </td>
+    </tr>
+    <tr id="row332514515229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p232519512211"><a name="p232519512211"></a><a name="p232519512211"></a>kubernetes.io/elb.port</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p173251458226"><a name="p173251458226"></a><a name="p173251458226"></a>Integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p93251554223"><a name="p93251554223"></a><a name="p93251554223"></a>必填，界面上的对外端口，为注册到负载均衡服务地址上的端口。</p>
+    </td>
+    </tr>
+    <tr id="row1432518511224"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1432565182214"><a name="p1432565182214"></a><a name="p1432565182214"></a>kubernetes.io/ingress.class</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1232514542215"><a name="p1232514542215"></a><a name="p1232514542215"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p13251456223"><a name="p13251456223"></a><a name="p13251456223"></a>默认，cce时表示使用增强型负载均衡实例，nginx时表示启用nginx-ingress插件。但通过API接口创建Ingress时必须增加该参数。</p>
+    </td>
+    </tr>
+    <tr id="row143251551229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p18325951228"><a name="p18325951228"></a><a name="p18325951228"></a>tls</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1832513582216"><a name="p1832513582216"></a><a name="p1832513582216"></a>Array of strings</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p53262562220"><a name="p53262562220"></a><a name="p53262562220"></a>可选，HTTPS协议时，需添加此参数。</p>
+    </td>
+    </tr>
+    <tr id="row6326185152213"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p5326145202219"><a name="p5326145202219"></a><a name="p5326145202219"></a>secretName</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p5326135162216"><a name="p5326135162216"></a><a name="p5326135162216"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1732645172213"><a name="p1732645172213"></a><a name="p1732645172213"></a>可选，HTTPS协议时添加，配置为创建的密钥证书名称。</p>
+    </td>
+    </tr>
+    <tr id="row33265552211"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1432685102213"><a name="p1432685102213"></a><a name="p1432685102213"></a>serviceName</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1632617511229"><a name="p1632617511229"></a><a name="p1632617511229"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p17326135102219"><a name="p17326135102219"></a><a name="p17326135102219"></a>为ingress-test-svc.yaml的服务名称。</p>
+    </td>
+    </tr>
+    <tr id="row1232616516229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p16326052225"><a name="p16326052225"></a><a name="p16326052225"></a>servicePort</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p23264582215"><a name="p23264582215"></a><a name="p23264582215"></a>Integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p53261152221"><a name="p53261152221"></a><a name="p53261152221"></a>为ingress-test-svc.yaml的Port。</p>
+    </td>
+    </tr>
+    <tr id="row1732620510228"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p12326195152216"><a name="p12326195152216"></a><a name="p12326195152216"></a>ingress.beta.kubernetes.io/url-match-mode</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1232675172211"><a name="p1232675172211"></a><a name="p1232675172211"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p16327755228"><a name="p16327755228"></a><a name="p16327755228"></a>路由匹配策略，可选值为EQUAL_TO（精确匹配）、STARTS_WITH(前缀匹配)、REGEX（正则匹配）。</p>
+    </td>
+    </tr>
+    <tr id="row19327205202214"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p83279511221"><a name="p83279511221"></a><a name="p83279511221"></a>path</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p932711582211"><a name="p932711582211"></a><a name="p932711582211"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p173278515229"><a name="p173278515229"></a><a name="p173278515229"></a>为路由，用户自定义设置。</p>
+    </td>
+    </tr>
+    <tr id="row16327451221"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p832714513227"><a name="p832714513227"></a><a name="p832714513227"></a>host</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1532718517223"><a name="p1532718517223"></a><a name="p1532718517223"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p53272572218"><a name="p53272572218"></a><a name="p53272572218"></a>可选，域名配置。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
-        <a name="table19417184671919"></a>
-        <table><thead align="left"><tr id="row14418174611912"><th class="cellrowborder" valign="top" width="29.727027297270276%" id="mcps1.2.4.1.1"><p id="p1141924611199"><a name="p1141924611199"></a><a name="p1141924611199"></a>参数</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="18.678132186781323%" id="mcps1.2.4.1.2"><p id="p1641911466191"><a name="p1641911466191"></a><a name="p1641911466191"></a>参数类型</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="51.594840515948405%" id="mcps1.2.4.1.3"><p id="p1941920463197"><a name="p1941920463197"></a><a name="p1941920463197"></a>描述</p>
-        </th>
-        </tr>
-        </thead>
-        <tbody><tr id="row194191846181915"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p152321411112318"><a name="p152321411112318"></a><a name="p152321411112318"></a>name</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p7419646171920"><a name="p7419646171920"></a><a name="p7419646171920"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p87791494919"><a name="p87791494919"></a><a name="p87791494919"></a>自动创建的负载均衡的名称。</p>
-        <p id="p9912132016296"><a name="p9912132016296"></a><a name="p9912132016296"></a>取值范围：1-64个字符，中英文，数字，下划线，中划线。</p>
-        </td>
-        </tr>
-        <tr id="row142064681919"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p20862285225"><a name="p20862285225"></a><a name="p20862285225"></a>type</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p8420746101918"><a name="p8420746101918"></a><a name="p8420746101918"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p4703183013491"><a name="p4703183013491"></a><a name="p4703183013491"></a>负载均衡实例网络类型，公网或者私网。</p>
-        <a name="ul152311045124913"></a><a name="ul152311045124913"></a><ul id="ul152311045124913"><li>public：公网型负载均衡</li><li>inner：私网型负载均衡</li></ul>
-        </td>
-        </tr>
-        <tr id="row194201046151910"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p128042817221"><a name="p128042817221"></a><a name="p128042817221"></a>bandwidth_name</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1142084619195"><a name="p1142084619195"></a><a name="p1142084619195"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6964103318220"><a name="p6964103318220"></a><a name="p6964103318220"></a>带宽的名称，默认值为：cce-bandwidth-******。</p>
-        <p id="p1236952875020"><a name="p1236952875020"></a><a name="p1236952875020"></a>1-64 字符，中文、英文字符、数字、下划线、中划线或点组成。</p>
-        </td>
-        </tr>
-        <tr id="row942194619199"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p77502811221"><a name="p77502811221"></a><a name="p77502811221"></a>bandwidth_chargemode</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p11421446191914"><a name="p11421446191914"></a><a name="p11421446191914"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p3178181495216"><a name="p3178181495216"></a><a name="p3178181495216"></a>带宽付费模式。</p>
-        <a name="ul567215235528"></a><a name="ul567215235528"></a><ul id="ul567215235528"><li>bandwidth：按带宽计费</li><li>traffic：按流量计费</li></ul>
-        </td>
-        </tr>
-        <tr id="row124211046101910"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p187492819229"><a name="p187492819229"></a><a name="p187492819229"></a>bandwidth_size</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p114229463196"><a name="p114229463196"></a><a name="p114229463196"></a>Integer</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p12958233152218"><a name="p12958233152218"></a><a name="p12958233152218"></a>带宽大小，请根据Region带宽支持范围设置，具体请参见<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b198591928137"><a name="b198591928137"></a><a name="b198591928137"></a>表4 bandwidth字段说明中size字段</strong>。</p>
-        </td>
-        </tr>
-        <tr id="row1942224601917"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p16731228202214"><a name="p16731228202214"></a><a name="p16731228202214"></a>bandwidth_sharetype</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p84221246111913"><a name="p84221246111913"></a><a name="p84221246111913"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p188864421731"><a name="p188864421731"></a><a name="p188864421731"></a>带宽共享方式。</p>
-        <a name="ul51872412"></a><a name="ul51872412"></a><ul id="ul51872412"><li>PER：共享带宽</li><li>WHOLE：共享带宽</li></ul>
-        </td>
-        </tr>
-        <tr id="row1242219461193"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1972102872220"><a name="p1972102872220"></a><a name="p1972102872220"></a>eip_type</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p132201811174611"><a name="p132201811174611"></a><a name="p132201811174611"></a>String</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p11956103372218"><a name="p11956103372218"></a><a name="p11956103372218"></a>弹性公网IP类型，请参考ELB支持的弹性公网IP类型，具体请参见<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b11814520410"><a name="b11814520410"></a><a name="b11814520410"></a>表3 publicip字段说明type字段</strong>。</p>
-        </td>
-        </tr>
-        </tbody>
-        </table>
+    **表 4**  elb.autocreate字段数据结构说明
 
-        **vi ingress-test-secret.yaml**
+    <a name="table19417184671919"></a>
+    <table><thead align="left"><tr id="row14418174611912"><th class="cellrowborder" valign="top" width="29.727027297270276%" id="mcps1.2.4.1.1"><p id="p1141924611199"><a name="p1141924611199"></a><a name="p1141924611199"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="18.678132186781323%" id="mcps1.2.4.1.2"><p id="p1641911466191"><a name="p1641911466191"></a><a name="p1641911466191"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="51.594840515948405%" id="mcps1.2.4.1.3"><p id="p1941920463197"><a name="p1941920463197"></a><a name="p1941920463197"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row194191846181915"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p152321411112318"><a name="p152321411112318"></a><a name="p152321411112318"></a>name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p7419646171920"><a name="p7419646171920"></a><a name="p7419646171920"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p87791494919"><a name="p87791494919"></a><a name="p87791494919"></a>自动创建的负载均衡的名称。</p>
+    <p id="p9912132016296"><a name="p9912132016296"></a><a name="p9912132016296"></a>取值范围：1-64个字符，中英文，数字，下划线，中划线。</p>
+    </td>
+    </tr>
+    <tr id="row142064681919"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p20862285225"><a name="p20862285225"></a><a name="p20862285225"></a>type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p8420746101918"><a name="p8420746101918"></a><a name="p8420746101918"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p4703183013491"><a name="p4703183013491"></a><a name="p4703183013491"></a>负载均衡实例网络类型，公网或者私网。</p>
+    <a name="ul152311045124913"></a><a name="ul152311045124913"></a><ul id="ul152311045124913"><li>public：公网型负载均衡</li><li>inner：私网型负载均衡</li></ul>
+    </td>
+    </tr>
+    <tr id="row194201046151910"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p128042817221"><a name="p128042817221"></a><a name="p128042817221"></a>bandwidth_name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1142084619195"><a name="p1142084619195"></a><a name="p1142084619195"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6964103318220"><a name="p6964103318220"></a><a name="p6964103318220"></a>带宽的名称，默认值为：cce-bandwidth-******。</p>
+    <p id="p1236952875020"><a name="p1236952875020"></a><a name="p1236952875020"></a>1-64 字符，中文、英文字符、数字、下划线、中划线或点组成。</p>
+    </td>
+    </tr>
+    <tr id="row942194619199"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p77502811221"><a name="p77502811221"></a><a name="p77502811221"></a>bandwidth_chargemode</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p11421446191914"><a name="p11421446191914"></a><a name="p11421446191914"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p3178181495216"><a name="p3178181495216"></a><a name="p3178181495216"></a>带宽付费模式。</p>
+    <a name="ul567215235528"></a><a name="ul567215235528"></a><ul id="ul567215235528"><li>bandwidth：按带宽计费</li><li>traffic：按流量计费</li></ul>
+    </td>
+    </tr>
+    <tr id="row124211046101910"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p187492819229"><a name="p187492819229"></a><a name="p187492819229"></a>bandwidth_size</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p114229463196"><a name="p114229463196"></a><a name="p114229463196"></a>Integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p12958233152218"><a name="p12958233152218"></a><a name="p12958233152218"></a>带宽大小，请根据Region带宽支持范围设置，具体请参见<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b198591928137"><a name="b198591928137"></a><a name="b198591928137"></a>表4 bandwidth字段说明中size字段</strong>。</p>
+    </td>
+    </tr>
+    <tr id="row1942224601917"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p16731228202214"><a name="p16731228202214"></a><a name="p16731228202214"></a>bandwidth_sharetype</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p84221246111913"><a name="p84221246111913"></a><a name="p84221246111913"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p188864421731"><a name="p188864421731"></a><a name="p188864421731"></a>带宽共享方式。</p>
+    <a name="ul51872412"></a><a name="ul51872412"></a><ul id="ul51872412"><li>PER：共享带宽</li><li>WHOLE：共享带宽</li></ul>
+    </td>
+    </tr>
+    <tr id="row1242219461193"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1972102872220"><a name="p1972102872220"></a><a name="p1972102872220"></a>eip_type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p132201811174611"><a name="p132201811174611"></a><a name="p132201811174611"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p11956103372218"><a name="p11956103372218"></a><a name="p11956103372218"></a>弹性公网IP类型，请参考ELB支持的弹性公网IP类型，具体请参见<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b11814520410"><a name="b11814520410"></a><a name="b11814520410"></a>表3 publicip字段说明type字段</strong>。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
-        ```
-        apiVersion: v1
-        data:
-          tls.crt: LS0******tLS0tCg==
-          tls.key: LS0tL******0tLS0K
-        kind: Secret
-        metadata:
-          annotations:
-            description: test for ingressTLS secrets
-          name: ingress-test-secret
-          namespace: default
-        type: IngressTLS
-        ```
+    **vi ingress-test-secret.yaml**
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >此处tls.crt和tls.key为示例，请获取真实密钥进行替换。  
+    ```
+    apiVersion: v1
+    data:
+      tls.crt: LS0******tLS0tCg==
+      tls.key: LS0tL******0tLS0K
+    kind: Secret
+    metadata:
+      annotations:
+        description: test for ingressTLS secrets
+      name: ingress-test-secret
+      namespace: default
+    type: IngressTLS
+    ```
 
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >此处tls.crt和tls.key为示例，请获取真实密钥进行替换。  
 
 3.  创建工作负载。
 
@@ -664,5 +669,5 @@
 
 ## 相关操作<a name="section132063911129"></a>
 
-由于社区Ingress结构体中没有property属性，用户使用client-go调用创建ingress的api接口时，创建的Ingress中没有property属性。为了与社区的client-go兼容，CCE提供了相关解决方案，具体请参见[Ingress中的property字段与社区client-go兼容](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0042.html)。
+由于社区Ingress结构体中没有property属性，用户使用client-go调用创建ingress的api接口时，创建的Ingress中没有property属性。为了与社区的client-go兼容，CCE提供了相关解决方案，具体请参见[Ingress中的property字段如何实现与社区client-go兼容？](https://support.huaweicloud.com/cce_faq/cce_faq_00234.html)。
 

@@ -8,7 +8,8 @@ Everest是一个云原生容器存储系统，基于CSI为Kubernetes v1.15.6及�
 
 ## 使用限制<a name="section202191122814"></a>
 
-本插件仅支持在**v1.15及以上版本**的混合集群和裸金属集群中安装，v1.13及以下版本集群创建时默认必装[storage-driver](storage-driver（系统资源插件-必装）.md)插件。
+-   仅支持**v1.15及以上版本**的混合集群和裸金属集群安装本插件。
+-   v1.13及以下版本集群创建时默认必装[storage-driver](storage-driver（系统资源插件-必装）.md)插件。
 
 ## 安装插件<a name="section168341157155317"></a>
 

@@ -1,6 +1,6 @@
 # virtual kubelet<a name="cce_01_0135"></a>
 
-Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该插件支持用户在短时高负载场景下，将部署在CCE上的无状态负载（Deployment）、守护进程集（DaemonSet）、普通任务（Job）三种资源类型的容器实例（Pod），弹性创建到华为云[云容器实例CCI](https://support.huaweicloud.com/cci/index.html)服务上，以减少集群扩容带来的消耗。
+Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该插件支持用户在短时高负载场景下，将部署在CCE上的无状态负载（Deployment）、有状态负载（StatefulSet）、普通任务（Job）三种资源类型的容器实例（Pod），弹性创建到华为云[云容器实例CCI](https://support.huaweicloud.com/cci/index.html)服务上，以减少集群扩容带来的消耗。
 
 Virtual Kubelet插件具体如下功能：
 
@@ -12,11 +12,11 @@ Virtual Kubelet插件具体如下功能：
 
 ## 使用约束<a name="section628693291119"></a>
 
--   仅支持VPC网络模式的虚拟机集群，仅限于v1.11版本。
+-   仅支持VPC网络模式的混合集群，仅限于v1.11及以上版本的集群使用。
 -   调度到CCI的实例的存储类型只支持SFS、ConfigMap、Secret三种Volume类型。
 -   暂不支持HostNetwork网络模式的容器实例（Pod）弹性到CCI。
 -   实例的规格必须满足云容器实例CCI的[容器规范](https://support.huaweicloud.com/productdesc-cci/cci_03_0007.html)。
--   使用插件前需要用户在[CCI界面](https://console.huaweicloud.com/cci)对CCI服务进行授信。
+-   使用插件前需要用户在[CCI界面](https://console.huaweicloud.com/cci/?locale=zh-cn#/dashboard)对CCI服务进行授信。
 
 ## 安装插件<a name="section2237175619515"></a>
 

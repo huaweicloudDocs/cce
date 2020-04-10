@@ -1,9 +1,9 @@
 # CCE控制台的权限依赖<a name="cce_01_0190"></a>
 
-CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略授权后，在CCE Console界面中的各项功能需要配置相应的服务权限后才能正常查看或使用，详细说明如下：
+CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略授权后，在CCE Console控制台中的各项功能需要配置相应的服务权限后才能正常查看或使用，详细说明如下：
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
->-   依赖服务的权限配置均基于您已设置了IAM系统策略授权的CCE FullAccess或CCE ReadOnlyAccess策略权限，详细设置方法请参见[IAM系统策略授权](IAM系统策略授权.md)。  
+>-   依赖服务的权限配置均基于您已设置了IAM系统策略授权的CCE FullAccess或CCE ReadOnlyAccess策略权限，详细设置方法请参见[设置集群权限](设置集群权限.md)。  
 >-   Tenant Guest权限在你开启IAM系统策略授权之后将不再生效，即无法再进入应用管理、模板市场、插件管理等CCE Console页面，也不会再有全局只读的效果。  
 >-   1.11.7-r2及以上版本的集群，显示情况依赖于命名空间权限的设置情况，如果没有设置命名空间权限，则无法查看集群下的资源。  
 >    -   如果您设置了全部命名空间的view权限，则可以查看到对应集群的全部命名空间下的资源，但密钥 \( Secret \)除外，密钥 \( Secret \)需要在命名空间权限下设置admin或者edit权限才能查看。  
@@ -11,12 +11,12 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 
 ## 依赖服务的权限设置<a name="section20316111417244"></a>
 
-如果IAM用户需要在CCE Console界面中拥有相应功能的查看或使用权限，请确认已经对该用户所在的用户组设置了CCE FullAccess或CCE ReadOnlyAccess策略的集群权限，再按如下表格增加依赖服务的角色或策略：
+如果IAM用户需要在CCE  Console控制台中拥有相应功能的查看或使用权限，请确认已经对该用户所在的用户组设置了CCE FullAccess或CCE ReadOnlyAccess策略的集群权限，再按如下表格增加依赖服务的角色或策略：
 
 **表 1**  CCE Console中依赖服务的角色或策略
 
 <a name="table99001215575"></a>
-<table><thead align="left"><tr id="row16901181518712"><th class="cellrowborder" valign="top" width="21.872187218721873%" id="mcps1.2.4.1.1"><p id="p109011015875"><a name="p109011015875"></a><a name="p109011015875"></a>Console界面功能</p>
+<table><thead align="left"><tr id="row16901181518712"><th class="cellrowborder" valign="top" width="21.872187218721873%" id="mcps1.2.4.1.1"><p id="p109011015875"><a name="p109011015875"></a><a name="p109011015875"></a><span id="ph1754516381692"><a name="ph1754516381692"></a><a name="ph1754516381692"></a>Console控制台</span>功能</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.642864286428644%" id="mcps1.2.4.1.2"><p id="p490115151776"><a name="p490115151776"></a><a name="p490115151776"></a>依赖服务</p>
 </th>
@@ -48,7 +48,7 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 <p id="p117241658182817"><a name="p117241658182817"></a><a name="p117241658182817"></a>弹性文件服务 SFS</p>
 </td>
 <td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p57471617102017"><a name="p57471617102017"></a><a name="p57471617102017"></a>正常创建工作负载时不依赖其他服务的权限。</p>
-<a name="ul8113732182016"></a><a name="ul8113732182016"></a><ul id="ul8113732182016"><li>如果需要创建ELB类型的服务，需要设置ELB Service Administrator和VPC Administrator。</li><li>如果需要使用Java探针，需要设置AOM&nbsp;FullAccess和APM FullAccess。</li><li>如果需要NAT网关类型的服务，需要设置NAT Gateway Administrator。</li><li>如果使用对象存储，需要全局设置OBS Administrator。<div class="note" id="note1215220141518"><a name="note1215220141518"></a><a name="note1215220141518"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p0153120121518"><a name="p0153120121518"></a><a name="p0153120121518"></a>由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的RBAC策略后，大概需要等待13分钟RBAC策略才能生效；授予OBS相关的细粒度策略后，大概需要等待5分钟细粒度策略才能生效。</p>
+<a name="ul8113732182016"></a><a name="ul8113732182016"></a><ul id="ul8113732182016"><li>如果需要创建ELB类型的服务，需要设置ELB Service Administrator和VPC Administrator。</li><li>如果需要使用Java探针，需要设置AOM&nbsp;FullAccess和APM FullAccess。</li><li>如果需要NAT网关类型的服务，需要设置NAT Gateway Administrator。</li><li>如果使用对象存储，需要全局设置OBS Administrator。<div class="note" id="note1215220141518"><a name="note1215220141518"></a><a name="note1215220141518"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p0153120121518"><a name="p0153120121518"></a><a name="p0153120121518"></a>由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的RBAC策略后，大概需要等待13分钟RBAC策略才能生效；授予OBS相关的系统策略后，大概需要等待5分钟系统策略能生效。</p>
 </div></div>
 </li><li>如果使用文件存储，需要设置SFS FullAccess。</li></ul>
 </td>
@@ -83,7 +83,7 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 <p id="p126411556163811"><a name="p126411556163811"></a><a name="p126411556163811"></a>弹性文件服务 SFS</p>
 <p id="p344642920405"><a name="p344642920405"></a><a name="p344642920405"></a>极速文件存储 EFS（SFS Turbo）</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul146023714385"></a><a name="ul146023714385"></a><ul id="ul146023714385"><li>如果使用对象存储，需要全局设置OBS Administrator。<div class="note" id="note927810178150"><a name="note927810178150"></a><a name="note927810178150"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p8278617181514"><a name="p8278617181514"></a><a name="p8278617181514"></a>由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的RBAC策略后，大概需要等待13分钟RBAC策略才能生效；授予OBS相关的细粒度策略后，大概需要等待5分钟细粒度策略才能生效。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul146023714385"></a><a name="ul146023714385"></a><ul id="ul146023714385"><li>如果使用对象存储，需要全局设置OBS Administrator。<div class="note" id="note927810178150"><a name="note927810178150"></a><a name="note927810178150"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p8278617181514"><a name="p8278617181514"></a><a name="p8278617181514"></a>由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的RBAC策略后，大概需要等待13分钟RBAC策略才能生效；授予OBS相关的系统策略后，大概需要等待5分钟系统策略才能生效。</p>
 </div></div>
 </li><li>如果使用文件存储，需要设置SFS Administrator。</li><li>如果使用极速文件存储，需要设置SFS Turbo Administrator</li></ul>
 </td>
@@ -113,7 +113,7 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p1214191764016"><a name="p1214191764016"></a><a name="p1214191764016"></a>/</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p19141141744012"><a name="p19141141744012"></a><a name="p19141141744012"></a>当前仅支持主账号和设置了CCE Administrator且Security Administrator（全局级策略）的子账号访问。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul372099481"></a><a name="ul372099481"></a><ul id="ul372099481"><li>支持主账号访问。</li><li>支持设置了CCE Administrator和Security Administrator（全局级策略）的子账号访问。</li><li>支持设置了IAM ReadOnlyAccess和CCE FullAccess或CCE ReadOnlyAccess的子账号访问。</li></ul>
 </td>
 </tr>
 <tr id="row1588069154010"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p1388110934011"><a name="p1388110934011"></a><a name="p1388110934011"></a>配置中心</p>
@@ -155,7 +155,7 @@ IAM用户“James”在用户组“开发人员组”，“开发人员组”仅
 
 ## 步骤一：验证用户当前权限<a name="section330722611126"></a>
 
-1.  使用IAM用户“James”登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，IAM用户登录方式请参见[步骤三：使用IAM用户登录并验证权限](IAM系统策略授权.md#section1953761017615)。
+1.  使用IAM用户“James”登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，IAM用户登录方式请参见[步骤三：使用IAM用户登录并验证权限](设置集群权限.md#section1953761017615)。
 2.  单击左侧导航栏中的“总览“，进入总览页面，可以看到该用户无权查看监控相关的模块信息。
 
     **图 2**  无权查看监控信息<a name="fig1825716752613"></a>  

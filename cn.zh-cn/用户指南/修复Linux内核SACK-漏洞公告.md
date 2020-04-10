@@ -69,72 +69,7 @@
 
 ## 解决方法<a name="section1446470135915"></a>
 
-华为云CCE团队已经紧急修复[Linux 内核SACK漏洞](https://www.huaweicloud.com/notice/2018/20190619122553544.html)，并已发布解决方案。
-
->![](public_sys-resources/icon-notice.gif) **须知：**   
->-   **Centos系统（7.4/7.6）：正在适配新内核，近期将发布新版本修复**  
->-   Euleros2.2支持升级内核到3.10.0-327.62.59.83.h162.x86\_64  
->-   Euleros2.5支持升级内核到3.10.0-862.14.1.0.h197.eulerosv2r7.x86\_64  
->-   节点需绑定EIP，内核升级完成后，需重启系统  
->-   升级过程中，下列报错不影响功能，为正常现象  
->![](figures/zh-cn_image_0177555996.png)  
-
-1.  连接集群master操作，驱逐受影响节点上的pod，pod会在其他节点进行重建以满足副本数要求。
-
-    执行以下命令：
-
-    ```
-    kubectl drain <node name> --ignore-daemonsets
-    ```
-
-2.  root用户使用如下命令更新内核（保证节点拥有EIP）并重启系统。
-    1.  EulerOS 2.2系统执行以下命令：
-
-        ```
-        bash /var/paas/kubernetes/canal/openvswitch/can_ovs.sh uninstall
-        yum update kernel -y
-        reboot
-        ```
-
-    2.  EulerOS 2.5系统执行以下命令：
-
-        ```
-        bash /var/paas/kubernetes/canal/openvswitch/can_ovs.sh uninstall
-        wget http://obs.cn-east-2.myhwclouds.com/cce-east/cce-openvswitch/kernel-3.10.0-862.14.1.0.h197.eulerosv2r7.x86_64.rpm
-        rpm -ihv kernel-3.10.0-862.14.1.0.h197.eulerosv2r7.x86_64.rpm
-        reboot
-        ```
-
-3.  root用户下执行以下命令升级cce组件适配新内核：
-    1.  EulerOS 2.2执行以下命令
-
-        ```
-        bash /var/paas/kubernetes/canal/openvswitch/can_ovs.sh install
-        su paas; monit restart ovsdb-server ovs-vswitchd
-        ```
-
-    2.  EulerOS 2.5执行以下脚本
-
-        ```
-        function upgrade_ovs()
-        {
-        	wget http://obs.cn-east-2.myhwclouds.com/cce-east/cce-openvswitch/openvswitch-1.0.RC10.SPC100.B050.tar.gz
-        	mv /var/paas/kubernetes/canal/openvswitch /var/paas/kubernetes/canal/openvswitch.bak
-        	tar zxvf openvswitch-1.0.RC10.SPC100.B050.tar.gz -C /var/paas/kubernetes/canal/
-        	bash /var/paas/kubernetes/canal/openvswitch/can_ovs.sh install
-        	systemctl restart  ovsdb-server ovs-vswitchd 
-        }
-        upgrade_ovs
-        ```
-
-4.  恢复节点调度。
-
-    执行以下命令：
-
-    ```
-    kubectl uncordon <node name>
-    ```
-
+升级操作系统内核的方法，请参见[操作系统内核升级](操作系统内核升级.md)。
 
 ## 附：TCP SACK介绍<a name="section11904733145410"></a>
 

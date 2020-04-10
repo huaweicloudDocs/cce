@@ -91,7 +91,7 @@
 
     -   **节点配额**
 
-        此处为节点配额提示，如需申请更多配额，请单击[申请扩大配额](https://console.huaweicloud.com/istio/%7B%7BENLARGE_QUOTA_ADDDRESS%7D%7D)。
+        此处为节点配额提示，如需申请更多配额，请单击申请扩大配额。
 
     -   **购买时长**
 
@@ -112,7 +112,7 @@
 
     **方式一：**
 
-    登录[应用服务网格](https://console.huaweicloud.com/istio)控制台，单击“Istio管理“，在右侧卡片列表中查看Istio状态，若为运行中则说明集群启用Istio成功。
+    登录[应用服务网格](https://console.huaweicloud.com/istio/)控制台，单击“Istio管理“，在右侧卡片列表中查看Istio状态，若为运行中则说明集群启用Istio成功。
 
     **图 1**  Istio服务网格启用成功<a name="zh-cn_topic_0137962680_fig93042151399"></a>  
     ![](figures/Istio服务网格启用成功.png "Istio服务网格启用成功")
