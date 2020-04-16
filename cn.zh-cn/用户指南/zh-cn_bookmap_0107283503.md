@@ -47,12 +47,12 @@
 -   [节点管理](节点管理.md)
     -   [购买节点](购买节点.md)
     -   [登录节点](登录节点.md)
+    -   [监控节点](监控节点.md)
+    -   [管理节点标签](管理节点标签.md)
     -   [同步节点信息](同步节点信息.md)
     -   [重置节点](重置节点.md)
     -   [删除节点](删除节点.md)
     -   [节点关机](节点关机.md)
-    -   [节点标签管理](节点标签管理.md)
-    -   [节点监控](节点监控.md)
     -   [节点预留资源计算公式](节点预留资源计算公式.md)
     -   [为docker创建Linux LVM型磁盘分区](为docker创建Linux-LVM型磁盘分区.md)
 
@@ -155,6 +155,8 @@
     -   [gpu-beta](gpu-beta.md)
     -   [npd](npd.md)
     -   [huawei-npu](huawei-npu.md)
+    -   [volcano](volcano.md)
+    -   [spark-operator](spark-operator.md)
     -   [nginx-ingress](nginx-ingress.md)
 
 -   [弹性伸缩](弹性伸缩.md)

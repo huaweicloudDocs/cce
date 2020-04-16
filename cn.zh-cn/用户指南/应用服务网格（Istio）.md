@@ -109,19 +109,14 @@
     >-   为该集群的default的命名空间打上inject=true标签。  
 
 5.  Istio服务网格启用成功后，可在“Istio管理“或CCE的集群列表中查看Istio启用状态。
+    -   **方式一：**登录[应用服务网格](https://console.huaweicloud.com/istio/)控制台，单击“Istio管理“，在右侧卡片列表中查看Istio状态，若为运行中则说明集群启用Istio成功。
 
-    **方式一：**
+        **图 1**  Istio服务网格启用成功<a name="zh-cn_topic_0137962680_fig93042151399"></a>  
+        ![](figures/Istio服务网格启用成功.png "Istio服务网格启用成功")
 
-    登录[应用服务网格](https://console.huaweicloud.com/istio/)控制台，单击“Istio管理“，在右侧卡片列表中查看Istio状态，若为运行中则说明集群启用Istio成功。
+    -   **方式二：**登录[云容器引擎](https://console.huaweicloud.com/cce2.0)控制台，单击“资源管理 \> 集群管理”，在右侧集群卡片列表中查看Istio状态。
+        -   若集群名称右侧显示![](figures/icon-Istio-l.png)，则Istio启用成功。
+        -   若集群名称右侧显示![](figures/icon-Istio-h.png)，则Istio启用失败。
 
-    **图 1**  Istio服务网格启用成功<a name="zh-cn_topic_0137962680_fig93042151399"></a>  
-    ![](figures/Istio服务网格启用成功.png "Istio服务网格启用成功")
-
-    **方式二：**
-
-    登录[云容器引擎](https://console.huaweicloud.com/cce2.0)控制台，单击“资源管理 \> 集群管理”，在右侧集群卡片列表中查看Istio状态。
-
-    -   若集群名称右侧显示![](figures/icon-Istio-l.png)，则Istio启用成功。
-    -   若集群名称右侧显示![](figures/icon-Istio-h.png)，则Istio启用失败。
 
 

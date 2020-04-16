@@ -11,6 +11,11 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 >-   [https://github.com/kubernetes/dashboard/pull/3400](https://github.com/kubernetes/dashboard/pull/3400?spm=a2c4g.11186623.2.11.34d16d21dGsJMe)  
 >-   [https://github.com/kubernetes/dashboard/releases/tag/v1.10.1](https://github.com/kubernetes/dashboard/releases/tag/v1.10.1)  
 
+## 使用约束<a name="section11172124718374"></a>
+
+-   1.05版本插件支持[混合集群](购买混合集群.md)、[裸金属集群](购买裸金属集群.md)和[鲲鹏集群](购买鲲鹏集群.md)，混合集群和裸金属集群需Kubernetes 1.9及以上版本，鲲鹏集群需Kubernetes 1.13及以上版本。
+-   1.04版本插件支持[混合集群](购买混合集群.md)和[裸金属集群](购买裸金属集群.md)，需Kubernetes 1.9及以上版本。
+
 ## 安装步骤<a name="section46701613154319"></a>
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“中，单击dashboard插件下的“安装插件“。
@@ -55,8 +60,6 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 成功安装dashboard后，需完成如下步骤才能使用：
 
-**Version 1.0.4及以上**
-
 1.  **获取认证token**
 
     请于“插件管理”-\>“插件实例”-\>“dashboard”完成操作。
@@ -64,28 +67,6 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 2.  **访问dashboard**
 
     “插件管理”-\>“插件实例”-\>“dashboard”，点击“访问地址”中的链接并通过token登录。
-
-
-**Version 1.0.3**
-
-1.  进入dashboard实例详情界面。
-2.  若访问类型为“节点访问”，需确认是否已为集群任意节点绑定弹性IP。若未绑定需根据界面引导进行绑定，若已绑定则跳过此步。
-3.  选择“说明”页签，单击“获取默认token”下的“操作”，复制“值”。
-4.  点击“访问地址”中的链接进入终端，选择“令牌”的登录方式，通过上一步获取的token值登录（当前只支持使用令牌方式进行登录）。
-
-**Version 1.0.2**
-
-1.  **绑定弹性IP**
-    -   在弹性公网服务的弹性公网IP界面，为插件所在集群的任意节点绑定弹性IP，若已有节点绑定弹性IP则跳过此步。
-    -   在工作负载页面，选择命名空间kube-system，复制工作负载kubernetes-dashboard对应的外部访问地址。用户在浏览器内输入相应的链接进行访问。链接的格式为：https://外部访问地址。
-
-2.  **获取认证token**
-
-    在“配置中心”-\>“密钥（Secret）”页面，选择实例所在集群，选择命名空间kube-system，选择密钥kubernetes-dashboard-token-XXXXX，查看密钥数据中键token对应的值。
-
-3.  **登录终端**
-
-    将上一步获取到的Token值进行base64解密并复制到dashboard的登录界面中，完成登录（当前只支持使用令牌方式进行登录）。
 
 
 ## 访问dashboard<a name="section15288141117362"></a>
