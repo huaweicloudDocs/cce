@@ -224,7 +224,7 @@ N/A
 </thead>
 <tbody><tr id="row47507485"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p22901097"><a name="p22901097"></a><a name="p22901097"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p43049602"><a name="p43049602"></a><a name="p43049602"></a>Delete a DaemonSet resource object successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p43049602"><a name="p43049602"></a><a name="p43049602"></a>Delete a Pod resource object successfully.</p>
 </td>
 </tr>
 </tbody>

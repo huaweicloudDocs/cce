@@ -21,7 +21,9 @@ This API is used to replace the specified Ingress.
 
 ## URI<a name="section14030938"></a>
 
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses/\{name\}
+PUT /apis/networking.k8s.io/v1beta1/namespaces/\{namespace\}/ingresses/\{name\} \(Supports since1.15\)
+
+PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses/\{name\} \(Compatible\)
 
 [表1](#d0e42906)描述该API的参数。
 

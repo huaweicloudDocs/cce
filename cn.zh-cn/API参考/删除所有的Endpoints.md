@@ -146,7 +146,7 @@ N/A
 </thead>
 <tbody><tr id="row29442650"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p36044417"><a name="p36044417"></a><a name="p36044417"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p33916685"><a name="p33916685"></a><a name="p33916685"></a>Delete a DaemonSet resource object successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p33916685"><a name="p33916685"></a><a name="p33916685"></a>Delete an Endpoints resource object successfully.</p>
 </td>
 </tr>
 </tbody>

@@ -261,7 +261,7 @@ PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Co
 </thead>
 <tbody><tr id="zh-cn_topic_0079616860_zh-cn_topic_0079614957_row41609976"><td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079616860_zh-cn_topic_0079614957_p14964925"><a name="zh-cn_topic_0079616860_zh-cn_topic_0079614957_p14964925"></a><a name="zh-cn_topic_0079616860_zh-cn_topic_0079614957_p14964925"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"><a name="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"></a><a name="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"></a>This operation succeeds, and a  Development resource object is returned.</p>
+<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"><a name="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"></a><a name="zh-cn_topic_0079616894_zh-cn_topic_0079614986_p51022873161656"></a>This operation succeeds, and a  Deployment resource object is returned.</p>
 </td>
 </tr>
 </tbody>

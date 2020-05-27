@@ -39,7 +39,7 @@ GET /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p22991372"><a name="p22991372"></a><a name="p22991372"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.36363636363636%" headers="mcps1.2.4.1.3 "><p id="p50361820"><a name="p50361820"></a><a name="p50361820"></a>Name of the Pod.</p>
+<td class="cellrowborder" valign="top" width="36.36363636363636%" headers="mcps1.2.4.1.3 "><p id="p50361820"><a name="p50361820"></a><a name="p50361820"></a>Name of the CronJob.</p>
 </td>
 </tr>
 <tr id="row50603201"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p5218617"><a name="p5218617"></a><a name="p5218617"></a>exact</p>
@@ -158,7 +158,7 @@ N/A
 </thead>
 <tbody><tr id="row21327729"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p49824477"><a name="p49824477"></a><a name="p49824477"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9250797"><a name="p9250797"></a><a name="p9250797"></a>This operation succeeds, and a Job resource object is returned.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9250797"><a name="p9250797"></a><a name="p9250797"></a>This operation succeeds, and a CronJob resource object is returned.</p>
 </td>
 </tr>
 </tbody>

@@ -37,14 +37,14 @@ PATCH /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p15078020"><a name="p15078020"></a><a name="p15078020"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p13360137"><a name="p13360137"></a><a name="p13360137"></a>name of the CronJob.</p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p13360137"><a name="p13360137"></a><a name="p13360137"></a>Name of the CronJob.</p>
 </td>
 </tr>
 <tr id="row53132375"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p8755152"><a name="p8755152"></a><a name="p8755152"></a>namespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p38078717"><a name="p38078717"></a><a name="p38078717"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p64477255"><a name="p64477255"></a><a name="p64477255"></a>object name and auth scope, such as for teams and projects.</p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p64477255"><a name="p64477255"></a><a name="p64477255"></a>Object name and auth scope, such as for teams and projects.</p>
 </td>
 </tr>
 <tr id="row43424386"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p27714369"><a name="p27714369"></a><a name="p27714369"></a>pretty</p>
@@ -161,7 +161,7 @@ Content-Type: application/merge-patch+json
 </thead>
 <tbody><tr id="row3106225"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p50277657"><a name="p50277657"></a><a name="p50277657"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p45958393"><a name="p45958393"></a><a name="p45958393"></a>This operation succeeds, and a Job resource object is returned.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p45958393"><a name="p45958393"></a><a name="p45958393"></a>This operation succeeds, and a CronJob resource object is returned.</p>
 </td>
 </tr>
 </tbody>

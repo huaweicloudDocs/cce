@@ -34,14 +34,14 @@ PATCH /api/v1/nodes/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p15054011"><a name="p15054011"></a><a name="p15054011"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p11415416"><a name="p11415416"></a><a name="p11415416"></a>name of the Job</p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p11415416"><a name="p11415416"></a><a name="p11415416"></a>name of the Node.</p>
 </td>
 </tr>
 <tr id="row35629883"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p339391"><a name="p339391"></a><a name="p339391"></a>namespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p27490704"><a name="p27490704"></a><a name="p27490704"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p12154517"><a name="p12154517"></a><a name="p12154517"></a>object name and auth scope, such as for teams and projects</p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p12154517"><a name="p12154517"></a><a name="p12154517"></a>object name and auth scope, such as for teams and projects.</p>
 </td>
 </tr>
 <tr id="row42281790"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p2273005"><a name="p2273005"></a><a name="p2273005"></a>pretty</p>

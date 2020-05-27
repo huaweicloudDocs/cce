@@ -237,7 +237,7 @@ DELETE /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </thead>
 <tbody><tr id="row58049462"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p4385942"><a name="p4385942"></a><a name="p4385942"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19716994"><a name="p19716994"></a><a name="p19716994"></a>Delete a Job resource object successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19716994"><a name="p19716994"></a><a name="p19716994"></a>Delete a CronJob resource object successfully.</p>
 </td>
 </tr>
 </tbody>

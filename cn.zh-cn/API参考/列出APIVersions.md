@@ -82,7 +82,7 @@ N/A.
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p58700486"><a name="p58700486"></a><a name="p58700486"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p57118931"><a name="p57118931"></a><a name="p57118931"></a>ddress of this server, suitable for a client that matches the above CIDR. This can be a hostname, hostname:port, IP or IP:port.</p>
+<td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p57118931"><a name="p57118931"></a><a name="p57118931"></a>Address of this server, suitable for a client that matches the above CIDR. This can be a hostname, hostname:port, IP or IP:port.</p>
 </td>
 </tr>
 </tbody>

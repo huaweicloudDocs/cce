@@ -32,7 +32,7 @@ GET /api/v1/nodes/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p18391853"><a name="p18391853"></a><a name="p18391853"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.36363636363636%" headers="mcps1.2.4.1.3 "><p id="p13345138"><a name="p13345138"></a><a name="p13345138"></a>IP of the Node.</p>
+<td class="cellrowborder" valign="top" width="36.36363636363636%" headers="mcps1.2.4.1.3 "><p id="p13345138"><a name="p13345138"></a><a name="p13345138"></a>Name of the Node.</p>
 </td>
 </tr>
 <tr id="row52997380"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p64929415"><a name="p64929415"></a><a name="p64929415"></a>exact</p>

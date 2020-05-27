@@ -4,6 +4,9 @@
 
 该API用于在指定的Namespace下创建PersistentVolumeClaim。
 
+>![](public_sys-resources/icon-note.gif) **说明：**   
+>使用已有的EVS创建PVC时，请参照CCE用户指南中使用云硬盘存储章节的[使用已有的EVS创建PVC](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html#section8)中**步骤5**为集群增加关联的metadata，以确保在删除节点或集群时避免删除已挂载的静态PV关联的EVS盘。若不执行上述操作或创建静态PV/PVC时没有执行过上述操作，请务必确保删除节点前，提前将静态PV关联的云硬盘从节点上卸载。  
+
 ## URI<a name="sdad79289da6f40bfb1b0726f426f9f1f"></a>
 
 POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
@@ -333,10 +336,6 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
         "metadata":{
             "name":"cce-evs-k6m16atm-3ays",
             "namespace":"default",
-            "selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/cce-evs-k6m16atm-3ays",
-            "uid":"80f111e7-7d7e-4841-bd73-7ef97df0ee51",
-            "resourceVersion":"2287083",
-            "creationTimestamp":"2020-02-14T10:30:20Z",
             "labels":{
                 "failure-domain.beta.kubernetes.io/region":"cn-north-5",
                 "failure-domain.beta.kubernetes.io/zone":"cn-north-5a"
@@ -344,10 +343,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
             "annotations":{
                 "everest.io/crypt-key-id":"527cbece-428d-463b-a92c-936a11077b5d", //创建加密卷必需，若无或不全，则不加密；
                 "everest.io/disk-volume-type":"SATA"
-            },
-            "finalizers":[
-                "kubernetes.io/pvc-protection"
-            ]
+            }
         },
         "spec":{
             "accessModes":[
@@ -358,11 +354,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
                     "storage":"10Gi"
                 }
             },
-            "storageClassName":"csi-disk",
-            "volumeMode":"Filesystem"
-        },
-        "status":{
-            "phase":"Pending"
+            "storageClassName":"csi-disk"
         }
     }
     ```
@@ -414,15 +406,8 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
     	    "everest.io/crypt-domain-id": "fff357e41a3a4a0d88e821f35194d110",
     	    "everest.io/crypt-alias": "sfs/default"
             },
-            "creationTimestamp": "2020-02-14T08:54:08Z",
-            "finalizers": [
-                "kubernetes.io/pvc-protection"
-            ],
-            "labels": {
-                "app": "test-sfs"
-            },
             "name": "pvc-158167040158916159-test-sfs-0",
-            "namespace": "default",
+            "namespace": "default"
         },
         "spec": {
             "accessModes": [
@@ -433,9 +418,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
                     "storage": "10Gi"
                 }
             },
-            "storageClassName": "csi-nas",
-            "volumeMode": "Filesystem",
-            "volumeName": "pvc-1c933c44-1f47-41a4-9353-3800a21cab6b"
+            "storageClassName": "csi-nas"
         }
     }
     ```

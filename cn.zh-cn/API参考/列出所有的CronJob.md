@@ -269,7 +269,7 @@ N/A
 </thead>
 <tbody><tr id="row10737742"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p64450739"><a name="p64450739"></a><a name="p64450739"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p53127348"><a name="p53127348"></a><a name="p53127348"></a>This operation succeeds, and the Job of a group of Pod objects are returned.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p53127348"><a name="p53127348"></a><a name="p53127348"></a>This operation succeeds, and the CronJob of a group of Pod objects are returned.</p>
 </td>
 </tr>
 </tbody>

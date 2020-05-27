@@ -6,7 +6,9 @@ This API is used to create an Ingress.
 
 ## URI<a name="section14030938"></a>
 
-POST /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses
+POST /apis/networking.k8s.io/v1beta1/namespaces/\{namespace\}/ingresses \(Supports since1.15\)
+
+POST /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses \(Compatible\)
 
 [表1](#d0e42906)描述该API的参数。
 
@@ -263,7 +265,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p12322321251"><a name="p12322321251"></a><a name="p12322321251"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39%" headers="mcps1.2.5.1.4 "><p id="p20785858182511"><a name="p20785858182511"></a><a name="p20785858182511"></a>An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.</p>
-<p id="p107851058122512"><a name="p107851058122512"></a><a name="p107851058122512"></a>Populated by the system. Read-only. Value must be treated as opaque by clients and .</p>
+<p id="p107851058122512"><a name="p107851058122512"></a><a name="p107851058122512"></a>Populated by the system. Read-only. Value must be treated as opaque by clients.</p>
 </td>
 </tr>
 <tr id="row13173092511"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="p101719017252"><a name="p101719017252"></a><a name="p101719017252"></a>selfLink</p>
@@ -314,7 +316,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="a792005b9cc9c4b62aa05ca6ba72edb1b"><a name="a792005b9cc9c4b62aa05ca6ba72edb1b"></a><a name="a792005b9cc9c4b62aa05ca6ba72edb1b"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a9fd3a2cf6b17488ebf787d90dcdd4806"><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a>Array of strings</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a9fd3a2cf6b17488ebf787d90dcdd4806"><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a><a name="a9fd3a2cf6b17488ebf787d90dcdd4806"></a>Array of <a href="#table15985152671512">IngressRule</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="aaca6cae38740430c8d9c48adc947545c"><a name="aaca6cae38740430c8d9c48adc947545c"></a><a name="aaca6cae38740430c8d9c48adc947545c"></a>A list of host rules used to configure the Ingress. If unspecified, or no rule matches, all traffic is sent to the default backend.</p>
 </td>
@@ -323,7 +325,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="p52382510302"><a name="p52382510302"></a><a name="p52382510302"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p323813563014"><a name="p323813563014"></a><a name="p323813563014"></a>Array of strings</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="p323813563014"><a name="p323813563014"></a><a name="p323813563014"></a>Array of <a href="#table4259201119446">IngressTLS</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="p2023814519307"><a name="p2023814519307"></a><a name="p2023814519307"></a>TLS configuration. Currently the Ingress only supports a single TLS port, 443. If multiple members of this list specify different hosts, they will be multiplexed on the same port according to the hostname specified through the SNI TLS extension, if the ingress controller fulfilling the ingress supports SNI.</p>
 </td>
@@ -410,6 +412,142 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses
 <td class="cellrowborder" valign="top" width="17.990000000000002%" headers="mcps1.2.5.1.3 "><p id="p063011953816"><a name="p063011953816"></a><a name="p063011953816"></a>Array of strings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.5.1.4 "><p id="p66301199389"><a name="p66301199389"></a><a name="p66301199389"></a>Ingress is a list containing ingress points for the load-balancer. Traffic intended for the service should be sent to these ingress points.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 8**  IngressRule字段数据结构说明
+
+<a name="table15985152671512"></a>
+<table><thead align="left"><tr id="row898552651519"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.1"><p id="p1998662614158"><a name="p1998662614158"></a><a name="p1998662614158"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.2"><p id="p398682631512"><a name="p398682631512"></a><a name="p398682631512"></a>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p2098612266156"><a name="p2098612266156"></a><a name="p2098612266156"></a>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p2986426101511"><a name="p2986426101511"></a><a name="p2986426101511"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row898662613158"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p2986726191516"><a name="p2986726191516"></a><a name="p2986726191516"></a>http</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p3986182618159"><a name="p3986182618159"></a><a name="p3986182618159"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1098610262151"><a name="p1098610262151"></a><a name="p1098610262151"></a><a href="#table1439394513210">http</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p1154646183112"><a name="p1154646183112"></a><a name="p1154646183112"></a>Is a list of http selectors pointing to backends. In the example: http://&lt;host&gt;/&lt;path&gt;?&lt;searchpart&gt; -&gt; backend where parts of the url correspond to RFC 3986, this resource will be used to match against everything after the last '/' and before the first '?' or '#'.</p>
+</td>
+</tr>
+<tr id="row11986182610157"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p3986112691511"><a name="p3986112691511"></a><a name="p3986112691511"></a>host</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p598672619150"><a name="p598672619150"></a><a name="p598672619150"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p99861726131516"><a name="p99861726131516"></a><a name="p99861726131516"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p11986126111513"><a name="p11986126111513"></a><a name="p11986126111513"></a>Host is the fully qualified domain name of a network host, as defined by RFC 3986. Incoming requests are matched against the host before the http. If the host is unspecified, the Ingress routes all traffic based on the http rule.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 9**  http字段数据结构说明
+
+<a name="table1439394513210"></a>
+<table><thead align="left"><tr id="row9393114518327"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.1"><p id="p739354553219"><a name="p739354553219"></a><a name="p739354553219"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.2"><p id="p239310457321"><a name="p239310457321"></a><a name="p239310457321"></a>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p3393104513214"><a name="p3393104513214"></a><a name="p3393104513214"></a>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p939324513213"><a name="p939324513213"></a><a name="p939324513213"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row15393445173210"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p5393144514322"><a name="p5393144514322"></a><a name="p5393144514322"></a>paths</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p63931045113218"><a name="p63931045113218"></a><a name="p63931045113218"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p12393104563211"><a name="p12393104563211"></a><a name="p12393104563211"></a>Array of <a href="#table481233417370">HTTPIngressPath</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p239324511329"><a name="p239324511329"></a><a name="p239324511329"></a>A collection of paths that map requests to backends.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 10**  HTTPIngressPath字段数据结构说明
+
+<a name="table481233417370"></a>
+<table><thead align="left"><tr id="row9812153473717"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.1"><p id="p181243453712"><a name="p181243453712"></a><a name="p181243453712"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.2"><p id="p581253423716"><a name="p581253423716"></a><a name="p581253423716"></a>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p481233453716"><a name="p481233453716"></a><a name="p481233453716"></a>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p38121634163718"><a name="p38121634163718"></a><a name="p38121634163718"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row138121034173715"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p88122345377"><a name="p88122345377"></a><a name="p88122345377"></a>path</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p19812133493710"><a name="p19812133493710"></a><a name="p19812133493710"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1381273413711"><a name="p1381273413711"></a><a name="p1381273413711"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p1281243473718"><a name="p1281243473718"></a><a name="p1281243473718"></a>Paths must begin with a '/'. If unspecified, the path defaults to a catch all sending traffic to the backend.</p>
+</td>
+</tr>
+<tr id="row1746775392"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p184847153910"><a name="p184847153910"></a><a name="p184847153910"></a>backend</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p12645445133910"><a name="p12645445133910"></a><a name="p12645445133910"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p2088575420391"><a name="p2088575420391"></a><a name="p2088575420391"></a><a href="#table1156984163517">backend</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p748197143914"><a name="p748197143914"></a><a name="p748197143914"></a>Backend defines the referenced service endpoint to which the traffic will be forwarded to.</p>
+</td>
+</tr>
+<tr id="row1230615134391"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p830651393916"><a name="p830651393916"></a><a name="p830651393916"></a>property</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p1235204633912"><a name="p1235204633912"></a><a name="p1235204633912"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p9306131319399"><a name="p9306131319399"></a><a name="p9306131319399"></a>Object</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p83065131399"><a name="p83065131399"></a><a name="p83065131399"></a>Extension property on the path</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 11**  IngressTLS字段数据结构说明
+
+<a name="table4259201119446"></a>
+<table><thead align="left"><tr id="row15260151113440"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.1"><p id="p126021124418"><a name="p126021124418"></a><a name="p126021124418"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.2"><p id="p526081119444"><a name="p526081119444"></a><a name="p526081119444"></a>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.3"><p id="p326091134413"><a name="p326091134413"></a><a name="p326091134413"></a>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p12260181114419"><a name="p12260181114419"></a><a name="p12260181114419"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row826013113446"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p1326011144417"><a name="p1326011144417"></a><a name="p1326011144417"></a>hosts</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p18260101117442"><a name="p18260101117442"></a><a name="p18260101117442"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p26421458445"><a name="p26421458445"></a><a name="p26421458445"></a>Array of strings</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p132605111444"><a name="p132605111444"></a><a name="p132605111444"></a>Hosts are a list of hosts included in the TLS certificate. The values in this list must match the name/s used in the tlsSecret. Defaults to the wildcard host setting for the loadbalancer controller fulfilling this Ingress, if left unspecified.</p>
+</td>
+</tr>
+<tr id="row626071111442"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p4260101134415"><a name="p4260101134415"></a><a name="p4260101134415"></a>serviceName</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p11260171154419"><a name="p11260171154419"></a><a name="p11260171154419"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p1926011115449"><a name="p1926011115449"></a><a name="p1926011115449"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p5260181114445"><a name="p5260181114445"></a><a name="p5260181114445"></a>SecretName is the name of the secret used to terminate SSL traffic on 443. Field is left optional to allow SSL routing based on SNI hostname alone. If the SNI host in a listener conflicts with the "Host" header field used by an IngressRule, the SNI host is used for termination and value of the Host header is used for routing.</p>
 </td>
 </tr>
 </tbody>
@@ -525,9 +663,9 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses
 
 ## 状态码<a name="section7688181432015"></a>
 
-[表8](#d0e43055)描述API的状态码。
+[表12](#d0e43055)描述API的状态码。
 
-**表 8**  状态码
+**表 12**  状态码
 
 <a name="d0e43055"></a>
 <table><thead align="left"><tr id="row20813512"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p8172937"><a name="p8172937"></a><a name="p8172937"></a>状态码</p>

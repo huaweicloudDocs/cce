@@ -608,7 +608,7 @@ GET /api/v3/addons/\{id\}?cluster\_id=\{cluster\_id\}
 </tr>
 <tr id="row1085813618415"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p106521249673"><a name="p106521249673"></a><a name="p106521249673"></a>404</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p265254911717"><a name="p265254911717"></a><a name="p265254911717"></a>Addon template not exist</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p265254911717"><a name="p265254911717"></a><a name="p265254911717"></a>Addon <span id="ph5276745827"><a name="ph5276745827"></a><a name="ph5276745827"></a>instance</span><span id="ph943018451921"><a name="ph943018451921"></a><a name="ph943018451921"></a> </span>not exist</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p13652134917713"><a name="p13652134917713"></a><a name="p13652134917713"></a>-</p>
 </td>

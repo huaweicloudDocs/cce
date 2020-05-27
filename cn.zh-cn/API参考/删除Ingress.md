@@ -6,7 +6,9 @@ This API is used to delete an Ingress.
 
 ## URI<a name="section14030938"></a>
 
-DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses/\{name\}
+DELETE /apis/networking.k8s.io/v1beta1/namespaces/\{namespace\}/ingresses/\{name\} \(Supports since1.15\)
+
+DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses/\{name\} \(Compatible\)
 
 [表1](#d0e42906)描述该API的参数。
 

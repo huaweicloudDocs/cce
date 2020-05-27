@@ -210,7 +210,7 @@ DELETE /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs/\{name\}
 </thead>
 <tbody><tr id="row10935710"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p13377326"><a name="p13377326"></a><a name="p13377326"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9821602"><a name="p9821602"></a><a name="p9821602"></a>Delete a Job resource object successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9821602"><a name="p9821602"></a><a name="p9821602"></a>Delete a CronJob resource object successfully.</p>
 </td>
 </tr>
 </tbody>

@@ -576,7 +576,7 @@ GET /apis/events.k8s.io/v1beta1/events
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="p81311730121818"><a name="p81311730121818"></a><a name="p81311730121818"></a>An opaque value that represents the internal version of this object that can be used by clients to determine when objects have changed. May be used for optimistic concurrency, change detection, and the watch operation on a resource or set of resources. Clients must treat these values as opaque and passed unmodified back to the server. They may only be valid for a particular resource or set of resources.</p>
 <p id="p2131133010187"><a name="p2131133010187"></a><a name="p2131133010187"></a></p>
-<p id="p161311930161818"><a name="p161311930161818"></a><a name="p161311930161818"></a>Populated by the system. Read-only. Value must be treated as opaque by clients and . More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#concurrency-control-and-consistency</p>
+<p id="p161311930161818"><a name="p161311930161818"></a><a name="p161311930161818"></a>Populated by the system. Read-only. Value must be treated as opaque by clients. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#concurrency-control-and-consistency</p>
 </td>
 </tr>
 <tr id="row12783182910188"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="p1013213061810"><a name="p1013213061810"></a><a name="p1013213061810"></a>selfLink</p>

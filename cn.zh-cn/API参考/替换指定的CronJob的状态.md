@@ -32,7 +32,7 @@ PUT /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs/\{name\}/status
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.2 "><p id="p11092289"><a name="p11092289"></a><a name="p11092289"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p26060242"><a name="p26060242"></a><a name="p26060242"></a>name of the Job</p>
+<td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p26060242"><a name="p26060242"></a><a name="p26060242"></a>name of the CronJob</p>
 </td>
 </tr>
 <tr id="row33215594"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p6108613"><a name="p6108613"></a><a name="p6108613"></a>namespace</p>
@@ -228,7 +228,7 @@ PUT /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs/\{name\}/status
 </thead>
 <tbody><tr id="row10773849"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p266578"><a name="p266578"></a><a name="p266578"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p21592892"><a name="p21592892"></a><a name="p21592892"></a>This operation succeeds, and a Job resource object is returned.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p21592892"><a name="p21592892"></a><a name="p21592892"></a>This operation succeeds, and a CronJob resource object is returned.</p>
 </td>
 </tr>
 </tbody>

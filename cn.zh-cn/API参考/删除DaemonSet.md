@@ -107,7 +107,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 </tr>
 <tr id="row18211246"><td class="cellrowborder" valign="top" width="18.18181818181818%" headers="mcps1.2.5.1.1 "><p id="p65824820"><a name="p65824820"></a><a name="p65824820"></a>kind</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p30210174"><a name="p30210174"></a><a name="p30210174"></a>Ye</p>
+<td class="cellrowborder" valign="top" width="15.151515151515152%" headers="mcps1.2.5.1.2 "><p id="p30210174"><a name="p30210174"></a><a name="p30210174"></a>Yes</p>
 </td>
 <td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.3 "><p id="p31105012"><a name="p31105012"></a><a name="p31105012"></a>String</p>
 </td>
@@ -297,7 +297,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(C
 </thead>
 <tbody><tr id="row3612049"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p24140565"><a name="p24140565"></a><a name="p24140565"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9228712"><a name="p9228712"></a><a name="p9228712"></a>Delete a DeamonSet resource object successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9228712"><a name="p9228712"></a><a name="p9228712"></a>Delete a DaemonSet resource object successfully.</p>
 </td>
 </tr>
 </tbody>

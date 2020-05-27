@@ -22,7 +22,7 @@
 
     其中：
 
-    -   lables参数下“app“参数所键入的“appname“为显示在CCE工作负载界面上的工作负载名称，其值与Deployment的“metadata.labels“中所添加的内容一致。
+    -   labels参数下“app“参数所键入的“appname“为显示在CCE工作负载界面上的工作负载名称，其值与Deployment的“metadata.labels“中所添加的内容一致。
     -   selector参数下“app“的值与需要关联的Deployment的“spec.selector“保持一致。
 
 
@@ -149,8 +149,8 @@ POST /api/v1/namespaces/\{namespace\}/services
 <td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p31956642"><a name="zh-cn_topic_0079615000_p31956642"></a><a name="zh-cn_topic_0079615000_p31956642"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p38351229"><a name="zh-cn_topic_0079615000_p38351229"></a><a name="zh-cn_topic_0079615000_p38351229"></a>Name must be unique within a namespace. Is required when creating resources, although some resources may allow a client to request the generation of an appropriate name automatically. Name is primarily intended for creation idempotence and configuration definition. Cannot be updated.</p>
-<p id="zh-cn_topic_0079615000_p9616746"><a name="zh-cn_topic_0079615000_p9616746"></a><a name="zh-cn_topic_0079615000_p9616746"></a>Value length: 0 character &lt; String length ≤ 24 characters</p>
-<p id="zh-cn_topic_0079615000_p19441857"><a name="zh-cn_topic_0079615000_p19441857"></a><a name="zh-cn_topic_0079615000_p19441857"></a>The string must comply with regular expression [a-z0-9]([-a-z0-9]*[a-z0-9])?.</p>
+<p id="zh-cn_topic_0079615000_p9616746"><a name="zh-cn_topic_0079615000_p9616746"></a><a name="zh-cn_topic_0079615000_p9616746"></a>Value length: 4 character ≤ String length ≤ 63 characters</p>
+<p id="zh-cn_topic_0079615000_p19441857"><a name="zh-cn_topic_0079615000_p19441857"></a><a name="zh-cn_topic_0079615000_p19441857"></a>The string must comply with regular expression: ^[a-z]([-a-z0-9]*[a-z0-9])?$.</p>
 </td>
 </tr>
 <tr id="r59e9b08f407d496eac092f809321b53f"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="aeefc6fe8fca8446685053b6d0902640e"><a name="aeefc6fe8fca8446685053b6d0902640e"></a><a name="aeefc6fe8fca8446685053b6d0902640e"></a>clusterName</p>
@@ -180,8 +180,8 @@ POST /api/v1/namespaces/\{namespace\}/services
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p27596449"><a name="zh-cn_topic_0079615000_p27596449"></a><a name="zh-cn_topic_0079615000_p27596449"></a>GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server.</p>
 <p id="zh-cn_topic_0079615000_p47041449"><a name="zh-cn_topic_0079615000_p47041449"></a><a name="zh-cn_topic_0079615000_p47041449"></a>If this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header).</p>
 <p id="zh-cn_topic_0079615000_p20719862"><a name="zh-cn_topic_0079615000_p20719862"></a><a name="zh-cn_topic_0079615000_p20719862"></a>Applied only if Name is not specified.</p>
-<p id="zh-cn_topic_0079615000_p52261031"><a name="zh-cn_topic_0079615000_p52261031"></a><a name="zh-cn_topic_0079615000_p52261031"></a>Value length: 0 character &lt; String length ≤ 24 characters</p>
-<p id="zh-cn_topic_0079615000_p587239"><a name="zh-cn_topic_0079615000_p587239"></a><a name="zh-cn_topic_0079615000_p587239"></a>The string must comply with regular expression [a-z0-9]([-a-z0-9]*[a-z0-9])?.</p>
+<p id="zh-cn_topic_0079615000_p52261031"><a name="zh-cn_topic_0079615000_p52261031"></a><a name="zh-cn_topic_0079615000_p52261031"></a>Value length: 4 character ≤ String length ≤ 63 characters</p>
+<p id="zh-cn_topic_0079615000_p587239"><a name="zh-cn_topic_0079615000_p587239"></a><a name="zh-cn_topic_0079615000_p587239"></a>The string must comply with regular expression: ^[a-z]([-a-z0-9]*[a-z0-9])?$.</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615000_row5285158"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p25444686"><a name="zh-cn_topic_0079615000_p25444686"></a><a name="zh-cn_topic_0079615000_p25444686"></a>namespace</p>

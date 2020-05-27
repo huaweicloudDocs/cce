@@ -52,7 +52,7 @@ N/A
 
 ```
 {
-    "kind" : "ClusterRole",
+    "kind" : "ClusterRoleBinding",
     "apiVersion" : "rbac.authorization.k8s.io/v1",
     "metadata" : {
         "name" : "secret-reader",

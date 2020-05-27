@@ -31,11 +31,58 @@
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1492918251523"><a name="p1492918251523"></a><a name="p1492918251523"></a>插件管理接口，包括AddonTemplates的查询，AddonInstance的创建、更新、删除和获取。</p>
 </td>
 </tr>
-<tr id="row33762552145910"><td class="cellrowborder" rowspan="21" valign="top" width="19.8%" headers="mcps1.1.4.1.1 "><p id="p11594550145910"><a name="p11594550145910"></a><a name="p11594550145910"></a>Kubernetes原生接口</p>
+<tr id="row33762552145910"><td class="cellrowborder" rowspan="22" valign="top" width="19.8%" headers="mcps1.1.4.1.1 "><p id="p11594550145910"><a name="p11594550145910"></a><a name="p11594550145910"></a>Kubernetes原生接口</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.78%" headers="mcps1.1.4.1.2 "><p id="p10599255145910"><a name="p10599255145910"></a><a name="p10599255145910"></a><a href="Secret.md">Secret</a></p>
+<td class="cellrowborder" valign="top" width="21.78%" headers="mcps1.1.4.1.2 "><p id="p5699090519278"><a name="p5699090519278"></a><a name="p5699090519278"></a><a href="Node.md">Node</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="58.42%" headers="mcps1.1.4.1.3 "><p id="p44056569145910"><a name="p44056569145910"></a><a name="p44056569145910"></a>Secret对象管理接口，包括Sercret对象的创建，查询，修改，删除等接口。</p>
+<td class="cellrowborder" valign="top" width="58.42%" headers="mcps1.1.4.1.3 "><p id="p4572971519278"><a name="p4572971519278"></a><a name="p4572971519278"></a>Node对象管理接口，包括Node对象的获取，查询和更新。</p>
+<div class="note" id="note18462175954313"><a name="note18462175954313"></a><a name="note18462175954313"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p19463959194317"><a name="p19463959194317"></a><a name="p19463959194317"></a>CCE仅支持使用<a href="集群管理.md">集群管理</a>中的接口创建、删除节点，不能使用Kubernetes原生接口来创建、删除节点。</p>
+</div></div>
+</td>
+</tr>
+<tr id="row127941236152711"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p44725375145910"><a name="p44725375145910"></a><a name="p44725375145910"></a><a href="Namespace.md">Namespace</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p66449515145910"><a name="p66449515145910"></a><a name="p66449515145910"></a>Namespace对象管理接口，包括Namespace对象的创建，查询，修改，删除等接口。</p>
+</td>
+</tr>
+<tr id="row124231810172813"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1542341010280"><a name="p1542341010280"></a><a name="p1542341010280"></a><a href="Resourcequotas.md">Resourcequotas</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p942381092810"><a name="p942381092810"></a><a name="p942381092810"></a>ResourceQuotas资源配额接口，包括查询接口。</p>
+</td>
+</tr>
+<tr id="row205721428203112"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p49554995145910"><a name="p49554995145910"></a><a name="p49554995145910"></a><a href="Pod.md">Pod</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p26187931145910"><a name="p26187931145910"></a><a name="p26187931145910"></a>Pod对象管理接口，包括Pod对象的创建，查询，修改，删除等接口。</p>
+</td>
+</tr>
+<tr id="row19515163917311"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p379336831112"><a name="p379336831112"></a><a name="p379336831112"></a><a href="Deployment.md">Deployment</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p48033961112"><a name="p48033961112"></a><a name="p48033961112"></a>Deployment对象管理接口，包括Deployment对象的创建，查询，修改，删除等接口。</p>
+</td>
+</tr>
+<tr id="row7980195320316"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1267985011044"><a name="p1267985011044"></a><a name="p1267985011044"></a><a href="StatefulSet.md">Statefulset</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p4969678411044"><a name="p4969678411044"></a><a name="p4969678411044"></a>Statefulset对象管理接口，包括Statefulset对象的创建，查询，修改，删除等接口。</p>
+</td>
+</tr>
+<tr id="row1949954320"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p4671625719274"><a name="p4671625719274"></a><a name="p4671625719274"></a><a href="DaemonSet.md">Daemonset</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6664593719274"><a name="p6664593719274"></a><a name="p6664593719274"></a>Daemonset对象管理接口，包括Daemonset对象的创建，查询，修改，删除等接口。</p>
+</td>
+</tr>
+<tr id="row10260164310320"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p3094168219276"><a name="p3094168219276"></a><a name="p3094168219276"></a><a href="Job.md">Job</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p3689587219276"><a name="p3689587219276"></a><a name="p3689587219276"></a>Job对象管理接口，包括Job对象的创建，查询，修改，删除等接口。</p>
+</td>
+</tr>
+<tr id="row152602043143211"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p995412315275"><a name="p995412315275"></a><a name="p995412315275"></a><a href="CronJob.md">CronJob</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1195415319277"><a name="p1195415319277"></a><a name="p1195415319277"></a>CronJob对象管理接口，包括CronJob对象的创建，查询，修改，删除等接口。</p>
+</td>
+</tr>
+<tr id="row1419213219339"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6028906019279"><a name="p6028906019279"></a><a name="p6028906019279"></a><a href="ReplicaSet.md">Replicset</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p5915636019279"><a name="p5915636019279"></a><a name="p5915636019279"></a>Replicset对象的查询。</p>
 </td>
 </tr>
 <tr id="row10957421145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p30771534145910"><a name="p30771534145910"></a><a name="p30771534145910"></a><a href="ReplicationController.md">ReplicationController</a></p>
@@ -43,29 +90,24 @@
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p61441166145910"><a name="p61441166145910"></a><a name="p61441166145910"></a>ReplicationController对象管理接口，包括ReplicationController对象的创建，查询，修改，删除等接口。</p>
 </td>
 </tr>
-<tr id="row20783185145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p28882047145910"><a name="p28882047145910"></a><a name="p28882047145910"></a><a href="Service.md">Service</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p27305587145910"><a name="p27305587145910"></a><a name="p27305587145910"></a>Service对象管理接口，包括Service对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row8372698145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p49554995145910"><a name="p49554995145910"></a><a name="p49554995145910"></a><a href="Pod.md">Pod</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p26187931145910"><a name="p26187931145910"></a><a name="p26187931145910"></a>Pod对象管理接口，包括Pod对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row50906229145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p44725375145910"><a name="p44725375145910"></a><a name="p44725375145910"></a><a href="Namespace.md">Namespace</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p66449515145910"><a name="p66449515145910"></a><a name="p66449515145910"></a>Namespace对象管理接口，包括Namespace对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
 <tr id="row45945772145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p46200155145910"><a name="p46200155145910"></a><a name="p46200155145910"></a><a href="Endpoints.md">Endpoints</a></p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p60436584145910"><a name="p60436584145910"></a><a name="p60436584145910"></a>Endpoint对象管理接口，包括Endpoint对象的创建，查询，修改，删除等接口。</p>
 </td>
 </tr>
-<tr id="row14175184145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p4151121811057"><a name="p4151121811057"></a><a name="p4151121811057"></a><a href="PersistentVolumeClaim.md">PersistentVolumeClaim</a></p>
+<tr id="row2032595553314"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p28882047145910"><a name="p28882047145910"></a><a name="p28882047145910"></a><a href="Service.md">Service</a></p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6268924811057"><a name="p6268924811057"></a><a name="p6268924811057"></a>PersistentVolumeClaim对象管理接口，包括PersistentVolumeClaim对象的创建，查询，修改，删除等接口。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p27305587145910"><a name="p27305587145910"></a><a name="p27305587145910"></a>Service对象管理接口，包括Service对象的创建，查询，修改，删除等接口。</p>
+</td>
+</tr>
+<tr id="row1643488143411"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p191324141413"><a name="p191324141413"></a><a name="p191324141413"></a><a href="Ingress.md">Ingress</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1991324101413"><a name="p1991324101413"></a><a name="p1991324101413"></a>Ingress对象管理接口，包括Ingress对象的创建，更新，删除等接口。</p>
+</td>
+</tr>
+<tr id="row17767622163414"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p15974819191220"><a name="p15974819191220"></a><a name="p15974819191220"></a><a href="NetworkPolicy.md">NetworkPolicy</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p7975141920121"><a name="p7975141920121"></a><a name="p7975141920121"></a>NetworkPolicy对象管理接口，包括NetworkPolicy对象的创建，更新，删除等接口。</p>
 </td>
 </tr>
 <tr id="row14719244145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6643479711057"><a name="p6643479711057"></a><a name="p6643479711057"></a><a href="PersistentVolume.md">PersistentVolume</a></p>
@@ -73,29 +115,9 @@
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p4547635511057"><a name="p4547635511057"></a><a name="p4547635511057"></a>PersistentVolume对象管理接口，包括PersistentVolume对象的创建，查询，修改，删除等接口。</p>
 </td>
 </tr>
-<tr id="row19843194145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p379336831112"><a name="p379336831112"></a><a name="p379336831112"></a><a href="Deployment.md">Deployment</a></p>
+<tr id="row16808163913413"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p4151121811057"><a name="p4151121811057"></a><a name="p4151121811057"></a><a href="PersistentVolumeClaim.md">PersistentVolumeClaim</a></p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p48033961112"><a name="p48033961112"></a><a name="p48033961112"></a>Deployment对象管理接口，包括Deployment对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row1134238919274"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p4671625719274"><a name="p4671625719274"></a><a name="p4671625719274"></a><a href="DaemonSet.md">Daemonset</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6664593719274"><a name="p6664593719274"></a><a name="p6664593719274"></a>Daemonset对象管理接口，包括Daemonset对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row4814789411037"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1267985011044"><a name="p1267985011044"></a><a name="p1267985011044"></a><a href="StatefulSet.md">Statefulset</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p4969678411044"><a name="p4969678411044"></a><a name="p4969678411044"></a>Statefulset对象管理接口，包括Statefulset对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row4383218619276"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p3094168219276"><a name="p3094168219276"></a><a name="p3094168219276"></a><a href="Job.md">Job</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p3689587219276"><a name="p3689587219276"></a><a name="p3689587219276"></a>Job对象管理接口，包括Job对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row7953131273"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p995412315275"><a name="p995412315275"></a><a name="p995412315275"></a><a href="CronJob.md">CronJob</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1195415319277"><a name="p1195415319277"></a><a name="p1195415319277"></a>CronJob对象管理接口，包括CronJob对象的创建，查询，修改，删除等接口。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6268924811057"><a name="p6268924811057"></a><a name="p6268924811057"></a>PersistentVolumeClaim对象管理接口，包括PersistentVolumeClaim对象的创建，查询，修改，删除等接口。</p>
 </td>
 </tr>
 <tr id="row785542119277"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p2163363219277"><a name="p2163363219277"></a><a name="p2163363219277"></a><a href="ConfigMap.md">ConfigMap</a></p>
@@ -103,41 +125,24 @@
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p3197595019277"><a name="p3197595019277"></a><a name="p3197595019277"></a>ConfigMap对象管理接口，包括ConfigMap对象的创建，查询，修改，删除等接口。</p>
 </td>
 </tr>
-<tr id="row1196235619278"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5699090519278"><a name="p5699090519278"></a><a name="p5699090519278"></a><a href="Node.md">Node</a></p>
+<tr id="row4534259183411"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p10599255145910"><a name="p10599255145910"></a><a name="p10599255145910"></a><a href="Secret.md">Secret</a></p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p4572971519278"><a name="p4572971519278"></a><a name="p4572971519278"></a>Node对象管理接口，包括Node对象的获取，查询和更新。</p>
-<div class="note" id="note18462175954313"><a name="note18462175954313"></a><a name="note18462175954313"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p19463959194317"><a name="p19463959194317"></a><a name="p19463959194317"></a>CCE仅支持使用<a href="集群管理.md">集群管理</a>中的接口创建、删除节点，不能使用Kubernetes原生接口来创建、删除节点。</p>
-</div></div>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p44056569145910"><a name="p44056569145910"></a><a name="p44056569145910"></a>Secret对象管理接口，包括Sercret对象的创建，查询，修改，删除等接口。</p>
 </td>
 </tr>
-<tr id="row1668465119279"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6028906019279"><a name="p6028906019279"></a><a name="p6028906019279"></a><a href="ReplicSet.md">Replicset</a></p>
+<tr id="row0570056103410"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p18959115215129"><a name="p18959115215129"></a><a name="p18959115215129"></a><a href="RBAC.md">RBAC</a></p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p5915636019279"><a name="p5915636019279"></a><a name="p5915636019279"></a>Replicset对象的查询。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1795945216128"><a name="p1795945216128"></a><a name="p1795945216128"></a>通过权限设置可以让不同的用户或用户组拥有操作不同Kubernetes资源的权限。</p>
+</td>
+</tr>
+<tr id="row9621141015358"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p22396136193538"><a name="p22396136193538"></a><a name="p22396136193538"></a><a href="API-groups.md">API groups</a></p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p65344911193538"><a name="p65344911193538"></a><a name="p65344911193538"></a>API group对象管理接口，包括列出API group和APIVersion。</p>
 </td>
 </tr>
 <tr id="row65712929193538"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p32547626193538"><a name="p32547626193538"></a><a name="p32547626193538"></a><a href="Event.md">Event</a></p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p35799742193538"><a name="p35799742193538"></a><a name="p35799742193538"></a>Event对象管理的查询。</p>
-</td>
-</tr>
-<tr id="row12801366193538"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p22396136193538"><a name="p22396136193538"></a><a name="p22396136193538"></a><a href="API-groups.md">API groups</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p65344911193538"><a name="p65344911193538"></a><a name="p65344911193538"></a>API group对象管理接口，包括列出API group和APIVersion。</p>
-</td>
-</tr>
-<tr id="row19872451415"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p191324141413"><a name="p191324141413"></a><a name="p191324141413"></a><a href="Ingress.md">Ingress</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1991324101413"><a name="p1991324101413"></a><a name="p1991324101413"></a>Ingress对象管理接口，包括Ingress对象的创建，更新，删除等接口。</p>
-</td>
-</tr>
-<tr id="row2973111971215"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p15974819191220"><a name="p15974819191220"></a><a name="p15974819191220"></a><a href="NetworkPolicy.md">NetworkPolicy</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p7975141920121"><a name="p7975141920121"></a><a name="p7975141920121"></a>NetworkPolicy对象管理接口，包括NetworkPolicy对象的创建，更新，删除等接口。</p>
-</td>
-</tr>
-<tr id="row7959175281214"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p18959115215129"><a name="p18959115215129"></a><a name="p18959115215129"></a><a href="RBAC.md">RBAC</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1795945216128"><a name="p1795945216128"></a><a name="p1795945216128"></a>通过权限设置可以让不同的用户或用户组拥有操作不同Kubernetes资源的权限。</p>
 </td>
 </tr>
 </tbody>
@@ -182,7 +187,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9510182110610"><a name="p9510182110610"></a><a name="p9510182110610"></a>删除一个指定的集群。</p>
 </td>
 </tr>
-<tr id="row09137251369"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p49133251669"><a name="p49133251669"></a><a name="p49133251669"></a><a href="获取集群证书（已废弃）.md">获取集群证书</a></p>
+<tr id="row09137251369"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p49133251669"><a name="p49133251669"></a><a name="p49133251669"></a><a href="获取集群证书.md">获取集群证书</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1391314257610"><a name="p1391314257610"></a><a name="p1391314257610"></a>获取指定集群的证书信息。</p>
 </td>
@@ -212,14 +217,39 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p12900174319104"><a name="p12900174319104"></a><a name="p12900174319104"></a>删除指定的节点。</p>
 </td>
 </tr>
-<tr id="row8873184419100"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p187311442102"><a name="p187311442102"></a><a name="p187311442102"></a><a href="查询作业进度.md">查询作业进度</a></p>
+<tr id="row55115292153"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p55218293153"><a name="p55218293153"></a><a name="p55218293153"></a><a href="cce_02_0354.md">创建节点池</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11873644161010"><a name="p11873644161010"></a><a name="p11873644161010"></a>查询作业进度，通过某一作业请求下发后返回的jobID来查询指定作业的进度。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1521929191511"><a name="p1521929191511"></a><a name="p1521929191511"></a>在指定集群下创建节点池。</p>
 </td>
 </tr>
-<tr id="row3198154021214"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p16199154010126"><a name="p16199154010126"></a><a name="p16199154010126"></a><a href="获取集群下所有节点池.md">获取集群下所有节点池</a></p>
+<tr id="row652112901511"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p85222912158"><a name="p85222912158"></a><a name="p85222912158"></a><a href="获取指定的节点池.md">获取指定的节点池</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1719984015122"><a name="p1719984015122"></a><a name="p1719984015122"></a>获取集群下所有节点池。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p17521296154"><a name="p17521296154"></a><a name="p17521296154"></a>获取指定节点池的详细信息。</p>
+</td>
+</tr>
+<tr id="row4527299155"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p25282919156"><a name="p25282919156"></a><a name="p25282919156"></a><a href="获取集群下所有节点池.md">获取集群下所有节点池</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1052229111514"><a name="p1052229111514"></a><a name="p1052229111514"></a>获取集群下所有节点池。</p>
+</td>
+</tr>
+<tr id="row155232931510"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p352142918155"><a name="p352142918155"></a><a name="p352142918155"></a><a href="更新指定的节点池.md">更新指定的节点池</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1552529161518"><a name="p1552529161518"></a><a name="p1552529161518"></a>更新指定的节点池。</p>
+</td>
+</tr>
+<tr id="row8521629141518"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p7521229191510"><a name="p7521229191510"></a><a name="p7521229191510"></a><a href="删除节点池.md">删除节点池</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p12521029171516"><a name="p12521029171516"></a><a name="p12521029171516"></a>删除指定的节点池。</p>
+</td>
+</tr>
+<tr id="row452629131515"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p125272918150"><a name="p125272918150"></a><a name="p125272918150"></a><a href="获取支持的集群版本.md">获取支持的集群版本</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p852152961513"><a name="p852152961513"></a><a name="p852152961513"></a>获取当前支持的所有集群版本。</p>
+</td>
+</tr>
+<tr id="row3198154021214"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14611442592"><a name="p14611442592"></a><a name="p14611442592"></a><a href="获取任务信息.md">获取任务信息</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11873644161010"><a name="p11873644161010"></a><a name="p11873644161010"></a>查询作业进度，通过某一作业请求下发后返回的jobID来查询指定作业的进度。</p>
 </td>
 </tr>
 </tbody>

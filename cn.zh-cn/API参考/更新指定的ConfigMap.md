@@ -40,14 +40,14 @@ PATCH /api/v1/namespaces/\{namespace\}/configmaps/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p24317681"><a name="p24317681"></a><a name="p24317681"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p23575121"><a name="p23575121"></a><a name="p23575121"></a>name of the Job</p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p23575121"><a name="p23575121"></a><a name="p23575121"></a>name of the ConfigMap.</p>
 </td>
 </tr>
 <tr id="row10849502"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p6394470"><a name="p6394470"></a><a name="p6394470"></a>namespace</p>
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p48190075"><a name="p48190075"></a><a name="p48190075"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p11081988"><a name="p11081988"></a><a name="p11081988"></a>object name and auth scope, such as for teams and projects</p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p11081988"><a name="p11081988"></a><a name="p11081988"></a>object name and auth scope, such as for teams and projects.</p>
 </td>
 </tr>
 <tr id="row32629032"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p25705915"><a name="p25705915"></a><a name="p25705915"></a>pretty</p>

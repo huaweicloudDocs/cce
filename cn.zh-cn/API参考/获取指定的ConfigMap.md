@@ -39,7 +39,7 @@ GET /api/v1/namespaces/\{namespace\}/configmaps/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p61044604"><a name="p61044604"></a><a name="p61044604"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="36.36363636363636%" headers="mcps1.2.4.1.3 "><p id="p45665871"><a name="p45665871"></a><a name="p45665871"></a>Name of the Pod.</p>
+<td class="cellrowborder" valign="top" width="36.36363636363636%" headers="mcps1.2.4.1.3 "><p id="p45665871"><a name="p45665871"></a><a name="p45665871"></a>Name of the ConfigMap.</p>
 </td>
 </tr>
 <tr id="row8339656"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p4423518"><a name="p4423518"></a><a name="p4423518"></a>exact</p>

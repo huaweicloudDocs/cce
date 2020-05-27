@@ -2,7 +2,7 @@
 
 ## 功能介绍<a name="section9325173016187"></a>
 
-list or watch objects of kind Namespace.
+This API is used to read the ReplicaSets in a specified namespace.
 
 ## URI<a name="section10326103011818"></a>
 

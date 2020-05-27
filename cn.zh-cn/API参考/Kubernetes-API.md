@@ -18,7 +18,7 @@
 
 -   **[CronJob](CronJob.md)**  
 
--   **[ReplicSet](ReplicSet.md)**  
+-   **[ReplicaSet](ReplicaSet.md)**  
 
 -   **[ReplicationController](ReplicationController.md)**  
 

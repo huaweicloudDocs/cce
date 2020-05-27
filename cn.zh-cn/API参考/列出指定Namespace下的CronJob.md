@@ -269,7 +269,7 @@ N/A
 </thead>
 <tbody><tr id="row49394905"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p41564386"><a name="p41564386"></a><a name="p41564386"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11272075"><a name="p11272075"></a><a name="p11272075"></a>This operation succeeds, and a group of Job resource objects is returned.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11272075"><a name="p11272075"></a><a name="p11272075"></a>This operation succeeds, and a group of CronJob resource objects is returned.</p>
 </td>
 </tr>
 </tbody>
