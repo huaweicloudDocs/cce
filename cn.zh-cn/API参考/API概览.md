@@ -217,7 +217,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p12900174319104"><a name="p12900174319104"></a><a name="p12900174319104"></a>删除指定的节点。</p>
 </td>
 </tr>
-<tr id="row55115292153"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p55218293153"><a name="p55218293153"></a><a name="p55218293153"></a><a href="cce_02_0354.md">创建节点池</a></p>
+<tr id="row55115292153"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p55218293153"><a name="p55218293153"></a><a name="p55218293153"></a><a href="创建节点池.md">创建节点池</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1521929191511"><a name="p1521929191511"></a><a name="p1521929191511"></a>在指定集群下创建节点池。</p>
 </td>
