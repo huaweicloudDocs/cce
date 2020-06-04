@@ -11,12 +11,23 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 
 ## 依赖服务的权限设置<a name="section20316111417244"></a>
 
-如果IAM用户需要在CCE  Console控制台中拥有相应功能的查看或使用权限，请确认已经对该用户所在的用户组设置了CCE FullAccess或CCE ReadOnlyAccess策略的集群权限，再按如下表格增加依赖服务的角色或策略：
+如果IAM用户需要在CCE Console控制台中拥有相应功能的查看或使用权限，请确认已经对该用户所在的用户组设置了CCE Administrator、CCE FullAccess或CCE ReadOnlyAccess策略的集群权限，再按如下[表1](#table99001215575)增加依赖服务的角色或策略：
+
+>![](public_sys-resources/icon-note.gif) **说明：**   
+>企业项目能够实现企业不同项目间资源的分组和管理，重在资源隔离，而IAM可以实现细粒度授权，因此强烈推荐您使用IAM实现权限管理。  
+>若您使用企业项目设置子用户权限，会有如下功能限制：  
+>-   由于存储资源暂不支持企业项目，因此在CCE控制台中，企业项目子用户查看非“Default“企业项目下集群的存储资源相关页面，存储页面中各按钮均置灰，且资源不显示。  
+>-   在CCE控制台中，集群监控获取AOM监控的接口暂不支持企业项目，因此企业项目子用户将无法查看监控相关数据。  
+>-   在CCE控制台中，由于创建节点时的密钥对查询接口不支持企业项目，因此企业项目子用户将无法使用“密钥对“登录方式，您可以选择使用“密码“登录方式。  
+>-   为企业项目设置**CCE FullAccess**权限后 ，需要在IAM控制台界面中再配置  **ecs:availabilityZones:list**  权限，企业项目子用户创建节点才可以正常显示并创建，否则将提示没有 ecs:availabilityZones:list 权限。  
+>CCE支持细粒度的权限设置，但有如下限制说明：  
+>-   AOM不支持资源级别细粒度：当通过IAM集群资源细粒度设置特定资源操作权限之后，子账号在CCE控制台的总览界面查看集群监控时，将显示非细粒度关联集群的监控信息。  
+>-   在IAM页面设置**CCE FullAccess**或者**CCE ReadOnlyAccess**权限后，需要配置  **sfsturbo:\*:\***  权限才能使用使用极速文件存储卷，否则子账号在集群下查询极速文件存储卷将失败。  
 
 **表 1**  CCE Console中依赖服务的角色或策略
 
 <a name="table99001215575"></a>
-<table><thead align="left"><tr id="row16901181518712"><th class="cellrowborder" valign="top" width="21.872187218721873%" id="mcps1.2.4.1.1"><p id="p109011015875"><a name="p109011015875"></a><a name="p109011015875"></a><span id="ph1754516381692"><a name="ph1754516381692"></a><a name="ph1754516381692"></a>Console控制台</span>功能</p>
+<table><thead align="left"><tr id="row16901181518712"><th class="cellrowborder" valign="top" width="21.872187218721873%" id="mcps1.2.4.1.1"><p id="p109011015875"><a name="p109011015875"></a><a name="p109011015875"></a>Console控制台功能</p>
 </th>
 <th class="cellrowborder" valign="top" width="28.642864286428644%" id="mcps1.2.4.1.2"><p id="p490115151776"><a name="p490115151776"></a><a name="p490115151776"></a>依赖服务</p>
 </th>
@@ -28,14 +39,14 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p119021153716"><a name="p119021153716"></a><a name="p119021153716"></a>应用运维管理 AOM</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p890212155710"><a name="p890212155710"></a><a name="p890212155710"></a>AOM&nbsp;FullAccess（Vision版本为1.0）</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul223369145920"></a><a name="ul223369145920"></a><ul id="ul223369145920"><li>子账号设置了CCE Administrator后，需要增加AOM&nbsp;FullAccess后才能访问总览中的数据图表。</li><li>支持设置了IAM ReadOnlyAccess和CCE FullAccess或CCE ReadOnlyAccess的子账号直接访问总览中的数据图表。</li></ul>
 </td>
 </tr>
 <tr id="row159021815871"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p79028151077"><a name="p79028151077"></a><a name="p79028151077"></a>应用管理</p>
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p18902715376"><a name="p18902715376"></a><a name="p18902715376"></a>/</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p290271515712"><a name="p290271515712"></a><a name="p290271515712"></a>当前仅支持主账号、设置了CCE Administrator的子账号或者设置了Tenant Guest的子账号访问。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p290271515712"><a name="p290271515712"></a><a name="p290271515712"></a>当前仅支持主账号、设置了CCE Administrator的子账号或者设置了Tenant Guest的子账号访问本功能。</p>
 </td>
 </tr>
 <tr id="row19902151514719"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p169022151472"><a name="p169022151472"></a><a name="p169022151472"></a>工作负载</p>
@@ -63,9 +74,9 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 </tr>
 <tr id="row790217151578"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p1790281519714"><a name="p1790281519714"></a><a name="p1790281519714"></a>节点管理</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p129021156718"><a name="p129021156718"></a><a name="p129021156718"></a>/</p>
+<td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p129021156718"><a name="p129021156718"></a><a name="p129021156718"></a>弹性云服务器 ECS</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p39021151714"><a name="p39021151714"></a><a name="p39021151714"></a>无需其他依赖权限。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p12840824466"><a name="p12840824466"></a><a name="p12840824466"></a>如果需要创建和删除节点，需要配置ECS FullAccess。</p>
 </td>
 </tr>
 <tr id="row1890251514716"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p39021615371"><a name="p39021615371"></a><a name="p39021615371"></a>网络管理</p>
@@ -148,14 +159,14 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 
 本章节通过为IAM用户“James”增加CCE**“总览“**页面监控信息的查看权限为例进行演示。
 
-IAM用户“James”在用户组“开发人员组”，“开发人员组”仅有CCE ReadOnlyAccess权限。而参照[表1](#table99001215575)可知，CCE总览页面的监控信息还需要增加“AOM FullAccess”策略才能正常查看。
+IAM用户“James”在用户组“开发人员组”，“开发人员组”仅有CCE Administrator权限。而参照[表1](#table99001215575)可知，CCE总览页面的监控信息还需要增加“AOM FullAccess”策略才能正常查看。
 
 **图 1**  依赖服务授权流程<a name="fig3687142183218"></a>  
 ![](figures/依赖服务授权流程.png "依赖服务授权流程")
 
 ## 步骤一：验证用户当前权限<a name="section330722611126"></a>
 
-1.  使用IAM用户“James”登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，IAM用户登录方式请参见[步骤三：使用IAM用户登录并验证权限](设置集群权限.md#section1953761017615)。
+1.  使用IAM用户“James”登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，IAM用户登录方式请参见[步骤四：使用IAM用户登录并验证权限](设置集群权限.md#section1953761017615)。
 2.  单击左侧导航栏中的“总览“，进入总览页面，可以看到该用户无权查看监控相关的模块信息。
 
     **图 2**  无权查看监控信息<a name="fig1825716752613"></a>  

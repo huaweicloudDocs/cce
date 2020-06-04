@@ -1,13 +1,13 @@
-# 网络平面（NetworkAttachmentDefinition）<a name="cce_01_0196"></a>
+# 网络平面\(NetworkAttachmentDefinition\)<a name="cce_01_0196"></a>
 
-网络平面（NetworkAttachmentDefinition）是集群的一种crd资源，为容器对接ENI（Elastic Network Interface，弹性网卡服务）提供配置项，如VPC，子网等。关联网络平面的工作负载支持对接弹性网卡服务，容器能直接绑定弹性网卡，并对外提供服务。
+网络平面（NetworkAttachmentDefinition）是集群的一种crd资源，为容器对接ENI（Elastic Network Interface，弹性网络接口）提供配置项，如VPC，子网等。关联网络平面的工作负载支持对接弹性网卡服务，容器能直接绑定弹性网卡，并对外提供服务。
 
 **图 1**  网络平面<a name="fig8117226195717"></a>  
 ![](figures/网络平面.png "网络平面")
 
 ## 限制条件<a name="section332285584912"></a>
 
--   仅网络模型为VPC网络的混合集群支持创建。
+-   仅网络模型为VPC网络（未开启IPv6）的混合集群支持创建网络平面；网络模型为容器隧道网络时列表中仅显示“default-network“，不能新增或修改。
 -   VPC Router网络模型不支持NetworkPolicy。
 -   需v1.13.7-r0及以上版本的集群才能启用，v1.13.7-r0以下版本集群需要升级到最新版本后才能启用。
 

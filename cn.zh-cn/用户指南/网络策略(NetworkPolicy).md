@@ -1,6 +1,4 @@
-# 网络策略（NetworkPolicy）<a name="cce_01_0059"></a>
-
-CCE基于Kubernetes的网络策略功能进行了加强，通过配置网络策略，允许在同个集群内实现网络的隔离，也就是可以在某些实例（Pod）之间架起防火墙。
+# 网络策略\(NetworkPolicy\)<a name="cce_01_0059"></a>
 
 ## 什么是网络策略<a name="section322222112010"></a>
 
@@ -12,7 +10,8 @@ CCE基于Kubernetes的网络策略功能进行了加强，通过配置网络策�
 
 ## 限制条件<a name="section332285584912"></a>
 
-VPC Router网络模型不支持NetworkPolicy。
+-   VPC Router网络模型暂不支持NetworkPolicy。
+-   1.13及1.15版本的容器隧道网络类型的集群，节点操作系统内核为Centos时，如果使用NetworkPolicy请升级openvswitch的版本。
 
 ## 使用说明<a name="section146088501667"></a>
 
@@ -26,7 +25,7 @@ VPC Router网络模型不支持NetworkPolicy。
     -   命名空间：选择网络策略所在命名空间。
     -   关联工作负载：
 
-        单击“选择工作负载“，选择“需要设置网络策略的工作负载“，例如工作负载名称为**workload1**，单击“确定“。
+        单击“选择工作负载“，选择“需要设置网络策略的工作负载“，例如工作负载名称为**workload-1**，单击“确定“。
 
     -   规则：单击“添加规则“，参数设置请参见[表1](#table26919378234)。
 
@@ -41,7 +40,7 @@ VPC Router网络模型不支持NetworkPolicy。
         </thead>
         <tbody><tr id="row17073752310"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p1770337122315"><a name="p1770337122315"></a><a name="p1770337122315"></a>方向</p>
         </td>
-        <td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p19701374230"><a name="p19701374230"></a><a name="p19701374230"></a>当前仅支持入方向。即<span class="uicontrol" id="uicontrol120917917468"><a name="uicontrol120917917468"></a><a name="uicontrol120917917468"></a>“其它工作负载”</span>访问<span class="uicontrol" id="uicontrol210571414614"><a name="uicontrol210571414614"></a><a name="uicontrol210571414614"></a>“当前的工作负载（即当前案例中的workload1）”</span>。</p>
+        <td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p19701374230"><a name="p19701374230"></a><a name="p19701374230"></a>当前仅支持入方向。即<span class="uicontrol" id="uicontrol120917917468"><a name="uicontrol120917917468"></a><a name="uicontrol120917917468"></a>“其它工作负载”</span>访问<span class="uicontrol" id="uicontrol210571414614"><a name="uicontrol210571414614"></a><a name="uicontrol210571414614"></a>“当前的工作负载（即当前案例中的workload-1）”</span>。</p>
         </td>
         </tr>
         <tr id="row0706372237"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p1871103711232"><a name="p1871103711232"></a><a name="p1871103711232"></a>协议</p>
@@ -58,7 +57,7 @@ VPC Router网络模型不支持NetworkPolicy。
         <tr id="row10711637182318"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p107120375238"><a name="p107120375238"></a><a name="p107120375238"></a>远端</p>
         </td>
         <td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p157183711231"><a name="p157183711231"></a><a name="p157183711231"></a>选择可访问<span class="uicontrol" id="uicontrol132819019318"><a name="uicontrol132819019318"></a><a name="uicontrol132819019318"></a>“当前工作负载”</span>的<span class="uicontrol" id="uicontrol147442219319"><a name="uicontrol147442219319"></a><a name="uicontrol147442219319"></a>“其它工作负载”</span>。通过目的容器端口来访问。</p>
-        <a name="ul28102117259"></a><a name="ul28102117259"></a><ul id="ul28102117259"><li>命名空间：若选择某个命名空间，则该命名空间下的所有工作负载都会加入白名单，即都可访问<strong id="b6354262264"><a name="b6354262264"></a><a name="b6354262264"></a>工作负载A</strong>。</li><li>工作负载：若选择某个工作负载，即该工作负载可以访问<strong id="b12101115402616"><a name="b12101115402616"></a><a name="b12101115402616"></a>工作负载A</strong>。仅支持选择与<span class="uicontrol" id="uicontrol126055244271"><a name="uicontrol126055244271"></a><a name="uicontrol126055244271"></a>“工作负载A”</span>同个命名空间下的<span class="uicontrol" id="uicontrol169474270272"><a name="uicontrol169474270272"></a><a name="uicontrol169474270272"></a>“其它工作负载”</span>。</li></ul>
+        <a name="ul28102117259"></a><a name="ul28102117259"></a><ul id="ul28102117259"><li>命名空间：若选择某个命名空间，则该命名空间下的所有工作负载都会加入白名单，即都可访问<strong id="b1324134631111"><a name="b1324134631111"></a><a name="b1324134631111"></a>workload-1</strong>。</li><li>工作负载：若选择某个工作负载，即该工作负载可以访问<strong id="b1494210490114"><a name="b1494210490114"></a><a name="b1494210490114"></a>workload-1</strong>。仅支持选择与<strong id="b93615811115"><a name="b93615811115"></a><a name="b93615811115"></a>workload-1</strong>同个命名空间下的<span class="uicontrol" id="uicontrol169474270272"><a name="uicontrol169474270272"></a><a name="uicontrol169474270272"></a>“其它工作负载”</span>。</li></ul>
         </td>
         </tr>
         </tbody>

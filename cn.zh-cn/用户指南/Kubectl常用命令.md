@@ -314,7 +314,7 @@ kubectl port -forward podname 5000:6000
 
 例如：
 
-Master节点开启HTTP Rest接口：
+控制节点开启HTTP Rest接口：
 
 ```
 kubectl proxy -accept-hosts=’.*’ -port=8001 -address=’0.0.0.0’

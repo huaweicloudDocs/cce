@@ -1,6 +1,6 @@
 # web-terminal<a name="cce_01_0134"></a>
 
-web-terminal是一款支持在web界面上使用kubectl的插件。它支持使用WebSocket通过浏览器连接linux，提供灵活的接口便于集成到独立系统中，可直接作为一个服务连接通过cmdb获取信息登陆服务器。
+web-terminal是一款支持在Web界面上使用Kubectl的插件。它支持使用WebSocket通过浏览器连接Linux，提供灵活的接口便于集成到独立系统中，可直接作为一个服务连接，通过cmdb获取信息并登陆服务器。
 
 ## 使用约束<a name="section628693291119"></a>
 

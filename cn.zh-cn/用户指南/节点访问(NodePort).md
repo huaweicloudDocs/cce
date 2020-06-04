@@ -1,45 +1,28 @@
-# 节点访问 \( NodePort \)<a name="cce_01_0142"></a>
+# 节点访问\(NodePort\)<a name="cce_01_0142"></a>
 
 节点访问 \( NodePort \)是指在每个节点的IP上开放一个静态端口，通过静态端口对外暴露服务。节点访问 \( NodePort \)会路由到ClusterIP服务，这个ClusterIP服务会自动创建。通过请求 <NodeIP\>:<NodePort\>，可以从集群的外部访问一个NodePort服务。
 
-节点访问有VPC内网访问或弹性公网IP访问两种方式。
-
--   **VPC内网访问**
-
-    VPC内网访问是指工作负载可以让同一VPC内其他工作负载访问，通过“集群节点的IP“的服务地址访问。
-
-    主要场景：同一VPC内其他工作负载需要访问kubernetes集群内部的工作负载。
-
-    **图 1**  VPC内网访问（通过集群节点IP访问）<a name="fig32443742164859"></a>  
-    ![](figures/VPC内网访问（通过集群节点IP访问）.png "VPC内网访问（通过集群节点IP访问）")
-
-
--   **弹性公网IP访问**
-
-    弹性公网IP访问可以通过弹性IP从公网访问工作负载，一般用于系统中需要暴露到公网的服务。
-
-    弹性IP访问方式需要给集群内任一节点绑定弹性IP，并设置一个映射在节点上的端口，其中节点端口的范围在30000-32767之间，例如访问地址为10.117.117.117:30000。
-
-    **图 2**  弹性公网IP访问<a name="fig57690358164948"></a>  
-    ![](figures/弹性公网IP访问.png "弹性公网IP访问")
-
-
 ## 产品约束<a name="section8501151104219"></a>
 
-Local的Nodeport不能在本节点访问Nodeport。
+-   “节点访问 \( NodePort \)“默认为VPC内网访问，如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。
+-   Local的Nodeport不能在本节点访问Nodeport，详情请参见[节点亲和性](节点亲和性.md)。
 
 ## 通过控制台操作<a name="section8124108325"></a>
 
 您可以在创建工作负载时通过控制台设置Service访问方式，本节以nginx为例进行说明。
 
-1.  参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)或[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
+1.  参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)、[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)或[创建守护进程集\(DaemonSet\)](创建守护进程集(DaemonSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
     -   **访问类型：**选择“节点访问 \( NodePort \)“。
+
+        >![](public_sys-resources/icon-note.gif) **说明：**   
+        >如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。  
+
     -   **Service名称：**自定义服务名称，可与工作负载名称保持一致。
     -   **服务亲和：**
         -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
         -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
 
-    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见如何通过CCE搭建IPv4/IPv6双栈集群？。该功能仅在1.15及以上版本的混合集群中显示。
+    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/cce_faq/cce_faq_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
     -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
         -   容器端口：容器镜像中工作负载实际监听的端口，取值范围为1-65535。
@@ -51,9 +34,9 @@ Local的Nodeport不能在本节点访问Nodeport。
 2.  单击“下一步“进入“高级设置“页面，直接单击“创建“。
 3.  <a name="li13702330143312"></a>单击“查看工作负载详情“，在访问方式页签中获取访问地址，例如“192.168.0.160:30358“。
 
-## kubectl命令行创建-VPC内访问<a name="section813715073217"></a>
+## kubectl命令行创建<a name="section813715073217"></a>
 
-您可以通过kubectl命令行设置Service访问方式。本节以nginx为例，说明kubectl命令实现VPC内访问的方法。
+您可以通过kubectl命令行设置Service访问方式。本节以nginx为例，说明kubectl命令实现节点访问的方法。
 
 **前提条件**
 
@@ -105,7 +88,7 @@ Local的Nodeport不能在本节点访问Nodeport。
     spec:
       ports:
       - name: service
-    #   nodePort: 30000
+        nodePort: 30000
         port: 80
         protocol: TCP
         targetPort: 80
@@ -241,176 +224,12 @@ Local的Nodeport不能在本节点访问Nodeport。
     ```
 
 
-## kubectl命令行创建-弹性公网IP<a name="section178584033417"></a>
-
-本节以nginx为例，说明kubectl命令实现公网访问的方法。
-
-**前提条件**
-
-请参见[通过kubectl或web-terminal插件连接CCE集群](通过kubectl或web-terminal插件连接CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
-
-**操作步骤**
-
-1.  登录已配置好kubectl命令的弹性云服务器。登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
-2.  创建并编辑nginx-deployment.yaml以及nginx-eip-svc.yaml文件。
-
-    其中，nginx-deployment.yaml和nginx-eip-svc.yaml为自定义名称，您可以随意命名。
-
-    **vi nginx-deployment.yaml**
-
-    ```
-    apiVersion: extensions/v1beta1
-    kind: Deployment
-    metadata:
-      name: nginx
-    spec:
-      replicas: 1
-      selector:
-        matchLabels:
-          app: nginx
-      strategy:
-        type: RollingUpdate
-      template:
-        metadata:
-          labels:
-            app: nginx
-        spec:
-          containers:
-          - image: nginx 
-            imagePullPolicy: Always
-            name: nginx
-          imagePullSecrets:
-          - name: default-secret
-    ```
-
-    **vi nginx-eip-svc.yaml**
-
-    ```
-    apiVersion: v1
-    kind: Service
-    metadata:
-      labels:
-        app: nginx
-      name: nginx-eip
-    spec:
-      ports:
-      - name: service0
-        nodePort: 30000
-        port: 80
-        protocol: TCP
-        targetPort: 80
-      selector:
-        app: nginx
-      type: NodePort
-    ```
-
-    **表 2**  关键参数说明
-
-    <a name="table1819001615355"></a>
-    <table><thead align="left"><tr id="row1519121663519"><th class="cellrowborder" valign="top" width="33.2%" id="mcps1.2.4.1.1"><p id="p18191161619356"><a name="p18191161619356"></a><a name="p18191161619356"></a>参数</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="15.110000000000001%" id="mcps1.2.4.1.2"><p id="p1191141613357"><a name="p1191141613357"></a><a name="p1191141613357"></a>参数类型</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="51.690000000000005%" id="mcps1.2.4.1.3"><p id="p1919116161353"><a name="p1919116161353"></a><a name="p1919116161353"></a>描述</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row15191171618357"><td class="cellrowborder" valign="top" width="33.2%" headers="mcps1.2.4.1.1 "><p id="p20192181615358"><a name="p20192181615358"></a><a name="p20192181615358"></a>nodePort</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.110000000000001%" headers="mcps1.2.4.1.2 "><p id="p14194181613351"><a name="p14194181613351"></a><a name="p14194181613351"></a>Integer</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="51.690000000000005%" headers="mcps1.2.4.1.3 "><p id="p91941216193518"><a name="p91941216193518"></a><a name="p91941216193518"></a>对应界面上的访问端口，取值范围为30000 ~ 32767，不填写表示自动生成。</p>
-    </td>
-    </tr>
-    <tr id="row81941516153513"><td class="cellrowborder" valign="top" width="33.2%" headers="mcps1.2.4.1.1 "><p id="p1619571643513"><a name="p1619571643513"></a><a name="p1619571643513"></a>port</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.110000000000001%" headers="mcps1.2.4.1.2 "><p id="p1195181653518"><a name="p1195181653518"></a><a name="p1195181653518"></a>Integer</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="51.690000000000005%" headers="mcps1.2.4.1.3 "><p id="p17195916113515"><a name="p17195916113515"></a><a name="p17195916113515"></a>集群虚拟IP的访问端口，取值范围为1 ~ 65535。</p>
-    </td>
-    </tr>
-    <tr id="row201957167350"><td class="cellrowborder" valign="top" width="33.2%" headers="mcps1.2.4.1.1 "><p id="p17195131643517"><a name="p17195131643517"></a><a name="p17195131643517"></a>protocol</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.110000000000001%" headers="mcps1.2.4.1.2 "><p id="p919551619351"><a name="p919551619351"></a><a name="p919551619351"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="51.690000000000005%" headers="mcps1.2.4.1.3 "><p id="p10195181611354"><a name="p10195181611354"></a><a name="p10195181611354"></a>该端口的IP协议，支持“TCP”和“UDP”。</p>
-    </td>
-    </tr>
-    <tr id="row1719518169356"><td class="cellrowborder" valign="top" width="33.2%" headers="mcps1.2.4.1.1 "><p id="p1419521610354"><a name="p1419521610354"></a><a name="p1419521610354"></a>targetPort</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.110000000000001%" headers="mcps1.2.4.1.2 "><p id="p17195171613355"><a name="p17195171613355"></a><a name="p17195171613355"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="51.690000000000005%" headers="mcps1.2.4.1.3 "><p id="p819511683519"><a name="p819511683519"></a><a name="p819511683519"></a>对应界面上的容器端口，取值范围为1 ~ 65535。</p>
-    </td>
-    </tr>
-    <tr id="row619531693510"><td class="cellrowborder" valign="top" width="33.2%" headers="mcps1.2.4.1.1 "><p id="p1719615168353"><a name="p1719615168353"></a><a name="p1719615168353"></a>type</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.110000000000001%" headers="mcps1.2.4.1.2 "><p id="p2196816113519"><a name="p2196816113519"></a><a name="p2196816113519"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="51.690000000000005%" headers="mcps1.2.4.1.3 "><p id="p16196121613518"><a name="p16196121613518"></a><a name="p16196121613518"></a>对应界面上的访问类型，弹性IP需要基于“NodePort”类型的服务。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-3.  创建工作负载。
-
-    **kubectl create -f nginx-deployment.yaml**
-
-    回显如下表示工作负载开始创建。
-
-    ```
-    deployment "nginx" created
-    ```
-
-    **kubectl get po**
-
-    回显如下，工作负载状态为Running，表示工作负载已运行中。
-
-    ```
-    NAME                     READY     STATUS             RESTARTS   AGE
-    etcd-0                   0/1       ImagePullBackOff   0          59m
-    icagent-m9dkt            0/0       Running            0          3d
-    nginx-2601814895-sf71t   1/1       Running            0          8s
-    ```
-
-4.  创建服务。
-
-    **kubectl create -f nginx-eip-svc.yaml**
-
-    回显如下表示服务已创建成功。
-
-    ```
-    service "nginx-eip" created
-    ```
-
-    **kubectl get svc**
-
-    回显如下表示服务访问方式已设置成功。
-
-    ```
-    NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
-    etcd-svc     ClusterIP   None             <none>        3120/TCP       59m
-    kubernetes   ClusterIP   10.247.0.1       <none>        443/TCP        3d
-    nginx-eip    NodePort    10.247.120.135   <none>        80:30000/TCP   7s
-    ```
-
-5.  在浏览器中输入访问地址，例如为10.78.44.60:30000访问地址。
-
-    其中10.78.44.60为弹性IP地址，30000为上一步中获取的节点端口号。
-
-    **图 3**  通过弹性IP访问nginx（二）<a name="fig6924134814251"></a>  
-    ![](figures/通过弹性IP访问nginx（二）.png "通过弹性IP访问nginx（二）")
-
-
 ## 验证访问方式<a name="section851316518140"></a>
-
--   **VPC内网访问验证**
 
 1.  在管理控制台首页，单击“计算 \>  弹性云服务器“。
 2.  在弹性云服务器页面，找到同一VPC内任意一台云服务器，并确认连接到访问地址中IP与端口的安全组是开放的。
 
-    **图 4**  确认安全组开放<a name="fig4156913155815"></a>  
+    **图 1**  确认安全组开放<a name="fig4156913155815"></a>  
     ![](figures/确认安全组开放.png "确认安全组开放")
 
 3.  单击“远程登录“，弹出登录页面，输入用户密码登录。
@@ -453,15 +272,6 @@ Local的Nodeport不能在本节点访问Nodeport。
     ```
 
 
--   **弹性公网IP访问验证**
-
-1.  工作负载创建成功后，单击“工作负载 \> 无状态负载 Deployment“或“工作负载 \> 有状态负载 StatefulSet“，在工作负载列表页面，单击工作负载名称进入工作负载详情页，在“访问方式“页签下，获取方式地址，例如“10.78.27.59:30911“。
-2.  单击访问地址，即可跳转到访问页面。
-
-    **图 5**  通过弹性IP访问nginx（一）<a name="fig1543716518012"></a>  
-    ![](figures/通过弹性IP访问nginx（一）.png "通过弹性IP访问nginx（一）")
-
-
 ## 工作负载创建完成后设置<a name="section41290043210"></a>
 
 您可以在工作负载创建完成后对Service进行配置，此配置对工作负载状态无影响，且实时生效。具体操作如下：
@@ -473,6 +283,10 @@ Local的Nodeport不能在本节点访问Nodeport。
 
 2.  在“访问方式“页签，单击“添加Service”。
 3.  在“添加Service“页面，访问类型选择“节点访问 \( NodePort \)“。
+
+    >![](public_sys-resources/icon-note.gif) **说明：**   
+    >如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。  
+
 4.  设置节点访问参数：
     -   **Service名称：**自定义服务名称，可与工作负载名称保持一致。
     -   **集群名称：**工作负载所在集群的名称，此处不可修改。
@@ -481,6 +295,7 @@ Local的Nodeport不能在本节点访问Nodeport。
     -   **服务亲和：**
         -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
         -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
+        -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/cce_faq/cce_faq_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
 
     -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
@@ -503,6 +318,7 @@ Local的Nodeport不能在本节点访问Nodeport。
     -   **集群名称：**工作负载所在集群的名称，此处不可修改。
     -   **命名空间：**工作负载所在命名空间，此处不可修改。
     -   **关联工作负载：**要添加Service的工作负载，此处不可修改。
+    -   **IPv6：**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示，此处不可修改。
     -   **服务亲和：**
         -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
         -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。

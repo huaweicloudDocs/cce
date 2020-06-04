@@ -88,7 +88,7 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 <tr id="row0226111212582"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p822671216588"><a name="p822671216588"></a><a name="p822671216588"></a>v1.11.3-r0</p>
 </td>
 <td class="cellrowborder" valign="top" width="70.97%" headers="mcps1.2.3.1.2 "><p id="p20226181211581"><a name="p20226181211581"></a><a name="p20226181211581"></a>主要特性：</p>
-<a name="ul169031946461"></a><a name="ul169031946461"></a><ul id="ul169031946461"><li>Kubernetes同步社区1.11.3版本</li><li>集群Master节点支持多可用区</li><li>容器存储支持对接SFS Turbo极速文件存储</li></ul>
+<a name="ul169031946461"></a><a name="ul169031946461"></a><ul id="ul169031946461"><li>Kubernetes同步社区1.11.3版本</li><li>集群控制节点支持多可用区</li><li>容器存储支持对接SFS Turbo极速文件存储</li></ul>
 </td>
 </tr>
 <tr id="row136651538121314"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p16652038131318"><a name="p16652038131318"></a><a name="p16652038131318"></a>v1.9.10-r2</p>
@@ -100,7 +100,7 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 <tr id="row193481521542"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p53481952205413"><a name="p53481952205413"></a><a name="p53481952205413"></a>v1.9.10-r1</p>
 </td>
 <td class="cellrowborder" valign="top" width="70.97%" headers="mcps1.2.3.1.2 "><p id="p734825215416"><a name="p734825215416"></a><a name="p734825215416"></a>主要特性：</p>
-<a name="ul692918571614"></a><a name="ul692918571614"></a><ul id="ul692918571614"><li>支持对接EFS存储</li><li>支持Service自动创建二代ELB</li><li>支持公网二代ELB透传源IP</li><li>支持设置节点最大实例数maxPods</li></ul>
+<a name="ul692918571614"></a><a name="ul692918571614"></a><ul id="ul692918571614"><li>支持对接SFS存储</li><li>支持Service自动创建二代ELB</li><li>支持公网二代ELB透传源IP</li><li>支持设置节点最大实例数maxPods</li></ul>
 </td>
 </tr>
 <tr id="row7688248145420"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p1688448205411"><a name="p1688448205411"></a><a name="p1688448205411"></a>v1.9.10-r0</p>

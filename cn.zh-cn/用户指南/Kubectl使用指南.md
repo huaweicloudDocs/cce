@@ -27,12 +27,12 @@
 
 ## 工作负载访问方式设置<a name="section557132035713"></a>
 
--   [通过kubectl命令实现集群内访问](集群内访问（ClusterIP）.md)
--   [通过kubectl命令实现VPC内访问](节点访问-(-NodePort-).md#section813715073217)
--   [通过kubectl命令行实现四层负载均衡](负载均衡-(-LoadBalancer-).md)
--   [通过kubectl命令实现弹性IP访问](节点访问-(-NodePort-).md#section178584033417)
--   [通过kubectl命令行实现NAT网关](DNAT网关-(-DNAT-).md)
--   [通过kubectl命令实现七层负载均衡](七层负载均衡（Ingress）.md#section1944313158364)
+-   [通过kubectl命令实现集群内访问](集群内访问(ClusterIP).md)
+-   [通过kubectl命令实现VPC内访问](节点访问(NodePort).md#section813715073217)
+-   [通过kubectl命令行实现四层负载均衡](负载均衡(LoadBalancer).md)
+-   [通过kubectl命令实现弹性IP访问](节点访问(NodePort).md#section178584033417)
+-   [通过kubectl命令行实现NAT网关](DNAT网关(DNAT).md)
+-   [通过kubectl命令实现七层负载均衡](七层负载均衡(Ingress).md#section1944313158364)
 
 ## 工作负载高级设置<a name="section927251814582"></a>
 

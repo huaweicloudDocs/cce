@@ -2,13 +2,13 @@
 
 ## 插件简介<a name="section25311744154917"></a>
 
-集群自动扩缩容插件autoscaler，是根据pod调度状态及资源使用情况对集群的node节点进行自动扩容缩容的插件。
+集群自动扩缩容插件autoscaler，是根据pod调度状态及资源使用情况对集群的工作节点进行自动扩容缩容的插件。
 
 云容器引擎简化了Kubernetes集群的创建、升级和手动扩缩容，而集群中应用的负载本身是会随着时间动态变化的，为了更好的平衡资源使用率以及性能，kubernetes引入了autoscaler插件，它可以根据部署的应用所请求的资源量自动的动态的伸缩集群。
 
 autoscaler可分成扩容和缩容两个方面：
 
--   当集群中的Pod由于node节点资源不足而调度失败时，会触发集群扩容，自动执行扩容操作。当前该插件使用的是最小浪费策略，即若pod创建需要3核，此时有4核、8核两种规格，优先创建规格为4核的节点。
+-   当集群中的Pod由于工作节点资源不足而调度失败时，会触发集群扩容，自动执行扩容操作。当前该插件使用的是最小浪费策略，即若pod创建需要3核，此时有4核、8核两种规格，优先创建规格为4核的节点。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >自动扩容策略在需满足如下一种情况时才会执行：  
@@ -65,9 +65,9 @@ autoscaler可分成扩容和缩容两个方面：
     </td>
     <td class="cellrowborder" valign="top" width="19.919999999999998%" headers="mcps1.2.4.1.2 "><p id="p17242135513412"><a name="p17242135513412"></a><a name="p17242135513412"></a>部分版本无此参数</p>
     </td>
-    <td class="cellrowborder" valign="top" width="61.75000000000001%" headers="mcps1.2.4.1.3 "><p id="p1011412155524"><a name="p1011412155524"></a><a name="p1011412155524"></a>为自动扩容node节点选择登录方式，当前支持<span class="uicontrol" id="uicontrol6266130175014"><a name="uicontrol6266130175014"></a><a name="uicontrol6266130175014"></a>“密码”</span>和<span class="uicontrol" id="uicontrol17468113316505"><a name="uicontrol17468113316505"></a><a name="uicontrol17468113316505"></a>“密钥对”</span>两种方式，您可根据需要进行选择。</p>
+    <td class="cellrowborder" valign="top" width="61.75000000000001%" headers="mcps1.2.4.1.3 "><p id="p1011412155524"><a name="p1011412155524"></a><a name="p1011412155524"></a>为自动扩容工作节点选择登录方式，当前支持<span class="uicontrol" id="uicontrol6266130175014"><a name="uicontrol6266130175014"></a><a name="uicontrol6266130175014"></a>“密码”</span>和<span class="uicontrol" id="uicontrol17468113316505"><a name="uicontrol17468113316505"></a><a name="uicontrol17468113316505"></a>“密钥对”</span>两种方式，您可根据需要进行选择。</p>
     <p id="p14460644195117"><a name="p14460644195117"></a><a name="p14460644195117"></a><strong id="b9415460515"><a name="b9415460515"></a><a name="b9415460515"></a>选择<span class="uicontrol" id="uicontrol1488552616504"><a name="uicontrol1488552616504"></a><a name="uicontrol1488552616504"></a>“密码”</span>方式：</strong></p>
-    <a name="ul427315025119"></a><a name="ul427315025119"></a><ul id="ul427315025119"><li>密码：自动扩容node节点密码。通过该密码登录node节点执行相关操作，用户名为root。</li><li>确认密码：再次输入自动扩容node节点密码。</li></ul>
+    <a name="ul427315025119"></a><a name="ul427315025119"></a><ul id="ul427315025119"><li>密码：自动扩容工作节点密码。通过该密码登录工作节点执行相关操作，用户名为root。</li><li>确认密码：再次输入自动扩容工作节点密码。</li></ul>
     <p id="p1973095275113"><a name="p1973095275113"></a><a name="p1973095275113"></a><strong id="b189751355125320"><a name="b189751355125320"></a><a name="b189751355125320"></a>选择<span class="uicontrol" id="uicontrol13155165310"><a name="uicontrol13155165310"></a><a name="uicontrol13155165310"></a>“密钥对”</span>方式：</strong></p>
     <p id="p1863961317528"><a name="p1863961317528"></a><a name="p1863961317528"></a>密钥对：密钥对用于远程登录节点时的身份认证，请选择已有密钥对或<a href="https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0014250631.html" target="_blank" rel="noopener noreferrer">创建密钥对</a>。</p>
     </td>
@@ -163,7 +163,7 @@ autoscaler可分成扩容和缩容两个方面：
     <td class="cellrowborder" valign="top" width="19.71802819718028%" headers="mcps1.2.4.1.2 "><p id="p834518108397"><a name="p834518108397"></a><a name="p834518108397"></a>部分版本无此参数</p>
     </td>
     <td class="cellrowborder" valign="top" width="61.75382461753826%" headers="mcps1.2.4.1.3 "><p id="p124899494362"><a name="p124899494362"></a><a name="p124899494362"></a>请输入脚本命令。</p>
-    <div class="note" id="note15181132114611"><a name="note15181132114611"></a><a name="note15181132114611"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul5782152581219"></a><a name="ul5782152581219"></a><ul id="ul5782152581219"><li>脚本命令大小限制：0~1000字符。</li><li>命令行注入示例请参见<a href="https://support.huaweicloud.com/cce_faq/cce_faq_00190.html" target="_blank" rel="noopener noreferrer">如何通过命令行注入功能格式化数据盘？</a>，详细的<span class="uicontrol" id="uicontrol4519153294614"><a name="uicontrol4519153294614"></a><a name="uicontrol4519153294614"></a>“命令行注入”</span>使用方法，请参见<a href="https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0032380449.html" target="_blank" rel="noopener noreferrer">用户数据注入</a>。</li></ul>
+    <div class="note" id="note15181132114611"><a name="note15181132114611"></a><a name="note15181132114611"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul5782152581219"></a><a name="ul5782152581219"></a><ul id="ul5782152581219"><li>脚本命令大小限制：0~1000字符。</li><li>命令行注入示例及使用方法，请参见<a href="https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0032380449.html" target="_blank" rel="noopener noreferrer">用户数据注入</a>。</li></ul>
     </div></div>
     </td>
     </tr>

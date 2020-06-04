@@ -1,10 +1,13 @@
-# 七层负载均衡（Ingress）<a name="cce_01_0094"></a>
+# 七层负载均衡\(Ingress\)<a name="cce_01_0094"></a>
 
 七层负载均衡是采用了增强型弹性负载均衡，在四层负载均衡访问方式的基础上支持了URI配置，通过对应的URI将访问流量分发到对应的服务。同时，服务根据不同URI实现不同的功能。
 
 七层负载均衡访问方式由弹性负载均衡ELB服务地址、设置的访问端口、定义的URI组成，例如：10.117.117.117:80/helloworld。
 
 通过配置公网类型和私网类型的负载均衡实例可以实现公网的七层路由转发和内网（同一VPC内）的七层路由转发。
+
+**图 1**  七层负载均衡\(Ingress\)<a name="fig6439172113112"></a>  
+![](figures/七层负载均衡(Ingress).png "七层负载均衡(Ingress)")
 
 ## 准备工作<a name="section2042610683912"></a>
 
@@ -23,7 +26,7 @@
 
 您可以在创建工作负载时通过CCE控制台设置访问方式，本节以创建一个nginx工作负载并添加Ingress类型的Service为例进行说明。
 
-1.  创建工作负载，详细步骤请参见[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)或[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)。
+1.  创建工作负载，详细步骤请参见[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)、[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)或[创建守护进程集\(DaemonSet\)](创建守护进程集(DaemonSet).md)。
     -   若创建工作负载时，配置了工作负载访问方式，且设置为“节点访问 \( NodePort \)”，请直接执行[3](#li45981923161059)。
     -   若创建工作负载未设置访问方式，请先执行[2](#li248013365354)。
 
@@ -38,6 +41,7 @@
             -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
             -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
 
+        -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/cce_faq/cce_faq_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
         -   **端口配置：**
             -   协议：请根据业务的协议类型选择。
             -   容器端口：容器镜像中工作负载实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
@@ -52,7 +56,7 @@
     1.  单击CCE左侧导航栏的“资源管理 \>  网络管理”。
     2.  在Ingress页签下，单击“添加Ingress”。
 
-        **图 1**  添加Ingress<a name="fig1625112413916"></a>  
+        **图 2**  添加Ingress<a name="fig1625112413916"></a>  
         ![](figures/添加Ingress.png "添加Ingress")
 
         -   **Ingress名称：**自定义Ingress名称，例如ingress-demo。
@@ -108,8 +112,8 @@
             请根据业务需求选择“公网“或“私网“，具体请参见[公网和私网负载均衡器](https://support.huaweicloud.com/productdesc-elb/zh_cn_elb_01_0004.html)。
 
             -   公网：支持自动创建和使用已有负载均衡实例两种方式。增强型负载均衡配额不足时，请通过新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
-                -   更改配置：选择“公网 \> 自动创建“时，单击规格配置下的“更改配置”，可修改待创建的负载均衡实例的名称、规格、计费模式和带宽。
                 -   企业项目：对接ELB的企业项目，可以选择直接创建在具体的ELB企业项目下。
+                -   更改配置：选择“公网 \> 自动创建“时，单击规格配置下的“更改配置”，可修改待创建的负载均衡实例的名称、规格、计费模式和带宽。
 
             -   私网：支持自动创建和使用已有负载均衡实例两种方式。
                 -   企业项目：对接ELB的企业项目，可以选择直接创建在具体的ELB企业项目下。
@@ -139,7 +143,7 @@
             -   URL：需要注册的访问路径，例如：/healthz。
             -   目标Service：请选择已有Service或新建Service。页面列表中仅支持选择“节点访问 \( NodePort \)“  类型的Service，该查询结果已自动过滤。若您[开启了Nginx](#li17417517134)，可以通过页面右侧的“YAML创建“功能对接“集群内访问 \( ClusterIP \)“类型的Service。
             -   Service访问端口：可选择目标Service的访问端口。
-            -   服务负载均衡配置：该配置是基于服务的配置，若有多条路由使用当前服务，这些路由将使用相同的服务负载均衡配置。详细配置请参见[负载均衡配置](负载均衡-(-LoadBalancer-).md#li1242315120217)。
+            -   服务负载均衡配置：该配置是基于服务的配置，若有多条路由使用当前服务，这些路由将使用相同的服务负载均衡配置。详细配置请参见[负载均衡配置](负载均衡(LoadBalancer).md#li1242315120217)。
             -   操作：可单击“删除“按钮删除该配置。
 
             单击“添加转发策略“按钮可添加多条转发策略。
@@ -155,12 +159,12 @@
 
     1.  获取defaultbackend“/healthz”接口的访问地址，访问地址有负载均衡实例、对外端口、映射URL组成，例如：10.154.73.151:80/healthz。
 
-        **图 2**  获取访问地址<a name="fig911562743620"></a>  
-        ![](figures/获取访问地址-8.png "获取访问地址-8")
+        **图 3**  获取访问地址<a name="fig911562743620"></a>  
+        ![](figures/获取访问地址-9.png "获取访问地址-9")
 
-    2.  在浏览器中输入“/healthz”接口的访问地址，如：http://10.154.73.151:80/healthz，即可成功访问工作负载，如[图3](#fig17115192714367)。
+    2.  在浏览器中输入“/healthz”接口的访问地址，如：http://10.154.73.151:80/healthz，即可成功访问工作负载，如[图4](#fig17115192714367)。
 
-        **图 3**  访问defaultbackend“/healthz”接口<a name="fig17115192714367"></a>  
+        **图 4**  访问defaultbackend“/healthz”接口<a name="fig17115192714367"></a>  
         ![](figures/访问defaultbackend-healthz-接口.png "访问defaultbackend-healthz-接口")
 
     方式二：域名访问
@@ -169,7 +173,7 @@
 
     1.  获取ingress-demo“/james”接口的域名与访问地址的IP与端口。
 
-        **图 4**  获取域名与访问地址<a name="fig1992172383117"></a>  
+        **图 5**  获取域名与访问地址<a name="fig1992172383117"></a>  
         ![](figures/获取域名与访问地址.png "获取域名与访问地址")
 
     2.  在本地主机的  C:\\Windows\\System32\\drivers\\etc\\hosts中配置访问地址的IP和域名。
@@ -519,22 +523,23 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p114229463196"><a name="p114229463196"></a><a name="p114229463196"></a>Integer</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p12958233152218"><a name="p12958233152218"></a><a name="p12958233152218"></a>带宽大小，请根据Region带宽支持范围设置，具体请参见<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b198591928137"><a name="b198591928137"></a><a name="b198591928137"></a>表4 bandwidth字段说明中size字段</strong>。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p12958233152218"><a name="p12958233152218"></a><a name="p12958233152218"></a>带宽大小，请根据Region带宽支持范围设置，具体请参见<a href="https://support.huaweicloud.com/api-eip/eip_api_0001.html" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b198591928137"><a name="b198591928137"></a><a name="b198591928137"></a>表4 bandwidth字段说明中size字段</strong>。</p>
     </td>
     </tr>
     <tr id="row1942224601917"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p16731228202214"><a name="p16731228202214"></a><a name="p16731228202214"></a>bandwidth_sharetype</p>
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p84221246111913"><a name="p84221246111913"></a><a name="p84221246111913"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p188864421731"><a name="p188864421731"></a><a name="p188864421731"></a>带宽共享方式。</p>
-    <a name="ul51872412"></a><a name="ul51872412"></a><ul id="ul51872412"><li>PER：共享带宽</li><li>WHOLE：共享带宽</li></ul>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p59311192057"><a name="p59311192057"></a><a name="p59311192057"></a>功能说明：带宽类型，标识是否是共享带宽。</p>
+    <p id="p188864421731"><a name="p188864421731"></a><a name="p188864421731"></a>取值范围：</p>
+    <a name="ul51872412"></a><a name="ul51872412"></a><ul id="ul51872412"><li>WHOLE：共享带宽</li><li>PER：独享带宽</li></ul>
     </td>
     </tr>
     <tr id="row1242219461193"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1972102872220"><a name="p1972102872220"></a><a name="p1972102872220"></a>eip_type</p>
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p132201811174611"><a name="p132201811174611"></a><a name="p132201811174611"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p11956103372218"><a name="p11956103372218"></a><a name="p11956103372218"></a>弹性公网IP类型，请参考ELB支持的弹性公网IP类型，具体请参见<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b11814520410"><a name="b11814520410"></a><a name="b11814520410"></a>表3 publicip字段说明type字段</strong>。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p11956103372218"><a name="p11956103372218"></a><a name="p11956103372218"></a>弹性公网IP类型，请参考ELB支持的弹性公网IP类型，具体请参见<a href="https://support.huaweicloud.com/api-eip/eip_api_0001.html" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b11814520410"><a name="b11814520410"></a><a name="b11814520410"></a>表3 publicip字段说明type字段</strong>。</p>
     </td>
     </tr>
     </tbody>
@@ -643,7 +648,7 @@
 
     其中，10.154.76.63为统一负载均衡实例的IP地址。
 
-    **图 5**  访问healthz<a name="fig1526153112115"></a>  
+    **图 6**  访问healthz<a name="fig1526153112115"></a>  
     ![](figures/访问healthz.png "访问healthz")
 
 

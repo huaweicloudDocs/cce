@@ -1,4 +1,4 @@
-# DNAT网关 \( DNAT \)<a name="cce_01_0058"></a>
+# DNAT网关\(DNAT\)<a name="cce_01_0058"></a>
 
 “DNAT网关“可以为集群节点提供网络地址转换服务，使多个节点可以共享使用弹性IP。
 
@@ -44,7 +44,7 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
 
 您可以在创建工作负载时通过CCE控制台设置Service访问方式，本节以nginx为例进行说明。具体操作如下：
 
-1.  参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)或[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
+1.  参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)、[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)或[创建守护进程集\(DaemonSet\)](创建守护进程集(DaemonSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
     -   **访问类型：**选择“DNAT网关 \( DNAT \)“。
     -   **Service名称：**自定义服务名称，可与工作负载名称保持一致。
     -   **服务亲和：**

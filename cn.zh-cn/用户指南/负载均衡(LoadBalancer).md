@@ -1,4 +1,4 @@
-# 负载均衡 \( LoadBalancer \)<a name="cce_01_0014"></a>
+# 负载均衡\(LoadBalancer\)<a name="cce_01_0014"></a>
 
 负载均衡\( LoadBalancer \)可以通过弹性负载均衡从公网访问到工作负载，与弹性IP方式相比提供了高可靠的保障，一般用于系统中需要暴露到公网的服务。
 
@@ -16,7 +16,7 @@
 
 可以在创建工作负载时通过CCE控制台设置Service访问方式，本节以nginx为例进行说明。
 
-1.  参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)或[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
+1.  参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)、[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)或[创建守护进程集\(DaemonSet\)](创建守护进程集(DaemonSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
 
     -   **访问类型：**选择“负载均衡 \( LoadBalancer \)“。
     -   **Service名称：**自定义服务名称，可与工作负载名称保持一致。
@@ -36,8 +36,8 @@
 
         负载均衡实例需与当前集群处于相同VPC且为相同公私网类型。
 
-        -   规格配置：**选择“公网 \> 自动创建“时显示此配置项，**单击“更改配置”可修改负载均衡实例的名称、规格、计费模式和带宽。
         -   企业项目：请选择企业项目名称，选择后可以直接创建在具体的ELB企业项目下。
+        -   规格配置：**选择“公网 \> 自动创建“时显示此配置项，**单击“更改配置”可修改负载均衡实例的名称、规格、计费模式和带宽。
         -   分配策略类型：可选择加权轮询算法、加权最少连接或源IP算法，权重将根据Service关联的工作负载在每个节点上的实例数量进行动态调整。
             -   加权轮询算法：根据后端服务器的权重，按顺序依次将请求分发给不同的服务器。它用相应的权重表示服务器的处理性能，按照权重的高低以及轮询方式将请求分配给各服务器，相同权重的服务器处理相同数目的连接数。常用于短连接服务，例如HTTP等服务。
             -   加权最少连接：最少连接是通过当前活跃的连接数来估计服务器负载情况的一种动态调度算法。加权最少连接就是在最少连接数的基础上，根据服务器的不同处理能力，给每个服务器分配不同的权重，使其能够接受相应权值数的服务请求。常用于长连接服务，例如数据库连接等服务。
@@ -107,7 +107,7 @@
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >若需要开启会话保持，需要满足如下条件：  
     >-   工作负载协议为TCP。  
-    >-   工作负载的各实例已设置反亲和部署，即所有的实例都部署在不同节点上。具体请参见[指定工作负载部署在不同节点](https://support.huaweicloud.com/usermanual-cce/cce_01_0051.html#section11)。  
+    >-   工作负载的各实例已设置反亲和部署，即所有的实例都部署在不同节点上。具体请参见[工作负载和节点的反亲和性](工作负载和节点的反亲和性.md)。  
 
     -   自动创建ELB：
 
@@ -301,7 +301,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p114229463196"><a name="p114229463196"></a><a name="p114229463196"></a>Integer</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p12958233152218"><a name="p12958233152218"></a><a name="p12958233152218"></a>带宽大小，请根据Region带宽支持范围设置，具体请参见<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b198591928137"><a name="b198591928137"></a><a name="b198591928137"></a>表4 bandwidth字段说明中size字段</strong>。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p12958233152218"><a name="p12958233152218"></a><a name="p12958233152218"></a>带宽大小，请根据Region带宽支持范围设置，具体请参见<a href="https://support.huaweicloud.com/api-eip/eip_api_0001.html" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b198591928137"><a name="b198591928137"></a><a name="b198591928137"></a>表4 bandwidth字段说明中size字段</strong>。</p>
     </td>
     </tr>
     <tr id="row1942224601917"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p16731228202214"><a name="p16731228202214"></a><a name="p16731228202214"></a>bandwidth_sharetype</p>
@@ -316,7 +316,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p132201811174611"><a name="p132201811174611"></a><a name="p132201811174611"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p11956103372218"><a name="p11956103372218"></a><a name="p11956103372218"></a>弹性公网IP类型，请参考ELB支持的弹性公网IP类型，具体请参见<a href="https://support.huaweicloud.com/api-vpc/zh-cn_topic_0020090596.html#ZH-CN_TOPIC_0020090596__table11041789" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b11814520410"><a name="b11814520410"></a><a name="b11814520410"></a>表3 publicip字段说明type字段</strong>。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p11956103372218"><a name="p11956103372218"></a><a name="p11956103372218"></a>弹性公网IP类型，请参考ELB支持的弹性公网IP类型，具体请参见<a href="https://support.huaweicloud.com/api-eip/eip_api_0001.html" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b11814520410"><a name="b11814520410"></a><a name="b11814520410"></a>表3 publicip字段说明type字段</strong>。</p>
     </td>
     </tr>
     </tbody>
@@ -401,8 +401,8 @@
 
         负载均衡实例需与当前集群处于相同VPC且为相同公私网类型。
 
-        -   规格配置：选择“公网 \> 自动创建“时显示此配置项，单击![](figures/zh-cn_image_0196372894.png)可修改负载均衡实例的名称、规格、计费模式和带宽。
         -   企业项目：请选择企业项目名称，选择后可以直接创建在具体的ELB企业项目下。
+        -   规格配置：选择“公网 \> 自动创建“时显示此配置项，单击![](figures/zh-cn_image_0196372894.png)可修改负载均衡实例的名称、规格、计费模式和带宽。
         -   分配策略类型：可选择加权轮询算法、加权最少连接或源IP算法，权重将根据Service关联的工作负载在每个节点上的实例数量进行动态调整。
 
             >![](public_sys-resources/icon-note.gif) **说明：**   
