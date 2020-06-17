@@ -15,7 +15,7 @@
     **图 1**  单击集群名称<a name="fig118327236614"></a>  
     ![](figures/单击集群名称.png "单击集群名称")
 
-2.  在集群详情页中的“Istioctl“页签中，请参照界面中的提示信息完成Istioctl的安装和配置。
+2.  在集群详情页中的“Istioctl“页签下，请参照界面中的提示信息完成Istioctl的安装和配置。
 
     **图 2**  使用Istioctl配置路由策略<a name="fig1366811551535"></a>  
     ![](figures/使用Istioctl配置路由策略.png "使用Istioctl配置路由策略")

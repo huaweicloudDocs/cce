@@ -143,7 +143,7 @@
             -   URL：需要注册的访问路径，例如：/healthz。
             -   目标Service：请选择已有Service或新建Service。页面列表中仅支持选择“节点访问 \( NodePort \)“  类型的Service，该查询结果已自动过滤。若您[开启了Nginx](#li17417517134)，可以通过页面右侧的“YAML创建“功能对接“集群内访问 \( ClusterIP \)“类型的Service。
             -   Service访问端口：可选择目标Service的访问端口。
-            -   服务负载均衡配置：该配置是基于服务的配置，若有多条路由使用当前服务，这些路由将使用相同的服务负载均衡配置。详细配置请参见[负载均衡配置](负载均衡(LoadBalancer).md#li1242315120217)。
+            -   服务负载均衡配置：该配置是基于服务的配置，若有多条路由使用当前服务，这些路由将使用相同的服务负载均衡配置。详细配置请参见[负载均衡配置](负载均衡(LoadBalancer).md#li2098815514414)。
             -   操作：可单击“删除“按钮删除该配置。
 
             单击“添加转发策略“按钮可添加多条转发策略。
@@ -176,7 +176,10 @@
         **图 5**  获取域名与访问地址<a name="fig1992172383117"></a>  
         ![](figures/获取域名与访问地址.png "获取域名与访问地址")
 
-    2.  在本地主机的  C:\\Windows\\System32\\drivers\\etc\\hosts中配置访问地址的IP和域名。
+    2.  在本地主机的  C:\\Windows\\System32\\drivers\\etc\\hosts中配置访问地址的IP和域名，如下图：
+
+        ![](figures/zh-cn_image_0253716542.png)
+
     3.  在浏览器中输入http://域名:访问地址端口/映射url，如：http://ingress.com:81/james。
 
 
@@ -201,9 +204,6 @@
 
     **vi ingress-test-deployment.yaml**
 
-    -   1.15及以上集群版本中的apiVersion为: networking.k8s.io/v1beta1
-    -   1.13及以下集群版本中的apiVersion为: extensions/v1beta1
-
     ```
     apiVersion: extensions/v1beta1
     kind: Deployment
@@ -223,11 +223,11 @@
         spec:
           containers:
             #第三方公开镜像，可以参见描述获取地址，也可以使用自己的镜像
-          - image: ingress  
+          - image: nginx 
             imagePullPolicy: Always
-            name: ingress
-            imagePullSecrets:
-            - name: default-secret
+            name: nginx
+          imagePullSecrets:
+          - name: default-secret
     ```
 
     **vi ingress-test-svc.yaml**
@@ -304,7 +304,7 @@
     自动创建ELB
 
     ```
-    apiVersion: extensions/v1beta1 
+    apiVersion: networking.k8s.io/v1beta1
     kind: Ingress 
     metadata: 
       annotations: 
@@ -332,7 +332,7 @@
     使用已有ELB
 
     ```
-    apiVersion: extensions/v1beta1 
+    apiVersion: networking.k8s.io/v1beta1
     kind: Ingress 
     metadata: 
       annotations: 
@@ -571,7 +571,7 @@
     回显如下，表明工作负载已创建。
 
     ```
-    deployment "ingress-test-deployment" created
+    deployment/ingress-test-deployment created
     ```
 
     **kubectl get po**
@@ -590,7 +590,7 @@
     回显如下，表明密钥已创建。
 
     ```
-    secret "ingress-test-secret" created
+    secret/ingress-test-secret created
     ```
 
     **kubectl get secrets**
@@ -614,7 +614,7 @@
     回显如下，表示服务已创建。
 
     ```
-    service "ingress-test-svc" created
+    service/ingress-test-svc created
     ```
 
     **kubectl get svc**
@@ -632,7 +632,7 @@
     回显如下，表示ingress服务已创建。
 
     ```
-    ingress "ingress-test-ingress" created
+    ingress/ingress-test-ingress created
     ```
 
     **kubectl get ingress**
@@ -658,17 +658,34 @@
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 网络管理”。在**Ingress**页签下，选择对应的集群和命名空间，单击待更新Ingress后方的“更新”。
 2.  在“更新Ingress“页面，更新如下参数：
+
+    **监听器配置**
+
     -   **对外端口：**开放在负载均衡服务地址的端口，可任意指定。
-    -   **域名：**可选填。实际访问的域名地址，该域名需用户购买并备案，并确保所填域名能解析到所选负载均衡实例的服务地址。一旦配置了域名规则，则必须使用域名访问。
-    -   **路由配置：**可单击“添加映射”增加新的路由配置。
-        -   路由匹配规则：前缀匹配、精确匹配、正则匹配。
+
+    **转发策略配置**
+
+    -   **服务负载均衡配置：**单击![](figures/zh-cn_image_0253718035.png)展开后，可对如下参数进行设置：
+        -   分配策略类型：可选择加权轮询算法、加权最少连接或源IP算法，权重将根据Service关联的工作负载在每个节点上的实例数量进行动态调整。
+            -   加权轮询算法：根据后端服务器的权重，按顺序依次将请求分发给不同的服务器。它用相应的权重表示服务器的处理性能，按照权重的高低以及轮询方式将请求分配给各服务器，相同权重的服务器处理相同数目的连接数。常用于短连接服务，例如HTTP等服务。
+            -   加权最少连接：最少连接是通过当前活跃的连接数来估计服务器负载情况的一种动态调度算法。加权最少连接就是在最少连接数的基础上，根据服务器的不同处理能力，给每个服务器分配不同的权重，使其能够接受相应权值数的服务请求。常用于长连接服务，例如数据库连接等服务。
+            -   源IP算法：将请求的源IP地址进行Hash运算，得到一个具体的数值，同时对后端服务器进行编号，按照运算结果将请求分发到对应编号的服务器上。这可以使得对不同源IP的访问进行负载分发，同时使得同一个客户端IP的请求始终被派发至某特定的服务器。该方式适合负载均衡无cookie功能的TCP协议。
+
+        -   会话保持：默认不启用，可选择“源IP地址“。负载均衡监听是基于IP地址的会话保持，即来自同一IP地址的访问请求转发到同一台后端服务器上。
+        -   健康检查：默认开启。请根据界面提示进行配置，更多参数说明请参见[配置健康检查](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0162227063.html)。
+
+    -   单击“添加转发策略“按钮可添加多条转发策略。
+        -   域名：实际访问的域名地址。请确保所填写的域名已注册并备案，在Ingress创建完成后，将域名与自动创建的负载均衡实例的IP（即Ingress访问地址的IP部分）绑定。一旦配置了域名规则，则必须使用域名访问。
+        -   URL匹配规则：
             -   前缀匹配：例如映射URL为/healthz，只要符合此前缀的URL均可访问。例如/healthz/v1，/healthz/v2。
             -   精确匹配：表示精准匹配，只有完全匹配上才能生效。例如映射URL为/healthz，则必须为此URL才能访问。
             -   正则匹配：可设定映射URL规范，例如规范为**/\[A-Za-z0-9\_.-\]+/test**。只要符合此规则的URL均可访问，例如/abcA9/test，/v1-Ab/test。正则匹配规则支持POSIX与Perl两种标准。
 
-        -   映射URL：需要注册的访问路径，例如：/healthz。
-        -   服务名称：选择需要添加Ingress的服务，该服务访问类型为VPC内网服务。
-        -   容器端口：容器镜像中容器实际监听端口，需用户确定。例如：defaultbackend程序实际监听的端口为8080。
+        -   URL：需要注册的访问路径，例如：/healthz。
+        -   目标Service：请选择已有Service或新建Service。页面列表中仅支持选择“节点访问 \( NodePort \)“  类型的Service，该查询结果已自动过滤。若您[开启了Nginx](#li17417517134)，可以通过页面右侧的“YAML创建“功能对接“集群内访问 \( ClusterIP \)“类型的Service。
+        -   Service访问端口：可选择目标Service的访问端口。
+        -   服务负载均衡配置：该配置是基于服务的配置，若有多条路由使用当前服务，这些路由将使用相同的服务负载均衡配置。详细配置请参见[负载均衡配置](负载均衡(LoadBalancer).md#li2098815514414)。
+        -   操作：可单击“删除“按钮删除该配置。
 
 3.  单击“提交”。工作负载已更新Ingress。
 

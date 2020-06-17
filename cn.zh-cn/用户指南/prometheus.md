@@ -33,7 +33,7 @@ Prometheus是一套开源的系统监控报警框架。它启发于Google的borg
 
 ## 安装插件<a name="section189463341114"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签中，单击**Prometheus**下的“安装插件“按钮。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击**Prometheus**下的“安装插件“按钮。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  在“规格配置“步骤中，配置以下参数：
 
@@ -80,13 +80,13 @@ Prometheus是一套开源的系统监控报警框架。它启发于Google的borg
 
 4.  单击“安装“。
 
-    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签中，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
+    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
 
 5.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例”中，点击“Prometheus”进入详情页，可以查看插件实例的详细情况。
 
 ## 卸载插件<a name="section1395073191112"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签中，选择对应的集群，单击**Prometheus**下的“卸载“。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击**Prometheus**下的“卸载“。
 2.  在弹出的窗口中，单击“确认“，可卸载该插件。
 
 ## 参考资源<a name="section16331426191116"></a>

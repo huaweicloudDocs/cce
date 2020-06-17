@@ -178,6 +178,27 @@ POST /api/v1/persistentvolumes
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079614924_p188779198221"><a name="zh-cn_topic_0079614924_p188779198221"></a><a name="zh-cn_topic_0079614924_p188779198221"></a>Name of StorageClass to which this persistent volume belongs. Empty value means that this volume does not belong to any StorageClass.</p>
 </td>
 </tr>
+<tr id="row896682754410"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="p187013221311"><a name="p187013221311"></a><a name="p187013221311"></a>flexVolume</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p11966132704416"><a name="p11966132704416"></a><a name="p11966132704416"></a><span id="ph917719490"><a name="ph917719490"></a><a name="ph917719490"></a>No</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p8480517124920"><a name="p8480517124920"></a><a name="p8480517124920"></a>flexVolume</p>
+<p id="p896642714443"><a name="p896642714443"></a><a name="p896642714443"></a><span id="ph13950163934510"><a name="ph13950163934510"></a><a name="ph13950163934510"></a>object</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p28021337195011"><a name="p28021337195011"></a><a name="p28021337195011"></a>FlexVolume represents a generic volume resource that is</p>
+<p id="p198021237155013"><a name="p198021237155013"></a><a name="p198021237155013"></a>provisioned/attached using an exec based plugin. The cluster earlier than v1.15(v1.9/v1.11/v1.13) which use CCE FlexVolume fuxi driver must fill in this field.</p>
+</td>
+</tr>
+<tr id="row512162514919"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="p182241738114916"><a name="p182241738114916"></a><a name="p182241738114916"></a>CSI</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p1212125104916"><a name="p1212125104916"></a><a name="p1212125104916"></a><span id="ph1470634412492"><a name="ph1470634412492"></a><a name="ph1470634412492"></a>No</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p121262514497"><a name="p121262514497"></a><a name="p121262514497"></a><span id="ph206011847174912"><a name="ph206011847174912"></a><a name="ph206011847174912"></a>CSI</span></p>
+<p id="p1398284724913"><a name="p1398284724913"></a><a name="p1398284724913"></a>object</p>
+</td>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p99555835916"><a name="p99555835916"></a><a name="p99555835916"></a>CSI represents storage that is handled by an external CSI driver. The cluster of v1.15 or later which use CCE SCI everest must fill in this filed.</p>
+</td>
+</tr>
 </tbody>
 </table>
 
@@ -370,6 +391,14 @@ POST /api/v1/persistentvolumes
 </tr>
 </tbody>
 </table>
+
+表9 flexVolume 字段结构说明
+
+表 10 options 字段结构说明
+
+表 11 CSI 字段结构说明
+
+表 12 volumeAttributes 字段结构说明
 
 **请求示例：**
 

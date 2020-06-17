@@ -2,16 +2,16 @@
 
 为了能够更好地方便您使用容器服务，确保您使用稳定又可靠的Kubernetes版本，云容器引擎CCE推出Kubernetes版本支持机制，将在每半年发布一个版本，每个版本的支持周期为一年，请您务必在维护周期结束之前升级您的Kubernetes集群。
 
-CCE集群新版本升级，请参见[集群版本升级说明](集群版本升级说明.md)。
+CCE集群新版本升级，请参见[集群大版本升级说明](集群大版本升级说明.md)。
 
 ## V1.15版本<a name="section18351606577"></a>
 
-**表 1**  V1.15公测版本集群特性说明
+**表 1**  V1.15版本集群说明
 
 <a name="table1381822411498"></a>
 <table><thead align="left"><tr id="row18181424144918"><th class="cellrowborder" valign="top" width="29.12%" id="mcps1.2.3.1.1"><p id="p18188245498"><a name="p18188245498"></a><a name="p18188245498"></a>Kubernetes版本（CCE增强版）</p>
 </th>
-<th class="cellrowborder" valign="top" width="70.88%" id="mcps1.2.3.1.2"><p id="p13819424114915"><a name="p13819424114915"></a><a name="p13819424114915"></a>升级说明</p>
+<th class="cellrowborder" valign="top" width="70.88%" id="mcps1.2.3.1.2"><p id="p13819424114915"><a name="p13819424114915"></a><a name="p13819424114915"></a>版本说明</p>
 </th>
 </tr>
 </thead>
@@ -27,12 +27,12 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 
 ## V1.13版本<a name="section1801516195711"></a>
 
-**表 2**  V1.13版本集群特性说明
+**表 2**  V1.13版本集群说明
 
 <a name="table14450940866"></a>
 <table><thead align="left"><tr id="row145024011618"><th class="cellrowborder" valign="top" width="29.12%" id="mcps1.2.3.1.1"><p id="p3450154019612"><a name="p3450154019612"></a><a name="p3450154019612"></a>Kubernetes版本（CCE增强版）</p>
 </th>
-<th class="cellrowborder" valign="top" width="70.88%" id="mcps1.2.3.1.2"><p id="p19450184018614"><a name="p19450184018614"></a><a name="p19450184018614"></a>升级说明</p>
+<th class="cellrowborder" valign="top" width="70.88%" id="mcps1.2.3.1.2"><p id="p19450184018614"><a name="p19450184018614"></a><a name="p19450184018614"></a>版本说明</p>
 </th>
 </tr>
 </thead>
@@ -52,12 +52,12 @@ CCE集群新版本升级，请参见[集群版本升级说明](集群版本升�
 
 ## V1.11及之前版本<a name="section19479153020578"></a>
 
-**表 3**  V1.11及之前版本集群特性说明
+**表 3**  V1.11及之前版本集群说明
 
 <a name="table7445114645410"></a>
 <table><thead align="left"><tr id="row244694645413"><th class="cellrowborder" valign="top" width="29.03%" id="mcps1.2.3.1.1"><p id="p174461846165411"><a name="p174461846165411"></a><a name="p174461846165411"></a>Kubernetes版本（CCE增强版）</p>
 </th>
-<th class="cellrowborder" valign="top" width="70.97%" id="mcps1.2.3.1.2"><p id="p1446154614545"><a name="p1446154614545"></a><a name="p1446154614545"></a>升级说明</p>
+<th class="cellrowborder" valign="top" width="70.97%" id="mcps1.2.3.1.2"><p id="p1446154614545"><a name="p1446154614545"></a><a name="p1446154614545"></a>版本说明</p>
 </th>
 </tr>
 </thead>

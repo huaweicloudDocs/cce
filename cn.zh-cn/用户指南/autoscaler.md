@@ -24,7 +24,7 @@ autoscaler可分成扩容和缩容两个方面：
 
 ## 安装插件<a name="section15573161754711"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“ 插件管理“，在“插件市场“中，单击**autoscaler**插件下的“安装插件“。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“ 插件管理“，在“插件市场“页签下，单击**autoscaler**插件下的“安装插件“。
 2.  在安装插件页面，选择您要安装插件的集群和插件版本，单击“下一步：规格配置“。
 3.  参照[表1](#table1582194517429)配置插件安装参数。
 
@@ -172,11 +172,11 @@ autoscaler可分成扩容和缩容两个方面：
 
 4.  配置完成后，单击“安装”。
 
-    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签中，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
+    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
 
 
 ## 卸载插件<a name="section610455514114"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“ 插件管理“，在“插件市场“中，选择对应的集群，单击**autoscaler**下的“卸载“。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“ 插件管理“，在“插件实例“页签下，选择对应的集群，单击**autoscaler**下的“卸载“。
 2.  在弹出的窗口中，单击“确认“，可卸载该插件。
 

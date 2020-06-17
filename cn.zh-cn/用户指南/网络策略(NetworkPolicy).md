@@ -10,7 +10,8 @@ CCE基于Kubernetes的网络策略功能进行了加强，通过配置网络策�
 
 ## 限制条件<a name="section332285584912"></a>
 
--   VPC Router网络模型暂不支持NetworkPolicy。
+-   VPC网络模型暂不支持网络策略\(NetworkPolicy\)。
+-   网络策略\(NetworkPolicy\)暂不支持设置Ingress路由规则。
 -   1.13及1.15版本的容器隧道网络类型的集群，节点操作系统内核为Centos时，如果使用NetworkPolicy请升级openvswitch的版本。
 
 ## 使用说明<a name="section146088501667"></a>

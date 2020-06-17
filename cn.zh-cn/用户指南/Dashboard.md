@@ -18,7 +18,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 ## 安装步骤<a name="section46701613154319"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“中，单击dashboard插件下的“安装插件“。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击dashboard插件下的“安装插件“。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置”。
 3.  在规格配置页面，配置以下参数。
     -   证书配置：dashboard服务端使用的证书。
@@ -53,7 +53,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 4.  单击“安装“。
 
-    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签中，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
+    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
 
 
 ## 安装后续操作<a name="section174811341488"></a>
@@ -73,8 +73,8 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 确认dashboard插件状态为“运行中“后，单击“访问地址“中的链接并登录，详细操作如下：
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例”页签中，确认dashboard插件状态为“运行中“后，单击插件名称“dashboard“进入插件实例详情页。
-2.  在详情页下方的“说明”页签中，单击“获取默认token”右侧的![](figures/zh-cn_image_0219106095.png)，复制“值”栏中的信息。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例”页签下，确认dashboard插件状态为“运行中“后，单击插件名称“dashboard“进入插件实例详情页。
+2.  在详情页下方的“说明”页签下，单击“获取默认token”右侧的![](figures/zh-cn_image_0219106095.png)，复制“值”栏中的信息。
 
     **图 1**  复制token<a name="fig118242010184815"></a>  
     ![](figures/复制token.png "复制token")
@@ -113,7 +113,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 ## 升级插件<a name="section455343310401"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签中，选择对应的集群，单击dashboard下的“ 升级“。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“ 升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：**   
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作；  
@@ -124,7 +124,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 ## 卸载插件<a name="section20765191931911"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签中，选择对应的集群，单击dashboard下的“ 卸载“。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“ 卸载“。
 2.  在弹出的窗口中，单击“确认“，可卸载该插件。
 
 ## 附：访问报错解决方法<a name="section913875232612"></a>

@@ -177,7 +177,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="19.191919191919194%" headers="mcps1.2.5.1.3 "><p id="adb5d08279e8c487d94b76c25dbc9f2e1"><a name="adb5d08279e8c487d94b76c25dbc9f2e1"></a><a name="adb5d08279e8c487d94b76c25dbc9f2e1"></a>Array of strings</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="a418458bd90ba478b8313723a7d57caf6"><a name="a418458bd90ba478b8313723a7d57caf6"></a><a name="a418458bd90ba478b8313723a7d57caf6"></a>AccessModes contains the desired access modes the volume should have.</p>
+<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="a418458bd90ba478b8313723a7d57caf6"><a name="a418458bd90ba478b8313723a7d57caf6"></a><a name="a418458bd90ba478b8313723a7d57caf6"></a>AccessModes contains the desired access modes the volume should have.<span> A volume can only be mounted using one access mode at a time, even if it supports many.</span></p>
 </td>
 </tr>
 <tr id="r80c1d9db5bd34ec595e0346d0da690d3"><td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.1 "><p id="a0e84d842139c48fc980c25160c38e10a"><a name="a0e84d842139c48fc980c25160c38e10a"></a><a name="a0e84d842139c48fc980c25160c38e10a"></a>resources</p>
@@ -205,6 +205,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 <td class="cellrowborder" valign="top" width="19.191919191919194%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615029_p13933641377"><a name="zh-cn_topic_0079615029_p13933641377"></a><a name="zh-cn_topic_0079615029_p13933641377"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="abe92fbe03e704d03bd4ba5eef9f22f87"><a name="abe92fbe03e704d03bd4ba5eef9f22f87"></a><a name="abe92fbe03e704d03bd4ba5eef9f22f87"></a>Name of the StorageClass required by the claim.</p>
+<p id="p1114925710147"><a name="p1114925710147"></a><a name="p1114925710147"></a>The cluster of v1.15 or later which use CCE SCI everest should fill in this filed. For EVS, set "csi-disk". For SFS, set "csi-nas". For OBS, set "csi-obs". For SFS-Turbo, set "csi-sfsturbo".</p>
 </td>
 </tr>
 </tbody>
@@ -336,6 +337,10 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
         "metadata":{
             "name":"cce-evs-k6m16atm-3ays",
             "namespace":"default",
+            "selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/cce-evs-k6m16atm-3ays",
+            "uid":"80f111e7-7d7e-4841-bd73-7ef97df0ee51",
+            "resourceVersion":"2287083",
+            "creationTimestamp":"2020-02-14T10:30:20Z",
             "labels":{
                 "failure-domain.beta.kubernetes.io/region":"cn-north-5",
                 "failure-domain.beta.kubernetes.io/zone":"cn-north-5a"
@@ -343,7 +348,10 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
             "annotations":{
                 "everest.io/crypt-key-id":"527cbece-428d-463b-a92c-936a11077b5d", //创建加密卷必需，若无或不全，则不加密；
                 "everest.io/disk-volume-type":"SATA"
-            }
+            },
+            "finalizers":[
+                "kubernetes.io/pvc-protection"
+            ]
         },
         "spec":{
             "accessModes":[
@@ -354,7 +362,8 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
                     "storage":"10Gi"
                 }
             },
-            "storageClassName":"csi-disk"
+            "storageClassName":"csi-disk",
+            "volumeMode":"Filesystem"
         }
     }
     ```
@@ -407,7 +416,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
     	    "everest.io/crypt-alias": "sfs/default"
             },
             "name": "pvc-158167040158916159-test-sfs-0",
-            "namespace": "default"
+            "namespace": "default",
         },
         "spec": {
             "accessModes": [
@@ -418,7 +427,9 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
                     "storage": "10Gi"
                 }
             },
-            "storageClassName": "csi-nas"
+            "storageClassName": "csi-nas",
+            "volumeMode": "Filesystem",
+            "volumeName": "pvc-1c933c44-1f47-41a4-9353-3800a21cab6b"
         }
     }
     ```
@@ -438,10 +449,6 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
             "paas.storage.io/cryptKeyId": "3cfaea47-eb9b-4c68-b108-86fe399aebaf",
     	"volume.beta.kubernetes.io/storage-class": "nfs-rw",
     	"volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxinfs"
-            },
-            "labels": {
-    	"failure-domain.beta.kubernetes.io/region": "cn-north-1",
-    	"failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
             }
         },
         "spec": {

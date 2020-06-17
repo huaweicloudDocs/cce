@@ -20,7 +20,7 @@ Virtual Kubelet插件具体如下功能：
 
 ## 安装插件<a name="section2237175619515"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“中，单击virtual kubelet插件下的“安装插件“。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击virtual kubelet插件下的“安装插件“。
 2.  在“基本信息“步骤中，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  在“规格配置“步骤中，勾选“跨服务互通“后的选择框，可实现CCE集群中的Pod与CCI集群中的Pod通过Kubernetes Service互通。
 
@@ -29,7 +29,7 @@ Virtual Kubelet插件具体如下功能：
 
 4.  单击“安装“。
 
-    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签中，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
+    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
 
 
 ## 配置插件<a name="section162391856185111"></a>
@@ -46,6 +46,6 @@ Virtual Kubelet插件具体如下功能：
 
 ## 卸载插件<a name="section1624015695110"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签中，选择对应的集群，单击virtual kubelet下的“卸载“。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击virtual kubelet下的“卸载“。
 2.  在弹出的窗口中，单击“确认“，可卸载该插件。
 
