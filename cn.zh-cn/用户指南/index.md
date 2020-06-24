@@ -3,6 +3,7 @@
 -   [什么是云容器引擎](什么是云容器引擎.md)
 -   [高危操作及解决方案](高危操作及解决方案.md)
 -   [产品公告](产品公告.md)
+    -   [CCE安全使用指引](CCE安全使用指引.md)
     -   [CCE集群版本发布说明](CCE集群版本发布说明.md)
     -   [漏洞修复公告](漏洞修复公告.md)
         -   [修复Kubernetes HTTP/2漏洞公告](修复Kubernetes-HTTP-2漏洞公告.md)
@@ -129,7 +130,7 @@
     -   [使用密钥](使用密钥.md)
 
 -   [模板市场](模板市场.md)
-    -   [官方模板](官方模板.md)
+    -   [示例模板](示例模板.md)
     -   [我的模板](我的模板.md)
         -   [简介](简介.md)
         -   [准备模板包](准备模板包.md)
@@ -158,6 +159,7 @@
     -   [volcano](volcano.md)
     -   [spark-operator](spark-operator.md)
     -   [nginx-ingress](nginx-ingress.md)
+    -   [Tf-operator](Tf-operator.md)
 
 -   [弹性伸缩](弹性伸缩.md)
     -   [创建工作负载伸缩策略](创建工作负载伸缩策略.md)

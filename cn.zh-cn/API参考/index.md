@@ -40,8 +40,8 @@
     -   [存储管理](存储管理.md)
         -   [创建PersistentVolumeClaim](创建PersistentVolumeClaim.md)
         -   [删除PersistentVolumeClaim](删除PersistentVolumeClaim.md)
-        -   [创建PersistentVolume](创建PersistentVolume.md)
-        -   [删除PersistentVolume](删除PersistentVolume.md)
+        -   [创建PersistentVolume（已废弃）](创建PersistentVolume（已废弃）.md)
+        -   [删除PersistentVolume（已废弃）](删除PersistentVolume（已废弃）.md)
 
     -   [插件管理](插件管理.md)
         -   [创建AddonInstance](创建AddonInstance.md)
@@ -210,7 +210,7 @@
         -   [获取networkpolicy列表](获取networkpolicy列表.md)
 
     -   [PersistentVolume](PersistentVolume.md)
-        -   [创建PersistentVolume](创建PersistentVolume-0.md)
+        -   [创建PersistentVolume](创建PersistentVolume.md)
         -   [删除指定的PersistentVolume](删除指定的PersistentVolume.md)
         -   [删除所有的PersistentVolume](删除所有的PersistentVolume.md)
         -   [获取指定的PersistentVolume](获取指定的PersistentVolume.md)
@@ -220,7 +220,7 @@
         -   [更新指定的PersistentVolume](更新指定的PersistentVolume.md)
 
     -   [PersistentVolumeClaim](PersistentVolumeClaim.md)
-        -   [创建PersistentVolumeClaim](创建PersistentVolumeClaim-1.md)
+        -   [创建PersistentVolumeClaim](创建PersistentVolumeClaim-0.md)
         -   [删除指定的PersistentVolumeClaim](删除指定的PersistentVolumeClaim.md)
         -   [删除所有的PersistentVolumeClaim](删除所有的PersistentVolumeClaim.md)
         -   [获取指定的PersistentVolumeClaim](获取指定的PersistentVolumeClaim.md)

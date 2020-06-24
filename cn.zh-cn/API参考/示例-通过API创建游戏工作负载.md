@@ -33,8 +33,8 @@
 
 假设已获取前提条件中的信息为如下值（实际操作中您需要根据实际情况替换）：
 
--   IAM的Endpoint：下面示例中以**iam\_endpoint**代替。
--   CCE的Endpoint：下面示例中以**cce\_endpoint**代替。
+-   IAM的Endpoint：下面示例中以**iam\_endpoint**代替，具体请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint?IAM)。
+-   CCE的Endpoint：下面示例中以**cce\_endpoint**代替，具体请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)。
 -   VPC的ID：**219ab8a0-1272-4049-a383-8ad0b770fa11**
 -   子网的ID：**d23ef2e9-8b90-49b3-bc4a-fd7d6bea6bec**
 -   密钥对的名称：**keypair-cce**

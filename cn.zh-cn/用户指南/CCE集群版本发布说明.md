@@ -70,7 +70,7 @@ CCE集群新版本升级，请参见[集群大版本升级说明](集群大版�
 <tr id="row190113461164"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p15901194614161"><a name="p15901194614161"></a><a name="p15901194614161"></a>v1.11.7-r0</p>
 </td>
 <td class="cellrowborder" valign="top" width="70.97%" headers="mcps1.2.3.1.2 "><p id="p10901164618166"><a name="p10901164618166"></a><a name="p10901164618166"></a>主要特性：</p>
-<a name="ul1513752874712"></a><a name="ul1513752874712"></a><ul id="ul1513752874712"><li>Kubernetes同步社区1.11.7版本</li><li>支持创建节点池（<span>nodepool</span>），虚拟机/鲲鹏ARM集群均支持</li><li>混合集群支持创建裸金属节点（vpc 网络），支持裸金属和虚机混合部署</li><li>GPU支持V100类型</li><li>1.11集群对接AOM告警通知机制</li><li>Service支持访问类型切换</li><li>支持服务网段</li><li>集群支持自定义每个节点分配的IP数（IP分配）</li></ul>
+<a name="ul1513752874712"></a><a name="ul1513752874712"></a><ul id="ul1513752874712"><li>Kubernetes同步社区1.11.7版本</li><li>支持创建节点池（nodepool），虚拟机/鲲鹏ARM集群均支持</li><li>混合集群支持创建裸金属节点（vpc 网络），支持裸金属和虚机混合部署</li><li>GPU支持V100类型</li><li>1.11集群对接AOM告警通知机制</li><li>Service支持访问类型切换</li><li>支持服务网段</li><li>集群支持自定义每个节点分配的IP数（IP分配）</li></ul>
 </td>
 </tr>
 <tr id="row1760182091416"><td class="cellrowborder" valign="top" width="29.03%" headers="mcps1.2.3.1.1 "><p id="p15760320151412"><a name="p15760320151412"></a><a name="p15760320151412"></a>v1.11.3-r2</p>

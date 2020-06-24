@@ -40,6 +40,7 @@
     <tbody><tr id="cce_01_0047_row18415163712618"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p32763416485"><a name="cce_01_0047_p32763416485"></a><a name="cce_01_0047_p32763416485"></a>* 工作负载名称</p>
     </td>
     <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p5276341485"><a name="cce_01_0047_p5276341485"></a><a name="cce_01_0047_p5276341485"></a>新建工作负载的名称，命名必须唯一。</p>
+    <p id="cce_01_0047_p99562111597"><a name="cce_01_0047_p99562111597"></a><a name="cce_01_0047_p99562111597"></a>请输入4到63个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。</p>
     </td>
     </tr>
     <tr id="cce_01_0047_row81437181202"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p514451811010"><a name="cce_01_0047_p514451811010"></a><a name="cce_01_0047_p514451811010"></a>* 集群名称</p>
@@ -190,9 +191,9 @@
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row9293194864911"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p229384818497"><a name="p229384818497"></a><a name="p229384818497"></a><span>服务名称</span></p>
+    <tbody><tr id="row9293194864911"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p229384818497"><a name="p229384818497"></a><a name="p229384818497"></a>服务名称</p>
     </td>
-    <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p1229313484495"><a name="p1229313484495"></a><a name="p1229313484495"></a><span>输</span>入工作负载所对应的服务名称，用于集群内工作负载间的互相访问。该服务主要用于实例的内部发现，不需要有单独的IP地址，也不需要做负载均衡。</p>
+    <td class="cellrowborder" valign="top" width="82%" headers="mcps1.2.3.1.2 "><p id="p1229313484495"><a name="p1229313484495"></a><a name="p1229313484495"></a>输入工作负载所对应的服务名称，用于集群内工作负载间的互相访问。该服务主要用于实例的内部发现，不需要有单独的IP地址，也不需要做负载均衡。</p>
     </td>
     </tr>
     <tr id="row15293748104915"><td class="cellrowborder" valign="top" width="18%" headers="mcps1.2.3.1.1 "><p id="p6293144814912"><a name="p6293144814912"></a><a name="p6293144814912"></a>端口名称</p>

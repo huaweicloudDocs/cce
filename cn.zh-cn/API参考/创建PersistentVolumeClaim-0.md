@@ -177,7 +177,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="19.191919191919194%" headers="mcps1.2.5.1.3 "><p id="adb5d08279e8c487d94b76c25dbc9f2e1"><a name="adb5d08279e8c487d94b76c25dbc9f2e1"></a><a name="adb5d08279e8c487d94b76c25dbc9f2e1"></a>Array of strings</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="a418458bd90ba478b8313723a7d57caf6"><a name="a418458bd90ba478b8313723a7d57caf6"></a><a name="a418458bd90ba478b8313723a7d57caf6"></a>AccessModes contains the desired access modes the volume should have.<span> A volume can only be mounted using one access mode at a time, even if it supports many.</span></p>
+<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="a418458bd90ba478b8313723a7d57caf6"><a name="a418458bd90ba478b8313723a7d57caf6"></a><a name="a418458bd90ba478b8313723a7d57caf6"></a>AccessModes contains the desired access modes the volume should have. A volume can only be mounted using one access mode at a time, even if it supports many.</p>
 </td>
 </tr>
 <tr id="r80c1d9db5bd34ec595e0346d0da690d3"><td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.1 "><p id="a0e84d842139c48fc980c25160c38e10a"><a name="a0e84d842139c48fc980c25160c38e10a"></a><a name="a0e84d842139c48fc980c25160c38e10a"></a>resources</p>

@@ -271,12 +271,12 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p7644218105810"><a name="p7644218105810"></a><a name="p7644218105810"></a>删除指定Namespace下的PersistentVolumeClaim对象，并可以选择保留后端的云存储。</p>
 </td>
 </tr>
-<tr id="row1464481875812"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1644171865810"><a name="p1644171865810"></a><a name="p1644171865810"></a><a href="创建PersistentVolume.md">创建PersistentVolume</a></p>
+<tr id="row1464481875812"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1644171865810"><a name="p1644171865810"></a><a name="p1644171865810"></a><a href="创建PersistentVolume（已废弃）.md">创建PersistentVolume</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13644218165816"><a name="p13644218165816"></a><a name="p13644218165816"></a>通过指定华为云存储服务中的云存储（如EVS、SFS、OBS）去创建PersistentVolume。</p>
 </td>
 </tr>
-<tr id="row46441018165812"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p36440184588"><a name="p36440184588"></a><a name="p36440184588"></a><a href="删除PersistentVolume.md">删除PersistentVolume</a></p>
+<tr id="row46441018165812"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p36440184588"><a name="p36440184588"></a><a name="p36440184588"></a><a href="删除PersistentVolume（已废弃）.md">删除PersistentVolume</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p864412185580"><a name="p864412185580"></a><a name="p864412185580"></a>删除指定Namespace下的PersistentVolume对象，并可以选择是否保留后端云存储。</p>
 </td>
@@ -1169,7 +1169,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row167701020205316"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p7770152095314"><a name="p7770152095314"></a><a name="p7770152095314"></a><a href="创建PersistentVolume-0.md">创建PersistentVolume</a></p>
+<tbody><tr id="row167701020205316"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p7770152095314"><a name="p7770152095314"></a><a name="p7770152095314"></a><a href="创建PersistentVolume.md">创建PersistentVolume</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1770320205319"><a name="p1770320205319"></a><a name="p1770320205319"></a>创建一个PersistentVolume。</p>
 </td>
@@ -1223,7 +1223,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row348010121475"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1948041216475"><a name="p1948041216475"></a><a name="p1948041216475"></a><a href="创建PersistentVolumeClaim-1.md">创建PersistentVolumeClaim</a></p>
+<tbody><tr id="row348010121475"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1948041216475"><a name="p1948041216475"></a><a name="p1948041216475"></a><a href="创建PersistentVolumeClaim-0.md">创建PersistentVolumeClaim</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="a863b97964c8f46c382c223f924027de7"><a name="a863b97964c8f46c382c223f924027de7"></a><a name="a863b97964c8f46c382c223f924027de7"></a>在指定的Namespace下创建PersistentVolumeClaim。</p>
 </td>

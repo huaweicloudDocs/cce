@@ -38,6 +38,7 @@
     <tbody><tr id="row18415163712618"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p32763416485"><a name="p32763416485"></a><a name="p32763416485"></a>* 工作负载名称</p>
     </td>
     <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p5276341485"><a name="p5276341485"></a><a name="p5276341485"></a>新建工作负载的名称，命名必须唯一。</p>
+    <p id="p99562111597"><a name="p99562111597"></a><a name="p99562111597"></a>请输入4到63个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。</p>
     </td>
     </tr>
     <tr id="row81437181202"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p514451811010"><a name="p514451811010"></a><a name="p514451811010"></a>* 集群名称</p>

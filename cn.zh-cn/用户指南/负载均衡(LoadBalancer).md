@@ -178,7 +178,8 @@
     </td>
     <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p19430103693512"><a name="p19430103693512"></a><a name="p19430103693512"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1380805311426"><a name="p1380805311426"></a><a name="p1380805311426"></a>对接增强型负载均衡时需要增加此参数，值为<span class="uicontrol" id="uicontrol349572644413"><a name="uicontrol349572644413"></a><a name="uicontrol349572644413"></a>“union”</span>。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1380805311426"><a name="p1380805311426"></a><a name="p1380805311426"></a>对接增强型负载均衡时需要增加此参数。</p>
+    <p id="p1951093520489"><a name="p1951093520489"></a><a name="p1951093520489"></a>取值为“elasticity”、“union”或者“performance”。</p>
     </td>
     </tr>
     <tr id="row15191171618357"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p204451615124716"><a name="p204451615124716"></a><a name="p204451615124716"></a>kubernetes.io/session-affinity-mode</p>
@@ -189,12 +190,20 @@
     <p id="p16904132104710"><a name="p16904132104710"></a><a name="p16904132104710"></a>取值“SOURCE_IP”表示基于源IP。</p>
     </td>
     </tr>
+    <tr id="row58484320498"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p15350191634913"><a name="p15350191634913"></a><a name="p15350191634913"></a>kubernetes.io/elb.session-affinity-option</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p1350111654920"><a name="p1350111654920"></a><a name="p1350111654920"></a><a href="#table168901496118">表3</a> Object</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p5350141654911"><a name="p5350141654911"></a><a name="p5350141654911"></a>可选，ELB会话保持配置选项</p>
+    </td>
+    </tr>
     <tr id="row81941516153513"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p4764162894719"><a name="p4764162894719"></a><a name="p4764162894719"></a>kubernetes.io/elb.id</p>
     </td>
     <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p77621528184710"><a name="p77621528184710"></a><a name="p77621528184710"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p59344376579"><a name="p59344376579"></a><a name="p59344376579"></a>可选，但使用已有ELB时必填。</p>
     <p id="p416573016509"><a name="p416573016509"></a><a name="p416573016509"></a>为增强型负载均衡实例的ID。</p>
+    <p id="p0972111919506"><a name="p0972111919506"></a><a name="p0972111919506"></a>取值范围：1-100字符。</p>
     </td>
     </tr>
     <tr id="row201957167350"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p18758202864719"><a name="p18758202864719"></a><a name="p18758202864719"></a>kubernetes.io/elb.subnet-id</p>
@@ -202,6 +211,7 @@
     <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p336744055219"><a name="p336744055219"></a><a name="p336744055219"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p2075662814474"><a name="p2075662814474"></a><a name="p2075662814474"></a>可选，但自动创建时必填，Kubernetes v1.11.7-r0以上版本的集群可不填。</p>
+    <p id="p1472174965011"><a name="p1472174965011"></a><a name="p1472174965011"></a>取值范围：1-100字符。</p>
     </td>
     </tr>
     <tr id="row1543834613532"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p443916465535"><a name="p443916465535"></a><a name="p443916465535"></a>kubernetes.io/elb.enterpriseID</p>
@@ -210,6 +220,38 @@
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1843954617535"><a name="p1843954617535"></a><a name="p1843954617535"></a>可选，但公网或私网自动创建时必填。</p>
     <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>为ELB企业项目名称，选择后可以直接创建在具体的ELB企业项目下。</p>
+    <p id="p86261431205112"><a name="p86261431205112"></a><a name="p86261431205112"></a>取值范围：1-100字符。</p>
+    </td>
+    </tr>
+    <tr id="row74391814155219"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p18720112215522"><a name="p18720112215522"></a><a name="p18720112215522"></a>kubernetes.io/elb.lb-algorithm</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p1720172255219"><a name="p1720172255219"></a><a name="p1720172255219"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p117201822185217"><a name="p117201822185217"></a><a name="p117201822185217"></a>ELB的负载均衡算法，可选</p>
+    <p id="p6720122275219"><a name="p6720122275219"></a><a name="p6720122275219"></a>默认值：“ROUND_ROBIN”，取值范围：“”空值、“ROUND_ROBIN”、“LEAST_CONNECTIONS”或者“SOURCE_IP”</p>
+    </td>
+    </tr>
+    <tr id="row12891652529"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p17720112205215"><a name="p17720112205215"></a><a name="p17720112205215"></a>kubernetes.io/elb.health-check-flag</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p672010221528"><a name="p672010221528"></a><a name="p672010221528"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p177202225524"><a name="p177202225524"></a><a name="p177202225524"></a>是否开启ELB健康检查功能，可选</p>
+    <p id="p27209225521"><a name="p27209225521"></a><a name="p27209225521"></a>默认开启，取值范围：“”（空值）、“on”或者“off”</p>
+    </td>
+    </tr>
+    <tr id="row158071523526"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p107206227525"><a name="p107206227525"></a><a name="p107206227525"></a>kubernetes.io/elb.health-check-option</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p11720152295219"><a name="p11720152295219"></a><a name="p11720152295219"></a><a href="#table153791748021">表4</a> Object</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p372017227523"><a name="p372017227523"></a><a name="p372017227523"></a>可选，ELB健康检查配置选项</p>
+    </td>
+    </tr>
+    <tr id="row592995917512"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p8720192275219"><a name="p8720192275219"></a><a name="p8720192275219"></a>kubernetes.io/hws-hostNetwork</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p872012265215"><a name="p872012265215"></a><a name="p872012265215"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p3721142215211"><a name="p3721142215211"></a><a name="p3721142215211"></a>标记工作负载服务是否使用主机网络模式，可选</p>
+    <p id="p1572132225218"><a name="p1572132225218"></a><a name="p1572132225218"></a>默认是未使用主机网络，取值范围：“true”或者“false”</p>
     </td>
     </tr>
     <tr id="row1719518169356"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p9754162844712"><a name="p9754162844712"></a><a name="p9754162844712"></a>kubernetes.io/elb.autocreate</p>
@@ -248,7 +290,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p19272143531318"><a name="p19272143531318"></a><a name="p19272143531318"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p8272035161316"><a name="p8272035161316"></a><a name="p8272035161316"></a>对应界面上的容器端口</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p8272035161316"><a name="p8272035161316"></a><a name="p8272035161316"></a>对应界面上的容器端口<span id="ph2339938205312"><a name="ph2339938205312"></a><a name="ph2339938205312"></a>。</span></p>
     </td>
     </tr>
     </tbody>
@@ -270,7 +312,7 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p7419646171920"><a name="p7419646171920"></a><a name="p7419646171920"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p87791494919"><a name="p87791494919"></a><a name="p87791494919"></a>自动创建的负载均衡的名称。</p>
-    <p id="p9912132016296"><a name="p9912132016296"></a><a name="p9912132016296"></a>取值范围：1-64个字符，中英文，数字，下划线，中划线。</p>
+    <p id="p9912132016296"><a name="p9912132016296"></a><a name="p9912132016296"></a><span id="ph116020516015"><a name="ph116020516015"></a><a name="ph116020516015"></a>取值范围：1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</span></p>
     </td>
     </tr>
     <tr id="row142064681919"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p20862285225"><a name="p20862285225"></a><a name="p20862285225"></a>type</p>
@@ -286,7 +328,7 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1142084619195"><a name="p1142084619195"></a><a name="p1142084619195"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6964103318220"><a name="p6964103318220"></a><a name="p6964103318220"></a>带宽的名称，默认值为：cce-bandwidth-******。</p>
-    <p id="p1236952875020"><a name="p1236952875020"></a><a name="p1236952875020"></a>1-64 字符，中文、英文字符、数字、下划线、中划线或点组成。</p>
+    <p id="p1236952875020"><a name="p1236952875020"></a><a name="p1236952875020"></a><span id="ph127758155113"><a name="ph127758155113"></a><a name="ph127758155113"></a>取值范围：1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</span></p>
     </td>
     </tr>
     <tr id="row942194619199"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p77502811221"><a name="p77502811221"></a><a name="p77502811221"></a>bandwidth_chargemode</p>
@@ -317,6 +359,84 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p132201811174611"><a name="p132201811174611"></a><a name="p132201811174611"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p11956103372218"><a name="p11956103372218"></a><a name="p11956103372218"></a>弹性公网IP类型，请参考ELB支持的弹性公网IP类型，具体请参见<a href="https://support.huaweicloud.com/api-eip/eip_api_0001.html" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b11814520410"><a name="b11814520410"></a><a name="b11814520410"></a>表3 publicip字段说明type字段</strong>。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    **表 3**  elb.session-affinity-option字段数据结构说明
+
+    <a name="table168901496118"></a>
+    <table><thead align="left"><tr id="row17910164917110"><th class="cellrowborder" valign="top" width="29.59%" id="mcps1.2.4.1.1"><p id="p391011490118"><a name="p391011490118"></a><a name="p391011490118"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="18.37%" id="mcps1.2.4.1.2"><p id="p391012495110"><a name="p391012495110"></a><a name="p391012495110"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="52.04%" id="mcps1.2.4.1.3"><p id="p1891017492116"><a name="p1891017492116"></a><a name="p1891017492116"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row19108491217"><td class="cellrowborder" valign="top" width="29.59%" headers="mcps1.2.4.1.1 "><p id="p591016495112"><a name="p591016495112"></a><a name="p591016495112"></a>persistence_timeout</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.37%" headers="mcps1.2.4.1.2 "><p id="p199103495116"><a name="p199103495116"></a><a name="p199103495116"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="52.04%" headers="mcps1.2.4.1.3 "><p id="p3910194918115"><a name="p3910194918115"></a><a name="p3910194918115"></a>当elb.session-affinity-mode是“SOURCE_IP”时生效，设置会话保持的超时时间。</p>
+    <p id="p99101649515"><a name="p99101649515"></a><a name="p99101649515"></a>默认值为：60，取值范围：1-60。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    **表 4**  elb.health-check-option字段数据结构说明
+
+    <a name="table153791748021"></a>
+    <table><thead align="left"><tr id="row184170481827"><th class="cellrowborder" valign="top" width="29.59%" id="mcps1.2.4.1.1"><p id="p641714481220"><a name="p641714481220"></a><a name="p641714481220"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="18.37%" id="mcps1.2.4.1.2"><p id="p541764810218"><a name="p541764810218"></a><a name="p541764810218"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="52.04%" id="mcps1.2.4.1.3"><p id="p1241794819210"><a name="p1241794819210"></a><a name="p1241794819210"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row1941714812217"><td class="cellrowborder" valign="top" width="29.59%" headers="mcps1.2.4.1.1 "><p id="p241719481124"><a name="p241719481124"></a><a name="p241719481124"></a>delay</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.37%" headers="mcps1.2.4.1.2 "><p id="p641715482215"><a name="p641715482215"></a><a name="p641715482215"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="52.04%" headers="mcps1.2.4.1.3 "><p id="p144176485211"><a name="p144176485211"></a><a name="p144176485211"></a>开始健康检查的初始等待时间（秒），可选</p>
+    <p id="p34179487213"><a name="p34179487213"></a><a name="p34179487213"></a>默认值：5，取值范围：1-50</p>
+    </td>
+    </tr>
+    <tr id="row164171348426"><td class="cellrowborder" valign="top" width="29.59%" headers="mcps1.2.4.1.1 "><p id="p741710487212"><a name="p741710487212"></a><a name="p741710487212"></a>timeout</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.37%" headers="mcps1.2.4.1.2 "><p id="p541717487210"><a name="p541717487210"></a><a name="p541717487210"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="52.04%" headers="mcps1.2.4.1.3 "><p id="p1941720482025"><a name="p1941720482025"></a><a name="p1941720482025"></a>健康检查的超时时间（秒），可选</p>
+    <p id="p84174481027"><a name="p84174481027"></a><a name="p84174481027"></a>默认值：10，取值范围1-50</p>
+    </td>
+    </tr>
+    <tr id="row94171248422"><td class="cellrowborder" valign="top" width="29.59%" headers="mcps1.2.4.1.1 "><p id="p194179486217"><a name="p194179486217"></a><a name="p194179486217"></a>max_retries</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.37%" headers="mcps1.2.4.1.2 "><p id="p6417248721"><a name="p6417248721"></a><a name="p6417248721"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="52.04%" headers="mcps1.2.4.1.3 "><p id="p0417204812218"><a name="p0417204812218"></a><a name="p0417204812218"></a>健康检查的最大重试次数，可选</p>
+    <p id="p174171748526"><a name="p174171748526"></a><a name="p174171748526"></a>默认值：3，取值范围1-10</p>
+    </td>
+    </tr>
+    <tr id="row134173484219"><td class="cellrowborder" valign="top" width="29.59%" headers="mcps1.2.4.1.1 "><p id="p64171448626"><a name="p64171448626"></a><a name="p64171448626"></a>protocol</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.37%" headers="mcps1.2.4.1.2 "><p id="p141713483219"><a name="p141713483219"></a><a name="p141713483219"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="52.04%" headers="mcps1.2.4.1.3 "><p id="p141710481826"><a name="p141710481826"></a><a name="p141710481826"></a>健康检查的协议，可选</p>
+    <p id="p84170481022"><a name="p84170481022"></a><a name="p84170481022"></a>默认值：取关联服务的协议</p>
+    <p id="p541724810212"><a name="p541724810212"></a><a name="p541724810212"></a>取值范围：“TCP”、“UDP_CONNECT”或者“HTTP”</p>
+    </td>
+    </tr>
+    <tr id="row14417048926"><td class="cellrowborder" valign="top" width="29.59%" headers="mcps1.2.4.1.1 "><p id="p141717488210"><a name="p141717488210"></a><a name="p141717488210"></a>path</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.37%" headers="mcps1.2.4.1.2 "><p id="p64173481422"><a name="p64173481422"></a><a name="p64173481422"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="52.04%" headers="mcps1.2.4.1.3 "><p id="p15417154812215"><a name="p15417154812215"></a><a name="p15417154812215"></a>健康检查的URL，协议是“HTTP”时配置，可选</p>
+    <p id="p9418104818210"><a name="p9418104818210"></a><a name="p9418104818210"></a>默认值：“/”</p>
+    <p id="p194181548321"><a name="p194181548321"></a><a name="p194181548321"></a>取值范围：1-10000字符</p>
     </td>
     </tr>
     </tbody>

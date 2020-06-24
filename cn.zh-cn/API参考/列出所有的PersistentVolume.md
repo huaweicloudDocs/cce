@@ -104,7 +104,7 @@ N/A
 <td class="cellrowborder" valign="top" width="30.130000000000003%" headers="mcps1.2.4.1.2 "><p id="aeed7e4fc9cb046bb8a31f51a08a01ba3"><a name="aeed7e4fc9cb046bb8a31f51a08a01ba3"></a><a name="aeed7e4fc9cb046bb8a31f51a08a01ba3"></a>Object</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.800000000000004%" headers="mcps1.2.4.1.3 "><p id="a6f1336d639b14f52aefdbed32248f795"><a name="a6f1336d639b14f52aefdbed32248f795"></a><a name="a6f1336d639b14f52aefdbed32248f795"></a>List of persistent volumes.</p>
-<p id="p43239512330"><a name="p43239512330"></a><a name="p43239512330"></a>具体请参见<a href="创建PersistentVolume-0.md#tfdb73431f39846d4a56ec4eb558e1617">表2</a>。</p>
+<p id="p43239512330"><a name="p43239512330"></a><a name="p43239512330"></a>具体请参见<a href="创建PersistentVolume.md#tfdb73431f39846d4a56ec4eb558e1617">表2</a>。</p>
 </td>
 </tr>
 <tr id="r1eae1b232e4a40a282f48a6c5dcfd2de"><td class="cellrowborder" valign="top" width="25.069999999999997%" headers="mcps1.2.4.1.1 "><p id="a7a01181f00f44f6ab8f5a7308e2962bf"><a name="a7a01181f00f44f6ab8f5a7308e2962bf"></a><a name="a7a01181f00f44f6ab8f5a7308e2962bf"></a>kind</p>

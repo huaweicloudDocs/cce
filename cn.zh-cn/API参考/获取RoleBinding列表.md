@@ -39,7 +39,7 @@ GET /apis/rbac.authorization.k8s.io/v1/rolebindings
 </td>
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.4.1.2 "><p id="p10523163603012"><a name="p10523163603012"></a><a name="p10523163603012"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p281014399014"><a name="p281014399014"></a><a name="p281014399014"></a><span>If true, partially initialized resources are included in the response.</span></p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p281014399014"><a name="p281014399014"></a><a name="p281014399014"></a>If true, partially initialized resources are included in the response.</p>
 </td>
 </tr>
 <tr id="row624413343302"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p13244133414304"><a name="p13244133414304"></a><a name="p13244133414304"></a>labelSelector</p>
@@ -67,7 +67,7 @@ GET /apis/rbac.authorization.k8s.io/v1/rolebindings
 </td>
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.4.1.2 "><p id="p1280215381514"><a name="p1280215381514"></a><a name="p1280215381514"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1580220385118"><a name="p1580220385118"></a><a name="p1580220385118"></a><span>When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.</span></p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1580220385118"><a name="p1580220385118"></a><a name="p1580220385118"></a>When specified with a watch call, shows changes that occur after that particular version of a resource. Defaults to changes from the beginning of history. When specified for list: - if unset, then the result is returned from remote storage based on quorum-read flag; - if it's 0, then we simply return what we currently have in cache, no guarantee; - if set to non zero, then the result is at least as fresh as given rv.</p>
 </td>
 </tr>
 <tr id="row693613351015"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p89361435115"><a name="p89361435115"></a><a name="p89361435115"></a>timeoutSeconds</p>

@@ -142,7 +142,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 </td>
 <td class="cellrowborder" valign="top" width="16.49%" headers="mcps1.2.5.1.2 "><p id="p20466776"><a name="p20466776"></a><a name="p20466776"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p47196154"><a name="p47196154"></a><a name="p47196154"></a><a href="创建PersistentVolumeClaim-1.md#t87a0b25af7d2428182ec8bb2b4416a12">selector</a> object</p>
+<td class="cellrowborder" valign="top" width="18.56%" headers="mcps1.2.5.1.3 "><p id="p47196154"><a name="p47196154"></a><a name="p47196154"></a><a href="创建PersistentVolumeClaim-0.md#t87a0b25af7d2428182ec8bb2b4416a12">selector</a> object</p>
 </td>
 <td class="cellrowborder" valign="top" width="42.27%" headers="mcps1.2.5.1.4 "><p id="p46258138"><a name="p46258138"></a><a name="p46258138"></a>A label query over pods that are managed by the daemon set. Must match in order to be controlled. If empty, defaulted to labels on Pod template.</p>
 </td>

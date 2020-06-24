@@ -127,13 +127,13 @@ N/A
             },
             "status": {
                 "capacity": {
-                    "alpha.kubernetes.io/nvidia-gpu": "0",
+                    "nvidia.com/gpu": "4",
                     "cpu": "2",
                     "memory": "3744164Ki",
                     "pods": "110"
                 },
                 "allocatable": {
-                    "alpha.kubernetes.io/nvidia-gpu": "0",
+                    "nvidia.com/gpu": "4",
                     "cpu": "1930m",
                     "memory": "2705828Ki",
                     "pods": "110"

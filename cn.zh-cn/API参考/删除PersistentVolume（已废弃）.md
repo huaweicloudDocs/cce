@@ -1,4 +1,4 @@
-# 删除PersistentVolume<a name="cce_02_0255"></a>
+# 删除PersistentVolume（已废弃）<a name="cce_02_0255"></a>
 
 ## 功能描述<a name="section155195145312"></a>
 

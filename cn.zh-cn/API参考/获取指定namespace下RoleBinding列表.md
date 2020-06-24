@@ -32,7 +32,7 @@ GET /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/rolebindings
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p8277205448"><a name="p8277205448"></a><a name="p8277205448"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p72781353412"><a name="p72781353412"></a><a name="p72781353412"></a><span>If </span><em id="i202791455417"><a name="i202791455417"></a><a name="i202791455417"></a>true</em><span>, then the output is pretty printed.</span></p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p72781353412"><a name="p72781353412"></a><a name="p72781353412"></a>If <em id="i202791455417"><a name="i202791455417"></a><a name="i202791455417"></a>true</em>, then the output is pretty printed.</p>
 </td>
 </tr>
 <tr id="row20522133618302"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p1522836153011"><a name="p1522836153011"></a><a name="p1522836153011"></a>continue</p>
@@ -60,7 +60,7 @@ GET /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/rolebindings
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p42651667523"><a name="p42651667523"></a><a name="p42651667523"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p026514655219"><a name="p026514655219"></a><a name="p026514655219"></a><span>A selector to restrict the list of returned objects by their labels. Defaults to everything.</span></p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p026514655219"><a name="p026514655219"></a><a name="p026514655219"></a>A selector to restrict the list of returned objects by their labels. Defaults to everything.</p>
 </td>
 </tr>
 <tr id="row12294495524"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p8294159145215"><a name="p8294159145215"></a><a name="p8294159145215"></a>limit</p>
@@ -81,7 +81,7 @@ GET /apis/rbac.authorization.k8s.io/v1/namespaces/\{namespace\}/rolebindings
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p10624172015313"><a name="p10624172015313"></a><a name="p10624172015313"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p106249202539"><a name="p106249202539"></a><a name="p106249202539"></a><span>Timeout for the list/watch call.</span></p>
+<td class="cellrowborder" valign="top" width="60.61%" headers="mcps1.2.4.1.3 "><p id="p106249202539"><a name="p106249202539"></a><a name="p106249202539"></a>Timeout for the list/watch call.</p>
 </td>
 </tr>
 <tr id="row15910162255313"><td class="cellrowborder" valign="top" width="22.220000000000002%" headers="mcps1.2.4.1.1 "><p id="p18910822105320"><a name="p18910822105320"></a><a name="p18910822105320"></a>watch</p>

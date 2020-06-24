@@ -37,6 +37,7 @@ CronJob的典型用法如下所示：
     <tbody><tr id="r56788b8cc82f49d290f64df3cc1dc0f3"><td class="cellrowborder" valign="top" width="19.77%" headers="mcps1.2.3.1.1 "><p id="a7ce6034eee6a45c4a2025b16a465af01"><a name="a7ce6034eee6a45c4a2025b16a465af01"></a><a name="a7ce6034eee6a45c4a2025b16a465af01"></a>* 任务名称</p>
     </td>
     <td class="cellrowborder" valign="top" width="80.23%" headers="mcps1.2.3.1.2 "><p id="a0c8ce3cf0d1348f9a9671b5175534afd"><a name="a0c8ce3cf0d1348f9a9671b5175534afd"></a><a name="a0c8ce3cf0d1348f9a9671b5175534afd"></a>新建任务的名称，命名必须唯一。</p>
+    <p id="p14468184014213"><a name="p14468184014213"></a><a name="p14468184014213"></a>请输入4到52个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。</p>
     </td>
     </tr>
     <tr id="row15341125115344"><td class="cellrowborder" valign="top" width="19.77%" headers="mcps1.2.3.1.1 "><p id="a75643f9a614b4180b6b9404f503c5dfd"><a name="a75643f9a614b4180b6b9404f503c5dfd"></a><a name="a75643f9a614b4180b6b9404f503c5dfd"></a>* 容器集群</p>
@@ -147,13 +148,13 @@ CronJob的典型用法如下所示：
         </th>
         </tr>
         </thead>
-        <tbody><tr id="r616e69d5a2004b079888d8a4a2a83762"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="ae1906e2a0f4e48c8a290d2ffdc9e83bf"><a name="ae1906e2a0f4e48c8a290d2ffdc9e83bf"></a><a name="ae1906e2a0f4e48c8a290d2ffdc9e83bf"></a>生命周<span>期</span></p>
+        <tbody><tr id="r616e69d5a2004b079888d8a4a2a83762"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="ae1906e2a0f4e48c8a290d2ffdc9e83bf"><a name="ae1906e2a0f4e48c8a290d2ffdc9e83bf"></a><a name="ae1906e2a0f4e48c8a290d2ffdc9e83bf"></a>生命周期</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="p35489275239"><a name="p35489275239"></a><a name="p35489275239"></a><span>生命周期脚本定义，主要针对容器类任务的生命周期事件工作负载采取的动作。</span><a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><ul id="u86a34d59537a4e5ebbcd8d62f0fb6fc7"><li>启动：输入容器启动命令，容器启动后会立即执行。详细步骤请参见<a href="容器设置.md">容器设置</a>。</li><li>启动后处<span>理：任务启动后触发。</span>详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li><li>停止前处理：任务停止前触发。详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li></ul>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="p35489275239"><a name="p35489275239"></a><a name="p35489275239"></a>生命周期脚本定义，主要针对容器类任务的生命周期事件工作负载采取的动作。<a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><ul id="u86a34d59537a4e5ebbcd8d62f0fb6fc7"><li>启动：输入容器启动命令，容器启动后会立即执行。详细步骤请参见<a href="容器设置.md">容器设置</a>。</li><li>启动后处理：任务启动后触发。详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li><li>停止前处理：任务停止前触发。详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li></ul>
         </div>
         </td>
         </tr>
-        <tr id="r159688429d2c4ad5b55d2b63b5bc6a46"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="acab0841bbf1548e08722d5ec9fb378e9"><a name="acab0841bbf1548e08722d5ec9fb378e9"></a><a name="acab0841bbf1548e08722d5ec9fb378e9"></a>环境变<span>量</span></p>
+        <tr id="r159688429d2c4ad5b55d2b63b5bc6a46"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="acab0841bbf1548e08722d5ec9fb378e9"><a name="acab0841bbf1548e08722d5ec9fb378e9"></a><a name="acab0841bbf1548e08722d5ec9fb378e9"></a>环境变量</p>
         </td>
         <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="p19408181613184"><a name="p19408181613184"></a><a name="p19408181613184"></a>在容器中添加环境变量，一般用于通过环境变量设置参数。在<span class="uicontrol" id="uicontrol148428462214"><a name="uicontrol148428462214"></a><a name="uicontrol148428462214"></a>“环境变量”</span>页签，单击<span class="uicontrol" id="uicontrol9842146626"><a name="uicontrol9842146626"></a><a name="uicontrol9842146626"></a>“添加环境变量”</span>。当前支持三种类型。<a name="ul145379401817"></a><a name="ul145379401817"></a><ul id="ul145379401817"><li>手动添加：输入变量名称、变量/变量引用。</li><li>密钥导入：输入变量名称，选择导入的密钥名称和数据。您需要提前创建密钥，具体请参见<a href="创建密钥.md">创建密钥</a>。</li><li>配置项导入：输入变量名称，选择导入的配置项名称和数据。您需要提前创建配置项，具体请参见<a href="创建配置项.md">创建配置项</a>。</li></ul>
         </div>

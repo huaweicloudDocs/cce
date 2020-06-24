@@ -1,595 +1,569 @@
-# 创建PersistentVolume<a name="cce_02_0256"></a>
+# 创建PersistentVolume<a name="cce_02_0076"></a>
 
-## 功能描述<a name="section155195145312"></a>
+## 功能介绍<a name="sa31140c4c2504d038441a395ac747acc"></a>
 
-该API用于通过指定云存储服务中的云存储（如EVS、SFS、OBS）去创建PersistentVolume。
+该API用于创建一个PersistentVolume。
 
-## URI<a name="section1975393831219"></a>
+## URI<a name="sdd6f9681b1594dd49f729d50c2e79843"></a>
 
-POST /api/v1/cloudpersistentvolumes
+POST /api/v1/persistentvolumes
 
-## 请求消息<a name="section1142842461418"></a>
+[表1](#tafb73a7dfdee477eb22297a81c5a0323)  描述该API的参数。
+
+**表 1**  参数描述
+
+<a name="tafb73a7dfdee477eb22297a81c5a0323"></a>
+<table><thead align="left"><tr id="r4aa74a4e7fdb4e46a05d374c08fe62cb"><th class="cellrowborder" valign="top" width="22.06%" id="mcps1.2.4.1.1"><p id="a740253478e13420dad9c719bf6439fac"><a name="a740253478e13420dad9c719bf6439fac"></a><a name="a740253478e13420dad9c719bf6439fac"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="20.74%" id="mcps1.2.4.1.2"><p id="p618415392612"><a name="p618415392612"></a><a name="p618415392612"></a>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="57.199999999999996%" id="mcps1.2.4.1.3"><p id="a5c2a9a92c6ea4375bf71cf4eb93f44d6"><a name="a5c2a9a92c6ea4375bf71cf4eb93f44d6"></a><a name="a5c2a9a92c6ea4375bf71cf4eb93f44d6"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="rc26b35eafb66455ca9adff25affaa95d"><td class="cellrowborder" valign="top" width="22.06%" headers="mcps1.2.4.1.1 "><p id="aa20582cb4b5e4f98a0ef0d4afff49073"><a name="aa20582cb4b5e4f98a0ef0d4afff49073"></a><a name="aa20582cb4b5e4f98a0ef0d4afff49073"></a>pretty</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.74%" headers="mcps1.2.4.1.2 "><p id="aa98923902bf34595890a2bbcda8c94af"><a name="aa98923902bf34595890a2bbcda8c94af"></a><a name="aa98923902bf34595890a2bbcda8c94af"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="57.199999999999996%" headers="mcps1.2.4.1.3 "><p id="a0b4e13224daf4066be13ce826ed3994d"><a name="a0b4e13224daf4066be13ce826ed3994d"></a><a name="a0b4e13224daf4066be13ce826ed3994d"></a>If 'true', then the output is pretty printed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+## 请求消息<a name="sa0f3d331d3db4ecfb93a5e6ac6ba8614"></a>
 
 **请求参数：**
 
-请求参数如[表1](#table31885335210)、[表2](#table26761425181512)所示。
+请求参数如[表2](#tfdb73431f39846d4a56ec4eb558e1617)所示。
 
-**表 1**  请求Header参数说明
+**表 2**  请求参数
 
-<a name="table31885335210"></a>
-<table><thead align="left"><tr id="cce_02_0252_row55001954122614"><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p id="cce_02_0252_p115009545264"><a name="cce_02_0252_p115009545264"></a><a name="cce_02_0252_p115009545264"></a>参数</p>
+<a name="tfdb73431f39846d4a56ec4eb558e1617"></a>
+<table><thead align="left"><tr id="r83d91421306342cb9c99219a8513588f"><th class="cellrowborder" valign="top" width="21.48%" id="mcps1.2.5.1.1"><p id="ae656fc68d4c647108a0d683bf8d51906"><a name="ae656fc68d4c647108a0d683bf8d51906"></a><a name="ae656fc68d4c647108a0d683bf8d51906"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="19%" id="mcps1.2.4.1.2"><p id="cce_02_0252_p175001547265"><a name="cce_02_0252_p175001547265"></a><a name="cce_02_0252_p175001547265"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="16.73%" id="mcps1.2.5.1.2"><p id="p1320117312263"><a name="p1320117312263"></a><a name="p1320117312263"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="61%" id="mcps1.2.4.1.3"><p id="cce_02_0252_p16500154162611"><a name="cce_02_0252_p16500154162611"></a><a name="cce_02_0252_p16500154162611"></a>描述</p>
+<th class="cellrowborder" valign="top" width="20.05%" id="mcps1.2.5.1.3"><p id="p3202133202614"><a name="p3202133202614"></a><a name="p3202133202614"></a>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="41.74%" id="mcps1.2.5.1.4"><p id="a02ec96a8fd6a472b99e398797499857f"><a name="a02ec96a8fd6a472b99e398797499857f"></a><a name="a02ec96a8fd6a472b99e398797499857f"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="cce_02_0252_row199801811203412"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="cce_02_0252_p69808112344"><a name="cce_02_0252_p69808112344"></a><a name="cce_02_0252_p69808112344"></a>Content-Type</p>
+<tbody><tr id="r08200704774e4d05aae8c69fe6cc2fef"><td class="cellrowborder" valign="top" width="21.48%" headers="mcps1.2.5.1.1 "><p id="aea1fe20af0a94c248d3916831bd0c939"><a name="aea1fe20af0a94c248d3916831bd0c939"></a><a name="aea1fe20af0a94c248d3916831bd0c939"></a>apiVersion</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="cce_02_0252_p3980111103414"><a name="cce_02_0252_p3980111103414"></a><a name="cce_02_0252_p3980111103414"></a>是</p>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.5.1.2 "><p id="aca44d0fb51e94e56abf09387405aae93"><a name="aca44d0fb51e94e56abf09387405aae93"></a><a name="aca44d0fb51e94e56abf09387405aae93"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0252_p2032514065313"><a name="cce_02_0252_p2032514065313"></a><a name="cce_02_0252_p2032514065313"></a>消息体的类型（格式），可任选其一使用。</p>
-<a name="cce_02_0252_ul7385444163617"></a><a name="cce_02_0252_ul7385444163617"></a><ul id="cce_02_0252_ul7385444163617"><li>application/json;charset=utf-8</li><li>application/json</li></ul>
+<td class="cellrowborder" valign="top" width="20.05%" headers="mcps1.2.5.1.3 "><p id="a4faa33955bdf4ded893bf57f3c82881e"><a name="a4faa33955bdf4ded893bf57f3c82881e"></a><a name="a4faa33955bdf4ded893bf57f3c82881e"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.74%" headers="mcps1.2.5.1.4 "><p id="a918b94b3be71446ca1bbed64af2ba21a"><a name="a918b94b3be71446ca1bbed64af2ba21a"></a><a name="a918b94b3be71446ca1bbed64af2ba21a"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</p>
 </td>
 </tr>
-<tr id="cce_02_0252_row3500125412260"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="cce_02_0252_p105001654202618"><a name="cce_02_0252_p105001654202618"></a><a name="cce_02_0252_p105001654202618"></a>X-Auth-Token</p>
+<tr id="r2be9fda9ffe04ac19b9473b274e73a0d"><td class="cellrowborder" valign="top" width="21.48%" headers="mcps1.2.5.1.1 "><p id="a706e6ecbdf7a4148b8fd39e99c292591"><a name="a706e6ecbdf7a4148b8fd39e99c292591"></a><a name="a706e6ecbdf7a4148b8fd39e99c292591"></a>kind</p>
 </td>
-<td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.4.1.2 "><p id="cce_02_0252_p20500954182618"><a name="cce_02_0252_p20500954182618"></a><a name="cce_02_0252_p20500954182618"></a>使用token认证时必选</p>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.5.1.2 "><p id="a63bcd371c09448d18a3bfe048242c22d"><a name="a63bcd371c09448d18a3bfe048242c22d"></a><a name="a63bcd371c09448d18a3bfe048242c22d"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="cce_02_0252_p1148116013545"><a name="cce_02_0252_p1148116013545"></a><a name="cce_02_0252_p1148116013545"></a>调用接口的一种认证方式，使用时需要<a href="认证鉴权.md#section2417768214391">获取token</a>.</p>
+<td class="cellrowborder" valign="top" width="20.05%" headers="mcps1.2.5.1.3 "><p id="aa18e5fd8437142e7955bce09f17a08df"><a name="aa18e5fd8437142e7955bce09f17a08df"></a><a name="aa18e5fd8437142e7955bce09f17a08df"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.74%" headers="mcps1.2.5.1.4 "><p id="a2b86022472c64cf3b5acb323bb61787b"><a name="a2b86022472c64cf3b5acb323bb61787b"></a><a name="a2b86022472c64cf3b5acb323bb61787b"></a>Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase.</p>
+</td>
+</tr>
+<tr id="rba776786c8054205b8da77ecc281abaa"><td class="cellrowborder" valign="top" width="21.48%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079614924_p620733172933"><a name="zh-cn_topic_0079614924_p620733172933"></a><a name="zh-cn_topic_0079614924_p620733172933"></a>metadata</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.5.1.2 "><p id="a0faf74610c8440369b4e2414556be495"><a name="a0faf74610c8440369b4e2414556be495"></a><a name="a0faf74610c8440369b4e2414556be495"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.05%" headers="mcps1.2.5.1.3 "><p id="a5a8fe745525644258b1955e09e7fc12a"><a name="a5a8fe745525644258b1955e09e7fc12a"></a><a name="a5a8fe745525644258b1955e09e7fc12a"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.74%" headers="mcps1.2.5.1.4 "><p id="a9aabf1a007b9447bb565ff542c2095e1"><a name="a9aabf1a007b9447bb565ff542c2095e1"></a><a name="a9aabf1a007b9447bb565ff542c2095e1"></a>Standard object's metadata.</p>
+</td>
+</tr>
+<tr id="r7e8105e003cb4deebacdc67b0f381d06"><td class="cellrowborder" valign="top" width="21.48%" headers="mcps1.2.5.1.1 "><p id="af1001bb599cf40378901fd25e121ea8c"><a name="af1001bb599cf40378901fd25e121ea8c"></a><a name="af1001bb599cf40378901fd25e121ea8c"></a>spec</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.5.1.2 "><p id="ad56870e48d7d4489b2917707026dacb6"><a name="ad56870e48d7d4489b2917707026dacb6"></a><a name="ad56870e48d7d4489b2917707026dacb6"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.05%" headers="mcps1.2.5.1.3 "><p id="aaefeac87a2464d9497236b34fef04084"><a name="aaefeac87a2464d9497236b34fef04084"></a><a name="aaefeac87a2464d9497236b34fef04084"></a><a href="#tb127086a0961458f95fba61c3071d468">spec</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.74%" headers="mcps1.2.5.1.4 "><p id="af33fa6c32187429fadb522ef6094a708"><a name="af33fa6c32187429fadb522ef6094a708"></a><a name="af33fa6c32187429fadb522ef6094a708"></a>Spec defines a specification of a persistent volume owned by the cluster. Provisioned by an administrator.</p>
+</td>
+</tr>
+<tr id="r993bc8fb952c4b098507659526be1710"><td class="cellrowborder" valign="top" width="21.48%" headers="mcps1.2.5.1.1 "><p id="a74ee763a532d45c4a717af166c55bb01"><a name="a74ee763a532d45c4a717af166c55bb01"></a><a name="a74ee763a532d45c4a717af166c55bb01"></a>status</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.5.1.2 "><p id="afad06b19b664499d9ec7c50945f395b3"><a name="afad06b19b664499d9ec7c50945f395b3"></a><a name="afad06b19b664499d9ec7c50945f395b3"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="20.05%" headers="mcps1.2.5.1.3 "><p id="ad81dfe97250c4ab28225761260d5b695"><a name="ad81dfe97250c4ab28225761260d5b695"></a><a name="ad81dfe97250c4ab28225761260d5b695"></a><a href="#tab4eab31a17149b4b5cd8d26c93b5a7e">status</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.74%" headers="mcps1.2.5.1.4 "><p id="ac0936b4e1e3847f790c3d03aaf1a7b6c"><a name="ac0936b4e1e3847f790c3d03aaf1a7b6c"></a><a name="ac0936b4e1e3847f790c3d03aaf1a7b6c"></a>Status represents the current information/status for the persistent volume. Populated by the system. Read-only.</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-**表 2**  请求body参数说明
+**表 3**  spec字段数据结构说明
 
-<a name="table26761425181512"></a>
-<table><thead align="left"><tr id="row107441225201515"><th class="cellrowborder" valign="top" width="19.801980198019802%" id="mcps1.2.5.1.1"><p id="p57445253154"><a name="p57445253154"></a><a name="p57445253154"></a>参数</p>
+<a name="tb127086a0961458f95fba61c3071d468"></a>
+<table><thead align="left"><tr id="r27367aa0d8e44ad9affc9674330b27c3"><th class="cellrowborder" valign="top" width="22%" id="mcps1.2.5.1.1"><p id="a4e206fbc29c34b908819fdfdc51f603c"><a name="a4e206fbc29c34b908819fdfdc51f603c"></a><a name="a4e206fbc29c34b908819fdfdc51f603c"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.81188118811881%" id="mcps1.2.5.1.2"><p id="p11744152514157"><a name="p11744152514157"></a><a name="p11744152514157"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.2"><p id="p323773142614"><a name="p323773142614"></a><a name="p323773142614"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.81188118811881%" id="mcps1.2.5.1.3"><p id="p14744172517156"><a name="p14744172517156"></a><a name="p14744172517156"></a>参数类型</p>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p id="p1123819320267"><a name="p1123819320267"></a><a name="p1123819320267"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="42.57425742574257%" id="mcps1.2.5.1.4"><p id="p1474411256156"><a name="p1474411256156"></a><a name="p1474411256156"></a>描述</p>
+<th class="cellrowborder" valign="top" width="42%" id="mcps1.2.5.1.4"><p id="ad4426867f27744389753b92676b6e809"><a name="ad4426867f27744389753b92676b6e809"></a><a name="ad4426867f27744389753b92676b6e809"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1574452581519"><td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.1 "><p id="p16744192510159"><a name="p16744192510159"></a><a name="p16744192510159"></a>apiVersion</p>
+<tbody><tr id="r0403545026624f2c9935417fc2662be9"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="a50347bcb13914fc682646031503d95ad"><a name="a50347bcb13914fc682646031503d95ad"></a><a name="a50347bcb13914fc682646031503d95ad"></a>accessModes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p6883728134011"><a name="p6883728134011"></a><a name="p6883728134011"></a>是</p>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="a5524a8df17714afea2432fed211761eb"><a name="a5524a8df17714afea2432fed211761eb"></a><a name="a5524a8df17714afea2432fed211761eb"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p97441825111518"><a name="p97441825111518"></a><a name="p97441825111518"></a>String</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="afbe16c2d348e43b4b82536299f41b835"><a name="afbe16c2d348e43b4b82536299f41b835"></a><a name="afbe16c2d348e43b4b82536299f41b835"></a>Array of strings</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p9745152531519"><a name="p9745152531519"></a><a name="p9745152531519"></a>API版本，固定值＂v1＂</p>
-</td>
-</tr>
-<tr id="row87455255158"><td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.1 "><p id="p117456259153"><a name="p117456259153"></a><a name="p117456259153"></a>kind</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p102721431204019"><a name="p102721431204019"></a><a name="p102721431204019"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p157451525111516"><a name="p157451525111516"></a><a name="p157451525111516"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p874542515151"><a name="p874542515151"></a><a name="p874542515151"></a>API类型，固定值＂PersistentVolume＂</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="a8915073c5f994f15af5505f816234e5b"><a name="a8915073c5f994f15af5505f816234e5b"></a><a name="a8915073c5f994f15af5505f816234e5b"></a>Access mode.</p>
+<p id="a03d00dd0c4444bbf9aac17163c9438fb"><a name="a03d00dd0c4444bbf9aac17163c9438fb"></a><a name="a03d00dd0c4444bbf9aac17163c9438fb"></a>Options:</p>
+<p id="zh-cn_topic_0079614924_p176517815548"><a name="zh-cn_topic_0079614924_p176517815548"></a><a name="zh-cn_topic_0079614924_p176517815548"></a>ReadWriteOnce: can be read and written by a single node.</p>
+<p id="a978d8fea82714215af18162f54354d3f"><a name="a978d8fea82714215af18162f54354d3f"></a><a name="a978d8fea82714215af18162f54354d3f"></a>ReadOnlyMany: can only be read by multiple nodes.</p>
+<p id="zh-cn_topic_0079614924_p196521087545"><a name="zh-cn_topic_0079614924_p196521087545"></a><a name="zh-cn_topic_0079614924_p196521087545"></a>ReadWriteMany: can be read and written by multiple nodes.</p>
 </td>
 </tr>
-<tr id="row16745125101516"><td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.1 "><p id="p177451725101517"><a name="p177451725101517"></a><a name="p177451725101517"></a>metadata</p>
+<tr id="r8cd65ef2bab5408588333d2fed8f42b3"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="afb04146dacb24ebc934eb6c1c071ee72"><a name="afb04146dacb24ebc934eb6c1c071ee72"></a><a name="afb04146dacb24ebc934eb6c1c071ee72"></a>capacity</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p1062853354013"><a name="p1062853354013"></a><a name="p1062853354013"></a>是</p>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="a0313a9f807354c7b9fd16bd5c0d2d2aa"><a name="a0313a9f807354c7b9fd16bd5c0d2d2aa"></a><a name="a0313a9f807354c7b9fd16bd5c0d2d2aa"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p074532551518"><a name="p074532551518"></a><a name="p074532551518"></a><a href="#table6304105819164">metadata</a> object</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="a1b6b3f5fd05742a3a0632019f3effc9f"><a name="a1b6b3f5fd05742a3a0632019f3effc9f"></a><a name="a1b6b3f5fd05742a3a0632019f3effc9f"></a>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p2745152519150"><a name="p2745152519150"></a><a name="p2745152519150"></a>-</p>
-</td>
-</tr>
-<tr id="row2745725201512"><td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.1 "><p id="p8745025151519"><a name="p8745025151519"></a><a name="p8745025151519"></a>spec</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p8581153624016"><a name="p8581153624016"></a><a name="p8581153624016"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p1574522520158"><a name="p1574522520158"></a><a name="p1574522520158"></a><a href="#table3862152512246">spec</a> object</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p97458257151"><a name="p97458257151"></a><a name="p97458257151"></a>-</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="af3fdde5703fa48ffbe089443037827fc"><a name="af3fdde5703fa48ffbe089443037827fc"></a><a name="af3fdde5703fa48ffbe089443037827fc"></a>A description of the persistent volume's resources and capacity.</p>
 </td>
 </tr>
-<tr id="row67451925181517"><td class="cellrowborder" valign="top" width="19.801980198019802%" headers="mcps1.2.5.1.1 "><p id="p107451025111518"><a name="p107451025111518"></a><a name="p107451025111518"></a>status</p>
+<tr id="r6c874aaed56f4a9080acc97e62169a0d"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="acc4b6006cbbb4a1fb4cae2dcb0aea4a1"><a name="acc4b6006cbbb4a1fb4cae2dcb0aea4a1"></a><a name="acc4b6006cbbb4a1fb4cae2dcb0aea4a1"></a>claimRef</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.2 "><p id="p1574516258158"><a name="p1574516258158"></a><a name="p1574516258158"></a>否</p>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="ac0e00a03dd504f6fb22d7d47676f6548"><a name="ac0e00a03dd504f6fb22d7d47676f6548"></a><a name="ac0e00a03dd504f6fb22d7d47676f6548"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p874562561514"><a name="p874562561514"></a><a name="p874562561514"></a><a href="#table478913499397">status</a> object</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="a487d3f45865848f7aaea4eeb1df20888"><a name="a487d3f45865848f7aaea4eeb1df20888"></a><a name="a487d3f45865848f7aaea4eeb1df20888"></a><a href="#t5fe2db24d4ee4588b001da6f826e3d3a">claimRef</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.57425742574257%" headers="mcps1.2.5.1.4 "><p id="p8745172518154"><a name="p8745172518154"></a><a name="p8745172518154"></a>-</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="aa564a4d14fc74b73a60ce98227ad5db5"><a name="aa564a4d14fc74b73a60ce98227ad5db5"></a><a name="aa564a4d14fc74b73a60ce98227ad5db5"></a>ClaimRef is part of a bi-directional binding between PersistentVolume and PersistentVolumeClaim. Expected to be non-nil when bound. claim. VolumeName is the authoritative bind between PV and PVC.</p>
+</td>
+</tr>
+<tr id="r83b704b2c08a446b8ffac782fb3e821e"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="a91aa438e2c92459f946ddd5c793cd6fa"><a name="a91aa438e2c92459f946ddd5c793cd6fa"></a><a name="a91aa438e2c92459f946ddd5c793cd6fa"></a>hostPath</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="a40a75035c80f4d5bbf9a60540d077979"><a name="a40a75035c80f4d5bbf9a60540d077979"></a><a name="a40a75035c80f4d5bbf9a60540d077979"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="a044d674a435c46dbb307c1cc4719aa3a"><a name="a044d674a435c46dbb307c1cc4719aa3a"></a><a name="a044d674a435c46dbb307c1cc4719aa3a"></a><a href="#t49e3547d603e4c019abc62b357512bf6">hostPath</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="adbadf9d4bfdf499aba91ea7fc5f19776"><a name="adbadf9d4bfdf499aba91ea7fc5f19776"></a><a name="adbadf9d4bfdf499aba91ea7fc5f19776"></a>HostPath represents a directory on the host. Provisioned by a developer or tester. This is useful for single-node development and testing only! On-host storage is not supported in any way and WILL NOT WORK in a multi-node cluster.</p>
+</td>
+</tr>
+<tr id="re19b89eeee6b48e795ee1568b09f7c7a"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="ab8e207fc902845e1b2e759a6d8a55c17"><a name="ab8e207fc902845e1b2e759a6d8a55c17"></a><a name="ab8e207fc902845e1b2e759a6d8a55c17"></a>nfs</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="a168651e90a36441bbf867859edf6fbda"><a name="a168651e90a36441bbf867859edf6fbda"></a><a name="a168651e90a36441bbf867859edf6fbda"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="a2346991b94c04146931e7cf591c46967"><a name="a2346991b94c04146931e7cf591c46967"></a><a name="a2346991b94c04146931e7cf591c46967"></a><a href="#t2f5e70bc193c4769a21652324f8fec4d">nfs</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="ac27b81771d184325a1207786c6900696"><a name="ac27b81771d184325a1207786c6900696"></a><a name="ac27b81771d184325a1207786c6900696"></a>NFS represents an NFS mount on the host. Provisioned by an admin.</p>
+</td>
+</tr>
+<tr id="r5ca08c1e40774604a8aa2549ccbd58d5"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="a2da1b82ec106467caf065cf4cb8eb2fb"><a name="a2da1b82ec106467caf065cf4cb8eb2fb"></a><a name="a2da1b82ec106467caf065cf4cb8eb2fb"></a>persistentVolumeReclaimPolicy</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="aa02cc300c0a14ab99f20d9ba4ed07f5c"><a name="aa02cc300c0a14ab99f20d9ba4ed07f5c"></a><a name="aa02cc300c0a14ab99f20d9ba4ed07f5c"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="ae2d38eeba03f491b8cb7ebc5dc516ecf"><a name="ae2d38eeba03f491b8cb7ebc5dc516ecf"></a><a name="ae2d38eeba03f491b8cb7ebc5dc516ecf"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="aa49502c49fb745e7b6dcb8fe73fdda58"><a name="aa49502c49fb745e7b6dcb8fe73fdda58"></a><a name="aa49502c49fb745e7b6dcb8fe73fdda58"></a>What happens to a persistent volume when released from its claim. Valid options are Retain (default) and Recycle. Recycling must be supported by the volume plugin underlying this persistent volume.</p>
+</td>
+</tr>
+<tr id="r2b242a00cf1a42a7906ea94711576193"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="af909c2ce83784cb997c466097b352fc0"><a name="af909c2ce83784cb997c466097b352fc0"></a><a name="af909c2ce83784cb997c466097b352fc0"></a>storageClassName</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="a3b9f154f21a4460892680151124947de"><a name="a3b9f154f21a4460892680151124947de"></a><a name="a3b9f154f21a4460892680151124947de"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079614924_p287791992216"><a name="zh-cn_topic_0079614924_p287791992216"></a><a name="zh-cn_topic_0079614924_p287791992216"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079614924_p188779198221"><a name="zh-cn_topic_0079614924_p188779198221"></a><a name="zh-cn_topic_0079614924_p188779198221"></a>Name of StorageClass to which this persistent volume belongs. Empty value means that this volume does not belong to any StorageClass.</p>
+</td>
+</tr>
+<tr id="row896682754410"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="p187013221311"><a name="p187013221311"></a><a name="p187013221311"></a>flexVolume</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p11966132704416"><a name="p11966132704416"></a><a name="p11966132704416"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p8480517124920"><a name="p8480517124920"></a><a name="p8480517124920"></a>flexVolume</p>
+<p id="p896642714443"><a name="p896642714443"></a><a name="p896642714443"></a>object</p>
+</td>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p28021337195011"><a name="p28021337195011"></a><a name="p28021337195011"></a>FlexVolume represents a generic volume resource that is</p>
+<p id="p198021237155013"><a name="p198021237155013"></a><a name="p198021237155013"></a>provisioned/attached using an exec based plugin. The cluster earlier than v1.15(v1.9/v1.11/v1.13) which use CCE FlexVolume fuxi driver must fill in this field.</p>
+</td>
+</tr>
+<tr id="row512162514919"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.1 "><p id="p182241738114916"><a name="p182241738114916"></a><a name="p182241738114916"></a>CSI</p>
+</td>
+<td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.2 "><p id="p1212125104916"><a name="p1212125104916"></a><a name="p1212125104916"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p121262514497"><a name="p121262514497"></a><a name="p121262514497"></a>CSI</p>
+<p id="p1398284724913"><a name="p1398284724913"></a><a name="p1398284724913"></a>object</p>
+</td>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p99555835916"><a name="p99555835916"></a><a name="p99555835916"></a>CSI represents storage that is handled by an external CSI driver. The cluster of v1.15 or later which use CCE SCI everest must fill in this filed.</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-**表 3**  metadata字段数据结构说明
+**表 4**  status字段数据结构说明
 
-<a name="table6304105819164"></a>
-<table><thead align="left"><tr id="row630412582164"><th class="cellrowborder" valign="top" width="18.81188118811881%" id="mcps1.2.5.1.1"><p id="p55461758152314"><a name="p55461758152314"></a><a name="p55461758152314"></a>参数</p>
+<a name="tab4eab31a17149b4b5cd8d26c93b5a7e"></a>
+<table><thead align="left"><tr id="r96f77f4a7bc345b4ab55432cc57a9558"><th class="cellrowborder" valign="top" width="21.61%" id="mcps1.2.5.1.1"><p id="a49f5bd9a5d9d4d7e822a713be20a5bc8"><a name="a49f5bd9a5d9d4d7e822a713be20a5bc8"></a><a name="a49f5bd9a5d9d4d7e822a713be20a5bc8"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="16.831683168316832%" id="mcps1.2.5.1.2"><p id="p754645816237"><a name="p754645816237"></a><a name="p754645816237"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="16.73%" id="mcps1.2.5.1.2"><p id="p534033182611"><a name="p534033182611"></a><a name="p534033182611"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.81188118811881%" id="mcps1.2.5.1.3"><p id="p354612586239"><a name="p354612586239"></a><a name="p354612586239"></a>参数类型</p>
+<th class="cellrowborder" valign="top" width="19.74%" id="mcps1.2.5.1.3"><p id="p534118319261"><a name="p534118319261"></a><a name="p534118319261"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="45.54455445544555%" id="mcps1.2.5.1.4"><p id="p754625882316"><a name="p754625882316"></a><a name="p754625882316"></a>描述</p>
+<th class="cellrowborder" valign="top" width="41.92%" id="mcps1.2.5.1.4"><p id="a0afa5eaa284e46b5acddd174528725cb"><a name="a0afa5eaa284e46b5acddd174528725cb"></a><a name="a0afa5eaa284e46b5acddd174528725cb"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row4304175891615"><td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.1 "><p id="p81931402411"><a name="p81931402411"></a><a name="p81931402411"></a>name</p>
+<tbody><tr id="rc7a7a85ee20c43e681f13dc49d357cd4"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="a8628d7b8f18c43619e9ef820db067cee"><a name="a8628d7b8f18c43619e9ef820db067cee"></a><a name="a8628d7b8f18c43619e9ef820db067cee"></a>message</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.831683168316832%" headers="mcps1.2.5.1.2 "><p id="p21931847246"><a name="p21931847246"></a><a name="p21931847246"></a>是</p>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.5.1.2 "><p id="a73e6f049fe0c4201833f12ed270815e9"><a name="a73e6f049fe0c4201833f12ed270815e9"></a><a name="a73e6f049fe0c4201833f12ed270815e9"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p15193194192418"><a name="p15193194192418"></a><a name="p15193194192418"></a>String</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="a46f1d8327bd54c5aaa321a213cbe1468"><a name="a46f1d8327bd54c5aaa321a213cbe1468"></a><a name="a46f1d8327bd54c5aaa321a213cbe1468"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p17193543245"><a name="p17193543245"></a><a name="p17193543245"></a>PersistentVolume名称，可以包含小写字母、数字、连字符和点，开头和结尾必须是字母或数字，最长253个字符，同一namespace下name不能重复。</p>
+<td class="cellrowborder" valign="top" width="41.92%" headers="mcps1.2.5.1.4 "><p id="a435fa11052194958b3509effae4a0980"><a name="a435fa11052194958b3509effae4a0980"></a><a name="a435fa11052194958b3509effae4a0980"></a>A human-readable message indicating details about why the volume is in this state.</p>
 </td>
 </tr>
-<tr id="row5304758171616"><td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.1 "><p id="p519318462411"><a name="p519318462411"></a><a name="p519318462411"></a>labels</p>
+<tr id="ra4c0d54b5ad140619b9dd512b5e7a364"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="ae348237b3b1a4d588236d9dabb550cf1"><a name="ae348237b3b1a4d588236d9dabb550cf1"></a><a name="ae348237b3b1a4d588236d9dabb550cf1"></a>phase</p>
 </td>
-<td class="cellrowborder" valign="top" width="16.831683168316832%" headers="mcps1.2.5.1.2 "><p id="p619364182418"><a name="p619364182418"></a><a name="p619364182418"></a>否</p>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.5.1.2 "><p id="adae8fb3bcd2e414995df0eaebd8aa27b"><a name="adae8fb3bcd2e414995df0eaebd8aa27b"></a><a name="adae8fb3bcd2e414995df0eaebd8aa27b"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.81188118811881%" headers="mcps1.2.5.1.3 "><p id="p1519316412248"><a name="p1519316412248"></a><a name="p1519316412248"></a>String</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079614924_p623832172933"><a name="zh-cn_topic_0079614924_p623832172933"></a><a name="zh-cn_topic_0079614924_p623832172933"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="45.54455445544555%" headers="mcps1.2.5.1.4 "><p id="p319310432413"><a name="p319310432413"></a><a name="p319310432413"></a>PersistentVolume标签，key/value对格式。</p>
-<a name="ul1736685012"></a><a name="ul1736685012"></a><ul id="ul1736685012"><li>Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀，例如example.com/my-key， DNS子域最长253个字符。</li><li>Value：可以为空或者非空字符串，非空字符串必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。</li></ul>
-<p id="p156295249512"><a name="p156295249512"></a><a name="p156295249512"></a>示例："foo": "bar"</p>
+<td class="cellrowborder" valign="top" width="41.92%" headers="mcps1.2.5.1.4 "><p id="a0b88476b907d44e3b574ad53c21ec02c"><a name="a0b88476b907d44e3b574ad53c21ec02c"></a><a name="a0b88476b907d44e3b574ad53c21ec02c"></a>Phase indicates if a volume is available, bound to a claim, or released by a claim.</p>
+</td>
+</tr>
+<tr id="r9f4a227a36124c688410b8efc26982c1"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="ad0da24a861fe458eb21056243cea3bc5"><a name="ad0da24a861fe458eb21056243cea3bc5"></a><a name="ad0da24a861fe458eb21056243cea3bc5"></a>reason</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.73%" headers="mcps1.2.5.1.2 "><p id="ad66281fe1d26410d989cbb2590abd08d"><a name="ad66281fe1d26410d989cbb2590abd08d"></a><a name="ad66281fe1d26410d989cbb2590abd08d"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="ade3542f5b64e4fc9a695a75094861ae0"><a name="ade3542f5b64e4fc9a695a75094861ae0"></a><a name="ade3542f5b64e4fc9a695a75094861ae0"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.92%" headers="mcps1.2.5.1.4 "><p id="a3c27e955529f45a5831f35940ae58bb2"><a name="a3c27e955529f45a5831f35940ae58bb2"></a><a name="a3c27e955529f45a5831f35940ae58bb2"></a>Reason is a brief CamelCase string that describes any failure and is meant for machine parsing and tidy display in the CLI.</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-**表 4**  spec字段数据结构说明
+**表 5**  claimRef字段数据结构说明
 
-<a name="table3862152512246"></a>
-<table><thead align="left"><tr id="row292213259241"><th class="cellrowborder" valign="top" width="20.202020202020204%" id="mcps1.2.5.1.1"><p id="p892212511240"><a name="p892212511240"></a><a name="p892212511240"></a>参数</p>
+<a name="t5fe2db24d4ee4588b001da6f826e3d3a"></a>
+<table><thead align="left"><tr id="r0c9eacb1d1f44d099edd92ab1ccdc411"><th class="cellrowborder" valign="top" width="21.61%" id="mcps1.2.5.1.1"><p id="adaeb206a9e294ead8a84afe179925760"><a name="adaeb206a9e294ead8a84afe179925760"></a><a name="adaeb206a9e294ead8a84afe179925760"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.18181818181818%" id="mcps1.2.5.1.2"><p id="p199221125112412"><a name="p199221125112412"></a><a name="p199221125112412"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="16.919999999999998%" id="mcps1.2.5.1.2"><p id="p1136615310262"><a name="p1136615310262"></a><a name="p1136615310262"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.19191919191919%" id="mcps1.2.5.1.3"><p id="p1592252520243"><a name="p1592252520243"></a><a name="p1592252520243"></a>参数类型</p>
+<th class="cellrowborder" valign="top" width="19.36%" id="mcps1.2.5.1.3"><p id="p1236712319261"><a name="p1236712319261"></a><a name="p1236712319261"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="42.42424242424242%" id="mcps1.2.5.1.4"><p id="p19225259247"><a name="p19225259247"></a><a name="p19225259247"></a>描述</p>
+<th class="cellrowborder" valign="top" width="42.11%" id="mcps1.2.5.1.4"><p id="a25acdc0edc4b4721ac8f6c5bd8303722"><a name="a25acdc0edc4b4721ac8f6c5bd8303722"></a><a name="a25acdc0edc4b4721ac8f6c5bd8303722"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row18922102592411"><td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.1 "><p id="p113621337112413"><a name="p113621337112413"></a><a name="p113621337112413"></a>flexVolume</p>
+<tbody><tr id="r8d94e5c2b06a49048e0772b09309afa3"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="ab72a484b179a4c67a01718366a3545a2"><a name="ab72a484b179a4c67a01718366a3545a2"></a><a name="ab72a484b179a4c67a01718366a3545a2"></a>apiVersion</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.18181818181818%" headers="mcps1.2.5.1.2 "><p id="p18362173742410"><a name="p18362173742410"></a><a name="p18362173742410"></a>是</p>
+<td class="cellrowborder" valign="top" width="16.919999999999998%" headers="mcps1.2.5.1.2 "><p id="a420f31b8bccc4faabb15ed4a5e808bcd"><a name="a420f31b8bccc4faabb15ed4a5e808bcd"></a><a name="a420f31b8bccc4faabb15ed4a5e808bcd"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p163629375243"><a name="p163629375243"></a><a name="p163629375243"></a><a href="#table11677121919263">flexVolume</a> object</p>
+<td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.5.1.3 "><p id="a09f42c6394a24387b604f4a758af6fb6"><a name="a09f42c6394a24387b604f4a758af6fb6"></a><a name="a09f42c6394a24387b604f4a758af6fb6"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p636233719244"><a name="p636233719244"></a><a name="p636233719244"></a>Kubernetes的flexvolume存储插件</p>
-</td>
-</tr>
-<tr id="row8922225162418"><td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.1 "><p id="p10362153713248"><a name="p10362153713248"></a><a name="p10362153713248"></a>accessModes</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.18181818181818%" headers="mcps1.2.5.1.2 "><p id="p5362337112412"><a name="p5362337112412"></a><a name="p5362337112412"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p136213375242"><a name="p136213375242"></a><a name="p136213375242"></a>Array of strings</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p12362837142418"><a name="p12362837142418"></a><a name="p12362837142418"></a>指定volume应该具有的访问模式。</p>
-<a name="ul20281165712148"></a><a name="ul20281165712148"></a><ul id="ul20281165712148"><li>ReadWriteOnce：该卷可以被单个节点以读/写模式挂载<div class="note" id="note1348319103139"><a name="note1348319103139"></a><a name="note1348319103139"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p19484810151313"><a name="p19484810151313"></a><a name="p19484810151313"></a>集群版本为v1.13.10且storage-driver版本为1.0.19时，才支持此功能。</p>
-</div></div>
-</li><li>ReadOnlyMany：该卷可以被多个节点以只读模式挂载</li><li>ReadWriteMany：该卷可以被多个节点以读/写模式挂载</li></ul>
+<td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="aac81bd8cc8a245dda1ba6cb44ac638ef"><a name="aac81bd8cc8a245dda1ba6cb44ac638ef"></a><a name="aac81bd8cc8a245dda1ba6cb44ac638ef"></a>API version of the referent.</p>
 </td>
 </tr>
-<tr id="row13922112515249"><td class="cellrowborder" valign="top" width="20.202020202020204%" headers="mcps1.2.5.1.1 "><p id="p143621137182416"><a name="p143621137182416"></a><a name="p143621137182416"></a>persistentVolumeReclaimPolicy</p>
+<tr id="racf54160dc614e1e816b2327b2b01299"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="a196942e98fdc4e79b5a41deed9506d0f"><a name="a196942e98fdc4e79b5a41deed9506d0f"></a><a name="a196942e98fdc4e79b5a41deed9506d0f"></a>fieldPath</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.18181818181818%" headers="mcps1.2.5.1.2 "><p id="p1536214371246"><a name="p1536214371246"></a><a name="p1536214371246"></a>否</p>
+<td class="cellrowborder" valign="top" width="16.919999999999998%" headers="mcps1.2.5.1.2 "><p id="a97ad88db9b704b5aad87134643f6cac0"><a name="a97ad88db9b704b5aad87134643f6cac0"></a><a name="a97ad88db9b704b5aad87134643f6cac0"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.19191919191919%" headers="mcps1.2.5.1.3 "><p id="p036214370243"><a name="p036214370243"></a><a name="p036214370243"></a>String</p>
+<td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.5.1.3 "><p id="abdad0b5457b347db8c177e1feca0ad0b"><a name="abdad0b5457b347db8c177e1feca0ad0b"></a><a name="abdad0b5457b347db8c177e1feca0ad0b"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.42424242424242%" headers="mcps1.2.5.1.4 "><p id="p83621637192411"><a name="p83621637192411"></a><a name="p83621637192411"></a>PersistentVolume的回收策略，包括：</p>
-<a name="ul6449173941614"></a><a name="ul6449173941614"></a><ul id="ul6449173941614"><li>Retain：保留策略允许手动回收资源。当 PersistentVolumeClaim 被删除时，PersistentVolume 仍然存在，volume 被视为“已释放”。</li><li>Recycle：回收策略会在 volume上执行基本擦除（rm -rf / thevolume / *），可被再次声明使用。</li><li>Delete：对于支持删除回收策略的卷插件，删除操作将从 Kubernetes 中删除 PersistentVolume 对象，并删除外部基础架构中的关联存储资产。动态配置的卷继承其 StorageClass，默认为 Delete。</li></ul>
+<td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="a9f77c2267201402e9ec40cb07cb90df4"><a name="a9f77c2267201402e9ec40cb07cb90df4"></a><a name="a9f77c2267201402e9ec40cb07cb90df4"></a>If referring to a piece of an object instead of an entire object, this string should contain a valid JSON/Go field access statement, such as desiredState.manifest.containers[2]. For example, if the object reference is to a container within a pod, this would take on a value like: "spec.containers{name}" (where "name" refers to the name of the container that triggered the event) or if no container name is specified "spec.containers[2]" (container with index 2 in this pod). This syntax is chosen only to have some well-defined way of referencing a part of an object.</p>
+</td>
+</tr>
+<tr id="r09a1a88d5d734b2ab26bb0d06acd3a68"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="af41593e5fff74f71b72a93681958c592"><a name="af41593e5fff74f71b72a93681958c592"></a><a name="af41593e5fff74f71b72a93681958c592"></a>kind</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.919999999999998%" headers="mcps1.2.5.1.2 "><p id="a59368126755e43a68b684dd2596b9d53"><a name="a59368126755e43a68b684dd2596b9d53"></a><a name="a59368126755e43a68b684dd2596b9d53"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.5.1.3 "><p id="afa50c262387b4320a5a822fe1e5ba158"><a name="afa50c262387b4320a5a822fe1e5ba158"></a><a name="afa50c262387b4320a5a822fe1e5ba158"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="ac715a49a280d411893cb8e61bcbeb1bf"><a name="ac715a49a280d411893cb8e61bcbeb1bf"></a><a name="ac715a49a280d411893cb8e61bcbeb1bf"></a>Kind of the referent.</p>
+</td>
+</tr>
+<tr id="r9b1eaa9a4c85447390a0d9615a7b0166"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="abb41cad359c8467fa5e856b0c0baaa18"><a name="abb41cad359c8467fa5e856b0c0baaa18"></a><a name="abb41cad359c8467fa5e856b0c0baaa18"></a>name</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.919999999999998%" headers="mcps1.2.5.1.2 "><p id="a9955f73594b046c8b44ad9ed6a879705"><a name="a9955f73594b046c8b44ad9ed6a879705"></a><a name="a9955f73594b046c8b44ad9ed6a879705"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.5.1.3 "><p id="a744fd92bed914a14b2ab554a011f16f5"><a name="a744fd92bed914a14b2ab554a011f16f5"></a><a name="a744fd92bed914a14b2ab554a011f16f5"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="aed7be3988a89464197b33683a61e3a05"><a name="aed7be3988a89464197b33683a61e3a05"></a><a name="aed7be3988a89464197b33683a61e3a05"></a>Name of the referent.</p>
+</td>
+</tr>
+<tr id="r54b4238fa80c44f68bc933c4b7780867"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="a894a3898bf8146e98eed722ff68cfc75"><a name="a894a3898bf8146e98eed722ff68cfc75"></a><a name="a894a3898bf8146e98eed722ff68cfc75"></a>namespace</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.919999999999998%" headers="mcps1.2.5.1.2 "><p id="a3f676502fc814c2bb2e6273552d60d81"><a name="a3f676502fc814c2bb2e6273552d60d81"></a><a name="a3f676502fc814c2bb2e6273552d60d81"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.5.1.3 "><p id="a1f25ecd62f7a4e74aa49cb98802d82e1"><a name="a1f25ecd62f7a4e74aa49cb98802d82e1"></a><a name="a1f25ecd62f7a4e74aa49cb98802d82e1"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="a2d567f0678c8435f8a121a522dfcffa9"><a name="a2d567f0678c8435f8a121a522dfcffa9"></a><a name="a2d567f0678c8435f8a121a522dfcffa9"></a>Namespace of the referent.</p>
+</td>
+</tr>
+<tr id="rb97454377bc440eeb48980bbb379fb0f"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="a50d2ef30d7834b70be836ba3e9befb83"><a name="a50d2ef30d7834b70be836ba3e9befb83"></a><a name="a50d2ef30d7834b70be836ba3e9befb83"></a>resourceVersion</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.919999999999998%" headers="mcps1.2.5.1.2 "><p id="abab1246833154f1aaecde5212a52aa88"><a name="abab1246833154f1aaecde5212a52aa88"></a><a name="abab1246833154f1aaecde5212a52aa88"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.5.1.3 "><p id="ab485b2338dbf4f08a65fd28ed05c257b"><a name="ab485b2338dbf4f08a65fd28ed05c257b"></a><a name="ab485b2338dbf4f08a65fd28ed05c257b"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="a67b4721a85744a1493073acf237a1818"><a name="a67b4721a85744a1493073acf237a1818"></a><a name="a67b4721a85744a1493073acf237a1818"></a>Specific resourceVersion to which this reference is made, if any.</p>
+</td>
+</tr>
+<tr id="r15a080213357496287a072eed9804c57"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="ac590104402024a9da42fb279e3e8ae6c"><a name="ac590104402024a9da42fb279e3e8ae6c"></a><a name="ac590104402024a9da42fb279e3e8ae6c"></a>uid</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.919999999999998%" headers="mcps1.2.5.1.2 "><p id="a3e578b4026e1435e8a83b48ca611b620"><a name="a3e578b4026e1435e8a83b48ca611b620"></a><a name="a3e578b4026e1435e8a83b48ca611b620"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.5.1.3 "><p id="a985db1fdf39b476c862dc2f34b36380d"><a name="a985db1fdf39b476c862dc2f34b36380d"></a><a name="a985db1fdf39b476c862dc2f34b36380d"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="a630c7c888ae44330815339b069c6988a"><a name="a630c7c888ae44330815339b069c6988a"></a><a name="a630c7c888ae44330815339b069c6988a"></a>UID of the referent.</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-**表 5**  status字段数据结构说明
+**表 6**  hostPath字段数据结构说明
 
-<a name="table478913499397"></a>
-<table><thead align="left"><tr id="row149491749113917"><th class="cellrowborder" valign="top" width="20.407959204079592%" id="mcps1.2.5.1.1"><p id="p8949174923910"><a name="p8949174923910"></a><a name="p8949174923910"></a>参数</p>
+<a name="t49e3547d603e4c019abc62b357512bf6"></a>
+<table><thead align="left"><tr id="rf9e8a0fc08f342b1877bad35e8767d4e"><th class="cellrowborder" valign="top" width="21.607839216078393%" id="mcps1.2.5.1.1"><p id="aac066a194f5a4c43b31933fd1ae24c13"><a name="aac066a194f5a4c43b31933fd1ae24c13"></a><a name="aac066a194f5a4c43b31933fd1ae24c13"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="17.348265173482652%" id="mcps1.2.5.1.2"><p id="p14949149203910"><a name="p14949149203910"></a><a name="p14949149203910"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="17.10828917108289%" id="mcps1.2.5.1.2"><p id="p12412636262"><a name="p12412636262"></a><a name="p12412636262"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.388061193880613%" id="mcps1.2.5.1.3"><p id="p18949124916399"><a name="p18949124916399"></a><a name="p18949124916399"></a>参数类型</p>
+<th class="cellrowborder" valign="top" width="18.988101189881014%" id="mcps1.2.5.1.3"><p id="p16414193142613"><a name="p16414193142613"></a><a name="p16414193142613"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="42.85571442855714%" id="mcps1.2.5.1.4"><p id="p14949124923919"><a name="p14949124923919"></a><a name="p14949124923919"></a>描述</p>
+<th class="cellrowborder" valign="top" width="42.2957704229577%" id="mcps1.2.5.1.4"><p id="aba968fcdb2d0485da9b48face280c1d9"><a name="aba968fcdb2d0485da9b48face280c1d9"></a><a name="aba968fcdb2d0485da9b48face280c1d9"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row39499497398"><td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.1 "><p id="p494914983911"><a name="p494914983911"></a><a name="p494914983911"></a>accessModes</p>
+<tbody><tr id="r89870a35b0354475868bbd0f9e480e92"><td class="cellrowborder" valign="top" width="21.607839216078393%" headers="mcps1.2.5.1.1 "><p id="a61baae9b9bfc4d46b4d8bd7ded5098aa"><a name="a61baae9b9bfc4d46b4d8bd7ded5098aa"></a><a name="a61baae9b9bfc4d46b4d8bd7ded5098aa"></a>path</p>
 </td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.5.1.2 "><p id="p19494490396"><a name="p19494490396"></a><a name="p19494490396"></a>否</p>
+<td class="cellrowborder" valign="top" width="17.10828917108289%" headers="mcps1.2.5.1.2 "><p id="a7f8cb15dee1d4b23b6ff227489a8cc1d"><a name="a7f8cb15dee1d4b23b6ff227489a8cc1d"></a><a name="a7f8cb15dee1d4b23b6ff227489a8cc1d"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p494924973913"><a name="p494924973913"></a><a name="p494924973913"></a>Array of strings</p>
+<td class="cellrowborder" valign="top" width="18.988101189881014%" headers="mcps1.2.5.1.3 "><p id="a2363d8740edc425290488f8ce234a9f0"><a name="a2363d8740edc425290488f8ce234a9f0"></a><a name="a2363d8740edc425290488f8ce234a9f0"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p894919493396"><a name="p894919493396"></a><a name="p894919493396"></a>显示volume实际具有的访问模式</p>
-</td>
-</tr>
-<tr id="row10950144913397"><td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.1 "><p id="p15950144923914"><a name="p15950144923914"></a><a name="p15950144923914"></a>phase</p>
-</td>
-<td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.5.1.2 "><p id="p13950949133913"><a name="p13950949133913"></a><a name="p13950949133913"></a>否</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p1895044933913"><a name="p1895044933913"></a><a name="p1895044933913"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p159501649173914"><a name="p159501649173914"></a><a name="p159501649173914"></a>PersistentVolume当前所处的状态，包括：</p>
-<a name="ul1051916493218"></a><a name="ul1051916493218"></a><ul id="ul1051916493218"><li>Available（可用）：还是空闲资源，没有被任何PVC绑定</li><li>Bound（已绑定）：卷已经被PVC绑定</li><li>Released（已释放）：之前绑定的PVC被删除，但是资源还未被集群重新声明</li><li>Failed（失败）：该卷的自动回收失败</li></ul>
+<td class="cellrowborder" valign="top" width="42.2957704229577%" headers="mcps1.2.5.1.4 "><p id="ac0c3654642024c0aa1fa753e5d174f7e"><a name="ac0c3654642024c0aa1fa753e5d174f7e"></a><a name="ac0c3654642024c0aa1fa753e5d174f7e"></a>Path of the directory on the host.</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-**表 6**  flexVolume字段数据结构说明
+**表 7**  nfs字段数据结构说明
 
-<a name="table11677121919263"></a>
-<table><thead align="left"><tr id="row56771019202620"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.1"><p id="p1180044072613"><a name="p1180044072613"></a><a name="p1180044072613"></a>参数</p>
+<a name="t2f5e70bc193c4769a21652324f8fec4d"></a>
+<table><thead align="left"><tr id="r1067814d8e7f4472ae3269ecd5155dd3"><th class="cellrowborder" valign="top" width="21.61%" id="mcps1.2.5.1.1"><p id="a4a18517e98684fb683a58e73d22ef6e4"><a name="a4a18517e98684fb683a58e73d22ef6e4"></a><a name="a4a18517e98684fb683a58e73d22ef6e4"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="15%" id="mcps1.2.5.1.2"><p id="p3800134052614"><a name="p3800134052614"></a><a name="p3800134052614"></a>是否必选</p>
+<th class="cellrowborder" valign="top" width="16.919999999999998%" id="mcps1.2.5.1.2"><p id="p6427432268"><a name="p6427432268"></a><a name="p6427432268"></a>是否必选</p>
 </th>
-<th class="cellrowborder" valign="top" width="22%" id="mcps1.2.5.1.3"><p id="p12800144010269"><a name="p12800144010269"></a><a name="p12800144010269"></a>参数类型</p>
+<th class="cellrowborder" valign="top" width="19.36%" id="mcps1.2.5.1.3"><p id="p14298310266"><a name="p14298310266"></a><a name="p14298310266"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="47%" id="mcps1.2.5.1.4"><p id="p1480064015266"><a name="p1480064015266"></a><a name="p1480064015266"></a>描述</p>
+<th class="cellrowborder" valign="top" width="42.11%" id="mcps1.2.5.1.4"><p id="ace0f23cc1099489a8de79f944bd8e372"><a name="ace0f23cc1099489a8de79f944bd8e372"></a><a name="ace0f23cc1099489a8de79f944bd8e372"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1367741972615"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p823584616263"><a name="p823584616263"></a><a name="p823584616263"></a>driver</p>
+<tbody><tr id="r35b95237f466499ea71f769f296a6269"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="adf05bf9e9eb24f61a7ca6072c0c2361e"><a name="adf05bf9e9eb24f61a7ca6072c0c2361e"></a><a name="adf05bf9e9eb24f61a7ca6072c0c2361e"></a>path</p>
 </td>
-<td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p1235134672611"><a name="p1235134672611"></a><a name="p1235134672611"></a>是</p>
+<td class="cellrowborder" valign="top" width="16.919999999999998%" headers="mcps1.2.5.1.2 "><p id="a5b06fcff8424404faba5b652d56f5ac0"><a name="a5b06fcff8424404faba5b652d56f5ac0"></a><a name="a5b06fcff8424404faba5b652d56f5ac0"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.3 "><p id="p1023513468266"><a name="p1023513468266"></a><a name="p1023513468266"></a>String</p>
+<td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.5.1.3 "><p id="acdd1d345103543b8934cc80317ccb338"><a name="acdd1d345103543b8934cc80317ccb338"></a><a name="acdd1d345103543b8934cc80317ccb338"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.5.1.4 "><p id="p1723544616263"><a name="p1723544616263"></a><a name="p1723544616263"></a>Flexvolume插件名称，请根据使用的存储类型填写：</p>
-<a name="ul16335122794614"></a><a name="ul16335122794614"></a><ul id="ul16335122794614"><li>huawei.com/fuxivol (EVS)</li><li>huawei.com/fuxinfs (SFS)</li><li>huawei.com/fuxiobs (OBS)</li><li>huawei.com/fuxiefs (SFS Turbo)</li></ul>
-</td>
-</tr>
-<tr id="row15677181962610"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p32351546112611"><a name="p32351546112611"></a><a name="p32351546112611"></a>fsType</p>
-</td>
-<td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p1523554618260"><a name="p1523554618260"></a><a name="p1523554618260"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.3 "><p id="p1023584614266"><a name="p1023584614266"></a><a name="p1023584614266"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.5.1.4 "><p id="p1123584642618"><a name="p1123584642618"></a><a name="p1123584642618"></a>文件系统类型，请根据使用的存储类型填写：</p>
-<a name="ul17722202534718"></a><a name="ul17722202534718"></a><ul id="ul17722202534718"><li>ext4： EVS云硬盘存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html" target="_blank" rel="noopener noreferrer">使用云硬盘存储卷</a> 。</li><li>nfs：SFS弹性文件存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html" target="_blank" rel="noopener noreferrer">使用文件存储卷</a> 。</li><li>obs：OBS对象存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html" target="_blank" rel="noopener noreferrer">使用对象存储卷</a> 。</li><li>efs：SFS Turbo极速文件存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html" target="_blank" rel="noopener noreferrer">使用极速文件存储卷</a>。</li></ul>
+<td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="afffa62a91c97422d9ba28acb79904f94"><a name="afffa62a91c97422d9ba28acb79904f94"></a><a name="afffa62a91c97422d9ba28acb79904f94"></a>Path that is exported by the NFS server.</p>
 </td>
 </tr>
-<tr id="row2678121972620"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p42353464268"><a name="p42353464268"></a><a name="p42353464268"></a>options</p>
+<tr id="r898e9fe994de4476b20741a64441366b"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="a52eae370cf3d4f9c947e735708f34264"><a name="a52eae370cf3d4f9c947e735708f34264"></a><a name="a52eae370cf3d4f9c947e735708f34264"></a>readOnly</p>
 </td>
-<td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.5.1.2 "><p id="p1723518464266"><a name="p1723518464266"></a><a name="p1723518464266"></a>是</p>
+<td class="cellrowborder" valign="top" width="16.919999999999998%" headers="mcps1.2.5.1.2 "><p id="a7b0fa9034fa846aa9feae5f5a17d6030"><a name="a7b0fa9034fa846aa9feae5f5a17d6030"></a><a name="a7b0fa9034fa846aa9feae5f5a17d6030"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.5.1.3 "><p id="p223574612612"><a name="p223574612612"></a><a name="p223574612612"></a><a href="#table311414269276">options</a> object</p>
+<td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079614924_p436639917128"><a name="zh-cn_topic_0079614924_p436639917128"></a><a name="zh-cn_topic_0079614924_p436639917128"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.5.1.4 "><p id="p323524616269"><a name="p323524616269"></a><a name="p323524616269"></a>-</p>
+<td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="afa12313c954546a1adc58c78a244cd04"><a name="afa12313c954546a1adc58c78a244cd04"></a><a name="afa12313c954546a1adc58c78a244cd04"></a>ReadOnly here will force the NFS export to be mounted with read-only permissions. Defaults to false.</p>
+</td>
+</tr>
+<tr id="ref82ffa16dfc4686beff8b64c5f285f9"><td class="cellrowborder" valign="top" width="21.61%" headers="mcps1.2.5.1.1 "><p id="ac1f9e5a70630464b950a84efd5874d7d"><a name="ac1f9e5a70630464b950a84efd5874d7d"></a><a name="ac1f9e5a70630464b950a84efd5874d7d"></a>server</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.919999999999998%" headers="mcps1.2.5.1.2 "><p id="a7366e25c79344ad1a4c9a12ec12006a5"><a name="a7366e25c79344ad1a4c9a12ec12006a5"></a><a name="a7366e25c79344ad1a4c9a12ec12006a5"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.36%" headers="mcps1.2.5.1.3 "><p id="ad0fe28d4b8354bd6afd457cf754582b7"><a name="ad0fe28d4b8354bd6afd457cf754582b7"></a><a name="ad0fe28d4b8354bd6afd457cf754582b7"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.11%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079614924_p528750817137"><a name="zh-cn_topic_0079614924_p528750817137"></a><a name="zh-cn_topic_0079614924_p528750817137"></a>Server is the hostname or IP address of the NFS server.</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-**表 7**  options字段数据结构说明
+表9 flexVolume 字段结构说明
 
-<a name="table311414269276"></a>
-<table><thead align="left"><tr id="row211582652717"><th class="cellrowborder" valign="top" width="13.861386138613863%" id="mcps1.2.5.1.1"><p id="p21681624202220"><a name="p21681624202220"></a><a name="p21681624202220"></a>参数</p>
-</th>
-<th class="cellrowborder" valign="top" width="13.861386138613863%" id="mcps1.2.5.1.2"><p id="p17168162412227"><a name="p17168162412227"></a><a name="p17168162412227"></a>是否必选</p>
-</th>
-<th class="cellrowborder" valign="top" width="15.841584158415841%" id="mcps1.2.5.1.3"><p id="p1168624112210"><a name="p1168624112210"></a><a name="p1168624112210"></a>参数类型</p>
-</th>
-<th class="cellrowborder" valign="top" width="56.43564356435643%" id="mcps1.2.5.1.4"><p id="p141691324182211"><a name="p141691324182211"></a><a name="p141691324182211"></a>描述</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row1115826152715"><td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.1 "><p id="p125557151227"><a name="p125557151227"></a><a name="p125557151227"></a>fsType</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.2 "><p id="p19555141562216"><a name="p19555141562216"></a><a name="p19555141562216"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.841584158415841%" headers="mcps1.2.5.1.3 "><p id="p1555511514222"><a name="p1555511514222"></a><a name="p1555511514222"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.43564356435643%" headers="mcps1.2.5.1.4 "><p id="p6555161522210"><a name="p6555161522210"></a><a name="p6555161522210"></a>文件系统类型，请根据使用的存储类型填写：</p>
-<a name="ul91631136124611"></a><a name="ul91631136124611"></a><ul id="ul91631136124611"><li>ext4 (EVS)</li><li>nfs (SFS)</li><li>obs (OBS)</li><li>efs (SFS Turbo)</li></ul>
-</td>
-</tr>
-<tr id="row1611562682718"><td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.1 "><p id="p1755518156223"><a name="p1755518156223"></a><a name="p1755518156223"></a>region</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.2 "><p id="p1955510154226"><a name="p1955510154226"></a><a name="p1955510154226"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.841584158415841%" headers="mcps1.2.5.1.3 "><p id="p1055591514222"><a name="p1055591514222"></a><a name="p1055591514222"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.43564356435643%" headers="mcps1.2.5.1.4 "><p id="p18555315122215"><a name="p18555315122215"></a><a name="p18555315122215"></a>云存储所在的region。</p>
-</td>
-</tr>
-<tr id="row11156268277"><td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.1 "><p id="p175551115182210"><a name="p175551115182210"></a><a name="p175551115182210"></a>volumeID</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.2 "><p id="p8555915192216"><a name="p8555915192216"></a><a name="p8555915192216"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.841584158415841%" headers="mcps1.2.5.1.3 "><p id="p9556415182215"><a name="p9556415182215"></a><a name="p9556415182215"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.43564356435643%" headers="mcps1.2.5.1.4 "><p id="p185569154223"><a name="p185569154223"></a><a name="p185569154223"></a>云存储的UUID，如果是OBS-bucket则填入名称</p>
-</td>
-</tr>
-<tr id="row17115192616279"><td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.1 "><p id="p255615153226"><a name="p255615153226"></a><a name="p255615153226"></a>storageType</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.861386138613863%" headers="mcps1.2.5.1.2 "><p id="p11559615192218"><a name="p11559615192218"></a><a name="p11559615192218"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.841584158415841%" headers="mcps1.2.5.1.3 "><p id="p18559315162216"><a name="p18559315162216"></a><a name="p18559315162216"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.43564356435643%" headers="mcps1.2.5.1.4 "><p id="p95591315182219"><a name="p95591315182219"></a><a name="p95591315182219"></a>指定云存储的类型。</p>
-<a name="ul1396918418499"></a><a name="ul1396918418499"></a><ul id="ul1396918418499"><li>bs (EVS)</li><li>nfs (SFS)</li><li>obs (OBS)</li><li>efs (SFS Turbo)</li></ul>
-</td>
-</tr>
-</tbody>
-</table>
+表 10 options 字段结构说明
+
+表 11 CSI 字段结构说明
+
+表 12 volumeAttributes 字段结构说明
 
 **请求示例：**
 
--   指定EVS云硬盘ID创建PersistentVolume
+1.15集群版本示例：
 
-    1.9版本的集群样例：
-
-    ```
-    { 
-        "apiVersion": "v1", 
-        "kind": "PersistentVolume", 
-        "metadata": { 
-            "labels": { 
-                "name": "pv-test" 
-            }, 
-            "name": "pv-test" 
-        }, 
-        "spec": { 
-            "accessModes": [ 
-                "ReadWriteMany" 
-            ], 
-            "flexVolume": { 
-                "driver": "huawei.com/fuxivol", 
-                "fsType": "ext4", 
-                "options": { 
-                    "fsType": "ext4", 
-                    "kubernetes.io/namespace": "default", 
-                    "region": "southchina", 
-                    "volumeID": "76e01b29-08b9-11e8-9ca5-1051722006ec", 
-                    "storageType": "bs" 
-                } 
-            }, 
-            "persistentVolumeReclaimPolicy": "Delete" 
-        } 
+```
+{
+    "apiVersion": "v1",
+    "kind": "PersistentVolume",
+    "metadata": {
+        "annotations": {
+            "pv.kubernetes.io/namespace": "default",
+            "pv.kubernetes.io/provisioned-by": "everest-csi-provisioner"
+        },
+        "labels": {
+            "failure-domain.beta.kubernetes.io/region": "cn-north-7",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-7b"
+        },
+        "name": "pvc-efe92ec5-fb39-4e17-bb26-c5d336ce5c14"
+    },
+    "spec": {
+        "accessModes": [
+            "ReadWriteOnce"
+        ],
+        "capacity": {
+            "storage": "20Gi"
+        },
+        "csi": {
+            "driver": "disk.csi.everest.io",
+            "fsType": "ext4",
+            "volumeAttributes": {
+                "everest.io/disk-mode": "SCSI",
+                "everest.io/disk-volume-type": "SATA",
+                "storage.kubernetes.io/csiProvisionerIdentity": "everest-csi-provisioner"
+            },
+            "volumeHandle": "9c44d068-42ab-4fcf-bb8f-1609823da5bb"
+        },
+        "persistentVolumeReclaimPolicy": "Delete",
+        "storageClassName": "csi-disk"
     }
-    ```
+}
+```
 
-    1.11及以上版本集群样例：
+1.13及之前版本示例：
 
-    ```
-    { 
-        "apiVersion": "v1", 
-        "kind": "PersistentVolume", 
-        "metadata": { 
-            "labels": { 
-                "name": "pv-test" 
-            }, 
-            "name": "pv-test" 
+```
+{ 
+    "apiVersion": "v1", 
+    "kind": "PersistentVolume", 
+    "metadata": { 
+        "labels": { 
+	"failure-domain.beta.kubernetes.io/region": "cn-north-1",
+	"failure-domain.beta.kubernetes.io/zone": "cn-north-1a",
+            "name": "pv-test-02" 
         }, 
-        "spec": { 
-            "accessModes": [ 
-                "ReadWriteMany" 
-            ], 
-            "flexVolume": { 
-                "driver": "huawei.com/fuxivol", 
-                "fsType": "ext4", 
-                "options": { 
-                    "fsType": "ext4", 
-                    "region": "southchina", 
-                    "volumeID": "76e01b29-08b9-11e8-9ca5-1051722006ec", 
-                    "storageType": "bs" 
-                } 
-            }, 
-            "persistentVolumeReclaimPolicy": "Delete" 
-        } 
-    }
-    ```
-
--   指定SFS文件存储ID创建PersistentVolume
-
-    1.9版本的集群样例：
-
-    ```
-    { 
-        "apiVersion": "v1", 
-        "kind": "PersistentVolume", 
-        "metadata": { 
-            "labels": { 
-                "name": "pv-test" 
-            }, 
-            "name": "pv-test" 
+        "name": "pv-test-02",
+        "annotations": {
+	"volume.beta.kubernetes.io/storage-class": "sata",
+	"volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
+        }
+    }, 
+    "spec": { 
+        "accessModes": [ 
+            "ReadWriteMany" 
+        ], 
+        "capacity": { 
+            "storage": "10Gi" 
         }, 
-        "spec": { 
-            "accessModes": [ 
-                "ReadWriteMany" 
-            ], 
-            "flexVolume": { 
-                "driver": "huawei.com/fuxinfs", 
-                "fsType": "nfs", 
-                "options": { 
-                    "fsType": "nfs ", 
-                    "kubernetes.io/namespace": "default", 
-                    "region": "southchina", 
-                    "volumeID": "56e01b29-02b9-128-9ca5-1051722006ec", 
-                    "storageType": "nfs" 
-                } 
-            }, 
-            "persistentVolumeReclaimPolicy": "Delete" 
-        } 
-    }
-    ```
-
-    1.11及以上版本集群样例：
-
-    ```
-    { 
-        "apiVersion": "v1", 
-        "kind": "PersistentVolume", 
-        "metadata": { 
-            "labels": { 
-                "name": "pv-test" 
-            }, 
-            "name": "pv-test" 
+        "hostPath": { 
+            "path": "/home" 
         }, 
-        "spec": { 
-            "accessModes": [ 
-                "ReadWriteMany" 
-            ], 
-            "flexVolume": { 
-                "driver": "huawei.com/fuxinfs", 
-                "fsType": "nfs", 
-                "options": { 
-                    "fsType": "nfs ", 
-                    "region": "southchina", 
-                    "volumeID": "56e01b29-02b9-128-9ca5-1051722006ec", 
-                    "storageType": "nfs" 
-                } 
-            }, 
-            "persistentVolumeReclaimPolicy": "Delete" 
-        } 
-    }
-    ```
+        "persistentVolumeReclaimPolicy": "Delete" 
+    } 
+}
+```
 
--   指定OBS对象存储ID创建PersistentVolume
-
-    1.9版本的集群样例：
-
-    ```
-    { 
-        "apiVersion": "v1", 
-        "kind": "PersistentVolume", 
-        "metadata": { 
-            "labels": { 
-                "name": "pv-test" 
-            }, 
-            "name": "pv-test" 
-        }, 
-        "spec": { 
-            "accessModes": [ 
-                "ReadWriteMany" 
-            ], 
-            "flexVolume": { 
-                "driver": "huawei.com/fuxiobs", 
-                "fsType": "obs", 
-                "options": { 
-                    "fsType": "obs", 
-                    "kubernetes.io/namespace": "default", 
-                    "region": "southchina", 
-                    "volumeID": "76e01b29-08b9-11e8-9ca5-1051722006ec", 
-                    "storageType": "obs" 
-                } 
-            }, 
-            "persistentVolumeReclaimPolicy": "Delete" 
-        } 
-    }
-    ```
-
-    1.11及以上版本集群样例：
-
-    ```
-    { 
-        "apiVersion": "v1", 
-        "kind": "PersistentVolume", 
-        "metadata": { 
-            "labels": { 
-                "name": "pv-test" 
-            }, 
-            "name": "pv-test" 
-        }, 
-        "spec": { 
-            "accessModes": [ 
-                "ReadWriteMany" 
-            ], 
-            "flexVolume": { 
-                "driver": "huawei.com/fuxiobs", 
-                "fsType": "obs", 
-                "options": { 
-                    "fsType": "obs", 
-                    "region": "southchina", 
-                    "volumeID": "76e01b29-08b9-11e8-9ca5-1051722006ec", 
-                    "storageType": "obs" 
-                } 
-            }, 
-            "persistentVolumeReclaimPolicy": "Delete" 
-        } 
-    }
-    ```
-
--   指定SFS Turbo极速文件存储ID创建PersistentVolume（不支持1.11版本之前的集群）
-
-    ```
-    { 
-        "apiVersion": "v1", 
-        "kind": "PersistentVolume", 
-        "metadata": { 
-            "labels": { 
-                "name": "pv-test" 
-            }, 
-            "name": "pv-test" 
-        }, 
-        "spec": { 
-            "accessModes": [ 
-                "ReadWriteMany" 
-            ], 
-            "flexVolume": { 
-                "driver": "huawei.com/fuxiefs", 
-                "fsType": "efs", 
-                "options": { 
-                    "fsType": "efs", 
-                    "region": "southchina", 
-                    "volumeID": "76e01b29-08b9-11e8-9ca5-1051722006ec", 
-                    "storageType": "efs" 
-                } 
-            }, 
-            "persistentVolumeReclaimPolicy": "Delete" 
-        } 
-    }
-    ```
-
-
-## 响应消息<a name="section61819725020"></a>
+## 响应消息<a name="s10a5fb14ddb8474d98072b106aef5bf9"></a>
 
 **响应参数：**
 
-响应参数如[表2](#table26761425181512)所示。
+响应参数的详细描述请参见[15.2-Table2 Request parameter](#tfdb73431f39846d4a56ec4eb558e1617).
 
 **响应示例：**
+
+1.15集群版本示例：
+
+```
+{
+    "apiVersion": "v1",
+    "kind": "PersistentVolume",
+    "metadata": {
+        "annotations": {
+            "pv.kubernetes.io/namespace": "default",
+            "pv.kubernetes.io/provisioned-by": "everest-csi-provisioner"
+        },
+        "creationTimestamp": "2020-01-08T02:00:31Z",
+        "deletionGracePeriodSeconds": 0,
+        "deletionTimestamp": "2020-01-13T02:04:12Z",
+        "finalizers": [
+            "everest-csi-attacher/disk-csi-everest-io"
+        ],
+        "labels": {
+            "failure-domain.beta.kubernetes.io/region": "cn-north-7",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-7b"
+        },
+        "name": "pvc-efe92ec5-fb39-4e17-bb26-c5d336ce5c14"
+    },
+    "spec": {
+        "accessModes": [
+            "ReadWriteOnce"
+        ],
+        "capacity": {
+            "storage": "20Gi"
+        },
+        "csi": {
+            "driver": "disk.csi.everest.io",
+            "fsType": "ext4",
+            "volumeAttributes": {
+                "everest.io/disk-mode": "SCSI",
+                "everest.io/disk-volume-type": "SATA",
+                "storage.kubernetes.io/csiProvisionerIdentity": "everest-csi-provisioner"
+            },
+            "volumeHandle": "9c44d068-42ab-4fcf-bb8f-1609823da5bb"
+        },
+        "persistentVolumeReclaimPolicy": "Delete",
+        "storageClassName": "csi-disk",
+        "volumeMode": "Filesystem"
+    }
+}
+```
+
+1.13及之前集群版本示例：
 
 ```
 {
     "kind": "PersistentVolume",
     "apiVersion": "v1",
     "metadata": {
-        "name": "pv-test",
+        "name": "pv-test-02",
         "namespace": "default",
-        "selfLink": "/api/v1/namespaces/default/persistentvolumes/pv-test",
-        "uid": "e174188f-ff21-11e7-855b-fa163eaf5675",
-        "resourceVersion": "174229",
-        "creationTimestamp": "2018-01-22T03:11:03Z",
+        "selfLink": "/api/v1/namespaces/default/persistentvolumes/pv-test-02",
+        "uid": "98efd6aa-920a-11e8-81cc-fa163e49263c",
+        "resourceVersion": "5672675",
+        "creationTimestamp": "2018-07-28T02:04:44Z",
         "labels": {
-            "name": "pv-test"
+            "failure-domain.beta.kubernetes.io/region": "cn-north-1",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-1a",
+            "name": "pv-test-02"
         },
-        "enable": true
+        "annotations": {
+            "volume.beta.kubernetes.io/storage-class": "sata",
+            "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
+        }
     },
     "spec": {
         "capacity": {
-            "storage": "1Gi"
+            "storage": "10Gi"
+        },
+        "hostPath": {
+            "path": "/home",
+            "type": ""
         },
         "accessModes": [
             "ReadWriteMany"
         ],
-        "flexVolume": {
-            "driver": "huawei.com/fuxivol",
-            "fsType": "ext4",
-            "options": {
-                "fsType": "ext4",
-                "kubernetes.io/namespace": "default",
-                "volumeID": "0781b22f-4d89-4e9c-b026-80e545cea16c"
-            }
-        },
         "persistentVolumeReclaimPolicy": "Delete"
     },
     "status": {
@@ -598,24 +572,26 @@ POST /api/v1/cloudpersistentvolumes
 }
 ```
 
-## 状态码<a name="s50f1049a6a4d404c895cf636eb8f3bf1"></a>
+## 状态码<a name="s9bf8cf335c8b4ceda65a73e0447ae83f"></a>
 
-[表 3 状态码](#zh-cn_topic_0079614900_table46761928)描述API的状态码。
+[表8](#teef67263b8ad4388911a1071b7457482)描述API的状态码。
 
 **表 8**  状态码
 
-<a name="zh-cn_topic_0079614900_table46761928"></a>
-<table><thead align="left"><tr id="zh-cn_topic_0079614900_row33254664"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p55616028205955"><a name="p55616028205955"></a><a name="p55616028205955"></a>状态码</p>
+<a name="teef67263b8ad4388911a1071b7457482"></a>
+<table><thead align="left"><tr id="r3b2414a3fe4b46bb9e39039567404d32"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p122844522619"><a name="p122844522619"></a><a name="p122844522619"></a>状态码</p>
 </th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p8604418205955"><a name="p8604418205955"></a><a name="p8604418205955"></a>描述</p>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="aceb99f5f86954f389c5f1d49a77db226"><a name="aceb99f5f86954f389c5f1d49a77db226"></a><a name="aceb99f5f86954f389c5f1d49a77db226"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0079614900_row41084259"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079614900_p39490674"><a name="zh-cn_topic_0079614900_p39490674"></a><a name="zh-cn_topic_0079614900_p39490674"></a>201</p>
+<tbody><tr id="rc9c9d39fe7f747ada330decba6fe2ce3"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="a75721a25b43d41099ac4cbfce5b64af4"><a name="a75721a25b43d41099ac4cbfce5b64af4"></a><a name="a75721a25b43d41099ac4cbfce5b64af4"></a>201</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614900_p44628050"><a name="zh-cn_topic_0079614900_p44628050"></a><a name="zh-cn_topic_0079614900_p44628050"></a>创建PersistentVolume作业下发成功。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="a2c08ae6cf4b1443faaa56b7c81c533f5"><a name="a2c08ae6cf4b1443faaa56b7c81c533f5"></a><a name="a2c08ae6cf4b1443faaa56b7c81c533f5"></a>The request has been fulfilled, resulting in the creation of a new resource.</p>
 </td>
 </tr>
 </tbody>
 </table>
+
+异常状态码请参见[状态码](状态码.md)。
 
