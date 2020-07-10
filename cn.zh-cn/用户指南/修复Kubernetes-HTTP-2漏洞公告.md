@@ -1,6 +1,6 @@
 # 修复Kubernetes HTTP/2漏洞公告<a name="cce_01_0017"></a>
 
-Kubernetes社区近期公布了CVE-2019-9512与CVE-2019-9514安全漏洞，CCE已发布最新kubernetes 1.13.10版本对漏洞进行修复，对于已经创建的kubernetes 1.13版本，9月底将提供补丁进行修复。针对低于kubernetes 1.13集群版本后续将提供升级能力。
+Kubernetes社区近期公布了CVE-2019-9512与CVE-2019-9514安全漏洞，CCE已发布最新kubernetes 1.13.10版本对漏洞进行修复，对于已经创建的kubernetes 1.13版本，2019年9月底将提供补丁进行修复。针对低于kubernetes 1.13集群版本后续将提供升级能力。
 
 ## 漏洞详情<a name="section205301931171815"></a>
 

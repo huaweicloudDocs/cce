@@ -14,7 +14,7 @@
 已在管理控制台中创建“弹性负载均衡“实例。
 
 1.  登录管理控制台首页，在服务列表中选择“网络  \> 弹性负载均衡 ELB“。
-2.  单击右上角的“购买增强型负载均衡“，详细操作步骤请参见[创建增强型负载均衡器](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0015479967.html)。
+2.  单击右上角的“购买弹性负载均衡“，详细操作步骤请参见[创建负载均衡器](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0015479967.html)。
 
 >![](public_sys-resources/icon-note.gif) **说明：**   
 >CCE中的负载均衡 \( LoadBalancer \)访问类型使用[弹性负载均衡 ELB](https://support.huaweicloud.com/productdesc-elb/zh-cn_topic_0015479966.html)提供网络访问，存在如下产品约束：  
@@ -111,7 +111,7 @@
 
             请根据业务需求选择“公网“或“私网“，具体请参见[公网和私网负载均衡器](https://support.huaweicloud.com/productdesc-elb/zh_cn_elb_01_0004.html)。
 
-            -   公网：支持自动创建和使用已有负载均衡实例两种方式。增强型负载均衡配额不足时，请通过新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
+            -   公网：支持自动创建和使用已有负载均衡实例两种方式。共享型负载均衡配额不足时，请通过新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
                 -   企业项目：对接ELB的企业项目，可以选择直接创建在具体的ELB企业项目下。
                 -   更改配置：选择“公网 \> 自动创建“时，单击规格配置下的“更改配置”，可修改待创建的负载均衡实例的名称、规格、计费模式和带宽。
 
@@ -373,7 +373,7 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p43232502212"><a name="p43232502212"></a><a name="p43232502212"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1532419502210"><a name="p1532419502210"></a><a name="p1532419502210"></a>可选，但使用已有ELB时必填。</p>
-    <p id="p1832435142216"><a name="p1832435142216"></a><a name="p1832435142216"></a>为增强型负载均衡实例的ID。</p>
+    <p id="p1832435142216"><a name="p1832435142216"></a><a name="p1832435142216"></a>为共享型负载均衡实例的ID。</p>
     <p id="p10820174517514"><a name="p10820174517514"></a><a name="p10820174517514"></a>取值范围：1-100字符。</p>
     </td>
     </tr>
@@ -432,7 +432,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p649915218108"><a name="p649915218108"></a><a name="p649915218108"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p54991723102"><a name="p54991723102"></a><a name="p54991723102"></a>ELB的负载均衡算法，可选</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p54991723102"><a name="p54991723102"></a><a name="p54991723102"></a>ELB的负载均衡算法，可选。</p>
     <p id="p16499162191013"><a name="p16499162191013"></a><a name="p16499162191013"></a>默认值：“ROUND_ROBIN”，取值范围：“”空值、“ROUND_ROBIN”、“LEAST_CONNECTIONS”或者“SOURCE_IP”</p>
     </td>
     </tr>
@@ -463,7 +463,9 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1232514542215"><a name="p1232514542215"></a><a name="p1232514542215"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p13251456223"><a name="p13251456223"></a><a name="p13251456223"></a>默认，cce时表示使用增强型负载均衡实例，nginx时表示启用nginx-ingress插件。但通过API接口创建Ingress时必须增加该参数。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p4738183193916"><a name="p4738183193916"></a><a name="p4738183193916"></a>是否开启nginx-ingress插件。</p>
+    <a name="ul20247158154013"></a><a name="ul20247158154013"></a><ul id="ul20247158154013"><li>cce：表示不开启nginx-ingress插件，将默认使用共享型负载均衡实例。</li><li>nginx：表示开启nginx-ingress插件。</li></ul>
+    <p id="p13251456223"><a name="p13251456223"></a><a name="p13251456223"></a>通过API接口创建Ingress时必须增加该参数。</p>
     </td>
     </tr>
     <tr id="row143251551229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p18325951228"><a name="p18325951228"></a><a name="p18325951228"></a>tls</p>
@@ -534,7 +536,7 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p7419646171920"><a name="p7419646171920"></a><a name="p7419646171920"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p87791494919"><a name="p87791494919"></a><a name="p87791494919"></a>自动创建的负载均衡的名称。</p>
-    <p id="p9912132016296"><a name="p9912132016296"></a><a name="p9912132016296"></a>取值范围：<span id="ph130694119111"><a name="ph130694119111"></a><a name="ph130694119111"></a>1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</span></p>
+    <p id="p9912132016296"><a name="p9912132016296"></a><a name="p9912132016296"></a>取值范围：1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</p>
     </td>
     </tr>
     <tr id="row142064681919"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p20862285225"><a name="p20862285225"></a><a name="p20862285225"></a>type</p>
@@ -550,7 +552,7 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1142084619195"><a name="p1142084619195"></a><a name="p1142084619195"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6964103318220"><a name="p6964103318220"></a><a name="p6964103318220"></a>带宽的名称，默认值为：cce-bandwidth-******。</p>
-    <p id="p1236952875020"><a name="p1236952875020"></a><a name="p1236952875020"></a><span id="ph68288851219"><a name="ph68288851219"></a><a name="ph68288851219"></a>取值范围：1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</span></p>
+    <p id="p1236952875020"><a name="p1236952875020"></a><a name="p1236952875020"></a>取值范围：1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</p>
     </td>
     </tr>
     <tr id="row942194619199"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p77502811221"><a name="p77502811221"></a><a name="p77502811221"></a>bandwidth_chargemode</p>

@@ -30,7 +30,7 @@
 
         -   公网：支持自动创建和使用已有负载均衡实例两种方式。
 
-            增强型负载均衡配额不足时，请通过新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
+            共享型负载均衡配额不足时，请通过新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
 
         -   私网：支持自动创建和使用已有负载均衡实例两种方式。
 
@@ -178,7 +178,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p19430103693512"><a name="p19430103693512"></a><a name="p19430103693512"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1380805311426"><a name="p1380805311426"></a><a name="p1380805311426"></a>对接增强型负载均衡时需要增加此参数。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1380805311426"><a name="p1380805311426"></a><a name="p1380805311426"></a>对接共享型负载均衡时需要增加此参数。</p>
     <p id="p1951093520489"><a name="p1951093520489"></a><a name="p1951093520489"></a>取值为“elasticity”、“union”或者“performance”。</p>
     </td>
     </tr>
@@ -202,7 +202,7 @@
     <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p77621528184710"><a name="p77621528184710"></a><a name="p77621528184710"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p59344376579"><a name="p59344376579"></a><a name="p59344376579"></a>可选，但使用已有ELB时必填。</p>
-    <p id="p416573016509"><a name="p416573016509"></a><a name="p416573016509"></a>为增强型负载均衡实例的ID。</p>
+    <p id="p416573016509"><a name="p416573016509"></a><a name="p416573016509"></a>为共享型负载均衡实例的ID。</p>
     <p id="p0972111919506"><a name="p0972111919506"></a><a name="p0972111919506"></a>取值范围：1-100字符。</p>
     </td>
     </tr>
@@ -290,7 +290,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p19272143531318"><a name="p19272143531318"></a><a name="p19272143531318"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p8272035161316"><a name="p8272035161316"></a><a name="p8272035161316"></a>对应界面上的容器端口<span id="ph2339938205312"><a name="ph2339938205312"></a><a name="ph2339938205312"></a>。</span></p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p8272035161316"><a name="p8272035161316"></a><a name="p8272035161316"></a>对应界面上的容器端口。</p>
     </td>
     </tr>
     </tbody>
@@ -312,7 +312,7 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p7419646171920"><a name="p7419646171920"></a><a name="p7419646171920"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p87791494919"><a name="p87791494919"></a><a name="p87791494919"></a>自动创建的负载均衡的名称。</p>
-    <p id="p9912132016296"><a name="p9912132016296"></a><a name="p9912132016296"></a><span id="ph116020516015"><a name="ph116020516015"></a><a name="ph116020516015"></a>取值范围：1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</span></p>
+    <p id="p9912132016296"><a name="p9912132016296"></a><a name="p9912132016296"></a>取值范围：1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</p>
     </td>
     </tr>
     <tr id="row142064681919"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p20862285225"><a name="p20862285225"></a><a name="p20862285225"></a>type</p>
@@ -328,7 +328,7 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1142084619195"><a name="p1142084619195"></a><a name="p1142084619195"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6964103318220"><a name="p6964103318220"></a><a name="p6964103318220"></a>带宽的名称，默认值为：cce-bandwidth-******。</p>
-    <p id="p1236952875020"><a name="p1236952875020"></a><a name="p1236952875020"></a><span id="ph127758155113"><a name="ph127758155113"></a><a name="ph127758155113"></a>取值范围：1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</span></p>
+    <p id="p1236952875020"><a name="p1236952875020"></a><a name="p1236952875020"></a>取值范围：1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</p>
     </td>
     </tr>
     <tr id="row942194619199"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p77502811221"><a name="p77502811221"></a><a name="p77502811221"></a>bandwidth_chargemode</p>
@@ -515,7 +515,7 @@
 
         -   公网：支持自动创建和使用已有负载均衡实例两种方式。
 
-            增强型负载均衡配额不足时，请通过新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
+            共享型负载均衡配额不足时，请通过新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
 
         -   私网：支持自动创建和使用已有负载均衡实例两种方式。
 

@@ -40,14 +40,14 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p119021153716"><a name="p119021153716"></a><a name="p119021153716"></a>应用运维管理 AOM</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul223369145920"></a><a name="ul223369145920"></a><ul id="ul223369145920"><li>子账号设置了CCE Administrator<span id="ph1719815217286"><a name="ph1719815217286"></a><a name="ph1719815217286"></a>权限</span>后，需要增加AOM&nbsp;FullAccess<span id="ph12581142752818"><a name="ph12581142752818"></a><a name="ph12581142752818"></a>权限</span>后才能访问总览中的数据图表。</li><li>支持设置了IAM ReadOnlyAccess和CCE FullAccess或CCE ReadOnlyAccess<span id="ph5962133732817"><a name="ph5962133732817"></a><a name="ph5962133732817"></a>权限</span>的子账号直接访问总览中的数据图表。</li></ul>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul223369145920"></a><a name="ul223369145920"></a><ul id="ul223369145920"><li>子账号设置了CCE Administrator权限后，需要增加AOM&nbsp;FullAccess权限后才能访问总览中的数据图表。</li><li>支持设置了IAM ReadOnlyAccess和CCE FullAccess或CCE ReadOnlyAccess权限的子账号直接访问总览中的数据图表。</li></ul>
 </td>
 </tr>
 <tr id="row159021815871"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p79028151077"><a name="p79028151077"></a><a name="p79028151077"></a>应用管理</p>
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p18902715376"><a name="p18902715376"></a><a name="p18902715376"></a>/</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p290271515712"><a name="p290271515712"></a><a name="p290271515712"></a>支持主账号、设置了CCE Administrator<span id="ph10621184493819"><a name="ph10621184493819"></a><a name="ph10621184493819"></a>、</span><span id="ph756112450388"><a name="ph756112450388"></a><a name="ph756112450388"></a>CCE FullAccess或CCE ReadOnlyAccess</span><span id="ph1246313498384"><a name="ph1246313498384"></a><a name="ph1246313498384"></a>等</span><span id="ph8137035390"><a name="ph8137035390"></a><a name="ph8137035390"></a>权限</span>的子账号访问本功能。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p290271515712"><a name="p290271515712"></a><a name="p290271515712"></a>支持主账号、设置了CCE Administrator、CCE FullAccess或CCE ReadOnlyAccess等权限的子账号访问本功能。</p>
 </td>
 </tr>
 <tr id="row19902151514719"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p169022151472"><a name="p169022151472"></a><a name="p169022151472"></a>工作负载</p>
@@ -60,9 +60,9 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 <p id="p117241658182817"><a name="p117241658182817"></a><a name="p117241658182817"></a>弹性文件服务 SFS</p>
 </td>
 <td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p57471617102017"><a name="p57471617102017"></a><a name="p57471617102017"></a>正常创建工作负载时不依赖其他服务的权限。</p>
-<a name="ul8113732182016"></a><a name="ul8113732182016"></a><ul id="ul8113732182016"><li>如果需要创建ELB类型的服务，需要设置<span id="ph783612547596"><a name="ph783612547596"></a><a name="ph783612547596"></a>ELB FullAccess或者ELB Administrator权限，以及</span>VPC Administrator<span id="ph14651710162818"><a name="ph14651710162818"></a><a name="ph14651710162818"></a>权限</span>。</li><li>如果需要使用Java探针，需要设置AOM&nbsp;FullAccess和APM FullAccess<span id="ph17242747162812"><a name="ph17242747162812"></a><a name="ph17242747162812"></a>权限</span>。</li><li>如果需要NAT网关类型的服务，需要设置NAT Gateway Administrator<span id="ph6725205212813"><a name="ph6725205212813"></a><a name="ph6725205212813"></a>权限</span>。</li><li>如果使用对象存储，需要全局设置OBS Administrator<span id="ph476416564286"><a name="ph476416564286"></a><a name="ph476416564286"></a>权限</span>。<div class="note" id="note1215220141518"><a name="note1215220141518"></a><a name="note1215220141518"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p0153120121518"><a name="p0153120121518"></a><a name="p0153120121518"></a>由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的RBAC策略后，大概需要等待13分钟RBAC策略才能生效；授予OBS相关的系统策略后，大概需要等待5分钟系统策略能生效。</p>
+<a name="ul8113732182016"></a><a name="ul8113732182016"></a><ul id="ul8113732182016"><li>如果需要创建ELB类型的服务，需要设置ELB FullAccess或者ELB Administrator权限，以及VPC Administrator权限。</li><li>如果需要使用Java探针，需要设置AOM&nbsp;FullAccess和APM FullAccess权限。</li><li>如果需要NAT网关类型的服务，需要设置NAT Gateway Administrator权限。</li><li>如果使用对象存储，需要全局设置OBS Administrator权限。<div class="note" id="note1215220141518"><a name="note1215220141518"></a><a name="note1215220141518"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p0153120121518"><a name="p0153120121518"></a><a name="p0153120121518"></a>由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的RBAC策略后，大概需要等待13分钟RBAC策略才能生效；授予OBS相关的系统策略后，大概需要等待5分钟系统策略能生效。</p>
 </div></div>
-</li><li>如果使用文件存储，需要设置SFS FullAccess<span id="ph96156262919"><a name="ph96156262919"></a><a name="ph96156262919"></a>权限</span>。</li></ul>
+</li><li>如果使用文件存储，需要设置SFS FullAccess权限。</li></ul>
 </td>
 </tr>
 <tr id="row39021315071"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p8902715071"><a name="p8902715071"></a><a name="p8902715071"></a>集群管理</p>
@@ -70,14 +70,14 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p14902111511717"><a name="p14902111511717"></a><a name="p14902111511717"></a>应用运维管理 AOM</p>
 <p id="p178879743210"><a name="p178879743210"></a><a name="p178879743210"></a>费用中心 BSS</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul772124115296"></a><a name="ul772124115296"></a><ul id="ul772124115296"><li>如果需要弹性扩容权限，需要设置AOM&nbsp;FullAccess<span id="ph389073112911"><a name="ph389073112911"></a><a name="ph389073112911"></a>权限</span>。</li><li>如果需要转包周期，需要设置BSS Administrator<span id="ph192727532912"><a name="ph192727532912"></a><a name="ph192727532912"></a>权限</span>。</li></ul>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul772124115296"></a><a name="ul772124115296"></a><ul id="ul772124115296"><li>如果需要弹性扩容权限，需要设置AOM&nbsp;FullAccess权限。</li><li>如果需要转包周期，需要设置BSS Administrator权限。</li></ul>
 </td>
 </tr>
 <tr id="row790217151578"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p1790281519714"><a name="p1790281519714"></a><a name="p1790281519714"></a>节点管理</p>
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p129021156718"><a name="p129021156718"></a><a name="p129021156718"></a>弹性云服务器 ECS</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p12840824466"><a name="p12840824466"></a><a name="p12840824466"></a>如果需要创建和删除节点，需要配置ECS FullAccess<span id="ph144680615292"><a name="ph144680615292"></a><a name="ph144680615292"></a>权限</span>。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p12840824466"><a name="p12840824466"></a><a name="p12840824466"></a>当子账号权限为CCE Administrator时，如果创建和删除节点，需要配置ECS FullAccess或ECS Administrator权限，以及VPC Administrator权限。</p>
 </td>
 </tr>
 <tr id="row1890251514716"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p39021615371"><a name="p39021615371"></a><a name="p39021615371"></a>网络管理</p>
@@ -86,7 +86,7 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 <p id="p19883145923514"><a name="p19883145923514"></a><a name="p19883145923514"></a>NAT网关 NAT</p>
 </td>
 <td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p052172153518"><a name="p052172153518"></a><a name="p052172153518"></a>正常创建时不依赖其他服务的权限。</p>
-<a name="ul5525210353"></a><a name="ul5525210353"></a><ul id="ul5525210353"><li>如果需要创建ELB类型的服务，需要设置<span id="ph128851024102914"><a name="ph128851024102914"></a><a name="ph128851024102914"></a>ELB FullAccess或者ELB Administrator权限，以及</span><span id="ph12886102410297"><a name="ph12886102410297"></a><a name="ph12886102410297"></a>VPC Administrator</span><span id="ph14885202452913"><a name="ph14885202452913"></a><a name="ph14885202452913"></a>权限</span>。</li><li>如果需要NAT网关类型的服务，需要设置NAT Administrator<span id="ph19239175542915"><a name="ph19239175542915"></a><a name="ph19239175542915"></a>权限</span>。</li></ul>
+<a name="ul5525210353"></a><a name="ul5525210353"></a><ul id="ul5525210353"><li>如果需要创建ELB类型的服务，需要设置ELB FullAccess或者ELB Administrator权限，以及VPC Administrator权限。</li><li>如果需要NAT网关类型的服务，需要设置NAT Administrator权限。</li></ul>
 </td>
 </tr>
 <tr id="row14486172213364"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p18487522123612"><a name="p18487522123612"></a><a name="p18487522123612"></a>存储管理</p>
@@ -97,7 +97,7 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 </td>
 <td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul146023714385"></a><a name="ul146023714385"></a><ul id="ul146023714385"><li>如果使用对象存储，需要全局设置OBS Administrator。<div class="note" id="note927810178150"><a name="note927810178150"></a><a name="note927810178150"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p8278617181514"><a name="p8278617181514"></a><a name="p8278617181514"></a>由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的RBAC策略后，大概需要等待13分钟RBAC策略才能生效；授予OBS相关的系统策略后，大概需要等待5分钟系统策略才能生效。</p>
 </div></div>
-</li><li>如果使用文件存储，需要设置SFS Administrator<span id="ph13646912173011"><a name="ph13646912173011"></a><a name="ph13646912173011"></a>权限</span>。</li><li>如果使用极速文件存储，需要设置SFS Turbo Admin<span id="ph1406162063019"><a name="ph1406162063019"></a><a name="ph1406162063019"></a>权限</span></li></ul>
+</li><li>如果使用文件存储，需要设置SFS Administrator权限。</li><li>如果使用极速文件存储，需要设置SFS Turbo Admin权限</li></ul>
 </td>
 </tr>
 <tr id="row1488112216362"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p144881022123614"><a name="p144881022123614"></a><a name="p144881022123614"></a>命名空间</p>
@@ -111,7 +111,7 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p257594214394"><a name="p257594214394"></a><a name="p257594214394"></a>/</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p1457514212392"><a name="p1457514212392"></a><a name="p1457514212392"></a>当前仅支持主账号、设置了CCE Administrator<span id="ph629144813325"><a name="ph629144813325"></a><a name="ph629144813325"></a>权限</span>的子账号访问。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p1457514212392"><a name="p1457514212392"></a><a name="p1457514212392"></a>当前仅支持主账号、设置了CCE Administrator权限的子账号访问。</p>
 </td>
 </tr>
 <tr id="row248812273618"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p10488142233620"><a name="p10488142233620"></a><a name="p10488142233620"></a>插件管理</p>
@@ -125,14 +125,14 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p1214191764016"><a name="p1214191764016"></a><a name="p1214191764016"></a>/</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul372099481"></a><a name="ul372099481"></a><ul id="ul372099481"><li>支持主账号访问。</li><li>支持设置了CCE Administrator和Security Administrator（全局级策略）<span id="ph18251832183011"><a name="ph18251832183011"></a><a name="ph18251832183011"></a>权限</span>的子账号访问。</li><li>支持设置了IAM ReadOnlyAccess和CCE FullAccess或CCE ReadOnlyAccess<span id="ph750854383010"><a name="ph750854383010"></a><a name="ph750854383010"></a>权限</span>的子账号访问。</li></ul>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul372099481"></a><a name="ul372099481"></a><ul id="ul372099481"><li>支持主账号访问。</li><li>支持设置了CCE Administrator和Security Administrator（全局级策略）权限的子账号访问。</li><li>支持设置了IAM ReadOnlyAccess和CCE FullAccess或CCE ReadOnlyAccess权限的子账号访问。</li></ul>
 </td>
 </tr>
 <tr id="row1588069154010"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p1388110934011"><a name="p1388110934011"></a><a name="p1388110934011"></a>配置中心</p>
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p28816914409"><a name="p28816914409"></a><a name="p28816914409"></a>/</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul858844185010"></a><a name="ul858844185010"></a><ul id="ul858844185010"><li>配置项 ( ConfigMap )无需其他依赖权限。</li><li>密钥 ( Secret )需要在命名空间权限下设置<span id="ph1939612399716"><a name="ph1939612399716"></a><a name="ph1939612399716"></a>cluster-admin</span><span id="ph149181392710"><a name="ph149181392710"></a><a name="ph149181392710"></a>、</span>admin或者edit权限才能查看<span id="ph224720119820"><a name="ph224720119820"></a><a name="ph224720119820"></a>，</span><span id="ph09613491179"><a name="ph09613491179"></a><a name="ph09613491179"></a>依赖服务需要添加DEW KeypairFullAccess或者DEW KeypairReadOnlyAccess</span><span id="ph81822504303"><a name="ph81822504303"></a><a name="ph81822504303"></a>权限</span><span id="ph39014616814"><a name="ph39014616814"></a><a name="ph39014616814"></a>。</span></li></ul>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul858844185010"></a><a name="ul858844185010"></a><ul id="ul858844185010"><li>配置项 ( ConfigMap )无需其他依赖权限。</li><li>密钥 ( Secret )需要在命名空间权限下设置cluster-admin、admin或者edit权限才能查看，依赖服务需要添加DEW KeypairFullAccess或者DEW KeypairReadOnlyAccess权限。</li></ul>
 </td>
 </tr>
 <tr id="row1090217151179"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p18903615977"><a name="p18903615977"></a><a name="p18903615977"></a>帮助中心</p>
@@ -167,7 +167,7 @@ IAM用户“James”在用户组“开发人员组”，“开发人员组”仅
 
 ## 步骤一：验证用户当前权限<a name="section330722611126"></a>
 
-1.  使用IAM用户“James”登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，IAM用户登录方式请参见[步骤四：使用IAM用户登录并验证权限](设置集群权限.md#section1953761017615)。
+1.  使用IAM用户“James”登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，IAM用户如何登录请参见[IAM用户登录](https://support.huaweicloud.com/usermanual-iam/iam_01_0552.html)。
 2.  单击左侧导航栏中的“总览“，进入总览页面，可以看到该用户无权查看监控相关的模块信息。
 
     **图 2**  无权查看监控信息<a name="fig1825716752613"></a>  
