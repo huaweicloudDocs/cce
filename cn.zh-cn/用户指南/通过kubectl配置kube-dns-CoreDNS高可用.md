@@ -4,9 +4,9 @@
 
 kube-dns/CoreDNS为集群提供了DNS服务。若集群中只部署了单个kube-dns/CoreDNS，则存在kube-dns/CoreDNS故障后影响整个集群运作的风险，因此建议为集群配置多个kube-dns/CoreDNS。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   在CCE中新建的kubernetes 1.11及以上版本集群默认会安装CoreDNS插件。  
->-   更多DNS相关信息请参见[CoreDNS（系统资源插件，必装）](CoreDNS（系统资源插件-必装）.md)或[Kubernetes集群内置DNS配置说明](Kubernetes集群内置DNS配置说明.md)。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   在CCE中新建的kubernetes 1.11及以上版本集群默认会安装CoreDNS插件。
+>-   更多DNS相关信息请参见[CoreDNS（系统资源插件，必装）](CoreDNS（系统资源插件-必装）.md)或[Kubernetes集群内置DNS配置说明](Kubernetes集群内置DNS配置说明.md)。
 
 本章以混合集群为例，裸金属集群操作方式与其相同。
 

@@ -392,13 +392,265 @@ POST /api/v1/persistentvolumes
 </tbody>
 </table>
 
-表9 flexVolume 字段结构说明
+**表 8**  flexVolume 字段结构说明
 
-表 10 options 字段结构说明
+<a name="table1146857164513"></a>
+<table><thead align="left"><tr id="row1846185794512"><th class="cellrowborder" valign="top" width="21.62%" id="mcps1.2.5.1.1"><p id="p164635734516"><a name="p164635734516"></a><a name="p164635734516"></a>名称</p>
+</th>
+<th class="cellrowborder" valign="top" width="16.57%" id="mcps1.2.5.1.2"><p id="p1646557134516"><a name="p1646557134516"></a><a name="p1646557134516"></a>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="19.759999999999998%" id="mcps1.2.5.1.3"><p id="p246165774510"><a name="p246165774510"></a><a name="p246165774510"></a>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="42.05%" id="mcps1.2.5.1.4"><p id="p1946115711453"><a name="p1946115711453"></a><a name="p1946115711453"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row14461957194516"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p134612574459"><a name="p134612574459"></a><a name="p134612574459"></a>driver</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p9461457184514"><a name="p9461457184514"></a><a name="p9461457184514"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p194695794511"><a name="p194695794511"></a><a name="p194695794511"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><pre class="screen" id="screen62758517110"><a name="screen62758517110"></a><a name="screen62758517110"></a>Driver is the name of the driver to use for this volume.
+If the storage type is <strong id="b588670192719"><a name="b588670192719"></a><a name="b588670192719"></a>EVS</strong>, set this parameter to <strong id="b595119511274"><a name="b595119511274"></a><a name="b595119511274"></a>huawei.com/fuxivol</strong>.
+If the storage type is <strong id="b12738194842915"><a name="b12738194842915"></a><a name="b12738194842915"></a>SFS</strong>, set this parameter to <strong id="b679720132301"><a name="b679720132301"></a><a name="b679720132301"></a>huawei.com/fuxinfs</strong>.
+If the storage type is <strong id="b514162023019"><a name="b514162023019"></a><a name="b514162023019"></a>OBS</strong>, set this parameter to <strong id="b893710273307"><a name="b893710273307"></a><a name="b893710273307"></a>huawei.com/fuxiobs</strong>.
+If the storage type is SFS-Turboe, set this parameter to
+huawei.com/fuxiefs</pre>
+</td>
+</tr>
+<tr id="row24625794515"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p81461011143116"><a name="p81461011143116"></a><a name="p81461011143116"></a>fsType</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p2072324382313"><a name="p2072324382313"></a><a name="p2072324382313"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p10461557154518"><a name="p10461557154518"></a><a name="p10461557154518"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p144695712457"><a name="p144695712457"></a><a name="p144695712457"></a>Required: Filesystem type to mount. Must be a filesystem type supported by the host operating system.</p>
+<p id="p1664118453185"><a name="p1664118453185"></a><a name="p1664118453185"></a>If the storage type is EVS, set this parameter to ext4.</p>
+<p id="p370313661916"><a name="p370313661916"></a><a name="p370313661916"></a>If the storage type is SFS, set this parameter to nfs.</p>
+<p id="p18326133152010"><a name="p18326133152010"></a><a name="p18326133152010"></a>If the storage type is OBS, set this parameter to obs.</p>
+<p id="p45737317208"><a name="p45737317208"></a><a name="p45737317208"></a>If the storage type is SFS-Turbo, set this parameter to efs.</p>
+</td>
+</tr>
+<tr id="row380114272221"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p12415543118"><a name="p12415543118"></a><a name="p12415543118"></a>options</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p1261882662216"><a name="p1261882662216"></a><a name="p1261882662216"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p3618152612225"><a name="p3618152612225"></a><a name="p3618152612225"></a>map</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p861872612216"><a name="p861872612216"></a><a name="p861872612216"></a>Map of string keys and values that can be used to record extra command options. The option key values are showed below, in the table 10.</p>
+</td>
+</tr>
+</tbody>
+</table>
 
-表 11 CSI 字段结构说明
+**表 9**  options 字段结构说明
 
-表 12 volumeAttributes 字段结构说明
+<a name="table18629113695410"></a>
+<table><thead align="left"><tr id="row186291936185414"><th class="cellrowborder" valign="top" width="21.62%" id="mcps1.2.5.1.1"><p id="p10629143645410"><a name="p10629143645410"></a><a name="p10629143645410"></a>名称</p>
+</th>
+<th class="cellrowborder" valign="top" width="16.57%" id="mcps1.2.5.1.2"><p id="p15629193645414"><a name="p15629193645414"></a><a name="p15629193645414"></a>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="19.759999999999998%" id="mcps1.2.5.1.3"><p id="p1662973635416"><a name="p1662973635416"></a><a name="p1662973635416"></a>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="42.05%" id="mcps1.2.5.1.4"><p id="p462923615418"><a name="p462923615418"></a><a name="p462923615418"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row5629736175414"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p4629123675413"><a name="p4629123675413"></a><a name="p4629123675413"></a>disk-mode</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p8629103615414"><a name="p8629103615414"></a><a name="p8629103615414"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p3629136115411"><a name="p3629136115411"></a><a name="p3629136115411"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p16629103617547"><a name="p16629103617547"></a><a name="p16629103617547"></a>This parameter is required only when the storage type is EVS, the value can be "SCSI" or "VBD".</p>
+</td>
+</tr>
+<tr id="row136290367547"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p1343115306554"><a name="p1343115306554"></a><a name="p1343115306554"></a>fsType</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p662973655416"><a name="p662973655416"></a><a name="p662973655416"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p5629163620549"><a name="p5629163620549"></a><a name="p5629163620549"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p1629133610549"><a name="p1629133610549"></a><a name="p1629133610549"></a>If the storage type is EVS, set this parameter to ext4.</p>
+<p id="p136291436145417"><a name="p136291436145417"></a><a name="p136291436145417"></a>If the storage type is SFS, set this parameter to nfs.</p>
+<p id="p9630193612541"><a name="p9630193612541"></a><a name="p9630193612541"></a>If the storage type is OBS, set this parameter to s3fs/obsfs.</p>
+<p id="p86301363546"><a name="p86301363546"></a><a name="p86301363546"></a>If the storage type is SFS-Turbo, set this parameter to nfs.</p>
+</td>
+</tr>
+<tr id="row7630133605411"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p273613314110"><a name="p273613314110"></a><a name="p273613314110"></a>volumeID</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p3630143635417"><a name="p3630143635417"></a><a name="p3630143635417"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p563033620548"><a name="p563033620548"></a><a name="p563033620548"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p5583173622"><a name="p5583173622"></a><a name="p5583173622"></a>For EVS\SFS\SFS-Turbo storages, fill the ID of the iaas resource, for OBS, fill the name of obs.</p>
+</td>
+</tr>
+<tr id="row2569401216"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p55612409217"><a name="p55612409217"></a><a name="p55612409217"></a>storage_class</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p65611401221"><a name="p65611401221"></a><a name="p65611401221"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p1956154014213"><a name="p1956154014213"></a><a name="p1956154014213"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p1832192211718"><a name="p1832192211718"></a><a name="p1832192211718"></a>This parameter is required when the storage type is OBS, used to specify OBS type. If there is no obs type, set the default value "STANDARD".</p>
+<p id="p45620401026"><a name="p45620401026"></a><a name="p45620401026"></a>OBS bucket type, standard storage (STANDARD), Low frequency access storage(WARM).</p>
+</td>
+</tr>
+<tr id="row19998235773"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p99981835770"><a name="p99981835770"></a><a name="p99981835770"></a>region</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p14998535479"><a name="p14998535479"></a><a name="p14998535479"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p699816359711"><a name="p699816359711"></a><a name="p699816359711"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p1499815358710"><a name="p1499815358710"></a><a name="p1499815358710"></a>This parameter is required when the storage type is OBS, used to specify the region of OBS resource.</p>
+</td>
+</tr>
+<tr id="row21281932584"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p61289322816"><a name="p61289322816"></a><a name="p61289322816"></a>deviceMountPath</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p912818326814"><a name="p912818326814"></a><a name="p912818326814"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p712810321383"><a name="p712810321383"></a><a name="p712810321383"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p51285329811"><a name="p51285329811"></a><a name="p51285329811"></a>This parameter is required when the storage type is  SFS or SFS-Turbo, used to specify the shared path of iaas resource.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 10**  CSI 字段结构说明
+
+<a name="table1542227193613"></a>
+<table><thead align="left"><tr id="row74222783611"><th class="cellrowborder" valign="top" width="21.62%" id="mcps1.2.5.1.1"><p id="p2420277365"><a name="p2420277365"></a><a name="p2420277365"></a>名称</p>
+</th>
+<th class="cellrowborder" valign="top" width="16.57%" id="mcps1.2.5.1.2"><p id="p1442132723615"><a name="p1442132723615"></a><a name="p1442132723615"></a>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="19.759999999999998%" id="mcps1.2.5.1.3"><p id="p142327173611"><a name="p142327173611"></a><a name="p142327173611"></a>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="42.05%" id="mcps1.2.5.1.4"><p id="p142827153613"><a name="p142827153613"></a><a name="p142827153613"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row542132711366"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p1442202720366"><a name="p1442202720366"></a><a name="p1442202720366"></a>driver</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p1042122715367"><a name="p1042122715367"></a><a name="p1042122715367"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p2042182763618"><a name="p2042182763618"></a><a name="p2042182763618"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><pre class="screen" id="screen942122715368"><a name="screen942122715368"></a><a name="screen942122715368"></a>Driver is the name of the driver to use for this volume.
+If the storage type is <strong id="b194242715366"><a name="b194242715366"></a><a name="b194242715366"></a>EVS</strong>, set this parameter to disk.csi.everest.io.
+If the storage type is <strong id="b2042172713360"><a name="b2042172713360"></a><a name="b2042172713360"></a>SFS</strong>, set this parameter to nas.csi.everest.io.
+If the storage type is <strong id="b1342192713368"><a name="b1342192713368"></a><a name="b1342192713368"></a>OBS</strong>, set this parameter to obs.csi.everest.io.
+If the storage type is SFS-Turboe, set this parameter to
+sfsturbo.csi.everest.io.</pre>
+</td>
+</tr>
+<tr id="row442132719362"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p5501333173113"><a name="p5501333173113"></a><a name="p5501333173113"></a>fsType</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p64262793619"><a name="p64262793619"></a><a name="p64262793619"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p1642102783615"><a name="p1642102783615"></a><a name="p1642102783615"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p144202753610"><a name="p144202753610"></a><a name="p144202753610"></a>Required: Filesystem type to mount. Must be a filesystem type supported by the host operating system.</p>
+<p id="p16421627113614"><a name="p16421627113614"></a><a name="p16421627113614"></a>If the storage type is EVS, set this parameter to ext4.</p>
+<p id="p1842192712369"><a name="p1842192712369"></a><a name="p1842192712369"></a>If the storage type is SFS, set this parameter to nfs.</p>
+<p id="p134214275361"><a name="p134214275361"></a><a name="p134214275361"></a>If the storage type is OBS, set this parameter to s3fs/obsfs.</p>
+<p id="p8426276364"><a name="p8426276364"></a><a name="p8426276364"></a>If the storage type is SFS-Turbo, set this parameter to nfs.</p>
+</td>
+</tr>
+<tr id="row742142753615"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p1142182723613"><a name="p1142182723613"></a><a name="p1142182723613"></a>volumeAttributes</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p1842927173614"><a name="p1842927173614"></a><a name="p1842927173614"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p44282716362"><a name="p44282716362"></a><a name="p44282716362"></a>map</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p194232753618"><a name="p194232753618"></a><a name="p194232753618"></a>Map of string keys and values that can be used to record extra command options. The option key values are showed below, in the table 12.</p>
+</td>
+</tr>
+<tr id="row516614805615"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p171661284569"><a name="p171661284569"></a><a name="p171661284569"></a>volumeHandle</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p71669815564"><a name="p71669815564"></a><a name="p71669815564"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p516616819564"><a name="p516616819564"></a><a name="p516616819564"></a>string</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p139781637113214"><a name="p139781637113214"></a><a name="p139781637113214"></a>VolumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to refer to the volume on all subsequent calls. For EVS\SFS\SFS-Turbo, fill the ID of the iaas resource, for OBS, fill the name of obs.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 11**  volumeAttributes 字段结构说明
+
+<a name="table1615922218174"></a>
+<table><thead align="left"><tr id="row1016019222175"><th class="cellrowborder" valign="top" width="21.62%" id="mcps1.2.5.1.1"><p id="p9160112221717"><a name="p9160112221717"></a><a name="p9160112221717"></a>名称</p>
+</th>
+<th class="cellrowborder" valign="top" width="16.57%" id="mcps1.2.5.1.2"><p id="p7160112218172"><a name="p7160112218172"></a><a name="p7160112218172"></a>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="19.759999999999998%" id="mcps1.2.5.1.3"><p id="p171601822161716"><a name="p171601822161716"></a><a name="p171601822161716"></a>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="42.05%" id="mcps1.2.5.1.4"><p id="p716092221712"><a name="p716092221712"></a><a name="p716092221712"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row1160172214177"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p8160182271713"><a name="p8160182271713"></a><a name="p8160182271713"></a>storage.kubernetes.io/csiProvisionerIdentity</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p4160182221715"><a name="p4160182221715"></a><a name="p4160182221715"></a>Yes</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p20160722121716"><a name="p20160722121716"></a><a name="p20160722121716"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p1775619534178"><a name="p1775619534178"></a><a name="p1775619534178"></a>For all types of storages, this parameter should be set to "Set everest-csi-provisioner".</p>
+</td>
+</tr>
+<tr id="row1116002210175"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p316022251711"><a name="p316022251711"></a><a name="p316022251711"></a>everest.io/disk-mode</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p1016016223173"><a name="p1016016223173"></a><a name="p1016016223173"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p16160222101715"><a name="p16160222101715"></a><a name="p16160222101715"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p1736013732111"><a name="p1736013732111"></a><a name="p1736013732111"></a>This parameter is required only when the storage type is EVS, the value can be "SCSI" or "VBD". But for everest, this value can only be set to "SCSI".</p>
+</td>
+</tr>
+<tr id="row151601422201712"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p2695203312314"><a name="p2695203312314"></a><a name="p2695203312314"></a>everest.io/disk-volume-type</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p101601228179"><a name="p101601228179"></a><a name="p101601228179"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p1160222151718"><a name="p1160222151718"></a><a name="p1160222151718"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p256625412314"><a name="p256625412314"></a><a name="p256625412314"></a>This parameter is required only when the storage type is EVS,</p>
+<p id="p16232560225"><a name="p16232560225"></a><a name="p16232560225"></a>used to specify the type of EVS disk to be used.</p>
+<p id="p183671642164716"><a name="p183671642164716"></a><a name="p183671642164716"></a>EVS disk type, high I/O (SAS), ultra-high I/O (SSD), or common I/O (SATA).</p>
+</td>
+</tr>
+<tr id="row416082210172"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p20160112211172"><a name="p20160112211172"></a><a name="p20160112211172"></a>everest.io/obs-volume-type</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p14160192261719"><a name="p14160192261719"></a><a name="p14160192261719"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p1160112231718"><a name="p1160112231718"></a><a name="p1160112231718"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p4160122219178"><a name="p4160122219178"></a><a name="p4160122219178"></a>This parameter is required when the storage type is OBS, used to specify OBS type. If there is no obs type, set the default value "STANDARD".</p>
+<p id="p416092211173"><a name="p416092211173"></a><a name="p416092211173"></a>OBS bucket type, standard storage (STANDARD), Low frequency access storage(WARM).</p>
+</td>
+</tr>
+<tr id="row41601822151715"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p88493264252"><a name="p88493264252"></a><a name="p88493264252"></a>everest.io/region</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p1516052251714"><a name="p1516052251714"></a><a name="p1516052251714"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p181601022181719"><a name="p181601022181719"></a><a name="p181601022181719"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p171602223175"><a name="p171602223175"></a><a name="p171602223175"></a>This parameter is required when the storage type is OBS, used to specify the region of OBS resource.</p>
+</td>
+</tr>
+<tr id="row13160322171716"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p14160112210178"><a name="p14160112210178"></a><a name="p14160112210178"></a>everest.io/share-export-location</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.57%" headers="mcps1.2.5.1.2 "><p id="p416114226175"><a name="p416114226175"></a><a name="p416114226175"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p7161172218173"><a name="p7161172218173"></a><a name="p7161172218173"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p13161112216175"><a name="p13161112216175"></a><a name="p13161112216175"></a>This parameter is required when the storage type is  SFS or SFS-Turbo, used to specify the shared path of iaas resource.</p>
+</td>
+</tr>
+</tbody>
+</table>
 
 **请求示例：**
 
@@ -574,9 +826,9 @@ POST /api/v1/persistentvolumes
 
 ## 状态码<a name="s9bf8cf335c8b4ceda65a73e0447ae83f"></a>
 
-[表8](#teef67263b8ad4388911a1071b7457482)描述API的状态码。
+[表12](#teef67263b8ad4388911a1071b7457482)描述API的状态码。
 
-**表 8**  状态码
+**表 12**  状态码
 
 <a name="teef67263b8ad4388911a1071b7457482"></a>
 <table><thead align="left"><tr id="r3b2414a3fe4b46bb9e39039567404d32"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p122844522619"><a name="p122844522619"></a><a name="p122844522619"></a>状态码</p>

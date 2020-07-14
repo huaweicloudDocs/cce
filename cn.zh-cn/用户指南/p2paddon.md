@@ -10,8 +10,8 @@ P2P插件用于加速镜像下载的p2p镜像下载服务插件。
 
 为解决此瓶颈，SWR容器镜像服务设计了一种利用P2P协议来加速镜像分发的插件，其主要思路是允许在集群的node之间共享镜像，形成分布式的P2P下载网络，提高网络吞吐量。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->此插件安装时会重启Docker，请谨慎使用。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>此插件安装时会重启Docker，请谨慎使用。
 
 ## 使用推荐<a name="section1666222134117"></a>
 

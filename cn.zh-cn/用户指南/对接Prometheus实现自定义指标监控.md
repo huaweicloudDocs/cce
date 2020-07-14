@@ -19,8 +19,8 @@
 -   您已连接到集群的控制节点，方便快速查看节点标签等信息，参见[通过kubectl或web-terminal插件连接CCE集群](通过kubectl或web-terminal插件连接CCE集群.md)。
 -   在设置自定义监控前，您需先了解和安装[prometheus](https://prometheus.io/)，并在您的工作负载中提供获取自定义指标数据的GET接口，以便能够通过该接口获取您的自定义指标数据。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >当前仅支持获取prometheus的[Gauge指标类型](https://prometheus.io/docs/concepts/metric_types/)。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >当前仅支持获取prometheus的[Gauge指标类型](https://prometheus.io/docs/concepts/metric_types/)。
 
 
 ## 操作步骤<a name="section2050317783613"></a>

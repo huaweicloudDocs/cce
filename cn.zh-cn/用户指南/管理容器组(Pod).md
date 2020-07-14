@@ -23,8 +23,8 @@ Kubernetes 集群中的 Pod 存在如下两种使用途径：
 2.  单击实例列表中后的“编辑YAML“，在弹出的“编辑YAML“窗中可对当前容器组（Pod）的YAML文件进行修改。
 3.  单击“修改“，在弹出的提示框中单击“确定“，完成修改。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >如果实例由其他工作负载创建，暂不支持在容器组（Pod）中单独修改。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >如果实例由其他工作负载创建，暂不支持在容器组（Pod）中单独修改。
 
 4.  （可选）在“编辑YAML“窗中，单击“下载“，可下载该YAML文件。
 
@@ -35,8 +35,8 @@ Kubernetes 集群中的 Pod 存在如下两种使用途径：
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 容器组 Pod”。
 2.  单击实例列表中后的“监控“，可查看相应实例的CPU使用率、内存使用率以及网络上行和下行速率、磁盘的读写速率。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >实例处于非运行状态时，无法查看实例的监控数据。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >实例处于非运行状态时，无法查看实例的监控数据。
 
 
 ## 删除实例<a name="section1917010503513"></a>

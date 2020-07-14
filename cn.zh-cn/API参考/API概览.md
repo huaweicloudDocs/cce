@@ -148,8 +148,8 @@
 </tbody>
 </table>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->当前版本调用Kubernetes接口不支持HTTP长链接。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>当前版本调用Kubernetes接口不支持HTTP长链接。
 
 ## 集群管理<a name="section1921916017577"></a>
 

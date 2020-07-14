@@ -9,11 +9,11 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
 -   安装gpu-beta插件的集群中必须包含GPU节点。
 -   下载的驱动必须是后缀为“.run“的文件。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->-   若下载链接为公网地址，如Nvidia官网，各GPU节点均需要绑定EIP。  
->-   若下载链接为OBS上的链接，无需绑定EIP 。  
->-   已验证支持的Nvidia驱动最新版本为396.37，不建议安装更高版本的驱动。  
->-   更改驱动版本后，需要重启节点才能生效。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>-   若下载链接为公网地址，如Nvidia官网，各GPU节点均需要绑定EIP。
+>-   若下载链接为OBS上的链接，无需绑定EIP 。
+>-   已验证支持的Nvidia驱动最新版本为396.37，不建议安装更高版本的驱动。
+>-   更改驱动版本后，需要重启节点才能生效。
 
 ## 安装插件<a name="section14115341020"></a>
 
@@ -24,8 +24,8 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
     **图 1**  安装Nvidia驱动<a name="fig428916253011"></a>  
     ![](figures/安装Nvidia驱动.png "安装Nvidia驱动")
 
-    >![](public_sys-resources/icon-caution.gif) **注意：**   
-    >卸载GPU-BETA插件不会卸载驱动。若重新安装了驱动，需重启所有GPU节点。  
+    >![](public_sys-resources/icon-caution.gif) **注意：** 
+    >卸载GPU-BETA插件不会卸载驱动。若重新安装了驱动，需重启所有GPU节点。
 
     1.  在“已验证驱动地址“页签下，选择华为云已经验证过的Nvidia驱动。
     2.  在“自定义驱动地址“页签下，输入您获取的Nvidia驱动链接。**如何获取驱动链接，请参考**[获取驱动链接方式](#section95451728192112)。
@@ -64,8 +64,8 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
 1.  登录CCE控制台，在左侧导航栏中选择“插件管理”。在“插件实例”页签下，选择对应的集群，单击“gpu-beta“下的“卸载“。
 2.  在弹出的窗口中，单击“确认”，可卸载该插件。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >卸载gpu-beta插件不会卸载驱动。若重新安装了驱动，需重启所有GPU节点。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >卸载gpu-beta插件不会卸载驱动。若重新安装了驱动，需重启所有GPU节点。
 
 
 ## 相关链接<a name="section16392113515592"></a>

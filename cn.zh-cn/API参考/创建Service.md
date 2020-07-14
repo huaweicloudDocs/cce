@@ -586,7 +586,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 </td>
 <td class="cellrowborder" valign="top" width="19.17%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0079615000_p49810484"><a name="zh-cn_topic_0079615000_p49810484"></a><a name="zh-cn_topic_0079615000_p49810484"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p8117426"><a name="zh-cn_topic_0079615000_p8117426"></a><a name="zh-cn_topic_0079615000_p8117426"></a>String</p>
+<td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p8117426"><a name="zh-cn_topic_0079615000_p8117426"></a><a name="zh-cn_topic_0079615000_p8117426"></a>Integer</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p53531744"><a name="zh-cn_topic_0079615000_p53531744"></a><a name="zh-cn_topic_0079615000_p53531744"></a>Number or name of the port to access on the pods targeted by the service. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. If this is a string, it will be looked up as a named port in the target Pod's container ports. If this is not specified, the value of Port is used (an identity map). Defaults to the service port.</p>
 <p id="zh-cn_topic_0079615000_p12023648"><a name="zh-cn_topic_0079615000_p12023648"></a><a name="zh-cn_topic_0079615000_p12023648"></a>Value range: (0,65535].</p>

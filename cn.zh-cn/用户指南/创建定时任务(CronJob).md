@@ -246,8 +246,8 @@ spec:
     cronjob "hello" deleted
     ```
 
-    >![](public_sys-resources/icon-notice.gif) **须知：**   
-    >删除cronjob的时候不会自动删除job，这些job可以用kubectl delete job来删除。  
+    >![](public_sys-resources/icon-notice.gif) **须知：** 
+    >删除cronjob的时候不会自动删除job，这些job可以用kubectl delete job来删除。
 
 
 ## 相关操作<a name="s28175da725cf46d49a4cfca59155a5d2"></a>

@@ -21,8 +21,8 @@ CCE支持“VPC网络内访问“和“互联网访问“两种方式访问集�
 -   VPC网络内访问：您需要在[ECS控制台](https://console.huaweicloud.com/ecm/?locale=zh-cn#/ecs/manager/vmList)购买一台云服务器，并确保和当前集群在同个VPC内。
 -   互联网访问：您需要准备一台能连接公网的云服务器。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->通过“互联网访问”方式访问集群，集群的kube-apiserver将会暴露到互联网，存在被攻击的风险，建议对kube-apiserver所在节点的EIP配置DDoS高防服务。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>通过“互联网访问”方式访问集群，集群的kube-apiserver将会暴露到互联网，存在被攻击的风险，建议对kube-apiserver所在节点的EIP配置DDoS高防服务。
 
 **操作步骤**
 
@@ -36,9 +36,9 @@ CCE支持“VPC网络内访问“和“互联网访问“两种方式访问集�
     **图 2**  通过kubectl连接集群<a name="fig1366811551535"></a>  
     ![](figures/通过kubectl连接集群.png "通过kubectl连接集群")
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   CCE支持主账号和子账号分别下载config文件（kubeconfig.json），子账号下载的config文件只有30天的有效期，而主账号下载的config文件会长期有效。  
-    >-   子账号下载的config文件所拥有的Kubernetes权限与CCE控制台上子账号所拥有的权限一致。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   CCE支持主账号和子账号分别下载config文件（kubeconfig.json），子账号下载的config文件只有30天的有效期，而主账号下载的config文件会长期有效。
+    >-   子账号下载的config文件所拥有的Kubernetes权限与CCE控制台上子账号所拥有的权限一致。
 
 
 ## 相关操作<a name="section422912118536"></a>

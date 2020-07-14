@@ -16,9 +16,9 @@
 -   metadata.generateName
 -   metadata.annotations
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   当“type“的值为“Opaque“时，“data“的“key“和“value“都可以更新。  
->-   当“type“的值不为“Opaque“时，“data“的“value“可以更新。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   当“type“的值为“Opaque“时，“data“的“key“和“value“都可以更新。
+>-   当“type“的值不为“Opaque“时，“data“的“value“可以更新。
 
 ## URI<a name="se7a801b22ec44205a03503a15151ba92"></a>
 

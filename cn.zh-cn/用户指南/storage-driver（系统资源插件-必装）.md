@@ -8,8 +8,9 @@ storage-driver是一款云存储驱动插件，北向遵循标准容器平台存
 
 **该插件为系统资源插件，kubernetes 1.13及以下版本的集群在创建时默认安装。**
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->当存储功能有升级或者BUG修复时，用户无需升级集群或新建集群来升级存储功能，仅需安装或升级storage-driver插件。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   v1.15.11-r1作为Flexvolume fuxi（即storage-driver）和CSI  [Everest](Everest（系统资源插件-必装）.md)兼容接管的过渡版本，计划在v1.17集群去除对Flexvolume fuxi的支持，请用户在v1.15.11版本范围内将对Flexvolume fuxi的使用切换CSI Everest上。
+>-   当存储功能有升级或者BUG修复时，用户无需升级集群或新建集群来升级存储功能，仅需安装或升级storage-driver插件。
 
 ## 使用限制<a name="section3993231122718"></a>
 
@@ -34,9 +35,9 @@ storage-driver是一款云存储驱动插件，北向遵循标准容器平台存
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**storage-driver**下的“ 升级“。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。  
-    >-   升级storage-driver插件时，会替换原先节点上的旧版本的storage-driver插件，安装最新版本的storage-driver插件以实现功能的快速升级。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
+    >-   升级storage-driver插件时，会替换原先节点上的旧版本的storage-driver插件，安装最新版本的storage-driver插件以实现功能的快速升级。
 
 2.  在基本信息页面选择插件版本，单击“下一步“。
 3.  云存储插件暂未开放可配置参数，直接单击“升级“即可升级storage-driver插件。

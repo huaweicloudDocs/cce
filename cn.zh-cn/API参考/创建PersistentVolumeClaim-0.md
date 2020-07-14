@@ -4,8 +4,8 @@
 
 该API用于在指定的Namespace下创建PersistentVolumeClaim。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->使用已有的EVS创建PVC时，请参照CCE用户指南中使用云硬盘存储章节的[使用已有的EVS创建PVC](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html#section8)中**步骤5**为集群增加关联的metadata，以确保在删除节点或集群时避免删除已挂载的静态PV关联的EVS盘。若不执行上述操作或创建静态PV/PVC时没有执行过上述操作，请务必确保删除节点前，提前将静态PV关联的云硬盘从节点上卸载。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>使用已有的EVS创建PVC时，请参照CCE用户指南中使用云硬盘存储章节的[使用已有的EVS创建PVC](https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html#section8)中**步骤5**为集群增加关联的metadata，以确保在删除节点或集群时避免删除已挂载的静态PV关联的EVS盘。若不执行上述操作或创建静态PV/PVC时没有执行过上述操作，请务必确保删除节点前，提前将静态PV关联的云硬盘从节点上卸载。
 
 ## URI<a name="sdad79289da6f40bfb1b0726f426f9f1f"></a>
 

@@ -6,6 +6,9 @@ Everest是一个云原生容器存储系统，基于CSI为Kubernetes v1.15.6及�
 
 **该插件为系统资源插件，kubernetes 1.15及以上版本的集群在创建时默认安装。**
 
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>v1.13.11-r1升级到v1.15.11-r1集群后，原本v1.13的Flexvolume Fuxi容器存储由v1.15的Everest接管（插件版本v1.1.6及以上），原有功能保持不变。
+
 ## 使用限制<a name="section202191122814"></a>
 
 -   仅支持**v1.15及以上版本**的混合集群和裸金属集群安装本插件。
@@ -26,9 +29,9 @@ Everest是一个云原生容器存储系统，基于CSI为Kubernetes v1.15.6及�
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“everest“下的“ 升级“。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。  
-    >-   升级everest插件时，会替换原先节点上的旧版本的everest插件，安装最新版本的everest插件以实现功能的快速升级。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
+    >-   升级everest插件时，会替换原先节点上的旧版本的everest插件，安装最新版本的everest插件以实现功能的快速升级。
 
 2.  在基本信息页面选择插件版本，单击“下一步“。
 3.  该插件可配置“单实例“或“高可用“规格，选择后单击“升级“即可升级“everest“插件。

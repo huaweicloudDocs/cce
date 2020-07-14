@@ -19,8 +19,8 @@
 -   spec.sessionAffinity
 -   spec.type
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >spec.type的值，可更新的优先级为LoadBalancer\>NodePort\>ClusterIP，即当spec.type的值为ClusterIP时，可更新为LoadBalancer或NodePort；当spec.type的值为NodePort时，只能更新为LoadBalancer；当spec.type的值为LoadBalancer时，spec.type不可更新。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >spec.type的值，可更新的优先级为LoadBalancer\>NodePort\>ClusterIP，即当spec.type的值为ClusterIP时，可更新为LoadBalancer或NodePort；当spec.type的值为NodePort时，只能更新为LoadBalancer；当spec.type的值为LoadBalancer时，spec.type不可更新。
 
 -   spec.port
 -   spec.selector

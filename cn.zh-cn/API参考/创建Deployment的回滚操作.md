@@ -187,7 +187,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/rollback \
 </tbody>
 </table>
 
-**表 5** revision字段说明
+**表 5**  revision字段说明
 
 <a name="table113892521219"></a>
 <table><thead align="left"><tr id="row1538965210113"><th class="cellrowborder" valign="top" width="19%" id="mcps1.2.5.1.1"><p id="p163898521118"><a name="p163898521118"></a><a name="p163898521118"></a>参数</p>

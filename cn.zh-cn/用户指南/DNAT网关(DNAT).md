@@ -28,8 +28,8 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
 
 1.  登录管理控制台，在服务列表中选择“网络 \> NAT网关”，单击页面右上角的“购买NAT网关“。下图是购买NAT网关的案例，请根据实际业务需求填写相关内容。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >购买NAT网关，选择VPC和子网时，请确保与CCE中运行业务的集群VPC和子网一致。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >购买NAT网关，选择VPC和子网时，请确保与CCE中运行业务的集群VPC和子网一致。
 
     **图 2**  购买NAT网关<a name="fig65141147164317"></a>  
     ![](figures/购买NAT网关.png "购买NAT网关")

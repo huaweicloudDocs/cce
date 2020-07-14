@@ -14,8 +14,8 @@
 1.  参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)、[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)或[创建守护进程集\(DaemonSet\)](创建守护进程集(DaemonSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
     -   **访问类型：**选择“节点访问 \( NodePort \)“。
 
-        >![](public_sys-resources/icon-note.gif) **说明：**   
-        >如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。  
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。
 
     -   **Service名称：**自定义服务名称，可与工作负载名称保持一致。
     -   **服务亲和：**
@@ -235,9 +235,9 @@
 3.  单击“远程登录“，弹出登录页面，输入用户密码登录。
 4.  使用curl命令访问工作负载验证工作负载是否可以正常访问。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   节点访问\(NodePort\)会在集群内节点上分配一个虚拟IP，即可以在集群内部通过虚拟IP的验证方式验证。其中，虚拟IP访问端口默认与容器端口一致。  
-    >-   如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   节点访问\(NodePort\)会在集群内节点上分配一个虚拟IP，即可以在集群内部通过虚拟IP的验证方式验证。其中，虚拟IP访问端口默认与容器端口一致。
+    >-   如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。
 
     **curl **_192.168.0.160:_30358
 
@@ -279,14 +279,14 @@
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 无状态 \( Deployment \)”，在工作负载列表页单击要设置Service的工作负载名称。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >如果当前Service被关联到Ingress，则更新Service的端口信息后Ingress将不可用，需要删除重建。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >如果当前Service被关联到Ingress，则更新Service的端口信息后Ingress将不可用，需要删除重建。
 
 2.  在“访问方式“页签，单击“添加Service”。
 3.  在“添加Service“页面，访问类型选择“节点访问 \( NodePort \)“。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。
 
 4.  设置节点访问参数：
     -   **Service名称：**自定义服务名称，可与工作负载名称保持一致。

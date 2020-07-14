@@ -6,10 +6,10 @@
 
 创建对应的service。开源接口的使用方法请参见[创建Service](创建Service.md)。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->若需要开启会话保持，需要满足如下条件：  
->-   工作负载协议为TCP。  
->-   工作负载的各实例已设置反亲和部署，即所有的实例都部署在不同节点上。详细请参见[工作负载和节点的反亲和性](https://support.huaweicloud.com/usermanual-cce/cce_01_0226.html)。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>若需要开启会话保持，需要满足如下条件：
+>-   工作负载协议为TCP。
+>-   工作负载的各实例已设置反亲和部署，即所有的实例都部署在不同节点上。详细请参见[工作负载和节点的反亲和性](https://support.huaweicloud.com/usermanual-cce/cce_01_0226.html)。
 
 自动创建ELB：
 
@@ -79,7 +79,7 @@ spec:
 </td>
 <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p19430103693512"><a name="p19430103693512"></a><a name="p19430103693512"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1380805311426"><a name="p1380805311426"></a><a name="p1380805311426"></a>对接增强型负载均衡时需要增加此参数，值为<span class="uicontrol" id="uicontrol349572644413"><a name="uicontrol349572644413"></a><a name="uicontrol349572644413"></a>“union”</span>。</p>
+<td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1380805311426"><a name="p1380805311426"></a><a name="p1380805311426"></a>对接共享型负载均衡时需要增加此参数，值为<span class="uicontrol" id="uicontrol349572644413"><a name="uicontrol349572644413"></a><a name="uicontrol349572644413"></a>“union”</span>。</p>
 </td>
 </tr>
 <tr id="row15191171618357"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p204451615124716"><a name="p204451615124716"></a><a name="p204451615124716"></a>kubernetes.io/session-affinity-mode</p>
@@ -95,7 +95,7 @@ spec:
 <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p77621528184710"><a name="p77621528184710"></a><a name="p77621528184710"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p59344376579"><a name="p59344376579"></a><a name="p59344376579"></a>可选，但使用已有ELB时必填。</p>
-<p id="p416573016509"><a name="p416573016509"></a><a name="p416573016509"></a>为增强型负载均衡实例的ID。</p>
+<p id="p416573016509"><a name="p416573016509"></a><a name="p416573016509"></a>为共享型负载均衡实例的ID。</p>
 </td>
 </tr>
 <tr id="row201957167350"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p18758202864719"><a name="p18758202864719"></a><a name="p18758202864719"></a>kubernetes.io/elb.subnet-id</p>

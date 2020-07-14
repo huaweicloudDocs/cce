@@ -8,9 +8,9 @@ CoreDNS是由CNCF孵化的开源软件，用于Cloud-Native环境下的DNS服务
 
 **该插件为系统资源插件，kubernetes 1.11及以上版本的集群在创建时默认安装。**
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   当CoreDNS插件有升级或者BUG修复时，您不必升级集群或新建集群，仅需安装或升级CoreDNS插件即可。  
->-   DNS详细使用方法请参见[Kubernetes集群内置DNS配置说明](Kubernetes集群内置DNS配置说明.md)或[通过kubectl配置kube-dns/CoreDNS高可用](通过kubectl配置kube-dns-CoreDNS高可用.md)。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   当CoreDNS插件有升级或者BUG修复时，您不必升级集群或新建集群，仅需安装或升级CoreDNS插件即可。
+>-   DNS详细使用方法请参见[Kubernetes集群内置DNS配置说明](Kubernetes集群内置DNS配置说明.md)或[通过kubectl配置kube-dns/CoreDNS高可用](通过kubectl配置kube-dns-CoreDNS高可用.md)。
 
 ## 安装插件<a name="section776571919194"></a>
 
@@ -117,9 +117,9 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 -   **“ClusterFirstWithHostNet”：**对于使用hostNetwork运行的Pod，您应该明确设置其DNS策略“ClusterFirstWithHostNet”。
 -   **“None”：**它允许Pod忽略Kubernetes环境中的DNS设置。应使用dnsConfigPod规范中的字段提供所有DNS设置 。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->-   Kubernetes 1.10及以上版本，支持Default、ClusterFirst、ClusterFirstWithHostNet和None四种策略；低于Kubernetes 1.10版本，仅支持default、ClusterFirst和ClusterFirstWithHostNet三种。  
->-   “Default”不是默认的DNS策略。如果dnsPolicy的Flag没有特别指明，则默认使用“**ClusterFirst**”。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>-   Kubernetes 1.10及以上版本，支持Default、ClusterFirst、ClusterFirstWithHostNet和None四种策略；低于Kubernetes 1.10版本，仅支持default、ClusterFirst和ClusterFirstWithHostNet三种。
+>-   “Default”不是默认的DNS策略。如果dnsPolicy的Flag没有特别指明，则默认使用“**ClusterFirst**”。
 
 **路由请求流程：**
 
@@ -142,9 +142,9 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“ 升级“。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。  
-    >-   升级coredns插件时，会替换原先节点上的旧版本的coredns插件，安装最新版本的coredns插件以实现功能的快速升级。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
+    >-   升级coredns插件时，会替换原先节点上的旧版本的coredns插件，安装最新版本的coredns插件以实现功能的快速升级。
 
 2.  在基本信息页面选择插件版本，单击“下一步“。
 3.  参照[表2](#table1410658238)配置插件安装参数。配置完成后，单击“升级“即可升级coredns插件。

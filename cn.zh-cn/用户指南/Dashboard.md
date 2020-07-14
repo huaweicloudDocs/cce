@@ -4,12 +4,12 @@
 
 Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行可以操作的所有命令。它允许用户管理在集群中运行应用程序并对其进行故障排除，以及管理集群本身。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->当前华为云CCE提供的Dashboard插件已将对应镜像升级到v1.10.1版本，不受Kubernetes Dashboard漏洞CVE-2018-18264影响。  
->安全漏洞CVE-2018-18264的详细信息，请参考：  
->-   [https://github.com/kubernetes/dashboard/pull/3289](https://github.com/kubernetes/dashboard/pull/3289?spm=a2c4g.11186623.2.10.34d16d21dGsJMe)  
->-   [https://github.com/kubernetes/dashboard/pull/3400](https://github.com/kubernetes/dashboard/pull/3400?spm=a2c4g.11186623.2.11.34d16d21dGsJMe)  
->-   [https://github.com/kubernetes/dashboard/releases/tag/v1.10.1](https://github.com/kubernetes/dashboard/releases/tag/v1.10.1)  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>当前华为云CCE提供的Dashboard插件已将对应镜像升级到v1.10.1版本，不受Kubernetes Dashboard漏洞CVE-2018-18264影响。
+>安全漏洞CVE-2018-18264的详细信息，请参考：
+>-   [https://github.com/kubernetes/dashboard/pull/3289](https://github.com/kubernetes/dashboard/pull/3289?spm=a2c4g.11186623.2.10.34d16d21dGsJMe)
+>-   [https://github.com/kubernetes/dashboard/pull/3400](https://github.com/kubernetes/dashboard/pull/3400?spm=a2c4g.11186623.2.11.34d16d21dGsJMe)
+>-   [https://github.com/kubernetes/dashboard/releases/tag/v1.10.1](https://github.com/kubernetes/dashboard/releases/tag/v1.10.1)
 
 ## 使用约束<a name="section11172124718374"></a>
 
@@ -28,8 +28,8 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
         -   不选择，将不需要上传证书。
 
-            >![](public_sys-resources/icon-notice.gif) **须知：**   
-            >dashboard默认生成的证书不合法，将影响浏览器正常访问，建议您选择手动上传合法证书，以便通过浏览器校验，保证连接的安全性，合法证书购买方法请参见[购买证书](https://support.huaweicloud.com/qs-scm/scm_07_0002.html)。  
+            >![](public_sys-resources/icon-notice.gif) **须知：** 
+            >dashboard默认生成的证书不合法，将影响浏览器正常访问，建议您选择手动上传合法证书，以便通过浏览器校验，保证连接的安全性，合法证书购买方法请参见[购买证书](https://support.huaweicloud.com/qs-scm/scm_07_0002.html)。
 
 
     -   访问类型：可以选择节点访问（NodePort）和负载均衡（LoadBalancer）两种类型。
@@ -41,8 +41,8 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
         -   负载均衡：
             -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后点击刷新按钮。
 
-                >![](public_sys-resources/icon-note.gif) **说明：**   
-                >负载均衡实例需与当前集群处于相同VPC且为公网类型。  
+                >![](public_sys-resources/icon-note.gif) **说明：** 
+                >负载均衡实例需与当前集群处于相同VPC且为公网类型。
 
             -   端口配置：访问类型为负载均衡时，需端口配置。
                 -   协议：默认为TCP。
@@ -81,16 +81,16 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 3.  在插件详情页，单击“访问地址“中的链接，将会打开Kubernetes仪表盘登录页面。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >使用Chrome浏览器访问时，会出现如下“ERR\_CERT\_INVALID”的报错导致无法正常进入登录界面，解决方法请参见[附：访问报错解决方法](#section913875232612)。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >使用Chrome浏览器访问时，会出现如下“ERR\_CERT\_INVALID”的报错导致无法正常进入登录界面，解决方法请参见[附：访问报错解决方法](#section913875232612)。
 
     **图 2**  访问地址<a name="fig1953829125211"></a>  
     ![](figures/访问地址.png "访问地址")
 
 4.  在登录页面中选择“令牌”的登录方式，粘贴输入复制的“值”，单击“登录“按钮。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >本插件默认不支持使用证书认证的kubeconfig进行登录，推荐使用令牌方式登录。详细信息请参考：[https://github.com/kubernetes/dashboard/issues/2474\#issuecomment-348912376](https://github.com/kubernetes/dashboard/issues/2474#issuecomment-348912376)  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >本插件默认不支持使用证书认证的kubeconfig进行登录，推荐使用令牌方式登录。详细信息请参考：[https://github.com/kubernetes/dashboard/issues/2474\#issuecomment-348912376](https://github.com/kubernetes/dashboard/issues/2474#issuecomment-348912376)
 
     **图 3**  令牌方式登录<a name="fig2040714531230"></a>  
     ![](figures/令牌方式登录.png "令牌方式登录")
@@ -115,10 +115,10 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“ 升级“。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作；  
-    >-   若升级按钮可点击，则点击升级按钮即可升级dashboard插件。  
-    >-   升级dashboard插件时，会替换原先节点上的旧版本的dashboard插件，安装最新版本的dashboard插件以实现功能的快速升级。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作；
+    >-   若升级按钮可点击，则点击升级按钮即可升级dashboard插件。
+    >-   升级dashboard插件时，会替换原先节点上的旧版本的dashboard插件，安装最新版本的dashboard插件以实现功能的快速升级。
 
 2.  在弹出的窗口中，单击“确认“，可升级该插件。
 

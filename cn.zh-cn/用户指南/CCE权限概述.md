@@ -19,8 +19,8 @@ CCE权限管理主要分为集群权限、命名空间权限，能够从集群�
     命名空间权限涉及CCE Kubernetes API，基于Kubernetes RBAC能力进行增强，支持对接IAM 用户/用户组进行授权和认证鉴权，但与IAM细粒度策略独立。
 
 
->![](public_sys-resources/icon-caution.gif) **注意：**   
->“集群权限“仅针对与集群相关的资源（如创建/删除集群、节点、节点池、模板、插件等）有效，您必须确保同时配置了“命名空间权限“，才能有操作Kubernetes资源（如工作负载、Service等）的权限。  
+>![](public_sys-resources/icon-caution.gif) **注意：** 
+>“集群权限“仅针对与集群相关的资源（如创建/删除集群、节点、节点池、模板、插件等）有效，您必须确保同时配置了“命名空间权限“，才能有操作Kubernetes资源（如工作负载、Service等）的权限。
 
 **图 1**  CCE权限管理<a name="fig1867613273114"></a>  
 ![](figures/CCE权限管理.png "CCE权限管理")

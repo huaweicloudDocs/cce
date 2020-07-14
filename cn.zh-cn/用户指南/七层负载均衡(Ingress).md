@@ -16,11 +16,11 @@
 1.  登录管理控制台首页，在服务列表中选择“网络  \> 弹性负载均衡 ELB“。
 2.  单击右上角的“购买弹性负载均衡“，详细操作步骤请参见[创建负载均衡器](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0015479967.html)。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->CCE中的负载均衡 \( LoadBalancer \)访问类型使用[弹性负载均衡 ELB](https://support.huaweicloud.com/productdesc-elb/zh-cn_topic_0015479966.html)提供网络访问，存在如下产品约束：  
->-   自动创建的ELB实例建议不要被其他资源使用，否则会在删除时被占用，导致资源残留。  
->-   正在使用的ELB实例请不要修改监听器名称，否则可能导致无法正常访问。  
->-   正在使用的ELB实例，其监听器请不要在ELB控制台中添加自定义转发规则，未通过CCE“网络管理“中的Ingress所管理的转发规则，将在更新ingress的时被清理掉。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>CCE中的负载均衡 \( LoadBalancer \)访问类型使用[弹性负载均衡 ELB](https://support.huaweicloud.com/productdesc-elb/zh-cn_topic_0015479966.html)提供网络访问，存在如下产品约束：
+>-   自动创建的ELB实例建议不要被其他资源使用，否则会在删除时被占用，导致资源残留。
+>-   正在使用的ELB实例请不要修改监听器名称，否则可能导致无法正常访问。
+>-   正在使用的ELB实例，其监听器请不要在ELB控制台中添加自定义转发规则，未通过CCE“网络管理“中的Ingress所管理的转发规则，将在更新ingress的时被清理掉。
 
 ## 通过控制台操作<a name="section744117150366"></a>
 
@@ -66,7 +66,7 @@
 
             单击![](figures/zh-cn_image_0237468998.png)开启后将对接nginx-ingress提供7层访问，可配置如下参数：
 
-            **表 1**  Nginx配置
+            **表 1**  Nginx配置服务器证书
 
             <a name="table05328482472"></a>
             <table><thead align="left"><tr id="row14537184814714"><th class="cellrowborder" valign="top" width="23.400000000000002%" id="mcps1.2.3.1.1"><p id="p453714481473"><a name="p453714481473"></a><a name="p453714481473"></a>参数</p>
@@ -124,9 +124,9 @@
 
             -   对外协议：支持HTTP和HTTPS。若选择HTTPS，请选择密钥证书，格式说明请参见[证书格式](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0092382555.html)。
 
-                >![](public_sys-resources/icon-note.gif) **说明：**   
-                >-   选择HTTPS协议时，才需要创建密钥证书ingress-test-secret.yaml。创建密钥的方法请参见[创建密钥](创建密钥.md)。  
-                >-   同一个ELB实例的同一个端口配置HTTPS时，一个监听器只支持配置一个密钥证书。若使用两个不同的密钥证书将两个Ingress添加到同一个ELB下的同一个监听器，ELB侧实际只生效最初的证书。  
+                >![](public_sys-resources/icon-note.gif) **说明：** 
+                >-   选择HTTPS协议时，才需要创建密钥证书ingress-test-secret.yaml。创建密钥的方法请参见[创建密钥](创建密钥.md)。
+                >-   同一个ELB实例的同一个端口配置HTTPS时，一个监听器只支持配置一个密钥证书。若使用两个不同的密钥证书将两个Ingress添加到同一个ELB下的同一个监听器，ELB侧实际只生效最初的证书。
 
             -   对外端口：开放在负载均衡服务地址的端口，可任意指定。
 
@@ -198,9 +198,9 @@
 
     ingress-test-deployment.yaml、ingress-test-svc.yaml、ingress-test-ingress.yaml、ingress-test-secret.yaml为自定义名称，您可以随意命名。
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >-   选择HTTPS协议时，才需要创建密钥证书ingress-test-secret.yaml。创建密钥的方法请参见[创建密钥](创建密钥.md)。  
-    >-   同一个ELB实例的同一个端口配置HTTPS时，选择的证书需要是一样的。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   选择HTTPS协议时，才需要创建密钥证书ingress-test-secret.yaml。创建密钥的方法请参见[创建密钥](创建密钥.md)。
+    >-   同一个ELB实例的同一个端口配置HTTPS时，选择的证书需要是一样的。
 
     **vi ingress-test-deployment.yaml**
 
@@ -691,8 +691,8 @@
     type: IngressTLS
     ```
 
-    >![](public_sys-resources/icon-note.gif) **说明：**   
-    >此处tls.crt和tls.key为示例，请获取真实密钥进行替换。  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >此处tls.crt和tls.key为示例，请获取真实密钥进行替换。
 
 3.  创建工作负载。
 

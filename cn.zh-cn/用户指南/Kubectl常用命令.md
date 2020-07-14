@@ -8,8 +8,8 @@ get命令用于获取集群的一个或一些resource信息。
 
 该命令可以列出集群所有资源的详细信息，resource包括集群节点、运行的pod、Replication Controller、service等。
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->集群中可以创建多个namespace，未指定namespace的情况下，所有操作都是针对--namespace=default。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>集群中可以创建多个namespace，未指定namespace的情况下，所有操作都是针对--namespace=default。
 
 例如：
 
@@ -37,8 +37,8 @@ kubectl get po --show-labels
 kubectl get namespace
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->查询其他节点需要加-s指定节点，类似可以使用“kubectl get rc”，“kubectl get svc”，“kubectl get nodes”，“kubectl get deploy”等获取其他resource信息。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>查询其他节点需要加-s指定节点，类似可以使用“kubectl get rc”，“kubectl get svc”，“kubectl get nodes”，“kubectl get deploy”等获取其他resource信息。
 
 以yaml格式输出pod的详细信息：
 
@@ -56,8 +56,8 @@ kubectl get po <podname> -o json
 kubectl get po rc-nginx-2-btv4j -o=custom-columns=LABELS:.metadata.labels.app
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->其中LABELS为显示的列标题，可以自己设置，“.metadata.labels.app”为查询的数据需要按照之前的yaml或json获取。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>其中LABELS为显示的列标题，可以自己设置，“.metadata.labels.app”为查询的数据需要按照之前的yaml或json获取。
 
 **create**
 
@@ -77,8 +77,8 @@ expose将一个资源包括pod、Replication Controller、service、deployment�
 kubectl expose deployment deployname --port=81 --type=NodePort --target-port=80 --name=service-name
 ```
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->给deployname发布一个服务，-port为暴露出去的端口，-type为服务类型，-target-port为容器端口，port通过clusterip加端口访问，target-port通过节点ip加端口访问。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>给deployname发布一个服务，-port为暴露出去的端口，-type为服务类型，-target-port为容器端口，port通过clusterip加端口访问，target-port通过节点ip加端口访问。
 
 **run**
 
@@ -273,11 +273,11 @@ kubectl cluster-info dump
 
 describe类似于get，同样用于获取resource的相关信息。不同的是，get获得的是更详细的resource个性的详细信息，describe获得的是resource集群相关的信息。describe 命令同get类似，但是describe不支持-o选项，对于同一类型resource，describe输出的信息格式，内容域相同。
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->如果发现是查询某个resource的信息，使用get命令能够获取更加详尽的信息。但是如果想要查询某个resource的状态，如某个pod并不是在running状态，这时需要获取更详尽的状态信息时，就应该使用describe命令。  
->```  
->kubectl describe po <podname>  
->```  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>如果发现是查询某个resource的信息，使用get命令能够获取更加详尽的信息。但是如果想要查询某个resource的状态，如某个pod并不是在running状态，这时需要获取更详尽的状态信息时，就应该使用describe命令。
+>```
+>kubectl describe po <podname>
+>```
 
 **logs**
 
@@ -350,8 +350,8 @@ replace命令用于对已有资源进行更新、替换。当我们需要更新r
 kubectl replace -f filename
 ```
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->名字不能被更新。另外，如果是更新label，原有标签的pod将会与更新label后的rc断开联系，有新label的rc将会创建指定副本数的新的pod，但是默认并不会删除原来的pod。所以此时如果使用get po将会发现pod数翻倍，进一步check会发现原来的pod已经不会被新rc控制。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>名字不能被更新。另外，如果是更新label，原有标签的pod将会与更新label后的rc断开联系，有新label的rc将会创建指定副本数的新的pod，但是默认并不会删除原来的pod。所以此时如果使用get po将会发现pod数翻倍，进一步check会发现原来的pod已经不会被新rc控制。
 
 **apply\***
 

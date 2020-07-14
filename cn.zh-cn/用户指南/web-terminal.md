@@ -51,8 +51,8 @@ web-terminal是一款支持在Web界面上使用Kubectl的插件。它支持使�
 
 ## 配置插件<a name="section18673939131214"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：**   
->**该部分仅针对1.0.0版本的web-terminal进行说明**，使用最新版本的用户无需阅读该部分的说明，使用老版本的用户建议尽早升级到最新版本提升使用体验。  
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>**该部分仅针对1.0.0版本的web-terminal进行说明**，使用最新版本的用户无需阅读该部分的说明，使用老版本的用户建议尽早升级到最新版本提升使用体验。
 
 成功安装web-tertimal后, 仍需完成如下步骤才能使用。
 

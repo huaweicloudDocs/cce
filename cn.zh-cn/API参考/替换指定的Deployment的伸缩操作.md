@@ -63,8 +63,8 @@ PUT /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Sup
 
 **请求示例：**
 
->![](public_sys-resources/icon-notice.gif) **须知：**   
->如果使用第一个URI：/apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale\(Supports only1.9\)，请将apiVersion的值修改为autoscaling/v1。  
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>如果使用第一个URI：/apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale\(Supports only1.9\)，请将apiVersion的值修改为autoscaling/v1。
 
 ```
 {
