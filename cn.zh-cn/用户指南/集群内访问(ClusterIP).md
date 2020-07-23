@@ -17,7 +17,7 @@
 
     -   **访问类型：**选择“集群内访问 \( ClusterIP \)“。
     -   **Service名称：**自定义服务名称，可与工作负载名称保持一致。
-    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/cce_faq/cce_faq_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
+    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
     -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
         -   容器端口：工作负载程序实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
@@ -317,7 +317,7 @@
 
 您可以在工作负载创建完成后对Service进行配置，此配置对工作负载状态无影响，且实时生效。具体操作如下：
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 无状态 \( Deployment \)”，在工作负载列表页单击要设置Service的工作负载名称。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 无状态负载 Deployment”，在工作负载列表页单击要设置Service的工作负载名称。
 2.  在“访问方式“页签，单击“添加Service”。
 3.  在“添加Service“页面，访问类型选择“集群内访问 \( ClusterIP \)“。
 4.  设置集群内访问参数。
@@ -325,7 +325,7 @@
     -   **集群名称：**工作负载所在集群的名称，此处不可修改。
     -   **命名空间：**工作负载所在命名空间，此处不可修改。
     -   **关联工作负载：**要添加Service的工作负载，此处不可修改。
-    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/cce_faq/cce_faq_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
+    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
     -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
         -   容器端口：工作负载程序实际监听的端口，需用户确定。nginx程序实际监听的端口为80。

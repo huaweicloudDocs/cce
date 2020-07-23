@@ -46,7 +46,7 @@ DELETE /api/v3/addons/\{id\}?cluster\_id=\{cluster\_id\}
 
 **请求参数：**
 
-请求参数如[表2](#HeaderParameter)、[表3](#requestParameter)所示。
+请求参数如[表2](#HeaderParameter)、[\#cce\_02\_0324/requestParameter](#requestParameter)所示。
 
 **表 2**  请求Header参数
 
@@ -83,59 +83,7 @@ DELETE /api/v3/addons/\{id\}?cluster\_id=\{cluster\_id\}
 </tbody>
 </table>
 
-**表 3**  请求Body参数
-
-<a name="requestParameter"></a>
-<table><thead align="left"><tr id="row39651049970"><th class="cellrowborder" valign="top" width="16.470000000000002%" id="mcps1.2.5.1.1"><p id="p79757491676"><a name="p79757491676"></a><a name="p79757491676"></a>参数</p>
-</th>
-<th class="cellrowborder" valign="top" width="15.89%" id="mcps1.2.5.1.2"><p id="p151613298520"><a name="p151613298520"></a><a name="p151613298520"></a>是否必选</p>
-</th>
-<th class="cellrowborder" valign="top" width="16.689999999999998%" id="mcps1.2.5.1.3"><p id="p1297615491679"><a name="p1297615491679"></a><a name="p1297615491679"></a>参数类型</p>
-</th>
-<th class="cellrowborder" valign="top" width="50.949999999999996%" id="mcps1.2.5.1.4"><p id="p49778492717"><a name="p49778492717"></a><a name="p49778492717"></a>描述</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row896517498719"><td class="cellrowborder" valign="top" width="16.470000000000002%" headers="mcps1.2.5.1.1 "><p id="p12978174918710"><a name="p12978174918710"></a><a name="p12978174918710"></a>kind</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.89%" headers="mcps1.2.5.1.2 "><p id="p132301636458"><a name="p132301636458"></a><a name="p132301636458"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.689999999999998%" headers="mcps1.2.5.1.3 "><p id="p1697919491671"><a name="p1697919491671"></a><a name="p1697919491671"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="50.949999999999996%" headers="mcps1.2.5.1.4 "><p id="p09812492719"><a name="p09812492719"></a><a name="p09812492719"></a>API类型，固定值“Addon”，该值不可修改。</p>
-</td>
-</tr>
-<tr id="row4965174915720"><td class="cellrowborder" valign="top" width="16.470000000000002%" headers="mcps1.2.5.1.1 "><p id="p109821949874"><a name="p109821949874"></a><a name="p109821949874"></a>apiVersion</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.89%" headers="mcps1.2.5.1.2 "><p id="p152301736152"><a name="p152301736152"></a><a name="p152301736152"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.689999999999998%" headers="mcps1.2.5.1.3 "><p id="p59835491375"><a name="p59835491375"></a><a name="p59835491375"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="50.949999999999996%" headers="mcps1.2.5.1.4 "><p id="p39851949479"><a name="p39851949479"></a><a name="p39851949479"></a>API版本，固定值“v3”，该值不可修改。</p>
-</td>
-</tr>
-<tr id="row159657491173"><td class="cellrowborder" valign="top" width="16.470000000000002%" headers="mcps1.2.5.1.1 "><p id="p209851249677"><a name="p209851249677"></a><a name="p209851249677"></a>metadata</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.89%" headers="mcps1.2.5.1.2 "><p id="p1230536556"><a name="p1230536556"></a><a name="p1230536556"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.689999999999998%" headers="mcps1.2.5.1.3 "><p id="p1698624920716"><a name="p1698624920716"></a><a name="p1698624920716"></a><a href="#metadata">metadata</a> object</p>
-</td>
-<td class="cellrowborder" valign="top" width="50.949999999999996%" headers="mcps1.2.5.1.4 "><p id="p1989164910715"><a name="p1989164910715"></a><a name="p1989164910715"></a>基本信息，为集合类的元素类型，包含一组由不同名称定义的属性。</p>
-</td>
-</tr>
-<tr id="row1996513491277"><td class="cellrowborder" valign="top" width="16.470000000000002%" headers="mcps1.2.5.1.1 "><p id="p11990124917718"><a name="p11990124917718"></a><a name="p11990124917718"></a>spec</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.89%" headers="mcps1.2.5.1.2 "><p id="p112303361055"><a name="p112303361055"></a><a name="p112303361055"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.689999999999998%" headers="mcps1.2.5.1.3 "><p id="p1299044915715"><a name="p1299044915715"></a><a name="p1299044915715"></a><a href="#templatespec">templatespec</a> object</p>
-</td>
-<td class="cellrowborder" valign="top" width="50.949999999999996%" headers="mcps1.2.5.1.4 "><p id="p12992124912711"><a name="p12992124912711"></a><a name="p12992124912711"></a>spec是集合类的元素类型，内容为插件模板具体信息，插件模板的详细描述主体部分都在spec中给出。</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-**表 4**  templatespec
+**表 3**  templatespec
 
 <a name="templatespec"></a>
 <table><thead align="left"><tr id="row899611491575"><th class="cellrowborder" valign="top" width="16.470000000000002%" id="mcps1.2.5.1.1"><p id="p1817501375"><a name="p1817501375"></a><a name="p1817501375"></a>参数</p>
@@ -232,7 +180,7 @@ DELETE /api/v3/addons/\{id\}?cluster\_id=\{cluster\_id\}
 </tbody>
 </table>
 
-**表 5**  supportVersions
+**表 4**  supportVersions
 
 <a name="supportVersions"></a>
 <table><thead align="left"><tr id="row1436050177"><th class="cellrowborder" valign="top" width="13.52%" id="mcps1.2.5.1.1"><p id="p1737150776"><a name="p1737150776"></a><a name="p1737150776"></a>参数</p>
@@ -266,7 +214,7 @@ DELETE /api/v3/addons/\{id\}?cluster\_id=\{cluster\_id\}
 </tbody>
 </table>
 
-**表 6**  versions
+**表 5**  versions
 
 <a name="versions"></a>
 <table><thead align="left"><tr id="row144915501874"><th class="cellrowborder" valign="top" width="16.050000000000004%" id="mcps1.2.5.1.1"><p id="p3531250179"><a name="p3531250179"></a><a name="p3531250179"></a>参数</p>
@@ -345,7 +293,7 @@ DELETE /api/v3/addons/\{id\}?cluster\_id=\{cluster\_id\}
 </tbody>
 </table>
 
-**表 7**  supportVersions
+**表 6**  supportVersions
 
 <a name="table118365013717"></a>
 <table><thead align="left"><tr id="row785850172"><th class="cellrowborder" valign="top" width="17.46%" id="mcps1.2.5.1.1"><p id="p19896505715"><a name="p19896505715"></a><a name="p19896505715"></a>参数</p>
@@ -379,7 +327,7 @@ DELETE /api/v3/addons/\{id\}?cluster\_id=\{cluster\_id\}
 </tbody>
 </table>
 
-**表 8**  metadata
+**表 7**  metadata
 
 <a name="metadata"></a>
 <table><thead align="left"><tr id="row161054501871"><th class="cellrowborder" valign="top" width="17.57%" id="mcps1.2.5.1.1"><p id="p811412504712"><a name="p811412504712"></a><a name="p811412504712"></a>参数</p>
@@ -451,62 +399,7 @@ DELETE /api/v3/addons/\{id\}?cluster\_id=\{cluster\_id\}
 
 **请求示例：**
 
-```
-{
-    "requesbody": {
-        "kind": "string",
-        "apiVersion": "string",
-        "metadata": {
-            "uid": "string",
-            "name": "string",
-            "labels": "object",
-            "annotations": "object",
-            "updateTimestamp": "string",
-            "creationTimestamp": "string"
-        },
-        "spec": {
-            "type": "string",
-            "labels": [
-                "string",
-                "string"
-            ],
-            "logoURL": "string",
-            "readmeURL": "string",
-            "description": "string",
-            "versions": [
-                {
-                    "version": "string",
-                    "input": {},
-                    "stable": "boolean",
-                    "translate": "string"
-                }
-            ],
-            "supportVersions": [
-                {
-                    "clusterType": "string",
-                    "clusterVersion": [
-                        "string",
-                        "string"
-                    ]
-                }
-            ],
-            "creationTimestamp": "string",
-            "updateTimestamp": "string"
-        },
-        "supportVersions": [
-            {
-                "clusterType": "string",
-                "clusterVersion": [
-                    "string",
-                    "string"
-                ]
-            }
-        ],
-        "creationTimestamp": "string",
-        "updateTimestamp": "string"
-    }
-}
-```
+无
 
 ## 响应消息<a name="section171345501278"></a>
 
@@ -537,7 +430,7 @@ NA
 
 ## 状态码<a name="section194651851070"></a>
 
-**表 9**  状态码
+**表 8**  状态码
 
 <a name="zh-cn_topic_0079614900_table46761928"></a>
 <table><thead align="left"><tr id="zh-cn_topic_0079614900_row33254664"><th class="cellrowborder" valign="top" width="19.96%" id="mcps1.2.3.1.1"><p id="p55616028205955"><a name="p55616028205955"></a><a name="p55616028205955"></a>状态码</p>
@@ -561,7 +454,7 @@ NA
 
 ## 错误码<a name="section64661151176"></a>
 
-**表 10**  错误码
+**表 9**  错误码
 
 <a name="table385715361349"></a>
 <table><thead align="left"><tr id="row1185873614413"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p38588361040"><a name="p38588361040"></a><a name="p38588361040"></a>错误码</p>

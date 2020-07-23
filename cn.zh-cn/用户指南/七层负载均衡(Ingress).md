@@ -41,7 +41,7 @@
             -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
             -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
 
-        -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/cce_faq/cce_faq_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
+        -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
         -   **端口配置：**
             -   协议：请根据业务的协议类型选择。
             -   容器端口：容器镜像中工作负载实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
@@ -62,11 +62,11 @@
         -   **Ingress名称：**自定义Ingress名称，例如ingress-demo。
         -   **集群名称：**选择需要添加Ingress的集群。
         -   **命名空间：**选择需要添加Ingress的命名空间。
-        -   <a name="li17417517134"></a>**对接Nginx：**集群中已安装[nginx-ingress模板](https://support.huaweicloud.com/cce_faq/cce_faq_00237.html)后显示此选项，未安装nginx-ingress模板时本选项不显示。
+        -   <a name="li17417517134"></a>**对接Nginx：**集群中已安装[nginx-ingress模板](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00237.html)后显示此选项，未安装nginx-ingress模板时本选项不显示。
 
             单击![](figures/zh-cn_image_0237468998.png)开启后将对接nginx-ingress提供7层访问，可配置如下参数：
 
-            **表 1**  Nginx配置服务器证书
+            **表 1**  Nginx配置参数
 
             <a name="table05328482472"></a>
             <table><thead align="left"><tr id="row14537184814714"><th class="cellrowborder" valign="top" width="23.400000000000002%" id="mcps1.2.3.1.1"><p id="p453714481473"><a name="p453714481473"></a><a name="p453714481473"></a>参数</p>
@@ -398,7 +398,7 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p164393463532"><a name="p164393463532"></a><a name="p164393463532"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1843954617535"><a name="p1843954617535"></a><a name="p1843954617535"></a>可选，但公网或私网自动创建时必填。</p>
-    <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>为ELB企业项目名称，选择后可以直接创建在具体的ELB企业项目下。</p>
+    <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>为ELB企业项目ID，选择后可以直接创建在具体的ELB企业项目下。</p>
     <p id="p133431611481"><a name="p133431611481"></a><a name="p133431611481"></a>取值范围：1-100字符。</p>
     </td>
     </tr>

@@ -56,7 +56,7 @@
 
     3.  检查分区是否被使用。
 
-        **lsblk  _<partdevice\>_**
+        **lsblk **_<partdevice\>_
 
         _<partdevice\>_为上个步骤中查到的Linux LVM分区。
 
@@ -79,7 +79,7 @@
 3.  <a name="li111391316141612"></a>为docker创建Linux LVM型磁盘分区。
     1.  执行如下命令，创建磁盘分区。其中devicename为可用的裸盘名，如[1](#li139011015111020)中的xvdb。
 
-        **fdisk /dev/_devicename_**
+        **fdisk /dev/**_devicename_
 
     2.  输入**n**创建新分区，输入**p**展示主分区号，输入**4**表示第4个主分区。
 

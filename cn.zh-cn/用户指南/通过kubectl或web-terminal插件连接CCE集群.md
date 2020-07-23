@@ -6,7 +6,7 @@
 
 **请安装和设置web-terminal。**
 
-有关详细信息，请参见[web-terminal](web-terminal.md)安装和配置插件，安装完成后单击左侧导航栏的“插件管理“，在“插件实例”中，点击“web-terminal”进入详情页，点击“访问地址”中的链接即可登录。
+有关详细信息，请参见[web-terminal](web-terminal.md)安装和配置插件，安装完成后单击左侧导航栏的“插件管理“，在“插件实例”中，单击“web-terminal”名称进入插件详情页，单击“访问地址”后的链接即可登录。
 
 ## 通过kubectl连接集群<a name="section37321625113110"></a>
 

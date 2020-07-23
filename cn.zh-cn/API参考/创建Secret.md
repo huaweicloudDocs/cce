@@ -8,6 +8,7 @@ Secret有主要有四种类型：
 
 -   kubernetes.io/service-account-token ：用来访问Kubernetes API，由Kubernetes自动创建，并且会自动挂载到Pod的/run/secrets/kubernetes.io/serviceaccount目录中；
 -   opaque ：base64编码格式的Secret，用来存储密码、密钥等；在高敏感场景，建议先通过数据加密服务加密敏感数据后，再存入Secret中；
+-   cfe/secure-opaque：secret格式，常用于上传敏感信息给平台使用。数据加密后存储并返回密文，可以有效保障用户数据安全；
 -   kubernetes.io/dockerconfigjson ：用来存储私有docker registry的认证信息。
 
 ## URI<a name="s3cae00f6e7914695ba88e44aa7a2a633"></a>

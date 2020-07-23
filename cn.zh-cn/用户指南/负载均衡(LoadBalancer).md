@@ -219,7 +219,7 @@
     <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p164393463532"><a name="p164393463532"></a><a name="p164393463532"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1843954617535"><a name="p1843954617535"></a><a name="p1843954617535"></a>可选，但公网或私网自动创建时必填。</p>
-    <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>为ELB企业项目名称，选择后可以直接创建在具体的ELB企业项目下。</p>
+    <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>为ELB企业项目ID，选择后可以直接创建在具体的ELB企业项目下。</p>
     <p id="p86261431205112"><a name="p86261431205112"></a><a name="p86261431205112"></a>取值范围：1-100字符。</p>
     </td>
     </tr>
@@ -379,7 +379,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.37%" headers="mcps1.2.4.1.2 "><p id="p199103495116"><a name="p199103495116"></a><a name="p199103495116"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="52.04%" headers="mcps1.2.4.1.3 "><p id="p3910194918115"><a name="p3910194918115"></a><a name="p3910194918115"></a>当elb.session-affinity-mode是“SOURCE_IP”时生效，设置会话保持的超时时间。</p>
+    <td class="cellrowborder" valign="top" width="52.04%" headers="mcps1.2.4.1.3 "><p id="p3910194918115"><a name="p3910194918115"></a><a name="p3910194918115"></a>当elb.session-affinity-mode是“SOURCE_IP”时生效，设置会话保持的超时时间（秒）。</p>
     <p id="p99101649515"><a name="p99101649515"></a><a name="p99101649515"></a>默认值为：60，取值范围：1-60。</p>
     </td>
     </tr>
@@ -496,7 +496,7 @@
 
 您可以在工作负载创建完成后对Service进行配置，此配置对工作负载状态无影响，且实时生效。具体操作如下：
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 无状态 \( Deployment \)”或“工作负载 \> 有状态负载 StatefulSet”，在工作负载列表页单击要设置Service的工作负载名称。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 无状态负载 Deployment”或“工作负载 \> 有状态负载 StatefulSet”，在工作负载列表页单击要设置Service的工作负载名称。
 2.  在“访问方式“页签，单击“添加Service”。
 3.  在“添加service“页面，访问类型选择“**负载均衡 \( LoadBalancer \)**”。
 4.  设置负载均衡参数。
@@ -535,7 +535,7 @@
 
     -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
-        -   端口：容器镜像中工作负载程序实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
+        -   容器端口：容器镜像中工作负载程序实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
         -   访问端口：容器端口最终映射到负载均衡服务地址的端口，用负载均衡服务地址访问工作负载时使用，端口范围为1-65535，可任意指定。
 
 5.  单击“创建”。工作负载已添加“负载均衡 \( LoadBalancer \)”的服务。
@@ -558,7 +558,7 @@
 
     **负载均衡配置：**
 
-    -   **负载均衡：**更新时此处不可修改。可以将互联网访问流量自动分发到工作负载所在的多个节点上。
+    -   **负载均衡：**更新时公网/私网在此处不可修改，但可以选择集群所在VPC下的其他负载均衡实例。负载均衡可以将互联网访问流量自动分发到工作负载所在的多个节点上。
 
         负载均衡实例需与当前集群处于相同VPC且为相同公私网类型。
 

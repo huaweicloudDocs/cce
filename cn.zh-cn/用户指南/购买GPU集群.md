@@ -14,7 +14,7 @@
 
 ## 购买GPU集群<a name="section9343750182712"></a>
 
-混合集群支持支持GPU、NPU等异构节点的混合部署，其购买方式与混合集群基本类似，你只需在创建混合集群时的“创建节点”步骤中选择**“GPU加速型“**下的节点规格即可。
+混合集群支持GPU、NPU等异构节点的混合部署，其购买方式与混合集群基本类似，你只需在创建混合集群时的“创建节点”步骤中选择**“GPU加速型“**下的节点规格即可。
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中单击“资源管理 \> 集群管理“，进入集群列表页面。
 2.  单击页面右上角“混合集群“右侧的“购买“按钮，进入购买集群页面。
@@ -27,14 +27,14 @@
 
 3.  请参考购买混合集群时的[操作步骤](购买混合集群.md#section463761220269)，填写服务选项参数。
 4.  在“创建节点“步骤中，注意参照如下参数配置节点。
-    -   **节点规格：**请根据业务需求选择**“GPU加速型“**下的节点规格。
 
-        **图 2**  选择GPU节点规格<a name="fig715175671311"></a>  
-        ![](figures/选择GPU节点规格.png "选择GPU节点规格")
+    **节点规格：**请根据业务需求选择**“GPU加速型“**下的节点规格。
 
-        >![](public_sys-resources/icon-note.gif) **说明：** 
-        >为确保节点稳定性，系统会自动预留部分资源，运行必须的系统组件。详细请参见[节点预留资源计算公式](节点预留资源计算公式.md)。
+    **图 2**  选择GPU节点规格<a name="fig715175671311"></a>  
+    ![](figures/选择GPU节点规格.png "选择GPU节点规格")
 
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >为确保节点稳定性，系统会自动预留部分资源，运行必须的系统组件。详细请参见[节点预留资源计算公式](节点预留资源计算公式.md)。
 
 5.  其他操作与购买混合集群一致，确认规格和费用后，单击“提交”，集群开始创建。
 
@@ -69,12 +69,27 @@
     </tr>
     <tr id="cce_01_0028_row106431055133510"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p1364315552359"><a name="cce_01_0028_p1364315552359"></a><a name="cce_01_0028_p1364315552359"></a>监控</p>
     </td>
-    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p5583863516649"><a name="cce_01_0028_p5583863516649"></a><a name="cce_01_0028_p5583863516649"></a>查看集群近1小时、近3小时或近12小时的CPU和内存占用情况。</p>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p5583863516649"><a name="cce_01_0028_p5583863516649"></a><a name="cce_01_0028_p5583863516649"></a>可查看集群下全部节点的CPU和内存分配率（即分配量的最大值），以及控制节点的CPU和内存使用率、控制节点规格等信息。</p>
     </td>
     </tr>
     <tr id="cce_01_0028_row1464335593515"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p1264365518351"><a name="cce_01_0028_p1264365518351"></a><a name="cce_01_0028_p1264365518351"></a>事件</p>
     </td>
     <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><a name="cce_01_0028_ul42186174161243"></a><a name="cce_01_0028_ul42186174161243"></a><ul id="cce_01_0028_ul42186174161243"><li>可以直接在“事件”页签下查看集群的事件。</li><li>可以设置查询条件，比如设置事件产生的时间段或搜索事件名称，查看相关事件。</li></ul>
+    </td>
+    </tr>
+    <tr id="cce_01_0028_row506129238"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p160812132312"><a name="cce_01_0028_p160812132312"></a><a name="cce_01_0028_p160812132312"></a>弹性扩容</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p90512182317"><a name="cce_01_0028_p90512182317"></a><a name="cce_01_0028_p90512182317"></a>您可以根据实际业务需要对集群的工作节点进行扩容和缩容，详情请参见<a href="集群弹性扩容.md">集群弹性扩容</a>。</p>
+    </td>
+    </tr>
+    <tr id="cce_01_0028_row651036112414"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p1251015692419"><a name="cce_01_0028_p1251015692419"></a><a name="cce_01_0028_p1251015692419"></a>kubectl</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p35101368242"><a name="cce_01_0028_p35101368242"></a><a name="cce_01_0028_p35101368242"></a>若您需要从客户端计算机连接到kubernetes集群，请使用kubernetes命令行客户端<a href="https://kubernetes.io/docs/user-guide/kubectl/" target="_blank" rel="noopener noreferrer">kubectl</a>，详情请参见<a href="通过kubectl或web-terminal插件连接CCE集群.md">通过kubectl或web-terminal插件连接CCE集群</a>。</p>
+    </td>
+    </tr>
+    <tr id="cce_01_0028_row2701721182419"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p6701721122417"><a name="cce_01_0028_p6701721122417"></a><a name="cce_01_0028_p6701721122417"></a>Istioctl</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p1701821112418"><a name="cce_01_0028_p1701821112418"></a><a name="cce_01_0028_p1701821112418"></a>在集群开启istio服务网格功能后，您使用Istio命令行工具Istioctl配置多种路由策略，从而管理服务流量，包括流量转移、故障注入、限流熔断等。详情请参见<a href="通过Istioctl配置路由策略.md">通过Istioctl配置路由策略</a>。</p>
     </td>
     </tr>
     </tbody>

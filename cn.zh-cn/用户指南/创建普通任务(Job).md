@@ -68,7 +68,7 @@
     </tbody>
     </table>
 
-4.  单击“下一步“，添加容器。
+4.  单击“下一步：添加容器“，添加容器和镜像。
     1.  单击“选择镜像”，选择需要部署的镜像。
         -   我的镜像：展示了您创建的所有镜像仓库。
         -   Dockerhub官方镜像：展示了Dockerhub仓库中的官方镜像。
@@ -106,11 +106,17 @@
         </tr>
         <tr id="zh-cn_topic_0107283470_row152831345485"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p875325925918"><a name="zh-cn_topic_0107283470_p875325925918"></a><a name="zh-cn_topic_0107283470_p875325925918"></a>容器规格</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="zh-cn_topic_0107283470_p1825119142351"><a name="zh-cn_topic_0107283470_p1825119142351"></a><a name="zh-cn_topic_0107283470_p1825119142351"></a>申请和限制的含义如下，具体请参见<a href="设置容器规格.md">设置容器规格</a>。<a name="zh-cn_topic_0107283470_ul1674183414114"></a><a name="zh-cn_topic_0107283470_ul1674183414114"></a><ul id="zh-cn_topic_0107283470_ul1674183414114"><li>申请：表示容器运行所需最少资源。</li><li>限制：若担心容器超载，导致系统故障。建议设容器配额的最高限制。确保容器资源不会超额。</li><li>GPU设置：<div class="note" id="zh-cn_topic_0107283470_note118204916050"><a name="zh-cn_topic_0107283470_note118204916050"></a><a name="zh-cn_topic_0107283470_note118204916050"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="zh-cn_topic_0107283470_p1063844316050"><a name="zh-cn_topic_0107283470_p1063844316050"></a><a name="zh-cn_topic_0107283470_p1063844316050"></a>当集群中包含GPU节点时，才能设置GPU。</p>
-        </div></div>
-        <a name="zh-cn_topic_0107283470_ul2409689116041"></a><a name="zh-cn_topic_0107283470_ul2409689116041"></a><ul id="zh-cn_topic_0107283470_ul2409689116041"><li>GPU配额：勾选申请，并设置百分比，例如设置为10%，表示该容器需使用GPU资源的10%。若不勾选申请，或设置为0，则无法使用GPU资源。</li><li>GPU显卡：若勾选“不限制”，容器将会随机使用节点中的任一显卡。您也可以勾选某个显卡，容器将使用特定显卡。</li></ul>
-        </li></ul>
-        </div>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p5379182494610"><a name="p5379182494610"></a><a name="p5379182494610"></a><strong id="b2155195713314"><a name="b2155195713314"></a><a name="b2155195713314"></a>CPU配额：</strong></p>
+        <a name="ul67283495467"></a><a name="ul67283495467"></a><ul id="ul67283495467"><li>申请：容器需要使用的最小CPU值，默认0.25Core。</li><li>限制：允许容器使用的CPU最大值。建议设容器配额的最高限额，避免容器资源超额导致系统故障。</li></ul>
+        <p id="p633394210502"><a name="p633394210502"></a><a name="p633394210502"></a><strong id="b5114173113411"><a name="b5114173113411"></a><a name="b5114173113411"></a>内存配额：</strong></p>
+        <a name="ul14326165915010"></a><a name="ul14326165915010"></a><ul id="ul14326165915010"><li>申请：容器需要使用的内存最小值，默认512MiB。</li><li>限制：允许容器使用的内存最大值。如果超过，容器会被终止。</li></ul>
+        <p id="p1825119142351"><a name="p1825119142351"></a><a name="p1825119142351"></a>申请和限制的具体请参见<a href="设置容器规格.md">设置容器规格</a>。</p>
+        <p id="p38521896343"><a name="p38521896343"></a><a name="p38521896343"></a><strong id="b11557151512341"><a name="b11557151512341"></a><a name="b11557151512341"></a>GPU配额：</strong>当集群中包含GPU节点时，才能设置GPU，无GPU节点不显示此选项。</p>
+        <p id="p15403132914341"><a name="p15403132914341"></a><a name="p15403132914341"></a>容器需要使用的GPU百分比。勾选<span class="uicontrol" id="uicontrol952171455614"><a name="uicontrol952171455614"></a><a name="uicontrol952171455614"></a>“使用”</span>并设置百分比，例如设置为10%，表示该容器需使用GPU资源的10%。若不勾选<span class="uicontrol" id="uicontrol12950184715612"><a name="uicontrol12950184715612"></a><a name="uicontrol12950184715612"></a>“使用”</span>，或设置为0，则无法使用GPU资源。</p>
+        <p id="p9626154413340"><a name="p9626154413340"></a><a name="p9626154413340"></a><strong id="b423894943411"><a name="b423894943411"></a><a name="b423894943411"></a>GPU显卡：</strong>工作负载实例将被调度到GPU显卡类型为指定显卡的节点上。</p>
+        <p id="p15765438173416"><a name="p15765438173416"></a><a name="p15765438173416"></a>若勾选“不限制”，容器将会随机使用节点中的任一显卡。您也可以勾选某个显卡，容器将使用特定显卡。</p>
+        <p id="p58663964520"><a name="p58663964520"></a><a name="p58663964520"></a><strong id="b188666944516"><a name="b188666944516"></a><a name="b188666944516"></a>昇腾&nbsp;310配额：</strong>容器需要使用的昇腾 310芯片个数，此处须为整数。</p>
+        <p id="p2097772173513"><a name="p2097772173513"></a><a name="p2097772173513"></a>选用AI加速型节点并安装<strong id="b99085210250"><a name="b99085210250"></a><a name="b99085210250"></a>huawei-npu</strong>插件后该参数设置将生效。AI加速型节点目前已开放公测，该节点搭载高性能、低功耗的海思Ascend 310 AI处理器，适用于图像识别、视频处理、推理计算以及机器学习等场景，点此可<a href="https://account.huaweicloud.com/usercenter/#/userindex/betaManagement?serviceCode=ecs_ascend_ai1" target="_blank" rel="noopener noreferrer">立即申请</a>。</p>
         </td>
         </tr>
         </tbody>
@@ -129,7 +135,7 @@
         </thead>
         <tbody><tr id="r616e69d5a2004b079888d8a4a2a83762"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="ae1906e2a0f4e48c8a290d2ffdc9e83bf"><a name="ae1906e2a0f4e48c8a290d2ffdc9e83bf"></a><a name="ae1906e2a0f4e48c8a290d2ffdc9e83bf"></a>生命周期</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="a72815832aa2c4ad6953cec368b824346"><a name="a72815832aa2c4ad6953cec368b824346"></a><a name="a72815832aa2c4ad6953cec368b824346"></a>生命周期脚本定义，主要针对容器类任务的生命周期事件采取的动作。<a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><ul id="u86a34d59537a4e5ebbcd8d62f0fb6fc7"><li>启动：输入容器启动命令，容器启动后会立即执行。详细步骤请参见<a href="容器设置.md">容器设置</a>。</li><li>启动后处理：任务启动后触发。详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li><li>停止前处理：任务停止前触发。详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li></ul>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="a72815832aa2c4ad6953cec368b824346"><a name="a72815832aa2c4ad6953cec368b824346"></a><a name="a72815832aa2c4ad6953cec368b824346"></a>生命周期脚本定义，主要针对容器类任务的生命周期事件采取的动作。<a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><ul id="u86a34d59537a4e5ebbcd8d62f0fb6fc7"><li>启动命令：输入容器启动命令，容器启动后会立即执行。详细步骤请参见<a href="容器设置.md">容器设置</a>。</li><li>启动后处理：任务启动后触发。详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li><li>停止前处理：任务停止前触发。详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li></ul>
         </div>
         </td>
         </tr>

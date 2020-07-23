@@ -71,7 +71,7 @@ POST /api/v3/addons
 <td class="cellrowborder" valign="top" width="50.949999999999996%" headers="mcps1.2.5.1.4 "><p id="p199661648677"><a name="p199661648677"></a><a name="p199661648677"></a>API类型，固定值“Addon”，该值不可修改。</p>
 </td>
 </tr>
-<tr id="row59554481671"><td class="cellrowborder" valign="top" width="15.25%" headers="mcps1.2.5.1.1 "><p id="p89671048679"><a name="p89671048679"></a><a name="p89671048679"></a>apVersion</p>
+<tr id="row59554481671"><td class="cellrowborder" valign="top" width="15.25%" headers="mcps1.2.5.1.1 "><p id="p89671048679"><a name="p89671048679"></a><a name="p89671048679"></a>apiVersion</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.48%" headers="mcps1.2.5.1.2 "><p id="p11899712165312"><a name="p11899712165312"></a><a name="p11899712165312"></a>是</p>
 </td>
@@ -158,14 +158,20 @@ POST /api/v3/addons
 
 ```
 {
-    "apiVersion": "string",
-    "kind": "string",
-    "metadata": {},
+    "kind": "Addon",
+    "apiVersion": "v3",
+    "metadata": {
+        "annotations": {
+            "addon.install/type": "install"
+        }
+    },
     "spec": {
-        "clusterID": "string",
-        "version": "string",
-        "addonTemplateName": "string",
-        "values": {}
+        "clusterID": "cfeeb0bf-c274-11ea-ab53-0255ac1001b2",
+        "version": "1.0.0",
+        "addonTemplateName": "metrics-server",
+        "values": {
+            "basic": {}
+        }
     }
 }
 ```
