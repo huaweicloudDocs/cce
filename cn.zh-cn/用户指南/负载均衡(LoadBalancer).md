@@ -30,7 +30,7 @@
 
         -   公网：支持自动创建和使用已有负载均衡实例两种方式。
 
-            共享型负载均衡配额不足时，请通过新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
+            共享型负载均衡配额不足时，请通过新建[共享型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
 
         -   私网：支持自动创建和使用已有负载均衡实例两种方式。
 
@@ -179,7 +179,9 @@
     <td class="cellrowborder" valign="top" width="14.118588141185882%" headers="mcps1.2.4.1.2 "><p id="p19430103693512"><a name="p19430103693512"></a><a name="p19430103693512"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1380805311426"><a name="p1380805311426"></a><a name="p1380805311426"></a>对接共享型负载均衡时需要增加此参数。</p>
-    <p id="p1951093520489"><a name="p1951093520489"></a><a name="p1951093520489"></a>取值为“elasticity”、“union”或者“performance”。</p>
+    <p id="p6702102618240"><a name="p6702102618240"></a><a name="p6702102618240"></a>取值如下：</p>
+    <a name="ul411914215243"></a><a name="ul411914215243"></a><ul id="ul411914215243"><li>elasticity：经典型负载均衡</li><li>union：共享型负载均衡</li><li>performance：独享型负载均衡（公测）</li></ul>
+    <p id="p104083513598"><a name="p104083513598"></a><a name="p104083513598"></a>详情请参见<a href="https://support.huaweicloud.com/productdesc-elb/zh_cn_elb_01_0007.html" target="_blank" rel="noopener noreferrer">共享型与经典型负载均衡的功能区别</a>。</p>
     </td>
     </tr>
     <tr id="row15191171618357"><td class="cellrowborder" valign="top" width="34.28657134286571%" headers="mcps1.2.4.1.1 "><p id="p204451615124716"><a name="p204451615124716"></a><a name="p204451615124716"></a>kubernetes.io/session-affinity-mode</p>
@@ -515,7 +517,7 @@
 
         -   公网：支持自动创建和使用已有负载均衡实例两种方式。
 
-            共享型负载均衡配额不足时，请通过新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
+            共享型负载均衡配额不足时，请通过新建[共享型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
 
         -   私网：支持自动创建和使用已有负载均衡实例两种方式。
 

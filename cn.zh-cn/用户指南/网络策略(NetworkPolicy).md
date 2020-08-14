@@ -8,11 +8,11 @@ CCE基于Kubernetes的网络策略功能进行了加强，通过配置网络策�
 
 使用场景例如：某个用户有支付系统，且严格要求只能某几个组件能访问该支付系统，否则有被攻破的安全风险，通过配置网络策略可免除该风险。
 
-## 限制条件<a name="section332285584912"></a>
+## 约束与限制<a name="section332285584912"></a>
 
 -   VPC网络模型暂不支持网络策略\(NetworkPolicy\)。
 -   网络策略\(NetworkPolicy\)暂不支持设置egress路由规则。
--   1.13及1.15版本的容器隧道网络类型的集群，节点操作系统内核为Centos时，如果使用NetworkPolicy请升级openvswitch的版本，升级方法请参考[升级CCE组件适配新内核](操作系统内核升级.md#li10378142834719)。
+-   v1.13及v1.15版本的容器隧道网络类型的集群，节点操作系统内核为Centos时，如果使用NetworkPolicy请升级openvswitch的版本，升级方法请参考[操作系统内核升级](https://support.huaweicloud.com/usermanual-cce/cce_01_0179.html)。
 
 ## 使用说明<a name="section146088501667"></a>
 

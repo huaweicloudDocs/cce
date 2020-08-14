@@ -13,8 +13,8 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 ## 使用约束<a name="section11172124718374"></a>
 
--   1.05版本插件支持[混合集群](购买混合集群.md)、[裸金属集群](购买裸金属集群.md)和[鲲鹏集群](购买鲲鹏集群.md)，混合集群和裸金属集群需Kubernetes 1.9及以上版本，鲲鹏集群需Kubernetes 1.13及以上版本。
--   1.04版本插件支持[混合集群](购买混合集群.md)和[裸金属集群](购买裸金属集群.md)，需Kubernetes 1.9及以上版本。
+-   1.05版本插件支持[混合集群](购买混合集群.md)和[鲲鹏集群](购买鲲鹏集群.md)，混合集群需Kubernetes 1.9及以上版本，鲲鹏集群需Kubernetes 1.13及以上版本。
+-   1.04版本插件支持[混合集群](购买混合集群.md)，需Kubernetes 1.9及以上版本。
 
 ## 安装步骤<a name="section46701613154319"></a>
 
@@ -39,7 +39,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
                 该插件默认以NodePort形式提供访问，需为集群任意一个节点绑定弹性IP才能使用。
 
         -   负载均衡：
-            -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后点击刷新按钮。
+            -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[共享型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后点击刷新按钮。
 
                 >![](public_sys-resources/icon-note.gif) **说明：** 
                 >负载均衡实例需与当前集群处于相同VPC且为公网类型。
@@ -136,14 +136,12 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 -   方式一：使用火狐浏览器访问链接，为当前地址添加“例外”后即可进入登录页面。
 
-    **图 6**  添加“例外”<a name="fig013354622913"></a>  
-    ![](figures/添加-例外.png "添加-例外")
+    ![](figures/2.png)
 
 -   方式二：通过启动Chrome时添加“--ignore-certificate-errors”开关忽略证书报错。
 
     Windows：保存链接地址，关闭所有已经打开的Chrome浏览器窗口，Windows键 +“R”弹出“运行”对话框，输入“chrome --ignore-certificate-errors”启动新的chrome窗口，输入地址进入登录界面。
 
-    **图 7**  启动chrome浏览器窗口<a name="fig9331181553117"></a>  
-    ![](figures/启动chrome浏览器窗口.png "启动chrome浏览器窗口")
+    ![](figures/3.png)
 
 

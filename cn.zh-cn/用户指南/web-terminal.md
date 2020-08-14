@@ -16,7 +16,7 @@ web-terminal是一款支持在Web界面上使用Kubectl的插件。它支持使�
     -   确认密码：重新准确输入该密码。
     -   访问类型：
         -   节点访问：该插件默认以NodePort形式提供访问，需为集群任意一个节点绑定弹性IP才能使用。若集群没有绑定弹性IP，需绑定弹性IP。
-        -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后点击刷新按钮。负载均衡实例需与当前集群处于相同VPC且为公网类型。
+        -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[共享型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后点击刷新按钮。负载均衡实例需与当前集群处于相同VPC且为公网类型。
 
     -   端口配置：访问类型为负载均衡时，需端口配置。
         -   协议：请根据业务的协议类型选择。
@@ -51,26 +51,39 @@ web-terminal是一款支持在Web界面上使用Kubectl的插件。它支持使�
 
 ## 配置插件<a name="section18673939131214"></a>
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->**该部分仅针对1.0.0版本的web-terminal进行说明**，使用最新版本的用户无需阅读该部分的说明，使用老版本的用户建议尽早升级到最新版本提升使用体验。
+该插件基于社区原生能力构建，请根据实际场景选择体验。
 
-成功安装web-tertimal后, 仍需完成如下步骤才能使用。
+成功安装web-tertimal后，需要完成如下步骤才能使用：
 
-1.  为web-terminal添加service
+**插件版本为1.0.1以及之后时：**
 
-    -   在“工作负载 \> 无状态负载 Deployment“界面单击“web-terminal”查看详情，然后单击“访问方式 \> 添加Service“进入Service添加界面。
-    -   设置服务名称为“web-terminal-service”（可任取），选择“公网访问“作为访问方式，从“负载均衡“和“弹性IP“中选一种访问类型。
-    -   端口配置中将容器端口设为3000，其余根据情况自行设定，确认设置后单击“创建“完成该步骤。
+-   在CCE控制台中，单击左侧栏目树的“工作负载 \> 无状态负载 Deployment“，在工作负载列表页面单击web-terminal名称进入web-terminal实例详情界面。
+-   单击下方的“访问方式“页签，查看其访问方式是否为“节点访问”，并确认是否已为集群任意节点绑定弹性公网IP。若未绑定需根据界面引导进行绑定，已绑定则可跳过此步。
 
-    现在您已可以通过service提供的访问地址和访问端口在浏览器上访问终端，对应地址为“https://访问地址:访问端口” 。为了能够在该终端使用kubectl，仍需为对应容器配置kubeconfig。
+    **图 3**  查看访问方式<a name="fig1569573614590"></a>  
+    ![](figures/查看访问方式.png "查看访问方式")
+
+-   点击“访问地址”中的链接进入终端并登录，默认账号为“root”, 密码与安装插件时设置的值一致。
+
+至此您已可以在web-terminal提供的界面上使用kubectl。
+
+**插件版本为1.0.0版本时：**
+
+1.  <a name="li78781347105012"></a>为web-terminal添加service
+
+    -   在CCE控制台中，单击左侧栏目树的“工作负载 \> 无状态负载 Deployment“，在工作负载列表页面单击web-terminal名称进入web-terminal实例详情界面。
+    -   单击下方的“访问方式“页签，单击“添加Service“按钮进入service添加界面。
+    -   访问类型选择“负载均衡 \( LoadBalancer \)“或“节点访问 \( NodePort \)“，Service名称设置为：web-terminal-service（可任取）。
+    -   端口配置中将容器端口设置为：3000，其余根据情况自行设定，确认设置后点击“创建“完成该步骤。
+
+    现在您已可以通过service提供的访问地址和访问端口在浏览器上访问终端，对应地址为“https://访问地址:访问端口”。
 
 2.  为容器配置kubeconfig
+    -   在CCE控制台中，单击左侧栏目树的“资源管理 \> 集群管理“，在集群管理页面选择想要操作的集群，点击“命令行工具 \> kubectl“，在弹出页面中下载kubectl配置文件并打开，复制所有内容。
+    -   根据[1](#li78781347105012)中的地址访问web-terminal并登录，，默认账号为“hwcloud\_cce”, 密码与安装插件时设置的值一致，在初始目录"/home/hwcloud\_cce"使用vi指令创建文件config，将kubeconfig的所有内容通过ctrl+v粘贴到该文件，最后保存。
 
-    -   在集群管理界面选择想要操作的集群，单击“更多 \> kubectl“，在弹出页面中下载kubectl配置文件并打开，复制所有内容。
-    -   根据上一步中的地址访问web-terminal，使用安装插件时设置的密码登录账户hwcloud\_cce，在初始目录"/home/hwcloud\_cce"使用vi指令创建文件config，将kubeconfig的所有内容通过ctrl+v粘贴到该文件，最后保存。
 
-    至此您已可以在web-terminal提供的界面上使用kubectl。
-
+至此您已可以在web-terminal提供的界面上使用kubectl。
 
 ## 卸载插件<a name="section65651488131"></a>
 

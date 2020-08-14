@@ -1,6 +1,6 @@
 # 七层负载均衡\(Ingress\)<a name="cce_01_0094"></a>
 
-七层负载均衡是采用了增强型弹性负载均衡，在四层负载均衡访问方式的基础上支持了URI配置，通过对应的URI将访问流量分发到对应的服务。同时，服务根据不同URI实现不同的功能。
+七层负载均衡是采用了共享型弹性负载均衡，在四层负载均衡访问方式的基础上支持了URI配置，通过对应的URI将访问流量分发到对应的服务。同时，服务根据不同URI实现不同的功能。
 
 七层负载均衡访问方式由弹性负载均衡ELB服务地址、设置的访问端口、定义的URI组成，例如：10.117.117.117:80/helloworld。
 
@@ -111,7 +111,7 @@
 
             请根据业务需求选择“公网“或“私网“，具体请参见[公网和私网负载均衡器](https://support.huaweicloud.com/productdesc-elb/zh_cn_elb_01_0004.html)。
 
-            -   公网：支持自动创建和使用已有负载均衡实例两种方式。共享型负载均衡配额不足时，请通过新建[增强型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
+            -   公网：支持自动创建和使用已有负载均衡实例两种方式。共享型负载均衡配额不足时，请通过新建[共享型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
                 -   企业项目：对接ELB的企业项目，可以选择直接创建在具体的ELB企业项目下。
                 -   更改配置：选择“公网 \> 自动创建“时，单击规格配置下的“更改配置”，可修改待创建的负载均衡实例的名称、规格、计费模式和带宽。
 
@@ -160,7 +160,7 @@
     1.  获取defaultbackend“/healthz”接口的访问地址，访问地址有负载均衡实例、对外端口、映射URL组成，例如：10.154.73.151:80/healthz。
 
         **图 3**  获取访问地址<a name="fig911562743620"></a>  
-        ![](figures/获取访问地址-9.png "获取访问地址-9")
+        ![](figures/获取访问地址-7.png "获取访问地址-7")
 
     2.  在浏览器中输入“/healthz”接口的访问地址，如：http://10.154.73.151:80/healthz，即可成功访问工作负载，如[图4](#fig17115192714367)。
 
@@ -176,7 +176,7 @@
         **图 5**  获取域名与访问地址<a name="fig1992172383117"></a>  
         ![](figures/获取域名与访问地址.png "获取域名与访问地址")
 
-    2.  在本地主机的  C:\\Windows\\System32\\drivers\\etc\\hosts中配置访问地址的IP和域名，如下图：
+    2.  在本地主机的C:\\Windows\\System32\\drivers\\etc\\hosts中配置访问地址的IP和域名，如下图：
 
         ![](figures/zh-cn_image_0253716542.png)
 
@@ -373,7 +373,7 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p43232502212"><a name="p43232502212"></a><a name="p43232502212"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1532419502210"><a name="p1532419502210"></a><a name="p1532419502210"></a>可选，但使用已有ELB时必填。</p>
-    <p id="p1832435142216"><a name="p1832435142216"></a><a name="p1832435142216"></a>为共享型负载均衡实例的ID。</p>
+    <p id="p1832435142216"><a name="p1832435142216"></a><a name="p1832435142216"></a>为共享型负载均衡实例的ID。获取方法：在控制台的<span class="uicontrol" id="uicontrol8385124317594"><a name="uicontrol8385124317594"></a><a name="uicontrol8385124317594"></a>“服务列表”</span>中，单击<span class="uicontrol" id="uicontrol12432719902"><a name="uicontrol12432719902"></a><a name="uicontrol12432719902"></a>“网络 &gt; 弹性负载均衡 ELB”</span>，单击ELB的名称，在ELB详情页的<span class="uicontrol" id="uicontrol762734213311"><a name="uicontrol762734213311"></a><a name="uicontrol762734213311"></a>“基本信息”</span>页签下找到<span class="uicontrol" id="uicontrol1139664010108"><a name="uicontrol1139664010108"></a><a name="uicontrol1139664010108"></a>“ID”</span>字段复制即可。</p>
     <p id="p10820174517514"><a name="p10820174517514"></a><a name="p10820174517514"></a>取值范围：1-100字符。</p>
     </td>
     </tr>
@@ -382,14 +382,14 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p63241755223"><a name="p63241755223"></a><a name="p63241755223"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1232410519221"><a name="p1232410519221"></a><a name="p1232410519221"></a>可选，但当elb自动创建时不填。</p>
-    <p id="p123246513225"><a name="p123246513225"></a><a name="p123246513225"></a>为负载均衡增强型实例的服务地址，公网ELB配置为公网IP，私网ELB配置为私网IP。</p>
+    <p id="p123246513225"><a name="p123246513225"></a><a name="p123246513225"></a>为共享型负载均衡实例的服务地址，公网ELB配置为公网IP，私网ELB配置为私网IP。</p>
     </td>
     </tr>
     <tr id="row113242512217"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1332415102211"><a name="p1332415102211"></a><a name="p1332415102211"></a>kubernetes.io/elb.subnet-id</p>
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p16324185192216"><a name="p16324185192216"></a><a name="p16324185192216"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6324185202213"><a name="p6324185202213"></a><a name="p6324185202213"></a>可选，但自动创建时必填，Kubernetes v1.11.7-r0以上版本的集群可不填。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6324185202213"><a name="p6324185202213"></a><a name="p6324185202213"></a>可选，但自动创建时必填，Kubernetes v1.11.7-r0以上版本的集群可不填。获取方法请参见：<a href="https://support.huaweicloud.com/api-vpc/vpc_api_0005.html" target="_blank" rel="noopener noreferrer">VPC子网接口与OpenStack Neutron子网接口的区别是什么？</a></p>
     <p id="p37329261377"><a name="p37329261377"></a><a name="p37329261377"></a>取值范围：1-100字符。</p>
     </td>
     </tr>
@@ -398,7 +398,7 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p164393463532"><a name="p164393463532"></a><a name="p164393463532"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1843954617535"><a name="p1843954617535"></a><a name="p1843954617535"></a>可选，但公网或私网自动创建时必填。</p>
-    <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>为ELB企业项目ID，选择后可以直接创建在具体的ELB企业项目下。</p>
+    <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>为ELB企业项目ID，选择后可以直接创建在具体的ELB企业项目下。获取方法：在CCE控制台中，单击<span class="uicontrol" id="uicontrol115051445181018"><a name="uicontrol115051445181018"></a><a name="uicontrol115051445181018"></a>“资源管理 &gt; 集群管理”</span>，单击集群名称进入集群详情页，在左侧的基本信息中单击企业项目的名称，进入企业项目详情页，找到<span class="uicontrol" id="uicontrol7221153491020"><a name="uicontrol7221153491020"></a><a name="uicontrol7221153491020"></a>“ID”</span>字段复制即可。</p>
     <p id="p133431611481"><a name="p133431611481"></a><a name="p133431611481"></a>取值范围：1-100字符。</p>
     </td>
     </tr>

@@ -22,8 +22,8 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 >-   在CCE控制台中，由于创建节点时的密钥对查询接口不支持企业项目，因此企业项目子用户将无法使用“密钥对“登录方式，您可以选择使用“密码“登录方式。
 >-   为企业项目设置**CCE FullAccess**权限后 ，需要在IAM控制台界面中再配置  **ecs:availabilityZones:list**  权限，企业项目子用户创建节点才可以正常显示并创建，否则将提示没有 ecs:availabilityZones:list 权限。
 >CCE支持细粒度的权限设置，但有如下限制说明：
->-   AOM不支持资源级别细粒度：当通过IAM集群资源细粒度设置特定资源操作权限之后，子账号在CCE控制台的总览界面查看集群监控时，将显示非细粒度关联集群的监控信息。
->-   在IAM页面设置**CCE FullAccess**或者**CCE ReadOnlyAccess**权限后，需要配置  **sfsturbo:\*:\***  权限才能使用使用极速文件存储卷，否则子账号在集群下查询极速文件存储卷将失败。
+>-   AOM不支持资源级别细粒度：当通过IAM集群资源细粒度设置特定资源操作权限之后，IAM用户在CCE控制台的总览界面查看集群监控时，将显示非细粒度关联集群的监控信息。
+>-   在IAM页面设置**CCE FullAccess**或者**CCE ReadOnlyAccess**权限后，需要配置  **sfsturbo:\*:\***  权限才能使用使用极速文件存储卷，否则IAM用户在集群下查询极速文件存储卷将失败。
 
 **表 1**  CCE Console中依赖服务的角色或策略
 
@@ -40,14 +40,14 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p119021153716"><a name="p119021153716"></a><a name="p119021153716"></a>应用运维管理 AOM</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul223369145920"></a><a name="ul223369145920"></a><ul id="ul223369145920"><li>子账号设置了CCE Administrator权限后，需要增加AOM&nbsp;FullAccess权限后才能访问总览中的数据图表。</li><li>支持设置了IAM ReadOnlyAccess和CCE FullAccess或CCE ReadOnlyAccess权限的子账号直接访问总览中的数据图表。</li></ul>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul223369145920"></a><a name="ul223369145920"></a><ul id="ul223369145920"><li>IAM用户设置了CCE Administrator权限后，需要增加AOM&nbsp;FullAccess权限后才能访问总览中的数据图表。</li><li>支持设置了IAM ReadOnlyAccess和CCE FullAccess或CCE ReadOnlyAccess权限的IAM用户直接访问总览中的数据图表。</li></ul>
 </td>
 </tr>
 <tr id="row159021815871"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p79028151077"><a name="p79028151077"></a><a name="p79028151077"></a>应用管理</p>
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p18902715376"><a name="p18902715376"></a><a name="p18902715376"></a>/</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p290271515712"><a name="p290271515712"></a><a name="p290271515712"></a>支持主账号、设置了CCE Administrator、CCE FullAccess或CCE ReadOnlyAccess等权限的子账号访问本功能。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p290271515712"><a name="p290271515712"></a><a name="p290271515712"></a>支持华为云账号、设置了CCE Administrator、CCE FullAccess或CCE ReadOnlyAccess等权限的IAM用户访问本功能。</p>
 </td>
 </tr>
 <tr id="row19902151514719"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p169022151472"><a name="p169022151472"></a><a name="p169022151472"></a>工作负载</p>
@@ -77,7 +77,7 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p129021156718"><a name="p129021156718"></a><a name="p129021156718"></a>弹性云服务器 ECS</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p12840824466"><a name="p12840824466"></a><a name="p12840824466"></a>当子账号权限为CCE Administrator时，如果创建和删除节点，需要配置ECS FullAccess或ECS Administrator权限，以及VPC Administrator权限。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p12840824466"><a name="p12840824466"></a><a name="p12840824466"></a>当IAM用户权限为CCE Administrator时，如果创建和删除节点，需要配置ECS FullAccess或ECS Administrator权限，以及VPC Administrator权限。</p>
 </td>
 </tr>
 <tr id="row1890251514716"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p39021615371"><a name="p39021615371"></a><a name="p39021615371"></a>网络管理</p>
@@ -111,21 +111,21 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p257594214394"><a name="p257594214394"></a><a name="p257594214394"></a>/</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p1457514212392"><a name="p1457514212392"></a><a name="p1457514212392"></a>当前仅支持主账号、设置了CCE Administrator权限的子账号访问。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p1457514212392"><a name="p1457514212392"></a><a name="p1457514212392"></a>当前仅支持华为云账号、设置了CCE Administrator权限的IAM用户访问。</p>
 </td>
 </tr>
 <tr id="row248812273618"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p10488142233620"><a name="p10488142233620"></a><a name="p10488142233620"></a>插件管理</p>
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p51171157173918"><a name="p51171157173918"></a><a name="p51171157173918"></a>/</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p218618303395"><a name="p218618303395"></a><a name="p218618303395"></a>支持主账号、设置了CCE Administrator、CCE FullAccess或CCE ReadOnlyAccess等权限的子账号访问本功能。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p218618303395"><a name="p218618303395"></a><a name="p218618303395"></a>支持华为云账号、设置了CCE Administrator、CCE FullAccess或CCE ReadOnlyAccess等权限的IAM用户访问本功能。</p>
 </td>
 </tr>
 <tr id="row54891622173617"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p1748919220362"><a name="p1748919220362"></a><a name="p1748919220362"></a>权限管理</p>
 </td>
 <td class="cellrowborder" valign="top" width="28.642864286428644%" headers="mcps1.2.4.1.2 "><p id="p1214191764016"><a name="p1214191764016"></a><a name="p1214191764016"></a>/</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul372099481"></a><a name="ul372099481"></a><ul id="ul372099481"><li>支持主账号访问。</li><li>支持设置了CCE Administrator和Security Administrator（全局级策略）权限的子账号访问。</li><li>支持设置了IAM ReadOnlyAccess和CCE FullAccess或CCE ReadOnlyAccess权限的子账号访问。</li></ul>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul372099481"></a><a name="ul372099481"></a><ul id="ul372099481"><li>支持华为云账号访问。</li><li>支持设置了CCE Administrator和Security Administrator（全局级策略）权限的IAM用户访问。</li><li>支持设置了IAM ReadOnlyAccess和CCE FullAccess或CCE ReadOnlyAccess权限的IAM用户访问。</li></ul>
 </td>
 </tr>
 <tr id="row1588069154010"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p1388110934011"><a name="p1388110934011"></a><a name="p1388110934011"></a>配置中心</p>
@@ -176,7 +176,7 @@ IAM用户“James”在用户组“开发人员组”，“开发人员组”仅
 
 ## 步骤二：为用户组增加系统策略<a name="section10561192612817"></a>
 
-1.  IAM用户“James”退出登录，使用主账号登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)。
+1.  IAM用户“James”退出登录，使用华为云账号登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)。
 2.  在CCE控制台中，单击左侧导航栏中的“权限管理“，在“集群权限“页签下单击“开发人员组”后的“设置权限“。
 
     **图 3**  设置用户组权限<a name="fig1511051633412"></a>  

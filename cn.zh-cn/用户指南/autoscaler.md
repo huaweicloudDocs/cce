@@ -208,14 +208,14 @@ autoscaler可分成扩容和缩容两个方面：
 </th>
 </tr>
 </thead>
-<tbody><tr id="row97875912317"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p159520272408"><a name="p159520272408"></a><a name="p159520272408"></a>1.13.10</p>
+<tbody><tr id="row97875912317"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p10472656612"><a name="p10472656612"></a><a name="p10472656612"></a>1.15.6</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p3595182774020"><a name="p3595182774020"></a><a name="p3595182774020"></a>混合集群 v1.13.*</p>
-<p id="p2059582784016"><a name="p2059582784016"></a><a name="p2059582784016"></a>鲲鹏集群 v1.13.*</p>
+<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p134723514610"><a name="p134723514610"></a><a name="p134723514610"></a>混合集群 v1.15.*</p>
+<p id="p14472951866"><a name="p14472951866"></a><a name="p14472951866"></a>鲲鹏集群 v1.15.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p2595162717404"><a name="p2595162717404"></a><a name="p2595162717404"></a>2020/03/12</p>
+<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p144721552063"><a name="p144721552063"></a><a name="p144721552063"></a>2020/07/25</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul659592714012"></a><a name="ul659592714012"></a><ul id="ul659592714012"><li>支持nodepool级别扩容策略</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul12472351967"></a><a name="ul12472351967"></a><ul id="ul12472351967"><li>修复scale_result指标</li></ul>
 </td>
 </tr>
 <tr id="row187865919236"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p25952027194012"><a name="p25952027194012"></a><a name="p25952027194012"></a>1.15.3</p>
@@ -246,6 +246,16 @@ autoscaler可分成扩容和缩容两个方面：
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p759511279400"><a name="p759511279400"></a><a name="p759511279400"></a>2019/12/19</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul55957274409"></a><a name="ul55957274409"></a><ul id="ul55957274409"><li>支持nodepool级别扩容策略</li></ul>
+</td>
+</tr>
+<tr id="row15919281555"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p159520272408"><a name="p159520272408"></a><a name="p159520272408"></a>1.13.10</p>
+</td>
+<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p3595182774020"><a name="p3595182774020"></a><a name="p3595182774020"></a>混合集群 v1.13.*</p>
+<p id="p2059582784016"><a name="p2059582784016"></a><a name="p2059582784016"></a>鲲鹏集群 v1.13.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p2595162717404"><a name="p2595162717404"></a><a name="p2595162717404"></a>2020/03/12</p>
+</td>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul659592714012"></a><a name="ul659592714012"></a><ul id="ul659592714012"><li>支持nodepool级别扩容策略</li></ul>
 </td>
 </tr>
 <tr id="row1878459102313"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p11595102794019"><a name="p11595102794019"></a><a name="p11595102794019"></a>1.13.9</p>

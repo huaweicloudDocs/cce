@@ -269,9 +269,9 @@ spec:
 </th>
 </tr>
 </thead>
-<tbody><tr id="row82414466296"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p147711757162810"><a name="p147711757162810"></a><a name="p147711757162810"></a>查看YAML</p>
+<tbody><tr id="row82414466296"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="p147711757162810"><a name="p147711757162810"></a><a name="p147711757162810"></a>编辑YAML</p>
 </td>
-<td class="cellrowborder" valign="top" width="71%" headers="mcps1.2.3.1.2 "><p id="p15771257142816"><a name="p15771257142816"></a><a name="p15771257142816"></a>单击定时任务名称后的<span class="uicontrol" id="uicontrol33801326152917"><a name="uicontrol33801326152917"></a><a name="uicontrol33801326152917"></a>“更多 &gt; 查看YAML”</span>，可查看到当前任务对应的YAML文件。</p>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.2.3.1.2 "><p id="p15771257142816"><a name="p15771257142816"></a><a name="p15771257142816"></a>单击定时任务名称后的<span class="uicontrol" id="uicontrol33801326152917"><a name="uicontrol33801326152917"></a><a name="uicontrol33801326152917"></a>“编辑YAML”</span>，可修改当前任务对应的YAML文件。</p>
 </td>
 </tr>
 <tr id="r25f2ff5451494127b1af5ab34b807936"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="a6abaef816404455581dc7dbaddf656ee"><a name="a6abaef816404455581dc7dbaddf656ee"></a><a name="a6abaef816404455581dc7dbaddf656ee"></a>停止定时任务</p>
@@ -281,7 +281,7 @@ spec:
 </tr>
 <tr id="r9fec8c34ebbb44e3888c677862a174e0"><td class="cellrowborder" valign="top" width="28.999999999999996%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0093532762_p685874410564"><a name="zh-cn_topic_0093532762_p685874410564"></a><a name="zh-cn_topic_0093532762_p685874410564"></a>删除定时任务</p>
 </td>
-<td class="cellrowborder" valign="top" width="71%" headers="mcps1.2.3.1.2 "><a name="o9409a54b32c14e4799c05e5f0a643633"></a><a name="o9409a54b32c14e4799c05e5f0a643633"></a><ol id="o9409a54b32c14e4799c05e5f0a643633"><li>选择待删除的任务，单击操作列的<span class="uicontrol" id="ub5a9da6130d04758b1d07c5b9e4f06e0"><a name="ub5a9da6130d04758b1d07c5b9e4f06e0"></a><a name="ub5a9da6130d04758b1d07c5b9e4f06e0"></a>“更多 &gt; 删除”</span>。</li><li>单击“确定”。<p id="a3be1d4db3fa4464dbc950b89a31d57aa"><a name="a3be1d4db3fa4464dbc950b89a31d57aa"></a><a name="a3be1d4db3fa4464dbc950b89a31d57aa"></a>任务删除后将无法恢复，请谨慎操作。</p>
+<td class="cellrowborder" valign="top" width="71%" headers="mcps1.2.3.1.2 "><a name="o9409a54b32c14e4799c05e5f0a643633"></a><a name="o9409a54b32c14e4799c05e5f0a643633"></a><ol id="o9409a54b32c14e4799c05e5f0a643633"><li>选择待删除的任务，单击操作列的<span class="uicontrol" id="ub5a9da6130d04758b1d07c5b9e4f06e0"><a name="ub5a9da6130d04758b1d07c5b9e4f06e0"></a><a name="ub5a9da6130d04758b1d07c5b9e4f06e0"></a>“删除”</span>。</li><li>单击“确定”。<p id="a3be1d4db3fa4464dbc950b89a31d57aa"><a name="a3be1d4db3fa4464dbc950b89a31d57aa"></a><a name="a3be1d4db3fa4464dbc950b89a31d57aa"></a>任务删除后将无法恢复，请谨慎操作。</p>
 </li></ol>
 </td>
 </tr>

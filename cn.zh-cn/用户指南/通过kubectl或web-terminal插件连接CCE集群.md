@@ -1,6 +1,6 @@
 # 通过kubectl或web-terminal插件连接CCE集群<a name="cce_01_0107"></a>
 
-本文将以混合集群为例，介绍如何通过连接CCE集群，GPU集群和裸金属集群操作方式与此相同。
+本文将以混合集群为例，介绍如何通过kubectl或web-terminal插件连接CCE集群。
 
 ## 通过web-terminal插件连接集群<a name="section6597175818153"></a>
 
@@ -37,8 +37,8 @@ CCE支持“VPC网络内访问“和“互联网访问“两种方式访问集�
     ![](figures/通过kubectl连接集群.png "通过kubectl连接集群")
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   CCE支持主账号和子账号分别下载config文件（kubeconfig.json），子账号下载的config文件只有30天的有效期，而主账号下载的config文件会长期有效。
-    >-   子账号下载的config文件所拥有的Kubernetes权限与CCE控制台上子账号所拥有的权限一致。
+    >-   CCE支持华为云账号和IAM用户分别下载config文件（kubeconfig.json），IAM用户下载的config文件只有30天的有效期，而华为云账号下载的config文件会长期有效。
+    >-   IAM用户下载的config文件所拥有的Kubernetes权限与CCE控制台上IAM用户所拥有的权限一致。
 
 
 ## 相关操作<a name="section422912118536"></a>

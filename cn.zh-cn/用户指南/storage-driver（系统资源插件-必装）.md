@@ -12,7 +12,7 @@ storage-driver是一款云存储驱动插件，北向遵循标准容器平台存
 >-   v1.15.11-r1作为Flexvolume fuxi（即storage-driver）和CSI  [Everest](Everest（系统资源插件-必装）.md)兼容接管的过渡版本，计划在v1.17集群去除对Flexvolume fuxi的支持，请用户在v1.15.11版本范围内将对Flexvolume fuxi的使用切换CSI Everest上。
 >-   当存储功能有升级或者BUG修复时，用户无需升级集群或新建集群来升级存储功能，仅需安装或升级storage-driver插件。
 
-## 使用限制<a name="section3993231122718"></a>
+## 约束与限制<a name="section3993231122718"></a>
 
 本插件仅支持在**v1.13及以下版本**的集群中安装，v1.15及以上版本集群创建时默认必装[Everest](Everest（系统资源插件-必装）.md)插件。
 
