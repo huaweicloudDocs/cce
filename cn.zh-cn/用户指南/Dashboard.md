@@ -135,13 +135,8 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 ![](figures/Chrome浏览器报错信息.png "Chrome浏览器报错信息")
 
 -   方式一：使用火狐浏览器访问链接，为当前地址添加“例外”后即可进入登录页面。
-
-    ![](figures/2.png)
-
 -   方式二：通过启动Chrome时添加“--ignore-certificate-errors”开关忽略证书报错。
 
     Windows：保存链接地址，关闭所有已经打开的Chrome浏览器窗口，Windows键 +“R”弹出“运行”对话框，输入“chrome --ignore-certificate-errors”启动新的chrome窗口，输入地址进入登录界面。
-
-    ![](figures/3.png)
 
 

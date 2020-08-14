@@ -130,7 +130,7 @@ CronJob的典型用法如下所示：
         <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0150_p5379182494610"><a name="cce_01_0150_p5379182494610"></a><a name="cce_01_0150_p5379182494610"></a><strong id="cce_01_0150_b2155195713314"><a name="cce_01_0150_b2155195713314"></a><a name="cce_01_0150_b2155195713314"></a>CPU配额：</strong></p>
         <a name="cce_01_0150_ul67283495467"></a><a name="cce_01_0150_ul67283495467"></a><ul id="cce_01_0150_ul67283495467"><li>申请：容器需要使用的最小CPU值，默认0.25Core。</li><li>限制：允许容器使用的CPU最大值。建议设容器配额的最高限额，避免容器资源超额导致系统故障。</li></ul>
         <p id="cce_01_0150_p633394210502"><a name="cce_01_0150_p633394210502"></a><a name="cce_01_0150_p633394210502"></a><strong id="cce_01_0150_b5114173113411"><a name="cce_01_0150_b5114173113411"></a><a name="cce_01_0150_b5114173113411"></a>内存配额：</strong></p>
-        <a name="cce_01_0150_ul14326165915010"></a><a name="cce_01_0150_ul14326165915010"></a><ul id="cce_01_0150_ul14326165915010"><li>申请：容器需要使用的内存最小值，默认512MiB。</li><li>限制：允许容器使用的内存最大值。如果超过，容器会被终止。</li></ul>
+        <a name="cce_01_0150_ul14326165915010"></a><a name="cce_01_0150_ul14326165915010"></a><ul id="cce_01_0150_ul14326165915010"><li>申请：容器需要使用的内存最小值，默认0.5GiB。</li><li>限制：允许容器使用的内存最大值。如果超过，容器会被终止。</li></ul>
         <p id="cce_01_0150_p1825119142351"><a name="cce_01_0150_p1825119142351"></a><a name="cce_01_0150_p1825119142351"></a>申请和限制的具体请参见<a href="设置容器规格.md">设置容器规格</a>。</p>
         <p id="cce_01_0150_p38521896343"><a name="cce_01_0150_p38521896343"></a><a name="cce_01_0150_p38521896343"></a><strong id="cce_01_0150_b11557151512341"><a name="cce_01_0150_b11557151512341"></a><a name="cce_01_0150_b11557151512341"></a>GPU配额：</strong>当集群中包含GPU节点时，才能设置GPU，无GPU节点不显示此选项。</p>
         <p id="cce_01_0150_p15403132914341"><a name="cce_01_0150_p15403132914341"></a><a name="cce_01_0150_p15403132914341"></a>容器需要使用的GPU百分比。勾选<span class="uicontrol" id="cce_01_0150_uicontrol952171455614"><a name="cce_01_0150_uicontrol952171455614"></a><a name="cce_01_0150_uicontrol952171455614"></a>“使用”</span>并设置百分比，例如设置为10%，表示该容器需使用GPU资源的10%。若不勾选<span class="uicontrol" id="cce_01_0150_uicontrol12950184715612"><a name="cce_01_0150_uicontrol12950184715612"></a><a name="cce_01_0150_uicontrol12950184715612"></a>“使用”</span>，或设置为0，则无法使用GPU资源。</p>
@@ -192,7 +192,7 @@ CronJob的配置参数如下所示：
 下面是一个CronJob的示例，保存在cronjob.yaml文件中。
 
 ```
-apiVersion: batch/v2alpha1
+apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: hello
@@ -219,7 +219,7 @@ spec:
     命令行终端显示如下信息：
 
     ```
-    cronjob "hello" created
+    cronjob.batch/hello created
     ```
 
 2.  执行如下命令，查看执行情况。
@@ -227,33 +227,40 @@ spec:
     **kubectl get cronjob**
 
     ```
-    NAME      SCHEDULE      SUSPEND   ACTIVE    LAST-SCHEDULE
-    hello     */1 * * * *   False     0         <none>
+    NAME      SCHEDULE      SUSPEND   ACTIVE    LAST SCHEDULE   AGE
+    hello     */1 * * * *   False     0         <none>          9s
     ```
 
     **kubectl get jobs**
 
     ```
-    NAME               DESIRED   SUCCESSFUL   AGE
-    hello-1202039034   1         1            49s
-    $ pods=$(kubectl get pods --selector=job-name=hello-1202039034 --output=jsonpath={.items..metadata.name} -a)
+    NAME               COMPLETIONS   DURATION   AGE
+    hello-1597387980   1/1           27s        45s
     ```
 
-    **kubectl logs $pods**
+    **kubectl get pod**
 
     ```
-    Mon Aug 29 21:34:09 UTC 2016
+    NAME                           READY     STATUS      RESTARTS   AGE
+    hello-1597387980-tjv8f         0/1       Completed   0          114s
+    hello-1597388040-lckg9         0/1       Completed   0          39s
+    ```
+
+    **kubectl logs hello-1597387980-tjv8f**
+
+    ```
+    Fri Aug 14 06:56:31 UTC 2020
     Hello from the Kubernetes cluster
     ```
 
     **kubectl delete cronjob hello**
 
     ```
-    cronjob "hello" deleted
+    cronjob.batch "hello" deleted
     ```
 
     >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >删除cronjob的时候不会自动删除job，这些job可以用kubectl delete job来删除。
+    >删除CronJob时，对应的普通任务及相关的Pod都会被删除。
 
 
 ## 相关操作<a name="s28175da725cf46d49a4cfca59155a5d2"></a>

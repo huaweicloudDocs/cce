@@ -10,9 +10,10 @@ Virtual Kubelet插件具体如下功能：
 -   支持查看虚拟弹性节点的节点容量信息。
 -   支持CCE和CCI两侧实例的service网络互通。
 
-## 使用约束<a name="section628693291119"></a>
+## 约束及限制<a name="section628693291119"></a>
 
 -   仅支持VPC网络模式的混合集群，仅限于v1.11及以上版本的集群使用。
+-   使用时需同时配置Request和Limit，且CPU-Memory比例须符合CCI要求，pod才可以部署到CCI侧。
 -   调度到CCI的实例的存储类型只支持SFS、ConfigMap、Secret三种Volume类型。
 -   暂不支持HostNetwork网络模式的容器实例（Pod）弹性到CCI。
 -   实例的规格必须满足云容器实例CCI的[容器规范](https://support.huaweicloud.com/productdesc-cci/cci_03_0007.html)。
