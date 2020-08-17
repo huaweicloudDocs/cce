@@ -22,7 +22,7 @@ The following fields can be updated:
 
 ## URI<a name="section1928895"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.9\)
+PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.9 and 1.9+\)
 
 PATCH /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.7\)
 

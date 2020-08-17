@@ -6,7 +6,7 @@ This API is used to read the status of a specified StatefulSet object under a sp
 
 ## URI<a name="section43853730"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports only1.9\)
+GET /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports 1.9 and 1.9+\)
 
 GET /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Compatible\)
 

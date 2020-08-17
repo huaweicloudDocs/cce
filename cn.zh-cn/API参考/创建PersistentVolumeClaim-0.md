@@ -339,7 +339,6 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
             "namespace":"default",
             "selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/cce-evs-k6m16atm-3ays",
             "uid":"80f111e7-7d7e-4841-bd73-7ef97df0ee51",
-            "resourceVersion":"2287083",
             "creationTimestamp":"2020-02-14T10:30:20Z",
             "labels":{
                 "failure-domain.beta.kubernetes.io/region":"cn-north-5",

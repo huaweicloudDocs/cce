@@ -6,7 +6,7 @@ This API is used to delete collection of DaemonSet.
 
 ## URI<a name="section36307850"></a>
 
-DELETE /apis/apps/v1/namespaces/\{namespace\}/daemonsets \(Supports only1.9\)
+DELETE /apis/apps/v1/namespaces/\{namespace\}/daemonsets \(Supports 1.9 and 1.9+\)
 
 DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 

@@ -6,7 +6,7 @@ This API is used to update the status of a specified DaemonSet object under a sp
 
 ## URI<a name="section41699700"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Supports only1.9\)
+PATCH /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Supports 1.9 and 1.9+\)
 
 PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Compatible\)
 

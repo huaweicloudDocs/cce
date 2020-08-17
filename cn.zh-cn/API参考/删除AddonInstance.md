@@ -46,7 +46,7 @@ DELETE /api/v3/addons/\{id\}?cluster\_id=\{cluster\_id\}
 
 **请求参数：**
 
-请求参数如[表2](#HeaderParameter)、[\#cce\_02\_0324/requestParameter](#requestParameter)所示。
+请求参数如下所示。
 
 **表 2**  请求Header参数
 

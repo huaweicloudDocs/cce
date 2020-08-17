@@ -6,7 +6,7 @@ This API is used to create a DaemonSet resource object.
 
 ## URI<a name="section43970798"></a>
 
-POST /apis/apps/v1/namespaces/\{namespace\}/daemonsets \(Supports only1.9\)
+POST /apis/apps/v1/namespaces/\{namespace\}/daemonsets \(Supports 1.9 and 1.9+\)
 
 POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 

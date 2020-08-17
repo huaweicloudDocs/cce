@@ -6,7 +6,7 @@
 
 ## URI<a name="section158974212501"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.9\)
+GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.9 and 1.9+\)
 
 GET /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.7\)
 

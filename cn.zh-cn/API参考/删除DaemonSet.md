@@ -6,7 +6,7 @@ This API is used to delete a DaemonSet resource object.
 
 ## URI<a name="section42527017"></a>
 
-DELETE /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports only1.9\)
+DELETE /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports 1.9 and 1.9+\)
 
 DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(Compatible\)
 

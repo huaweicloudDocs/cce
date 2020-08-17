@@ -6,7 +6,7 @@ This API is used to list all DemonSet resource objects.
 
 ## URI<a name="section39916899"></a>
 
-GET /apis/apps/v1/daemonsets \(Supports only1.9\)
+GET /apis/apps/v1/daemonsets \(Supports 1.9 and 1.9+\)
 
 GET /apis/extensions/v1beta1/daemonsets \(Compatible\)
 

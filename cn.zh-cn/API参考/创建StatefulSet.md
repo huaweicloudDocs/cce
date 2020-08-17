@@ -6,7 +6,7 @@ This API is used to create a StatefulSet resource object.
 
 ## URI<a name="section33235568"></a>
 
-POST /apis/apps/v1/namespaces/\{namespace\}/statefulsets \(Supports only1.9\)
+POST /apis/apps/v1/namespaces/\{namespace\}/statefulsets \(Supports 1.9 and 1.9+\)
 
 POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 

@@ -20,7 +20,7 @@ labels:
 
 ## URI<a name="section764545414815"></a>
 
-POST /apis/apps/v1/namespaces/\{namespace\}/deployments \(Supports only1.9\)
+POST /apis/apps/v1/namespaces/\{namespace\}/deployments \(Supports 1.9 and 1.9+\)
 
 POST /apis/apps/v1beta1/namespaces/\{namespace\}/deployments \(Supports only1.7\)
 

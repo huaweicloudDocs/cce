@@ -6,7 +6,7 @@ This API is used to read the status of a specified Deployment object under a spe
 
 ## URI<a name="section2437233"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports only1.9\)
+GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports 1.9 and 1.9+\)
 
 GET /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports only1.7\)
 

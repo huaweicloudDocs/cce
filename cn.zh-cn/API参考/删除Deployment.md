@@ -6,7 +6,7 @@ This API is used to delete a Deployment resource object.
 
 ## URI<a name="section51020189"></a>
 
-DELETE /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.9\)
+DELETE /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.9 and 1.9+\)
 
 DELETE /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.7\)
 

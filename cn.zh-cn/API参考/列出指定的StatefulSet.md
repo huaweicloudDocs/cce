@@ -6,7 +6,7 @@ This API is used to list all StatefulSet resource objects.
 
 ## URI<a name="section50354060"></a>
 
-GET /apis/apps/v1/statefulsets \(Supports only1.9\)
+GET /apis/apps/v1/statefulsets \(Supports 1.9 and 1.9+\)
 
 GET /apis/apps/v1beta1/statefulsets \(Compatible\)
 

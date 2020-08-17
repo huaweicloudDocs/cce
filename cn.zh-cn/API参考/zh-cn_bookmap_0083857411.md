@@ -3,8 +3,8 @@
 -   [使用前必读](使用前必读.md)
     -   [概述](概述.md)
     -   [调用说明](调用说明.md)
-    -   [终端节点](终端节点.md)
-    -   [约束限制](约束限制.md)
+    -   [终端节点（Endpoint）](终端节点（Endpoint）.md)
+    -   [约束与限制](约束与限制.md)
     -   [基本概念](基本概念.md)
 
 -   [API概览](API概览.md)
@@ -17,6 +17,7 @@
     -   [示例：通过API创建游戏工作负载](示例-通过API创建游戏工作负载.md)
 
 -   [API](API.md)
+    -   [API URL说明](API-URL说明.md)
     -   [集群管理](集群管理.md)
         -   [创建集群](创建集群.md)
         -   [获取指定的集群](获取指定的集群.md)
@@ -53,6 +54,7 @@
 
 
 -   [Kubernetes API](Kubernetes-API.md)
+    -   [Kubernetes API URL说明](Kubernetes-API-URL说明.md)
     -   [Node](Node.md)
         -   [获取指定的Node](获取指定的Node.md)
         -   [列出指定的Node](列出指定的Node.md)

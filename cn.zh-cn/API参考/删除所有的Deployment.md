@@ -6,7 +6,7 @@ This API is used to delete collection of Deployment.
 
 ## URI<a name="section59073635"></a>
 
-DELETE /apis/apps/v1/namespaces/\{namespace\}/deployments \(Supports only1.9\)
+DELETE /apis/apps/v1/namespaces/\{namespace\}/deployments \(Supports 1.9 and 1.9+\)
 
 DELETE /apis/apps/v1beta1/namespaces/\{namespace\}/deployments \(Supports only1.7\)
 

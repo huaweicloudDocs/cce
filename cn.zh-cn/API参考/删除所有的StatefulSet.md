@@ -6,7 +6,7 @@ This API is used to delete collection of StatefulSet.
 
 ## URI<a name="section35695364"></a>
 
-DELETE /apis/apps/v1/namespaces/\{namespace\}/statefulsets \(Supports only1.9\)
+DELETE /apis/apps/v1/namespaces/\{namespace\}/statefulsets \(Supports 1.9 and 1.9+\)
 
 DELETE /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
 

@@ -6,7 +6,7 @@ This API is used to delete a StatefulSet resource object.
 
 ## URI<a name="section13914160"></a>
 
-DELETE /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\} \(Supports only1.9\)
+DELETE /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\} \(Supports 1.9 and 1.9+\)
 
 DELETE /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\} \(Compatible\)
 

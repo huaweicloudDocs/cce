@@ -6,7 +6,7 @@ This API is used to list all DaemonSet resource objects under a specified Namesp
 
 ## URI<a name="section27053763"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/daemonsets \(Supports only1.9\)
+GET /apis/apps/v1/namespaces/\{namespace\}/daemonsets \(Supports 1.9 and 1.9+\)
 
 GET /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
 

@@ -22,7 +22,7 @@
 
 ## URI<a name="section1524832914503"></a>
 
-PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.9\)
+PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.9 and 1.9+\)
 
 PUT /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.7\)
 

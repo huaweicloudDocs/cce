@@ -113,15 +113,6 @@ GET /api/v3/addontemplates
 <td class="cellrowborder" valign="top" width="50.949999999999996%" headers="mcps1.2.5.1.4 "><p id="p10416848774"><a name="p10416848774"></a><a name="p10416848774"></a>API版本，固定值“v3”，该值不可修改。</p>
 </td>
 </tr>
-<tr id="row1840612480712"><td class="cellrowborder" valign="top" width="20.03%" headers="mcps1.2.5.1.1 "><p id="p341718481978"><a name="p341718481978"></a><a name="p341718481978"></a>metadata</p>
-</td>
-<td class="cellrowborder" valign="top" width="15.340000000000002%" headers="mcps1.2.5.1.2 "><p id="p13704165614455"><a name="p13704165614455"></a><a name="p13704165614455"></a>是</p>
-</td>
-<td class="cellrowborder" valign="top" width="13.68%" headers="mcps1.2.5.1.3 "><p id="p104191481879"><a name="p104191481879"></a><a name="p104191481879"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="50.949999999999996%" headers="mcps1.2.5.1.4 "><p id="p1642115481775"><a name="p1642115481775"></a><a name="p1642115481775"></a>基本信息，为集合类的元素类型，包含一组由不同名称定义的属性</p>
-</td>
-</tr>
 <tr id="row84065482073"><td class="cellrowborder" valign="top" width="20.03%" headers="mcps1.2.5.1.1 "><p id="p542218481571"><a name="p542218481571"></a><a name="p542218481571"></a>items</p>
 </td>
 <td class="cellrowborder" valign="top" width="15.340000000000002%" headers="mcps1.2.5.1.2 "><p id="p2070435614511"><a name="p2070435614511"></a><a name="p2070435614511"></a>是</p>

@@ -6,7 +6,7 @@ This API is used to replace the status of a specified StatefulSet object under a
 
 ## URI<a name="section51865283"></a>
 
-PUT /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports only1.9\)
+PUT /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports 1.9 and 1.9+\)
 
 PUT /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Compatible\)
 

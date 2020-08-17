@@ -6,7 +6,7 @@ This API is used to read a DaemonSet object under a specified Namespace.
 
 ## URI<a name="section46731593"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports only1.9\)
+GET /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports 1.9 and 1.9+\)
 
 GET /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(Compatible\)
 

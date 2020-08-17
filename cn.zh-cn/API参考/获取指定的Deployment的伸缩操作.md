@@ -6,11 +6,11 @@ This API is used to read scale of the specified Scale.
 
 ## URI<a name="section27365698"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports only1.9\)
-
-GET /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Compatible\)
+GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports 1.9 and 1.9+\)
 
 GET /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports only1.7\)
+
+GET /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Compatible\)
 
 [表1](#d0e35851)描述该API的参数。
 

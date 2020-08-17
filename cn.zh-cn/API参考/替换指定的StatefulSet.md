@@ -24,7 +24,7 @@ The other fields cannot be updated.
 
 ## URI<a name="section13071992"></a>
 
-PUT /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\} \(Supports only1.9\)
+PUT /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\} \(Supports 1.9 and 1.9+\)
 
 PUT /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\} \(Compatible\)
 

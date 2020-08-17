@@ -20,7 +20,7 @@ The other fields cannot be updated.
 
 ## URI<a name="section31639905"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports only1.9\)
+PATCH /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports 1.9 and 1.9+\)
 
 PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(Compatible\)
 

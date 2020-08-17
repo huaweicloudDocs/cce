@@ -6,7 +6,7 @@ This API is used to update the status of a specified StatefulSet object under a 
 
 ## URI<a name="section59145013"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports only1.9\)
+PATCH /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports 1.9 and 1.9+\)
 
 PATCH /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Compatible\)
 

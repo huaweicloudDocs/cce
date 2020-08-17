@@ -12,7 +12,7 @@ The following fields can be updated:
 
 ## URI<a name="section23520938"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports only1.9\)
+PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports 1.9 and 1.9+\)
 
 PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Compatible\)
 

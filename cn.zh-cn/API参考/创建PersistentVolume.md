@@ -666,8 +666,8 @@ sfsturbo.csi.everest.io.</pre>
             "pv.kubernetes.io/provisioned-by": "everest-csi-provisioner"
         },
         "labels": {
-            "failure-domain.beta.kubernetes.io/region": "cn-north-7",
-            "failure-domain.beta.kubernetes.io/zone": "cn-north-7b"
+            "failure-domain.beta.kubernetes.io/region": "cn-north-1",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
         },
         "name": "pvc-efe92ec5-fb39-4e17-bb26-c5d336ce5c14"
     },
@@ -697,33 +697,38 @@ sfsturbo.csi.everest.io.</pre>
 1.13及之前版本示例：
 
 ```
-{ 
-    "apiVersion": "v1", 
-    "kind": "PersistentVolume", 
-    "metadata": { 
-        "labels": { 
-	"failure-domain.beta.kubernetes.io/region": "cn-north-1",
-	"failure-domain.beta.kubernetes.io/zone": "cn-north-1a",
-            "name": "pv-test-02" 
-        }, 
-        "name": "pv-test-02",
-        "annotations": {
-	"volume.beta.kubernetes.io/storage-class": "sata",
-	"volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
-        }
-    }, 
-    "spec": { 
-        "accessModes": [ 
-            "ReadWriteMany" 
-        ], 
-        "capacity": { 
-            "storage": "10Gi" 
-        }, 
-        "hostPath": { 
-            "path": "/home" 
-        }, 
-        "persistentVolumeReclaimPolicy": "Delete" 
-    } 
+{
+  "apiVersion": "v1",
+  "kind": "PersistentVolume",
+  "metadata": {
+    "labels": {
+      "failure-domain.beta.kubernetes.io/region": "cn-north-1",
+      "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+    },
+    "annotations": {
+      "pv.kubernetes.io/provisioned-by": "flexvolume-huawei.com/fuxivol"
+    },
+    "name": "pv-evs-example"
+  },
+  "spec": {
+    "accessModes": [
+      "ReadWriteMany"
+    ],
+    "capacity": {
+      "storage": "10Gi"
+    },
+    "flexVolume": {
+      "driver": "huawei.com/fuxivol",
+      "fsType": "ext4",
+      "options": {
+        "disk-mode": "SCSI",
+        "fsType": "ext4",
+        "volumeID": "0992dbda-6340-470e-a74e-4f0db288ed82"
+      }
+    },
+    "persistentVolumeReclaimPolicy": "Delete",
+    "storageClassName": "sata"
+  }
 }
 ```
 
@@ -753,8 +758,8 @@ sfsturbo.csi.everest.io.</pre>
             "everest-csi-attacher/disk-csi-everest-io"
         ],
         "labels": {
-            "failure-domain.beta.kubernetes.io/region": "cn-north-7",
-            "failure-domain.beta.kubernetes.io/zone": "cn-north-7b"
+            "failure-domain.beta.kubernetes.io/region": "cn-north-1",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
         },
         "name": "pvc-efe92ec5-fb39-4e17-bb26-c5d336ce5c14"
     },

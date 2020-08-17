@@ -6,7 +6,7 @@ This API is used to list all Deployment resource objects under a specified Names
 
 ## URI<a name="section57055467"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/deployments \(Supports only1.9\)
+GET /apis/apps/v1/namespaces/\{namespace\}/deployments \(Supports 1.9 and 1.9+\)
 
 GET /apis/apps/v1beta1/namespaces/\{namespace\}/deployments \(Supports only1.7\)
 

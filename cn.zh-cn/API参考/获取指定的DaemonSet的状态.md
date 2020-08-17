@@ -6,7 +6,7 @@ This API is used to read the status of a specified DaemonSet object under a spec
 
 ## URI<a name="section12991283"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Supports only1.9\)
+GET /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Supports 1.9 and 1.9+\)
 
 GET /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Compatible\)
 
