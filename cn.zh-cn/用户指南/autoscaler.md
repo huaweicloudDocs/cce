@@ -163,7 +163,7 @@ autoscaler可分成扩容和缩容两个方面：
     <td class="cellrowborder" valign="top" width="19.71802819718028%" headers="mcps1.2.4.1.2 "><p id="p9813132834516"><a name="p9813132834516"></a><a name="p9813132834516"></a>部分版本无此参数</p>
     </td>
     <td class="cellrowborder" valign="top" width="61.75382461753826%" headers="mcps1.2.4.1.3 "><div class="p" id="p16199190205513"><a name="p16199190205513"></a><a name="p16199190205513"></a>系统盘和数据盘：设置节点磁盘空间。<a name="ul1220313142710"></a><a name="ul1220313142710"></a><ul id="ul1220313142710"><li>系统盘：规格为[40,1024]GB，用户可以配置，缺省值为40GB。</li><li>数据盘：规格为[100,32678]GB，用户可以配置，缺省值为100GB。<p id="p149151439185614"><a name="p149151439185614"></a><a name="p149151439185614"></a>勾选<span class="uicontrol" id="uicontrol5468812165717"><a name="uicontrol5468812165717"></a><a name="uicontrol5468812165717"></a>“资源分配自定义”</span>后，您可以对数据盘中的Docker和Kubelet资源占比进行自定义设置。</p>
-    <div class="notice" id="note1420420141375"><a name="note1420420141375"></a><a name="note1420420141375"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><a name="ul6609174914587"></a><a name="ul6609174914587"></a><ul id="ul6609174914587"><li>磁盘使用direct-lvm模式，移除将使用loop-lvm模式，有影响系统稳定性的风险。<a href="https://docs.docker.com/engine/userguide/storagedriver/device-mapper-driver/" target="_blank" rel="noopener noreferrer">了解更多</a></li><li>Docker资源包含Docker镜像数据以及镜像元数据，Kubelet资源包含Pod配置文件、密钥以及临时存储EmptyDir等挂载数据。</li></ul>
+    <div class="notice" id="note1420420141375"><a name="note1420420141375"></a><a name="note1420420141375"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><a name="ul6609174914587"></a><a name="ul6609174914587"></a><ul id="ul6609174914587"><li>磁盘使用direct-lvm模式，移除将使用loop-lvm模式，有影响系统稳定性的风险。</li><li>Docker资源包含Docker镜像数据以及镜像元数据，Kubelet资源包含Pod配置文件、密钥以及临时存储EmptyDir等挂载数据。</li></ul>
     </div></div>
     </li><li>数据盘：单击<span class="uicontrol" id="uicontrol14989121667"><a name="uicontrol14989121667"></a><a name="uicontrol14989121667"></a>“新增数据盘”</span>，您可以增加一块数据盘。</li></ul>
     </div>
@@ -208,14 +208,24 @@ autoscaler可分成扩容和缩容两个方面：
 </th>
 </tr>
 </thead>
-<tbody><tr id="row97875912317"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p10472656612"><a name="p10472656612"></a><a name="p10472656612"></a>1.15.6</p>
+<tbody><tr id="row31745215578"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p317410218570"><a name="p317410218570"></a><a name="p317410218570"></a><span id="ph278372385718"><a name="ph278372385718"></a><a name="ph278372385718"></a>1.17.2</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p674493210571"><a name="p674493210571"></a><a name="p674493210571"></a>混合集群 v1.17.*</p>
+<p id="p197441632205712"><a name="p197441632205712"></a><a name="p197441632205712"></a>鲲鹏集群 v1.17.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p417492125717"><a name="p417492125717"></a><a name="p417492125717"></a>2020/08/19</p>
+</td>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p217416255719"><a name="p217416255719"></a><a name="p217416255719"></a><span id="ph3201245115713"><a name="ph3201245115713"></a><a name="ph3201245115713"></a>支持1.17版本的kubernetes</span></p>
+</td>
+</tr>
+<tr id="row97875912317"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p10472656612"><a name="p10472656612"></a><a name="p10472656612"></a>1.15.6</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p134723514610"><a name="p134723514610"></a><a name="p134723514610"></a>混合集群 v1.15.*</p>
 <p id="p14472951866"><a name="p14472951866"></a><a name="p14472951866"></a>鲲鹏集群 v1.15.*</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p144721552063"><a name="p144721552063"></a><a name="p144721552063"></a>2020/07/25</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul12472351967"></a><a name="ul12472351967"></a><ul id="ul12472351967"><li>修复scale_result指标</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p101359865814"><a name="p101359865814"></a><a name="p101359865814"></a>修复scale_result指标</p>
 </td>
 </tr>
 <tr id="row187865919236"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p25952027194012"><a name="p25952027194012"></a><a name="p25952027194012"></a>1.15.3</p>
@@ -225,7 +235,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p259513276409"><a name="p259513276409"></a><a name="p259513276409"></a>2020/03/12</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul165951827174010"></a><a name="ul165951827174010"></a><ul id="ul165951827174010"><li>支持nodepool级别扩容策略</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p713628125816"><a name="p713628125816"></a><a name="p713628125816"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
 <tr id="row14788592234"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p16595132724019"><a name="p16595132724019"></a><a name="p16595132724019"></a>1.15.2</p>
@@ -235,7 +245,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p1595112714406"><a name="p1595112714406"></a><a name="p1595112714406"></a>2020/02/06</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul65954279404"></a><a name="ul65954279404"></a><ul id="ul65954279404"><li>支持nodepool级别扩容策略</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p61371810589"><a name="p61371810589"></a><a name="p61371810589"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
 <tr id="row1878859102318"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1595327184017"><a name="p1595327184017"></a><a name="p1595327184017"></a>1.15.1</p>
@@ -245,7 +255,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p759511279400"><a name="p759511279400"></a><a name="p759511279400"></a>2019/12/19</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul55957274409"></a><a name="ul55957274409"></a><ul id="ul55957274409"><li>支持nodepool级别扩容策略</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p413811895811"><a name="p413811895811"></a><a name="p413811895811"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
 <tr id="row15919281555"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p159520272408"><a name="p159520272408"></a><a name="p159520272408"></a>1.13.10</p>
@@ -255,7 +265,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p2595162717404"><a name="p2595162717404"></a><a name="p2595162717404"></a>2020/03/12</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul659592714012"></a><a name="ul659592714012"></a><ul id="ul659592714012"><li>支持nodepool级别扩容策略</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p413919818585"><a name="p413919818585"></a><a name="p413919818585"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
 <tr id="row1878459102313"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p11595102794019"><a name="p11595102794019"></a><a name="p11595102794019"></a>1.13.9</p>
@@ -265,7 +275,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p1595122719409"><a name="p1595122719409"></a><a name="p1595122719409"></a>2020/02/06</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul4595427124011"></a><a name="ul4595427124011"></a><ul id="ul4595427124011"><li>支持nodepool级别扩容策略</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1139784583"><a name="p1139784583"></a><a name="p1139784583"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
 <tr id="row3799599239"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p18596127124013"><a name="p18596127124013"></a><a name="p18596127124013"></a>1.13.8</p>
@@ -275,7 +285,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p19596027164012"><a name="p19596027164012"></a><a name="p19596027164012"></a>2019/12/19</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul8596122715404"></a><a name="ul8596122715404"></a><ul id="ul8596122715404"><li>支持nodepool级别扩容策略</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p814012817589"><a name="p814012817589"></a><a name="p814012817589"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
 <tr id="row1210141511246"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p7596027154017"><a name="p7596027154017"></a><a name="p7596027154017"></a>1.13.7</p>
@@ -285,7 +295,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p4596182718400"><a name="p4596182718400"></a><a name="p4596182718400"></a>2019/10/17</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul115961227164012"></a><a name="ul115961227164012"></a><ul id="ul115961227164012"><li>修复缩容场景下空指针引用错误</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p121417825817"><a name="p121417825817"></a><a name="p121417825817"></a>修复缩容场景下空指针引用错误</p>
 </td>
 </tr>
 <tr id="row1821191542410"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p16596122764017"><a name="p16596122764017"></a><a name="p16596122764017"></a>1.13.5</p>
@@ -295,7 +305,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p145961527134016"><a name="p145961527134016"></a><a name="p145961527134016"></a>2019/08/15</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul4596327104012"></a><a name="ul4596327104012"></a><ul id="ul4596327104012"><li>1.支持nodepool</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p91421285580"><a name="p91421285580"></a><a name="p91421285580"></a>支持nodepool</p>
 </td>
 </tr>
 <tr id="row12115156247"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p10596112712409"><a name="p10596112712409"></a><a name="p10596112712409"></a>1.13.4</p>
@@ -305,7 +315,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p859612714403"><a name="p859612714403"></a><a name="p859612714403"></a>2019/08/16</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul13596127194013"></a><a name="ul13596127194013"></a><ul id="ul13596127194013"><li>1.支持鲲鹏集群 2.开放缩容相关参数 3.支持添加k8s节点标签</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul13596127194013"></a><a name="ul13596127194013"></a><ul id="ul13596127194013"><li>支持鲲鹏集群</li><li>开放缩容相关参数 3.支持添加k8s节点标签</li></ul>
 </td>
 </tr>
 <tr id="row6211111532416"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p18596102714403"><a name="p18596102714403"></a><a name="p18596102714403"></a>1.13.3</p>
@@ -314,7 +324,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p559612764012"><a name="p559612764012"></a><a name="p559612764012"></a>2019/07/10</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul145961727124011"></a><a name="ul145961727124011"></a><ul id="ul145961727124011"><li>支持给扩容的节点加Taints</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p129151236205818"><a name="p129151236205818"></a><a name="p129151236205818"></a>支持给扩容的节点加Taints</p>
 </td>
 </tr>
 <tr id="row421111153248"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1043324612400"><a name="p1043324612400"></a><a name="p1043324612400"></a>1.13.2</p>
@@ -323,7 +333,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p0433144616405"><a name="p0433144616405"></a><a name="p0433144616405"></a>2019/06/10</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul154330461403"></a><a name="ul154330461403"></a><ul id="ul154330461403"><li>支持给扩容的节点加Taints</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p7917236175816"><a name="p7917236175816"></a><a name="p7917236175816"></a>支持给扩容的节点加Taints</p>
 </td>
 </tr>
 <tr id="row12211171512417"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p184331946144020"><a name="p184331946144020"></a><a name="p184331946144020"></a>1.11.8</p>
@@ -332,7 +342,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p34332046124017"><a name="p34332046124017"></a><a name="p34332046124017"></a>2019/09/10</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul243319469403"></a><a name="ul243319469403"></a><ul id="ul243319469403"><li>修复缩容场景下空指针引用错误</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1291753615820"><a name="p1291753615820"></a><a name="p1291753615820"></a>修复缩容场景下空指针引用错误</p>
 </td>
 </tr>
 <tr id="row582262022410"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1433246114013"><a name="p1433246114013"></a><a name="p1433246114013"></a>1.11.6</p>
@@ -341,7 +351,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p154334464401"><a name="p154334464401"></a><a name="p154334464401"></a>2019/08/15</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul44332467407"></a><a name="ul44332467407"></a><ul id="ul44332467407"><li>1.支持nodepool</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1912314019583"><a name="p1912314019583"></a><a name="p1912314019583"></a>支持nodepool</p>
 </td>
 </tr>
 <tr id="row14823102013241"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p0433346184017"><a name="p0433346184017"></a><a name="p0433346184017"></a>1.11.5</p>
@@ -350,7 +360,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p243311466404"><a name="p243311466404"></a><a name="p243311466404"></a>2019/08/16</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul543374619409"></a><a name="ul543374619409"></a><ul id="ul543374619409"><li>1.开放缩容相关参数 2.支持添加k8s节点标签</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul543374619409"></a><a name="ul543374619409"></a><ul id="ul543374619409"><li>开放缩容相关参数</li><li>支持添加k8s节点标签</li></ul>
 </td>
 </tr>
 <tr id="row39171026182415"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p343364615402"><a name="p343364615402"></a><a name="p343364615402"></a>1.11.4</p>
@@ -359,7 +369,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p4433246104013"><a name="p4433246104013"></a><a name="p4433246104013"></a>2019/07/10</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul1943312461404"></a><a name="ul1943312461404"></a><ul id="ul1943312461404"><li>支持给扩容的节点加Taints</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p344813320585"><a name="p344813320585"></a><a name="p344813320585"></a>支持给扩容的节点加Taints</p>
 </td>
 </tr>
 <tr id="row6918142642419"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1143319462401"><a name="p1143319462401"></a><a name="p1143319462401"></a>1.11.3</p>
@@ -368,7 +378,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p94336465401"><a name="p94336465401"></a><a name="p94336465401"></a>2019/06/10</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul1743311466403"></a><a name="ul1743311466403"></a><ul id="ul1743311466403"><li>支持给扩容的节点加Taints</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p64491932135820"><a name="p64491932135820"></a><a name="p64491932135820"></a>支持给扩容的节点加Taints</p>
 </td>
 </tr>
 <tr id="row1391872622417"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1443344624017"><a name="p1443344624017"></a><a name="p1443344624017"></a>1.1.3</p>
@@ -377,7 +387,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p10433124612402"><a name="p10433124612402"></a><a name="p10433124612402"></a>2019/09/21</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul15433204617404"></a><a name="ul15433204617404"></a><ul id="ul15433204617404"><li>支持给扩容的节点加Taints</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p114505329582"><a name="p114505329582"></a><a name="p114505329582"></a>支持给扩容的节点加Taints</p>
 </td>
 </tr>
 <tr id="row191815264242"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1643374654015"><a name="p1643374654015"></a><a name="p1643374654015"></a>1.1.2</p>
@@ -386,7 +396,7 @@ autoscaler可分成扩容和缩容两个方面：
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p1943310469409"><a name="p1943310469409"></a><a name="p1943310469409"></a>2019/02/01</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul343344610407"></a><a name="ul343344610407"></a><ul id="ul343344610407"><li>支持给扩容的节点加Taints</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p7451163219587"><a name="p7451163219587"></a><a name="p7451163219587"></a>支持给扩容的节点加Taints</p>
 </td>
 </tr>
 <tr id="row891802662411"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p443354664010"><a name="p443354664010"></a><a name="p443354664010"></a>1.0.7</p>

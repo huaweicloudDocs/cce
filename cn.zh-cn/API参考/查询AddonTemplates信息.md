@@ -4,6 +4,9 @@
 
 插件模板查询接口，查询插件信息。
 
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。
+
 ## URI<a name="section183455486713"></a>
 
 GET /api/v3/addontemplates

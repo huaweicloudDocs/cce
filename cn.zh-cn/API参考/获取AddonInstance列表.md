@@ -4,6 +4,9 @@
 
 获取集群所有已安装插件实例。
 
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。
+
 ## URI<a name="section68937501179"></a>
 
 GET /api/v3/addons?cluster\_id=\{cluster\_id\}

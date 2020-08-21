@@ -4,6 +4,9 @@
 
 更新插件实例的功能。
 
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。
+
 ## URI<a name="section1021716494713"></a>
 
 PUT /api/v3/addons/\{id\}

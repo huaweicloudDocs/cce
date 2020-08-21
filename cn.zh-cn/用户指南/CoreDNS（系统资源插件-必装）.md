@@ -192,7 +192,18 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 </th>
 </tr>
 </thead>
-<tbody><tr id="row97875912317"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p19246621182"><a name="p19246621182"></a><a name="p19246621182"></a>1.15.3</p>
+<tbody><tr id="row12566114195411"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p956611419541"><a name="p956611419541"></a><a name="p956611419541"></a><span id="ph5234641125416"><a name="ph5234641125416"></a><a name="ph5234641125416"></a>1.17.1</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p122317499543"><a name="p122317499543"></a><a name="p122317499543"></a>混合集群 v1.17.*</p>
+<p id="p1123119493546"><a name="p1123119493546"></a><a name="p1123119493546"></a>裸金属集群 v1.17.*</p>
+<p id="p10231949155412"><a name="p10231949155412"></a><a name="p10231949155412"></a>鲲鹏集群 v1.17.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p2566141405412"><a name="p2566141405412"></a><a name="p2566141405412"></a><span id="ph55484125514"><a name="ph55484125514"></a><a name="ph55484125514"></a>2020/08/19</span></p>
+</td>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1456681414548"><a name="p1456681414548"></a><a name="p1456681414548"></a><span id="ph2851112035514"><a name="ph2851112035514"></a><a name="ph2851112035514"></a>支持1.17集群</span></p>
+</td>
+</tr>
+<tr id="row97875912317"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p19246621182"><a name="p19246621182"></a><a name="p19246621182"></a>1.15.3</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p20246102588"><a name="p20246102588"></a><a name="p20246102588"></a>混合集群 v1.15.*</p>
 <p id="p2024642382"><a name="p2024642382"></a><a name="p2024642382"></a>裸金属集群 v1.15.*</p>
@@ -200,7 +211,7 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p132462210818"><a name="p132462210818"></a><a name="p132462210818"></a>2020/07/27</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul8246821382"></a><a name="ul8246821382"></a><ul id="ul8246821382"><li>同步社区修改，修复kube-apiserver down， coredns crash issue</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p17922112020594"><a name="p17922112020594"></a><a name="p17922112020594"></a>同步社区修改，修复kube-apiserver down，coredns crash issue</p>
 </td>
 </tr>
 <tr id="row187865919236"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p72461227810"><a name="p72461227810"></a><a name="p72461227810"></a>1.15.2</p>
@@ -211,7 +222,7 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p132461929812"><a name="p132461929812"></a><a name="p132461929812"></a>2020/07/27</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul152461521788"></a><a name="ul152461521788"></a><ul id="ul152461521788"><li>同步社区修改，修复kube-apiserver down， coredns crash issue</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p0923220195912"><a name="p0923220195912"></a><a name="p0923220195912"></a>同步社区修改，修复kube-apiserver down，coredns crash issue</p>
 </td>
 </tr>
 <tr id="row14788592234"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p12247722082"><a name="p12247722082"></a><a name="p12247722082"></a>1.15.1</p>
@@ -222,7 +233,7 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p2024711211816"><a name="p2024711211816"></a><a name="p2024711211816"></a>2019/12/16</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul4247622083"></a><a name="ul4247622083"></a><ul id="ul4247622083"><li>支持鲲鹏集群</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p89251420175911"><a name="p89251420175911"></a><a name="p89251420175911"></a>支持鲲鹏集群</p>
 </td>
 </tr>
 <tr id="row1878859102318"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p132471025814"><a name="p132471025814"></a><a name="p132471025814"></a>1.13.4</p>
@@ -233,7 +244,7 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p162471620812"><a name="p162471620812"></a><a name="p162471620812"></a>2020/04/04</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul524718211818"></a><a name="ul524718211818"></a><ul id="ul524718211818"><li>支持新版本集群</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p14925420185912"><a name="p14925420185912"></a><a name="p14925420185912"></a>支持新版本集群</p>
 </td>
 </tr>
 <tr id="row15919281555"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p102471214818"><a name="p102471214818"></a><a name="p102471214818"></a>1.13.3</p>
@@ -244,7 +255,7 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p124710211817"><a name="p124710211817"></a><a name="p124710211817"></a>2019/07/02</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul17247927812"></a><a name="ul17247927812"></a><ul id="ul17247927812"><li>适配ARM集群</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p392652018595"><a name="p392652018595"></a><a name="p392652018595"></a>适配ARM集群</p>
 </td>
 </tr>
 <tr id="row1878459102313"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p10247521982"><a name="p10247521982"></a><a name="p10247521982"></a>1.13.2</p>
@@ -254,7 +265,7 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p1624772982"><a name="p1624772982"></a><a name="p1624772982"></a>2019/09/26</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul1924710220815"></a><a name="ul1924710220815"></a><ul id="ul1924710220815"><li>支持服务网段可配置</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1792732016596"><a name="p1792732016596"></a><a name="p1792732016596"></a>支持服务网段可配置</p>
 </td>
 </tr>
 <tr id="row3799599239"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p0247628816"><a name="p0247628816"></a><a name="p0247628816"></a>1.2.7</p>
@@ -264,7 +275,7 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p19247162086"><a name="p19247162086"></a><a name="p19247162086"></a>2019/06/10</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul8247126818"></a><a name="ul8247126818"></a><ul id="ul8247126818"><li>支持服务网段可配置</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p192782025920"><a name="p192782025920"></a><a name="p192782025920"></a>支持服务网段可配置</p>
 </td>
 </tr>
 </tbody>

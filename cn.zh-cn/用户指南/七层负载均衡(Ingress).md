@@ -372,9 +372,10 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p43232502212"><a name="p43232502212"></a><a name="p43232502212"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1532419502210"><a name="p1532419502210"></a><a name="p1532419502210"></a>可选，但使用已有ELB时必填。</p>
-    <p id="p1832435142216"><a name="p1832435142216"></a><a name="p1832435142216"></a>为共享型负载均衡实例的ID。获取方法：在控制台的<span class="uicontrol" id="uicontrol8385124317594"><a name="uicontrol8385124317594"></a><a name="uicontrol8385124317594"></a>“服务列表”</span>中，单击<span class="uicontrol" id="uicontrol12432719902"><a name="uicontrol12432719902"></a><a name="uicontrol12432719902"></a>“网络 &gt; 弹性负载均衡 ELB”</span>，单击ELB的名称，在ELB详情页的<span class="uicontrol" id="uicontrol762734213311"><a name="uicontrol762734213311"></a><a name="uicontrol762734213311"></a>“基本信息”</span>页签下找到<span class="uicontrol" id="uicontrol1139664010108"><a name="uicontrol1139664010108"></a><a name="uicontrol1139664010108"></a>“ID”</span>字段复制即可。</p>
-    <p id="p10820174517514"><a name="p10820174517514"></a><a name="p10820174517514"></a>取值范围：1-100字符。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1532419502210"><a name="p1532419502210"></a><a name="p1532419502210"></a>为共享型负载均衡实例的ID，取值范围：1-100字符。</p>
+    <a name="ul18514172511463"></a><a name="ul18514172511463"></a><ul id="ul18514172511463"><li>在自动创建时：可选。</li><li>在关联已有ELB时：必填。</li></ul>
+    <p id="p14913235171018"><a name="p14913235171018"></a><a name="p14913235171018"></a><strong id="b533215484103"><a name="b533215484103"></a><a name="b533215484103"></a>获取方法：</strong></p>
+    <p id="p1832435142216"><a name="p1832435142216"></a><a name="p1832435142216"></a>在控制台的<span class="uicontrol" id="uicontrol8385124317594"><a name="uicontrol8385124317594"></a><a name="uicontrol8385124317594"></a>“服务列表”</span>中，单击<span class="uicontrol" id="uicontrol12432719902"><a name="uicontrol12432719902"></a><a name="uicontrol12432719902"></a>“网络 &gt; 弹性负载均衡 ELB”</span>，单击ELB的名称，在ELB详情页的<span class="uicontrol" id="uicontrol762734213311"><a name="uicontrol762734213311"></a><a name="uicontrol762734213311"></a>“基本信息”</span>页签下找到<span class="uicontrol" id="uicontrol1139664010108"><a name="uicontrol1139664010108"></a><a name="uicontrol1139664010108"></a>“ID”</span>字段复制即可。</p>
     </td>
     </tr>
     <tr id="row19324185132210"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p143241054227"><a name="p143241054227"></a><a name="p143241054227"></a>kubernetes.io/elb.ip</p>
@@ -389,32 +390,44 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p16324185192216"><a name="p16324185192216"></a><a name="p16324185192216"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p6324185202213"><a name="p6324185202213"></a><a name="p6324185202213"></a>可选，但自动创建时必填，Kubernetes v1.11.7-r0以上版本的集群可不填。获取方法请参见：<a href="https://support.huaweicloud.com/api-vpc/vpc_api_0005.html" target="_blank" rel="noopener noreferrer">VPC子网接口与OpenStack Neutron子网接口的区别是什么？</a></p>
-    <p id="p37329261377"><a name="p37329261377"></a><a name="p37329261377"></a>取值范围：1-100字符。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p9695142617472"><a name="p9695142617472"></a><a name="p9695142617472"></a>为子网的ID，取值范围：1-100字符。</p>
+    <a name="ul17340104499"></a><a name="ul17340104499"></a><ul id="ul17340104499"><li>Kubernetes v1.11.7-r0及以下版本的集群自动创建时：必填，</li><li>Kubernetes v1.11.7-r0以上版本的集群：可不填。</li></ul>
+    <p id="p6324185202213"><a name="p6324185202213"></a><a name="p6324185202213"></a>获取方法请参见：<a href="https://support.huaweicloud.com/api-vpc/vpc_api_0005.html" target="_blank" rel="noopener noreferrer">VPC子网接口与OpenStack Neutron子网接口的区别是什么？</a></p>
+    </td>
+    </tr>
+    <tr id="row87776149020"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1577817142004"><a name="p1577817142004"></a><a name="p1577817142004"></a><span id="ph1248724718511"><a name="ph1248724718511"></a><a name="ph1248724718511"></a>kuber</span><span id="ph33532591258"><a name="ph33532591258"></a><a name="ph33532591258"></a>netes.io</span><span id="ph1111181915613"><a name="ph1111181915613"></a><a name="ph1111181915613"></a>/elb.eip-id</span></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p97788148014"><a name="p97788148014"></a><a name="p97788148014"></a><span id="ph816517301663"><a name="ph816517301663"></a><a name="ph816517301663"></a>Strin</span><span id="ph71411419677"><a name="ph71411419677"></a><a name="ph71411419677"></a>g</span></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p10958226114910"><a name="p10958226114910"></a><a name="p10958226114910"></a>为弹性公网的ID，取值范围：1-100字符。</p>
+    <a name="ul1459701465115"></a><a name="ul1459701465115"></a><ul id="ul1459701465115"><li><span id="ph797810351494"><a name="ph797810351494"></a><a name="ph797810351494"></a>非自动创建<span id="ph914662911517"><a name="ph914662911517"></a><a name="ph914662911517"></a>elb</span>时：可选</span>。</li><li><span id="ph154236711405"><a name="ph154236711405"></a><a name="ph154236711405"></a>自动创建<span id="ph52441632155115"><a name="ph52441632155115"></a><a name="ph52441632155115"></a>elb</span>时：不填</span>。</li></ul>
+    <p id="p98341426575"><a name="p98341426575"></a><a name="p98341426575"></a><strong id="b1350019315539"><a name="b1350019315539"></a><a name="b1350019315539"></a>获取方法：</strong></p>
+    <p id="p217113461975"><a name="p217113461975"></a><a name="p217113461975"></a>在控制台的“服务列表”中，单击“网络 &gt; 弹性公网IP EIP”，单击EIP的名称，在EIP详情页的“基本信息”中找到“ID”字段复制即可。</p>
     </td>
     </tr>
     <tr id="row135515812311"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p443916465535"><a name="p443916465535"></a><a name="p443916465535"></a>kubernetes.io/elb.enterpriseID</p>
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p164393463532"><a name="p164393463532"></a><a name="p164393463532"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1843954617535"><a name="p1843954617535"></a><a name="p1843954617535"></a>可选，但公网或私网自动创建时必填。</p>
-    <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>为ELB企业项目ID，选择后可以直接创建在具体的ELB企业项目下。获取方法：在CCE控制台中，单击<span class="uicontrol" id="uicontrol115051445181018"><a name="uicontrol115051445181018"></a><a name="uicontrol115051445181018"></a>“资源管理 &gt; 集群管理”</span>，单击集群名称进入集群详情页，在左侧的基本信息中单击企业项目的名称，进入企业项目详情页，找到<span class="uicontrol" id="uicontrol7221153491020"><a name="uicontrol7221153491020"></a><a name="uicontrol7221153491020"></a>“ID”</span>字段复制即可。</p>
-    <p id="p133431611481"><a name="p133431611481"></a><a name="p133431611481"></a>取值范围：1-100字符。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p16861422181410"><a name="p16861422181410"></a><a name="p16861422181410"></a>可选，为ELB企业项目ID，选择后可以直接创建在具体的ELB企业项目下。</p>
+    <p id="p86261431205112"><a name="p86261431205112"></a><a name="p86261431205112"></a>取值范围：1-100字符。</p>
+    <p id="p9823163591414"><a name="p9823163591414"></a><a name="p9823163591414"></a><strong id="b646493811412"><a name="b646493811412"></a><a name="b646493811412"></a>获取方法：</strong></p>
+    <p id="p439419360561"><a name="p439419360561"></a><a name="p439419360561"></a>在CCE控制台中，单击<span class="uicontrol" id="uicontrol115051445181018"><a name="uicontrol115051445181018"></a><a name="uicontrol115051445181018"></a>“资源管理 &gt; 集群管理”</span>，单击集群名称进入集群详情页，在左侧的基本信息中单击企业项目的名称，进入企业项目详情页，找到<span class="uicontrol" id="uicontrol7221153491020"><a name="uicontrol7221153491020"></a><a name="uicontrol7221153491020"></a>“ID”</span>字段复制即可。</p>
     </td>
     </tr>
     <tr id="row895420391888"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p18244154711811"><a name="p18244154711811"></a><a name="p18244154711811"></a>kubernetes.io/elb.session-affinity-mode</p>
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p024434718814"><a name="p024434718814"></a><a name="p024434718814"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p124410471184"><a name="p124410471184"></a><a name="p124410471184"></a>可选，若需要开启会话保持，需增加该参数。</p>
-    <p id="p162441847188"><a name="p162441847188"></a><a name="p162441847188"></a>可选值：“HTTP_COOKIE”或者“APP_COOKIE”</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p10253947153813"><a name="p10253947153813"></a><a name="p10253947153813"></a>可选，负载均衡监听是基于IP地址的会话保持，即来自同一IP地址的访问请求转发到同一台后端服务器上。</p>
+    <a name="ul75841719426"></a><a name="ul75841719426"></a><ul id="ul75841719426"><li>不启用：不填写该参数。</li><li>开启会话保持：需增加该参数，取值“SOURCE_IP”，表示基于源IP地址。</li></ul>
     </td>
     </tr>
     <tr id="row11167337989"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p12244124711810"><a name="p12244124711810"></a><a name="p12244124711810"></a>kubernetes.io/elb.session-affinity-option</p>
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p024414476811"><a name="p024414476811"></a><a name="p024414476811"></a><a href="#table1920573716128">表5</a> Object</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p102448476816"><a name="p102448476816"></a><a name="p102448476816"></a>可选，7层ELB会话保持配置选项</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p102448476816"><a name="p102448476816"></a><a name="p102448476816"></a>可选，七层负载均衡会话保持配置选项。</p>
     </td>
     </tr>
     <tr id="row14324115112219"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p163241552218"><a name="p163241552218"></a><a name="p163241552218"></a>kubernetes.io/elb.autocreate</p>
@@ -432,23 +445,25 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p649915218108"><a name="p649915218108"></a><a name="p649915218108"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p54991723102"><a name="p54991723102"></a><a name="p54991723102"></a>ELB的负载均衡算法，可选。</p>
-    <p id="p16499162191013"><a name="p16499162191013"></a><a name="p16499162191013"></a>默认值：“ROUND_ROBIN”，取值范围：“”空值、“ROUND_ROBIN”、“LEAST_CONNECTIONS”或者“SOURCE_IP”</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p54991723102"><a name="p54991723102"></a><a name="p54991723102"></a>可选，默认值：“ROUND_ROBIN”，为后端云服务器组的负载均衡算法。</p>
+    <p id="p2243151782218"><a name="p2243151782218"></a><a name="p2243151782218"></a>取值范围：</p>
+    <a name="ul103391736202217"></a><a name="ul103391736202217"></a><ul id="ul103391736202217"><li>ROUND_ROBIN：加权轮询算法。</li><li>LEAST_CONNECTIONS：加权最少连接算法。</li><li>SOURCE_IP：源IP算法。</li></ul>
+    <p id="p15243917162217"><a name="p15243917162217"></a><a name="p15243917162217"></a>当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。</p>
     </td>
     </tr>
     <tr id="row25968422094"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p44993217106"><a name="p44993217106"></a><a name="p44993217106"></a>kubernetes.io/elb.health-check-flag</p>
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1249992101014"><a name="p1249992101014"></a><a name="p1249992101014"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1549917221011"><a name="p1549917221011"></a><a name="p1549917221011"></a>是否开启ELB健康检查功能，可选</p>
-    <p id="p19499132111019"><a name="p19499132111019"></a><a name="p19499132111019"></a>默认开启，取值范围：“”（空值）、“on”或者“off”</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p177202225524"><a name="p177202225524"></a><a name="p177202225524"></a>可选，默认开启，为是否开启ELB健康检查功能。</p>
+    <a name="ul141265119581"></a><a name="ul141265119581"></a><ul id="ul141265119581"><li>开启：“”（空值）或“on”</li><li>关闭：“off”</li></ul>
     </td>
     </tr>
     <tr id="row68009391914"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p15499152161017"><a name="p15499152161017"></a><a name="p15499152161017"></a>kubernetes.io/elb.health-check-option</p>
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p5499822109"><a name="p5499822109"></a><a name="p5499822109"></a><a href="#table329102513130">表6</a> Object</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p114991826105"><a name="p114991826105"></a><a name="p114991826105"></a>可选，ELB健康检查配置选项</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p114991826105"><a name="p114991826105"></a><a name="p114991826105"></a>可选，ELB健康检查配置选项。</p>
     </td>
     </tr>
     <tr id="row332514515229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p232519512211"><a name="p232519512211"></a><a name="p232519512211"></a>kubernetes.io/elb.port</p>
@@ -500,21 +515,24 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1232675172211"><a name="p1232675172211"></a><a name="p1232675172211"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p16327755228"><a name="p16327755228"></a><a name="p16327755228"></a>路由匹配策略，可选值为EQUAL_TO（精确匹配）、STARTS_WITH(前缀匹配)、REGEX（正则匹配）。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1017425211255"><a name="p1017425211255"></a><a name="p1017425211255"></a>可选，路由匹配策略。</p>
+    <p id="p552354022316"><a name="p552354022316"></a><a name="p552354022316"></a><span id="ph8523540162311"><a name="ph8523540162311"></a><a name="ph8523540162311"></a>默认值：</span><span id="ph19523240142314"><a name="ph19523240142314"></a><a name="ph19523240142314"></a>STARTS_WITH(前缀匹配)</span><span id="ph752310401233"><a name="ph752310401233"></a><a name="ph752310401233"></a>。</span></p>
+    <p id="p18550124318232"><a name="p18550124318232"></a><a name="p18550124318232"></a><span id="ph11550164312232"><a name="ph11550164312232"></a><a name="ph11550164312232"></a>取值范围</span>：</p>
+    <a name="ul5804181111244"></a><a name="ul5804181111244"></a><ul id="ul5804181111244"><li>EQUAL_TO：精确匹配</li><li>STARTS_WITH：前缀匹配</li><li>REGEX：正则匹配</li></ul>
     </td>
     </tr>
     <tr id="row19327205202214"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p83279511221"><a name="p83279511221"></a><a name="p83279511221"></a>path</p>
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p932711582211"><a name="p932711582211"></a><a name="p932711582211"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p173278515229"><a name="p173278515229"></a><a name="p173278515229"></a>为路由，用户自定义设置。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p173278515229"><a name="p173278515229"></a><a name="p173278515229"></a>必填，为路由路径，用户自定义设置。</p>
     </td>
     </tr>
     <tr id="row16327451221"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p832714513227"><a name="p832714513227"></a><a name="p832714513227"></a>host</p>
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1532718517223"><a name="p1532718517223"></a><a name="p1532718517223"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p53272572218"><a name="p53272572218"></a><a name="p53272572218"></a>可选，域名配置。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p53272572218"><a name="p53272572218"></a><a name="p53272572218"></a>可选，为域名配置。</p>
     </td>
     </tr>
     </tbody>
@@ -574,7 +592,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p84221246111913"><a name="p84221246111913"></a><a name="p84221246111913"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p59311192057"><a name="p59311192057"></a><a name="p59311192057"></a>功能说明：带宽类型，标识是否是共享带宽。</p>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p59311192057"><a name="p59311192057"></a><a name="p59311192057"></a>带宽类型，标识是否是共享带宽。</p>
     <p id="p188864421731"><a name="p188864421731"></a><a name="p188864421731"></a>取值范围：</p>
     <a name="ul51872412"></a><a name="ul51872412"></a><ul id="ul51872412"><li>WHOLE：共享带宽</li><li>PER：独享带宽</li></ul>
     </td>

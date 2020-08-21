@@ -4,6 +4,9 @@
 
 该API用于在指定的Namespace下通过云存储服务中的云存储（EVS、SFS、OBS）去创建PersistentVolumeClaim。
 
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。
+
 ## URI<a name="section1975393831219"></a>
 
 POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims

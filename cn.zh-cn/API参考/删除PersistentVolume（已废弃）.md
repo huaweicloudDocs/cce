@@ -4,6 +4,9 @@
 
 该API用于删除指定Namespace下的PersistentVolume对象，并可以选择是否保留后端云存储。
 
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。
+
 ## URI<a name="section1975393831219"></a>
 
 DELETE /api/v1/cloudpersistentvolumes/\{name\}
