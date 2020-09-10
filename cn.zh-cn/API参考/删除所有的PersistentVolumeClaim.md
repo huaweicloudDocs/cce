@@ -88,7 +88,7 @@ N/A
 
 **响应参数：**
 
-响应参数的详细描述请参见[表2](创建PersistentVolumeClaim-0.md#t8268aeafde034542ab17a36c7fca65c3)。
+响应参数的详细描述请参见[表2](创建PersistentVolumeClaim.md#t8268aeafde034542ab17a36c7fca65c3)。
 
 **响应示例：**
 
@@ -112,8 +112,8 @@ N/A
                     "resourceVersion": "4197709",
                     "creationTimestamp": "2018-07-21T12:00:33Z",
                     "labels": {
-                        "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-                        "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+                        "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+                        "failure-domain.beta.kubernetes.io/zone": "cn-north-4a"
                     },
                     "annotations": {
                         "everest.io/crypt-key-id":"527cbece-428d-463b-a92c-936a11077b5d",//若为加密卷，则存在
@@ -170,8 +170,8 @@ N/A
                     "resourceVersion": "4197709",
                     "creationTimestamp": "2018-07-21T12:00:33Z",
                     "labels": {
-                        "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-                        "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+                        "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+                        "failure-domain.beta.kubernetes.io/zone": "cn-north-4a"
                     },
                     "annotations": {
                         "pv.kubernetes.io/bind-completed": "yes",

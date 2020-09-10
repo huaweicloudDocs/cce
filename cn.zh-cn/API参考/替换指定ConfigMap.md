@@ -4,18 +4,6 @@
 
 This API is used to replace the specified ConfigMap.
 
-The following fields can be updated:
-
--   metadata.selfLink
--   metadata.resourceVersion
--   metadata.generation
--   metadata.creationTimestamp
--   metadata.deletionTimestamp
--   metadata.labels
--   metadata.generateName
--   metadata.annotations
--   data.value
-
 ## URI<a name="section34991658"></a>
 
 PUT /api/v1/namespaces/\{namespace\}/configmaps/\{name\}

@@ -165,8 +165,8 @@ N/A
                     "resourceVersion": "4197709",
                     "creationTimestamp": "2018-07-21T12:00:33Z",
                     "labels": {
-                        "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-                        "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+                        "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+                        "failure-domain.beta.kubernetes.io/zone": "cn-north-4a"
                     },
                     "annotations": {
                         "pv.kubernetes.io/bind-completed": "yes",
@@ -206,8 +206,8 @@ N/A
                     "resourceVersion": "4198033",
                     "creationTimestamp": "2018-07-21T12:02:38Z",
                     "labels": {
-                        "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-                        "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+                        "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+                        "failure-domain.beta.kubernetes.io/zone": "cn-north-4a"
                     },
                     "annotations": {
                         "pv.kubernetes.io/bind-completed": "yes",

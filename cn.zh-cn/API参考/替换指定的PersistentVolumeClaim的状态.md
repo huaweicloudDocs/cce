@@ -53,7 +53,7 @@ PUT /api/v1/namespaces/\{namespace\}/persistentvolumeclaims/\{name\}/status
 
 **请求参数：**
 
-请求参数的详细描述请参见[表2](创建PersistentVolumeClaim-0.md#t8268aeafde034542ab17a36c7fca65c3)。
+请求参数的详细描述请参见[表2](创建PersistentVolumeClaim.md#t8268aeafde034542ab17a36c7fca65c3)。
 
 **请求示例：**
 
@@ -123,8 +123,8 @@ PUT /api/v1/namespaces/\{namespace\}/persistentvolumeclaims/\{name\}/status
             "resourceVersion": "4202107",
             "creationTimestamp": "2018-07-21T12:28:46Z",
             "labels": {
-                "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-                "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+                "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+                "failure-domain.beta.kubernetes.io/zone": "cn-north-4a"
             },
             "annotations": {
                 "pv.kubernetes.io/bind-completed": "yes",
@@ -162,7 +162,7 @@ PUT /api/v1/namespaces/\{namespace\}/persistentvolumeclaims/\{name\}/status
 
 **响应参数：**
 
-响应参数的详细描述请参见[14.2-Table2 Request parameters](创建PersistentVolumeClaim-0.md#t8268aeafde034542ab17a36c7fca65c3).
+响应参数的详细描述请参见[14.2-Table2 Request parameters](创建PersistentVolumeClaim.md#t8268aeafde034542ab17a36c7fca65c3).
 
 **响应示例：**
 
@@ -232,8 +232,8 @@ PUT /api/v1/namespaces/\{namespace\}/persistentvolumeclaims/\{name\}/status
             "resourceVersion": "4202107",
             "creationTimestamp": "2018-07-21T12:28:46Z",
             "labels": {
-                "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-                "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+                "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+                "failure-domain.beta.kubernetes.io/zone": "cn-north-4a"
             },
             "annotations": {
                 "pv.kubernetes.io/bind-completed": "yes",

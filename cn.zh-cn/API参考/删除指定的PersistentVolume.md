@@ -159,8 +159,8 @@ DELETE /api/v1/persistentvolumes/\{name\}
         "resourceVersion": "5674455",
         "creationTimestamp": "2018-07-28T02:04:44Z",
         "labels": {
-            "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-            "failure-domain.beta.kubernetes.io/zone": "cn-north-1a",
+            "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-4a",
             "name": "pv-test-03"
         },
         "annotations": {

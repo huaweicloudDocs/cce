@@ -85,8 +85,8 @@ Content-Type: application/json-patch+json
         "resourceVersion": "5690537",
         "creationTimestamp": "2018-07-28T02:59:41Z",
         "labels": {
-            "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-            "failure-domain.beta.kubernetes.io/zone": "cn-north-1a",
+            "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-4a",
             "name": "pv-test-03"
         },
         "annotations": {

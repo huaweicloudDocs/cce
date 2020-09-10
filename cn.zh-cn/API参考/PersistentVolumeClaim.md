@@ -1,6 +1,6 @@
 # PersistentVolumeClaim<a name="cce_02_0066"></a>
 
--   **[创建PersistentVolumeClaim](创建PersistentVolumeClaim-0.md)**  
+-   **[创建PersistentVolumeClaim](创建PersistentVolumeClaim.md)**  
 
 -   **[删除指定的PersistentVolumeClaim](删除指定的PersistentVolumeClaim.md)**  
 

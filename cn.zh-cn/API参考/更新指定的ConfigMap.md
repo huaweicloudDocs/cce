@@ -4,21 +4,6 @@
 
 This API is used to update the specified ConfigMap.
 
-The following fields can be updated:
-
--   metadata.selfLink
--   metadata.resourceVersion
--   metadata.generation
--   metadata.creationTimestamp
--   metadata.deletionTimestamp
--   metadata.labels
--   metadata.clusterName
--   metadata.generateName
--   metadata.annotations
--   spec.replicas
--   spec.restartPolicy
--   spec.activeDeadlineSeconds
-
 ## URI<a name="section26103793"></a>
 
 PATCH /api/v1/namespaces/\{namespace\}/configmaps/\{name\}

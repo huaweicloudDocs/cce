@@ -1,19 +1,19 @@
-# 获取AddonInstance列表<a name="cce_02_0326"></a>
+# 查询AddonTemplates列表<a name="cce_02_0321"></a>
 
 ## 功能介绍
 
-获取集群所有已安装插件实例
+插件模板查询接口，查询插件信息。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >插件管理的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中\*\*\{clusterid\}\*\*为集群ID，**uri**为资源路径，也即API访问的路径。
 
 ## 调试
 
-您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=ListAddonInstances)中调试该接口。
+您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=ListAddonTemplates)中调试该接口。
 
 ## URI
 
-GET /api/v3/addons
+GET /api/v3/addontemplates
 
 **表 1**  Query参数
 
@@ -27,13 +27,15 @@ GET /api/v3/addons
 </th>
 </tr>
 </thead>
-<tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>cluster_id</p>
+<tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>addon_template_name</p>
 </td>
-<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>是</p>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>否</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>集群 ID，获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0271.html" target="_blank" rel="noopener noreferrer">如何获取接口URI中参数</a></p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>指定的模板名称，不填写则查询列表。</p>
+<p>最小长度：2</p>
+<p>最大长度：30</p>
 </td>
 </tr>
 </tbody>
@@ -120,17 +122,17 @@ GET /api/v3/addons
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>items</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Array of <a href="#response_AddonInstance">AddonInstance</a> objects</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Array of <a href="#response_AddonTemplate">AddonTemplate</a> objects</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件实例列表</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板列表</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-**表 4**  AddonInstance
+**表 4**  AddonTemplate
 
-<a name="response_AddonInstance"></a>
+<a name="response_AddonTemplate"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.2"><p>参数类型</p>
@@ -164,16 +166,9 @@ GET /api/v3/addons
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>spec</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p><a href="#response_InstanceSpec">InstanceSpec</a> object</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p><a href="#response_Templatespec">Templatespec</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>spec是集合类的元素类型，内容为插件实例具体信息，实例的详细描述主体部分都在spec中给出</p>
-</td>
-</tr>
-<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>status</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p><a href="#response_Status">Status</a> object</p>
-</td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件实例状态</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>spec是集合类的元素类型，内容为插件模板具体信息，插件模板的详细描述主体部分都在spec中给出</p>
 </td>
 </tr>
 </tbody>
@@ -238,9 +233,9 @@ GET /api/v3/addons
 </tbody>
 </table>
 
-**表 6**  InstanceSpec
+**表 6**  Templatespec
 
-<a name="response_InstanceSpec"></a>
+<a name="response_Templatespec"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.2"><p>参数类型</p>
@@ -249,143 +244,59 @@ GET /api/v3/addons
 </th>
 </tr>
 </thead>
-<tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>clusterID</p>
+<tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>type</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>集群id</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>模板类型（helm，static）</p>
 </td>
 </tr>
-<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>version</p>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>require</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板版本号，如1.0.0</p>
-</td>
-</tr>
-<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>addonTemplateName</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板名称，如coredns</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>是否为必安装插件</p>
 </td>
 </tr>
-<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>addonTemplateType</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板类型</p>
-</td>
-</tr>
-<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>addonTemplateLogo</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件logo</p>
-<p>最大长度：200</p>
-</td>
-</tr>
-<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>addonTemplateLabels</p>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>labels</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Array of strings</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板所属类型</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>模板所属分组</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>logoURL</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>Logo图片地址</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>readmeURL</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件详情描述及使用说明</p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>description</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板描述</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>模板描述</p>
 </td>
 </tr>
-<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>values</p>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>versions</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Object</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Array of <a href="#response_Versions">Versions</a> objects</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板安装参数（各插件不同）</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-**表 7**  values
-
-<a name="response_values"></a>
-<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
-</th>
-<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.2"><p>参数类型</p>
-</th>
-<th class="cellrowborder" valign="top" width="60%" id="mcps1.2.4.1.3"><p>描述</p>
-</th>
-</tr>
-</thead>
-<tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>-</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Map&lt;String,String&gt;</p>
-</td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板的具体安装参数</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>模板具体版本详情</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-**表 8**  Status
-
-<a name="response_Status"></a>
-<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
-</th>
-<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.2"><p>参数类型</p>
-</th>
-<th class="cellrowborder" valign="top" width="60%" id="mcps1.2.4.1.3"><p>描述</p>
-</th>
-</tr>
-</thead>
-<tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>status</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件实例状态</p>
-<p>枚举值：</p>
-<ul><li><p>installing</p>
-</li><li><p>upgrading</p>
-</li><li><p>failed</p>
-</li><li><p>running</p>
-</li></ul>
-</td>
-</tr>
-<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>reason</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件安装失败原因</p>
-</td>
-</tr>
-<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>message</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>安装错误详情</p>
-</td>
-</tr>
-<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>targetVersions</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Array of strings</p>
-</td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>此插件版本，支持升级的集群版本</p>
-</td>
-</tr>
-<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>currentVersion</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p><a href="#response_Versions">Versions</a> object</p>
-</td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>当前插件实例使用的具体插件版本信息</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-**表 9**  Versions
+**表 7**  Versions
 
 <a name="response_Versions"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -448,7 +359,7 @@ GET /api/v3/addons
 </tbody>
 </table>
 
-**表 10**  SupportVersions
+**表 8**  SupportVersions
 
 <a name="response_SupportVersions"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -484,7 +395,7 @@ GET /api/v3/addons
 
 **状态码为 200 时: **
 
-ok
+OK
 
 ```
 {
@@ -494,67 +405,155 @@ ok
     "kind" : "Addon",
     "apiVersion" : "v3",
     "metadata" : {
-      "uid" : "8ca259cc-553b-11e9-926f-0255ac101a31",
-      "name" : "storage-driver",
-      "creationTimestamp" : "2019-04-02T11:36:26Z",
-      "updateTimestamp" : "2019-04-02T11:36:26Z"
+      "uid" : "web-terminal",
+      "name" : "web-terminal",
+      "creationTimestamp" : "2019-01-07T13:22:48Z",
+      "updateTimestamp" : "2019-03-28T06:52:58Z"
     },
     "spec" : {
-      "clusterID" : "0c0e4a63-5539-11e9-95f7-0255ac10177e",
-      "version" : "1.0.10",
-      "addonTemplateName" : "storage-driver",
-      "addonTemplateType" : "helm",
-      "addonTemplateLogo" : "https://192.149.48.66/cce-addon-southchina-aw1hz2u/storage-driverlogo.svg",
-      "addonTemplateLabels" : [ "Storage" ],
-      "description" : "A kubernetes FlexVolume Driver used to support cloud storage",
-      "values" : {
-        "basic" : {
-          "addon_version" : "1.0.10",
-          "euleros_version" : "2.2.5",
-          "obs_url" : "obs.cn-north-1.myhuaweicloud.com",
-          "platform" : "linux-amd64",
-          "swr_addr" : "100.125.6.246:20202",
-          "swr_user" : "hwofficial"
-        },
-        "flavor" : {
-          "replicas" : 1
-        },
-        "parameters" : { }
-      }
-    },
-    "status" : {
-      "status" : "running",
-      "Reason" : "Install complete",
-      "message" : "",
-      "currentVersion" : {
-        "version" : "1.0.10",
+      "type" : "helm",
+      "labels" : [ "Maintenance" ],
+      "logoURL" : "https://192.149.48.66/cce-addon-southchina-aw1hz2u/web-terminallogo.svg",
+      "readmeURL" : "https://192.149.48.66/cce-addon-southchina-y24tcmvhzg1l/web-terminalcn-readme.md##https://192.149.48.66/cce-addon-southchina-zw4tcmvhzg1l/web-terminalen-readme.md",
+      "description" : "A plug-in that allows users to run kubectl commands using a web browser.",
+      "versions" : [ {
+        "version" : "1.0.0",
         "input" : {
           "basic" : {
             "euleros_version" : "2.2.5",
-            "obs_url" : "obs.cn-north-1.myhuaweicloud.com",
             "swr_addr" : "100.125.6.246:20202",
             "swr_user" : "hwofficial"
           },
-          "parameters" : { }
+          "parameters" : {
+            "custom" : {
+              "password" : "hwcloud_cce"
+            },
+            "flavor1" : {
+              "description" : "Has only one instance",
+              "name" : "Single",
+              "replicas" : 1,
+              "resources" : [ {
+                "limitsCpu" : "200m",
+                "limitsMem" : "512Mi",
+                "name" : "web-terminal",
+                "requestsCpu" : "100m",
+                "requestsMem" : "256Mi"
+              } ]
+            }
+          }
         },
         "stable" : true,
         "translate" : {
           "en_US" : {
             "addon" : {
-              "changeLog" : "The plug-in is upgraded to enhance the storage plug-in function.",
-              "description" : "A kubernetes FlexVolume Driver used to support cloud storage"
+              "changeLog" : "none",
+              "description" : "A plug-in that allows users to run kubectl commands using a web browser."
+            },
+            "description" : {
+              "Parameters.flavor1.description" : "Deploy with one instance",
+              "Parameters.flavor1.name" : "Single"
+            },
+            "key" : {
+              "Parameters.custom.password" : "password"
             }
           },
           "zh_CN" : {
             "addon" : {
-              "changeLog" : "升级插件，增强存储插件功能.",
-              "description" : "用于对接云存储服务的FlexVolume驱动"
+              "changeLog" : "无",
+              "description" : "一款支持在web界面上使用kubectl的插件。"
+            },
+            "description" : {
+              "Parameters.flavor1.description" : "单实例部署",
+              "Parameters.flavor1.name" : "单实例"
+            },
+            "key" : {
+              "Parameters.custom.password" : "密码"
             }
           }
         },
-        "creationTimestamp" : "2019-03-29T13:45:37Z",
-        "updateTimestamp" : "2019-03-29T13:45:37Z"
-      }
+        "supportVersions" : [ {
+          "clusterType" : "VirtualMachine",
+          "clusterVersion" : [ "v1.(9|11).*" ]
+        }, {
+          "clusterType" : "BareMetal",
+          "clusterVersion" : [ "v1.(9|11).*" ]
+        } ],
+        "creationTimestamp" : "2019-01-07T13:22:48Z",
+        "updateTimestamp" : "2019-02-22T07:01:16Z"
+      }, {
+        "version" : "1.0.1",
+        "input" : {
+          "basic" : {
+            "euleros_version" : "2.2.5",
+            "rbac_enabled" : true,
+            "swr_addr" : "100.125.6.246:20202",
+            "swr_user" : "hwofficial"
+          },
+          "parameters" : {
+            "custom" : {
+              "elbClass" : "union",
+              "elbID" : 0,
+              "loadBalancerIP" : "127.0.0.1",
+              "password" : "hwcloud_cce",
+              "port" : 3000,
+              "serviceType" : "NodePort",
+              "targetPort" : 3000
+            },
+            "flavor1" : {
+              "description" : "Has only one instance",
+              "name" : "Single",
+              "replicas" : 1,
+              "resources" : [ {
+                "limitsCpu" : "200m",
+                "limitsMem" : "512Mi",
+                "name" : "web-terminal",
+                "requestsCpu" : "100m",
+                "requestsMem" : "256Mi"
+              } ]
+            }
+          }
+        },
+        "stable" : true,
+        "translate" : {
+          "en_US" : {
+            "addon" : {
+              "changeLog" : "1.include service creation  2.simplify operation  3.support access via elb",
+              "description" : "A plug-in that allows users to run kubectl commands using a web browser."
+            },
+            "description" : {
+              "Parameters.custom.serviceType" : "Service type for accessing web-terminal",
+              "Parameters.flavor1.description" : "Deploy with one instance",
+              "Parameters.flavor1.name" : "Single"
+            },
+            "key" : {
+              "Parameters.custom.serviceType" : "Access type"
+            }
+          },
+          "zh_CN" : {
+            "addon" : {
+              "changeLog" : "1.包含service创建  2.操作简化  3.支持通过elb访问",
+              "description" : "一款支持在web界面上使用kubectl的插件。"
+            },
+            "description" : {
+              "Parameters.custom.serviceType" : "访问web-terminal的service类型",
+              "Parameters.flavor1.description" : "单实例部署",
+              "Parameters.flavor1.name" : "单实例"
+            },
+            "key" : {
+              "Parameters.custom.serviceType" : "访问类型"
+            }
+          }
+        },
+        "supportVersions" : [ {
+          "clusterType" : "VirtualMachine",
+          "clusterVersion" : [ "v1.(9|11).*" ]
+        }, {
+          "clusterType" : "BareMetal",
+          "clusterVersion" : [ "v1.(9|11).*" ]
+        } ],
+        "creationTimestamp" : "2019-03-28T06:52:57Z",
+        "updateTimestamp" : "2019-03-28T06:52:57Z"
+      } ]
     }
   } ]
 }
@@ -566,14 +565,14 @@ Internal Server Error
 
 ```
 {
-  "message" : "internal error",
+  "message" : "Internal error",
   "code" : "SVCSTG.CCE-ADDONMGR.500"
 }
 ```
 
 ## 状态码
 
-<a name="table4456"></a>
+<a name="table4462"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.3.1.1"><p>状态码 </p>
 </th>
 <th class="cellrowborder" valign="top" width="85%" id="mcps1.1.3.1.2"><p>描述</p>
@@ -582,7 +581,7 @@ Internal Server Error
 </thead>
 <tbody><tr><td class="cellrowborder" valign="top" width="15%" headers="mcps1.1.3.1.1 "><p>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="85%" headers="mcps1.1.3.1.2 "><p>ok</p>
+<td class="cellrowborder" valign="top" width="85%" headers="mcps1.1.3.1.2 "><p>OK</p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="15%" headers="mcps1.1.3.1.1 "><p>500</p>

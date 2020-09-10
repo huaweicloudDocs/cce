@@ -187,6 +187,16 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9510182110610"><a name="p9510182110610"></a><a name="p9510182110610"></a>删除一个指定的集群。</p>
 </td>
 </tr>
+<tr id="row433972018146"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p733917204144"><a name="p733917204144"></a><a name="p733917204144"></a><a href="集群休眠.md">集群休眠</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p5340122016140"><a name="p5340122016140"></a><a name="p5340122016140"></a>休眠一个指定的集群。</p>
+</td>
+</tr>
+<tr id="row5413123710145"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p441393717143"><a name="p441393717143"></a><a name="p441393717143"></a><a href="集群唤醒.md">集群唤醒</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18413163718147"><a name="p18413163718147"></a><a name="p18413163718147"></a>唤醒一个指定的已休眠集群。</p>
+</td>
+</tr>
 <tr id="row09137251369"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p49133251669"><a name="p49133251669"></a><a name="p49133251669"></a><a href="获取集群证书.md">获取集群证书</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1391314257610"><a name="p1391314257610"></a><a name="p1391314257610"></a>获取指定集群的证书信息。</p>
@@ -232,7 +242,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1052229111514"><a name="p1052229111514"></a><a name="p1052229111514"></a>获取集群下所有节点池。</p>
 </td>
 </tr>
-<tr id="row155232931510"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p352142918155"><a name="p352142918155"></a><a name="p352142918155"></a><a href="更新指定的节点池.md">更新指定的节点池</a></p>
+<tr id="row155232931510"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p352142918155"><a name="p352142918155"></a><a name="p352142918155"></a><a href="更新指定节点池.md">更新指定节点池</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1552529161518"><a name="p1552529161518"></a><a name="p1552529161518"></a>更新指定的节点池。</p>
 </td>
@@ -261,22 +271,22 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row2643518165810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p10643171815819"><a name="p10643171815819"></a><a name="p10643171815819"></a><a href="创建PersistentVolumeClaim.md">创建PersistentVolumeClaim</a></p>
+<tbody><tr id="row2643518165810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p10643171815819"><a name="p10643171815819"></a><a name="p10643171815819"></a><a href="创建PVC.md">创建PVC</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p264311865818"><a name="p264311865818"></a><a name="p264311865818"></a>在指定的Namespace下通过华为云存储服务中的云存储（EVS、SFS、OBS）去创建PersistentVolumeClaim。</p>
 </td>
 </tr>
-<tr id="row176431418185819"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p66435189586"><a name="p66435189586"></a><a name="p66435189586"></a><a href="删除PersistentVolumeClaim.md">删除PersistentVolumeClaim</a></p>
+<tr id="row176431418185819"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p66435189586"><a name="p66435189586"></a><a name="p66435189586"></a><a href="删除PVC.md">删除PVC</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p7644218105810"><a name="p7644218105810"></a><a name="p7644218105810"></a>删除指定Namespace下的PersistentVolumeClaim对象，并可以选择保留后端的云存储。</p>
 </td>
 </tr>
-<tr id="row1464481875812"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1644171865810"><a name="p1644171865810"></a><a name="p1644171865810"></a><a href="创建PersistentVolume（已废弃）.md">创建PersistentVolume</a></p>
+<tr id="row1464481875812"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1644171865810"><a name="p1644171865810"></a><a name="p1644171865810"></a><a href="创建PV（已废弃）.md">创建PV（已废弃）</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13644218165816"><a name="p13644218165816"></a><a name="p13644218165816"></a>通过指定华为云存储服务中的云存储（如EVS、SFS、OBS）去创建PersistentVolume。</p>
 </td>
 </tr>
-<tr id="row46441018165812"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p36440184588"><a name="p36440184588"></a><a name="p36440184588"></a><a href="删除PersistentVolume（已废弃）.md">删除PersistentVolume</a></p>
+<tr id="row46441018165812"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p36440184588"><a name="p36440184588"></a><a name="p36440184588"></a><a href="删除PV（已废弃）.md">删除PV（已废弃）</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p864412185580"><a name="p864412185580"></a><a name="p864412185580"></a>删除指定Namespace下的PersistentVolume对象，并可以选择是否保留后端云存储。</p>
 </td>
@@ -295,7 +305,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row453712351771"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p85371735571"><a name="p85371735571"></a><a name="p85371735571"></a><a href="查询AddonTemplates信息.md">查询AddonTemplates信息</a></p>
+<tbody><tr id="row453712351771"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p85371735571"><a name="p85371735571"></a><a name="p85371735571"></a><a href="查询AddonTemplates列表.md">查询AddonTemplates列表</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p55370351476"><a name="p55370351476"></a><a name="p55370351476"></a>插件模板查询接口，查询插件信息。</p>
 </td>
@@ -1223,7 +1233,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row348010121475"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1948041216475"><a name="p1948041216475"></a><a name="p1948041216475"></a><a href="创建PersistentVolumeClaim-0.md">创建PersistentVolumeClaim</a></p>
+<tbody><tr id="row348010121475"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1948041216475"><a name="p1948041216475"></a><a name="p1948041216475"></a><a href="创建PersistentVolumeClaim.md">创建PersistentVolumeClaim</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="a863b97964c8f46c382c223f924027de7"><a name="a863b97964c8f46c382c223f924027de7"></a><a name="a863b97964c8f46c382c223f924027de7"></a>在指定的Namespace下创建PersistentVolumeClaim。</p>
 </td>

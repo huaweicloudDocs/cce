@@ -666,8 +666,8 @@ sfsturbo.csi.everest.io.</pre>
             "pv.kubernetes.io/provisioned-by": "everest-csi-provisioner"
         },
         "labels": {
-            "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-            "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+            "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-4a"
         },
         "name": "pvc-efe92ec5-fb39-4e17-bb26-c5d336ce5c14"
     },
@@ -702,8 +702,8 @@ sfsturbo.csi.everest.io.</pre>
   "kind": "PersistentVolume",
   "metadata": {
     "labels": {
-      "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-      "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+      "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+      "failure-domain.beta.kubernetes.io/zone": "cn-north-4a"
     },
     "annotations": {
       "pv.kubernetes.io/provisioned-by": "flexvolume-huawei.com/fuxivol"
@@ -758,8 +758,8 @@ sfsturbo.csi.everest.io.</pre>
             "everest-csi-attacher/disk-csi-everest-io"
         ],
         "labels": {
-            "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-            "failure-domain.beta.kubernetes.io/zone": "cn-north-1a"
+            "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-4a"
         },
         "name": "pvc-efe92ec5-fb39-4e17-bb26-c5d336ce5c14"
     },
@@ -801,8 +801,8 @@ sfsturbo.csi.everest.io.</pre>
         "resourceVersion": "5672675",
         "creationTimestamp": "2018-07-28T02:04:44Z",
         "labels": {
-            "failure-domain.beta.kubernetes.io/region": "cn-north-1",
-            "failure-domain.beta.kubernetes.io/zone": "cn-north-1a",
+            "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-4a",
             "name": "pv-test-02"
         },
         "annotations": {

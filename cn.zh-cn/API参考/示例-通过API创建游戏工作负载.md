@@ -38,7 +38,7 @@
 -   VPC的ID：**219ab8a0-1272-4049-a383-8ad0b770fa11**
 -   子网的ID：**d23ef2e9-8b90-49b3-bc4a-fd7d6bea6bec**
 -   密钥对的名称：**keypair-cce**
--   区域的名称：**cn-north-1**
+-   区域的名称：**cn-north-4**
 -   项目ID：下面示例中以project\_id代替，获取方式请参见[如何获取接口URI中参数](如何获取接口URI中参数.md)。
 
 则可以通过如下步骤创建一个带有单个节点的集群。
@@ -50,7 +50,7 @@
     -   username：华为云的用户帐号。
     -   password：华为云的用户密码。
     -   domainname：若是子帐号，请填写对应的主帐号名称。若不是子帐号，请与username保持一致。
-    -   cn-north-1：此处以中国华北区1为例。
+    -   cn-north-4：此处以中国华北区4为例。
 
         ```
         curl -H "Content-Type:application/json" https://{iam_endpoint}/v3/auth/tokens -X POST -d '{ 
@@ -71,7 +71,7 @@
              }, 
              "scope": { 
                "project": { 
-                 "name": "cn-north-1" 
+                 "name": "cn-north-4" 
                } 
              } 
            } 
@@ -138,7 +138,7 @@
         },
         "spec": {
             "flavor": "c3.large.2",
-            "az": "cn-north-1a",
+            "az": "cn-north-4a",
             "login": {
                 "sshKey": "keypair-cce"
             },
@@ -173,13 +173,13 @@
 
 假设已获取前提条件中的信息为如下值（实际操作中您需要根据实际情况替换）：
 
-私有docker镜像地址：**swr.cn-north-1.myhuaweicloud.com/full/2048-demo:v1.2**（此地址为示例，获取方法请参见[客户端上传镜像](https://support.huaweicloud.com/usermanual-swr/swr_01_0011.html)）。
+私有docker镜像地址：**swr.cn-north-4.myhuaweicloud.com/full/2048-demo:v1.2**（此地址为示例，获取方法请参见[客户端上传镜像](https://support.huaweicloud.com/usermanual-swr/swr_01_0011.html)）。
 
 则可以通过如下步骤创建一个工作负载。
 
 1.  调用[创建Deployment](创建Deployment.md)使用镜像创建2048工作负载。
 
-    创建一个Deployment，名称为deployment-test，且添加一个标签name:deployment-test。使用镜像为  **swr.cn-north-1.myhuaweicloud.com/full/2048-demo:v1.2**  （此地址为示例）**。**
+    创建一个Deployment，名称为deployment-test，且添加一个标签name:deployment-test。使用镜像为  **swr.cn-north-4.myhuaweicloud.com/full/2048-demo:v1.2**  （此地址为示例）**。**
 
     ```
     curl -X POST -H "Content-Type:application/json" -H "X-Cluster-ID:$UUID" -H "X-Auth-Token:$Token" -d '{ 
@@ -207,7 +207,7 @@
                  "spec": { 
                      "containers": [ 
                          { 
-                             "image": "swr.cn-north-1.myhuaweicloud.com/full/2048-demo:v1.2", 
+                             "image": "swr.cn-north-4.myhuaweicloud.com/full/2048-demo:v1.2", 
                              "imagePullPolicy": "IfNotPresent", 
                              "name": "deployment-test" 
                          } 
