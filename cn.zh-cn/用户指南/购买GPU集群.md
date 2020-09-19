@@ -8,11 +8,11 @@
 
 ## 约束与限制<a name="section15947165882217"></a>
 
--   每个账号默认可以创建的云资源有一定的配额，如果超过配额创建集群会失败。请在创建集群前确认您的配额，查看配额请参见[关于配额](https://support.huaweicloud.com/usermanual-iaas/zh-cn_topic_0040259342.html)。如果您需要提高您的配额，请[提交工单](https://console.huaweicloud.com/console/#/quota)申请。
+-   每个账号默认可以创建的云资源有一定的配额，如果超过配额创建集群会失败。请在创建集群前确认您的配额，查看配额请参见[关于配额](https://support.huaweicloud.com/usermanual-iaas/zh-cn_topic_0040259342.html)。如果您需要提高您的配额，请[提交工单](https://console.huaweicloud.com/quota/?locale=zh-cn#/quota)申请。
 -   Kubernetes 1.9版本的集群，GPU组件默认强制安装；Kubernetes 1.11及以上版本的集群，GPU能力以插件的方式外接提供，需要您在“插件管理“中安装[GPU-beta插件。](gpu-beta.md)
 -   ECS 实例使用限制：CUDA需要您自行在镜像中安装。
 
-## 购买GPU集群<a name="section9343750182712"></a>
+## 操作步骤<a name="section9343750182712"></a>
 
 混合集群支持GPU、NPU等异构节点的混合部署，其购买方式与混合集群基本类似，你只需在创建混合集群时的“创建节点”步骤中选择**“GPU加速型“**下的节点规格即可。
 

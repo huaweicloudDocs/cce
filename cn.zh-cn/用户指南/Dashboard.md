@@ -34,12 +34,12 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
     -   访问类型：可以选择节点访问（NodePort）和负载均衡（LoadBalancer）两种类型。
         -   节点访问：
-            -   绑定弹性IP：若集群没有绑定弹性IP，需点击  [此处](https://console.huaweicloud.com/vpc/#/vpc/vpcmanager/eips)  绑定弹性IP，绑定后单击刷新按钮。
+            -   绑定弹性IP：若集群没有绑定弹性IP，需单击[此处](https://console.huaweicloud.com/vpc/#/vpc/vpcmanager/eips)绑定弹性IP，绑定后单击刷新按钮。
 
                 该插件默认以NodePort形式提供访问，需为集群任意一个节点绑定弹性IP才能使用。
 
         -   负载均衡：
-            -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[共享型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后点击刷新按钮。
+            -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[共享型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后单击刷新按钮。
 
                 >![](public_sys-resources/icon-note.gif) **说明：** 
                 >负载均衡实例需与当前集群处于相同VPC且为公网类型。
@@ -66,7 +66,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 2.  **访问dashboard**
 
-    “插件管理”-\>“插件实例”-\>“dashboard”，点击“访问地址”中的链接并通过token登录。
+    “插件管理”-\>“插件实例”-\>“dashboard”，单击“访问地址”中的链接并通过token登录。
 
 
 ## 访问dashboard<a name="section15288141117362"></a>
@@ -117,7 +117,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作；
-    >-   若升级按钮可点击，则点击升级按钮即可升级dashboard插件。
+    >-   若升级按钮可单击，则单击升级按钮即可升级dashboard插件。
     >-   升级dashboard插件时，会替换原先节点上的旧版本的dashboard插件，安装最新版本的dashboard插件以实现功能的快速升级。
 
 2.  在弹出的窗口中，单击“确认“，可升级该插件。
@@ -125,7 +125,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 ## 卸载插件<a name="section20765191931911"></a>
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“ 卸载“。
-2.  在弹出的窗口中，单击“确认“，可卸载该插件。
+2.  在弹出的窗口中，单击“是“，可卸载该插件。
 
 ## 附：访问报错解决方法<a name="section913875232612"></a>
 

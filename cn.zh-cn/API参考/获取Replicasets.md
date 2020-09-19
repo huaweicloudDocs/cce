@@ -6,9 +6,9 @@ list or watch objects of kind ReplicaSet
 
 ## URI<a name="section5904740103211"></a>
 
-GET /apis/apps/v1/replicasets
+GET /apis/apps/v1/replicasets \(Supports 1.9 and 1.9+\)
 
-GET /apis/extensions/v1beta1/replicasets
+GET /apis/extensions/v1beta1/replicasets\(Supports 1.15 and 1.15-\)
 
 **表 1**  Query参数
 

@@ -21,9 +21,9 @@ This API is used to partially update the specified Ingress.
 
 ## URI<a name="section14030938"></a>
 
-PATCH /apis/networking.k8s.io/v1beta1/namespaces/\{namespace\}/ingresses/\{name\} \(Supports since1.15\)
+PATCH /apis/networking.k8s.io/v1beta1/namespaces/\{namespace\}/ingresses/\{name\} \(Supports 1.15 and 1.15+\)
 
-PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses/\{name\} \(Compatible\)
+PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses/\{name\} \(Supports 1.15-\)
 
 [表1](#d0e42906)描述该API的参数。
 

@@ -654,7 +654,7 @@ sfsturbo.csi.everest.io.</pre>
 
 **请求示例：**
 
-1.15集群版本示例：
+1.15及以上版本集群，示例如下：
 
 ```
 {
@@ -662,7 +662,6 @@ sfsturbo.csi.everest.io.</pre>
     "kind": "PersistentVolume",
     "metadata": {
         "annotations": {
-            "pv.kubernetes.io/namespace": "default",
             "pv.kubernetes.io/provisioned-by": "everest-csi-provisioner"
         },
         "labels": {
@@ -740,7 +739,7 @@ sfsturbo.csi.everest.io.</pre>
 
 **响应示例：**
 
-1.15集群版本示例：
+1.15及以上版本集群，示例如下：
 
 ```
 {
@@ -748,7 +747,6 @@ sfsturbo.csi.everest.io.</pre>
     "kind": "PersistentVolume",
     "metadata": {
         "annotations": {
-            "pv.kubernetes.io/namespace": "default",
             "pv.kubernetes.io/provisioned-by": "everest-csi-provisioner"
         },
         "creationTimestamp": "2020-01-08T02:00:31Z",

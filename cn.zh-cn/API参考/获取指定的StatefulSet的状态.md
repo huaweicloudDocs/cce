@@ -8,7 +8,7 @@ This API is used to read the status of a specified StatefulSet object under a sp
 
 GET /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports 1.9 and 1.9+\)
 
-GET /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Compatible\)
+GET /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e38842)描述该API的参数。
 

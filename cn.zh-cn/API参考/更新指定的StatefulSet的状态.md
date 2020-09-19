@@ -8,7 +8,7 @@ This API is used to update the status of a specified StatefulSet object under a 
 
 PATCH /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports 1.9 and 1.9+\)
 
-PATCH /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Compatible\)
+PATCH /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e39989)描述该API的参数。
 

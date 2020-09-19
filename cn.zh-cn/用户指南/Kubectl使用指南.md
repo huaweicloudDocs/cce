@@ -27,11 +27,11 @@
 
 ## 工作负载访问方式设置<a name="section557132035713"></a>
 
--   [通过kubectl命令实现集群内访问](集群内访问(ClusterIP).md)
--   [通过kubectl命令实现节点访问](节点访问(NodePort).md#section813715073217)
--   [通过kubectl命令行实现四层负载均衡](负载均衡(LoadBalancer).md)
--   [通过kubectl命令行实现NAT网关](DNAT网关(DNAT).md)
--   [通过kubectl命令实现七层负载均衡](七层负载均衡(Ingress).md#section1944313158364)
+-   [通过kubectl命令实现集群内访问](集群内访问(ClusterIP).md#section9813121512319)
+-   [通过kubectl命令实现节点访问](节点访问(NodePort).md#section7114174773118)
+-   [通过kubectl命令行实现四层负载均衡](负载均衡(LoadBalancer).md#section1984211714368)
+-   [通过kubectl命令行实现NAT网关](DNAT网关(DNAT).md#section646312404363)
+-   [通过kubectl命令实现七层负载均衡](通过Kubectl命令行创建Ingress.md)
 
 ## 工作负载高级设置<a name="section927251814582"></a>
 
@@ -49,10 +49,10 @@
 
 ## 存储管理<a name="section274418453590"></a>
 
--   [使用kubectl创建云硬盘](使用云硬盘存储卷.md#section198505107598)
--   [使用kubectl挂载云硬盘](使用云硬盘存储卷.md#section1996254515127)
--   [使用kubectl创建对象存储](使用对象存储卷.md#section102883211413)
--   [使用kubectl挂载对象存储](使用对象存储卷.md#section83940541116)
--   [使用kubectl创建文件存储](使用文件存储卷.md#section5806637172015)
--   [使用kubectl挂载文件存储](使用文件存储卷.md#section1094712153215)
+-   [使用kubectl创建云硬盘](使用kubectl创建云硬盘.md)
+-   [使用kubectl挂载云硬盘](使用kubectl部署使用云硬盘卷的工作负载.md)
+-   [使用kubectl创建对象存储](使用kubectl创建对象存储.md)
+-   [使用kubectl挂载对象存储](使用kubectl部署使用对象存储卷的工作负载.md)
+-   [使用kubectl创建文件存储](使用kubectl创建文件存储.md)
+-   [使用kubectl挂载文件存储](使用kubectl部署使用文件存储卷的工作负载.md)
 

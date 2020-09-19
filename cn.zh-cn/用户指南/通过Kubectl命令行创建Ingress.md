@@ -1,189 +1,4 @@
-# 七层负载均衡\(Ingress\)<a name="cce_01_0094"></a>
-
-七层负载均衡是采用了共享型弹性负载均衡，在四层负载均衡访问方式的基础上支持了URI配置，通过对应的URI将访问流量分发到对应的服务。同时，服务根据不同URI实现不同的功能。
-
-七层负载均衡访问方式由弹性负载均衡ELB服务地址、设置的访问端口、定义的URI组成，例如：10.117.117.117:80/helloworld。
-
-通过配置公网类型和私网类型的负载均衡实例可以实现公网的七层路由转发和内网（同一VPC内）的七层路由转发。
-
-**图 1**  七层负载均衡\(Ingress\)<a name="fig6439172113112"></a>  
-![](figures/七层负载均衡(Ingress).png "七层负载均衡(Ingress)")
-
-## 准备工作<a name="section2042610683912"></a>
-
-已在管理控制台中创建“弹性负载均衡“实例。
-
-1.  登录管理控制台首页，在服务列表中选择“网络  \> 弹性负载均衡 ELB“。
-2.  单击右上角的“购买弹性负载均衡“，详细操作步骤请参见[创建负载均衡器](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0015479967.html)。
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->CCE中的负载均衡 \( LoadBalancer \)访问类型使用[弹性负载均衡 ELB](https://support.huaweicloud.com/productdesc-elb/zh-cn_topic_0015479966.html)提供网络访问，存在如下产品约束：
->-   自动创建的ELB实例建议不要被其他资源使用，否则会在删除时被占用，导致资源残留。
->-   正在使用的ELB实例请不要修改监听器名称，否则可能导致无法正常访问。
->-   正在使用的ELB实例，其监听器请不要在ELB控制台中添加自定义转发规则，未通过CCE“网络管理“中的Ingress所管理的转发规则，将在更新ingress的时被清理掉。
-
-## 通过控制台操作<a name="section744117150366"></a>
-
-您可以在创建工作负载时通过CCE控制台设置访问方式，本节以创建一个nginx工作负载并添加Ingress类型的Service为例进行说明。
-
-1.  创建工作负载，详细步骤请参见[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)、[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)或[创建守护进程集\(DaemonSet\)](创建守护进程集(DaemonSet).md)。
-    -   若创建工作负载时，配置了工作负载访问方式，且设置为“节点访问 \( NodePort \)”，请直接执行[3](#li45981923161059)。
-    -   若创建工作负载未设置访问方式，请先执行[2](#li248013365354)。
-
-2.  <a name="li248013365354"></a>（可选）若创建工作负载时，未配置“节点访问 \( NodePort \)”，请执行如下操作。
-    1.  登录CCE控制台，在左侧导航栏中选择“资源管理 \> 网络管理”。
-    2.  在Service页签下，单击“添加Service”。选择类型为“节点访问 \( NodePort \)”。
-        -   **Service名称：**自定义服务名称，可与工作负载名称保持一致。
-        -   **集群名称：**选择需要添加Service的集群。
-        -   **命名空间：**选择需要添加Service的命名空间。
-        -   **关联工作负载：**单击“选择工作负载”，选择需要配置节点访问 \( NodePort \)的工作负载名称，单击“确定”。
-        -   **服务亲和：**
-            -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
-            -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
-
-        -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
-        -   **端口配置：**
-            -   协议：请根据业务的协议类型选择。
-            -   容器端口：容器镜像中工作负载实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
-            -   访问端口：容器端口映射到节点私有IP上的端口，用私有IP访问工作负载时使用，端口范围为30000-32767，建议选择“自动生成”。
-                -   自动生成：系统会自动分配端口号。
-                -   指定端口：指定固定的节点端口，默认取值范围为30000-32767。若指定端口时，请确保同个集群内的端口唯一性。
-
-
-    3.  单击“创建”，节点访问方式设置成功。
-
-3.  <a name="li45981923161059"></a>添加Ingress类型的Service。
-    1.  单击CCE左侧导航栏的“资源管理 \>  网络管理”。
-    2.  在Ingress页签下，单击“添加Ingress”。
-
-        **图 2**  添加Ingress<a name="fig1625112413916"></a>  
-        ![](figures/添加Ingress.png "添加Ingress")
-
-        -   **Ingress名称：**自定义Ingress名称，例如ingress-demo。
-        -   **集群名称：**选择需要添加Ingress的集群。
-        -   **命名空间：**选择需要添加Ingress的命名空间。
-        -   <a name="li17417517134"></a>**对接Nginx：**集群中已安装[nginx-ingress模板](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00237.html)后显示此选项，未安装nginx-ingress模板时本选项不显示。
-
-            单击![](figures/zh-cn_image_0237468998.png)开启后将对接nginx-ingress提供7层访问，可配置如下参数：
-
-            **表 1**  Nginx配置参数
-
-            <a name="table05328482472"></a>
-            <table><thead align="left"><tr id="row14537184814714"><th class="cellrowborder" valign="top" width="23.400000000000002%" id="mcps1.2.3.1.1"><p id="p453714481473"><a name="p453714481473"></a><a name="p453714481473"></a>参数</p>
-            </th>
-            <th class="cellrowborder" valign="top" width="76.6%" id="mcps1.2.3.1.2"><p id="p553714824714"><a name="p553714824714"></a><a name="p553714824714"></a>参数说明</p>
-            </th>
-            </tr>
-            </thead>
-            <tbody><tr id="row642311116124"><td class="cellrowborder" valign="top" width="23.400000000000002%" headers="mcps1.2.3.1.1 "><p id="p1242371171212"><a name="p1242371171212"></a><a name="p1242371171212"></a>对外协议</p>
-            </td>
-            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p042318171215"><a name="p042318171215"></a><a name="p042318171215"></a>支持<span class="uicontrol" id="uicontrol1712440191315"><a name="uicontrol1712440191315"></a><a name="uicontrol1712440191315"></a>“HTTP”</span>和<span class="uicontrol" id="uicontrol192534211138"><a name="uicontrol192534211138"></a><a name="uicontrol192534211138"></a>“HTTPS”</span>两种协议。</p>
-            </td>
-            </tr>
-            <tr id="row826304681311"><td class="cellrowborder" valign="top" width="23.400000000000002%" headers="mcps1.2.3.1.1 "><p id="p7263946111315"><a name="p7263946111315"></a><a name="p7263946111315"></a>对外端口</p>
-            </td>
-            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p162631846111312"><a name="p162631846111312"></a><a name="p162631846111312"></a>安装nginx-ingress插件时预留的监听端口，HTTP为80，HTTPS为443。</p>
-            </td>
-            </tr>
-            <tr id="row205371848144711"><td class="cellrowborder" valign="top" width="23.400000000000002%" headers="mcps1.2.3.1.1 "><p id="p195381848164718"><a name="p195381848164718"></a><a name="p195381848164718"></a>超时时间</p>
-            </td>
-            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p253884810475"><a name="p253884810475"></a><a name="p253884810475"></a>描述客户端与代理服务器建立连接的超时时间。</p>
-            </td>
-            </tr>
-            <tr id="row25383486478"><td class="cellrowborder" valign="top" width="23.400000000000002%" headers="mcps1.2.3.1.1 "><p id="p5538194844713"><a name="p5538194844713"></a><a name="p5538194844713"></a>重定向地址</p>
-            </td>
-            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p75381148174713"><a name="p75381148174713"></a><a name="p75381148174713"></a>将所有的内容重定向到指定地址，例如输入"https://www.huaweicloud.com/"。</p>
-            </td>
-            </tr>
-            <tr id="row1153816485478"><td class="cellrowborder" valign="top" width="23.400000000000002%" headers="mcps1.2.3.1.1 "><p id="p453864864712"><a name="p453864864712"></a><a name="p453864864712"></a>自定义配置</p>
-            </td>
-            <td class="cellrowborder" valign="top" width="76.6%" headers="mcps1.2.3.1.2 "><p id="p1642633205019"><a name="p1642633205019"></a><a name="p1642633205019"></a>Ingress通过Annotations设置来修改nginx.conf里面的配置，如需设置key: value，可通过<a href="https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/" target="_blank" rel="noopener noreferrer">Annotations</a>查询。</p>
-            </td>
-            </tr>
-            </tbody>
-            </table>
-
-        -   **负载均衡配置：**Ingress使用弹性负载均衡服务（ELB）的负载均衡器提供七层网络访问。
-
-            **开启“对接Nginx“后，将使用Nginx插件中配置的负载均衡设置，该配置区域将不显示。**
-
-            负载均衡：可以将互联网访问流量自动分发到工作负载所在的多个节点上。负载均衡实例需与当前集群处于相同VPC且为相同公私网类型。
-
-            请根据业务需求选择“公网“或“私网“，具体请参见[公网和私网负载均衡器](https://support.huaweicloud.com/productdesc-elb/zh_cn_elb_01_0004.html)。
-
-            -   公网：支持自动创建和使用已有负载均衡实例两种方式。共享型负载均衡配额不足时，请通过新建[共享型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)创建，完成后点击刷新按钮。
-                -   企业项目：对接ELB的企业项目，可以选择直接创建在具体的ELB企业项目下。
-                -   更改配置：选择“公网 \> 自动创建“时，单击规格配置下的“更改配置”，可修改待创建的负载均衡实例的名称、规格、计费模式和带宽。
-
-            -   私网：支持自动创建和使用已有负载均衡实例两种方式。
-                -   企业项目：对接ELB的企业项目，可以选择直接创建在具体的ELB企业项目下。
-
-        -   **监听器配置：**Ingress为负载均衡器配置监听器，监听器对负载均衡器上的请求进行监听，并分发流量。
-
-            **开启“对接Nginx“后将不显示该配置。**
-
-            -   对外协议：支持HTTP和HTTPS。若选择HTTPS，请选择密钥证书，格式说明请参见[证书格式](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0092382555.html)。
-
-                >![](public_sys-resources/icon-note.gif) **说明：** 
-                >-   选择HTTPS协议时，才需要创建密钥证书ingress-test-secret.yaml。创建密钥的方法请参见[创建密钥](创建密钥.md)。
-                >-   同一个ELB实例的同一个端口配置HTTPS时，一个监听器只支持配置一个密钥证书。若使用两个不同的密钥证书将两个Ingress添加到同一个ELB下的同一个监听器，ELB侧实际只生效最初的证书。
-
-            -   对外端口：开放在负载均衡服务地址的端口，可任意指定。
-
-                若选择启用“对接Nginx“后，将默认开启80和443端口，此处“对外端口“参数项将不显示。
-
-        -   **转发策略配置：**请求的访问地址与转发规则匹配时（转发规则由域名、URL组成），此请求将被转发到对应的目标Service处理。
-
-            -   域名：实际访问的域名地址。请确保所填写的域名已注册并备案，在Ingress创建完成后，将域名与自动创建的负载均衡实例的IP（即Ingress访问地址的IP部分）绑定。一旦配置了域名规则，则必须使用域名访问。
-            -   URL匹配规则：
-                -   前缀匹配：例如映射URL为/healthz，只要符合此前缀的URL均可访问。例如/healthz/v1，/healthz/v2。
-                -   精确匹配：表示精准匹配，只有完全匹配上才能生效。例如映射URL为/healthz，则必须为此URL才能访问。
-                -   正则匹配：可设定映射URL规范，例如规范为**/\[A-Za-z0-9\_.-\]+/test**。只要符合此规则的URL均可访问，例如/abcA9/test，/v1-Ab/test。正则匹配规则支持POSIX与Perl两种标准。
-
-            -   URL：需要注册的访问路径，例如：/healthz。
-            -   目标Service：请选择已有Service或新建Service。页面列表中仅支持选择“节点访问 \( NodePort \)“  类型的Service，该查询结果已自动过滤。若您[开启了Nginx](#li17417517134)，可以通过页面右侧的“YAML创建“功能对接“集群内访问 \( ClusterIP \)“类型的Service。
-            -   Service访问端口：可选择目标Service的访问端口。
-            -   服务负载均衡配置：该配置是基于服务的配置，若有多条路由使用当前服务，这些路由将使用相同的服务负载均衡配置。详细配置请参见[负载均衡配置](负载均衡(LoadBalancer).md#li2098815514414)。
-            -   操作：可单击“删除“按钮删除该配置。
-
-            单击“添加转发策略“按钮可添加多条转发策略。
-
-
-4.  配置完成后，单击“创建“。
-
-    创建完成后，在Ingress列表可查看到已创建成功的Ingress。
-
-5.  访问工作负载（例如名称为defaultbackend）的“/healthz”接口。
-
-    方式一：负载均衡IP访问（需负载均衡访问的服务不能配置域名）
-
-    1.  获取defaultbackend“/healthz”接口的访问地址，访问地址有负载均衡实例、对外端口、映射URL组成，例如：10.154.73.151:80/healthz。
-
-        **图 3**  获取访问地址<a name="fig911562743620"></a>  
-        ![](figures/获取访问地址-7.png "获取访问地址-7")
-
-    2.  在浏览器中输入“/healthz”接口的访问地址，如：http://10.154.73.151:80/healthz，即可成功访问工作负载，如[图4](#fig17115192714367)。
-
-        **图 4**  访问defaultbackend“/healthz”接口<a name="fig17115192714367"></a>  
-        ![](figures/访问defaultbackend-healthz-接口.png "访问defaultbackend-healthz-接口")
-
-    方式二：域名访问
-
-    以ingress中已配置域名ingress.com为例。
-
-    1.  获取ingress-demo“/james”接口的域名与访问地址的IP与端口。
-
-        **图 5**  获取域名与访问地址<a name="fig1992172383117"></a>  
-        ![](figures/获取域名与访问地址.png "获取域名与访问地址")
-
-    2.  在本地主机的C:\\Windows\\System32\\drivers\\etc\\hosts中配置访问地址的IP和域名，如下图：
-
-        ![](figures/zh-cn_image_0253716542.png)
-
-    3.  在浏览器中输入http://域名:访问地址端口/映射url，如：http://ingress.com:81/james。
-
-
-## 通过kubectl命令行创建<a name="section1944313158364"></a>
+# 通过Kubectl命令行创建Ingress<a name="cce_01_0252"></a>
 
 本节以nginx为例，说明kubectl命令实现ingress访问的方法。
 
@@ -254,7 +69,7 @@
       type:  NodePort
     ```
 
-    **表 2**  关键参数说明
+    **表 1**  关键参数说明
 
     <a name="table1819001615355"></a>
     <table><thead align="left"><tr id="row1519121663519"><th class="cellrowborder" valign="top" width="30.316968303169684%" id="mcps1.2.4.1.1"><p id="p18191161619356"><a name="p18191161619356"></a><a name="p18191161619356"></a>参数</p>
@@ -311,6 +126,7 @@
         kubernetes.io/elb.subnet-id: 29a0567e-96f1-4227-91cc-64f54d0b064d
         kubernetes.io/elb.enterpriseID: f6b9fffc-a9b7-4a50-a25e-364f587abe44
         kubernetes.io/elb.autocreate: '{"type":"public","bandwidth_name":"cce-bandwidth-1551163379627","bandwidth_chargemode":"bandwidth","bandwidth_size":5,"bandwidth_sharetype":"PER","eip_type":"5_bgp","name":"james"}'
+        kubernetes.io/elb.tls-ciphers-policy: tls-1-2
         kubernetes.io/elb.port: "80"
         kubernetes.io/ingress.class: cce
       name: ingress-test-ingress
@@ -357,7 +173,10 @@
         host: ingress.com
     ```
 
-    **表 3**  关键参数说明
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >安全策略选择（kubernetes.io/elb.tls-ciphers-policy）将在近期上线。
+
+    **表 2**  关键参数说明
 
     <a name="table1732315519222"></a>
     <table><thead align="left"><tr id="row43239510228"><th class="cellrowborder" valign="top" width="29.727027297270276%" id="mcps1.2.4.1.1"><p id="p3323185142214"><a name="p3323185142214"></a><a name="p3323185142214"></a>参数</p>
@@ -395,12 +214,12 @@
     <p id="p6324185202213"><a name="p6324185202213"></a><a name="p6324185202213"></a>获取方法请参见：<a href="https://support.huaweicloud.com/api-vpc/vpc_api_0005.html" target="_blank" rel="noopener noreferrer">VPC子网接口与OpenStack Neutron子网接口的区别是什么？</a></p>
     </td>
     </tr>
-    <tr id="row87776149020"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1577817142004"><a name="p1577817142004"></a><a name="p1577817142004"></a><span id="ph1248724718511"><a name="ph1248724718511"></a><a name="ph1248724718511"></a>kuber</span><span id="ph33532591258"><a name="ph33532591258"></a><a name="ph33532591258"></a>netes.io</span><span id="ph1111181915613"><a name="ph1111181915613"></a><a name="ph1111181915613"></a>/elb.eip-id</span></p>
+    <tr id="row87776149020"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p1577817142004"><a name="p1577817142004"></a><a name="p1577817142004"></a>kubernetes.io/elb.eip-id</p>
     </td>
-    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p97788148014"><a name="p97788148014"></a><a name="p97788148014"></a><span id="ph816517301663"><a name="ph816517301663"></a><a name="ph816517301663"></a>Strin</span><span id="ph71411419677"><a name="ph71411419677"></a><a name="ph71411419677"></a>g</span></p>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p97788148014"><a name="p97788148014"></a><a name="p97788148014"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p10958226114910"><a name="p10958226114910"></a><a name="p10958226114910"></a>为弹性公网的ID，取值范围：1-100字符。</p>
-    <a name="ul1459701465115"></a><a name="ul1459701465115"></a><ul id="ul1459701465115"><li><span id="ph797810351494"><a name="ph797810351494"></a><a name="ph797810351494"></a>非自动创建<span id="ph914662911517"><a name="ph914662911517"></a><a name="ph914662911517"></a>elb</span>时：可选</span>。</li><li><span id="ph154236711405"><a name="ph154236711405"></a><a name="ph154236711405"></a>自动创建<span id="ph52441632155115"><a name="ph52441632155115"></a><a name="ph52441632155115"></a>elb</span>时：不填</span>。</li></ul>
+    <a name="ul1459701465115"></a><a name="ul1459701465115"></a><ul id="ul1459701465115"><li>非自动创建elb时：可选。</li><li>自动创建elb时：不填。</li></ul>
     <p id="p98341426575"><a name="p98341426575"></a><a name="p98341426575"></a><strong id="b1350019315539"><a name="b1350019315539"></a><a name="b1350019315539"></a>获取方法：</strong></p>
     <p id="p217113461975"><a name="p217113461975"></a><a name="p217113461975"></a>在控制台的“服务列表”中，单击“网络 &gt; 弹性公网IP EIP”，单击EIP的名称，在EIP详情页的“基本信息”中找到“ID”字段复制即可。</p>
     </td>
@@ -425,7 +244,7 @@
     </tr>
     <tr id="row11167337989"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p12244124711810"><a name="p12244124711810"></a><a name="p12244124711810"></a>kubernetes.io/elb.session-affinity-option</p>
     </td>
-    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p024414476811"><a name="p024414476811"></a><a name="p024414476811"></a><a href="#table1920573716128">表5</a> Object</p>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p024414476811"><a name="p024414476811"></a><a name="p024414476811"></a><a href="#table1920573716128">表4</a> Object</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p102448476816"><a name="p102448476816"></a><a name="p102448476816"></a>可选，七层负载均衡会话保持配置选项。</p>
     </td>
@@ -461,9 +280,19 @@
     </tr>
     <tr id="row68009391914"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p15499152161017"><a name="p15499152161017"></a><a name="p15499152161017"></a>kubernetes.io/elb.health-check-option</p>
     </td>
-    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p5499822109"><a name="p5499822109"></a><a name="p5499822109"></a><a href="#table329102513130">表6</a> Object</p>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p5499822109"><a name="p5499822109"></a><a name="p5499822109"></a><a href="#table329102513130">表5</a> Object</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p114991826105"><a name="p114991826105"></a><a name="p114991826105"></a>可选，ELB健康检查配置选项。</p>
+    </td>
+    </tr>
+    <tr id="row2077834792815"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p91694415438"><a name="p91694415438"></a><a name="p91694415438"></a>kubernetes.io/elb.tls-ciphers-policy</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1778447202813"><a name="p1778447202813"></a><a name="p1778447202813"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p11778147112810"><a name="p11778147112810"></a><a name="p11778147112810"></a>可选，默认值：“tls-1-2”, 为监听器使用的安全策略，仅在HTTPS协议下生效。</p>
+    <p id="p1624920113387"><a name="p1624920113387"></a><a name="p1624920113387"></a>取值范围：</p>
+    <a name="ul2055451911387"></a><a name="ul2055451911387"></a><ul id="ul2055451911387"><li>tls-1-0-inherit</li><li>tls-1-0</li><li>tls-1-</li><li>tls-1-2</li><li>tls-1-2-strict</li></ul>
+    <p id="p17848163214417"><a name="p17848163214417"></a><a name="p17848163214417"></a>各安全策略使用的加密套件列表详细参见<a href="#table315082934512">表6</a></p>
     </td>
     </tr>
     <tr id="row332514515229"><td class="cellrowborder" valign="top" width="29.727027297270276%" headers="mcps1.2.4.1.1 "><p id="p232519512211"><a name="p232519512211"></a><a name="p232519512211"></a>kubernetes.io/elb.port</p>
@@ -516,8 +345,8 @@
     <td class="cellrowborder" valign="top" width="18.678132186781323%" headers="mcps1.2.4.1.2 "><p id="p1232675172211"><a name="p1232675172211"></a><a name="p1232675172211"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1017425211255"><a name="p1017425211255"></a><a name="p1017425211255"></a>可选，路由匹配策略。</p>
-    <p id="p552354022316"><a name="p552354022316"></a><a name="p552354022316"></a><span id="ph8523540162311"><a name="ph8523540162311"></a><a name="ph8523540162311"></a>默认值：</span><span id="ph19523240142314"><a name="ph19523240142314"></a><a name="ph19523240142314"></a>STARTS_WITH(前缀匹配)</span><span id="ph752310401233"><a name="ph752310401233"></a><a name="ph752310401233"></a>。</span></p>
-    <p id="p18550124318232"><a name="p18550124318232"></a><a name="p18550124318232"></a><span id="ph11550164312232"><a name="ph11550164312232"></a><a name="ph11550164312232"></a>取值范围</span>：</p>
+    <p id="p552354022316"><a name="p552354022316"></a><a name="p552354022316"></a>默认值：STARTS_WITH(前缀匹配)。</p>
+    <p id="p18550124318232"><a name="p18550124318232"></a><a name="p18550124318232"></a>取值范围：</p>
     <a name="ul5804181111244"></a><a name="ul5804181111244"></a><ul id="ul5804181111244"><li>EQUAL_TO：精确匹配</li><li>STARTS_WITH：前缀匹配</li><li>REGEX：正则匹配</li></ul>
     </td>
     </tr>
@@ -538,7 +367,7 @@
     </tbody>
     </table>
 
-    **表 4**  elb.autocreate字段数据结构说明
+    **表 3**  elb.autocreate字段数据结构说明
 
     <a name="table19417184671919"></a>
     <table><thead align="left"><tr id="row14418174611912"><th class="cellrowborder" valign="top" width="29.727027297270276%" id="mcps1.2.4.1.1"><p id="p1141924611199"><a name="p1141924611199"></a><a name="p1141924611199"></a>参数</p>
@@ -607,7 +436,7 @@
     </tbody>
     </table>
 
-    **表 5**  elb.session-affinity-option字段数据结构说明
+    **表 4**  elb.session-affinity-option字段数据结构说明
 
     <a name="table1920573716128"></a>
     <table><thead align="left"><tr id="row18242183711210"><th class="cellrowborder" valign="top" width="29.59%" id="mcps1.2.4.1.1"><p id="p132427378126"><a name="p132427378126"></a><a name="p132427378126"></a>参数</p>
@@ -637,7 +466,7 @@
     </tbody>
     </table>
 
-    **表 6**  elb.health-check-option字段数据结构说明
+    **表 5**  elb.health-check-option字段数据结构说明
 
     <a name="table329102513130"></a>
     <table><thead align="left"><tr id="row682132520131"><th class="cellrowborder" valign="top" width="29.59%" id="mcps1.2.4.1.1"><p id="p108210257139"><a name="p108210257139"></a><a name="p108210257139"></a>参数</p>
@@ -693,6 +522,51 @@
     </tbody>
     </table>
 
+    **表 6**  tls\_ciphers\_policy取值说明
+
+    <a name="table315082934512"></a>
+    <table><thead align="left"><tr id="row615092919459"><th class="cellrowborder" valign="top" width="16.37%" id="mcps1.2.4.1.1"><p id="p18150122917459"><a name="p18150122917459"></a><a name="p18150122917459"></a>安全策略</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="25.71%" id="mcps1.2.4.1.2"><p id="p1915092918458"><a name="p1915092918458"></a><a name="p1915092918458"></a>支持的TLS版本类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="57.92%" id="mcps1.2.4.1.3"><p id="p8150629134515"><a name="p8150629134515"></a><a name="p8150629134515"></a>使用的加密套件列表</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row101504293456"><td class="cellrowborder" valign="top" width="16.37%" headers="mcps1.2.4.1.1 "><p id="p63758145478"><a name="p63758145478"></a><a name="p63758145478"></a>tls-1-0-inherit</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.71%" headers="mcps1.2.4.1.2 "><p id="p884111261473"><a name="p884111261473"></a><a name="p884111261473"></a>TLSv1.2 TLSv1.1 TLSv1</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.92%" headers="mcps1.2.4.1.3 "><p id="p2841122619472"><a name="p2841122619472"></a><a name="p2841122619472"></a>ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:AES128-SHA256:AES256-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES128-SHA:DHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:AES128-SHA:AES256-SHA:DHE-DSS-AES128-SHA:CAMELLIA128-SHA:EDH-RSA-DES-CBC3-SHA:DES-CBC3-SHA:ECDHE-RSA-RC4-SHA:RC4-SHA:DHE-RSA-AES256-SHA:DHE-DSS-AES256-SHA:DHE-RSA-CAMELLIA256-SHA:DHE-DSS-CAMELLIA256-SHA:CAMELLIA256-SHA:EDH-DSS-DES-CBC3-SHA:DHE-RSA-CAMELLIA128-SHA:DHE-DSS-CAMELLIA128-SHA</p>
+    </td>
+    </tr>
+    <tr id="row11150122911454"><td class="cellrowborder" valign="top" width="16.37%" headers="mcps1.2.4.1.1 "><p id="p11150629194512"><a name="p11150629194512"></a><a name="p11150629194512"></a>tls-1-0</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.71%" headers="mcps1.2.4.1.2 "><p id="p131501029114519"><a name="p131501029114519"></a><a name="p131501029114519"></a>TLS1v1.2 TLSv1.1 TLSv1</p>
+    </td>
+    <td class="cellrowborder" rowspan="3" valign="top" width="57.92%" headers="mcps1.2.4.1.3 "><p id="p131519291455"><a name="p131519291455"></a><a name="p131519291455"></a>ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:AES128-SHA256:AES256-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:AES128-SHA:AES256-SHA</p>
+    </td>
+    </tr>
+    <tr id="row13150129194510"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p1615042915451"><a name="p1615042915451"></a><a name="p1615042915451"></a>tls1-1</p>
+    </td>
+    <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p21507299451"><a name="p21507299451"></a><a name="p21507299451"></a>TLSv1.2 TLSv1.1</p>
+    </td>
+    </tr>
+    <tr id="row171506297455"><td class="cellrowborder" valign="top" headers="mcps1.2.4.1.1 "><p id="p2150122994517"><a name="p2150122994517"></a><a name="p2150122994517"></a>tls-1-2</p>
+    </td>
+    <td class="cellrowborder" valign="top" headers="mcps1.2.4.1.2 "><p id="p3151529134514"><a name="p3151529134514"></a><a name="p3151529134514"></a>TLSv1.2</p>
+    </td>
+    </tr>
+    <tr id="row1415122915452"><td class="cellrowborder" valign="top" width="16.37%" headers="mcps1.2.4.1.1 "><p id="p715152917452"><a name="p715152917452"></a><a name="p715152917452"></a>tls-1-2-strict</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.71%" headers="mcps1.2.4.1.2 "><p id="p91511029194513"><a name="p91511029194513"></a><a name="p91511029194513"></a>TLSv1.2</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.92%" headers="mcps1.2.4.1.3 "><p id="p8151429144512"><a name="p8151429144512"></a><a name="p8151429144512"></a>ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:AES128-SHA256:AES256-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
     **vi ingress-test-secret.yaml**
 
     ```
@@ -710,7 +584,7 @@
     ```
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >此处tls.crt和tls.key为示例，请获取真实密钥进行替换。
+    >此处tls.crt和tls.key为示例，请获取真实密钥进行替换。tls.crt和tls.key的值为Base64加密后的内容。
 
 3.  创建工作负载。
 
@@ -796,48 +670,7 @@
 
     其中，10.154.76.63为统一负载均衡实例的IP地址。
 
-    **图 6**  访问healthz<a name="fig1526153112115"></a>  
+    **图 1**  访问healthz<a name="fig1526153112115"></a>  
     ![](figures/访问healthz.png "访问healthz")
 
-
-## 更新Ingress<a name="section1071722525415"></a>
-
-您可以在添加完Ingress后，更新此Ingress的端口、域名和路由配置。操作如下：
-
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 网络管理”。在**Ingress**页签下，选择对应的集群和命名空间，单击待更新Ingress后方的“更新”。
-2.  在“更新Ingress“页面，更新如下参数：
-
-    **监听器配置**
-
-    -   **对外端口：**开放在负载均衡服务地址的端口，可任意指定。
-
-    **转发策略配置**
-
-    -   **服务负载均衡配置：**单击![](figures/zh-cn_image_0253718035.png)展开后，可对如下参数进行设置：
-        -   分配策略类型：可选择加权轮询算法、加权最少连接或源IP算法，权重将根据Service关联的工作负载在每个节点上的实例数量进行动态调整。
-            -   加权轮询算法：根据后端服务器的权重，按顺序依次将请求分发给不同的服务器。它用相应的权重表示服务器的处理性能，按照权重的高低以及轮询方式将请求分配给各服务器，相同权重的服务器处理相同数目的连接数。常用于短连接服务，例如HTTP等服务。
-            -   加权最少连接：最少连接是通过当前活跃的连接数来估计服务器负载情况的一种动态调度算法。加权最少连接就是在最少连接数的基础上，根据服务器的不同处理能力，给每个服务器分配不同的权重，使其能够接受相应权值数的服务请求。常用于长连接服务，例如数据库连接等服务。
-            -   源IP算法：将请求的源IP地址进行Hash运算，得到一个具体的数值，同时对后端服务器进行编号，按照运算结果将请求分发到对应编号的服务器上。这可以使得对不同源IP的访问进行负载分发，同时使得同一个客户端IP的请求始终被派发至某特定的服务器。该方式适合负载均衡无cookie功能的TCP协议。
-
-        -   会话保持：默认不启用，可选择“源IP地址“。负载均衡监听是基于IP地址的会话保持，即来自同一IP地址的访问请求转发到同一台后端服务器上。
-        -   健康检查：默认开启。请根据界面提示进行配置，更多参数说明请参见[配置健康检查](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0162227063.html)。
-
-    -   单击“添加转发策略“按钮可添加多条转发策略。
-        -   域名：实际访问的域名地址。请确保所填写的域名已注册并备案，在Ingress创建完成后，将域名与自动创建的负载均衡实例的IP（即Ingress访问地址的IP部分）绑定。一旦配置了域名规则，则必须使用域名访问。
-        -   URL匹配规则：
-            -   前缀匹配：例如映射URL为/healthz，只要符合此前缀的URL均可访问。例如/healthz/v1，/healthz/v2。
-            -   精确匹配：表示精准匹配，只有完全匹配上才能生效。例如映射URL为/healthz，则必须为此URL才能访问。
-            -   正则匹配：可设定映射URL规范，例如规范为**/\[A-Za-z0-9\_.-\]+/test**。只要符合此规则的URL均可访问，例如/abcA9/test，/v1-Ab/test。正则匹配规则支持POSIX与Perl两种标准。
-
-        -   URL：需要注册的访问路径，例如：/healthz。
-        -   目标Service：请选择已有Service或新建Service。页面列表中仅支持选择“节点访问 \( NodePort \)“  类型的Service，该查询结果已自动过滤。若您[开启了Nginx](#li17417517134)，可以通过页面右侧的“YAML创建“功能对接“集群内访问 \( ClusterIP \)“类型的Service。
-        -   Service访问端口：可选择目标Service的访问端口。
-        -   服务负载均衡配置：该配置是基于服务的配置，若有多条路由使用当前服务，这些路由将使用相同的服务负载均衡配置。详细配置请参见[负载均衡配置](负载均衡(LoadBalancer).md#li2098815514414)。
-        -   操作：可单击“删除“按钮删除该配置。
-
-3.  单击“提交”。工作负载已更新Ingress。
-
-## 相关操作<a name="section132063911129"></a>
-
-由于社区Ingress结构体中没有property属性，用户使用client-go调用创建ingress的api接口时，创建的Ingress中没有property属性。为了与社区的client-go兼容，CCE提供了相关解决方案，具体请参见[Ingress中的property字段如何实现与社区client-go兼容？](https://support.huaweicloud.com/cce_faq/cce_faq_00234.html)。
 

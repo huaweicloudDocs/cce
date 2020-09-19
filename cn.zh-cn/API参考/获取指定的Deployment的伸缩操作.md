@@ -10,7 +10,7 @@ GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports
 
 GET /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports only1.7\)
 
-GET /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Compatible\)
+GET /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e35851)描述该API的参数。
 

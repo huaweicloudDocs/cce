@@ -1,6 +1,6 @@
-# 网络策略\(NetworkPolicy\)<a name="cce_01_0059"></a>
+# NetworkPolicy<a name="cce_01_0059"></a>
 
-## 什么是网络策略<a name="section322222112010"></a>
+## 什么是网络策略（NetworkPolicy）<a name="section322222112010"></a>
 
 随着业务逻辑的复杂化，越来越多的应用需要大量模块之间的网络调用。传统的单一外部防火墙，或依照应用分层的防火墙已渐渐无法满足需求。在一个大的集群里面，各模块、业务逻辑层，或各职能团队之间的网络策略需求越来越强。
 
@@ -10,8 +10,8 @@ CCE基于Kubernetes的网络策略功能进行了加强，通过配置网络策�
 
 ## 约束与限制<a name="section332285584912"></a>
 
--   VPC网络模型暂不支持网络策略\(NetworkPolicy\)。
--   网络策略\(NetworkPolicy\)暂不支持设置egress路由规则。
+-   VPC网络模型暂不支持网络策略（NetworkPolicy）。
+-   网络策略（NetworkPolicy）暂不支持设置egress路由规则。
 -   v1.13及v1.15版本的容器隧道网络类型的集群，节点操作系统内核为Centos时，如果使用NetworkPolicy请升级openvswitch的版本，升级方法请参考[操作系统内核升级](https://support.huaweicloud.com/usermanual-cce/cce_01_0179.html)。
 
 ## 使用说明<a name="section146088501667"></a>

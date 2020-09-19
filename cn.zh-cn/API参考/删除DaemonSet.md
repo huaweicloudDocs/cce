@@ -8,7 +8,7 @@ This API is used to delete a DaemonSet resource object.
 
 DELETE /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports 1.9 and 1.9+\)
 
-DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(Compatible\)
+DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports 1.15 and 1.15-\)
 
 [表1](#table137278403473)描述该API的参数。
 

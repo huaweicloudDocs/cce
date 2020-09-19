@@ -10,9 +10,9 @@ status.loadBalancer
 
 ## URI<a name="section14030938"></a>
 
-PUT /apis/networking.k8s.io/v1beta1/namespaces/\{namespace\}/ingresses/\{name\}/status \(Supports since1.15\)
+PUT /apis/networking.k8s.io/v1beta1/namespaces/\{namespace\}/ingresses/\{name\}/status \(Supports 1.15 and 1.15+\)
 
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses/\{name\}/status \(Compatible\)
+PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses/\{name\}/status \(Supports 1.15-\)
 
 [表1](#d0e42906)描述该API的参数。
 

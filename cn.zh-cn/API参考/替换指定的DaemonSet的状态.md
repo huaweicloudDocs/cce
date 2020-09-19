@@ -8,7 +8,7 @@ This API is used to replace the status of a specified DaemonSet object under a s
 
 PUT /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Supports 1.9 and 1.9+\)
 
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Compatible\)
+PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e32918)描述该API的参数。
 

@@ -9,8 +9,8 @@
 
 CronJob的典型用法如下所示：
 
--   在给定的时间点调度 Job 运行。
--   创建周期性运行的 Job，例如数据库备份、发送邮件。
+-   在给定的时间点调度Job运行。
+-   创建周期性运行的Job，例如数据库备份、发送邮件。
 
 ## 准备工作<a name="s50bf087555b1437aa249c1259138706c"></a>
 
@@ -73,7 +73,7 @@ CronJob的典型用法如下所示：
     <tbody><tr id="r6305be1a630244bf81ac437522f31cf0"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0093532762_p162871332056"><a name="zh-cn_topic_0093532762_p162871332056"></a><a name="zh-cn_topic_0093532762_p162871332056"></a>* <span class="keyword" id="keyword536182114411"><a name="keyword536182114411"></a><a name="keyword536182114411"></a>并发策略</span></p>
     </td>
     <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="a1238035c6c934a228d56a1884594bf19"><a name="a1238035c6c934a228d56a1884594bf19"></a><a name="a1238035c6c934a228d56a1884594bf19"></a>支持如下三种模式：</p>
-    <a name="u8a387ed341d640999663e82cfc513fb5"></a><a name="u8a387ed341d640999663e82cfc513fb5"></a><ul id="u8a387ed341d640999663e82cfc513fb5"><li><span class="keyword" id="keyword175416136441"><a name="keyword175416136441"></a><a name="keyword175416136441"></a>Forbid</span>：在前一个任务未完成时，不创建新任务。</li><li><span class="keyword" id="keyword11529101520448"><a name="keyword11529101520448"></a><a name="keyword11529101520448"></a>Allow</span>：定时任务不断新建Job。</li><li><span class="keyword" id="keyword457320174442"><a name="keyword457320174442"></a><a name="keyword457320174442"></a>Replace</span>：已到新任务创建时间点，但前一个任务还未完成，新的任务会取代前一个任务。</li></ul>
+    <a name="u8a387ed341d640999663e82cfc513fb5"></a><a name="u8a387ed341d640999663e82cfc513fb5"></a><ul id="u8a387ed341d640999663e82cfc513fb5"><li><span class="keyword" id="keyword175416136441"><a name="keyword175416136441"></a><a name="keyword175416136441"></a>Forbid</span>：在前一个任务未完成时，不创建新任务。</li><li><span class="keyword" id="keyword11529101520448"><a name="keyword11529101520448"></a><a name="keyword11529101520448"></a>Allow</span>：定时任务不断新建Job，会抢占集群资源。</li><li><span class="keyword" id="keyword457320174442"><a name="keyword457320174442"></a><a name="keyword457320174442"></a>Replace</span>：已到新任务创建时间点，但前一个任务还未完成，新的任务会取代前一个任务。</li></ul>
     </td>
     </tr>
     <tr id="zh-cn_topic_0093532762_row8270974297"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="a86a31e64aad144e19e5df3d4e25158b9"><a name="a86a31e64aad144e19e5df3d4e25158b9"></a><a name="a86a31e64aad144e19e5df3d4e25158b9"></a>* <span class="keyword" id="keyword68782234441"><a name="keyword68782234441"></a><a name="keyword68782234441"></a>定时规则</span></p>
@@ -83,7 +83,7 @@ CronJob的典型用法如下所示：
     </tr>
     <tr id="row57993169"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="p5369911316108"><a name="p5369911316108"></a><a name="p5369911316108"></a>任务记录</p>
     </td>
-    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="p5466090716108"><a name="p5466090716108"></a><a name="p5466090716108"></a>可以设置保留执行成功或执行失败的任务个数，设置为 0 表示不保留。</p>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="p5466090716108"><a name="p5466090716108"></a><a name="p5466090716108"></a>可以设置保留执行成功或执行失败的任务个数，设置为0表示不保留。</p>
     </td>
     </tr>
     </tbody>
@@ -117,7 +117,7 @@ CronJob的典型用法如下所示：
         </tr>
         <tr id="cce_01_0150_zh-cn_topic_0107283470_row338117362515"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0150_zh-cn_topic_0107283470_p1038143616517"><a name="cce_01_0150_zh-cn_topic_0107283470_p1038143616517"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p1038143616517"></a>* 镜像版本</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0150_zh-cn_topic_0107283470_p1338110368519"><a name="cce_01_0150_zh-cn_topic_0107283470_p1338110368519"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p1338110368519"></a>若选择<span id="cce_01_0150_ph15324124018410"><a name="cce_01_0150_ph15324124018410"></a><a name="cce_01_0150_ph15324124018410"></a><span class="uicontrol" id="cce_01_0150_uicontrol18207174312413"><a name="cce_01_0150_uicontrol18207174312413"></a><a name="cce_01_0150_uicontrol18207174312413"></a>“开源镜像中心”</span></span>，请选择需要部署的镜像版本。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0150_zh-cn_topic_0107283470_p1338110368519"><a name="cce_01_0150_zh-cn_topic_0107283470_p1338110368519"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p1338110368519"></a>选择需要部署的镜像版本。</p>
         </td>
         </tr>
         <tr id="cce_01_0150_zh-cn_topic_0107283470_row32839494813"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0150_zh-cn_topic_0107283470_p122831140486"><a name="cce_01_0150_zh-cn_topic_0107283470_p122831140486"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p122831140486"></a>* 容器名称</p>

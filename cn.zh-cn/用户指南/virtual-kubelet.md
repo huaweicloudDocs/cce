@@ -14,6 +14,7 @@ Virtual Kubelet插件具体如下功能：
 
 -   仅支持VPC网络模式的混合集群，仅限于v1.11及以上版本的集群使用。
 -   使用时需同时配置Request和Limit，且CPU-Memory比例须符合CCI要求，pod才可以部署到CCI侧。
+-   pod弹到CCI侧后，暂不支持改变负载的“数据存储 \> 本地磁盘“的Configmap/Secret键值。
 -   调度到CCI的实例的存储类型只支持SFS、ConfigMap、Secret三种Volume类型。
 -   暂不支持HostNetwork网络模式的容器实例（Pod）弹性到CCI。
 -   实例的规格必须满足云容器实例CCI的[容器规范](https://support.huaweicloud.com/productdesc-cci/cci_03_0007.html)。
@@ -48,5 +49,5 @@ Virtual Kubelet插件具体如下功能：
 ## 卸载插件<a name="section1624015695110"></a>
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击virtual kubelet下的“卸载“。
-2.  在弹出的窗口中，单击“确认“，可卸载该插件。
+2.  在弹出的窗口中，单击“是“，可卸载该插件。
 

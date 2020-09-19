@@ -34,7 +34,7 @@ DELETE /api/v1/cloudpersistentvolumes/\{name\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>需要删除的PersistentVolume的名称</p>
-<p>name格式为：Volume名称[?deleteVolume=BOOLEAN&amp;storageType=云存储类型]，中括号内可省略，示例：</p>
+<p>name格式为：Volume名称?deleteVolume=BOOLEAN&amp;storageType=云存储类型]，中括号内可省略，示例：</p>
 <p>volume-49f1?deleteVolume=true&amp;storageType=bs</p>
 <p>volume-49f1</p>
 <p>其中：</p>
@@ -44,8 +44,7 @@ DELETE /api/v1/cloudpersistentvolumes/\{name\}
 <p>storageType：云存储的类型，和deleteVolume搭配使用。即deleteVolume和storageType必须同时配置。</p>
 <div class="note"><span class="notetitle"> 说明： </span><div class="notebody"><ul><li><p>bs：EVS云存储</p>
 </li><li><p>nfs：SFS弹性文件存储</p>
-</li><li><p>obs：OBS对象存储</p>
-</li><li><p>efs：SFS Turbo极速文件存储</p>
+</li><li><p>obs：OBS对象存储 [&gt;   - efs：SFS Turbo极速文件存储</p>
 </li></ul>
 </div></div>
 </td>
@@ -413,7 +412,7 @@ DELETE /api/v1/cloudpersistentvolumes/\{name\}
 
 ## 状态码
 
-<a name="table4473"></a>
+<a name="table21"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.3.1.1"><p>状态码 </p>
 </th>
 <th class="cellrowborder" valign="top" width="85%" id="mcps1.1.3.1.2"><p>描述</p>

@@ -8,7 +8,7 @@ This API is used to create a StatefulSet resource object.
 
 POST /apis/apps/v1/namespaces/\{namespace\}/statefulsets \(Supports 1.9 and 1.9+\)
 
-POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
+POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e37523)描述该API的参数。
 

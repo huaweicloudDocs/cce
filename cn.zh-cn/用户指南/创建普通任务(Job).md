@@ -57,7 +57,7 @@
     <tr id="row65301051950"><td class="cellrowborder" valign="top" width="19.77%" headers="mcps1.2.3.1.1 "><p id="p4877104910012"><a name="p4877104910012"></a><a name="p4877104910012"></a>CCI弹性承载</p>
     </td>
     <td class="cellrowborder" valign="top" width="80.23%" headers="mcps1.2.3.1.2 "><p id="p11595204219"><a name="p11595204219"></a><a name="p11595204219"></a>该参数仅在安装virtual kubelet插件后才显示，具体请参见<a href="virtual-kubelet.md">virtual kubelet</a>。</p>
-    <p id="p118778495016"><a name="p118778495016"></a><a name="p118778495016"></a>勾选此选项后，当集群资源不足时，支持将Pod部署到CCI集群。</p>
+    <p id="p118778495016"><a name="p118778495016"></a><a name="p118778495016"></a>勾选此选项后，当集群资源不足时，支持将Pod部署到云容器实例CCI。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0093532761_row2314820103"><td class="cellrowborder" valign="top" width="19.77%" headers="mcps1.2.3.1.1 "><p id="ab9807e25b58e4d3e88a5fe580e46e093"><a name="ab9807e25b58e4d3e88a5fe580e46e093"></a><a name="ab9807e25b58e4d3e88a5fe580e46e093"></a>任务描述</p>
@@ -96,7 +96,7 @@
         </tr>
         <tr id="zh-cn_topic_0107283470_row338117362515"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p1038143616517"><a name="zh-cn_topic_0107283470_p1038143616517"></a><a name="zh-cn_topic_0107283470_p1038143616517"></a>* 镜像版本</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p1338110368519"><a name="zh-cn_topic_0107283470_p1338110368519"></a><a name="zh-cn_topic_0107283470_p1338110368519"></a>若选择<span id="ph15324124018410"><a name="ph15324124018410"></a><a name="ph15324124018410"></a><span class="uicontrol" id="uicontrol18207174312413"><a name="uicontrol18207174312413"></a><a name="uicontrol18207174312413"></a>“开源镜像中心”</span></span>，请选择需要部署的镜像版本。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p1338110368519"><a name="zh-cn_topic_0107283470_p1338110368519"></a><a name="zh-cn_topic_0107283470_p1338110368519"></a>选择需要部署的镜像版本。</p>
         </td>
         </tr>
         <tr id="zh-cn_topic_0107283470_row32839494813"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p122831140486"><a name="zh-cn_topic_0107283470_p122831140486"></a><a name="zh-cn_topic_0107283470_p122831140486"></a>* 容器名称</p>

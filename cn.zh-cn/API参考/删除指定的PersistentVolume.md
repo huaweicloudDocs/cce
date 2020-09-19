@@ -83,7 +83,7 @@ DELETE /api/v1/persistentvolumes/\{name\}
 
 **响应示例：**
 
-1.15及之后集群版本示例：
+1.15及以上版本集群，示例如下：
 
 ```
 {
@@ -91,7 +91,6 @@ DELETE /api/v1/persistentvolumes/\{name\}
     "kind": "PersistentVolume",
     "metadata": {
         "annotations": {
-            "pv.kubernetes.io/namespace": "default",
             "pv.kubernetes.io/provisioned-by": "everest-csi-provisioner"
         },
         "creationTimestamp": "2020-01-08T02:00:31Z",

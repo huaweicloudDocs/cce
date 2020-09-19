@@ -16,7 +16,7 @@ PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports
 
 PUT /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports only1.7\)
 
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Compatible\)
+PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e36373)描述该API的参数。
 

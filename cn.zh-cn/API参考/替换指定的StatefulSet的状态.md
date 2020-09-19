@@ -8,7 +8,7 @@ This API is used to replace the status of a specified StatefulSet object under a
 
 PUT /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports 1.9 and 1.9+\)
 
-PUT /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Compatible\)
+PUT /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\}/status \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e39176)描述该API的参数。
 

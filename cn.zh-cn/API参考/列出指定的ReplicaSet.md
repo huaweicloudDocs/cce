@@ -8,7 +8,7 @@ This API is used to list all ReplicaSet resource objects under a specified Names
 
 GET /apis/apps/v1/namespaces/\{namespace\}/replicasets  \(Supports 1.9 and 1.9+\)
 
-GET /apis/extensions/v1beta1/namespaces/\{namespace\}/replicasets \(Compatible\)
+GET /apis/extensions/v1beta1/namespaces/\{namespace\}/replicasets \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e45179)描述该API的参数。
 

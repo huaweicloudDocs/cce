@@ -6,7 +6,7 @@
 
 ## 准备工作<a name="section1734962819219"></a>
 
--   在创建容器工作负载前，您需要存在一个可用集群。若没有请参照3.3-购买混合集群中内容创建。
+-   在创建容器工作负载前，您需要存在一个可用集群。若没有请参照[购买混合集群](购买混合集群.md)中内容创建。
 -   若工作负载需要被外网访问，请确保集群中至少有一个节点已绑定弹性IP，或已购买负载均衡实例。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -31,58 +31,58 @@
     **表 1**  工作负载基本信息
 
     <a name="table12741447488"></a>
-    <table><thead align="left"><tr id="cce_01_0047_row52758419481"><th class="cellrowborder" valign="top" width="23.07%" id="mcps1.2.3.1.1"><p id="cce_01_0047_p152759464816"><a name="cce_01_0047_p152759464816"></a><a name="cce_01_0047_p152759464816"></a>参数</p>
+    <table><thead align="left"><tr id="zh-cn_topic_0107283470_row52758419481"><th class="cellrowborder" valign="top" width="23.07%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0107283470_p152759464816"><a name="zh-cn_topic_0107283470_p152759464816"></a><a name="zh-cn_topic_0107283470_p152759464816"></a>参数</p>
     </th>
-    <th class="cellrowborder" valign="top" width="76.92999999999999%" id="mcps1.2.3.1.2"><p id="cce_01_0047_p3275134114811"><a name="cce_01_0047_p3275134114811"></a><a name="cce_01_0047_p3275134114811"></a>参数说明</p>
+    <th class="cellrowborder" valign="top" width="76.92999999999999%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0107283470_p3275134114811"><a name="zh-cn_topic_0107283470_p3275134114811"></a><a name="zh-cn_topic_0107283470_p3275134114811"></a>参数说明</p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="cce_01_0047_row18415163712618"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p32763416485"><a name="cce_01_0047_p32763416485"></a><a name="cce_01_0047_p32763416485"></a>* 工作负载名称</p>
+    <tbody><tr id="zh-cn_topic_0107283470_row18415163712618"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p32763416485"><a name="zh-cn_topic_0107283470_p32763416485"></a><a name="zh-cn_topic_0107283470_p32763416485"></a>* 工作负载名称</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p5276341485"><a name="cce_01_0047_p5276341485"></a><a name="cce_01_0047_p5276341485"></a>新建工作负载的名称，命名必须唯一。</p>
-    <p id="cce_01_0047_p99562111597"><a name="cce_01_0047_p99562111597"></a><a name="cce_01_0047_p99562111597"></a>请输入4到63个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。</p>
-    </td>
-    </tr>
-    <tr id="cce_01_0047_row81437181202"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p514451811010"><a name="cce_01_0047_p514451811010"></a><a name="cce_01_0047_p514451811010"></a>* 集群名称</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p323714215492"><a name="cce_01_0047_p323714215492"></a><a name="cce_01_0047_p323714215492"></a>新建工作负载所在的集群。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p5276341485"><a name="zh-cn_topic_0107283470_p5276341485"></a><a name="zh-cn_topic_0107283470_p5276341485"></a>新建工作负载的名称，命名必须唯一。</p>
+    <p id="zh-cn_topic_0107283470_p99562111597"><a name="zh-cn_topic_0107283470_p99562111597"></a><a name="zh-cn_topic_0107283470_p99562111597"></a>请输入4到52个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。</p>
     </td>
     </tr>
-    <tr id="cce_01_0047_row169810201307"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p19698152011011"><a name="cce_01_0047_p19698152011011"></a><a name="cce_01_0047_p19698152011011"></a>* 命名空间</p>
+    <tr id="zh-cn_topic_0107283470_row81437181202"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p514451811010"><a name="zh-cn_topic_0107283470_p514451811010"></a><a name="zh-cn_topic_0107283470_p514451811010"></a>* 集群名称</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p12447336131710"><a name="cce_01_0047_p12447336131710"></a><a name="cce_01_0047_p12447336131710"></a>在单集群中，不同命名空间中的数据彼此隔离。使应用可以共享同个集群的服务，也能够互不干扰。若您不设置命名空间，系统会默认使用default命名空间。</p>
-    </td>
-    </tr>
-    <tr id="cce_01_0047_row165805182316"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p45913512317"><a name="cce_01_0047_p45913512317"></a><a name="cce_01_0047_p45913512317"></a>* 实例数量</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p1042648123717"><a name="cce_01_0047_p1042648123717"></a><a name="cce_01_0047_p1042648123717"></a>工作负载的实例数量。工作负载可以有一个或多个实例，用户可以设置具体实例个数，默认为2，可自定义设置为1。</p>
-    <p id="cce_01_0047_p17713926910"><a name="cce_01_0047_p17713926910"></a><a name="cce_01_0047_p17713926910"></a>每个工作负载实例都由相同的容器部署而成。设置多个实例主要用于实现高可靠性，当某个实例故障时，工作负载还能正常运行。若使用单实例，节点异常或实例异常会导致服务异常。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p323714215492"><a name="zh-cn_topic_0107283470_p323714215492"></a><a name="zh-cn_topic_0107283470_p323714215492"></a>新建工作负载所在的集群。</p>
     </td>
     </tr>
-    <tr id="cce_01_0047_row1233713478354"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p15337247203514"><a name="cce_01_0047_p15337247203514"></a><a name="cce_01_0047_p15337247203514"></a>弹性网卡</p>
+    <tr id="zh-cn_topic_0107283470_row169810201307"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p19698152011011"><a name="zh-cn_topic_0107283470_p19698152011011"></a><a name="zh-cn_topic_0107283470_p19698152011011"></a>* 命名空间</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p476333074117"><a name="cce_01_0047_p476333074117"></a><a name="cce_01_0047_p476333074117"></a>Pod中的容器支持绑定弹性网卡，单击选中<span class="uicontrol" id="cce_01_0047_uicontrol187631230104117"><a name="cce_01_0047_uicontrol187631230104117"></a><a name="cce_01_0047_uicontrol187631230104117"></a>“绑定弹性网卡”</span>可以绑定已有的网络平面。更多网络平面信息请参见<a href="网络平面(NetworkAttachmentDefinition).md">网络平面(NetworkAttachmentDefinition)</a>。</p>
-    <p id="cce_01_0047_p58611513174112"><a name="cce_01_0047_p58611513174112"></a><a name="cce_01_0047_p58611513174112"></a><strong id="cce_01_0047_b10861121314119"><a name="cce_01_0047_b10861121314119"></a><a name="cce_01_0047_b10861121314119"></a>仅v1.13.7-r0及以上版本且网络模型为VPC网络的混合集群才能绑定弹性网卡，不符合条件的集群将不显示<span class="uicontrol" id="cce_01_0047_uicontrol1986171319410"><a name="cce_01_0047_uicontrol1986171319410"></a><a name="cce_01_0047_uicontrol1986171319410"></a>“弹性网卡”</span>选项。</strong></p>
-    <div class="note" id="cce_01_0047_note124412587394"><a name="cce_01_0047_note124412587394"></a><a name="cce_01_0047_note124412587394"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="cce_01_0047_ul1444165810398"></a><a name="cce_01_0047_ul1444165810398"></a><ul id="cce_01_0047_ul1444165810398"><li>网络平面是CCE新增的一种crd资源，记录了租户ID，子网ID，安全组等的配置项，作为申请弹性网卡的配置信息。</li><li>创建工作负载时，在<a href="创建无状态负载(Deployment).md#li3580132418215">设置工作负载访问方式</a>步骤中如果添加了节点级别的Service，将无法绑定弹性网卡；同理，绑定了弹性网卡的工作负载，将无法添加节点级别的Service。</li></ul>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p12447336131710"><a name="zh-cn_topic_0107283470_p12447336131710"></a><a name="zh-cn_topic_0107283470_p12447336131710"></a>在单集群中，不同命名空间中的数据彼此隔离。使应用可以共享同个集群的服务，也能够互不干扰。若您不设置命名空间，系统会默认使用default命名空间。</p>
+    </td>
+    </tr>
+    <tr id="zh-cn_topic_0107283470_row165805182316"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p45913512317"><a name="zh-cn_topic_0107283470_p45913512317"></a><a name="zh-cn_topic_0107283470_p45913512317"></a>* 实例数量</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p1042648123717"><a name="zh-cn_topic_0107283470_p1042648123717"></a><a name="zh-cn_topic_0107283470_p1042648123717"></a>工作负载的实例数量。工作负载可以有一个或多个实例，用户可以设置具体实例个数，默认为2，可自定义设置为1。</p>
+    <p id="zh-cn_topic_0107283470_p17713926910"><a name="zh-cn_topic_0107283470_p17713926910"></a><a name="zh-cn_topic_0107283470_p17713926910"></a>每个工作负载实例都由相同的容器部署而成。设置多个实例主要用于实现高可靠性，当某个实例故障时，工作负载还能正常运行。若使用单实例，节点异常或实例异常会导致服务异常。</p>
+    </td>
+    </tr>
+    <tr id="zh-cn_topic_0107283470_row1233713478354"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p15337247203514"><a name="zh-cn_topic_0107283470_p15337247203514"></a><a name="zh-cn_topic_0107283470_p15337247203514"></a>弹性网卡</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p476333074117"><a name="zh-cn_topic_0107283470_p476333074117"></a><a name="zh-cn_topic_0107283470_p476333074117"></a>Pod中的容器支持绑定弹性网卡，单击选中<span class="uicontrol" id="zh-cn_topic_0107283470_uicontrol187631230104117"><a name="zh-cn_topic_0107283470_uicontrol187631230104117"></a><a name="zh-cn_topic_0107283470_uicontrol187631230104117"></a>“绑定弹性网卡”</span>可以绑定已有的网络平面。更多网络平面信息请参见<a href="网络平面(NetworkAttachmentDefinition).md">网络平面(NetworkAttachmentDefinition)</a>。</p>
+    <p id="zh-cn_topic_0107283470_p58611513174112"><a name="zh-cn_topic_0107283470_p58611513174112"></a><a name="zh-cn_topic_0107283470_p58611513174112"></a><strong id="zh-cn_topic_0107283470_b10861121314119"><a name="zh-cn_topic_0107283470_b10861121314119"></a><a name="zh-cn_topic_0107283470_b10861121314119"></a>仅v1.13.7-r0及以上版本且网络模型为VPC网络的混合集群才能绑定弹性网卡，不符合条件的集群将不显示<span class="uicontrol" id="zh-cn_topic_0107283470_uicontrol1986171319410"><a name="zh-cn_topic_0107283470_uicontrol1986171319410"></a><a name="zh-cn_topic_0107283470_uicontrol1986171319410"></a>“弹性网卡”</span>选项。</strong></p>
+    <div class="note" id="zh-cn_topic_0107283470_note124412587394"><a name="zh-cn_topic_0107283470_note124412587394"></a><a name="zh-cn_topic_0107283470_note124412587394"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="zh-cn_topic_0107283470_ul1444165810398"></a><a name="zh-cn_topic_0107283470_ul1444165810398"></a><ul id="zh-cn_topic_0107283470_ul1444165810398"><li>网络平面是CCE新增的一种crd资源，记录了租户ID，子网ID，安全组等的配置项，作为申请弹性网卡的配置信息。</li><li>创建工作负载时，在<a href="创建无状态负载(Deployment).md#li3580132418215">设置工作负载访问方式</a>步骤中如果添加了节点级别的Service，将无法绑定弹性网卡；同理，绑定了弹性网卡的工作负载，将无法添加节点级别的Service。</li></ul>
     </div></div>
     </td>
     </tr>
-    <tr id="cce_01_0047_row18442191224514"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p244261214513"><a name="cce_01_0047_p244261214513"></a><a name="cce_01_0047_p244261214513"></a>时区同步</p>
+    <tr id="zh-cn_topic_0107283470_row18442191224514"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p244261214513"><a name="zh-cn_topic_0107283470_p244261214513"></a><a name="zh-cn_topic_0107283470_p244261214513"></a>时区同步</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p644215125454"><a name="cce_01_0047_p644215125454"></a><a name="cce_01_0047_p644215125454"></a>勾选<span class="uicontrol" id="cce_01_0047_uicontrol3743418174611"><a name="cce_01_0047_uicontrol3743418174611"></a><a name="cce_01_0047_uicontrol3743418174611"></a>“开启”</span>，容器将和节点使用相同时区。</p>
-    <div class="notice" id="cce_01_0047_note5422953172616"><a name="cce_01_0047_note5422953172616"></a><a name="cce_01_0047_note5422953172616"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="cce_01_0047_p11422145392614"><a name="cce_01_0047_p11422145392614"></a><a name="cce_01_0047_p11422145392614"></a>时区同步功能开启后，在<span class="uicontrol" id="cce_01_0047_uicontrol107671854164714"><a name="cce_01_0047_uicontrol107671854164714"></a><a name="cce_01_0047_uicontrol107671854164714"></a>“数据存储 &gt; 本地磁盘”</span>中，将会自动添加HostPath类型的磁盘，请勿修改删除该磁盘。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p644215125454"><a name="zh-cn_topic_0107283470_p644215125454"></a><a name="zh-cn_topic_0107283470_p644215125454"></a>单击<a name="zh-cn_topic_0107283470_image16680652104914"></a><a name="zh-cn_topic_0107283470_image16680652104914"></a><span><img id="zh-cn_topic_0107283470_image16680652104914" src="figures/2020-08-13_092636-7.png"></span>开启后，容器将和节点使用相同时区。</p>
+    <div class="notice" id="zh-cn_topic_0107283470_note5422953172616"><a name="zh-cn_topic_0107283470_note5422953172616"></a><a name="zh-cn_topic_0107283470_note5422953172616"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="zh-cn_topic_0107283470_p11422145392614"><a name="zh-cn_topic_0107283470_p11422145392614"></a><a name="zh-cn_topic_0107283470_p11422145392614"></a>时区同步功能开启后，在<span class="uicontrol" id="zh-cn_topic_0107283470_uicontrol107671854164714"><a name="zh-cn_topic_0107283470_uicontrol107671854164714"></a><a name="zh-cn_topic_0107283470_uicontrol107671854164714"></a>“数据存储 &gt; 本地磁盘”</span>中，将会自动添加HostPath类型的磁盘，请勿修改删除该磁盘。</p>
     </div></div>
     </td>
     </tr>
-    <tr id="cce_01_0047_row15877104919019"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p4877104910012"><a name="cce_01_0047_p4877104910012"></a><a name="cce_01_0047_p4877104910012"></a>CCI弹性承载</p>
+    <tr id="zh-cn_topic_0107283470_row15877104919019"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p4877104910012"><a name="zh-cn_topic_0107283470_p4877104910012"></a><a name="zh-cn_topic_0107283470_p4877104910012"></a>CCI弹性承载</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p187282214438"><a name="cce_01_0047_p187282214438"></a><a name="cce_01_0047_p187282214438"></a>勾选此选项后，当集群资源不足时，支持将Pod部署到CCI集群。</p>
-    <p id="cce_01_0047_p11595204219"><a name="cce_01_0047_p11595204219"></a><a name="cce_01_0047_p11595204219"></a><strong id="cce_01_0047_b17562201711376"><a name="cce_01_0047_b17562201711376"></a><a name="cce_01_0047_b17562201711376"></a>该参数仅在安装virtual kubelet插件后才显示</strong>，具体请参见<a href="virtual-kubelet.md">virtual kubelet</a>。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p187282214438"><a name="zh-cn_topic_0107283470_p187282214438"></a><a name="zh-cn_topic_0107283470_p187282214438"></a>勾选此选项后，当集群资源不足时，支持将Pod部署到云容器实例CCI。</p>
+    <p id="zh-cn_topic_0107283470_p11595204219"><a name="zh-cn_topic_0107283470_p11595204219"></a><a name="zh-cn_topic_0107283470_p11595204219"></a><strong id="zh-cn_topic_0107283470_b17562201711376"><a name="zh-cn_topic_0107283470_b17562201711376"></a><a name="zh-cn_topic_0107283470_b17562201711376"></a>该参数仅在安装virtual kubelet插件后才显示</strong>，具体请参见<a href="virtual-kubelet.md">virtual kubelet</a>。</p>
     </td>
     </tr>
-    <tr id="cce_01_0047_row1027719414818"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p1527715418485"><a name="cce_01_0047_p1527715418485"></a><a name="cce_01_0047_p1527715418485"></a>工作负载描述</p>
+    <tr id="zh-cn_topic_0107283470_row1027719414818"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p1527715418485"><a name="zh-cn_topic_0107283470_p1527715418485"></a><a name="zh-cn_topic_0107283470_p1527715418485"></a>工作负载描述</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p827734134817"><a name="cce_01_0047_p827734134817"></a><a name="cce_01_0047_p827734134817"></a>工作负载描述信息。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p827734134817"><a name="zh-cn_topic_0107283470_p827734134817"></a><a name="zh-cn_topic_0107283470_p827734134817"></a>工作负载描述信息。</p>
     </td>
     </tr>
     </tbody>
@@ -118,7 +118,7 @@
         </tr>
         <tr id="cce_01_0047_row338117362515"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p1038143616517"><a name="cce_01_0047_p1038143616517"></a><a name="cce_01_0047_p1038143616517"></a>* 镜像版本</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p1338110368519"><a name="cce_01_0047_p1338110368519"></a><a name="cce_01_0047_p1338110368519"></a>若选择<span id="cce_01_0047_ph134919214212"><a name="cce_01_0047_ph134919214212"></a><a name="cce_01_0047_ph134919214212"></a><span class="uicontrol" id="cce_01_0047_uicontrol17496211527"><a name="cce_01_0047_uicontrol17496211527"></a><a name="cce_01_0047_uicontrol17496211527"></a>“开源镜像中心”</span></span>，请选择需要部署的镜像版本。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p1338110368519"><a name="cce_01_0047_p1338110368519"></a><a name="cce_01_0047_p1338110368519"></a>选择需要部署的镜像版本。</p>
         </td>
         </tr>
         <tr id="cce_01_0047_row32839494813"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p122831140486"><a name="cce_01_0047_p122831140486"></a><a name="cce_01_0047_p122831140486"></a>* 容器名称</p>
@@ -171,7 +171,11 @@
             >对于已设置的环境变量，单击环境变量后的“编辑”，可对该环境变量进行编辑。单击环境变量后的“删除”，可删除该环境变量。
 
 
-    6.  **数据存储：**给容器挂载数据存储，支持本地磁盘和云存储，适用于需持久化存储、高磁盘IO等场景。具体请参见[使用本地磁盘存储](使用本地磁盘存储.md)、[使用文件存储卷](使用文件存储卷.md)、[使用对象存储卷](使用对象存储卷.md)、[使用极速文件存储卷](使用极速文件存储卷.md)。
+    6.  **数据存储：**给容器挂载数据存储，支持本地磁盘和云存储，适用于需持久化存储、高磁盘IO等场景。具体请参见[本地磁盘存储](本地磁盘存储.md)、[文件存储卷](文件存储卷.md)、[对象存储卷](对象存储卷.md)、[极速文件存储卷](极速文件存储卷.md)。
+
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >有状态工作负载只能在创建时添加数据存储，创建完成后无法再添加。
+
     7.  **安全设置：**对容器权限进行设置，保护系统和其他容器不受其影响。
 
         请输入用户ID，容器将以当前用户权限运行。

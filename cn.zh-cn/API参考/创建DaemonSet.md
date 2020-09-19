@@ -8,7 +8,7 @@ This API is used to create a DaemonSet resource object.
 
 POST /apis/apps/v1/namespaces/\{namespace\}/daemonsets \(Supports 1.9 and 1.9+\)
 
-POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
+POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e31331)描述该API的参数。
 

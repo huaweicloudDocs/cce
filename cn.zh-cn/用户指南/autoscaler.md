@@ -24,7 +24,7 @@ autoscaler可分成扩容和缩容两个方面：
     -   pod有设置PodDisruptionBudget，当移除pod不满足对应条件时，节点不会缩容。
     -   pod设置本地存储时，节点不会缩容。
     -   pod由于一些限制，如亲和、反亲和等，无法调度到其他节点，节点不会缩容。
-    -   pod拥有"cluster-autoscaler.kubernetes.io/safe-to-evict": "false"这个annotations时，节点不缩容。
+    -   pod拥有cluster-autoscaler.kubernetes.io/safe-to-evict: 'false'这个annotations时，节点不缩容。
     -   节点上存在kube-system namespace下的Pod（除kube-system daemonset创建的Pod），节点不缩容。
     -   节点上有非controller（deployment/replica set/job/stateful set）创建的Pod，节点不缩容。
 
@@ -92,7 +92,7 @@ autoscaler可分成扩容和缩容两个方面：
     <td class="cellrowborder" valign="top" width="61.75000000000001%" headers="mcps1.2.4.1.3 "><p id="p15974173353612"><a name="p15974173353612"></a><a name="p15974173353612"></a>默认不开启：将不开启自动缩容，只进行自动扩容。</p>
     <p id="p597311174372"><a name="p597311174372"></a><a name="p597311174372"></a>开启：开启自动缩容，且自建节点和插件扩容所创建的节点均可缩容。</p>
     <a name="ul20302135243"></a><a name="ul20302135243"></a><ul id="ul20302135243"><li>空置时间（min）：当集群节点处于一段时间的空闲状态时，会触发集群缩容操作，删除节点，默认10min。</li><li>百分比：当集群节点资源低于多少百分比时，进行集群缩容扫描（默认0.5，即50%，cpu和mem都要满足的条件下才会缩容）。</li><li>扩容后缩容冷却时间：扩容执行后能再次启动缩容评估的时间间隔，默认10min。</li><li>节点删除后缩容冷却时间：删除节点后能再次启动缩容评估的时间间隔，默认10min。</li><li>缩容失败后缩容冷却时间：缩容失败后能再次启动缩容评估的时间间隔，默认3min。</li><li>空节点缩容最大并发数：默认10。</li><li>不可移除节点的重检查时间：节点被判定不可移除后能再次启动检查的时间间隔，默认5min。</li></ul>
-    <div class="note" id="note15581214141911"><a name="note15581214141911"></a><a name="note15581214141911"></a><span class="notetitle"> 说明： </span><div class="notebody"><div class="p" id="p424619478180"><a name="p424619478180"></a><a name="p424619478180"></a>当节点处于以下几种状态时，不可缩容：<a name="ul128441417142719"></a><a name="ul128441417142719"></a><ul id="ul128441417142719"><li>pod设置为PodDisruptionBudget，当不满足条件时，节点不会缩容。</li><li>pod设置本地存储时，节点不会缩容。</li><li>pod由于一些限制，如亲和、反亲和等，无法调度到其他节点，节点不会缩容。</li><li>pod拥有"cluster-autoscaler.kubernetes.io/safe-to-evict": "false"这个annotations时，节点不缩容。</li><li>节点上存在kube-system命名空间下的Pod（除kube-system daemonset创建的Pod）。</li><li>节点上有非controller（deployment/replica set/job/stateful set）创建的Pod。</li></ul>
+    <div class="note" id="note15581214141911"><a name="note15581214141911"></a><a name="note15581214141911"></a><span class="notetitle"> 说明： </span><div class="notebody"><div class="p" id="p424619478180"><a name="p424619478180"></a><a name="p424619478180"></a>当节点处于以下几种状态时，不可缩容：<a name="ul128441417142719"></a><a name="ul128441417142719"></a><ul id="ul128441417142719"><li>pod设置为PodDisruptionBudget，当不满足条件时，节点不会缩容。</li><li>pod设置本地存储时，节点不会缩容。</li><li>pod由于一些限制，如亲和、反亲和等，无法调度到其他节点，节点不会缩容。</li><li>pod拥有cluster-autoscaler.kubernetes.io/safe-to-evict: 'false'这个annotations时，节点不缩容。</li><li>节点上存在kube-system命名空间下的Pod（除kube-system daemonset创建的Pod）。</li><li>节点上有非controller（deployment/replica set/job/stateful set）创建的Pod。</li></ul>
     </div>
     </div></div>
     </td>
@@ -191,7 +191,7 @@ autoscaler可分成扩容和缩容两个方面：
 ## 卸载插件<a name="section610455514114"></a>
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“ 插件管理“，在“插件实例“页签下，选择对应的集群，单击**autoscaler**下的“卸载“。
-2.  在弹出的窗口中，单击“确认“，可卸载该插件。
+2.  在弹出的窗口中，单击“是“，可卸载该插件。
 
 ## 版本记录<a name="section1357513092214"></a>
 
@@ -208,14 +208,14 @@ autoscaler可分成扩容和缩容两个方面：
 </th>
 </tr>
 </thead>
-<tbody><tr id="row31745215578"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p317410218570"><a name="p317410218570"></a><a name="p317410218570"></a><span id="ph278372385718"><a name="ph278372385718"></a><a name="ph278372385718"></a>1.17.2</span></p>
+<tbody><tr id="row31745215578"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p317410218570"><a name="p317410218570"></a><a name="p317410218570"></a>1.17.2</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p674493210571"><a name="p674493210571"></a><a name="p674493210571"></a>混合集群 v1.17.*</p>
 <p id="p197441632205712"><a name="p197441632205712"></a><a name="p197441632205712"></a>鲲鹏集群 v1.17.*</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p417492125717"><a name="p417492125717"></a><a name="p417492125717"></a>2020/08/19</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p217416255719"><a name="p217416255719"></a><a name="p217416255719"></a><span id="ph3201245115713"><a name="ph3201245115713"></a><a name="ph3201245115713"></a>支持1.17版本的kubernetes</span></p>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p217416255719"><a name="p217416255719"></a><a name="p217416255719"></a>支持1.17版本的kubernetes</p>
 </td>
 </tr>
 <tr id="row97875912317"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p10472656612"><a name="p10472656612"></a><a name="p10472656612"></a>1.15.6</p>
@@ -313,9 +313,9 @@ autoscaler可分成扩容和缩容两个方面：
 <td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p16596152717402"><a name="p16596152717402"></a><a name="p16596152717402"></a>混合集群 v1.13.*</p>
 <p id="p7596202715404"><a name="p7596202715404"></a><a name="p7596202715404"></a>鲲鹏集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p859612714403"><a name="p859612714403"></a><a name="p859612714403"></a>2019/08/16</p>
+<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p859612714403"><a name="p859612714403"></a><a name="p859612714403"></a>2019/08/01</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul13596127194013"></a><a name="ul13596127194013"></a><ul id="ul13596127194013"><li>支持鲲鹏集群</li><li>开放缩容相关参数 3.支持添加k8s节点标签</li></ul>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul13596127194013"></a><a name="ul13596127194013"></a><ul id="ul13596127194013"><li>支持鲲鹏集群</li><li>开放缩容相关参数</li><li>支持添加k8s节点标签</li></ul>
 </td>
 </tr>
 <tr id="row6211111532416"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p18596102714403"><a name="p18596102714403"></a><a name="p18596102714403"></a>1.13.3</p>
@@ -383,7 +383,7 @@ autoscaler可分成扩容和缩容两个方面：
 </tr>
 <tr id="row1391872622417"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1443344624017"><a name="p1443344624017"></a><a name="p1443344624017"></a>1.1.3</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p6433174664016"><a name="p6433174664016"></a><a name="p6433174664016"></a>混合集群 v1.9.7-r[1-9][0-9]?(.sp[1-9][0-9]?)?$|v1.9.10-r*</p>
+<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p6433174664016"><a name="p6433174664016"></a><a name="p6433174664016"></a>混合集群 v1.9.7-r*、v1.9.10-r*</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p10433124612402"><a name="p10433124612402"></a><a name="p10433124612402"></a>2019/09/21</p>
 </td>
@@ -392,7 +392,7 @@ autoscaler可分成扩容和缩容两个方面：
 </tr>
 <tr id="row191815264242"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1643374654015"><a name="p1643374654015"></a><a name="p1643374654015"></a>1.1.2</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p1143319464405"><a name="p1143319464405"></a><a name="p1143319464405"></a>混合集群 v1.9.7-r[1-9][0-9]?(.sp[1-9][0-9]?)?$|v1.9.10-r*</p>
+<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p1143319464405"><a name="p1143319464405"></a><a name="p1143319464405"></a>混合集群 v1.9.7-r*、v1.9.10-r*</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p1943310469409"><a name="p1943310469409"></a><a name="p1943310469409"></a>2019/02/01</p>
 </td>
@@ -401,7 +401,7 @@ autoscaler可分成扩容和缩容两个方面：
 </tr>
 <tr id="row891802662411"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p443354664010"><a name="p443354664010"></a><a name="p443354664010"></a>1.0.7</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p2433114644013"><a name="p2433114644013"></a><a name="p2433114644013"></a>混合集群 v1.9.7-r[1-9][0-9]?(.sp[1-9][0-9]?)?$|v1.9.10-r*</p>
+<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p2433114644013"><a name="p2433114644013"></a><a name="p2433114644013"></a>混合集群 v1.9.7-r*、v1.9.10-r*</p>
 </td>
 <td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p1943394634012"><a name="p1943394634012"></a><a name="p1943394634012"></a>2018/10/29</p>
 </td>

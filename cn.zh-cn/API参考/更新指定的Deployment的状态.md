@@ -10,7 +10,7 @@ PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/status \(Suppo
 
 PATCH /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports only1.7\)
 
-PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Compatible\)
+PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e37132)描述该API的参数。
 

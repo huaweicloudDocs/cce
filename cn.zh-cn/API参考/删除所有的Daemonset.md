@@ -8,7 +8,7 @@ This API is used to delete collection of DaemonSet.
 
 DELETE /apis/apps/v1/namespaces/\{namespace\}/daemonsets \(Supports 1.9 and 1.9+\)
 
-DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
+DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e32232)描述该API的参数。
 

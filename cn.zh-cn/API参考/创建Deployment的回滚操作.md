@@ -10,7 +10,7 @@ PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.1
 
 POST /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/rollback \(Supports only 1.7\~1.15\)
 
-POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/rollback \(Compatible\)
+POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/rollback \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e34843)描述该API的参数。
 

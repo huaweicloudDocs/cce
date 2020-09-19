@@ -328,7 +328,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 
 **云硬盘存储卷请求示例**：
 
--   1.15及之后集群版本请求示例：
+-   1.15及以上版本集群，示例如下：
 
     ```
     {
@@ -402,7 +402,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 
 **文件存储卷请求示例**：
 
--   1.15及之后集群版本示例
+-   1.15及以上版本集群，示例如下：
 
     ```
     {
@@ -472,7 +472,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 
 **云硬盘存储卷响应示例：**
 
--   1.15及之后集群版本yaml示例
+-   1.15及以上版本集群，示例如下：
 
     ```
     {

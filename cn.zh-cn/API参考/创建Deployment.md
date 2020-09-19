@@ -24,7 +24,7 @@ POST /apis/apps/v1/namespaces/\{namespace\}/deployments \(Supports 1.9 and 1.9+\
 
 POST /apis/apps/v1beta1/namespaces/\{namespace\}/deployments \(Supports only1.7\)
 
-POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\)
+POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Supports 1.15 and 1.15-\)
 
 [表1](#table167042013408)描述该API的参数。
 

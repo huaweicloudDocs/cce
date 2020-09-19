@@ -8,7 +8,7 @@ This API is used to read a DaemonSet object under a specified Namespace.
 
 GET /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports 1.9 and 1.9+\)
 
-GET /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(Compatible\)
+GET /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e32428)描述该API的参数。
 

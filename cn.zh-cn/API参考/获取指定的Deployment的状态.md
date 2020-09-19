@@ -10,7 +10,7 @@ GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/status \(Support
 
 GET /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports only1.7\)
 
-GET /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Compatible\)
+GET /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e35701)描述该API的参数。
 

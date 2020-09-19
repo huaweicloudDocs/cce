@@ -16,9 +16,9 @@
 云容器引擎提供了多种创建工作负载的方式，您可以通过如下方式进行创建：
 
 -   基于“开源镜像中心“创建工作负载，无需上传镜像。
--   基于“我的镜像“创建工作负载，用户首先需要将镜像上传至容器镜像服务，上传镜像的方式请参考[镜像管理](https://support.huaweicloud.com/usermanual-swr/swr_01_0011.html)
+-   基于“我的镜像“创建工作负载，用户首先需要将镜像上传至容器镜像服务，上传镜像的方式请参考[镜像管理](https://support.huaweicloud.com/usermanual-swr/swr_01_0011.html)。
 -   基于“共享镜像“创建工作负载，即其它租户通过“容器镜像服务“共享给您的镜像。
--   您希望通过YAML方式创建工作负载，您可在“创建无状态工作负载”页面单击界面右侧的“YAML创建“，通过yaml的方式创建工作负载。YAML的说明请参见[表3](#table132326831016)。YAML编写完成后，可单击“创建“，直接创建工作负载。
+-   您希望通过YAML方式创建工作负载，您可在“创建无状态工作负载”高级设置页面单击界面右侧的“YAML创建“，通过yaml的方式创建工作负载。YAML的说明请参见[表3](#table132326831016)。YAML编写完成后，可单击“创建“，直接创建工作负载。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >YAML文件是和界面保持同步的，您也可以通过界面和YAML互动完成工作负载的创建。例如界面中填写工作负载名称后，YAML文件会自动关联该名称。例如界面中添加完镜像后，YAML中也会自动关联该镜像。
@@ -67,14 +67,14 @@
     </tr>
     <tr id="row18442191224514"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p244261214513"><a name="p244261214513"></a><a name="p244261214513"></a>时区同步</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p644215125454"><a name="p644215125454"></a><a name="p644215125454"></a>勾选<span class="uicontrol" id="uicontrol3743418174611"><a name="uicontrol3743418174611"></a><a name="uicontrol3743418174611"></a>“开启”</span>，容器将和节点使用相同时区。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p644215125454"><a name="p644215125454"></a><a name="p644215125454"></a>单击<a name="image16680652104914"></a><a name="image16680652104914"></a><span><img id="image16680652104914" src="figures/2020-08-13_092636-6.png"></span>开启后，容器将和节点使用相同时区。</p>
     <div class="notice" id="note5422953172616"><a name="note5422953172616"></a><a name="note5422953172616"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="p11422145392614"><a name="p11422145392614"></a><a name="p11422145392614"></a>时区同步功能开启后，在<span class="uicontrol" id="uicontrol107671854164714"><a name="uicontrol107671854164714"></a><a name="uicontrol107671854164714"></a>“数据存储 &gt; 本地磁盘”</span>中，将会自动添加HostPath类型的磁盘，请勿修改删除该磁盘。</p>
     </div></div>
     </td>
     </tr>
     <tr id="row15877104919019"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p4877104910012"><a name="p4877104910012"></a><a name="p4877104910012"></a>CCI弹性承载</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p187282214438"><a name="p187282214438"></a><a name="p187282214438"></a>勾选此选项后，当集群资源不足时，支持将Pod部署到CCI集群。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p187282214438"><a name="p187282214438"></a><a name="p187282214438"></a>勾选此选项后，当集群资源不足时，支持将Pod部署到云容器实例CCI。</p>
     <p id="p11595204219"><a name="p11595204219"></a><a name="p11595204219"></a><strong id="b17562201711376"><a name="b17562201711376"></a><a name="b17562201711376"></a>该参数仅在安装virtual kubelet插件后才显示</strong>，具体请参见<a href="virtual-kubelet.md">virtual kubelet</a>。</p>
     </td>
     </tr>
@@ -116,7 +116,7 @@
         </tr>
         <tr id="row338117362515"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="p1038143616517"><a name="p1038143616517"></a><a name="p1038143616517"></a>* 镜像版本</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p1338110368519"><a name="p1338110368519"></a><a name="p1338110368519"></a>若选择<span id="ph134919214212"><a name="ph134919214212"></a><a name="ph134919214212"></a><span class="uicontrol" id="uicontrol17496211527"><a name="uicontrol17496211527"></a><a name="uicontrol17496211527"></a>“开源镜像中心”</span></span>，请选择需要部署的镜像版本。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p1338110368519"><a name="p1338110368519"></a><a name="p1338110368519"></a>选择需要部署的镜像版本。</p>
         </td>
         </tr>
         <tr id="row32839494813"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="p122831140486"><a name="p122831140486"></a><a name="p122831140486"></a>* 容器名称</p>
@@ -169,7 +169,7 @@
             >对于已设置的环境变量，单击环境变量后的“编辑”，可对该环境变量进行编辑。单击环境变量后的“删除”，可删除该环境变量。
 
 
-    6.  **数据存储：**给容器挂载数据存储，支持本地磁盘和云存储，适用于需持久化存储、高磁盘IO等场景。具体请参见[使用本地磁盘存储](使用本地磁盘存储.md)、[使用文件存储卷](使用文件存储卷.md)、[使用对象存储卷](使用对象存储卷.md)、[使用极速文件存储卷](使用极速文件存储卷.md)。
+    6.  **数据存储：**给容器挂载数据存储，支持本地磁盘和云存储，适用于需持久化存储、高磁盘IO等场景。具体请参见[本地磁盘存储](本地磁盘存储.md)、[文件存储卷](文件存储卷.md)、[对象存储卷](对象存储卷.md)、[极速文件存储卷](极速文件存储卷.md)。
     7.  **安全设置：**对容器权限进行设置，保护系统和其他容器不受其影响。
 
         请输入用户ID，容器将以当前用户权限运行。
@@ -224,7 +224,7 @@
 
     工作负载状态不会实时更新，请单击右上角的![](figures/zh-cn_image_0183674977.png)图标或按F5刷新页面查看。
 
-6.  在“工作负载”页面的工作负载列表中，复制“外部访问地址”，可在浏览器中访问工作负载。
+6.  在“无状态负载 Deployment”页面的工作负载列表中，复制“外部访问地址”，可在浏览器中访问工作负载。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   当工作负载访问方式设为“节点访问（NodePort）“并绑定弹性IP或设为“负载均衡 \( LoadBalancer \)“时，才可以获取外部访问地址，可以访问外网。
@@ -409,10 +409,10 @@
 
     **参数解析：**
 
-    -   NAME：pod名
-    -   READY：准备好的副本数
+    -   NAME：pod的名称
+    -   READY：已经部署完毕的pod副本数
     -   STATUS：状态
-    -   RESTARTS：重启数
+    -   RESTARTS：重启次数
     -   AGE：已经运行的时间
 
 5.  若工作负载（即deployment）需要被访问（集群内访问或节点访问），您需要设置访问方式，具体请参见[网络管理](网络管理.md)创建对应服务。

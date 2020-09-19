@@ -42,6 +42,13 @@ DELETE /api/v1/namespaces/\{namespace\}/pods/\{name\}
 <td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="zh-cn_topic_0079615056_p52347609"><a name="zh-cn_topic_0079615056_p52347609"></a><a name="zh-cn_topic_0079615056_p52347609"></a>Name of the Pod.</p>
 </td>
 </tr>
+<tr id="row1038212017422"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="p16382132074212"><a name="p16382132074212"></a><a name="p16382132074212"></a>dryRun</p>
+</td>
+<td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="p738212084216"><a name="p738212084216"></a><a name="p738212084216"></a>No</p>
+</td>
+<td class="cellrowborder" valign="top" width="45%" headers="mcps1.2.4.1.3 "><p id="p73822201428"><a name="p73822201428"></a><a name="p73822201428"></a>When present, indicates that modifications should not be persisted. An invalid or unrecognized dryRun directive will result in an error response and no further processing of the request. Valid values are: - All: all dry run stages will be processed</p>
+</td>
+</tr>
 <tr id="rf0174cc788d1406791ebac9b6df8acd6"><td class="cellrowborder" valign="top" width="33%" headers="mcps1.2.4.1.1 "><p id="a9c85576f378c4573b485d43745475398"><a name="a9c85576f378c4573b485d43745475398"></a><a name="a9c85576f378c4573b485d43745475398"></a>gracePeriodSeconds</p>
 </td>
 <td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615056_p777074816124"><a name="zh-cn_topic_0079615056_p777074816124"></a><a name="zh-cn_topic_0079615056_p777074816124"></a>No</p>

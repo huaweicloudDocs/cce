@@ -22,7 +22,7 @@ The other fields cannot be updated.
 
 PATCH /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports 1.9 and 1.9+\)
 
-PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(Compatible\)
+PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e33576)描述该API的参数。
 

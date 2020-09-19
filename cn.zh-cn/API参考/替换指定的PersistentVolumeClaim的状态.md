@@ -57,7 +57,7 @@ PUT /api/v1/namespaces/\{namespace\}/persistentvolumeclaims/\{name\}/status
 
 **请求示例：**
 
--   1.15及之后集群版本示例：
+-   1.15及以上版本集群，示例如下：
 
     ```
     {
@@ -166,7 +166,7 @@ PUT /api/v1/namespaces/\{namespace\}/persistentvolumeclaims/\{name\}/status
 
 **响应示例：**
 
--   1.15及之后集群版本示例：
+-   1.15及以上版本集群，示例如下：
 
     ```
     {

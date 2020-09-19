@@ -6,9 +6,9 @@ This API is used to create an Ingress.
 
 ## URI<a name="section14030938"></a>
 
-POST /apis/networking.k8s.io/v1beta1/namespaces/\{namespace\}/ingresses \(Supports since1.15\)
+POST /apis/networking.k8s.io/v1beta1/namespaces/\{namespace\}/ingresses \(Supports 1.15 and 1.15+\)
 
-POST /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses \(Compatible\)
+POST /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses \(Supports 1.15-\)
 
 [表1](#d0e42906)描述该API的参数。
 

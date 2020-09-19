@@ -8,7 +8,7 @@ This API is used to list all DaemonSet resource objects under a specified Namesp
 
 GET /apis/apps/v1/namespaces/\{namespace\}/daemonsets \(Supports 1.9 and 1.9+\)
 
-GET /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Compatible\)
+GET /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e33074)描述该API的参数。
 

@@ -10,7 +10,7 @@ DELETE /apis/apps/v1/namespaces/\{namespace\}/deployments \(Supports 1.9 and 1.9
 
 DELETE /apis/apps/v1beta1/namespaces/\{namespace\}/deployments \(Supports only1.7\)
 
-DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Compatible\)
+DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e35322)描述该API的参数。
 

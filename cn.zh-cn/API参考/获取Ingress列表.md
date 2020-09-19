@@ -6,9 +6,9 @@ This API is used to list or watch objects of kind Ingress.
 
 ## URI<a name="section14030938"></a>
 
-GET /apis/networking.k8s.io/v1beta1/ingresses \(Supports since1.15\)
+GET /apis/networking.k8s.io/v1beta1/ingresses \(Supports 1.15 and 1.15+\)
 
-GET /apis/extensions/v1beta1/ingresses \(Compatible\)
+GET /apis/extensions/v1beta1/ingresses \(Supports 1.15-\)
 
 [表1](#d0e42906)描述该API的参数。
 

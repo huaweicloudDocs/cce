@@ -10,7 +10,7 @@
 -   在每个节点上运行日志收集 daemon，例如fluentd、logstash。
 -   在每个节点上运行监控 daemon，例如 Prometheus Node Exporter、collectd、Datadog 代理、New Relic 代理，或 Ganglia gmond。
 
-一个简单的用法是在所有的节点上都启动一个 DaemonSet，将被作为每种类型的 daemon 使用。 一个稍微复杂的用法是单独对每种 daemon 类型使用多个 DaemonSet，但具有不同的标志，和/或对不同硬件类型具有不同的内存、CPU要求。
+一种简单的用法是为每种类型的守护进程在所有的节点上都启动一个DaemonSet。一个稍微复杂的用法是为同一种守护进程部署多个DaemonSet；每个具有不同的标志， 并且对不同硬件类型具有不同的内存、CPU 要求。
 
 ## 准备工作<a name="section7271245481"></a>
 
@@ -56,7 +56,7 @@
     </tr>
     <tr id="row15115217354"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p151122103514"><a name="p151122103514"></a><a name="p151122103514"></a>时区同步</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p14511926351"><a name="p14511926351"></a><a name="p14511926351"></a>勾选<span class="uicontrol" id="uicontrol751116223511"><a name="uicontrol751116223511"></a><a name="uicontrol751116223511"></a>“开启”</span>，容器将和节点使用相同时区。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p14511926351"><a name="p14511926351"></a><a name="p14511926351"></a>单击<a name="image16680652104914"></a><a name="image16680652104914"></a><span><img id="image16680652104914" src="figures/2020-08-13_092636-8.png"></span>开启后，容器将和节点使用相同时区。</p>
     <div class="notice" id="note25113211350"><a name="note25113211350"></a><a name="note25113211350"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="p75117233519"><a name="p75117233519"></a><a name="p75117233519"></a>时区同步功能开启后，在<span class="uicontrol" id="uicontrol0511182113516"><a name="uicontrol0511182113516"></a><a name="uicontrol0511182113516"></a>“数据存储 &gt; 本地磁盘”</span>中，将会自动添加HostPath类型的磁盘，请勿修改删除该磁盘。</p>
     </div></div>
     </td>
@@ -99,7 +99,7 @@
         </tr>
         <tr id="cce_01_0047_row338117362515"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p1038143616517"><a name="cce_01_0047_p1038143616517"></a><a name="cce_01_0047_p1038143616517"></a>* 镜像版本</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p1338110368519"><a name="cce_01_0047_p1338110368519"></a><a name="cce_01_0047_p1338110368519"></a>若选择<span id="cce_01_0047_ph134919214212"><a name="cce_01_0047_ph134919214212"></a><a name="cce_01_0047_ph134919214212"></a><span class="uicontrol" id="cce_01_0047_uicontrol17496211527"><a name="cce_01_0047_uicontrol17496211527"></a><a name="cce_01_0047_uicontrol17496211527"></a>“开源镜像中心”</span></span>，请选择需要部署的镜像版本。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p1338110368519"><a name="cce_01_0047_p1338110368519"></a><a name="cce_01_0047_p1338110368519"></a>选择需要部署的镜像版本。</p>
         </td>
         </tr>
         <tr id="cce_01_0047_row32839494813"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p122831140486"><a name="cce_01_0047_p122831140486"></a><a name="cce_01_0047_p122831140486"></a>* 容器名称</p>
@@ -152,7 +152,7 @@
             >对于已设置的环境变量，单击环境变量后的“编辑”，可对该环境变量进行编辑。单击环境变量后的“删除”，可删除该环境变量。
 
 
-    6.  **数据存储：**给容器挂载数据存储，支持本地磁盘和云存储，适用于需持久化存储、高磁盘IO等场景。具体请参见[使用本地磁盘存储](使用本地磁盘存储.md)、[使用文件存储卷](使用文件存储卷.md)、[使用对象存储卷](使用对象存储卷.md)、[使用极速文件存储卷](使用极速文件存储卷.md)。
+    6.  **数据存储：**给容器挂载数据存储，支持本地磁盘和云存储，适用于需持久化存储、高磁盘IO等场景。具体请参见[本地磁盘存储](本地磁盘存储.md)、[文件存储卷](文件存储卷.md)、[对象存储卷](对象存储卷.md)、[极速文件存储卷](极速文件存储卷.md)。
     7.  **安全设置：**对容器权限进行设置，保护系统和其他容器不受其影响。
 
         请输入用户ID，容器将以当前用户权限运行。

@@ -1,15 +1,15 @@
 # 管理容器组\(Pod\)<a name="cce_01_0013"></a>
 
-容器组（Pod）是 Kubernetes 中最小的可部署单元。一个 Pod（容器组）包含了一个应用程序容器（某些情况下是多个容器）、存储资源、一个唯一的网络 IP 地址、以及一些确定容器该如何运行的选项。Pod 容器组代表了 Kubernetes 中一个独立的应用程序运行实例，该实例可能由单个容器或者几个紧耦合在一起的容器组成。
+容器组（Pod）是Kubernetes中最小的可部署单元。一个Pod（容器组）包含了一个应用程序容器（某些情况下是多个容器）、存储资源、一个唯一的网络IP地址、以及一些确定容器该如何运行的选项。Pod容器组代表了Kubernetes中一个独立的应用程序运行实例，该实例可能由单个容器或者几个紧耦合在一起的容器组成。
 
-Kubernetes 集群中的 Pod 存在如下两种使用途径：
+Kubernetes集群中的Pod存在如下两种使用途径：
 
--   一个 Pod 中只运行一个容器。"one-container-per-pod" 是 Kubernetes 中最常见的使用方式。此时，您可以认为 Pod 容器组是该容器的 wrapper，Kubernetes 通过 Pod 管理容器，而不是直接管理容器。
--   一个 Pod 中运行多个需要互相协作的容器。您可以将多个紧密耦合、共享资源且始终在一起运行的容器编排在同一个 Pod 中，可能的情况有：
-    -   Content management systems, file and data loaders, local cache managers 等
-    -   log and checkpoint backup, compression, rotation, snapshotting 等
-    -   data change watchers, log tailers, logging and monitoring adapters, event publishers 等
-    -   proxies, bridges, adapters 等
+-   一个Pod中只运行一个容器。"one-container-per-pod" 是Kubernetes中最常见的使用方式。此时，您可以认为Pod容器组是该容器的 wrapper，Kubernetes通过Pod管理容器，而不是直接管理容器。
+-   一个Pod中运行多个需要互相协作的容器。您可以将多个紧密耦合、共享资源且始终在一起运行的容器编排在同一个Pod中，可能的情况有：
+    -   Content management systems, file and data loaders, local cache managers等
+    -   log and checkpoint backup, compression, rotation, snapshotting等
+    -   data change watchers, log tailers, logging and monitoring adapters, event publishers等
+    -   proxies, bridges, adapters等
     -   controllers, managers, configurators, and updaters
 
 
@@ -44,11 +44,11 @@ Kubernetes 集群中的 Pod 存在如下两种使用途径：
 若实例无需再使用，您可以将其删除。实例删除后，将无法恢复，请谨慎操作。
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 容器组 Pod”。
-2.  单击待删除实例后的“删除“，即可删除该实例。
+2.  单击待删除实例后的“删除“。
 
     请仔细阅读系统提示，删除操作无法恢复，请谨慎操作。
 
-3.  单击“是“。
+3.  单击“是“，即可删除该实例。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   若Pod所在节点不可用或者关机，负载无法删除时可以在详情页面实例列表选择强制删除。

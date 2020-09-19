@@ -8,7 +8,7 @@ This API is used to read the status of a specified DaemonSet object under a spec
 
 GET /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Supports 1.9 and 1.9+\)
 
-GET /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Compatible\)
+GET /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\}/status \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e32595)描述该API的参数。
 

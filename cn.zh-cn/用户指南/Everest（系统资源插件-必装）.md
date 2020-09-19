@@ -39,7 +39,7 @@ Everest是一个云原生容器存储系统，基于CSI为Kubernetes v1.15.6及�
 ## 卸载插件<a name="section610455514114"></a>
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击“everest“下的“卸载“。
-2.  在弹出的窗口中，单击“确认“，可卸载该插件。
+2.  在弹出的窗口中，单击“是“，可卸载该插件。
 
 ## 版本记录<a name="section144262219109"></a>
 
@@ -56,13 +56,13 @@ Everest是一个云原生容器存储系统，基于CSI为Kubernetes v1.15.6及�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row7335155311559"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1333565320554"><a name="p1333565320554"></a><a name="p1333565320554"></a><span id="ph5273185635515"><a name="ph5273185635515"></a><a name="ph5273185635515"></a>1.1.11</span></p>
+<tbody><tr id="row7335155311559"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1333565320554"><a name="p1333565320554"></a><a name="p1333565320554"></a>1.1.11</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p207694410562"><a name="p207694410562"></a><a name="p207694410562"></a>混合集群 v1.(15|17).*</p>
 <p id="p117696411564"><a name="p117696411564"></a><a name="p117696411564"></a>裸金属集群 v1.(15|17).*</p>
 <p id="p9769840568"><a name="p9769840568"></a><a name="p9769840568"></a>鲲鹏集群 v1.15.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p8335165335516"><a name="p8335165335516"></a><a name="p8335165335516"></a><span id="ph3380310155610"><a name="ph3380310155610"></a><a name="ph3380310155610"></a>2020/08/19</span></p>
+<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p8335165335516"><a name="p8335165335516"></a><a name="p8335165335516"></a>2020/08/19</p>
 </td>
 <td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul1466354565"></a><a name="ul1466354565"></a><ul id="ul1466354565"><li>配置安全加固</li><li>支持挂载三方OBS存储</li><li>切换更优性能的EVS查询接口</li><li>默认快照以clone模式创建磁盘</li><li>优化和增强Attach和Detach磁盘状态检测和日志输出</li><li>增加认证过期判断可靠性</li></ul>
 </td>

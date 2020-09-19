@@ -82,7 +82,7 @@ Content-Type: application/merge-patch+json
 
 **响应示例：**
 
--   1.15及之后集群版本示例：
+-   1.15及以上版本集群，示例如下：
 
     ```
     {

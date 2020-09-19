@@ -10,7 +10,7 @@ PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/status \(Support
 
 PUT /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports only1.7\)
 
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Compatible\)
+PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e36203)描述该API的参数。
 

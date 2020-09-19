@@ -26,7 +26,7 @@ PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.9
 
 PATCH /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.7\)
 
-PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Compatible\)
+PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e36967)描述该API的参数。
 

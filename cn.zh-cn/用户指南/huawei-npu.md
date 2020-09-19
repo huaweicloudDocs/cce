@@ -22,5 +22,5 @@ huawei-npu是支持容器里使用huawei NPU设备的管理插件。
 ## 卸载插件<a name="section1395073191112"></a>
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击**huawei-npu**下的“卸载“。
-2.  在弹出的窗口中，单击“确认“，可卸载该插件。
+2.  在弹出的窗口中，单击“是“，可卸载该插件。
 

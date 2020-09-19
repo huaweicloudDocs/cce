@@ -8,7 +8,7 @@ This API is used to delete collection of StatefulSet.
 
 DELETE /apis/apps/v1/namespaces/\{namespace\}/statefulsets \(Supports 1.9 and 1.9+\)
 
-DELETE /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Compatible\)
+DELETE /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e38460)描述该API的参数。
 

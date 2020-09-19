@@ -8,7 +8,7 @@ This API is used to list all StatefulSet resource objects.
 
 GET /apis/apps/v1/statefulsets \(Supports 1.9 and 1.9+\)
 
-GET /apis/apps/v1beta1/statefulsets \(Compatible\)
+GET /apis/apps/v1beta1/statefulsets \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e39528)描述该API的参数。
 

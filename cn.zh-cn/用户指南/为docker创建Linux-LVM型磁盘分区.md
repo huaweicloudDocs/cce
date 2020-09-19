@@ -4,7 +4,7 @@
 
 ## 准备工作<a name="section19834182211494"></a>
 
-为了使系统更加稳定，请给docker单独挂载数据盘，使用direct-lvm模式。挂载磁盘方法请参见[这里](https://support.huaweicloud.com/qs-evs/evs_01_0037.html)
+为了使系统更加稳定，请给docker单独挂载数据盘，使用direct-lvm模式。挂载磁盘方法请参见[这里](https://support.huaweicloud.com/qs-evs/evs_01_0037.html)。
 
 ## 操作步骤<a name="section18184888105"></a>
 

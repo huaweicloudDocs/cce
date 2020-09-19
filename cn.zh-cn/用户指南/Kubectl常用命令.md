@@ -131,7 +131,7 @@ kubectl replace -f /tmp/nginx-tmp.yaml
 
 **explain**
 
-文档参考资料。
+查看文档或参考资料。
 
 例如：
 
@@ -162,7 +162,7 @@ kubectl delete deployment deployname
 
 **rolling-update\***
 
-rolling-update 是一个非常重要的命令，对于已经部署并且正在运行的业务，rolling-update提供了不中断业务的更新方式。rolling-update 每次起一个新的pod，等新pod完全起来后删除一个旧的pod，然后再起一个新的pod替换旧的pod，直到替换掉所有的pod。rolling-update 需要确保新的版本有不同的name，Version和label，否则会报错 。
+rolling-update是一个非常重要的命令，对于已经部署并且正在运行的业务，rolling-update提供了不中断业务的更新方式。rolling-update 每次起一个新的pod，等新pod完全起来后删除一个旧的pod，然后再起一个新的pod替换旧的pod，直到替换掉所有的pod。rolling-update 需要确保新的版本有不同的name，Version和label，否则会报错 。
 
 ```
 kubectl rolling-update poname -f newfilename
@@ -233,7 +233,7 @@ kubectl autoscale deployment deployname --min=minnumber --max=maxnumber
     kubectl drain newnodename
     ```
 
-3.  对该节点进行一些节点维护的操作，如升级内核，升级Docker等。
+3.  对该节点进行一些节点维护的操作，如升级内核、升级Docker等。
 4.  节点维护完后，使用uncordon命令解锁该node，使其重新变得可调度。
 
     ```
@@ -271,7 +271,7 @@ kubectl cluster-info dump
 
 **describe**
 
-describe类似于get，同样用于获取resource的相关信息。不同的是，get获得的是更详细的resource个性的详细信息，describe获得的是resource集群相关的信息。describe 命令同get类似，但是describe不支持-o选项，对于同一类型resource，describe输出的信息格式，内容域相同。
+describe类似于get，同样用于获取resource的相关信息。不同的是，get获得的是更详细的resource个性的详细信息，describe获得的是resource集群相关的信息。describe命令同get类似，但是describe不支持-o选项，对于同一类型resource，describe输出的信息格式，内容域相同。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >如果发现是查询某个resource的信息，使用get命令能够获取更加详尽的信息。但是如果想要查询某个resource的状态，如某个pod并不是在running状态，这时需要获取更详尽的状态信息时，就应该使用describe命令。

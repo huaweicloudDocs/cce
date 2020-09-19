@@ -125,14 +125,14 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 
 未配置存根域：没有匹配上配置的集群域名后缀的任何请求，例如 “www.kubernetes.io”，将会被转发到继承自节点的上游域名服务器。
 
-已配置存根域：如果配置了存根域和上游 DNS 服务器，DNS 查询将基于下面的流程对请求进行路由：
+已配置存根域：如果配置了存根域和上游DNS服务器，DNS查询将基于下面的流程对请求进行路由：
 
-1.  查询首先被发送到 coredns 中的 DNS 缓存层。
-2.  从缓存层，检查请求的后缀，并根据下面的情况转发到对应的 DNS 上：
-    -   具有集群后缀的名字（例如“.cluster.local”）：请求被发送到 coredns。
+1.  查询首先被发送到coredns中的DNS缓存层。
+2.  从缓存层，检查请求的后缀，并根据下面的情况转发到对应的DNS上：
+    -   具有集群后缀的名字（例如“.cluster.local”）：请求被发送到coredns。
 
-    -   具有存根域后缀的名字（例如“.acme.local”）：请求被发送到配置的自定义 DNS 解析器（例如：监听在 1.2.3.4）。
-    -   未能匹配上后缀的名字（例如“widget.com”）：请求被转发到上游 DNS。
+    -   具有存根域后缀的名字（例如“.acme.local”）：请求被发送到配置的自定义DNS解析器（例如：监听在 1.2.3.4）。
+    -   未能匹配上后缀的名字（例如“widget.com”）：请求被转发到上游DNS。
 
 
 **图 1**  路由请求流程<a name="fig7582181514118"></a>  
@@ -175,7 +175,7 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 ## 卸载插件<a name="section7582615184814"></a>
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“ 卸载“。
-2.  在弹出的窗口中，单击“确认“，可卸载该插件。
+2.  在弹出的窗口中，单击“是“，可卸载该插件。
 
 ## 版本记录<a name="section1945192816714"></a>
 
@@ -192,15 +192,15 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 </th>
 </tr>
 </thead>
-<tbody><tr id="row12566114195411"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p956611419541"><a name="p956611419541"></a><a name="p956611419541"></a><span id="ph5234641125416"><a name="ph5234641125416"></a><a name="ph5234641125416"></a>1.17.1</span></p>
+<tbody><tr id="row12566114195411"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p956611419541"><a name="p956611419541"></a><a name="p956611419541"></a>1.17.1</p>
 </td>
 <td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p122317499543"><a name="p122317499543"></a><a name="p122317499543"></a>混合集群 v1.17.*</p>
 <p id="p1123119493546"><a name="p1123119493546"></a><a name="p1123119493546"></a>裸金属集群 v1.17.*</p>
 <p id="p10231949155412"><a name="p10231949155412"></a><a name="p10231949155412"></a>鲲鹏集群 v1.17.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p2566141405412"><a name="p2566141405412"></a><a name="p2566141405412"></a><span id="ph55484125514"><a name="ph55484125514"></a><a name="ph55484125514"></a>2020/08/19</span></p>
+<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p2566141405412"><a name="p2566141405412"></a><a name="p2566141405412"></a>2020/08/19</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1456681414548"><a name="p1456681414548"></a><a name="p1456681414548"></a><span id="ph2851112035514"><a name="ph2851112035514"></a><a name="ph2851112035514"></a>支持1.17集群</span></p>
+<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1456681414548"><a name="p1456681414548"></a><a name="p1456681414548"></a>支持1.17集群</p>
 </td>
 </tr>
 <tr id="row97875912317"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p19246621182"><a name="p19246621182"></a><a name="p19246621182"></a>1.15.3</p>

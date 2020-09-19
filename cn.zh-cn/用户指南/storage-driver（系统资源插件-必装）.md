@@ -45,5 +45,5 @@ storage-driver是一款云存储驱动插件，北向遵循标准容器平台存
 ## 卸载插件<a name="section20765191931911"></a>
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**storage-driver**下的“ 卸载“。
-2.  在弹出的窗口中，单击“确认“，可卸载该插件。
+2.  在弹出的窗口中，单击“是“，可卸载该插件。
 

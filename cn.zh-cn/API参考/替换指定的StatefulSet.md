@@ -26,7 +26,7 @@ The other fields cannot be updated.
 
 PUT /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\} \(Supports 1.9 and 1.9+\)
 
-PUT /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\} \(Compatible\)
+PUT /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\} \(Supports 1.15 and 1.15-\)
 
 [表1](#d0e39017)描述该API的参数。
 

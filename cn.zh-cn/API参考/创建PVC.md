@@ -254,10 +254,80 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </li></ul>
 </td>
 </tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>storageClassName</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>PVC的StorageClass名称</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>volumeName</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>PVC绑定的PV名称</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>resources</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p><a href="#request_ResourceRequirements">ResourceRequirements</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>需要的计算资源</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>volumeMode</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>PVC指定的PV类型</p>
+</td>
+</tr>
 </tbody>
 </table>
 
-**表 6**  PersistentVolumeClaimStatus
+**表 6**  ResourceRequirements
+
+<a name="request_ResourceRequirements"></a>
+<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.1"><p>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="10%" id="mcps1.2.5.1.2"><p>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.5.1.4"><p>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>limits</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>Object</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>计算资源限制</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>requests</p>
+</td>
+<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>Object</p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>计算资源申请</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 7**  PersistentVolumeClaimStatus
 
 <a name="request_PersistentVolumeClaimStatus"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.1"><p>参数</p>
@@ -304,7 +374,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 
 **状态码为 201 时: **
 
-**表 7**  响应Body参数
+**表 8**  响应Body参数
 
 <a name="responseParameter"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -355,7 +425,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </tbody>
 </table>
 
-**表 8**  PersistentVolumeClaimMetadata
+**表 9**  PersistentVolumeClaimMetadata
 
 <a name="response_PersistentVolumeClaimMetadata"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -386,7 +456,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </tbody>
 </table>
 
-**表 9**  PersistentVolumeClaimSpec
+**表 10**  PersistentVolumeClaimSpec
 
 <a name="response_PersistentVolumeClaimSpec"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -436,10 +506,66 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </li></ul>
 </td>
 </tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>storageClassName</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>PVC的StorageClass名称</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>volumeName</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>PVC绑定的PV名称</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>resources</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p><a href="#response_ResourceRequirements">ResourceRequirements</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>需要的计算资源</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>volumeMode</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>PVC指定的PV类型</p>
+</td>
+</tr>
 </tbody>
 </table>
 
-**表 10**  PersistentVolumeClaimStatus
+**表 11**  ResourceRequirements
+
+<a name="response_ResourceRequirements"></a>
+<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.2"><p>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="60%" id="mcps1.2.4.1.3"><p>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>limits</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Object</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>计算资源限制</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>requests</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Object</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>计算资源申请</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 12**  PersistentVolumeClaimStatus
 
 <a name="response_PersistentVolumeClaimStatus"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -532,7 +658,7 @@ POST /api/v1/namespaces/default/cloudpersistentvolumeclaims
 
 ## 状态码
 
-<a name="table4470"></a>
+<a name="table18"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.3.1.1"><p>状态码 </p>
 </th>
 <th class="cellrowborder" valign="top" width="85%" id="mcps1.1.3.1.2"><p>描述</p>

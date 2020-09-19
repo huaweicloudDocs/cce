@@ -33,7 +33,7 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>需要删除的PersistentVolumClaim的名称。 name格式为：Volume名称[?deleteVolume=BOOLEAN&amp;storageType=云存储类型]，中括号内可省略，示例：</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>需要删除的PersistentVolumClaim的名称。 name格式为：Volume名称?deleteVolume=BOOLEAN&amp;storageType=云存储类型]，中括号内可省略，示例：</p>
 <ul><li><p>volume-49f1?deleteVolume=true&amp;storageType=bs</p>
 </li><li><p>volume-49f1 其中：</p>
 </li><li><p>deleteVolume：删除PersistentVolumeClaim后是否保留后端关联的云存储。false表示不删除，true表示删除，默认为false。</p>
@@ -42,8 +42,7 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 </li><li><p>storageType：云存储的类型，和deleteVolume搭配使用。即deleteVolume和storageType必须同时配置。</p>
 <ul><li><p>bs：EVS云存储</p>
 </li><li><p>nfs：SFS弹性文件存储</p>
-</li><li><p>obs：OBS对象存储</p>
-</li><li><p>efs：SFS Turbo极速文件存储</p>
+</li><li><p>obs：OBS对象存储 [- efs：SFS Turbo极速文件存储</p>
 </li></ul>
 </li></ul>
 </td>
@@ -246,10 +245,66 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 </li></ul>
 </td>
 </tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>storageClassName</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>PVC的StorageClass名称</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>volumeName</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>PVC绑定的PV名称</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>resources</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p><a href="#response_ResourceRequirements">ResourceRequirements</a> object</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>需要的计算资源</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>volumeMode</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>PVC指定的PV类型</p>
+</td>
+</tr>
 </tbody>
 </table>
 
-**表 6**  PersistentVolumeClaimStatus
+**表 6**  ResourceRequirements
+
+<a name="response_ResourceRequirements"></a>
+<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.2"><p>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="60%" id="mcps1.2.4.1.3"><p>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>limits</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Object</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>计算资源限制</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>requests</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Object</p>
+</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>计算资源申请</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 7**  PersistentVolumeClaimStatus
 
 <a name="response_PersistentVolumeClaimStatus"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -290,32 +345,11 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 
 ## 响应示例
 
-**状态码为 200 时: **
-
-```
-{
-  "apiVersion" : "string",
-  "kind" : "string",
-  "metadata" : {
-    "name" : "例：my-pvc",
-    "labels" : "string"
-  },
-  "spec" : {
-    "volumeID" : "string",
-    "storageType" : "string",
-    "accessModes" : [ "string", "string" ]
-  },
-  "status" : {
-    "accessModes" : [ "string", "string" ],
-    "capacity" : "string",
-    "phase" : "string"
-  }
-}
-```
+无
 
 ## 状态码
 
-<a name="table4471"></a>
+<a name="table19"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.3.1.1"><p>状态码 </p>
 </th>
 <th class="cellrowborder" valign="top" width="85%" id="mcps1.1.3.1.2"><p>描述</p>

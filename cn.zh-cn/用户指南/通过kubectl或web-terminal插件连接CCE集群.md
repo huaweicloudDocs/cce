@@ -37,8 +37,8 @@ CCE支持“VPC网络内访问“和“互联网访问“两种方式访问集�
     ![](figures/通过kubectl连接集群.png "通过kubectl连接集群")
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   CCE支持华为云账号和IAM用户分别下载config文件（kubeconfig.json），IAM用户下载的config文件只有30天的有效期，而华为云账号下载的config文件会长期有效。
-    >-   IAM用户下载的config文件所拥有的Kubernetes权限与CCE控制台上IAM用户所拥有的权限一致。
+    >-   您可以在“kubectl“页签下方便的**下载kubectl配置文件**（kubeconfig.json），CCE支持华为云账号和IAM用户分别下载该配置文件，IAM用户下载的配置文件只有30天的有效期，而华为云账号下载的配置文件会长期有效。
+    >-   IAM用户下载的配置文件所拥有的Kubernetes权限与CCE控制台上IAM用户所拥有的权限一致。
 
 
 ## 相关操作<a name="section422912118536"></a>

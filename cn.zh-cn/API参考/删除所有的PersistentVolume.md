@@ -21,14 +21,7 @@ DELETE /api/v1/persistentvolumes
 </th>
 </tr>
 </thead>
-<tbody><tr id="row45526591"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p63775286"><a name="p63775286"></a><a name="p63775286"></a>namespace</p>
-</td>
-<td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p65524504"><a name="p65524504"></a><a name="p65524504"></a>Yes</p>
-</td>
-<td class="cellrowborder" valign="top" width="61.22%" headers="mcps1.2.4.1.3 "><p id="p5884623"><a name="p5884623"></a><a name="p5884623"></a>object name and auth scope, such as for teams and projects</p>
-</td>
-</tr>
-<tr id="row52961614"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p62032351"><a name="p62032351"></a><a name="p62032351"></a>pretty</p>
+<tbody><tr id="row52961614"><td class="cellrowborder" valign="top" width="22.45%" headers="mcps1.2.4.1.1 "><p id="p62032351"><a name="p62032351"></a><a name="p62032351"></a>pretty</p>
 </td>
 <td class="cellrowborder" valign="top" width="16.33%" headers="mcps1.2.4.1.2 "><p id="p58564536"><a name="p58564536"></a><a name="p58564536"></a>No</p>
 </td>

@@ -26,7 +26,7 @@ PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.9 a
 
 PUT /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.7\)
 
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Compatible\)
+PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.15 and 1.15-\)
 
 [表1](#table14970324122818)描述该API的参数
 
