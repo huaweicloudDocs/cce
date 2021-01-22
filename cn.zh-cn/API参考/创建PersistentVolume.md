@@ -411,7 +411,7 @@ POST /api/v1/persistentvolumes
 </td>
 <td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p194695794511"><a name="p194695794511"></a><a name="p194695794511"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><pre class="screen" id="screen62758517110"><a name="screen62758517110"></a><a name="screen62758517110"></a>Driver is the name of the driver to use for this volume.
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><pre class="screen" id="screen62758517110"><a name="screen62758517110"></a><a name="screen62758517110"></a><span>Driver is the name of the driver to use for this volume.</span>
 If the storage type is <strong id="b588670192719"><a name="b588670192719"></a><a name="b588670192719"></a>EVS</strong>, set this parameter to <strong id="b595119511274"><a name="b595119511274"></a><a name="b595119511274"></a>huawei.com/fuxivol</strong>.
 If the storage type is <strong id="b12738194842915"><a name="b12738194842915"></a><a name="b12738194842915"></a>SFS</strong>, set this parameter to <strong id="b679720132301"><a name="b679720132301"></a><a name="b679720132301"></a>huawei.com/fuxinfs</strong>.
 If the storage type is <strong id="b514162023019"><a name="b514162023019"></a><a name="b514162023019"></a>OBS</strong>, set this parameter to <strong id="b893710273307"><a name="b893710273307"></a><a name="b893710273307"></a>huawei.com/fuxiobs</strong>.
@@ -474,8 +474,9 @@ huawei.com/fuxiefs</pre>
 </td>
 <td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p1629133610549"><a name="p1629133610549"></a><a name="p1629133610549"></a>If the storage type is EVS, set this parameter to ext4.</p>
 <p id="p136291436145417"><a name="p136291436145417"></a><a name="p136291436145417"></a>If the storage type is SFS, set this parameter to nfs.</p>
-<p id="p9630193612541"><a name="p9630193612541"></a><a name="p9630193612541"></a>If the storage type is OBS, set this parameter to s3fs/obsfs.</p>
-<p id="p86301363546"><a name="p86301363546"></a><a name="p86301363546"></a>If the storage type is SFS-Turbo, set this parameter to nfs.</p>
+<p id="p9630193612541"><a name="p9630193612541"></a><a name="p9630193612541"></a>If the storage type is OBS, set this parameter to s3fs.(≥v1.15)</p>
+<p id="p529531014294"><a name="p529531014294"></a><a name="p529531014294"></a>If the storage type is OBS, set this parameter to obs.(≤v1.13)</p>
+<p id="p86301363546"><a name="p86301363546"></a><a name="p86301363546"></a>If the storage type is SFS-Turbo, set this parameter to efs.</p>
 </td>
 </tr>
 <tr id="row7630133605411"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p273613314110"><a name="p273613314110"></a><a name="p273613314110"></a>volumeID</p>
@@ -537,7 +538,7 @@ huawei.com/fuxiefs</pre>
 </td>
 <td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p2042182763618"><a name="p2042182763618"></a><a name="p2042182763618"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><pre class="screen" id="screen942122715368"><a name="screen942122715368"></a><a name="screen942122715368"></a>Driver is the name of the driver to use for this volume.
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><pre class="screen" id="screen942122715368"><a name="screen942122715368"></a><a name="screen942122715368"></a><span>Driver is the name of the driver to use for this volume.</span>
 If the storage type is <strong id="b194242715366"><a name="b194242715366"></a><a name="b194242715366"></a>EVS</strong>, set this parameter to disk.csi.everest.io.
 If the storage type is <strong id="b2042172713360"><a name="b2042172713360"></a><a name="b2042172713360"></a>SFS</strong>, set this parameter to nas.csi.everest.io.
 If the storage type is <strong id="b1342192713368"><a name="b1342192713368"></a><a name="b1342192713368"></a>OBS</strong>, set this parameter to obs.csi.everest.io.
@@ -573,7 +574,7 @@ sfsturbo.csi.everest.io.</pre>
 </td>
 <td class="cellrowborder" valign="top" width="19.759999999999998%" headers="mcps1.2.5.1.3 "><p id="p516616819564"><a name="p516616819564"></a><a name="p516616819564"></a>string</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p139781637113214"><a name="p139781637113214"></a><a name="p139781637113214"></a>VolumeHandle is the unique volume name returned by the CSI volume plugin’s CreateVolume to refer to the volume on all subsequent calls. For EVS\SFS\SFS-Turbo, fill the ID of the iaas resource, for OBS, fill the name of obs.</p>
+<td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p139781637113214"><a name="p139781637113214"></a><a name="p139781637113214"></a>VolumeHandle is the unique volume name returned by the CSI volume<span> plugin’s CreateVolume to refer to the volume on all subsequent calls.</span> For EVS\SFS\SFS-Turbo, fill the ID of the iaas resource, for OBS, fill the name of obs.</p>
 </td>
 </tr>
 </tbody>

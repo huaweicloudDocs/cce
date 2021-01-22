@@ -205,7 +205,7 @@ DELETE  /api/v1/namespaces/\{namespace\}/persistentvolumeclaims/\{name\}
 </thead>
 <tbody><tr id="r3e3f40d0ede848c4bbbb7b4863b6af4c"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="a9e2f86eb816746e280d1ec69bef19894"><a name="a9e2f86eb816746e280d1ec69bef19894"></a><a name="a9e2f86eb816746e280d1ec69bef19894"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="a97163082ddd5447b884268416909cc62"><a name="a97163082ddd5447b884268416909cc62"></a><a name="a97163082ddd5447b884268416909cc62"></a>Delete a PersistentVolumeClaim resource objectre successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="a97163082ddd5447b884268416909cc62"><a name="a97163082ddd5447b884268416909cc62"></a><a name="a97163082ddd5447b884268416909cc62"></a>Delete a PersistentVolumeClaim resource object successfully.</p>
 </td>
 </tr>
 </tbody>

@@ -213,7 +213,7 @@ DELETE /api/v1/namespaces/\{namespace\}/endpoints/\{name\}
 </thead>
 <tbody><tr id="zh-cn_topic_0079614926_row25979390"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079614926_p23955812"><a name="zh-cn_topic_0079614926_p23955812"></a><a name="zh-cn_topic_0079614926_p23955812"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614926_p61372619"><a name="zh-cn_topic_0079614926_p61372619"></a><a name="zh-cn_topic_0079614926_p61372619"></a>Delete an Endpoint resource objectre successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614926_p61372619"><a name="zh-cn_topic_0079614926_p61372619"></a><a name="zh-cn_topic_0079614926_p61372619"></a>Delete an Endpoint resource object successfully.</p>
 </td>
 </tr>
 </tbody>

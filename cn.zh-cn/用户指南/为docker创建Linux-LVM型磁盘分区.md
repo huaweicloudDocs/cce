@@ -1,8 +1,14 @@
 # 为docker创建Linux LVM型磁盘分区<a name="cce_01_0200"></a>
 
-指导用户检查是否存在“可用裸盘“和“Linux LVM型磁盘分区“，并提供创建Linux LVM型磁盘分区的方法。
+-   [操作场景](#section1719177173914)
+-   [前提条件](#section19834182211494)
+-   [操作步骤](#section18184888105)
 
-## 准备工作<a name="section19834182211494"></a>
+## 操作场景<a name="section1719177173914"></a>
+
+检查是否存在“可用裸盘“和“Linux LVM型磁盘分区“，并提供创建Linux LVM型磁盘分区的方法。
+
+## 前提条件<a name="section19834182211494"></a>
 
 为了使系统更加稳定，请给docker单独挂载数据盘，使用direct-lvm模式。挂载磁盘方法请参见[这里](https://support.huaweicloud.com/qs-evs/evs_01_0037.html)。
 
@@ -41,6 +47,7 @@
         xvdb 202:16   0  100G  0 disk
         ```
 
+
 2.  检查是否存在可用区，当前仅支持Linux LVM型分区。
     1.  以root用户登录目标节点。
     2.  查看当前系统类型为Linux LVM的分区。
@@ -75,6 +82,7 @@
         ```
 
         若无可用区，请执行[3](#li111391316141612)为docker创建可用区。
+
 
 3.  <a name="li111391316141612"></a>为docker创建Linux LVM型磁盘分区。
     1.  执行如下命令，创建磁盘分区。其中devicename为可用的裸盘名，如[1](#li139011015111020)中的xvdb。

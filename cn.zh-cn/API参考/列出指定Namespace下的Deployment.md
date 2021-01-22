@@ -99,12 +99,527 @@ N/A
 ```
 {
     "kind": "DeploymentList",
-    "apiVersion": "apps/v1beta1",
+    "apiVersion": "apps/v1",
     "metadata": {
-        "selfLink": "/apis/apps/v1beta1/namespaces/ns-12130306-s/deployments",
-        "resourceVersion": "418745"
+        "selfLink": "/apis/apps/v1/namespaces/kube-system/deployments",
+        "resourceVersion": "11628542"
     },
-    "items": []
+    "items": [
+        {
+            "metadata": {
+                "name": "coredns",
+                "namespace": "kube-system",
+                "selfLink": "/apis/apps/v1/namespaces/kube-system/deployments/coredns",
+                "uid": "08b538c7-c9f9-4bd8-96fb-9a161a25ba48",
+                "resourceVersion": "10574590",
+                "generation": 1,
+                "creationTimestamp": "2020-11-11T02:54:56Z",
+                "labels": {
+                    "app": "coredns",
+                    "k8s-app": "coredns",
+                    "kubernetes.io/cluster-service": "true",
+                    "kubernetes.io/name": "CoreDNS",
+                    "release": "cceaddon-coredns"
+                },
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "1"
+                }
+            },
+            "spec": {
+                "replicas": 2,
+                "selector": {
+                    "matchLabels": {
+                        "app": "coredns",
+                        "k8s-app": "coredns"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "app": "coredns",
+                            "k8s-app": "coredns",
+                            "kubernetes.io/evictcritical": "",
+                            "release": "cceaddon-coredns"
+                        },
+                        "annotations": {
+                            "checksum/config": "cd3bc40fa01a7ca64fa89c3923c7ffe69e8d679a55cbd4a89d0d172bf9fdb966",
+                            "scheduler.alpha.kubernetes.io/critical-pod": "",
+                            "scheduler.alpha.kubernetes.io/tolerations": "[{\"key\":\"CriticalAddonsOnly\", \"operator\":\"Exists\"}]",
+                            "seccomp.security.alpha.kubernetes.io/pod": "runtime/default"
+                        }
+                    },
+                    "spec": {
+                        "volumes": [
+                            {
+                                "name": "logfile",
+                                "hostPath": {
+                                    "path": "/var/paas/sys/log/coredns/",
+                                    "type": ""
+                                }
+                            },
+                            {
+                                "name": "tmp",
+                                "emptyDir": {}
+                            },
+                            {
+                                "name": "config-volume",
+                                "configMap": {
+                                    "name": "coredns",
+                                    "items": [
+                                        {
+                                            "key": "Corefile",
+                                            "path": "Corefile"
+                                        }
+                                    ],
+                                    "defaultMode": 420
+                                }
+                            }
+                        ],
+                        "containers": [
+                            {
+                                "name": "coredns",
+                                "image": "coredns:1.15.7",
+                                "command": [
+                                    "/bin/sh",
+                                    "-c",
+                                    "/coredns -conf=/etc/coredns/Corefile -rmem=udp#8388608 -wmem=udp#1048576 1\u003e\u003e/var/paas/sys/log/coredns/coredns.log 2\u003e\u00261"
+                                ],
+                                "ports": [
+                                    {
+                                        "containerPort": 5353,
+                                        "protocol": "UDP"
+                                    }
+                                ],
+                                "env": [
+                                    {
+                                        "name": "POD_IP",
+                                        "valueFrom": {
+                                            "fieldRef": {
+                                                "apiVersion": "v1",
+                                                "fieldPath": "status.podIP"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "500m",
+                                        "memory": "512Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "500m",
+                                        "memory": "512Mi"
+                                    }
+                                },
+                                "volumeMounts": [
+                                    {
+                                        "name": "config-volume",
+                                        "mountPath": "/etc/coredns"
+                                    },
+                                    {
+                                        "name": "tmp",
+                                        "mountPath": "/tmp"
+                                    },
+                                    {
+                                        "name": "logfile",
+                                        "mountPath": "/var/paas/sys/log/coredns/",
+                                        "policy": {
+                                            "logs": {
+                                                "rotate": "Daily"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "livenessProbe": {
+                                    "httpGet": {
+                                        "path": "/health",
+                                        "port": 8080,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 60,
+                                    "timeoutSeconds": 5,
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "failureThreshold": 5
+                                },
+                                "readinessProbe": {
+                                    "httpGet": {
+                                        "path": "/health",
+                                        "port": 8080,
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 3,
+                                    "timeoutSeconds": 3,
+                                    "periodSeconds": 5,
+                                    "successThreshold": 1,
+                                    "failureThreshold": 3
+                                },
+                                "lifecycle": {
+                                    "preStop": {
+                                        "exec": {
+                                            "command": [
+                                                "sleep",
+                                                "5"
+                                            ]
+                                        }
+                                    }
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "imagePullPolicy": "Always",
+                                "securityContext": {
+                                    "capabilities": {
+                                        "add": [
+                                            "NET_BIND_SERVICE"
+                                        ],
+                                        "drop": [
+                                            "all"
+                                        ]
+                                    },
+                                    "runAsUser": 10000,
+                                    "readOnlyRootFilesystem": true
+                                }
+                            }
+                        ],
+                        "restartPolicy": "Always",
+                        "terminationGracePeriodSeconds": 30,
+                        "dnsPolicy": "Default",
+                        "serviceAccountName": "coredns",
+                        "serviceAccount": "coredns",
+                        "securityContext": {},
+                        "affinity": {
+                            "podAntiAffinity": {
+                                "requiredDuringSchedulingIgnoredDuringExecution": [
+                                    {
+                                        "labelSelector": {
+                                            "matchExpressions": [
+                                                {
+                                                    "key": "app",
+                                                    "operator": "In",
+                                                    "values": [
+                                                        "coredns"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "topologyKey": "kubernetes.io/hostname"
+                                    }
+                                ]
+                            }
+                        },
+                        "schedulerName": "default-scheduler",
+                        "tolerations": [
+                            {
+                                "key": "node.kubernetes.io/not-ready",
+                                "operator": "Exists",
+                                "effect": "NoExecute",
+                                "tolerationSeconds": 60
+                            },
+                            {
+                                "key": "node.kubernetes.io/unreachable",
+                                "operator": "Exists",
+                                "effect": "NoExecute",
+                                "tolerationSeconds": 60
+                            }
+                        ],
+                        "priorityClassName": "system-cluster-critical"
+                    }
+                },
+                "strategy": {
+                    "type": "RollingUpdate",
+                    "rollingUpdate": {
+                        "maxUnavailable": 0,
+                        "maxSurge": "10%"
+                    }
+                },
+                "revisionHistoryLimit": 10,
+                "progressDeadlineSeconds": 600
+            },
+            "status": {
+                "observedGeneration": 1,
+                "replicas": 2,
+                "updatedReplicas": 2,
+                "readyReplicas": 2,
+                "availableReplicas": 2,
+                "conditions": [
+                    {
+                        "type": "Progressing",
+                        "status": "True",
+                        "lastUpdateTime": "2020-11-11T10:59:56Z",
+                        "lastTransitionTime": "2020-11-11T10:59:56Z",
+                        "reason": "NewReplicaSetAvailable",
+                        "message": "ReplicaSet \"coredns-749d9dd57\" has successfully progressed."
+                    },
+                    {
+                        "type": "Available",
+                        "status": "True",
+                        "lastUpdateTime": "2020-12-11T12:23:40Z",
+                        "lastTransitionTime": "2020-12-11T12:23:40Z",
+                        "reason": "MinimumReplicasAvailable",
+                        "message": "Deployment has minimum availability."
+                    }
+                ]
+            }
+        },
+        {
+            "metadata": {
+                "name": "everest-csi-controller",
+                "namespace": "kube-system",
+                "selfLink": "/apis/apps/v1/namespaces/kube-system/deployments/everest-csi-controller",
+                "uid": "e51e7fcb-5e2e-43b7-a830-cf7a708a9081",
+                "resourceVersion": "10202131",
+                "generation": 1,
+                "creationTimestamp": "2020-11-11T02:54:56Z",
+                "labels": {
+                    "app": "everest-csi-controller",
+                    "release": "cceaddon-everest"
+                },
+                "annotations": {
+                    "deployment.kubernetes.io/revision": "1"
+                }
+            },
+            "spec": {
+                "replicas": 2,
+                "selector": {
+                    "matchLabels": {
+                        "app": "everest-csi-controller"
+                    }
+                },
+                "template": {
+                    "metadata": {
+                        "creationTimestamp": null,
+                        "labels": {
+                            "app": "everest-csi-controller",
+                            "release": "cceaddon-everest"
+                        },
+                        "annotations": {
+                            "seccomp.security.alpha.kubernetes.io/pod": "runtime/default"
+                        }
+                    },
+                    "spec": {
+                        "volumes": [
+                            {
+                                "name": "cipher-root",
+                                "hostPath": {
+                                    "path": "/var/paas/srv/kubernetes",
+                                    "type": "Directory"
+                                }
+                            },
+                            {
+                                "name": "host-log",
+                                "hostPath": {
+                                    "path": "/var/paas/sys/log/everest-csi-controller",
+                                    "type": "DirectoryOrCreate"
+                                }
+                            },
+                            {
+                                "name": "localtime",
+                                "hostPath": {
+                                    "path": "/etc/localtime",
+                                    "type": "File"
+                                }
+                            }
+                        ],
+                        "containers": [
+                            {
+                                "name": "everest-csi-controller",
+                                "image": "everest-csi-controller:1.1.15",
+                                "args": [
+                                    "--controllers=*",
+                                    "--v=2",
+                                    "--leader-elect=true",
+                                    "--leader-elect-resource-lock=endpoints",
+                                    "--leader-elect-namespace=kube-system",
+                                    "--feature-gates=Topology=true",
+                                    "--provision-with-strict-topology=true"
+                                ],
+                                "ports": [
+                                    {
+                                        "name": "healthzport",
+                                        "containerPort": 3225,
+                                        "protocol": "TCP"
+                                    }
+                                ],
+                                "resources": {
+                                    "limits": {
+                                        "cpu": "250m",
+                                        "memory": "600Mi"
+                                    },
+                                    "requests": {
+                                        "cpu": "250m",
+                                        "memory": "600Mi"
+                                    }
+                                },
+                                "volumeMounts": [
+                                    {
+                                        "name": "cipher-root",
+                                        "readOnly": true,
+                                        "mountPath": "/var/paas/everest-csi-driver/cipher"
+                                    },
+                                    {
+                                        "name": "host-log",
+                                        "mountPath": "/var/paas/sys/log/everest-csi-controller",
+                                        "policy": {
+                                            "logs": {
+                                                "rotate": "Hourly"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "localtime",
+                                        "readOnly": true,
+                                        "mountPath": "/etc/localtime"
+                                    }
+                                ],
+                                "livenessProbe": {
+                                    "httpGet": {
+                                        "path": "/healthz",
+                                        "port": "healthzport",
+                                        "scheme": "HTTP"
+                                    },
+                                    "initialDelaySeconds": 60,
+                                    "timeoutSeconds": 5,
+                                    "periodSeconds": 10,
+                                    "successThreshold": 1,
+                                    "failureThreshold": 5
+                                },
+                                "terminationMessagePath": "/dev/termination-log",
+                                "terminationMessagePolicy": "File",
+                                "imagePullPolicy": "IfNotPresent",
+                                "securityContext": {
+                                    "capabilities": {
+                                        "add": [
+                                            "SYS_ADMIN",
+                                            "DAC_OVERRIDE"
+                                        ],
+                                        "drop": [
+                                            "all"
+                                        ]
+                                    }
+                                }
+                            }
+                        ],
+                        "restartPolicy": "Always",
+                        "terminationGracePeriodSeconds": 10,
+                        "dnsPolicy": "Default",
+                        "serviceAccountName": "everest-csi-plugin",
+                        "serviceAccount": "everest-csi-plugin",
+                        "securityContext": {},
+                        "affinity": {
+                            "nodeAffinity": {
+                                "requiredDuringSchedulingIgnoredDuringExecution": {
+                                    "nodeSelectorTerms": [
+                                        {
+                                            "matchExpressions": [
+                                                {
+                                                    "key": "kubernetes.io/role",
+                                                    "operator": "NotIn",
+                                                    "values": [
+                                                        "virtual-kubelet",
+                                                        "edge"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            },
+                            "podAffinity": {
+                                "preferredDuringSchedulingIgnoredDuringExecution": [
+                                    {
+                                        "weight": 50,
+                                        "podAffinityTerm": {
+                                            "labelSelector": {
+                                                "matchExpressions": [
+                                                    {
+                                                        "key": "k8s-app",
+                                                        "operator": "In",
+                                                        "values": [
+                                                            "coredns"
+                                                        ]
+                                                    }
+                                                ]
+                                            },
+                                            "topologyKey": "kubernetes.io/hostname"
+                                        }
+                                    }
+                                ]
+                            },
+                            "podAntiAffinity": {
+                                "requiredDuringSchedulingIgnoredDuringExecution": [
+                                    {
+                                        "labelSelector": {
+                                            "matchExpressions": [
+                                                {
+                                                    "key": "app",
+                                                    "operator": "In",
+                                                    "values": [
+                                                        "everest-csi-controller"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        "topologyKey": "kubernetes.io/hostname"
+                                    }
+                                ]
+                            }
+                        },
+                        "schedulerName": "default-scheduler",
+                        "tolerations": [
+                            {
+                                "key": "node.kubernetes.io/not-ready",
+                                "operator": "Exists",
+                                "effect": "NoExecute",
+                                "tolerationSeconds": 60
+                            },
+                            {
+                                "key": "node.kubernetes.io/unreachable",
+                                "operator": "Exists",
+                                "effect": "NoExecute",
+                                "tolerationSeconds": 60
+                            }
+                        ],
+                        "priorityClassName": "system-cluster-critical"
+                    }
+                },
+                "strategy": {
+                    "type": "RollingUpdate",
+                    "rollingUpdate": {
+                        "maxUnavailable": "50%",
+                        "maxSurge": "25%"
+                    }
+                },
+                "revisionHistoryLimit": 10,
+                "progressDeadlineSeconds": 600
+            },
+            "status": {
+                "observedGeneration": 1,
+                "replicas": 2,
+                "updatedReplicas": 2,
+                "readyReplicas": 2,
+                "availableReplicas": 2,
+                "conditions": [
+                    {
+                        "type": "Available",
+                        "status": "True",
+                        "lastUpdateTime": "2020-11-11T02:55:39Z",
+                        "lastTransitionTime": "2020-11-11T02:55:39Z",
+                        "reason": "MinimumReplicasAvailable",
+                        "message": "Deployment has minimum availability."
+                    },
+                    {
+                        "type": "Progressing",
+                        "status": "True",
+                        "lastUpdateTime": "2020-11-11T10:59:55Z",
+                        "lastTransitionTime": "2020-11-11T10:59:55Z",
+                        "reason": "NewReplicaSetAvailable",
+                        "message": "ReplicaSet \"everest-csi-controller-66955966db\" has successfully progressed."
+                    }
+                ]
+            }
+        }
+    ]
 }
 ```
 

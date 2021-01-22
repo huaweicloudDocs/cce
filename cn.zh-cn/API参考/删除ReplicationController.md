@@ -213,7 +213,7 @@ DELETE /api/v1/namespaces/\{namespace\}/replicationcontrollers/\{name\}
 </thead>
 <tbody><tr id="zh-cn_topic_0079615022_row34146301"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615022_p14387025"><a name="zh-cn_topic_0079615022_p14387025"></a><a name="zh-cn_topic_0079615022_p14387025"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615022_p24498377"><a name="zh-cn_topic_0079615022_p24498377"></a><a name="zh-cn_topic_0079615022_p24498377"></a>Delete a ReplicationController resource objectre successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615022_p24498377"><a name="zh-cn_topic_0079615022_p24498377"></a><a name="zh-cn_topic_0079615022_p24498377"></a>Delete a ReplicationController resource object successfully.</p>
 </td>
 </tr>
 </tbody>

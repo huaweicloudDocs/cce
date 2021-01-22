@@ -82,7 +82,7 @@ N/A
 </thead>
 <tbody><tr id="zh-cn_topic_0079615016_row23578293"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615016_p30793598"><a name="zh-cn_topic_0079615016_p30793598"></a><a name="zh-cn_topic_0079615016_p30793598"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615016_p11253479"><a name="zh-cn_topic_0079615016_p11253479"></a><a name="zh-cn_topic_0079615016_p11253479"></a>Delete a Service resource objectre successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615016_p11253479"><a name="zh-cn_topic_0079615016_p11253479"></a><a name="zh-cn_topic_0079615016_p11253479"></a>Delete a Service resource object successfully.</p>
 </td>
 </tr>
 </tbody>

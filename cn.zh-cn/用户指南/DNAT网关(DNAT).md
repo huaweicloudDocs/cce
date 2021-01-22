@@ -1,5 +1,15 @@
 # DNAT网关\(DNAT\)<a name="cce_01_0058"></a>
 
+-   [操作场景](#section1610320382509)
+-   [约束与限制](#section1153345812121)
+-   [前提条件](#section33871214153614)
+-   [工作负载创建时设置](#section744117150366)
+-   [工作负载创建完成后设置](#section156711537124016)
+-   [更新Service](#section1335271211407)
+-   [通过kubectl命令行创建](#section646312404363)
+
+## 操作场景<a name="section1610320382509"></a>
+
 “DNAT网关“可以为集群节点提供网络地址转换服务，使多个节点可以共享使用弹性IP。
 
 NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节点绑定，任何节点状态的异常不影响其访问。访问方式由公网弹性IP地址以及设置的访问端口组成，例如“10.117.117.117:80”。
@@ -25,7 +35,7 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
 
 ## 前提条件<a name="section33871214153614"></a>
 
-你需要提前创建NAT网关实例和弹性IP，具体操作步骤如下：
+您需要提前创建NAT网关实例和弹性IP，具体操作步骤如下：
 
 1.  登录管理控制台，在服务列表中选择“网络 \> NAT网关”，单击页面右上角的“购买NAT网关“。下图是购买NAT网关的案例，请根据实际业务需求填写相关内容。
 
@@ -62,6 +72,7 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
         -   容器端口：容器镜像中工作负载实际监听端口，需用户确定。nginx程序实际监听的端口为80。
         -   访问端口：容器端口映射端口，访问工作负载时使用，端口范围为1-65535，可任意指定。
 
+
 2.  完成配置后，直接单击“确定“。
 3.  单击“下一步“进入“高级设置“页面，直接单击“创建“。
 4.  工作负载创建成功后，单击“工作负载 \> 无状态负载 Deployment“或“工作负载 \> 有状态负载 StatefulSet“，在工作负载列表页面，单击“查看应用详情“进入工作负载详情页，在“访问方式“页签下，获取方式地址，例如“10.154.78.160:2“。
@@ -97,6 +108,7 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
         -   容器端口：容器镜像中工作负载程序实际监听端口，需用户确定。nginx程序实际监听的端口为80。
         -   访问端口：容器端口映射端口，访问工作负载时使用，端口范围为1-65535，可任意指定。
 
+
 5.  单击“创建”。工作负载已添加“DNAT网关 \( DNAT \)”的服务。
 
 ## 更新Service<a name="section1335271211407"></a>
@@ -109,7 +121,7 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
 
 **前提条件**
 
-请参见[通过kubectl或web-terminal插件连接CCE集群](通过kubectl或web-terminal插件连接CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
+请参见[通过kubectl或web-terminal插件操作CCE集群](通过kubectl或web-terminal插件操作CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
 
 **操作步骤**
 
@@ -121,7 +133,7 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
     **vi nginx-deployment.yaml**
 
     ```
-    apiVersion: extensions/v1beta1
+    apiVersion: apps/v1
     kind: Deployment
     metadata:
       name: nginx
@@ -174,54 +186,68 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
     **表 1**  关键参数说明
 
     <a name="table1819001615355"></a>
-    <table><thead align="left"><tr id="row1519121663519"><th class="cellrowborder" valign="top" width="30.416958304169583%" id="mcps1.2.4.1.1"><p id="p18191161619356"><a name="p18191161619356"></a><a name="p18191161619356"></a>参数</p>
+    <table><thead align="left"><tr id="row1519121663519"><th class="cellrowborder" valign="top" width="26.240000000000002%" id="mcps1.2.5.1.1"><p id="p18191161619356"><a name="p18191161619356"></a><a name="p18191161619356"></a>参数</p>
     </th>
-    <th class="cellrowborder" valign="top" width="17.98820117988201%" id="mcps1.2.4.1.2"><p id="p1191141613357"><a name="p1191141613357"></a><a name="p1191141613357"></a>参数类型</p>
+    <th class="cellrowborder" valign="top" width="14.510000000000002%" id="mcps1.2.5.1.2"><p id="p17701449131815"><a name="p17701449131815"></a><a name="p17701449131815"></a>是否必填</p>
     </th>
-    <th class="cellrowborder" valign="top" width="51.594840515948405%" id="mcps1.2.4.1.3"><p id="p1919116161353"><a name="p1919116161353"></a><a name="p1919116161353"></a>描述</p>
+    <th class="cellrowborder" valign="top" width="14.26%" id="mcps1.2.5.1.3"><p id="p1191141613357"><a name="p1191141613357"></a><a name="p1191141613357"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="44.99%" id="mcps1.2.5.1.4"><p id="p1919116161353"><a name="p1919116161353"></a><a name="p1919116161353"></a>描述</p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row15191171618357"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p102011514170"><a name="p102011514170"></a><a name="p102011514170"></a>kubernetes.io/elb.class</p>
+    <tbody><tr id="row15191171618357"><td class="cellrowborder" valign="top" width="26.240000000000002%" headers="mcps1.2.5.1.1 "><p id="p102011514170"><a name="p102011514170"></a><a name="p102011514170"></a>kubernetes.io/elb.class</p>
     </td>
-    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p1090683224719"><a name="p1090683224719"></a><a name="p1090683224719"></a>String</p>
+    <td class="cellrowborder" valign="top" width="14.510000000000002%" headers="mcps1.2.5.1.2 "><p id="p570117494183"><a name="p570117494183"></a><a name="p570117494183"></a>是</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p16904132104710"><a name="p16904132104710"></a><a name="p16904132104710"></a>该参数配置为DNAT用于对接NAT网关服务添加DNAT规则。</p>
+    <td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.3 "><p id="p1090683224719"><a name="p1090683224719"></a><a name="p1090683224719"></a>String</p>
     </td>
-    </tr>
-    <tr id="row81941516153513"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p4764162894719"><a name="p4764162894719"></a><a name="p4764162894719"></a>kubernetes.io/natgateway.id</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p77621528184710"><a name="p77621528184710"></a><a name="p77621528184710"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p416573016509"><a name="p416573016509"></a><a name="p416573016509"></a>用于指定NAT网关ID。</p>
+    <td class="cellrowborder" valign="top" width="44.99%" headers="mcps1.2.5.1.4 "><p id="p16904132104710"><a name="p16904132104710"></a><a name="p16904132104710"></a>该参数配置为DNAT用于对接NAT网关服务添加DNAT规则。</p>
     </td>
     </tr>
-    <tr id="row201957167350"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p18966182113208"><a name="p18966182113208"></a><a name="p18966182113208"></a>loadBalancerIP</p>
+    <tr id="row81941516153513"><td class="cellrowborder" valign="top" width="26.240000000000002%" headers="mcps1.2.5.1.1 "><p id="p4764162894719"><a name="p4764162894719"></a><a name="p4764162894719"></a>kubernetes.io/natgateway.id</p>
     </td>
-    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p336744055219"><a name="p336744055219"></a><a name="p336744055219"></a>String</p>
+    <td class="cellrowborder" valign="top" width="14.510000000000002%" headers="mcps1.2.5.1.2 "><p id="p3701144901811"><a name="p3701144901811"></a><a name="p3701144901811"></a>是</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p2075662814474"><a name="p2075662814474"></a><a name="p2075662814474"></a>公网弹性IP。</p>
+    <td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.3 "><p id="p77621528184710"><a name="p77621528184710"></a><a name="p77621528184710"></a>String</p>
     </td>
-    </tr>
-    <tr id="row17773517113812"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p17120639161311"><a name="p17120639161311"></a><a name="p17120639161311"></a>port</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p1120939161311"><a name="p1120939161311"></a><a name="p1120939161311"></a>Integer</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p1120163961310"><a name="p1120163961310"></a><a name="p1120163961310"></a>对应界面上的访问端口，取值范围为1 ~ 65535。</p>
+    <td class="cellrowborder" valign="top" width="44.99%" headers="mcps1.2.5.1.4 "><p id="p416573016509"><a name="p416573016509"></a><a name="p416573016509"></a>用于指定NAT网关ID。</p>
     </td>
     </tr>
-    <tr id="row2339171473819"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p2022520488387"><a name="p2022520488387"></a><a name="p2022520488387"></a>targetPort</p>
+    <tr id="row201957167350"><td class="cellrowborder" valign="top" width="26.240000000000002%" headers="mcps1.2.5.1.1 "><p id="p18966182113208"><a name="p18966182113208"></a><a name="p18966182113208"></a>loadBalancerIP</p>
     </td>
-    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p522534816381"><a name="p522534816381"></a><a name="p522534816381"></a>String</p>
+    <td class="cellrowborder" valign="top" width="14.510000000000002%" headers="mcps1.2.5.1.2 "><p id="p1701349181816"><a name="p1701349181816"></a><a name="p1701349181816"></a>是</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p52251448103812"><a name="p52251448103812"></a><a name="p52251448103812"></a>对应界面上的容器端口，取值范围为1 ~ 65535。</p>
+    <td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.3 "><p id="p336744055219"><a name="p336744055219"></a><a name="p336744055219"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="44.99%" headers="mcps1.2.5.1.4 "><p id="p2075662814474"><a name="p2075662814474"></a><a name="p2075662814474"></a>公网弹性IP。</p>
     </td>
     </tr>
-    <tr id="row02694357138"><td class="cellrowborder" valign="top" width="30.416958304169583%" headers="mcps1.2.4.1.1 "><p id="p627233515132"><a name="p627233515132"></a><a name="p627233515132"></a>type</p>
+    <tr id="row17773517113812"><td class="cellrowborder" valign="top" width="26.240000000000002%" headers="mcps1.2.5.1.1 "><p id="p17120639161311"><a name="p17120639161311"></a><a name="p17120639161311"></a>port</p>
     </td>
-    <td class="cellrowborder" valign="top" width="17.98820117988201%" headers="mcps1.2.4.1.2 "><p id="p19272143531318"><a name="p19272143531318"></a><a name="p19272143531318"></a>String</p>
+    <td class="cellrowborder" valign="top" width="14.510000000000002%" headers="mcps1.2.5.1.2 "><p id="p31941824191917"><a name="p31941824191917"></a><a name="p31941824191917"></a>是</p>
     </td>
-    <td class="cellrowborder" valign="top" width="51.594840515948405%" headers="mcps1.2.4.1.3 "><p id="p8272035161316"><a name="p8272035161316"></a><a name="p8272035161316"></a>NAT网关服务需要配置为LoadBalancer类型。</p>
+    <td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.3 "><p id="p1120939161311"><a name="p1120939161311"></a><a name="p1120939161311"></a>Integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="44.99%" headers="mcps1.2.5.1.4 "><p id="p1120163961310"><a name="p1120163961310"></a><a name="p1120163961310"></a>对应界面上的访问端口，取值范围为1 ~ 65535。</p>
+    </td>
+    </tr>
+    <tr id="row2339171473819"><td class="cellrowborder" valign="top" width="26.240000000000002%" headers="mcps1.2.5.1.1 "><p id="p2022520488387"><a name="p2022520488387"></a><a name="p2022520488387"></a>targetPort</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.510000000000002%" headers="mcps1.2.5.1.2 "><p id="p20194122416198"><a name="p20194122416198"></a><a name="p20194122416198"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.3 "><p id="p522534816381"><a name="p522534816381"></a><a name="p522534816381"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="44.99%" headers="mcps1.2.5.1.4 "><p id="p52251448103812"><a name="p52251448103812"></a><a name="p52251448103812"></a>对应界面上的容器端口，取值范围为1 ~ 65535。</p>
+    </td>
+    </tr>
+    <tr id="row02694357138"><td class="cellrowborder" valign="top" width="26.240000000000002%" headers="mcps1.2.5.1.1 "><p id="p627233515132"><a name="p627233515132"></a><a name="p627233515132"></a>type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.510000000000002%" headers="mcps1.2.5.1.2 "><p id="p121941624191915"><a name="p121941624191915"></a><a name="p121941624191915"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.26%" headers="mcps1.2.5.1.3 "><p id="p19272143531318"><a name="p19272143531318"></a><a name="p19272143531318"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="44.99%" headers="mcps1.2.5.1.4 "><p id="p8272035161316"><a name="p8272035161316"></a><a name="p8272035161316"></a>NAT网关服务需要配置为LoadBalancer类型。</p>
     </td>
     </tr>
     </tbody>

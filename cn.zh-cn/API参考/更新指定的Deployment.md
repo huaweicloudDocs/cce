@@ -45,7 +45,7 @@ PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(S
 </td>
 <td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.4.1.2 "><p id="p48756965"><a name="p48756965"></a><a name="p48756965"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="66.32336766323368%" headers="mcps1.2.4.1.3 "><p id="p57000088"><a name="p57000088"></a><a name="p57000088"></a>name of the DaemonSet</p>
+<td class="cellrowborder" valign="top" width="66.32336766323368%" headers="mcps1.2.4.1.3 "><p id="p57000088"><a name="p57000088"></a><a name="p57000088"></a>name of the Deployment</p>
 </td>
 </tr>
 <tr id="row43238749"><td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.1 "><p id="p12677770"><a name="p12677770"></a><a name="p12677770"></a>namespace</p>

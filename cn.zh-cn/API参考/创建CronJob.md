@@ -63,7 +63,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p24577473"><a name="p24577473"></a><a name="p24577473"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p44618282"><a name="p44618282"></a><a name="p44618282"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</p>
+<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p44618282"><a name="p44618282"></a><a name="p44618282"></a><span>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values.</span></p>
 </td>
 </tr>
 <tr id="row66020222"><td class="cellrowborder" valign="top" width="22.447755224477554%" headers="mcps1.2.5.1.1 "><p id="p46037745"><a name="p46037745"></a><a name="p46037745"></a>kind</p>
@@ -99,7 +99,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="20.407959204079592%" headers="mcps1.2.5.1.3 "><p id="p34261248"><a name="p34261248"></a><a name="p34261248"></a><a href="#table28665255">status</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p11952954"><a name="p11952954"></a><a name="p11952954"></a>Current status of a cron job.</p>
+<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p11952954"><a name="p11952954"></a><a name="p11952954"></a><span>Current status of a cron job.</span></p>
 </td>
 </tr>
 </tbody>
@@ -122,9 +122,9 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.2 "><p id="p270813244402"><a name="p270813244402"></a><a name="p270813244402"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p48343558"><a name="p48343558"></a><a name="p48343558"></a>String</p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p48343558"><a name="p48343558"></a><a name="p48343558"></a><span>String</span></p>
 </td>
-<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p8335102813362"><a name="p8335102813362"></a><a name="p8335102813362"></a>Specifies how to treat concurrent executions of a Job. Valid values are: - "Allow" (default): allows CronJobs to run concurrently; - "Forbid": forbids concurrent runs, skipping next run if previous run hasn’t finished yet; - "Replace": cancels currently running job and replaces it with a new one.</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p8335102813362"><a name="p8335102813362"></a><a name="p8335102813362"></a><span>Specifies how to treat concurrent executions of a Job. Valid values are: - "Allow" (default): allows CronJobs to run concurrently; - "Forbid": forbids concurrent runs, skipping next run if previous run hasn’t finished yet; - "Replace": cancels currently running job and replaces it with a new one</span>.</p>
 </td>
 </tr>
 <tr id="row10300809"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.5.1.1 "><p id="p197193233615"><a name="p197193233615"></a><a name="p197193233615"></a>failedJobsHistoryLimit</p>
@@ -142,14 +142,14 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p19240909"><a name="p19240909"></a><a name="p19240909"></a><a href="#table928061144217">jobTemplate</a>  object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p933322823614"><a name="p933322823614"></a><a name="p933322823614"></a>Specifies the job that will be created when executing a CronJob.</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p933322823614"><a name="p933322823614"></a><a name="p933322823614"></a><span>Specifies the job that will be created when executing a CronJob.</span></p>
 </td>
 </tr>
 <tr id="row7831802"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.5.1.1 "><p id="p1694193283616"><a name="p1694193283616"></a><a name="p1694193283616"></a>schedule</p>
 </td>
 <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.2 "><p id="p4703142494015"><a name="p4703142494015"></a><a name="p4703142494015"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p49457273"><a name="p49457273"></a><a name="p49457273"></a>String</p>
+<td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p49457273"><a name="p49457273"></a><a name="p49457273"></a><span>String</span></p>
 </td>
 <td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p8331928143612"><a name="p8331928143612"></a><a name="p8331928143612"></a>The schedule in Cron format.</p>
 </td>
@@ -160,7 +160,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p1758932144016"><a name="p1758932144016"></a><a name="p1758932144016"></a>Integer</p>
 </td>
-<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p1330102803616"><a name="p1330102803616"></a><a name="p1330102803616"></a>Optional deadline in seconds for starting the job if it misses scheduled time for any reason. Missed jobs executions will be counted as failed ones.</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p1330102803616"><a name="p1330102803616"></a><a name="p1330102803616"></a><span>Optional deadline in seconds for starting the job if it misses scheduled time for any reason. Missed jobs executions will be counted as failed ones.</span></p>
 </td>
 </tr>
 <tr id="row24881422"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.5.1.1 "><p id="p79383211361"><a name="p79383211361"></a><a name="p79383211361"></a>successfulJobsHistoryLimit</p>
@@ -178,7 +178,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p1770917913713"><a name="p1770917913713"></a><a name="p1770917913713"></a>Boolean</p>
 </td>
-<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p187091194376"><a name="p187091194376"></a><a name="p187091194376"></a>This flag tells the controller to suspend subsequent executions, it does not apply to already started executions. Defaults to false.</p>
+<td class="cellrowborder" valign="top" width="42%" headers="mcps1.2.5.1.4 "><p id="p187091194376"><a name="p187091194376"></a><a name="p187091194376"></a><span>This flag tells the controller to suspend subsequent executions, it does not apply to already started executions. Defaults to false.</span></p>
 </td>
 </tr>
 </tbody>
@@ -203,7 +203,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="19.59%" headers="mcps1.2.5.1.3 "><p id="p2878161564312"><a name="p2878161564312"></a><a name="p2878161564312"></a><a href="创建PersistentVolume.md#t5fe2db24d4ee4588b001da6f826e3d3a">claimRef</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="43.3%" headers="mcps1.2.5.1.4 "><p id="p28761915184314"><a name="p28761915184314"></a><a name="p28761915184314"></a>A list of pointers to currently running jobs.</p>
+<td class="cellrowborder" valign="top" width="43.3%" headers="mcps1.2.5.1.4 "><p id="p28761915184314"><a name="p28761915184314"></a><a name="p28761915184314"></a><span>A list of pointers to currently running jobs.</span></p>
 </td>
 </tr>
 <tr id="row29065558"><td class="cellrowborder" valign="top" width="22.68%" headers="mcps1.2.5.1.1 "><p id="p5499969"><a name="p5499969"></a><a name="p5499969"></a>lastScheduleTime</p>
@@ -237,7 +237,7 @@ POST /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs
 </td>
 <td class="cellrowborder" valign="top" width="19.388061193880613%" headers="mcps1.2.5.1.3 "><p id="p1132719134215"><a name="p1132719134215"></a><a name="p1132719134215"></a><a href="请求数据结构.md#zh-cn_topic_0079614925_table47756489">metadata</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p833416174219"><a name="p833416174219"></a><a name="p833416174219"></a>Standard object’s metadata of the jobs created from this template.</p>
+<td class="cellrowborder" valign="top" width="42.85571442855714%" headers="mcps1.2.5.1.4 "><p id="p833416174219"><a name="p833416174219"></a><a name="p833416174219"></a><span>Standard object’s metadata of the jobs created from this template.</span></p>
 </td>
 </tr>
 <tr id="row153356134215"><td class="cellrowborder" valign="top" width="22.447755224477554%" headers="mcps1.2.5.1.1 "><p id="p933919116429"><a name="p933919116429"></a><a name="p933919116429"></a>spec</p>

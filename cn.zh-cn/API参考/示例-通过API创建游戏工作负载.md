@@ -7,7 +7,7 @@
 
 创建2048工作负载的流程如下：
 
-1.  首先调用[Token认证](认证鉴权.md#section2417768214391)获取用户的token，因为在后续的请求中需要将token放到请求消息头中作为认证。
+1.  首先调用[Token认证](认证鉴权.md#zh-cn_topic_0121671869_section2417768214391)获取用户的token，因为在后续的请求中需要将token放到请求消息头中作为认证。
 2.  其次创建集群并获取集群UUID。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -23,7 +23,7 @@
 
 ## 前提条件<a name="section196401353584"></a>
 
--   已获取Token，具体请参见[Token认证](认证鉴权.md#section2417768214391)。
+-   已获取Token，具体请参见[Token认证](认证鉴权.md#zh-cn_topic_0121671869_section2417768214391)。
 -   已创建VPC和子网，并获取VPC和子网的ID，具体请参见[创建VPC和子网](创建VPC和子网.md)。
 -   已创建密钥对，并获取密钥对的名称具体请参见[创建密钥对](创建密钥对.md)。
 -   已获取IAM和CCE的Endpoint，具体请参见[地区和终端节点](https://developer.huaweicloud.com/endpoint)。
@@ -43,7 +43,7 @@
 
 则可以通过如下步骤创建一个带有单个节点的集群。
 
-1.  调用其他接口前，需要调用[Token认证](认证鉴权.md#section2417768214391)获取token，并设置成环境变量。
+1.  调用其他接口前，需要调用[Token认证](认证鉴权.md#zh-cn_topic_0121671869_section2417768214391)获取token，并设置成环境变量。
 
     其中加粗的部分，需要替换为真实的数据。
 
@@ -77,6 +77,7 @@
            } 
          }' -v
         ```
+
 
     响应Header中“X-Subject-Token“的值即为Token：
 

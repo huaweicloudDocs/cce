@@ -1,11 +1,22 @@
 # 节点访问\(NodePort\)<a name="cce_01_0142"></a>
 
+-   [操作场景](#section13654155944916)
+-   [约束与限制](#section8501151104219)
+-   [工作负载创建时设置](#section8124108325)
+-   [工作负载创建完成后设置](#section41290043210)
+-   [验证访问方式](#section18896114113215)
+-   [更新Service](#section14145190183217)
+-   [kubectl命令行创建](#section7114174773118)
+
+## 操作场景<a name="section13654155944916"></a>
+
 节点访问 \( NodePort \)是指在每个节点的IP上开放一个静态端口，通过静态端口对外暴露服务。节点访问 \( NodePort \)会路由到ClusterIP服务，这个ClusterIP服务会自动创建。通过请求 <NodeIP\>:<NodePort\>，可以从集群的外部访问一个NodePort服务。
 
 ## 约束与限制<a name="section8501151104219"></a>
 
 -   “节点访问 \( NodePort \)“默认为VPC内网访问，如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。
 -   创建service后，如果[服务亲和](#li195904442002)从集群级别切换为节点级别，连接跟踪表将不会被清理，建议用户创建service后不要修改服务亲和属性，如需修改请重新创建servcie。
+-   同一个节点内的容器不支持访问**externalTrafficPolicy**为local的service。
 
 ## 工作负载创建时设置<a name="section8124108325"></a>
 
@@ -22,13 +33,14 @@
         -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
         -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
 
-    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
+    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的集群创建时开启了IPv6功能才会显示。**
     -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
         -   容器端口：容器镜像中工作负载实际监听的端口，取值范围为1-65535。
         -   访问端口：容器端口映射到节点私有IP上的端口，建议选择“自动生成“。
             -   自动生成：系统会自动分配端口号。
             -   指定端口：指定固定的节点端口，默认取值范围为30000-32767。若指定端口时，请确保同个集群内的端口唯一性。
+
 
 
 2.  完成配置后，单击“确定“。
@@ -59,13 +71,14 @@
         -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
         -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
 
-    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
+    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的集群创建时开启了IPv6功能才会显示。**
     -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
         -   容器端口：容器镜像中工作负载程序实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
         -   访问端口：容器端口映射到节点私有IP上的端口，建议选择“自动生成“。
             -   自动生成：系统会自动分配端口号。
             -   指定端口：指定固定的节点端口，默认取值范围为30000-32767。若指定端口时，请确保同个集群内的端口唯一性。
+
 
 
 5.  单击“创建”。工作负载已添加“节点访问 \( NodePort \)”的服务。
@@ -130,7 +143,7 @@
     -   **集群名称：**工作负载所在集群的名称，此处不可修改。
     -   **命名空间：**工作负载所在命名空间，此处不可修改。
     -   **关联工作负载：**要添加Service的工作负载，此处不可修改。
-    -   **IPv6：**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示，此处不可修改。
+    -   **IPv6：**该功能仅在1.15及以上版本的集群创建时开启了IPv6功能才会显示，此处不可修改。
     -   **服务亲和：**
         -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
         -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
@@ -143,6 +156,7 @@
             -   指定端口：指定固定的节点端口，默认取值范围为30000-32767。若指定端口时，请确保同个集群内的端口唯一性。
 
 
+
 4.  单击“更新”。工作负载已更新Service。
 
 ## kubectl命令行创建<a name="section7114174773118"></a>
@@ -151,7 +165,7 @@
 
 **前提条件**
 
-请参见[通过kubectl或web-terminal插件连接CCE集群](通过kubectl或web-terminal插件连接CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
+请参见[通过kubectl或web-terminal插件操作CCE集群](通过kubectl或web-terminal插件操作CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
 
 **操作步骤**
 
@@ -163,7 +177,7 @@
     **vi nginx-deployment.yaml**
 
     ```
-    apiVersion: extensions/v1beta1
+    apiVersion: apps/v1
     kind: Deployment
     metadata:
       name: nginx
@@ -211,47 +225,60 @@
     **表 1**  关键参数说明
 
     <a name="table56443210447"></a>
-    <table><thead align="left"><tr id="row157011325448"><th class="cellrowborder" valign="top" width="19.009999999999998%" id="mcps1.2.4.1.1"><p id="p127013213445"><a name="p127013213445"></a><a name="p127013213445"></a>参数</p>
+    <table><thead align="left"><tr id="row157011325448"><th class="cellrowborder" valign="top" width="15.55%" id="mcps1.2.5.1.1"><p id="p127013213445"><a name="p127013213445"></a><a name="p127013213445"></a>参数</p>
     </th>
-    <th class="cellrowborder" valign="top" width="18.43%" id="mcps1.2.4.1.2"><p id="p070113234410"><a name="p070113234410"></a><a name="p070113234410"></a>参数类型</p>
+    <th class="cellrowborder" valign="top" width="14.23%" id="mcps1.2.5.1.2"><p id="p14772424935"><a name="p14772424935"></a><a name="p14772424935"></a>是否必填</p>
     </th>
-    <th class="cellrowborder" valign="top" width="62.56%" id="mcps1.2.4.1.3"><p id="p870832124415"><a name="p870832124415"></a><a name="p870832124415"></a>描述</p>
+    <th class="cellrowborder" valign="top" width="14.01%" id="mcps1.2.5.1.3"><p id="p070113234410"><a name="p070113234410"></a><a name="p070113234410"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="56.21000000000001%" id="mcps1.2.5.1.4"><p id="p870832124415"><a name="p870832124415"></a><a name="p870832124415"></a>描述</p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row19708321446"><td class="cellrowborder" valign="top" width="19.009999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615000_p41087597"><a name="zh-cn_topic_0079615000_p41087597"></a><a name="zh-cn_topic_0079615000_p41087597"></a>nodePort</p>
+    <tbody><tr id="row19708321446"><td class="cellrowborder" valign="top" width="15.55%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p41087597"><a name="zh-cn_topic_0079615000_p41087597"></a><a name="zh-cn_topic_0079615000_p41087597"></a>nodePort</p>
     </td>
-    <td class="cellrowborder" valign="top" width="18.43%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615000_p66528668"><a name="zh-cn_topic_0079615000_p66528668"></a><a name="zh-cn_topic_0079615000_p66528668"></a>Integer</p>
+    <td class="cellrowborder" valign="top" width="14.23%" headers="mcps1.2.5.1.2 "><p id="p87721824533"><a name="p87721824533"></a><a name="p87721824533"></a>否</p>
     </td>
-    <td class="cellrowborder" valign="top" width="62.56%" headers="mcps1.2.4.1.3 "><p id="p164654108492"><a name="p164654108492"></a><a name="p164654108492"></a>对应界面上的访问端口，取值范围为30000 ~ 32767，不填写表示自动生成。</p>
+    <td class="cellrowborder" valign="top" width="14.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p66528668"><a name="zh-cn_topic_0079615000_p66528668"></a><a name="zh-cn_topic_0079615000_p66528668"></a>Integer</p>
     </td>
-    </tr>
-    <tr id="row2787832142320"><td class="cellrowborder" valign="top" width="19.009999999999998%" headers="mcps1.2.4.1.1 "><p id="p5788113218236"><a name="p5788113218236"></a><a name="p5788113218236"></a>port</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="18.43%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615000_p54093956"><a name="zh-cn_topic_0079615000_p54093956"></a><a name="zh-cn_topic_0079615000_p54093956"></a>Integer</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="62.56%" headers="mcps1.2.4.1.3 "><p id="p167881320237"><a name="p167881320237"></a><a name="p167881320237"></a>集群虚拟IP的访问端口，取值范围为1 ~ 65535。</p>
+    <td class="cellrowborder" valign="top" width="56.21000000000001%" headers="mcps1.2.5.1.4 "><p id="p164654108492"><a name="p164654108492"></a><a name="p164654108492"></a>对应界面上的访问端口，取值范围为30000 ~ 32767，不填写表示自动生成。</p>
     </td>
     </tr>
-    <tr id="row13718321449"><td class="cellrowborder" valign="top" width="19.009999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615000_p11039195"><a name="zh-cn_topic_0079615000_p11039195"></a><a name="zh-cn_topic_0079615000_p11039195"></a>protocol</p>
+    <tr id="row2787832142320"><td class="cellrowborder" valign="top" width="15.55%" headers="mcps1.2.5.1.1 "><p id="p5788113218236"><a name="p5788113218236"></a><a name="p5788113218236"></a>port</p>
     </td>
-    <td class="cellrowborder" valign="top" width="18.43%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615000_p17699892"><a name="zh-cn_topic_0079615000_p17699892"></a><a name="zh-cn_topic_0079615000_p17699892"></a>String</p>
+    <td class="cellrowborder" valign="top" width="14.23%" headers="mcps1.2.5.1.2 "><p id="p1877242417320"><a name="p1877242417320"></a><a name="p1877242417320"></a>是</p>
     </td>
-    <td class="cellrowborder" valign="top" width="62.56%" headers="mcps1.2.4.1.3 "><p id="p835181810259"><a name="p835181810259"></a><a name="p835181810259"></a>该端口的IP协议，支持“TCP”和“UDP”。</p>
+    <td class="cellrowborder" valign="top" width="14.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p54093956"><a name="zh-cn_topic_0079615000_p54093956"></a><a name="zh-cn_topic_0079615000_p54093956"></a>Integer</p>
     </td>
-    </tr>
-    <tr id="row1671532144412"><td class="cellrowborder" valign="top" width="19.009999999999998%" headers="mcps1.2.4.1.1 "><p id="zh-cn_topic_0079615000_p53639231"><a name="zh-cn_topic_0079615000_p53639231"></a><a name="zh-cn_topic_0079615000_p53639231"></a>targetPort</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="18.43%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615000_p8117426"><a name="zh-cn_topic_0079615000_p8117426"></a><a name="zh-cn_topic_0079615000_p8117426"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="62.56%" headers="mcps1.2.4.1.3 "><p id="p1262218433513"><a name="p1262218433513"></a><a name="p1262218433513"></a>对应界面上的容器端口，取值范围为1 ~ 65535。</p>
+    <td class="cellrowborder" valign="top" width="56.21000000000001%" headers="mcps1.2.5.1.4 "><p id="p167881320237"><a name="p167881320237"></a><a name="p167881320237"></a>集群虚拟IP的访问端口，取值范围为1 ~ 65535。</p>
     </td>
     </tr>
-    <tr id="row371674812911"><td class="cellrowborder" valign="top" width="19.009999999999998%" headers="mcps1.2.4.1.1 "><p id="p6716134816295"><a name="p6716134816295"></a><a name="p6716134816295"></a>type</p>
+    <tr id="row13718321449"><td class="cellrowborder" valign="top" width="15.55%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p11039195"><a name="zh-cn_topic_0079615000_p11039195"></a><a name="zh-cn_topic_0079615000_p11039195"></a>protocol</p>
     </td>
-    <td class="cellrowborder" valign="top" width="18.43%" headers="mcps1.2.4.1.2 "><p id="zh-cn_topic_0079615000_p18968549"><a name="zh-cn_topic_0079615000_p18968549"></a><a name="zh-cn_topic_0079615000_p18968549"></a>String</p>
+    <td class="cellrowborder" valign="top" width="14.23%" headers="mcps1.2.5.1.2 "><p id="p377216245314"><a name="p377216245314"></a><a name="p377216245314"></a>否</p>
     </td>
-    <td class="cellrowborder" valign="top" width="62.56%" headers="mcps1.2.4.1.3 "><p id="p13717148202913"><a name="p13717148202913"></a><a name="p13717148202913"></a>对应界面上的访问类型，NodePort表示“节点私有IP”。</p>
+    <td class="cellrowborder" valign="top" width="14.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p17699892"><a name="zh-cn_topic_0079615000_p17699892"></a><a name="zh-cn_topic_0079615000_p17699892"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="56.21000000000001%" headers="mcps1.2.5.1.4 "><p id="p835181810259"><a name="p835181810259"></a><a name="p835181810259"></a>该端口的IP协议，支持“TCP”和“UDP”。</p>
+    <p id="p1298491011365"><a name="p1298491011365"></a><a name="p1298491011365"></a>默认值：TCP</p>
+    </td>
+    </tr>
+    <tr id="row1671532144412"><td class="cellrowborder" valign="top" width="15.55%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p53639231"><a name="zh-cn_topic_0079615000_p53639231"></a><a name="zh-cn_topic_0079615000_p53639231"></a>targetPort</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.23%" headers="mcps1.2.5.1.2 "><p id="p1577262411315"><a name="p1577262411315"></a><a name="p1577262411315"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p8117426"><a name="zh-cn_topic_0079615000_p8117426"></a><a name="zh-cn_topic_0079615000_p8117426"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="56.21000000000001%" headers="mcps1.2.5.1.4 "><p id="p1262218433513"><a name="p1262218433513"></a><a name="p1262218433513"></a>对应界面上的容器端口，取值范围为1 ~ 65535。</p>
+    </td>
+    </tr>
+    <tr id="row371674812911"><td class="cellrowborder" valign="top" width="15.55%" headers="mcps1.2.5.1.1 "><p id="p6716134816295"><a name="p6716134816295"></a><a name="p6716134816295"></a>type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.23%" headers="mcps1.2.5.1.2 "><p id="p1977218241317"><a name="p1977218241317"></a><a name="p1977218241317"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p18968549"><a name="zh-cn_topic_0079615000_p18968549"></a><a name="zh-cn_topic_0079615000_p18968549"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="56.21000000000001%" headers="mcps1.2.5.1.4 "><p id="p13717148202913"><a name="p13717148202913"></a><a name="p13717148202913"></a>对应界面上的访问类型，NodePort表示“节点私有IP”。</p>
     </td>
     </tr>
     </tbody>

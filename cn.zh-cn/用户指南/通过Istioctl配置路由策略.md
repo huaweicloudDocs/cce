@@ -1,10 +1,14 @@
 # 通过Istioctl配置路由策略<a name="cce_01_0202"></a>
 
-## 背景信息<a name="section8631134182813"></a>
+-   [操作场景](#section8631134182813)
+-   [前提条件](#section125311022122915)
+-   [操作步骤](#section078023812295)
+
+## 操作场景<a name="section8631134182813"></a>
 
 在集群开启istio服务网格功能后，您使用Istio命令行工具Istioctl配置多种路由策略，从而管理服务流量，包括流量转移、故障注入、限流熔断等。
 
-## 准备工作<a name="section125311022122915"></a>
+## 前提条件<a name="section125311022122915"></a>
 
 配置Istio命令行工具前必须先配置kubectl命令，详细信息请参见[安装和设置 kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)。
 

@@ -29,7 +29,7 @@ PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/sta
 </td>
 <td class="cellrowborder" valign="top" width="17.169999999999998%" headers="mcps1.2.4.1.2 "><p id="p12315142"><a name="p12315142"></a><a name="p12315142"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="62.629999999999995%" headers="mcps1.2.4.1.3 "><p id="p58002450"><a name="p58002450"></a><a name="p58002450"></a>name of the DaemonSet</p>
+<td class="cellrowborder" valign="top" width="62.629999999999995%" headers="mcps1.2.4.1.3 "><p id="p58002450"><a name="p58002450"></a><a name="p58002450"></a>name of the Deployment</p>
 </td>
 </tr>
 <tr id="row52260006"><td class="cellrowborder" valign="top" width="20.200000000000003%" headers="mcps1.2.4.1.1 "><p id="p5202061"><a name="p5202061"></a><a name="p5202061"></a>namespace</p>

@@ -78,7 +78,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(
 
 **请求示例：**
 
--   只删除Deployment（对应ReplicSet和Pod不删除）
+-   只删除Deployment（对应ReplicaSet和Pod不删除）
 
     ```
     {

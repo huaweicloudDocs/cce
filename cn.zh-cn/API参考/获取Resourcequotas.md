@@ -128,7 +128,7 @@ GET /api/v1/resourcequotas
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p id="p1894533011815"><a name="p1894533011815"></a><a name="p1894533011815"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="p1694543031812"><a name="p1694543031812"></a><a name="p1694543031812"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p id="p1694543031812"><a name="p1694543031812"></a><a name="p1694543031812"></a>APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://github.com/kubernetes/community/blob/master/contributors/devel/sig-architecture/api-conventions.md</p>
 </td>
 </tr>
 <tr id="row494073016185"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p id="p79461730161810"><a name="p79461730161810"></a><a name="p79461730161810"></a>items</p>

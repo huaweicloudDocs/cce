@@ -210,7 +210,7 @@ DELETE /api/v1/persistentvolumes/\{name\}
 </thead>
 <tbody><tr id="r188ec9cc97ca4259847bb8f3f3226b4b"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="a2fa6153697ab4cf0bfecd0ac700546d4"><a name="a2fa6153697ab4cf0bfecd0ac700546d4"></a><a name="a2fa6153697ab4cf0bfecd0ac700546d4"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614956_p633951365615"><a name="zh-cn_topic_0079614956_p633951365615"></a><a name="zh-cn_topic_0079614956_p633951365615"></a>Delete a specified PersistentVolume resource objectre successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614956_p633951365615"><a name="zh-cn_topic_0079614956_p633951365615"></a><a name="zh-cn_topic_0079614956_p633951365615"></a>Delete a specified PersistentVolume resource object successfully.</p>
 </td>
 </tr>
 </tbody>

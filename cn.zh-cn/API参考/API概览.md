@@ -80,9 +80,9 @@
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1195415319277"><a name="p1195415319277"></a><a name="p1195415319277"></a>CronJob对象管理接口，包括CronJob对象的创建，查询，修改，删除等接口。</p>
 </td>
 </tr>
-<tr id="row1419213219339"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6028906019279"><a name="p6028906019279"></a><a name="p6028906019279"></a><a href="ReplicaSet.md">Replicset</a></p>
+<tr id="row1419213219339"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6028906019279"><a name="p6028906019279"></a><a name="p6028906019279"></a><a href="ReplicaSet.md">ReplicaSet</a></p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p5915636019279"><a name="p5915636019279"></a><a name="p5915636019279"></a>Replicset对象的查询。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p5915636019279"><a name="p5915636019279"></a><a name="p5915636019279"></a>ReplicaSet对象的查询。</p>
 </td>
 </tr>
 <tr id="row10957421145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p30771534145910"><a name="p30771534145910"></a><a name="p30771534145910"></a><a href="ReplicationController.md">ReplicationController</a></p>
@@ -197,9 +197,9 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18413163718147"><a name="p18413163718147"></a><a name="p18413163718147"></a>唤醒一个指定的已休眠集群。</p>
 </td>
 </tr>
-<tr id="row09137251369"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p49133251669"><a name="p49133251669"></a><a name="p49133251669"></a><a href="获取集群证书.md">获取集群证书</a></p>
+<tr id="row1268164714123"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18430134931216"><a name="p18430134931216"></a><a name="p18430134931216"></a><a href="集群唤醒.md">获取集群证书</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1391314257610"><a name="p1391314257610"></a><a name="p1391314257610"></a>获取指定集群的证书信息。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p194305493127"><a name="p194305493127"></a><a name="p194305493127"></a><span>获取指定集群的证书信息。</span></p>
 </td>
 </tr>
 <tr id="row2985204221018"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p2985142131017"><a name="p2985142131017"></a><a name="p2985142131017"></a><a href="创建节点.md">创建节点</a></p>
@@ -279,16 +279,6 @@
 <tr id="row176431418185819"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p66435189586"><a name="p66435189586"></a><a name="p66435189586"></a><a href="删除PVC.md">删除PVC</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p7644218105810"><a name="p7644218105810"></a><a name="p7644218105810"></a>删除指定Namespace下的PersistentVolumeClaim对象，并可以选择保留后端的云存储。</p>
-</td>
-</tr>
-<tr id="row1464481875812"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1644171865810"><a name="p1644171865810"></a><a name="p1644171865810"></a><a href="创建PV（已废弃）.md">创建PV（已废弃）</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13644218165816"><a name="p13644218165816"></a><a name="p13644218165816"></a>通过指定华为云存储服务中的云存储（如EVS、SFS、OBS）去创建PersistentVolume。</p>
-</td>
-</tr>
-<tr id="row46441018165812"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p36440184588"><a name="p36440184588"></a><a name="p36440184588"></a><a href="删除PV（已废弃）.md">删除PV（已废弃）</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p864412185580"><a name="p864412185580"></a><a name="p864412185580"></a>删除指定Namespace下的PersistentVolume对象，并可以选择是否保留后端云存储。</p>
 </td>
 </tr>
 </tbody>
@@ -864,9 +854,9 @@
 </tbody>
 </table>
 
-## ReplicSet<a name="section1136381210362"></a>
+## ReplicaSet<a name="section1136381210362"></a>
 
-**表 13**  ReplicSet
+**表 13**  ReplicaSet
 
 <a name="table11215101815365"></a>
 <table><thead align="left"><tr id="row1721810186364"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p101766339367"><a name="p101766339367"></a><a name="p101766339367"></a>API</p>

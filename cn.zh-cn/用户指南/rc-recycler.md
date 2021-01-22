@@ -1,19 +1,26 @@
 # rc-recycler<a name="cce_01_0126"></a>
 
+-   [插件简介](#section1636442645315)
+-   [约束与限制](#section1968316128568)
+-   [安装插件](#section1842517810574)
+-   [升级插件](#section23441939916)
+-   [卸载插件](#section8166134965710)
+-   [版本记录](#section144262219109)
+
 ## 插件简介<a name="section1636442645315"></a>
 
 rc-recycler是一款可根据用户配置策略对资源进行自动回收的插件。用户可在创建或者在插件运行过程中对具体的回收策略进行调整。该插件能定期清理集群中的无用资源，保证其他功能的正常运行。
 
-## 使用约束<a name="section1968316128568"></a>
+## 约束与限制<a name="section1968316128568"></a>
 
--   集群为1.9及以上版本时，才支持此功能。
--   当前支持特性：Job资源并行回收、日志转储、回收统计信息、缓存机制为分次list请求。
+-   仅支持1.9和1.11版本的集群安装此插件。
+-   只支持default命名空间的job清理，当前支持特性：Job资源并行回收、日志转储、回收统计信息、缓存机制为分次list请求。
 
 ## 安装插件<a name="section1842517810574"></a>
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“ 插件管理“，在“插件市场“页签下，单击rc-recycler插件下的“安装插件“。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
-3.  参照[表1](#table95961922132915)配置插件安装参数。
+3.  <a name="li1959342211297"></a>参照[表1](#table95961922132915)配置插件安装参数。
 
     **表 1**  安装插件说明
 
@@ -46,11 +53,49 @@ rc-recycler是一款可根据用户配置策略对资源进行自动回收的插
 
 4.  配置完成后，单击“安装”。
 
-    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
+    待插件安装完成后，单击“返回“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
 
+
+## 升级插件<a name="section23441939916"></a>
+
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“rc-recycler“下的“ 升级“。
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
+    >-   升级“rc-recycler“插件时，会替换原先节点上的旧版本的“rc-recycler“插件，安装最新版本的“rc-recycler“插件以实现功能的快速升级。
+
+2.  在基本信息页面选择插件版本，单击“下一步“。
+3.  参考[安装插件](#li1959342211297)中参数说明配置参数后，单击“升级“即可升级“rc-recycler“插件。
 
 ## 卸载插件<a name="section8166134965710"></a>
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击rc-recycler下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
+
+## 版本记录<a name="section144262219109"></a>
+
+**表 2**  rc-recycler版本记录
+
+<a name="table178175952310"></a>
+<table><thead align="left"><tr id="row278175916234"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.1"><p id="p37875972314"><a name="p37875972314"></a><a name="p37875972314"></a>插件版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="24%" id="mcps1.2.5.1.2"><p id="p1178135932311"><a name="p1178135932311"></a><a name="p1178135932311"></a>支持的集群类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p id="p178185952316"><a name="p178185952316"></a><a name="p178185952316"></a>更新时间</p>
+</th>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p2078175942320"><a name="p2078175942320"></a><a name="p2078175942320"></a>更新特性</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row152684214528"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p4539101965313"><a name="p4539101965313"></a><a name="p4539101965313"></a>1.0.3</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p1653941995317"><a name="p1653941995317"></a><a name="p1653941995317"></a>混合集群 v1.(9|11).*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p753981925311"><a name="p753981925311"></a><a name="p753981925311"></a>2019/06/10</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><a name="ul125398194532"></a><a name="ul125398194532"></a><ul id="ul125398194532"><li>job并行回收</li><li>日志转储</li><li>回收统计信息</li><li>缓存机制改为分次list请求</li></ul>
+</td>
+</tr>
+</tbody>
+</table>
 

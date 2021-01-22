@@ -1,10 +1,27 @@
 # prometheus<a name="cce_01_0221"></a>
 
+-   [插件简介](#section173631312185614)
+-   [插件特点](#section4740192825614)
+-   [约束与限制](#section11172124718374)
+-   [安装插件](#section189463341114)
+-   [升级插件](#section23441939916)
+-   [卸载插件](#section1395073191112)
+-   [采集自定义指标](#section16495203010263)
+-   [采集自定义指标示例](#section11344192116206)
+-   [版本记录](#section144262219109)
+-   [参考资源](#section16331426191116)
+
 ## 插件简介<a name="section173631312185614"></a>
 
 Prometheus是一套开源的系统监控报警框架。它启发于Google的borgmon监控系统，由工作在SoundCloud的google前员工在2012年创建，作为社区开源项目进行开发，并于2015年正式发布。2016年，Prometheus正式加入Cloud Native Computing Foundation，成为受欢迎度仅次于Kubernetes的项目。
 
 在云容器引擎CCE中，支持以插件的方式快捷安装Prometheus。
+
+插件官网：[https://prometheus.io/](https://prometheus.io/)
+
+开源社区地址：[https://github.com/prometheus/prometheus](https://github.com/prometheus/prometheus)
+
+## 插件特点<a name="section4740192825614"></a>
 
 作为新一代的监控框架，Prometheus具有以下特点：
 
@@ -27,7 +44,7 @@ Prometheus是一套开源的系统监控报警框架。它启发于Google的borg
 
 需要指出的是，由于数据采集可能会有丢失，所以Prometheus不适用对采集数据要100%准确的情形。但如果用于记录时间序列数据，Prometheus具有很大的查询优势，此外，Prometheus适用于微服务的体系架构。
 
-## 使用约束<a name="section11172124718374"></a>
+## 约束与限制<a name="section11172124718374"></a>
 
 1.11及以上版本的混合集群支持此插件功能。
 
@@ -35,7 +52,7 @@ Prometheus是一套开源的系统监控报警框架。它启发于Google的borg
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击**Prometheus**下的“安装插件“按钮。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
-3.  在“规格配置“步骤中，配置以下参数：
+3.  <a name="li126079206265"></a>在“规格配置“步骤中，配置以下参数：
 
     **表 1**  Prometheus配置参数说明
 
@@ -80,9 +97,20 @@ Prometheus是一套开源的系统监控报警框架。它启发于Google的borg
 
 4.  单击“安装“。
 
-    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
+    待插件安装完成后，单击“返回“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
 
 5.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例”中，单击“Prometheus”进入详情页，可以查看插件实例的详细情况。
+
+## 升级插件<a name="section23441939916"></a>
+
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“Prometheus“下的“ 升级“。
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
+    >-   升级“Prometheus“插件时，会替换原先节点上的旧版本的“Prometheus“插件，安装最新版本的“Prometheus“插件以实现功能的快速升级。
+
+2.  在基本信息页面选择插件版本，单击“下一步“。
+3.  参考[安装插件](#li126079206265)中参数说明配置参数后，单击“升级“即可升级“Prometheus“插件。
 
 ## 卸载插件<a name="section1395073191112"></a>
 
@@ -95,7 +123,7 @@ Prometheus是一套开源的系统监控报警框架。它启发于Google的borg
 
 应用具备采集指标功能后，需要在工作负载对应的资源上增加配置，让Prometheus拉取指标。
 
-可以在Pod、Service的metadata.annotation增加：
+可以在Pod或Service的metadata.annotation增加：
 
 ```
 prometheus.io/path：'PATH'
@@ -252,6 +280,42 @@ kubectl get --raw '/apis/custom.metrics.k8s.io/v1beta1/namespaces/default/servic
 >如果修改了monitoring/adapter-config，需要重启monitoring命名空间下的custom-metrics-apiserver无状态负载的实例，使修改生效。
 
 Kubernetes的自定义指标可用于[工作负载伸缩（HPA）](创建工作负载伸缩策略.md)。
+
+## 版本记录<a name="section144262219109"></a>
+
+**表 2**  prometheus版本记录
+
+<a name="table178175952310"></a>
+<table><thead align="left"><tr id="row278175916234"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.1"><p id="p37875972314"><a name="p37875972314"></a><a name="p37875972314"></a>插件版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="24%" id="mcps1.2.5.1.2"><p id="p1178135932311"><a name="p1178135932311"></a><a name="p1178135932311"></a>支持的集群类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p id="p178185952316"><a name="p178185952316"></a><a name="p178185952316"></a>更新时间</p>
+</th>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p2078175942320"><a name="p2078175942320"></a><a name="p2078175942320"></a>更新特性</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row152684214528"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p755643112519"><a name="p755643112519"></a><a name="p755643112519"></a>1.15.1</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p18556831165115"><a name="p18556831165115"></a><a name="p18556831165115"></a>混合集群 v1.(15|17).*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p11556123125117"><a name="p11556123125117"></a><a name="p11556123125117"></a>2020/08/19</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p1133595216510"><a name="p1133595216510"></a><a name="p1133595216510"></a>Prometheus是一个监控系统和时间序列库</p>
+</td>
+</tr>
+<tr id="row7335155311559"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p45561331155116"><a name="p45561331155116"></a><a name="p45561331155116"></a>1.1.0</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p1055663118517"><a name="p1055663118517"></a><a name="p1055663118517"></a>混合集群 v1.11.*|v1.13.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p9556173112515"><a name="p9556173112515"></a><a name="p9556173112515"></a>2020/07/29</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p193487529519"><a name="p193487529519"></a><a name="p193487529519"></a>Prometheus是一个监控系统和时间序列库</p>
+</td>
+</tr>
+</tbody>
+</table>
 
 ## 参考资源<a name="section16331426191116"></a>
 

@@ -106,7 +106,7 @@ N/A
             "memory": "3641812Ki",
             "pods": "110"
         },
-        "phase": "Running",
+        "phase": "Running",    #该字段仅支持1.15及以下版本的集群
         "conditions": [
             {
                 "type": "OutOfDisk",

@@ -1,5 +1,11 @@
 # 通过kubectl配置kube-dns/CoreDNS高可用<a name="cce_01_0162"></a>
 
+-   [操作场景](#section4341202011411)
+-   [前提条件](#s749b044f6e864a919f0c0616cfad1dab)
+-   [操作步骤](#s6797453bdad1452db7d603668deda069)
+
+## 操作场景<a name="section4341202011411"></a>
+
 通过kubernetes命令行工具来配置kube-dns/CoreDNS的高可用。
 
 kube-dns/CoreDNS为集群提供了DNS服务。若集群中只部署了单个kube-dns/CoreDNS，则存在kube-dns/CoreDNS故障后影响整个集群运作的风险，因此建议为集群配置多个kube-dns/CoreDNS。
@@ -8,7 +14,7 @@ kube-dns/CoreDNS为集群提供了DNS服务。若集群中只部署了单个kube
 >-   在CCE中新建的kubernetes 1.11及以上版本集群默认会安装CoreDNS插件。
 >-   更多DNS相关信息请参见[CoreDNS（系统资源插件，必装）](CoreDNS（系统资源插件-必装）.md)或[Kubernetes集群内置DNS配置说明](Kubernetes集群内置DNS配置说明.md)。
 
-## 准备工作<a name="s749b044f6e864a919f0c0616cfad1dab"></a>
+## 前提条件<a name="s749b044f6e864a919f0c0616cfad1dab"></a>
 
 集群能够被互联网访问，或集群与客户端机器在同一个VPC下。
 

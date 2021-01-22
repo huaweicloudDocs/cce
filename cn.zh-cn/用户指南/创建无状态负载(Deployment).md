@@ -1,8 +1,15 @@
 # 创建无状态负载\(Deployment\)<a name="cce_01_0047"></a>
 
-在运行中始终不保存任何数据或状态的工作负载称为“无状态负载 Deployment”，例如nginx。
+-   [操作场景](#section686591217411)
+-   [前提条件](#section7271245481)
+-   [通过控制台创建](#section1996635141916)
+-   [通过kubectl命令行创建](#section155246177178)
 
-## 准备工作<a name="section7271245481"></a>
+## 操作场景<a name="section686591217411"></a>
+
+在运行中始终不保存任何数据或状态的工作负载称为“无状态负载 Deployment”，例如nginx。您可以通过控制台或kubectl命令行创建无状态负载。
+
+## 前提条件<a name="section7271245481"></a>
 
 -   在创建容器工作负载前，您需要存在一个可用集群。若没有可用集群 ，请参照[购买混合集群](购买混合集群.md)中内容创建。
 -   若工作负载需要被外网访问，请确保集群中至少有一个节点已绑定弹性IP，或已购买负载均衡实例。
@@ -67,7 +74,7 @@
     </tr>
     <tr id="row18442191224514"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p244261214513"><a name="p244261214513"></a><a name="p244261214513"></a>时区同步</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p644215125454"><a name="p644215125454"></a><a name="p644215125454"></a>单击<a name="image16680652104914"></a><a name="image16680652104914"></a><span><img id="image16680652104914" src="figures/2020-08-13_092636-6.png"></span>开启后，容器将和节点使用相同时区。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p644215125454"><a name="p644215125454"></a><a name="p644215125454"></a>单击<a name="image16680652104914"></a><a name="image16680652104914"></a><span><img id="image16680652104914" src="figures/2020-08-13_092636-15.png"></span>开启后，容器将和节点使用相同时区。</p>
     <div class="notice" id="note5422953172616"><a name="note5422953172616"></a><a name="note5422953172616"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="p11422145392614"><a name="p11422145392614"></a><a name="p11422145392614"></a>时区同步功能开启后，在<span class="uicontrol" id="uicontrol107671854164714"><a name="uicontrol107671854164714"></a><a name="uicontrol107671854164714"></a>“数据存储 &gt; 本地磁盘”</span>中，将会自动添加HostPath类型的磁盘，请勿修改删除该磁盘。</p>
     </div></div>
     </td>
@@ -183,7 +190,7 @@
     工作负载访问的方式决定了这个工作负载的网络属性，不同访问方式的工作负载可以提供不同网络能力，具体请参见[网络概述](网络概述.md)。
 
 4.  单击“下一步：高级设置“，配置更多高级策略。
-    -   **升级策略：**你可以指定无状态工作负载的升级方式，包括逐步“滚动升级“和整体“替换升级“。
+    -   **升级策略：**您可以指定无状态工作负载的升级方式，包括逐步“滚动升级“和整体“替换升级“。
         -   滚动升级：将逐步用新版本的实例替换旧版本的实例，升级的过程中，业务流量会同时负载均衡分布到新老的实例上，因此业务不会中断。
             -   最大无效实例数：每次滚动升级允许的最大无效实例数，如果等于实例数有断服风险（最小存活实例数 = 实例数 - 最大无效实例数）。
 
@@ -196,7 +203,7 @@
     -   **迁移策略：**当工作负载实例所在的节点不可用时，系统将实例重新调度到其它可用节点的时间窗。
         -   迁移时间窗 \(s\)：请输入时间，默认为300秒。
 
-    -   **调度策略：**你可以根据需要自由组合静态的全局调度策略或动态的运行时调度策略来实现自己的需求。具体请参见[调度策略概述](调度策略概述.md)。
+    -   **调度策略：**您可以根据需要自由组合静态的全局调度策略或动态的运行时调度策略来实现自己的需求。具体请参见[调度策略概述](调度策略概述.md)。
     -   **Pod高级设置**
 
         -   Pod标签：内置app标签在工作负载创建时指定，主要用于设置亲和性与反亲和性调度，暂不支持修改。您可以单击下方的“添加标签“增加标签。
@@ -237,7 +244,7 @@
 
 **前提条件**
 
-请参见[通过kubectl或web-terminal插件连接CCE集群](通过kubectl或web-terminal插件连接CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
+请参见[通过kubectl或web-terminal插件操作CCE集群](通过kubectl或web-terminal插件操作CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
 
 **操作步骤**
 
@@ -249,7 +256,7 @@
     描述文件内容如下。此处仅为示例，deployment的详细说明请参见[kubernetes官方文档](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)。
 
     ```
-    apiVersion: extensions/v1beta1
+    apiVersion: apps/v1
     kind: Deployment
     metadata:
       name: nginx

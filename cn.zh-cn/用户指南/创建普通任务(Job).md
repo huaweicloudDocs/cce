@@ -1,5 +1,13 @@
 # 创建普通任务\(Job\)<a name="cce_01_0150"></a>
 
+-   [操作场景](#section142417128434)
+-   [前提条件](#s50bf087555b1437aa249c1259138706c)
+-   [操作步骤](#sb8a02965b2624dbbabab320046ca4973)
+-   [使用kubectl创建Job](#section450152719412)
+-   [相关操作](#s9bef0428158a4935b466ea150ccae961)
+
+## 操作场景<a name="section142417128434"></a>
+
 普通任务是一次性运行的短任务，部署完成后即可执行。正常退出（exit 0）后，任务即执行完成。
 
 普通任务是用来控制批处理型任务的资源对象。批处理业务与长期伺服业务（Deployment、Statefulset）的主要区别是：
@@ -10,7 +18,7 @@
 -   定数成功型任务保证有N个任务全部成功。
 -   工作队列型任务根据应用确认的全局成功而标志成功。
 
-## 准备工作<a name="s50bf087555b1437aa249c1259138706c"></a>
+## 前提条件<a name="s50bf087555b1437aa249c1259138706c"></a>
 
 已创建资源，具体操作请参见[购买节点（按需计费）](购买节点.md)。若已有集群和节点资源，无需重复操作。
 
@@ -83,28 +91,28 @@
         **表 2**  添加容器参数说明
 
         <a name="t2fdf8c3943d948f6873da4b75b46d3f5"></a>
-        <table><thead align="left"><tr id="zh-cn_topic_0107283470_row0282348486"><th class="cellrowborder" valign="top" width="23%" id="mcps1.2.3.1.1"><p id="zh-cn_topic_0107283470_p3282147483"><a name="zh-cn_topic_0107283470_p3282147483"></a><a name="zh-cn_topic_0107283470_p3282147483"></a>参数</p>
+        <table><thead align="left"><tr id="cce_01_0047_row0282348486"><th class="cellrowborder" valign="top" width="23%" id="mcps1.2.3.1.1"><p id="cce_01_0047_p3282147483"><a name="cce_01_0047_p3282147483"></a><a name="cce_01_0047_p3282147483"></a>参数</p>
         </th>
-        <th class="cellrowborder" valign="top" width="77%" id="mcps1.2.3.1.2"><p id="zh-cn_topic_0107283470_p1828244144819"><a name="zh-cn_topic_0107283470_p1828244144819"></a><a name="zh-cn_topic_0107283470_p1828244144819"></a>说明</p>
+        <th class="cellrowborder" valign="top" width="77%" id="mcps1.2.3.1.2"><p id="cce_01_0047_p1828244144819"><a name="cce_01_0047_p1828244144819"></a><a name="cce_01_0047_p1828244144819"></a>说明</p>
         </th>
         </tr>
         </thead>
-        <tbody><tr id="zh-cn_topic_0107283470_row1844916557597"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p182837474815"><a name="zh-cn_topic_0107283470_p182837474815"></a><a name="zh-cn_topic_0107283470_p182837474815"></a>镜像</p>
+        <tbody><tr id="cce_01_0047_row1844916557597"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p182837474815"><a name="cce_01_0047_p182837474815"></a><a name="cce_01_0047_p182837474815"></a>镜像</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p3283134134820"><a name="zh-cn_topic_0107283470_p3283134134820"></a><a name="zh-cn_topic_0107283470_p3283134134820"></a>导入的镜像，您可单击<span class="uicontrol" id="zh-cn_topic_0107283470_uicontrol1217815019463"><a name="zh-cn_topic_0107283470_uicontrol1217815019463"></a><a name="zh-cn_topic_0107283470_uicontrol1217815019463"></a>“更换镜像”</span>进行更换。</p>
-        </td>
-        </tr>
-        <tr id="zh-cn_topic_0107283470_row338117362515"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p1038143616517"><a name="zh-cn_topic_0107283470_p1038143616517"></a><a name="zh-cn_topic_0107283470_p1038143616517"></a>* 镜像版本</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p1338110368519"><a name="zh-cn_topic_0107283470_p1338110368519"></a><a name="zh-cn_topic_0107283470_p1338110368519"></a>选择需要部署的镜像版本。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p3283134134820"><a name="cce_01_0047_p3283134134820"></a><a name="cce_01_0047_p3283134134820"></a>导入的镜像，您可单击<span class="uicontrol" id="cce_01_0047_uicontrol1217815019463"><a name="cce_01_0047_uicontrol1217815019463"></a><a name="cce_01_0047_uicontrol1217815019463"></a>“更换镜像”</span>进行更换。</p>
         </td>
         </tr>
-        <tr id="zh-cn_topic_0107283470_row32839494813"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p122831140486"><a name="zh-cn_topic_0107283470_p122831140486"></a><a name="zh-cn_topic_0107283470_p122831140486"></a>* 容器名称</p>
+        <tr id="cce_01_0047_row338117362515"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p1038143616517"><a name="cce_01_0047_p1038143616517"></a><a name="cce_01_0047_p1038143616517"></a>* 镜像版本</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p528314415486"><a name="zh-cn_topic_0107283470_p528314415486"></a><a name="zh-cn_topic_0107283470_p528314415486"></a>容器的名称，可修改。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p1338110368519"><a name="cce_01_0047_p1338110368519"></a><a name="cce_01_0047_p1338110368519"></a>选择需要部署的镜像版本。</p>
         </td>
         </tr>
-        <tr id="zh-cn_topic_0107283470_row152831345485"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p875325925918"><a name="zh-cn_topic_0107283470_p875325925918"></a><a name="zh-cn_topic_0107283470_p875325925918"></a>容器规格</p>
+        <tr id="cce_01_0047_row32839494813"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p122831140486"><a name="cce_01_0047_p122831140486"></a><a name="cce_01_0047_p122831140486"></a>* 容器名称</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p528314415486"><a name="cce_01_0047_p528314415486"></a><a name="cce_01_0047_p528314415486"></a>容器的名称，可修改。</p>
+        </td>
+        </tr>
+        <tr id="cce_01_0047_row152831345485"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p875325925918"><a name="cce_01_0047_p875325925918"></a><a name="cce_01_0047_p875325925918"></a>容器规格</p>
         </td>
         <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="p5379182494610"><a name="p5379182494610"></a><a name="p5379182494610"></a><strong id="b2155195713314"><a name="b2155195713314"></a><a name="b2155195713314"></a>CPU配额：</strong></p>
         <a name="ul67283495467"></a><a name="ul67283495467"></a><ul id="ul67283495467"><li>申请：容器需要使用的最小CPU值，默认0.25Core。</li><li>限制：允许容器使用的CPU最大值。建议设容器配额的最高限额，避免容器资源超额导致系统故障。</li></ul>
@@ -133,13 +141,13 @@
         </th>
         </tr>
         </thead>
-        <tbody><tr id="r616e69d5a2004b079888d8a4a2a83762"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="ae1906e2a0f4e48c8a290d2ffdc9e83bf"><a name="ae1906e2a0f4e48c8a290d2ffdc9e83bf"></a><a name="ae1906e2a0f4e48c8a290d2ffdc9e83bf"></a>生命周期</p>
+        <tbody><tr id="r616e69d5a2004b079888d8a4a2a83762"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="ae1906e2a0f4e48c8a290d2ffdc9e83bf"><a name="ae1906e2a0f4e48c8a290d2ffdc9e83bf"></a><a name="ae1906e2a0f4e48c8a290d2ffdc9e83bf"></a>生命周<span>期</span></p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="a72815832aa2c4ad6953cec368b824346"><a name="a72815832aa2c4ad6953cec368b824346"></a><a name="a72815832aa2c4ad6953cec368b824346"></a>生命周期脚本定义，主要针对容器类任务的生命周期事件采取的动作。<a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><ul id="u86a34d59537a4e5ebbcd8d62f0fb6fc7"><li>启动命令：输入容器启动命令，容器启动后会立即执行。详细步骤请参见<a href="容器设置.md">容器设置</a>。</li><li>启动后处理：任务启动后触发。详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li><li>停止前处理：任务停止前触发。详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li></ul>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="a72815832aa2c4ad6953cec368b824346"><a name="a72815832aa2c4ad6953cec368b824346"></a><a name="a72815832aa2c4ad6953cec368b824346"></a>生命周期脚本定义，主要针对容器类任务的生命周期事件采取的动作。<a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><a name="u86a34d59537a4e5ebbcd8d62f0fb6fc7"></a><ul id="u86a34d59537a4e5ebbcd8d62f0fb6fc7"><li>启动命令：输入容器启动命令，容器启动后会立即执行。详细步骤请参见<a href="容器设置.md">容器设置</a>。</li><li>启动后处<span>理：</span>任务启动后<span>触发。</span>详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li><li>停止前处理：任务停止前触发。详细步骤请参见<a href="设置容器生命周期.md">设置容器生命周期</a>。</li></ul>
         </div>
         </td>
         </tr>
-        <tr id="r159688429d2c4ad5b55d2b63b5bc6a46"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="acab0841bbf1548e08722d5ec9fb378e9"><a name="acab0841bbf1548e08722d5ec9fb378e9"></a><a name="acab0841bbf1548e08722d5ec9fb378e9"></a>环境变量</p>
+        <tr id="r159688429d2c4ad5b55d2b63b5bc6a46"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="acab0841bbf1548e08722d5ec9fb378e9"><a name="acab0841bbf1548e08722d5ec9fb378e9"></a><a name="acab0841bbf1548e08722d5ec9fb378e9"></a>环境变<span>量</span></p>
         </td>
         <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><div class="p" id="p1033073311186"><a name="p1033073311186"></a><a name="p1033073311186"></a>在容器中添加环境变量，一般用于通过环境变量设置参数。在环境变量页签，单击<span class="uicontrol" id="uicontrol9842146626"><a name="uicontrol9842146626"></a><a name="uicontrol9842146626"></a>“添加环境变量”</span>。当前支持三种类型。<a name="ul145379401817"></a><a name="ul145379401817"></a><ul id="ul145379401817"><li>手动添加：输入变量名称、变量/变量引用。</li><li>密钥导入：输入变量名称，选择导入的密钥名称和数据。您需要提前创建密钥，具体请参见<a href="创建密钥.md">创建密钥</a>。</li><li>配置项导入：输入变量名称，选择导入的配置项名称和数据。您需要提前创建配置项，具体请参见<a href="创建配置项.md">创建配置项</a>。</li></ul>
         </div>
@@ -147,7 +155,7 @@
         </tr>
         <tr id="r23157569d21e4f1eaca7fddbb384abd8"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="a8540d286ec904152a0ae2a7706f81b13"><a name="a8540d286ec904152a0ae2a7706f81b13"></a><a name="a8540d286ec904152a0ae2a7706f81b13"></a>数据存储</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="a8b0122d13c334988999081ca36bcd194"><a name="a8b0122d13c334988999081ca36bcd194"></a><a name="a8b0122d13c334988999081ca36bcd194"></a>支持挂载本地磁盘或者云存储到容器中，以实现数据文件的持久化存储。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="a8b0122d13c334988999081ca36bcd194"><a name="a8b0122d13c334988999081ca36bcd194"></a><a name="a8b0122d13c334988999081ca36bcd194"></a>支持挂载本地磁盘或者云存储到容器中，以实现数据文件的持久化存储<span>。</span></p>
         <p id="a15513eb91b5c4c3daf720ca0b6365c60"><a name="a15513eb91b5c4c3daf720ca0b6365c60"></a><a name="a15513eb91b5c4c3daf720ca0b6365c60"></a>详细步骤请参见<a href="存储管理.md">存储管理</a>。</p>
         </td>
         </tr>
@@ -222,7 +230,7 @@ Job的配置参数如下所示。
 </tbody>
 </table>
 
-以下是一个Job配置，其计算π到2000位并打印输出。
+以下是一个Job配置示例，保存在myjob.yaml中，其计算π到2000位并打印输出。
 
 ```
 apiVersion: batch/v1
@@ -241,6 +249,55 @@ spec:
         command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
       restartPolicy: Never
 ```
+
+**说明：**
+
+-   apiVersion: batch/v1 是当前job的Version
+-   kind: Job：指定当前资源的类型时Job
+-   restartPolicy: Never：是指当前的重启策略。对于Job，只能设置为Never或者OnFailure。对于其他controller（比如 Deployment）可以设置为Always。
+
+**运行该任务，如下：**
+
+1.  启动这个job。
+
+    ```
+    [root@k8s-master k8s]# kubectl apply -f myjob.yaml
+    job.batch/myjob created
+    ```
+
+2.  查看这个job。
+
+    **kubectl get job**
+
+    ```
+    [root@k8s-master k8s]# kubectl get job
+    NAME    COMPLETIONS   DURATION   AGE
+    myjob   1/1           23s        3m45s
+    ```
+
+    completions为 1/1 表示成功运行了这个job。
+
+3.  查看pod的状态。
+
+    **kubectl get pod**
+
+    ```
+    [root@k8s-master k8s]# kubectl get pod
+    NAME          READY   STATUS      RESTARTS   AGE
+    myjob-29qlw   0/1     Completed   0          4m5s
+    ```
+
+    状态为Completed表示这个job已经运行完成。
+
+4.  查看这个pod的日志。
+
+    **kubectl  logs**
+
+    ```
+    [root@k8s-master k8s]# kubectl logs myjob-29qlw 
+    hello k8s job!
+    ```
+
 
 ## 相关操作<a name="s9bef0428158a4935b466ea150ccae961"></a>
 

@@ -1,5 +1,13 @@
 # Kubectl常用命令<a name="cce_01_0139"></a>
 
+-   [基础命令](#section18967103615461)
+-   [部署命令](#section122665712261)
+-   [集群管理命令](#section286451412289)
+-   [故障诊断和调试命令](#section2283324202914)
+-   [高级命令](#section1870143812302)
+-   [设置命令](#section20145838123111)
+-   [其他命令](#section44619483210)
+
 ## 基础命令<a name="section18967103615461"></a>
 
 **get**
@@ -334,7 +342,7 @@ cp filename newfilename
 
 **attach\***
 
-attach命令效果类似于logs -f，退出查看使用ctrl-c。如果一个pod中有多个容器，要查看具体的某个容器的的输出，需要在pod名后使用-c containername指定运行的容器。
+attach命令效果类似于logs -f，退出查看使用ctrl-c。如果一个pod中有多个容器，要查看具体的某个容器的输出，需要在pod名后使用-c containername指定运行的容器。
 
 ```
 kubectl attach podname -c containername

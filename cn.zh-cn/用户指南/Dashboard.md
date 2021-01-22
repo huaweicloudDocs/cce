@@ -1,8 +1,32 @@
 # Dashboard<a name="cce_01_0128"></a>
 
+-   [插件简介](#section1418513434428)
+-   [约束与限制](#section11172124718374)
+-   [安装步骤](#section46701613154319)
+-   [安装后续操作](#section174811341488)
+-   [访问dashboard](#section15288141117362)
+-   [权限修改](#section10659162018415)
+-   [升级插件](#section455343310401)
+-   [卸载插件](#section20765191931911)
+-   [附：访问报错解决方法](#section913875232612)
+-   [版本记录](#section144262219109)
+
 ## 插件简介<a name="section1418513434428"></a>
 
-Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行可以操作的所有命令。它允许用户管理在集群中运行应用程序并对其进行故障排除，以及管理集群本身。
+Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操作Web界面的项目，集合了命令行可以操作的所有命令。
+
+使用Kubernetes Dashboard，你可以：
+
+-   向Kubernetes集群部署容器化应用
+-   诊断容器化应用的问题
+-   管理集群的资源
+-   查看集群上所运行的应用程序
+-   创建、修改Kubernetes上的资源（例如Deployment、Job、DaemonSet等）
+-   展示集群上发生的错误
+
+例如：您可以伸缩一个Deployment、执行滚动更新、重启一个 Pod 或部署一个新的应用程序。
+
+**开源社区地址：**[https://github.com/kubernetes/dashboard](https://github.com/kubernetes/dashboard)
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >当前华为云CCE提供的Dashboard插件已将对应镜像升级到v1.10.1版本，不受Kubernetes Dashboard漏洞CVE-2018-18264影响。
@@ -11,7 +35,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 >-   [https://github.com/kubernetes/dashboard/pull/3400](https://github.com/kubernetes/dashboard/pull/3400?spm=a2c4g.11186623.2.11.34d16d21dGsJMe)
 >-   [https://github.com/kubernetes/dashboard/releases/tag/v1.10.1](https://github.com/kubernetes/dashboard/releases/tag/v1.10.1)
 
-## 使用约束<a name="section11172124718374"></a>
+## 约束与限制<a name="section11172124718374"></a>
 
 -   1.05版本插件支持[混合集群](购买混合集群.md)和[鲲鹏集群](购买鲲鹏集群.md)，混合集群需Kubernetes 1.9及以上版本，鲲鹏集群需Kubernetes 1.13及以上版本。
 -   1.04版本插件支持[混合集群](购买混合集群.md)，需Kubernetes 1.9及以上版本。
@@ -38,6 +62,7 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
                 该插件默认以NodePort形式提供访问，需为集群任意一个节点绑定弹性IP才能使用。
 
+
         -   负载均衡：
             -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[共享型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后单击刷新按钮。
 
@@ -51,9 +76,10 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
 
 
+
 4.  单击“安装“。
 
-    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
+    待插件安装完成后，单击“返回“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
 
 
 ## 安装后续操作<a name="section174811341488"></a>
@@ -139,4 +165,51 @@ Kubernetes Dashboard是Kubernetes集群基于Web的通用UI，集合了命令行
 
     Windows：保存链接地址，关闭所有已经打开的Chrome浏览器窗口，Windows键 +“R”弹出“运行”对话框，输入“chrome --ignore-certificate-errors”启动新的chrome窗口，输入地址进入登录界面。
 
+
+## 版本记录<a name="section144262219109"></a>
+
+**表 1**  dashboard版本记录
+
+<a name="table178175952310"></a>
+<table><thead align="left"><tr id="row278175916234"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.1"><p id="p37875972314"><a name="p37875972314"></a><a name="p37875972314"></a>插件版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="24%" id="mcps1.2.5.1.2"><p id="p1178135932311"><a name="p1178135932311"></a><a name="p1178135932311"></a>支持的集群类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p id="p178185952316"><a name="p178185952316"></a><a name="p178185952316"></a>更新时间</p>
+</th>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p2078175942320"><a name="p2078175942320"></a><a name="p2078175942320"></a>更新特性</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row152684214528"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p136771045194313"><a name="p136771045194313"></a><a name="p136771045194313"></a>2.0.0</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p156774456437"><a name="p156774456437"></a><a name="p156774456437"></a>混合集群 v1.17.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1667784514312"><a name="p1667784514312"></a><a name="p1667784514312"></a>2020/08/19</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p840516619447"><a name="p840516619447"></a><a name="p840516619447"></a>支持对接kubernetes 1.17</p>
+</td>
+</tr>
+<tr id="row7335155311559"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p56771745114318"><a name="p56771745114318"></a><a name="p56771745114318"></a>1.0.7</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p7677134519436"><a name="p7677134519436"></a><a name="p7677134519436"></a>混合集群 v1.(9|11|13|15).*</p>
+<p id="p1867774564311"><a name="p1867774564311"></a><a name="p1867774564311"></a>鲲鹏集群 v1.(13|15).*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p46771745134312"><a name="p46771745134312"></a><a name="p46771745134312"></a>2020/08/05</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><a name="ul19802321114413"></a><a name="ul19802321114413"></a><ul id="ul19802321114413"><li>支持鲲鹏集群</li><li>支持对接kubernetes 1.15</li></ul>
+</td>
+</tr>
+<tr id="row97875912317"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p0677645114319"><a name="p0677645114319"></a><a name="p0677645114319"></a>1.0.6</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p196776452432"><a name="p196776452432"></a><a name="p196776452432"></a>混合集群 v1.(9|11|13|15).*</p>
+<p id="p3677164544317"><a name="p3677164544317"></a><a name="p3677164544317"></a>鲲鹏集群 v1.(13|15).*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1367712452433"><a name="p1367712452433"></a><a name="p1367712452433"></a>2020/06/23</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><a name="ul1439719251448"></a><a name="ul1439719251448"></a><ul id="ul1439719251448"><li>支持鲲鹏集群</li><li>支持对接kubernetes 1.15</li></ul>
+</td>
+</tr>
+</tbody>
+</table>
 

@@ -1,5 +1,13 @@
 # 创建定时任务\(CronJob\)<a name="cce_01_0151"></a>
 
+-   [操作场景](#section6515233144317)
+-   [前提条件](#s50bf087555b1437aa249c1259138706c)
+-   [操作步骤](#s631f9f0386834b23ae6d1e4d19d53382)
+-   [使用kubectl创建CronJob](#section13519162224919)
+-   [相关操作](#s28175da725cf46d49a4cfca59155a5d2)
+
+## 操作场景<a name="section6515233144317"></a>
+
 定时任务是按照指定时间周期运行的短任务。使用场景为在某个固定时间点，为所有运行中的节点做时间同步。
 
 定时任务是基于时间的Job，就类似于Linux系统的crontab，在指定的时间周期运行指定的Job，即：
@@ -12,7 +20,7 @@ CronJob的典型用法如下所示：
 -   在给定的时间点调度Job运行。
 -   创建周期性运行的Job，例如数据库备份、发送邮件。
 
-## 准备工作<a name="s50bf087555b1437aa249c1259138706c"></a>
+## 前提条件<a name="s50bf087555b1437aa249c1259138706c"></a>
 
 已创建资源，具体操作请参见[购买节点（按需计费）](购买节点.md)。若已有集群和节点资源，无需重复操作。
 
@@ -104,28 +112,28 @@ CronJob的典型用法如下所示：
         **表 3**  添加容器参数说明
 
         <a name="t7eeb89498d8449aaaf341f1d6441a1e6"></a>
-        <table><thead align="left"><tr id="cce_01_0150_zh-cn_topic_0107283470_row0282348486"><th class="cellrowborder" valign="top" width="23%" id="mcps1.2.3.1.1"><p id="cce_01_0150_zh-cn_topic_0107283470_p3282147483"><a name="cce_01_0150_zh-cn_topic_0107283470_p3282147483"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p3282147483"></a>参数</p>
+        <table><thead align="left"><tr id="cce_01_0150_cce_01_0047_row0282348486"><th class="cellrowborder" valign="top" width="23%" id="mcps1.2.3.1.1"><p id="cce_01_0150_cce_01_0047_p3282147483"><a name="cce_01_0150_cce_01_0047_p3282147483"></a><a name="cce_01_0150_cce_01_0047_p3282147483"></a>参数</p>
         </th>
-        <th class="cellrowborder" valign="top" width="77%" id="mcps1.2.3.1.2"><p id="cce_01_0150_zh-cn_topic_0107283470_p1828244144819"><a name="cce_01_0150_zh-cn_topic_0107283470_p1828244144819"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p1828244144819"></a>说明</p>
+        <th class="cellrowborder" valign="top" width="77%" id="mcps1.2.3.1.2"><p id="cce_01_0150_cce_01_0047_p1828244144819"><a name="cce_01_0150_cce_01_0047_p1828244144819"></a><a name="cce_01_0150_cce_01_0047_p1828244144819"></a>说明</p>
         </th>
         </tr>
         </thead>
-        <tbody><tr id="cce_01_0150_zh-cn_topic_0107283470_row1844916557597"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0150_zh-cn_topic_0107283470_p182837474815"><a name="cce_01_0150_zh-cn_topic_0107283470_p182837474815"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p182837474815"></a>镜像</p>
+        <tbody><tr id="cce_01_0150_cce_01_0047_row1844916557597"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0150_cce_01_0047_p182837474815"><a name="cce_01_0150_cce_01_0047_p182837474815"></a><a name="cce_01_0150_cce_01_0047_p182837474815"></a>镜像</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0150_zh-cn_topic_0107283470_p3283134134820"><a name="cce_01_0150_zh-cn_topic_0107283470_p3283134134820"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p3283134134820"></a>导入的镜像，您可单击<span class="uicontrol" id="cce_01_0150_zh-cn_topic_0107283470_uicontrol1217815019463"><a name="cce_01_0150_zh-cn_topic_0107283470_uicontrol1217815019463"></a><a name="cce_01_0150_zh-cn_topic_0107283470_uicontrol1217815019463"></a>“更换镜像”</span>进行更换。</p>
-        </td>
-        </tr>
-        <tr id="cce_01_0150_zh-cn_topic_0107283470_row338117362515"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0150_zh-cn_topic_0107283470_p1038143616517"><a name="cce_01_0150_zh-cn_topic_0107283470_p1038143616517"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p1038143616517"></a>* 镜像版本</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0150_zh-cn_topic_0107283470_p1338110368519"><a name="cce_01_0150_zh-cn_topic_0107283470_p1338110368519"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p1338110368519"></a>选择需要部署的镜像版本。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0150_cce_01_0047_p3283134134820"><a name="cce_01_0150_cce_01_0047_p3283134134820"></a><a name="cce_01_0150_cce_01_0047_p3283134134820"></a>导入的镜像，您可单击<span class="uicontrol" id="cce_01_0150_cce_01_0047_uicontrol1217815019463"><a name="cce_01_0150_cce_01_0047_uicontrol1217815019463"></a><a name="cce_01_0150_cce_01_0047_uicontrol1217815019463"></a>“更换镜像”</span>进行更换。</p>
         </td>
         </tr>
-        <tr id="cce_01_0150_zh-cn_topic_0107283470_row32839494813"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0150_zh-cn_topic_0107283470_p122831140486"><a name="cce_01_0150_zh-cn_topic_0107283470_p122831140486"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p122831140486"></a>* 容器名称</p>
+        <tr id="cce_01_0150_cce_01_0047_row338117362515"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0150_cce_01_0047_p1038143616517"><a name="cce_01_0150_cce_01_0047_p1038143616517"></a><a name="cce_01_0150_cce_01_0047_p1038143616517"></a>* 镜像版本</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0150_zh-cn_topic_0107283470_p528314415486"><a name="cce_01_0150_zh-cn_topic_0107283470_p528314415486"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p528314415486"></a>容器的名称，可修改。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0150_cce_01_0047_p1338110368519"><a name="cce_01_0150_cce_01_0047_p1338110368519"></a><a name="cce_01_0150_cce_01_0047_p1338110368519"></a>选择需要部署的镜像版本。</p>
         </td>
         </tr>
-        <tr id="cce_01_0150_zh-cn_topic_0107283470_row152831345485"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0150_zh-cn_topic_0107283470_p875325925918"><a name="cce_01_0150_zh-cn_topic_0107283470_p875325925918"></a><a name="cce_01_0150_zh-cn_topic_0107283470_p875325925918"></a>容器规格</p>
+        <tr id="cce_01_0150_cce_01_0047_row32839494813"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0150_cce_01_0047_p122831140486"><a name="cce_01_0150_cce_01_0047_p122831140486"></a><a name="cce_01_0150_cce_01_0047_p122831140486"></a>* 容器名称</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0150_cce_01_0047_p528314415486"><a name="cce_01_0150_cce_01_0047_p528314415486"></a><a name="cce_01_0150_cce_01_0047_p528314415486"></a>容器的名称，可修改。</p>
+        </td>
+        </tr>
+        <tr id="cce_01_0150_cce_01_0047_row152831345485"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0150_cce_01_0047_p875325925918"><a name="cce_01_0150_cce_01_0047_p875325925918"></a><a name="cce_01_0150_cce_01_0047_p875325925918"></a>容器规格</p>
         </td>
         <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0150_p5379182494610"><a name="cce_01_0150_p5379182494610"></a><a name="cce_01_0150_p5379182494610"></a><strong id="cce_01_0150_b2155195713314"><a name="cce_01_0150_b2155195713314"></a><a name="cce_01_0150_b2155195713314"></a>CPU配额：</strong></p>
         <a name="cce_01_0150_ul67283495467"></a><a name="cce_01_0150_ul67283495467"></a><ul id="cce_01_0150_ul67283495467"><li>申请：容器需要使用的最小CPU值，默认0.25Core。</li><li>限制：允许容器使用的CPU最大值。建议设容器配额的最高限额，避免容器资源超额导致系统故障。</li></ul>
@@ -211,6 +219,8 @@ spec:
             - date; echo Hello from the Kubernetes cluster
           restartPolicy: OnFailure
 ```
+
+**运行该任务，如下：**
 
 1.  创建CronJob。
 

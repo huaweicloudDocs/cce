@@ -1,35 +1,50 @@
 # autoscaler<a name="cce_01_0154"></a>
 
+-   [插件简介](#section25311744154917)
+-   [插件说明](#section11187642115211)
+-   [约束与限制](#section202191122814)
+-   [安装插件](#section15573161754711)
+-   [升级插件](#section3578191413712)
+-   [卸载插件](#section610455514114)
+-   [版本记录](#section1357513092214)
+
 ## 插件简介<a name="section25311744154917"></a>
 
-集群自动扩缩容插件autoscaler，是根据pod调度状态及资源使用情况对集群的工作节点进行自动扩容缩容的插件。
+autoscaler是Kubernetes中非常重要的一个Controller，它提供了微服务的弹性能力，并且和Serverless密切相关。
 
-云容器引擎简化了Kubernetes集群的创建、升级和手动扩缩容，而集群中应用的负载本身是会随着时间动态变化的，为了更好的平衡资源使用率以及性能，kubernetes引入了autoscaler插件，它可以根据部署的应用所请求的资源量自动的动态的伸缩集群。
+弹性伸缩是很好理解的一个概念，当微服务负载高（CPU/内存使用率过高）时水平扩容，增加pod的数量以降低负载，当负载降低时减少pod的数量，减少资源的消耗，通过这种方式使得微服务始终稳定在一个理想的状态。
+
+云容器引擎简化了Kubernetes集群的创建、升级和手动扩缩容，而集群中应用的负载本身是会随着时间动态变化的，为了更好的平衡资源使用率以及性能，kubernetes引入了autoscaler插件，它可以根据部署的应用所请求的资源量自动的动态的伸缩集群，详情请了解[创建节点伸缩策略](创建节点伸缩策略.md)。
+
+**开源社区地址：**[https://github.com/kubernetes/autoscaler](https://github.com/kubernetes/autoscaler)
+
+## 插件说明<a name="section11187642115211"></a>
 
 autoscaler可分成扩容和缩容两个方面：
 
 -   **自动扩容**
 
-    当集群中的Pod由于工作节点资源不足而无法调度时，会触发集群扩容，扩容节点与所在分组资源配额一致。当前该插件使用的是最小浪费策略，即若pod创建需要3核，此时有4核、8核两种规格，优先创建规格为4核的节点。
+    当集群中的Pod由于工作节点资源不足而无法调度时，会触发集群扩容，扩容节点与所在分组资源配额一致。详情请参见[创建节点伸缩策略](创建节点伸缩策略.md)。
+
+    当前该插件使用的是最小浪费策略，即若pod创建需要3核，此时有4核、8核两种规格，优先创建规格为4核的节点。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >自动扩容策略在需满足如下一种情况时才会执行：
+    >自动扩容策略在满足如下条件时才会执行：
     >-   节点上的资源不足。
-    >-   其他的调度配置中不包含节点亲和的策略（在亲和策略中如果包含节点亲和策略则不会自动扩容节点），节点亲和策略设置方法请参见[节点亲和性](节点亲和性.md)。
+    >-   Pod的调度配置中不能包含节点亲和的策略（即Pod若已经设置亲和某个节点，则不会自动扩容节点），节点亲和策略设置方法请参见[节点亲和性](节点亲和性.md)。
 
 -   **自动缩容**
 
     当集群节点处于一段时间空闲状态时（默认10min），会触发集群缩容操作（即节点会被自动删除）。当节点存在以下几种状态的pod时，不可缩容：
 
     -   pod有设置PodDisruptionBudget，当移除pod不满足对应条件时，节点不会缩容。
-    -   pod设置本地存储时，节点不会缩容。
     -   pod由于一些限制，如亲和、反亲和等，无法调度到其他节点，节点不会缩容。
     -   pod拥有cluster-autoscaler.kubernetes.io/safe-to-evict: 'false'这个annotations时，节点不缩容。
     -   节点上存在kube-system namespace下的Pod（除kube-system daemonset创建的Pod），节点不缩容。
     -   节点上有非controller（deployment/replica set/job/stateful set）创建的Pod，节点不缩容。
 
 
-## 使用约束<a name="section202191122814"></a>
+## 约束与限制<a name="section202191122814"></a>
 
 -   集群为1.9.7-r1及以上版本时，才支持此功能。
 -   安装时请确保有足够的资源安装本插件。
@@ -185,8 +200,19 @@ autoscaler可分成扩容和缩容两个方面：
 
 4.  配置完成后，单击“安装”。
 
-    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
+    待插件安装完成后，单击“返回“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
 
+
+## 升级插件<a name="section3578191413712"></a>
+
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击autoscaler下的“ 升级“。
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作；
+    >-   若升级按钮可单击，则单击升级按钮即可升级autoscaler插件。
+    >-   升级autoscaler插件时，会替换原先节点上的旧版本的autoscaler插件，安装最新版本的autoscaler插件以实现功能的快速升级。
+
+2.  在弹出的窗口中，配置参数后，升级该插件。配置参数可参考[安装插件](#section15573161754711)中的参数说明。
 
 ## 卸载插件<a name="section610455514114"></a>
 
@@ -198,214 +224,234 @@ autoscaler可分成扩容和缩容两个方面：
 **表 3**  autoscaler版本记录
 
 <a name="table178175952310"></a>
-<table><thead align="left"><tr id="row278175916234"><th class="cellrowborder" valign="top" width="11.24%" id="mcps1.2.5.1.1"><p id="p37875972314"><a name="p37875972314"></a><a name="p37875972314"></a>插件版本</p>
+<table><thead align="left"><tr id="row278175916234"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.1"><p id="p37875972314"><a name="p37875972314"></a><a name="p37875972314"></a>插件版本</p>
 </th>
-<th class="cellrowborder" valign="top" width="29.68%" id="mcps1.2.5.1.2"><p id="p1178135932311"><a name="p1178135932311"></a><a name="p1178135932311"></a>支持的集群类型</p>
+<th class="cellrowborder" valign="top" width="24%" id="mcps1.2.5.1.2"><p id="p1178135932311"><a name="p1178135932311"></a><a name="p1178135932311"></a>支持的集群类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.44%" id="mcps1.2.5.1.3"><p id="p178185952316"><a name="p178185952316"></a><a name="p178185952316"></a>更新时间</p>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p id="p178185952316"><a name="p178185952316"></a><a name="p178185952316"></a>更新时间</p>
 </th>
-<th class="cellrowborder" valign="top" width="40.64%" id="mcps1.2.5.1.4"><p id="p2078175942320"><a name="p2078175942320"></a><a name="p2078175942320"></a>更新特性</p>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p2078175942320"><a name="p2078175942320"></a><a name="p2078175942320"></a>更新特性</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row31745215578"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p317410218570"><a name="p317410218570"></a><a name="p317410218570"></a>1.17.2</p>
+<tbody><tr id="row1802546134512"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p680284674510"><a name="p680284674510"></a><a name="p680284674510"></a>1.17.5</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p674493210571"><a name="p674493210571"></a><a name="p674493210571"></a>混合集群 v1.17.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p3271188174610"><a name="p3271188174610"></a><a name="p3271188174610"></a>混合集群 v1.17.*</p>
+<p id="p927116818469"><a name="p927116818469"></a><a name="p927116818469"></a>鲲鹏集群 v1.17.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p208027461455"><a name="p208027461455"></a><a name="p208027461455"></a>2020/09/12</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p15366238134613"><a name="p15366238134613"></a><a name="p15366238134613"></a>支持1.17版本的kubernetes，支持页面显示伸缩事件</p>
+</td>
+</tr>
+<tr id="row31745215578"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p317410218570"><a name="p317410218570"></a><a name="p317410218570"></a>1.17.2</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p674493210571"><a name="p674493210571"></a><a name="p674493210571"></a>混合集群 v1.17.*</p>
 <p id="p197441632205712"><a name="p197441632205712"></a><a name="p197441632205712"></a>鲲鹏集群 v1.17.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p417492125717"><a name="p417492125717"></a><a name="p417492125717"></a>2020/08/19</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p417492125717"><a name="p417492125717"></a><a name="p417492125717"></a>2020/08/19</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p217416255719"><a name="p217416255719"></a><a name="p217416255719"></a>支持1.17版本的kubernetes</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p217416255719"><a name="p217416255719"></a><a name="p217416255719"></a>支持1.17版本的kubernetes</p>
 </td>
 </tr>
-<tr id="row97875912317"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p10472656612"><a name="p10472656612"></a><a name="p10472656612"></a>1.15.6</p>
+<tr id="row858273761217"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p1658253712123"><a name="p1658253712123"></a><a name="p1658253712123"></a>1.15.7</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p134723514610"><a name="p134723514610"></a><a name="p134723514610"></a>混合集群 v1.15.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p54341947111217"><a name="p54341947111217"></a><a name="p54341947111217"></a>混合集群 v1.15.*</p>
+<p id="p84341473123"><a name="p84341473123"></a><a name="p84341473123"></a>鲲鹏集群 v1.15.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1843544791218"><a name="p1843544791218"></a><a name="p1843544791218"></a>2020/09/12</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p43781361316"><a name="p43781361316"></a><a name="p43781361316"></a>修复节点删除异常问题</p>
+</td>
+</tr>
+<tr id="row97875912317"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p10472656612"><a name="p10472656612"></a><a name="p10472656612"></a>1.15.6</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p134723514610"><a name="p134723514610"></a><a name="p134723514610"></a>混合集群 v1.15.*</p>
 <p id="p14472951866"><a name="p14472951866"></a><a name="p14472951866"></a>鲲鹏集群 v1.15.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p144721552063"><a name="p144721552063"></a><a name="p144721552063"></a>2020/07/25</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p144721552063"><a name="p144721552063"></a><a name="p144721552063"></a>2020/07/25</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p101359865814"><a name="p101359865814"></a><a name="p101359865814"></a>修复scale_result指标</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p101359865814"><a name="p101359865814"></a><a name="p101359865814"></a>修复scale_result指标</p>
 </td>
 </tr>
-<tr id="row187865919236"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p25952027194012"><a name="p25952027194012"></a><a name="p25952027194012"></a>1.15.3</p>
+<tr id="row187865919236"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p25952027194012"><a name="p25952027194012"></a><a name="p25952027194012"></a>1.15.3</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p1259532734017"><a name="p1259532734017"></a><a name="p1259532734017"></a>混合集群 v1.15.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p1259532734017"><a name="p1259532734017"></a><a name="p1259532734017"></a>混合集群 v1.15.*</p>
 <p id="p165951727114011"><a name="p165951727114011"></a><a name="p165951727114011"></a>鲲鹏集群 v1.15.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p259513276409"><a name="p259513276409"></a><a name="p259513276409"></a>2020/03/12</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p259513276409"><a name="p259513276409"></a><a name="p259513276409"></a>2020/03/12</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p713628125816"><a name="p713628125816"></a><a name="p713628125816"></a>支持nodepool级别扩容策略</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p713628125816"><a name="p713628125816"></a><a name="p713628125816"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
-<tr id="row14788592234"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p16595132724019"><a name="p16595132724019"></a><a name="p16595132724019"></a>1.15.2</p>
+<tr id="row14788592234"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p16595132724019"><a name="p16595132724019"></a><a name="p16595132724019"></a>1.15.2</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p1459552715401"><a name="p1459552715401"></a><a name="p1459552715401"></a>混合集群 v1.15.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p1459552715401"><a name="p1459552715401"></a><a name="p1459552715401"></a>混合集群 v1.15.*</p>
 <p id="p75951327164012"><a name="p75951327164012"></a><a name="p75951327164012"></a>鲲鹏集群 v1.15.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p1595112714406"><a name="p1595112714406"></a><a name="p1595112714406"></a>2020/02/06</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1595112714406"><a name="p1595112714406"></a><a name="p1595112714406"></a>2020/02/06</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p61371810589"><a name="p61371810589"></a><a name="p61371810589"></a>支持nodepool级别扩容策略</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p61371810589"><a name="p61371810589"></a><a name="p61371810589"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
-<tr id="row1878859102318"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1595327184017"><a name="p1595327184017"></a><a name="p1595327184017"></a>1.15.1</p>
+<tr id="row1878859102318"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p1595327184017"><a name="p1595327184017"></a><a name="p1595327184017"></a>1.15.1</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p11595182734020"><a name="p11595182734020"></a><a name="p11595182734020"></a>混合集群 v1.15.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p11595182734020"><a name="p11595182734020"></a><a name="p11595182734020"></a>混合集群 v1.15.*</p>
 <p id="p10595927124014"><a name="p10595927124014"></a><a name="p10595927124014"></a>鲲鹏集群 v1.15.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p759511279400"><a name="p759511279400"></a><a name="p759511279400"></a>2019/12/19</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p759511279400"><a name="p759511279400"></a><a name="p759511279400"></a>2019/12/19</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p413811895811"><a name="p413811895811"></a><a name="p413811895811"></a>支持nodepool级别扩容策略</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p413811895811"><a name="p413811895811"></a><a name="p413811895811"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
-<tr id="row15919281555"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p159520272408"><a name="p159520272408"></a><a name="p159520272408"></a>1.13.10</p>
+<tr id="row15919281555"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p159520272408"><a name="p159520272408"></a><a name="p159520272408"></a>1.13.10</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p3595182774020"><a name="p3595182774020"></a><a name="p3595182774020"></a>混合集群 v1.13.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p3595182774020"><a name="p3595182774020"></a><a name="p3595182774020"></a>混合集群 v1.13.*</p>
 <p id="p2059582784016"><a name="p2059582784016"></a><a name="p2059582784016"></a>鲲鹏集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p2595162717404"><a name="p2595162717404"></a><a name="p2595162717404"></a>2020/03/12</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p2595162717404"><a name="p2595162717404"></a><a name="p2595162717404"></a>2020/03/12</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p413919818585"><a name="p413919818585"></a><a name="p413919818585"></a>支持nodepool级别扩容策略</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p413919818585"><a name="p413919818585"></a><a name="p413919818585"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
-<tr id="row1878459102313"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p11595102794019"><a name="p11595102794019"></a><a name="p11595102794019"></a>1.13.9</p>
+<tr id="row1878459102313"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p11595102794019"><a name="p11595102794019"></a><a name="p11595102794019"></a>1.13.9</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p115951127194015"><a name="p115951127194015"></a><a name="p115951127194015"></a>混合集群 v1.13.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p115951127194015"><a name="p115951127194015"></a><a name="p115951127194015"></a>混合集群 v1.13.*</p>
 <p id="p1459517276401"><a name="p1459517276401"></a><a name="p1459517276401"></a>鲲鹏集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p1595122719409"><a name="p1595122719409"></a><a name="p1595122719409"></a>2020/02/06</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1595122719409"><a name="p1595122719409"></a><a name="p1595122719409"></a>2020/02/06</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1139784583"><a name="p1139784583"></a><a name="p1139784583"></a>支持nodepool级别扩容策略</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p1139784583"><a name="p1139784583"></a><a name="p1139784583"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
-<tr id="row3799599239"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p18596127124013"><a name="p18596127124013"></a><a name="p18596127124013"></a>1.13.8</p>
+<tr id="row3799599239"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p18596127124013"><a name="p18596127124013"></a><a name="p18596127124013"></a>1.13.8</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p14596202715401"><a name="p14596202715401"></a><a name="p14596202715401"></a>混合集群 v1.13.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p14596202715401"><a name="p14596202715401"></a><a name="p14596202715401"></a>混合集群 v1.13.*</p>
 <p id="p65969274405"><a name="p65969274405"></a><a name="p65969274405"></a>鲲鹏集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p19596027164012"><a name="p19596027164012"></a><a name="p19596027164012"></a>2019/12/19</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p19596027164012"><a name="p19596027164012"></a><a name="p19596027164012"></a>2019/12/19</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p814012817589"><a name="p814012817589"></a><a name="p814012817589"></a>支持nodepool级别扩容策略</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p814012817589"><a name="p814012817589"></a><a name="p814012817589"></a>支持nodepool级别扩容策略</p>
 </td>
 </tr>
-<tr id="row1210141511246"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p7596027154017"><a name="p7596027154017"></a><a name="p7596027154017"></a>1.13.7</p>
+<tr id="row1210141511246"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p7596027154017"><a name="p7596027154017"></a><a name="p7596027154017"></a>1.13.7</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p1859612279405"><a name="p1859612279405"></a><a name="p1859612279405"></a>混合集群 v1.13.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p1859612279405"><a name="p1859612279405"></a><a name="p1859612279405"></a>混合集群 v1.13.*</p>
 <p id="p1459602717403"><a name="p1459602717403"></a><a name="p1459602717403"></a>鲲鹏集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p4596182718400"><a name="p4596182718400"></a><a name="p4596182718400"></a>2019/10/17</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p4596182718400"><a name="p4596182718400"></a><a name="p4596182718400"></a>2019/10/17</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p121417825817"><a name="p121417825817"></a><a name="p121417825817"></a>修复缩容场景下空指针引用错误</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p121417825817"><a name="p121417825817"></a><a name="p121417825817"></a>修复缩容场景下空指针引用错误</p>
 </td>
 </tr>
-<tr id="row1821191542410"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p16596122764017"><a name="p16596122764017"></a><a name="p16596122764017"></a>1.13.5</p>
+<tr id="row1821191542410"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p16596122764017"><a name="p16596122764017"></a><a name="p16596122764017"></a>1.13.5</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p65963270405"><a name="p65963270405"></a><a name="p65963270405"></a>混合集群 v1.13.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p65963270405"><a name="p65963270405"></a><a name="p65963270405"></a>混合集群 v1.13.*</p>
 <p id="p195961527114017"><a name="p195961527114017"></a><a name="p195961527114017"></a>鲲鹏集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p145961527134016"><a name="p145961527134016"></a><a name="p145961527134016"></a>2019/08/15</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p145961527134016"><a name="p145961527134016"></a><a name="p145961527134016"></a>2019/08/15</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p91421285580"><a name="p91421285580"></a><a name="p91421285580"></a>支持nodepool</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p91421285580"><a name="p91421285580"></a><a name="p91421285580"></a>支持nodepool</p>
 </td>
 </tr>
-<tr id="row12115156247"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p10596112712409"><a name="p10596112712409"></a><a name="p10596112712409"></a>1.13.4</p>
+<tr id="row12115156247"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p10596112712409"><a name="p10596112712409"></a><a name="p10596112712409"></a>1.13.4</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p16596152717402"><a name="p16596152717402"></a><a name="p16596152717402"></a>混合集群 v1.13.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p16596152717402"><a name="p16596152717402"></a><a name="p16596152717402"></a>混合集群 v1.13.*</p>
 <p id="p7596202715404"><a name="p7596202715404"></a><a name="p7596202715404"></a>鲲鹏集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p859612714403"><a name="p859612714403"></a><a name="p859612714403"></a>2019/08/01</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p859612714403"><a name="p859612714403"></a><a name="p859612714403"></a>2019/08/01</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul13596127194013"></a><a name="ul13596127194013"></a><ul id="ul13596127194013"><li>支持鲲鹏集群</li><li>开放缩容相关参数</li><li>支持添加k8s节点标签</li></ul>
-</td>
-</tr>
-<tr id="row6211111532416"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p18596102714403"><a name="p18596102714403"></a><a name="p18596102714403"></a>1.13.3</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p859662744017"><a name="p859662744017"></a><a name="p859662744017"></a>混合集群 v1.13.*</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p559612764012"><a name="p559612764012"></a><a name="p559612764012"></a>2019/07/10</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p129151236205818"><a name="p129151236205818"></a><a name="p129151236205818"></a>支持给扩容的节点加Taints</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><a name="ul13596127194013"></a><a name="ul13596127194013"></a><ul id="ul13596127194013"><li>支持鲲鹏集群</li><li>开放缩容相关参数</li><li>支持添加k8s节点标签</li></ul>
 </td>
 </tr>
-<tr id="row421111153248"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1043324612400"><a name="p1043324612400"></a><a name="p1043324612400"></a>1.13.2</p>
+<tr id="row6211111532416"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p18596102714403"><a name="p18596102714403"></a><a name="p18596102714403"></a>1.13.3</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p24331246174017"><a name="p24331246174017"></a><a name="p24331246174017"></a>混合集群 v1.13.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p859662744017"><a name="p859662744017"></a><a name="p859662744017"></a>混合集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p0433144616405"><a name="p0433144616405"></a><a name="p0433144616405"></a>2019/06/10</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p559612764012"><a name="p559612764012"></a><a name="p559612764012"></a>2019/07/10</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p7917236175816"><a name="p7917236175816"></a><a name="p7917236175816"></a>支持给扩容的节点加Taints</p>
-</td>
-</tr>
-<tr id="row12211171512417"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p184331946144020"><a name="p184331946144020"></a><a name="p184331946144020"></a>1.11.8</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p104331346154013"><a name="p104331346154013"></a><a name="p104331346154013"></a>混合集群 v1.11.*</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p34332046124017"><a name="p34332046124017"></a><a name="p34332046124017"></a>2019/09/10</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1291753615820"><a name="p1291753615820"></a><a name="p1291753615820"></a>修复缩容场景下空指针引用错误</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p129151236205818"><a name="p129151236205818"></a><a name="p129151236205818"></a>支持给扩容的节点加Taints</p>
 </td>
 </tr>
-<tr id="row582262022410"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1433246114013"><a name="p1433246114013"></a><a name="p1433246114013"></a>1.11.6</p>
+<tr id="row421111153248"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p1043324612400"><a name="p1043324612400"></a><a name="p1043324612400"></a>1.13.2</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p6433446124010"><a name="p6433446124010"></a><a name="p6433446124010"></a>混合集群 v1.11.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p24331246174017"><a name="p24331246174017"></a><a name="p24331246174017"></a>混合集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p154334464401"><a name="p154334464401"></a><a name="p154334464401"></a>2019/08/15</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p0433144616405"><a name="p0433144616405"></a><a name="p0433144616405"></a>2019/06/10</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1912314019583"><a name="p1912314019583"></a><a name="p1912314019583"></a>支持nodepool</p>
-</td>
-</tr>
-<tr id="row14823102013241"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p0433346184017"><a name="p0433346184017"></a><a name="p0433346184017"></a>1.11.5</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p1343364612403"><a name="p1343364612403"></a><a name="p1343364612403"></a>混合集群 v1.11.*</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p243311466404"><a name="p243311466404"></a><a name="p243311466404"></a>2019/08/16</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul543374619409"></a><a name="ul543374619409"></a><ul id="ul543374619409"><li>开放缩容相关参数</li><li>支持添加k8s节点标签</li></ul>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p7917236175816"><a name="p7917236175816"></a><a name="p7917236175816"></a>支持给扩容的节点加Taints</p>
 </td>
 </tr>
-<tr id="row39171026182415"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p343364615402"><a name="p343364615402"></a><a name="p343364615402"></a>1.11.4</p>
+<tr id="row12211171512417"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p184331946144020"><a name="p184331946144020"></a><a name="p184331946144020"></a>1.11.8</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p0433164684013"><a name="p0433164684013"></a><a name="p0433164684013"></a>混合集群 v1.11.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p104331346154013"><a name="p104331346154013"></a><a name="p104331346154013"></a>混合集群 v1.11.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p4433246104013"><a name="p4433246104013"></a><a name="p4433246104013"></a>2019/07/10</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p34332046124017"><a name="p34332046124017"></a><a name="p34332046124017"></a>2019/09/10</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p344813320585"><a name="p344813320585"></a><a name="p344813320585"></a>支持给扩容的节点加Taints</p>
-</td>
-</tr>
-<tr id="row6918142642419"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1143319462401"><a name="p1143319462401"></a><a name="p1143319462401"></a>1.11.3</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p2043384616409"><a name="p2043384616409"></a><a name="p2043384616409"></a>混合集群 v1.11.*</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p94336465401"><a name="p94336465401"></a><a name="p94336465401"></a>2019/06/10</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p64491932135820"><a name="p64491932135820"></a><a name="p64491932135820"></a>支持给扩容的节点加Taints</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p1291753615820"><a name="p1291753615820"></a><a name="p1291753615820"></a>修复缩容场景下空指针引用错误</p>
 </td>
 </tr>
-<tr id="row1391872622417"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1443344624017"><a name="p1443344624017"></a><a name="p1443344624017"></a>1.1.3</p>
+<tr id="row582262022410"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p1433246114013"><a name="p1433246114013"></a><a name="p1433246114013"></a>1.11.6</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p6433174664016"><a name="p6433174664016"></a><a name="p6433174664016"></a>混合集群 v1.9.7-r*、v1.9.10-r*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p6433446124010"><a name="p6433446124010"></a><a name="p6433446124010"></a>混合集群 v1.11.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p10433124612402"><a name="p10433124612402"></a><a name="p10433124612402"></a>2019/09/21</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p154334464401"><a name="p154334464401"></a><a name="p154334464401"></a>2019/08/15</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p114505329582"><a name="p114505329582"></a><a name="p114505329582"></a>支持给扩容的节点加Taints</p>
-</td>
-</tr>
-<tr id="row191815264242"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p1643374654015"><a name="p1643374654015"></a><a name="p1643374654015"></a>1.1.2</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p1143319464405"><a name="p1143319464405"></a><a name="p1143319464405"></a>混合集群 v1.9.7-r*、v1.9.10-r*</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p1943310469409"><a name="p1943310469409"></a><a name="p1943310469409"></a>2019/02/01</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p7451163219587"><a name="p7451163219587"></a><a name="p7451163219587"></a>支持给扩容的节点加Taints</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p1912314019583"><a name="p1912314019583"></a><a name="p1912314019583"></a>支持nodepool</p>
 </td>
 </tr>
-<tr id="row891802662411"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p443354664010"><a name="p443354664010"></a><a name="p443354664010"></a>1.0.7</p>
+<tr id="row14823102013241"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p0433346184017"><a name="p0433346184017"></a><a name="p0433346184017"></a>1.11.5</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p2433114644013"><a name="p2433114644013"></a><a name="p2433114644013"></a>混合集群 v1.9.7-r*、v1.9.10-r*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p1343364612403"><a name="p1343364612403"></a><a name="p1343364612403"></a>混合集群 v1.11.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p1943394634012"><a name="p1943394634012"></a><a name="p1943394634012"></a>2018/10/29</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p243311466404"><a name="p243311466404"></a><a name="p243311466404"></a>2019/08/16</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><a name="ul12433194644020"></a><a name="ul12433194644020"></a><ul id="ul12433194644020"><li>autoscaler 1.0.0</li><li>自动扩容：确保所有节点可调度</li><li>自动缩容：删除无用node节点</li></ul>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><a name="ul543374619409"></a><a name="ul543374619409"></a><ul id="ul543374619409"><li>开放缩容相关参数</li><li>支持添加k8s节点标签</li></ul>
+</td>
+</tr>
+<tr id="row39171026182415"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p343364615402"><a name="p343364615402"></a><a name="p343364615402"></a>1.11.4</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p0433164684013"><a name="p0433164684013"></a><a name="p0433164684013"></a>混合集群 v1.11.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p4433246104013"><a name="p4433246104013"></a><a name="p4433246104013"></a>2019/07/10</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p344813320585"><a name="p344813320585"></a><a name="p344813320585"></a>支持给扩容的节点加Taints</p>
+</td>
+</tr>
+<tr id="row6918142642419"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p1143319462401"><a name="p1143319462401"></a><a name="p1143319462401"></a>1.11.3</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p2043384616409"><a name="p2043384616409"></a><a name="p2043384616409"></a>混合集群 v1.11.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p94336465401"><a name="p94336465401"></a><a name="p94336465401"></a>2019/06/10</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p64491932135820"><a name="p64491932135820"></a><a name="p64491932135820"></a>支持给扩容的节点加Taints</p>
+</td>
+</tr>
+<tr id="row1391872622417"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p1443344624017"><a name="p1443344624017"></a><a name="p1443344624017"></a>1.1.3</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p6433174664016"><a name="p6433174664016"></a><a name="p6433174664016"></a>混合集群 v1.9.7-r*、v1.9.10-r*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p10433124612402"><a name="p10433124612402"></a><a name="p10433124612402"></a>2019/09/21</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p114505329582"><a name="p114505329582"></a><a name="p114505329582"></a>支持给扩容的节点加Taints</p>
+</td>
+</tr>
+<tr id="row191815264242"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p1643374654015"><a name="p1643374654015"></a><a name="p1643374654015"></a>1.1.2</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p1143319464405"><a name="p1143319464405"></a><a name="p1143319464405"></a>混合集群 v1.9.7-r*、v1.9.10-r*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1943310469409"><a name="p1943310469409"></a><a name="p1943310469409"></a>2019/02/01</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p7451163219587"><a name="p7451163219587"></a><a name="p7451163219587"></a>支持给扩容的节点加Taints</p>
+</td>
+</tr>
+<tr id="row891802662411"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p443354664010"><a name="p443354664010"></a><a name="p443354664010"></a>1.0.7</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p2433114644013"><a name="p2433114644013"></a><a name="p2433114644013"></a>混合集群 v1.9.7-r*、v1.9.10-r*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1943394634012"><a name="p1943394634012"></a><a name="p1943394634012"></a>2018/10/29</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><a name="ul12433194644020"></a><a name="ul12433194644020"></a><ul id="ul12433194644020"><li>autoscaler 1.0.0</li><li>自动扩容：确保所有节点可调度</li><li>自动缩容：删除无用node节点</li></ul>
 </td>
 </tr>
 </tbody>

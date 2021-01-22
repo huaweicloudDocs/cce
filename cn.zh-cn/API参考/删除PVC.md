@@ -5,7 +5,7 @@
 该API用于删除指定Namespace下的PVC（PersistentVolumeClaim）对象，并可以选择保留后端的云存储。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->存储管理的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中\*\*\{clusterid\}**为集群ID，**uri**为资源路径，也即API访问的路径。 \>如果使用**https://Endpoint/uri\*\*，则必须指定请求header中的**X-Cluster-ID**参数。
+>存储管理的URL格式为：https://\{clusterid\}.Endpoint/uri。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。如果使用https://Endpoint/uri，则必须指定请求header中的X-Cluster-ID参数。
 
 ## 调试
 
@@ -19,41 +19,63 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.1"><p>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="10%" id="mcps1.2.5.1.2"><p>是否必选</p>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.2"><p>是否必选</p>
 </th>
 <th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.5.1.4"><p>描述</p>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p>描述</p>
 </th>
 </tr>
 </thead>
 <tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>是</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.2 "><p>是</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>需要删除的PersistentVolumClaim的名称。 name格式为：Volume名称?deleteVolume=BOOLEAN&amp;storageType=云存储类型]，中括号内可省略，示例：</p>
-<ul><li><p>volume-49f1?deleteVolume=true&amp;storageType=bs</p>
-</li><li><p>volume-49f1 其中：</p>
-</li><li><p>deleteVolume：删除PersistentVolumeClaim后是否保留后端关联的云存储。false表示不删除，true表示删除，默认为false。</p>
-<div class="note"><span class="notetitle"> 说明： </span><div class="notebody"><p>当为efs时，不支持删除存储，所以不能设为true。</p>
-</div></div>
-</li><li><p>storageType：云存储的类型，和deleteVolume搭配使用。即deleteVolume和storageType必须同时配置。</p>
-<ul><li><p>bs：EVS云存储</p>
-</li><li><p>nfs：SFS弹性文件存储</p>
-</li><li><p>obs：OBS对象存储 [- efs：SFS Turbo极速文件存储</p>
-</li></ul>
-</li></ul>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>需要删除的PersistentVolumClaim的名称。</p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>namespace</p>
 </td>
-<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>是</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.2 "><p>是</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>指定PersistentVolumeClaim所在的命名空间。</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>指定PersistentVolumeClaim所在的命名空间。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+**表 2**  Query参数
+
+<table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.1"><p>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.2"><p>是否必选</p>
+</th>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>deleteVolume</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.2 "><p>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>删除PersistentVolumeClaim后是否保留后端关联的云存储。false表示不删除，true表示删除，默认为false。</p>
+</td>
+</tr>
+<tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>storageType</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.2 "><p>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>删除PersistentVolumeClaim后是否保留后端关联的云存储。false表示不删除，true表示删除，默认为false。云存储的类型，和deleteVolume搭配使用。即deleteVolume和storageType必须同时配置。 - bs：EVS云存储 - nfs：SFS弹性文件存储 - obs：OBS对象存储 - efs：SFS Turbo极速文件存储</p>
 </td>
 </tr>
 </tbody>
@@ -61,49 +83,46 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 
 ## 请求参数
 
-**表 2**  请求Header参数
+**表 3**  请求Header参数
 
 <a name="HeaderParameter"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.1"><p>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="10%" id="mcps1.2.5.1.2"><p>是否必选</p>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.2"><p>是否必选</p>
 </th>
 <th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.5.1.4"><p>描述</p>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p>描述</p>
 </th>
 </tr>
 </thead>
 <tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>Content-Type</p>
 </td>
-<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>是</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.2 "><p>是</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>消息体的类型（格式）</p>
-<p>枚举值：</p>
-<ul><li><p>application/json;charset=utf-8</p>
-</li><li><p>application/json</p>
-</li></ul>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>消息体的类型（格式）</p>
+<p>缺省值：<strong>application/json</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>X-Auth-Token</p>
 </td>
-<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>是</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.2 "><p>是</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0004.html#cce_02_0004__section2417768214391" target="_blank" rel="noopener noreferrer">获取token</a>。</p>
-<p>最大长度：16384</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>"调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0004.html#cce_02_0004__section2417768214391" target="_blank" rel="noopener noreferrer">获取token</a>。"</p>
+<p>最大长度：<strong>16384</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>X-Cluster-ID</p>
 </td>
-<td class="cellrowborder" valign="top" width="10%" headers="mcps1.2.5.1.2 "><p>否</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.2 "><p>否</p>
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.5.1.4 "><p>集群 ID，使用<strong>https://Endpoint/uri</strong>这种URL格式时必须指定此参数。获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0271.html" target="_blank" rel="noopener noreferrer">如何获取接口URI中参数</a></p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>"集群ID，使用<strong>https://Endpoint/uri</strong>这种URL格式时必须指定此参数。获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0271.html" target="_blank" rel="noopener noreferrer">如何获取接口URI中参数</a>"</p>
 </td>
 </tr>
 </tbody>
@@ -111,9 +130,9 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 
 ## 响应参数
 
-**状态码为 200 时: **
+**状态码： 200**
 
-**表 3**  响应Body参数
+**表 4**  响应Body参数
 
 <a name="responseParameter"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -129,7 +148,7 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API版本，固定值<strong>v1</strong></p>
-<p>缺省值：v1</p>
+<p>缺省值：<strong>v1</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>kind</p>
@@ -137,7 +156,7 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API类型，固定值<strong>PersistentVolumeClaim</strong></p>
-<p>缺省值：PersistentVolumeClaim</p>
+<p>缺省值：<strong>PersistentVolumeClaim</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>metadata</p>
@@ -164,7 +183,7 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 </tbody>
 </table>
 
-**表 4**  PersistentVolumeClaimMetadata
+**表 5**  PersistentVolumeClaimMetadata
 
 <a name="response_PersistentVolumeClaimMetadata"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -195,7 +214,7 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 </tbody>
 </table>
 
-**表 5**  PersistentVolumeClaimSpec
+**表 6**  PersistentVolumeClaimSpec
 
 <a name="response_PersistentVolumeClaimSpec"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -240,8 +259,8 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 </li><li><p>ReadWriteMany：该卷可以被多个节点以读/写模式挂载</p>
 </li></ul>
 <p>枚举值：</p>
-<ul><li><p>ReadOnlyMany</p>
-</li><li><p>ReadWriteMany</p>
+<ul><li><p><strong>ReadOnlyMany</strong></p>
+</li><li><p><strong>ReadWriteMany</strong></p>
 </li></ul>
 </td>
 </tr>
@@ -263,7 +282,7 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p><a href="#response_ResourceRequirements">ResourceRequirements</a> object</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>需要的计算资源</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>资源需求和限制</p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>volumeMode</p>
@@ -276,7 +295,7 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 </tbody>
 </table>
 
-**表 6**  ResourceRequirements
+**表 7**  ResourceRequirements
 
 <a name="response_ResourceRequirements"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -289,22 +308,22 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 </thead>
 <tbody><tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>limits</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Object</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Map&lt;String,String&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>计算资源限制</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>资源限制，创建时指定无效</p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>requests</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Object</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Map&lt;String,String&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>计算资源申请</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>资源需求，创建时指定无效</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-**表 7**  PersistentVolumeClaimStatus
+**表 8**  PersistentVolumeClaimStatus
 
 <a name="response_PersistentVolumeClaimStatus"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
@@ -349,7 +368,7 @@ DELETE /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims/\{name\}
 
 ## 状态码
 
-<a name="table19"></a>
+<a name="status_code"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="15%" id="mcps1.1.3.1.1"><p>状态码 </p>
 </th>
 <th class="cellrowborder" valign="top" width="85%" id="mcps1.1.3.1.2"><p>描述</p>

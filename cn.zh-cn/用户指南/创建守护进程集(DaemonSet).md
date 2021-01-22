@@ -1,5 +1,11 @@
 # 创建守护进程集\(DaemonSet\)<a name="cce_01_0216"></a>
 
+-   [操作场景](#section1479811467429)
+-   [前提条件](#section7271245481)
+-   [操作步骤](#section1160483214207)
+
+## 操作场景<a name="section1479811467429"></a>
+
 云容器引擎（CCE）提供多种类型的容器部署和管理能力，支持对容器工作负载的部署、配置、监控、扩容、升级、卸载、服务发现及负载均衡等特性。
 
 其中守护进程集（DaemonSet）可以确保全部（或者某些）节点上仅运行一个Pod实例，当有节点加入集群时，也会为他们新增一个 Pod 。 当有节点从集群移除时，这些 Pod 也会被回收。删除 DaemonSet 将会删除它创建的所有 Pod。
@@ -12,7 +18,7 @@
 
 一种简单的用法是为每种类型的守护进程在所有的节点上都启动一个DaemonSet。一个稍微复杂的用法是为同一种守护进程部署多个DaemonSet；每个具有不同的标志， 并且对不同硬件类型具有不同的内存、CPU 要求。
 
-## 准备工作<a name="section7271245481"></a>
+## 前提条件<a name="section7271245481"></a>
 
 在创建守护进程集前，您需要存在一个可用集群。若没有可用集群 ，请参照[购买混合集群](购买混合集群.md)中内容创建。
 
@@ -46,17 +52,17 @@
     <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p2511628354"><a name="p2511628354"></a><a name="p2511628354"></a>在单集群中，不同命名空间中的数据彼此隔离。使应用可以共享同个集群的服务，也能够互不干扰。若您不设置命名空间，系统会默认使用default命名空间。</p>
     </td>
     </tr>
-    <tr id="row32431417251"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0107283470_p15337247203514"><a name="zh-cn_topic_0107283470_p15337247203514"></a><a name="zh-cn_topic_0107283470_p15337247203514"></a>弹性网卡</p>
+    <tr id="row32431417251"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p15337247203514"><a name="cce_01_0047_p15337247203514"></a><a name="cce_01_0047_p15337247203514"></a>弹性网卡</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0107283470_p476333074117"><a name="zh-cn_topic_0107283470_p476333074117"></a><a name="zh-cn_topic_0107283470_p476333074117"></a>Pod中的容器支持绑定弹性网卡，单击选中<span class="uicontrol" id="zh-cn_topic_0107283470_uicontrol187631230104117"><a name="zh-cn_topic_0107283470_uicontrol187631230104117"></a><a name="zh-cn_topic_0107283470_uicontrol187631230104117"></a>“绑定弹性网卡”</span>可以绑定已有的网络平面。更多网络平面信息请参见<a href="网络平面(NetworkAttachmentDefinition).md">网络平面(NetworkAttachmentDefinition)</a>。</p>
-    <p id="zh-cn_topic_0107283470_p58611513174112"><a name="zh-cn_topic_0107283470_p58611513174112"></a><a name="zh-cn_topic_0107283470_p58611513174112"></a><strong id="zh-cn_topic_0107283470_b10861121314119"><a name="zh-cn_topic_0107283470_b10861121314119"></a><a name="zh-cn_topic_0107283470_b10861121314119"></a>仅v1.13.7-r0及以上版本且网络模型为VPC网络的混合集群才能绑定弹性网卡，不符合条件的集群将不显示<span class="uicontrol" id="zh-cn_topic_0107283470_uicontrol1986171319410"><a name="zh-cn_topic_0107283470_uicontrol1986171319410"></a><a name="zh-cn_topic_0107283470_uicontrol1986171319410"></a>“弹性网卡”</span>选项。</strong></p>
-    <div class="note" id="zh-cn_topic_0107283470_note124412587394"><a name="zh-cn_topic_0107283470_note124412587394"></a><a name="zh-cn_topic_0107283470_note124412587394"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="zh-cn_topic_0107283470_ul1444165810398"></a><a name="zh-cn_topic_0107283470_ul1444165810398"></a><ul id="zh-cn_topic_0107283470_ul1444165810398"><li>网络平面是CCE新增的一种crd资源，记录了租户ID，子网ID，安全组等的配置项，作为申请弹性网卡的配置信息。</li><li>创建工作负载时，在<a href="创建无状态负载(Deployment).md#li3580132418215">设置工作负载访问方式</a>步骤中如果添加了节点级别的Service，将无法绑定弹性网卡；同理，绑定了弹性网卡的工作负载，将无法添加节点级别的Service。</li></ul>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p476333074117"><a name="cce_01_0047_p476333074117"></a><a name="cce_01_0047_p476333074117"></a>Pod中的容器支持绑定弹性网卡，单击选中<span class="uicontrol" id="cce_01_0047_uicontrol187631230104117"><a name="cce_01_0047_uicontrol187631230104117"></a><a name="cce_01_0047_uicontrol187631230104117"></a>“绑定弹性网卡”</span>可以绑定已有的网络平面。更多网络平面信息请参见<a href="网络平面(NetworkAttachmentDefinition).md">网络平面(NetworkAttachmentDefinition)</a>。</p>
+    <p id="cce_01_0047_p58611513174112"><a name="cce_01_0047_p58611513174112"></a><a name="cce_01_0047_p58611513174112"></a><strong id="cce_01_0047_b10861121314119"><a name="cce_01_0047_b10861121314119"></a><a name="cce_01_0047_b10861121314119"></a>仅v1.13.7-r0及以上版本且网络模型为VPC网络的混合集群才能绑定弹性网卡，不符合条件的集群将不显示<span class="uicontrol" id="cce_01_0047_uicontrol1986171319410"><a name="cce_01_0047_uicontrol1986171319410"></a><a name="cce_01_0047_uicontrol1986171319410"></a>“弹性网卡”</span>选项。</strong></p>
+    <div class="note" id="cce_01_0047_note124412587394"><a name="cce_01_0047_note124412587394"></a><a name="cce_01_0047_note124412587394"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="cce_01_0047_ul1444165810398"></a><a name="cce_01_0047_ul1444165810398"></a><ul id="cce_01_0047_ul1444165810398"><li>网络平面是CCE新增的一种crd资源，记录了租户ID，子网ID，安全组等的配置项，作为申请弹性网卡的配置信息。</li><li>创建工作负载时，在<a href="创建无状态负载(Deployment).md#li3580132418215">设置工作负载访问方式</a>步骤中如果添加了节点级别的Service，将无法绑定弹性网卡；同理，绑定了弹性网卡的工作负载，将无法添加节点级别的Service。</li></ul>
     </div></div>
     </td>
     </tr>
     <tr id="row15115217354"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p151122103514"><a name="p151122103514"></a><a name="p151122103514"></a>时区同步</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p14511926351"><a name="p14511926351"></a><a name="p14511926351"></a>单击<a name="image16680652104914"></a><a name="image16680652104914"></a><span><img id="image16680652104914" src="figures/2020-08-13_092636-8.png"></span>开启后，容器将和节点使用相同时区。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p14511926351"><a name="p14511926351"></a><a name="p14511926351"></a>单击<a name="image16680652104914"></a><a name="image16680652104914"></a><span><img id="image16680652104914" src="figures/2020-08-13_092636-17.png"></span>开启后，容器将和节点使用相同时区。</p>
     <div class="notice" id="note25113211350"><a name="note25113211350"></a><a name="note25113211350"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="p75117233519"><a name="p75117233519"></a><a name="p75117233519"></a>时区同步功能开启后，在<span class="uicontrol" id="uicontrol0511182113516"><a name="uicontrol0511182113516"></a><a name="uicontrol0511182113516"></a>“数据存储 &gt; 本地磁盘”</span>中，将会自动添加HostPath类型的磁盘，请勿修改删除该磁盘。</p>
     </div></div>
     </td>
@@ -174,7 +180,7 @@
 
         缩容时间窗：请输入时间。为工作负载删除提供一个时间窗，预留给生命周期中PreStop阶段执行命令。若超过此时间窗，进程仍未停止，该工作负载将被强制删除。
 
-    -   **调度策略：**你可以根据需要自由组合静态的全局调度策略或动态的运行时调度策略来实现自己的需求。具体请参见[调度策略概述](调度策略概述.md)。
+    -   **调度策略：**您可以根据需要自由组合静态的全局调度策略或动态的运行时调度策略来实现自己的需求。具体请参见[调度策略概述](调度策略概述.md)。
     -   **Pod高级设置**
 
         -   Pod标签：内置app标签在工作负载创建时指定，主要用于设置亲和性与反亲和性调度，暂不支持修改。您可以单击下方的“添加标签“增加标签。

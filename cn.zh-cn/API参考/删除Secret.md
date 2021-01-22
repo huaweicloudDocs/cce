@@ -365,7 +365,7 @@ DELETE /api/v1/namespaces/\{namespace\}/secrets/\{name\}
 </thead>
 <tbody><tr id="zh-cn_topic_0079615047_row4146549"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615047_p326206"><a name="zh-cn_topic_0079615047_p326206"></a><a name="zh-cn_topic_0079615047_p326206"></a>200</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p188922206273"><a name="p188922206273"></a><a name="p188922206273"></a>Delete a secret resource objectre successfully.</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p188922206273"><a name="p188922206273"></a><a name="p188922206273"></a>Delete a secret resource object successfully.</p>
 </td>
 </tr>
 </tbody>

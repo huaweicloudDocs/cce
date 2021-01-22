@@ -41,7 +41,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses \(Supports 1.
 </td>
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.4.1.2 "><p id="p624483412306"><a name="p624483412306"></a><a name="p624483412306"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p152441344307"><a name="p152441344307"></a><a name="p152441344307"></a>A selector to restrict the list of returned objects by their fields. Defaults to everything.</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p152441344307"><a name="p152441344307"></a><a name="p152441344307"></a><span>A selector to restrict the list of returned objects by their fields. Defaults to everything.</span></p>
 </td>
 </tr>
 <tr id="row17811636"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p33456451"><a name="p33456451"></a><a name="p33456451"></a>includeUninitialized</p>
@@ -55,7 +55,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses \(Supports 1.
 </td>
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.4.1.2 "><p id="p253493417317"><a name="p253493417317"></a><a name="p253493417317"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1353413347311"><a name="p1353413347311"></a><a name="p1353413347311"></a>A selector to restrict the list of returned objects by their labels. Defaults to everything.</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1353413347311"><a name="p1353413347311"></a><a name="p1353413347311"></a><span>A selector to restrict the list of returned objects by their labels. Defaults to everything.</span></p>
 </td>
 </tr>
 <tr id="row129823551381"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p498285513380"><a name="p498285513380"></a><a name="p498285513380"></a>limit</p>
@@ -70,7 +70,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses \(Supports 1.
 </td>
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.4.1.2 "><p id="p194502812396"><a name="p194502812396"></a><a name="p194502812396"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1450282397"><a name="p1450282397"></a><a name="p1450282397"></a>If <em id="i1691161912407"><a name="i1691161912407"></a><a name="i1691161912407"></a>true</em>, then the output is pretty printed.</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p1450282397"><a name="p1450282397"></a><a name="p1450282397"></a><span>If </span><em id="i1691161912407"><a name="i1691161912407"></a><a name="i1691161912407"></a>true</em><span>, then the output is pretty printed.</span></p>
 </td>
 </tr>
 <tr id="row378595183911"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p117851657391"><a name="p117851657391"></a><a name="p117851657391"></a>resourceVersion</p>
@@ -84,7 +84,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses \(Supports 1.
 </td>
 <td class="cellrowborder" valign="top" width="17%" headers="mcps1.2.4.1.2 "><p id="p3158103133912"><a name="p3158103133912"></a><a name="p3158103133912"></a>No</p>
 </td>
-<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p915816317399"><a name="p915816317399"></a><a name="p915816317399"></a>Timeout for the list/watch call.</p>
+<td class="cellrowborder" valign="top" width="61%" headers="mcps1.2.4.1.3 "><p id="p915816317399"><a name="p915816317399"></a><a name="p915816317399"></a><span>Timeout for the list/watch call.</span></p>
 </td>
 </tr>
 <tr id="row16929259103817"><td class="cellrowborder" valign="top" width="22%" headers="mcps1.2.4.1.1 "><p id="p139294597389"><a name="p139294597389"></a><a name="p139294597389"></a>watch</p>

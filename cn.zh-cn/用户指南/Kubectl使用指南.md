@@ -1,10 +1,22 @@
 # Kubectl使用指南<a name="cce_01_0023"></a>
 
+-   [连接集群](#section223415528535)
+-   [CoreDNS高可用](#section4965217185418)
+-   [创建工作负载](#section81661268550)
+-   [工作负载/调度](#section1294518341552)
+-   [设置](#section557132035713)
+-   [工作负载高级设置](#section927251814582)
+-   [任务管理](#section1660674011584)
+-   [配置中心](#section12376151215916)
+-   [存储管理](#section274418453590)
+
 使用Kubectl命令时，您需要具备Kubectl相关开发技能，了解Kubectl相关操作。详细请参考[Kubernetes API](https://kubernetes.io/docs/concepts/overview/kubernetes-api/)、[kubectl CLI](https://kubernetes.io/docs/reference/kubectl/overview/)。
+
+请到[kubernetes版本发布页面](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/README.md)下载与集群版本对应的或者更新的kubectl。
 
 ## 连接集群<a name="section223415528535"></a>
 
--   [通过Kubectl连接集群](通过kubectl或web-terminal插件连接CCE集群.md)
+-   [通过Kubectl连接集群](通过kubectl或web-terminal插件操作CCE集群.md)
 -   [通过web-terminal插件连接集群](web-terminal.md)
 
 ## CoreDNS高可用<a name="section4965217185418"></a>
@@ -49,10 +61,10 @@
 
 ## 存储管理<a name="section274418453590"></a>
 
--   [使用kubectl创建云硬盘](使用kubectl创建云硬盘.md)
--   [使用kubectl挂载云硬盘](使用kubectl部署使用云硬盘卷的工作负载.md)
--   [使用kubectl创建对象存储](使用kubectl创建对象存储.md)
--   [使用kubectl挂载对象存储](使用kubectl部署使用对象存储卷的工作负载.md)
--   [使用kubectl创建文件存储](使用kubectl创建文件存储.md)
--   [使用kubectl挂载文件存储](使用kubectl部署使用文件存储卷的工作负载.md)
+-   [使用kubectl创建云硬盘](使用kubectl自动创建云硬盘.md)
+-   [使用kubectl挂载云硬盘](使用kubectl部署带云硬盘存储卷的工作负载.md)
+-   [使用kubectl创建对象存储](使用kubectl自动创建对象存储.md)
+-   [使用kubectl挂载对象存储](使用kubectl部署带对象存储卷的工作负载.md)
+-   [使用kubectl创建文件存储](使用kubectl自动创建文件存储.md)
+-   [使用kubectl挂载文件存储](使用kubectl部署带文件存储卷的工作负载.md)
 

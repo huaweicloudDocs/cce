@@ -1,5 +1,13 @@
 # CoreDNS（系统资源插件，必装）<a name="cce_01_0129"></a>
 
+-   [插件简介](#section25311744154917)
+-   [安装插件](#section776571919194)
+-   [为CoreDNS配置存根域](#section5202157467)
+-   [kubernetes中的域名解析逻辑](#section1860523212152)
+-   [升级插件](#section19566181513486)
+-   [卸载插件](#section7582615184814)
+-   [版本记录](#section1945192816714)
+
 ## 插件简介<a name="section25311744154917"></a>
 
 CoreDNS插件是一款通过链式插件的方式为Kubernetes提供域名解析服务的DNS服务器。
@@ -8,7 +16,12 @@ CoreDNS是由CNCF孵化的开源软件，用于Cloud-Native环境下的DNS服务
 
 **该插件为系统资源插件，kubernetes 1.11及以上版本的集群在创建时默认安装。**
 
+CoreDNS官网：[https://coredns.io/](https://coredns.io/)
+
+开源社区地址：[https://github.com/coredns/coredns](https://github.com/coredns/coredns)
+
 >![](public_sys-resources/icon-note.gif) **说明：** 
+>-   升级CoreDNS插件时，请确保集群中有两个及以上节点。
 >-   当CoreDNS插件有升级或者BUG修复时，您不必升级集群或新建集群，仅需安装或升级CoreDNS插件即可。
 >-   DNS详细使用方法请参见[Kubernetes集群内置DNS配置说明](Kubernetes集群内置DNS配置说明.md)或[通过kubectl配置kube-dns/CoreDNS高可用](通过kubectl配置kube-dns-CoreDNS高可用.md)。
 
@@ -59,7 +72,7 @@ CoreDNS是由CNCF孵化的开源软件，用于Cloud-Native环境下的DNS服务
 
 4.  完成以上配置后，单击“安装“。
 
-    待插件安装完成后，单击“返回插件管理“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
+    待插件安装完成后，单击“返回“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
 
 
 ## 为CoreDNS配置存根域<a name="section5202157467"></a>
@@ -76,7 +89,39 @@ consul.local:5353 {
     }
 ```
 
-修改后最终的ConfigMap如下所示：
+**v1.15.11及之后的集群版本**，修改后最终的ConfigMap如下所示：
+
+```
+apiVersion: v1
+data:
+  Corefile: |-
+    .:5353 {
+        cache 30
+        errors
+        health
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+          pods insecure
+          upstream /etc/resolv.conf
+          fallthrough in-addr.arpa ip6.arpa
+        }
+        loadbalance round_robin
+        prometheus 0.0.0.0:9153
+        forward . /etc/resolv.conf
+        reload
+    }
+
+    consul.local:5353 {
+        errors
+        cache 30
+        forward . 10.150.0.1
+    }
+kind: ConfigMap
+metadata:
+  name: coredns
+  namespace: kube-system
+```
+
+**1.15.11之前的集群版本**，修改后最终的ConfigMap如下所示：
 
 ```
 apiVersion: v1
@@ -110,7 +155,7 @@ metadata:
 
 ## kubernetes中的域名解析逻辑<a name="section1860523212152"></a>
 
-DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**Default、ClusterFirst、ClusterFirstWithHostNet和None**四种DNS策略，具体请参见[https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)。这些策略在pod-specific的**dnsPolicy**  字段中指定。
+DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**Default、ClusterFirst、ClusterFirstWithHostNet和None**四种DNS策略，具体请参见[https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)。这些策略在pod-specific的**dnsPolicy**字段中指定。
 
 -   **“Default”**：如果dnsPolicy被设置为“Default”，则名称解析配置将从pod运行的节点继承。 自定义上游域名服务器和存根域不能够与这个策略一起使用。
 -   **“ClusterFirst”：**如果dnsPolicy被设置为“ClusterFirst”，任何与配置的集群域后缀不匹配的DNS查询（例如，www.kubernetes.io）将转发到从该节点继承的上游名称服务器。集群管理员可能配置了额外的存根域和上游DNS服务器。
@@ -182,100 +227,112 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 **表 3**  coredns版本记录
 
 <a name="table178175952310"></a>
-<table><thead align="left"><tr id="row278175916234"><th class="cellrowborder" valign="top" width="11.24%" id="mcps1.2.5.1.1"><p id="p37875972314"><a name="p37875972314"></a><a name="p37875972314"></a>插件版本</p>
+<table><thead align="left"><tr id="row278175916234"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.1"><p id="p37875972314"><a name="p37875972314"></a><a name="p37875972314"></a>插件版本</p>
 </th>
-<th class="cellrowborder" valign="top" width="29.68%" id="mcps1.2.5.1.2"><p id="p1178135932311"><a name="p1178135932311"></a><a name="p1178135932311"></a>支持的集群类型</p>
+<th class="cellrowborder" valign="top" width="24%" id="mcps1.2.5.1.2"><p id="p1178135932311"><a name="p1178135932311"></a><a name="p1178135932311"></a>支持的集群类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="18.44%" id="mcps1.2.5.1.3"><p id="p178185952316"><a name="p178185952316"></a><a name="p178185952316"></a>更新时间</p>
+<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p id="p178185952316"><a name="p178185952316"></a><a name="p178185952316"></a>更新时间</p>
 </th>
-<th class="cellrowborder" valign="top" width="40.64%" id="mcps1.2.5.1.4"><p id="p2078175942320"><a name="p2078175942320"></a><a name="p2078175942320"></a>更新特性</p>
+<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p2078175942320"><a name="p2078175942320"></a><a name="p2078175942320"></a>更新特性</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row12566114195411"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p956611419541"><a name="p956611419541"></a><a name="p956611419541"></a>1.17.1</p>
+<tbody><tr id="row8606152894117"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p136071287413"><a name="p136071287413"></a><a name="p136071287413"></a>1.17.3</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p122317499543"><a name="p122317499543"></a><a name="p122317499543"></a>混合集群 v1.17.*</p>
-<p id="p1123119493546"><a name="p1123119493546"></a><a name="p1123119493546"></a>裸金属集群 v1.17.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p1589875054116"><a name="p1589875054116"></a><a name="p1589875054116"></a>混合集群 v1.17.*</p>
+<p id="p11898185014113"><a name="p11898185014113"></a><a name="p11898185014113"></a>鲲鹏集群 v1.17.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1260718286413"><a name="p1260718286413"></a><a name="p1260718286413"></a>2020/09/12</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p360752884118"><a name="p360752884118"></a><a name="p360752884118"></a>支持1.17集群，修复存根域配置问题</p>
+</td>
+</tr>
+<tr id="row12566114195411"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p956611419541"><a name="p956611419541"></a><a name="p956611419541"></a>1.17.1</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p122317499543"><a name="p122317499543"></a><a name="p122317499543"></a>混合集群 v1.17.*</p>
 <p id="p10231949155412"><a name="p10231949155412"></a><a name="p10231949155412"></a>鲲鹏集群 v1.17.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p2566141405412"><a name="p2566141405412"></a><a name="p2566141405412"></a>2020/08/19</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p2566141405412"><a name="p2566141405412"></a><a name="p2566141405412"></a>2020/08/19</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1456681414548"><a name="p1456681414548"></a><a name="p1456681414548"></a>支持1.17集群</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p1456681414548"><a name="p1456681414548"></a><a name="p1456681414548"></a>支持1.17集群</p>
 </td>
 </tr>
-<tr id="row97875912317"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p19246621182"><a name="p19246621182"></a><a name="p19246621182"></a>1.15.3</p>
+<tr id="row5667201185613"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p106682145612"><a name="p106682145612"></a><a name="p106682145612"></a>1.15.6</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p20246102588"><a name="p20246102588"></a><a name="p20246102588"></a>混合集群 v1.15.*</p>
-<p id="p2024642382"><a name="p2024642382"></a><a name="p2024642382"></a>裸金属集群 v1.15.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p182881707578"><a name="p182881707578"></a><a name="p182881707578"></a>混合集群 v1.15.*</p>
+<p id="p928850175710"><a name="p928850175710"></a><a name="p928850175710"></a>鲲鹏集群 v1.15.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p18668815563"><a name="p18668815563"></a><a name="p18668815563"></a>2020/09/12</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p16236161618216"><a name="p16236161618216"></a><a name="p16236161618216"></a>同步社区修改，修复存根域配置问题</p>
+</td>
+</tr>
+<tr id="row97875912317"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p19246621182"><a name="p19246621182"></a><a name="p19246621182"></a>1.15.3</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p20246102588"><a name="p20246102588"></a><a name="p20246102588"></a>混合集群 v1.15.*</p>
 <p id="p324616215819"><a name="p324616215819"></a><a name="p324616215819"></a>鲲鹏集群 v1.15.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p132462210818"><a name="p132462210818"></a><a name="p132462210818"></a>2020/07/27</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p132462210818"><a name="p132462210818"></a><a name="p132462210818"></a>2020/07/27</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p17922112020594"><a name="p17922112020594"></a><a name="p17922112020594"></a>同步社区修改，修复kube-apiserver down，coredns crash issue</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p17922112020594"><a name="p17922112020594"></a><a name="p17922112020594"></a>同步社区修改，修复kube-apiserver down，coredns crash issue</p>
 </td>
 </tr>
-<tr id="row187865919236"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p72461227810"><a name="p72461227810"></a><a name="p72461227810"></a>1.15.2</p>
+<tr id="row187865919236"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p72461227810"><a name="p72461227810"></a><a name="p72461227810"></a>1.15.2</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p98181511911"><a name="p98181511911"></a><a name="p98181511911"></a>混合集群 v1.15.*</p>
-<p id="p48186511919"><a name="p48186511919"></a><a name="p48186511919"></a>裸金属集群 v1.15.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p98181511911"><a name="p98181511911"></a><a name="p98181511911"></a>混合集群 v1.15.*</p>
 <p id="p981855992"><a name="p981855992"></a><a name="p981855992"></a>鲲鹏集群 v1.15.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p132461929812"><a name="p132461929812"></a><a name="p132461929812"></a>2020/07/27</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p132461929812"><a name="p132461929812"></a><a name="p132461929812"></a>2020/07/27</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p0923220195912"><a name="p0923220195912"></a><a name="p0923220195912"></a>同步社区修改，修复kube-apiserver down，coredns crash issue</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p0923220195912"><a name="p0923220195912"></a><a name="p0923220195912"></a>同步社区修改，修复kube-apiserver down，coredns crash issue</p>
 </td>
 </tr>
-<tr id="row14788592234"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p12247722082"><a name="p12247722082"></a><a name="p12247722082"></a>1.15.1</p>
+<tr id="row14788592234"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p12247722082"><a name="p12247722082"></a><a name="p12247722082"></a>1.15.1</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p106871785917"><a name="p106871785917"></a><a name="p106871785917"></a>混合集群 v1.15.*</p>
-<p id="p76871814916"><a name="p76871814916"></a><a name="p76871814916"></a>裸金属集群 v1.15.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p106871785917"><a name="p106871785917"></a><a name="p106871785917"></a>混合集群 v1.15.*</p>
 <p id="p166877810911"><a name="p166877810911"></a><a name="p166877810911"></a>鲲鹏集群 v1.15.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p2024711211816"><a name="p2024711211816"></a><a name="p2024711211816"></a>2019/12/16</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p2024711211816"><a name="p2024711211816"></a><a name="p2024711211816"></a>2019/12/16</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p89251420175911"><a name="p89251420175911"></a><a name="p89251420175911"></a>支持鲲鹏集群</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p89251420175911"><a name="p89251420175911"></a><a name="p89251420175911"></a>支持鲲鹏集群</p>
 </td>
 </tr>
-<tr id="row1878859102318"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p132471025814"><a name="p132471025814"></a><a name="p132471025814"></a>1.13.4</p>
+<tr id="row1878859102318"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p132471025814"><a name="p132471025814"></a><a name="p132471025814"></a>1.13.4</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p1124702488"><a name="p1124702488"></a><a name="p1124702488"></a>混合集群 v1.13.*</p>
-<p id="p3247152183"><a name="p3247152183"></a><a name="p3247152183"></a>裸金属集群 v1.13.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p1124702488"><a name="p1124702488"></a><a name="p1124702488"></a>混合集群 v1.13.*</p>
 <p id="p8247221289"><a name="p8247221289"></a><a name="p8247221289"></a>鲲鹏集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p162471620812"><a name="p162471620812"></a><a name="p162471620812"></a>2020/04/04</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p162471620812"><a name="p162471620812"></a><a name="p162471620812"></a>2020/04/04</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p14925420185912"><a name="p14925420185912"></a><a name="p14925420185912"></a>支持新版本集群</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p14925420185912"><a name="p14925420185912"></a><a name="p14925420185912"></a>支持新版本集群</p>
 </td>
 </tr>
-<tr id="row15919281555"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p102471214818"><a name="p102471214818"></a><a name="p102471214818"></a>1.13.3</p>
+<tr id="row15919281555"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p102471214818"><a name="p102471214818"></a><a name="p102471214818"></a>1.13.3</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p16509204113917"><a name="p16509204113917"></a><a name="p16509204113917"></a>混合集群 v1.13.*</p>
-<p id="p1450916411392"><a name="p1450916411392"></a><a name="p1450916411392"></a>裸金属集群 v1.13.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p16509204113917"><a name="p16509204113917"></a><a name="p16509204113917"></a>混合集群 v1.13.*</p>
 <p id="p4509941597"><a name="p4509941597"></a><a name="p4509941597"></a>鲲鹏集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p124710211817"><a name="p124710211817"></a><a name="p124710211817"></a>2019/07/02</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p124710211817"><a name="p124710211817"></a><a name="p124710211817"></a>2019/07/02</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p392652018595"><a name="p392652018595"></a><a name="p392652018595"></a>适配ARM集群</p>
-</td>
-</tr>
-<tr id="row1878459102313"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p10247521982"><a name="p10247521982"></a><a name="p10247521982"></a>1.13.2</p>
-</td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p1593154515918"><a name="p1593154515918"></a><a name="p1593154515918"></a>混合集群 v1.13.*</p>
-<p id="p193154516913"><a name="p193154516913"></a><a name="p193154516913"></a>裸金属集群 v1.13.*</p>
-</td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p1624772982"><a name="p1624772982"></a><a name="p1624772982"></a>2019/09/26</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p1792732016596"><a name="p1792732016596"></a><a name="p1792732016596"></a>支持服务网段可配置</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p392652018595"><a name="p392652018595"></a><a name="p392652018595"></a>适配ARM集群</p>
 </td>
 </tr>
-<tr id="row3799599239"><td class="cellrowborder" valign="top" width="11.24%" headers="mcps1.2.5.1.1 "><p id="p0247628816"><a name="p0247628816"></a><a name="p0247628816"></a>1.2.7</p>
+<tr id="row1878459102313"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p10247521982"><a name="p10247521982"></a><a name="p10247521982"></a>1.13.2</p>
 </td>
-<td class="cellrowborder" valign="top" width="29.68%" headers="mcps1.2.5.1.2 "><p id="p73876541598"><a name="p73876541598"></a><a name="p73876541598"></a>混合集群 v1.11.*</p>
-<p id="p038765414910"><a name="p038765414910"></a><a name="p038765414910"></a>裸金属集群 v1.11.*</p>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p1593154515918"><a name="p1593154515918"></a><a name="p1593154515918"></a>混合集群 v1.13.*</p>
 </td>
-<td class="cellrowborder" valign="top" width="18.44%" headers="mcps1.2.5.1.3 "><p id="p19247162086"><a name="p19247162086"></a><a name="p19247162086"></a>2019/06/10</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1624772982"><a name="p1624772982"></a><a name="p1624772982"></a>2019/09/26</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.64%" headers="mcps1.2.5.1.4 "><p id="p192782025920"><a name="p192782025920"></a><a name="p192782025920"></a>支持服务网段可配置</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p1792732016596"><a name="p1792732016596"></a><a name="p1792732016596"></a>支持服务网段可配置</p>
+</td>
+</tr>
+<tr id="row3799599239"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p0247628816"><a name="p0247628816"></a><a name="p0247628816"></a>1.2.7</p>
+</td>
+<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p73876541598"><a name="p73876541598"></a><a name="p73876541598"></a>混合集群 v1.11.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p19247162086"><a name="p19247162086"></a><a name="p19247162086"></a>2019/06/10</p>
+</td>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p192782025920"><a name="p192782025920"></a><a name="p192782025920"></a>支持服务网段可配置</p>
 </td>
 </tr>
 </tbody>

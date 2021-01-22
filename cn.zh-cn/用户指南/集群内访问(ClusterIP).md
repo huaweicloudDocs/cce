@@ -1,5 +1,14 @@
 # 集群内访问\(ClusterIP\)<a name="cce_01_0011"></a>
 
+-   [操作场景](#section13559184110492)
+-   [工作负载创建时设置](#section363413419562)
+-   [工作负载创建完成后设置](#section51925078171335)
+-   [验证访问方式](#section127671412133313)
+-   [更新Service](#section170649161816)
+-   [通过kubectl命令行创建](#section9813121512319)
+
+## 操作场景<a name="section13559184110492"></a>
+
 集群内访问表示工作负载暴露给同一集群内其他工作负载访问的方式，可以通过“集群内部域名“访问。
 
 集群内部域名格式为“<自定义的服务名称\>.<工作负载所在命名空间\>.svc.cluster.local:<端口号\>“，例如“nginx.default.svc.cluster.local:80“。
@@ -17,11 +26,12 @@
 
     -   **访问类型：**选择“集群内访问 \( ClusterIP \)“。
     -   **Service名称：**自定义服务名称，可与工作负载名称保持一致。
-    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
+    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的集群创建时开启了IPv6功能才会显示。**
     -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
         -   容器端口：工作负载程序实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
         -   访问端口：容器端口映射到集群虚拟IP上的端口，用虚拟IP访问工作负载时使用，端口范围为1-65535，可任意指定。
+
 
     **图 2**  访问类型为集群内访问 \( ClusterIP \)<a name="fig56211834134312"></a>  
     ![](figures/访问类型为集群内访问-(-ClusterIP-).png "访问类型为集群内访问-(-ClusterIP-)")
@@ -41,11 +51,12 @@
     -   **集群名称：**工作负载所在集群的名称，此处不可修改。
     -   **命名空间：**工作负载所在命名空间，此处不可修改。
     -   **关联工作负载：**要添加Service的工作负载，此处不可修改。
-    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示。**
+    -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的集群创建时开启了IPv6功能才会显示。**
     -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
         -   容器端口：工作负载程序实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
         -   访问端口：容器端口映射到集群虚拟IP上的端口，用虚拟IP访问工作负载时使用，端口范围为1-65535，可任意指定。
+
 
 5.  单击“创建”。工作负载已添加“集群内访问 \( ClusterIP \)”的服务。
 
@@ -55,76 +66,76 @@
 2.  在弹性云服务器页面，找到同一VPC内任意一台云服务器，并确认连接到访问地址中IP与端口的安全组是开放的。
 3.  登录工作负载所在集群的任意节点，登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
 4.  使用curl命令访问工作负载验证工作负载是否可以正常访问。您可以通过IP或者域名的方式来验证。
-    -   方式一：通过IP地址验证。
 
-        **curl **_10.247.74.100:8080_
+    **方式一：通过IP地址验证。**
 
-        其中10.247.74.100:8080为[步骤3](#li090492615184)中获取的访问地址。
+    **curl **_10.247.74.100:8080_
 
-        回显如下表示工作负载可正常访问。
+    其中10.247.74.100:8080为[步骤3](#li090492615184)中获取的访问地址。
 
-        ```
-        <html>
-        <head>
-        <title>Welcome to nginx!</title>
-        <style>
-            body {
-                width: 35em;
-                margin: 0 auto;
-                font-family: Tahoma, Verdana, Arial, sans-serif;
-            }
-        </style>
-        </head>
-        <body>
-        <h1>Welcome to nginx!</h1>
-        <p>If you see this page, the nginx web server is successfully installed and
-        working. Further configuration is required.</p>
-        
-        <p>For online documentation and support please refer to
-        <a href="http://nginx.org/">nginx.org</a>.<br/>
-        Commercial support is available at
-        <a href="http://nginx.com/">nginx.com</a>.</p>
-        
-        <p><em>Thank you for using nginx.</em></p>
-        </body>
-        </html>
-        ```
+    回显如下表示工作负载可正常访问。
 
-    -   方式二：通过域名验证。
+    ```
+    <html>
+    <head>
+    <title>Welcome to nginx!</title>
+    <style>
+        body {
+            width: 35em;
+            margin: 0 auto;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>Welcome to nginx!</h1>
+    <p>If you see this page, the nginx web server is successfully installed and
+    working. Further configuration is required.</p>
+    
+    <p>For online documentation and support please refer to
+    <a href="http://nginx.org/">nginx.org</a>.<br/>
+    Commercial support is available at
+    <a href="http://nginx.com/">nginx.com</a>.</p>
+    
+    <p><em>Thank you for using nginx.</em></p>
+    </body>
+    </html>
+    ```
 
-        **curl **_nginx.default.svc.cluster.local:8080_
+    **方式二：进入容器，在容器内通过域名验证。**
 
-        其中_nginx.default.svc.cluster.local_为[步骤3](#li16964121448)中获取的域名访问地址。
+    **curl **_nginx.default.svc.cluster.local:8080_
 
-        回显如下表示工作负载可正常访问。
+    其中_nginx.default.svc.cluster.local_为[步骤3](#li16964121448)中获取的域名访问地址。
 
-        ```
-        <html>
-        <head>
-        <title>Welcome to nginx!</title>
-        <style>
-            body {
-                width: 35em;
-                margin: 0 auto;
-                font-family: Tahoma, Verdana, Arial, sans-serif;
-            }
-        </style>
-        </head>
-        <body>
-        <h1>Welcome to nginx!</h1>
-        <p>If you see this page, the nginx web server is successfully installed and
-        working. Further configuration is required.</p>
-        
-        <p>For online documentation and support please refer to
-        <a href="http://nginx.org/">nginx.org</a>.<br/>
-        Commercial support is available at
-        <a href="http://nginx.com/">nginx.com</a>.</p>
-        
-        <p><em>Thank you for using nginx.</em></p>
-        </body>
-        </html>
-        ```
+    回显如下表示工作负载可正常访问。
 
+    ```
+    <html>
+    <head>
+    <title>Welcome to nginx!</title>
+    <style>
+        body {
+            width: 35em;
+            margin: 0 auto;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>Welcome to nginx!</h1>
+    <p>If you see this page, the nginx web server is successfully installed and
+    working. Further configuration is required.</p>
+    
+    <p>For online documentation and support please refer to
+    <a href="http://nginx.org/">nginx.org</a>.<br/>
+    Commercial support is available at
+    <a href="http://nginx.com/">nginx.com</a>.</p>
+    
+    <p><em>Thank you for using nginx.</em></p>
+    </body>
+    </html>
+    ```
 
 
 ## 更新Service<a name="section170649161816"></a>
@@ -138,11 +149,12 @@
     -   **集群名称：**工作负载所在集群的名称，此处不可修改。
     -   **命名空间：**工作负载所在命名空间，此处不可修改。
     -   **关联工作负载：**要添加Service的工作负载，此处不可修改。
-    -   **IPv6：**该功能仅在1.15及以上版本的混合集群开启IPv6功能后显示，此处不可修改。
+    -   **IPv6：**该功能仅在1.15及以上版本的集群创建时开启了IPv6功能才会显示，此处不可修改。
     -   **端口配置：**
         -   协议：请根据业务的协议类型选择。
         -   容器端口：工作负载程序实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
         -   访问端口：容器端口映射到集群虚拟IP上的端口，用虚拟IP访问工作负载时使用，端口范围为1-65535，可任意指定。
+
 
 4.  单击“更新”，工作负载已更新Service。
 
@@ -152,7 +164,7 @@
 
 **前提条件**
 
-请参见[通过kubectl或web-terminal插件连接CCE集群](通过kubectl或web-terminal插件连接CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
+请参见[通过kubectl或web-terminal插件操作CCE集群](通过kubectl或web-terminal插件操作CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
 
 **操作步骤**
 
@@ -164,7 +176,7 @@
     **vi nginx-deployment.yaml**
 
     ```
-    apiVersion: extensions/v1beta1
+    apiVersion: apps/v1
     kind: Deployment
     metadata:
       name: nginx
@@ -211,35 +223,43 @@
     **表 1**  关键参数说明
 
     <a name="table56443210447"></a>
-    <table><thead align="left"><tr id="row157011325448"><th class="cellrowborder" valign="top" width="19.009999999999998%" id="mcps1.2.4.1.1"><p id="p127013213445"><a name="p127013213445"></a><a name="p127013213445"></a>参数</p>
+    <table><thead align="left"><tr id="row157011325448"><th class="cellrowborder" valign="top" width="17.580000000000002%" id="mcps1.2.5.1.1"><p id="p127013213445"><a name="p127013213445"></a><a name="p127013213445"></a>参数</p>
     </th>
-    <th class="cellrowborder" valign="top" width="18.43%" id="mcps1.2.4.1.2"><p id="p070113234410"><a name="p070113234410"></a><a name="p070113234410"></a>参数类型</p>
+    <th class="cellrowborder" valign="top" width="16.27%" id="mcps1.2.5.1.2"><p id="p41549595118"><a name="p41549595118"></a><a name="p41549595118"></a>是否必填</p>
     </th>
-    <th class="cellrowborder" valign="top" width="62.56%" id="mcps1.2.4.1.3"><p id="p870832124415"><a name="p870832124415"></a><a name="p870832124415"></a>描述</p>
+    <th class="cellrowborder" valign="top" width="17.05%" id="mcps1.2.5.1.3"><p id="p070113234410"><a name="p070113234410"></a><a name="p070113234410"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="49.1%" id="mcps1.2.5.1.4"><p id="p870832124415"><a name="p870832124415"></a><a name="p870832124415"></a>描述</p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row19708321446"><td class="cellrowborder" valign="top" width="19.009999999999998%" headers="mcps1.2.4.1.1 "><p id="p2705327445"><a name="p2705327445"></a><a name="p2705327445"></a>port</p>
+    <tbody><tr id="row19708321446"><td class="cellrowborder" valign="top" width="17.580000000000002%" headers="mcps1.2.5.1.1 "><p id="p2705327445"><a name="p2705327445"></a><a name="p2705327445"></a>port</p>
     </td>
-    <td class="cellrowborder" valign="top" width="18.43%" headers="mcps1.2.4.1.2 "><p id="p37133244415"><a name="p37133244415"></a><a name="p37133244415"></a>Integer</p>
+    <td class="cellrowborder" valign="top" width="16.27%" headers="mcps1.2.5.1.2 "><p id="p31545518517"><a name="p31545518517"></a><a name="p31545518517"></a>是</p>
     </td>
-    <td class="cellrowborder" valign="top" width="62.56%" headers="mcps1.2.4.1.3 "><p id="p164654108492"><a name="p164654108492"></a><a name="p164654108492"></a>将由此服务公开的端口，对应界面上的访问端口。</p>
+    <td class="cellrowborder" valign="top" width="17.05%" headers="mcps1.2.5.1.3 "><p id="p37133244415"><a name="p37133244415"></a><a name="p37133244415"></a>Integer</p>
     </td>
-    </tr>
-    <tr id="row13718321449"><td class="cellrowborder" valign="top" width="19.009999999999998%" headers="mcps1.2.4.1.1 "><p id="p971532194415"><a name="p971532194415"></a><a name="p971532194415"></a>targetPort</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="18.43%" headers="mcps1.2.4.1.2 "><p id="p127153274418"><a name="p127153274418"></a><a name="p127153274418"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="62.56%" headers="mcps1.2.4.1.3 "><p id="p571173210447"><a name="p571173210447"></a><a name="p571173210447"></a>对应界面上的容器端口。</p>
+    <td class="cellrowborder" valign="top" width="49.1%" headers="mcps1.2.5.1.4 "><p id="p164654108492"><a name="p164654108492"></a><a name="p164654108492"></a>将由此服务公开的端口，对应界面上的访问端口。</p>
     </td>
     </tr>
-    <tr id="row1671532144412"><td class="cellrowborder" valign="top" width="19.009999999999998%" headers="mcps1.2.4.1.1 "><p id="p127115322447"><a name="p127115322447"></a><a name="p127115322447"></a>type</p>
+    <tr id="row13718321449"><td class="cellrowborder" valign="top" width="17.580000000000002%" headers="mcps1.2.5.1.1 "><p id="p971532194415"><a name="p971532194415"></a><a name="p971532194415"></a>targetPort</p>
     </td>
-    <td class="cellrowborder" valign="top" width="18.43%" headers="mcps1.2.4.1.2 "><p id="p1147421514515"><a name="p1147421514515"></a><a name="p1147421514515"></a>String</p>
+    <td class="cellrowborder" valign="top" width="16.27%" headers="mcps1.2.5.1.2 "><p id="p41541517515"><a name="p41541517515"></a><a name="p41541517515"></a>是</p>
     </td>
-    <td class="cellrowborder" valign="top" width="62.56%" headers="mcps1.2.4.1.3 "><p id="p1962118433512"><a name="p1962118433512"></a><a name="p1962118433512"></a>对应界面上的访问类型，必须是：</p>
+    <td class="cellrowborder" valign="top" width="17.05%" headers="mcps1.2.5.1.3 "><p id="p127153274418"><a name="p127153274418"></a><a name="p127153274418"></a>Integer</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="49.1%" headers="mcps1.2.5.1.4 "><p id="p571173210447"><a name="p571173210447"></a><a name="p571173210447"></a>对应界面上的容器端口。</p>
+    </td>
+    </tr>
+    <tr id="row1671532144412"><td class="cellrowborder" valign="top" width="17.580000000000002%" headers="mcps1.2.5.1.1 "><p id="p127115322447"><a name="p127115322447"></a><a name="p127115322447"></a>type</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="16.27%" headers="mcps1.2.5.1.2 "><p id="p81541516516"><a name="p81541516516"></a><a name="p81541516516"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.05%" headers="mcps1.2.5.1.3 "><p id="p1147421514515"><a name="p1147421514515"></a><a name="p1147421514515"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="49.1%" headers="mcps1.2.5.1.4 "><p id="p1962118433512"><a name="p1962118433512"></a><a name="p1962118433512"></a>对应界面上的访问类型，必须是：</p>
     <a name="ul1735917148524"></a><a name="ul1735917148524"></a><ul id="ul1735917148524"><li>ClusterIP</li><li>NodePort</li><li>LoadBalancer</li></ul>
-    <p id="p1262218433513"><a name="p1262218433513"></a><a name="p1262218433513"></a>默认是ClusterIP，表示“集群虚拟IP”。</p>
+    <p id="p1262218433513"><a name="p1262218433513"></a><a name="p1262218433513"></a>默认值：ClusterIP，表示“集群虚拟IP”。</p>
     </td>
     </tr>
     </tbody>
@@ -289,71 +309,71 @@
 
 5.  登录工作负载所在集群的任意节点，登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
 6.  采用curl命令访问工作负载验证工作负载是否可以正常访问。您可以通过IP或者域名的方式来验证。
-    -   方式一：通过IP地址验证。
 
-        **curl **_10.247.200.134__:80_
+    **方式一：通过IP地址验证。**
 
-        回显如下表示工作负载可正常访问。
+    **curl **_10.247.200.134__:80_
 
-        ```
-        <html>
-        <head>
-        <title>Welcome to nginx!</title>
-        <style>
-            body {
-                width: 35em;
-                margin: 0 auto;
-                font-family: Tahoma, Verdana, Arial, sans-serif;
-            }
-        </style>
-        </head>
-        <body>
-        <h1>Welcome to nginx!</h1>
-        <p>If you see this page, the nginx web server is successfully installed and
-        working. Further configuration is required.</p>
-        
-        <p>For online documentation and support please refer to
-        <a href="http://nginx.org/">nginx.org</a>.<br/>
-        Commercial support is available at
-        <a href="http://nginx.com/">nginx.com</a>.</p>
-        
-        <p><em>Thank you for using nginx.</em></p>
-        </body>
-        </html>
-        ```
+    回显如下表示工作负载可正常访问。
 
-    -   方式二：通过域名验证。
+    ```
+    <html>
+    <head>
+    <title>Welcome to nginx!</title>
+    <style>
+        body {
+            width: 35em;
+            margin: 0 auto;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>Welcome to nginx!</h1>
+    <p>If you see this page, the nginx web server is successfully installed and
+    working. Further configuration is required.</p>
+    
+    <p>For online documentation and support please refer to
+    <a href="http://nginx.org/">nginx.org</a>.<br/>
+    Commercial support is available at
+    <a href="http://nginx.com/">nginx.com</a>.</p>
+    
+    <p><em>Thank you for using nginx.</em></p>
+    </body>
+    </html>
+    ```
 
-        **curl **_nginx-_**clusterip.default.svc.cluster.local:**_8080_
+    **方式二：通过域名验证。**
 
-        回显如下表示工作负载可正常访问。
+    **curl **_nginx-_**clusterip.default.svc.cluster.local:**_8080_
 
-        ```
-        <html>
-        <head>
-        <title>Welcome to nginx!</title>
-        <style>
-            body {
-                width: 35em;
-                margin: 0 auto;
-                font-family: Tahoma, Verdana, Arial, sans-serif;
-            }
-        </style>
-        </head>
-        <body>
-        <h1>Welcome to nginx!</h1>
-        <p>If you see this page, the nginx web server is successfully installed and
-        working. Further configuration is required.</p>
-        
-        <p>For online documentation and support please refer to
-        <a href="http://nginx.org/">nginx.org</a>.<br/>
-        Commercial support is available at
-        <a href="http://nginx.com/">nginx.com</a>.</p>
-        
-        <p><em>Thank you for using nginx.</em></p>
-        </body>
-        </html>
-        ```
+    回显如下表示工作负载可正常访问。
 
+    ```
+    <html>
+    <head>
+    <title>Welcome to nginx!</title>
+    <style>
+        body {
+            width: 35em;
+            margin: 0 auto;
+            font-family: Tahoma, Verdana, Arial, sans-serif;
+        }
+    </style>
+    </head>
+    <body>
+    <h1>Welcome to nginx!</h1>
+    <p>If you see this page, the nginx web server is successfully installed and
+    working. Further configuration is required.</p>
+    
+    <p>For online documentation and support please refer to
+    <a href="http://nginx.org/">nginx.org</a>.<br/>
+    Commercial support is available at
+    <a href="http://nginx.com/">nginx.com</a>.</p>
+    
+    <p><em>Thank you for using nginx.</em></p>
+    </body>
+    </html>
+    ```
 
 

@@ -119,8 +119,8 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/roll
 <p id="p14188744185714"><a name="p14188744185714"></a><a name="p14188744185714"></a>or</p>
 <p id="p61883444575"><a name="p61883444575"></a><a name="p61883444575"></a>revision object</p>
 </td>
-<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.5.1.4 "><p id="p12188174417575"><a name="p12188174417575"></a><a name="p12188174417575"></a>Template describes the pods’ template that will be rollback which can be got from certain replicset.spec.template, template correspond to path “/spec/template”.</p>
-<p id="p8188174435719"><a name="p8188174435719"></a><a name="p8188174435719"></a>Revision describes the revision of replicset to rollback, revision correspond to path “/metadata/annotations”</p>
+<td class="cellrowborder" valign="top" width="43%" headers="mcps1.2.5.1.4 "><p id="p12188174417575"><a name="p12188174417575"></a><a name="p12188174417575"></a>Template describes the pods’ template that will be rollback which can be got from certain replicaset.spec.template, template correspond to path “/spec/template”.</p>
+<p id="p8188174435719"><a name="p8188174435719"></a><a name="p8188174435719"></a>Revision describes the revision of replicaset to rollback, revision correspond to path “/metadata/annotations”</p>
 </td>
 </tr>
 <tr id="row21256466"><td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.1 "><p id="p44052166"><a name="p44052166"></a><a name="p44052166"></a>kind</p>
@@ -206,7 +206,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/roll
 </td>
 <td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.5.1.3 "><p id="p920714512211"><a name="p920714512211"></a><a name="p920714512211"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.5.1.4 "><p id="p202078511215"><a name="p202078511215"></a><a name="p202078511215"></a>The revision of replicset to rollback.</p>
+<td class="cellrowborder" valign="top" width="44%" headers="mcps1.2.5.1.4 "><p id="p202078511215"><a name="p202078511215"></a><a name="p202078511215"></a>The revision of replicaset to rollback.</p>
 </td>
 </tr>
 </tbody>

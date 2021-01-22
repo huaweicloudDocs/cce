@@ -180,7 +180,7 @@ POST /api/v1/namespaces/\{namespace\}/replicationcontrollers
 </thead>
 <tbody><tr id="zh-cn_topic_0079615078_row7199758"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0079615078_p46309534"><a name="zh-cn_topic_0079615078_p46309534"></a><a name="zh-cn_topic_0079615078_p46309534"></a>201</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615078_p60084754"><a name="zh-cn_topic_0079615078_p60084754"></a><a name="zh-cn_topic_0079615078_p60084754"></a>操作成v功，返回ReplicationController资源对象。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615078_p60084754"><a name="zh-cn_topic_0079615078_p60084754"></a><a name="zh-cn_topic_0079615078_p60084754"></a>操作成功，返回ReplicationController资源对象。</p>
 </td>
 </tr>
 </tbody>

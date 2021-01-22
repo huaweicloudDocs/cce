@@ -1,8 +1,15 @@
 # 对接Prometheus实现自定义指标监控<a name="cce_01_0201"></a>
 
-在CCE创建容器应用时，支持您通过对接普罗米修斯（prometheus）来上报自定义指标，并将其展示在应用运维管理（AOM）服务中的“视图管理 \> 指标监控”中。
+-   [背景知识](#section7646185263910)
+-   [前提条件](#section1439216379382)
+-   [操作步骤](#section2050317783613)
+-   [相关链接](#section834624942119)
 
-指标是应用运维管理（AOM）服务中对资源性能的数据描述或状态描述，指标由[命名空间](https://support.huaweicloud.com/productdesc-aom/aom_06_0014.html#aom_06_0014__section15138195111105)、[维度](https://support.huaweicloud.com/productdesc-aom/aom_06_0014.html#aom_06_0014__section157916821815)、指标名称和单位组成。指标分为系统指标和自定义指标。
+## 背景知识<a name="section7646185263910"></a>
+
+在CCE创建容器应用时，支持您通过对接普罗米修斯（prometheus）来上报自定义指标，并将其展示在应用运维管理（AOM）服务中的“监控 \> 指标浏览”中。
+
+指标是应用运维管理（AOM）服务中对资源性能的数据描述或状态描述，指标由[命名空间](https://support.huaweicloud.com/productdesc-aom/aom_06_0014.html#section0)、[维度](https://support.huaweicloud.com/productdesc-aom/aom_06_0014.html#section1)、指标名称和单位组成。指标分为系统指标和自定义指标。
 
 -   系统指标：AOM提供的基础指标，例如：CPU使用率、CPU内核占用等。
 -   自定义指标：您自己定义的指标。可参考如下两种方式上报自定义指标。
@@ -10,13 +17,13 @@
     -   方式二：在CCE创建容器工作负载时，通过对接普罗米修斯（prometheus）上报自定义指标，详细操作请参见[操作步骤](#section2050317783613)。
 
 
-**图 1**  AOM中自定义指标<a name="fig157555902919"></a>  
+**图 1**  AOM中自定义指标<a name="fig0211185184017"></a>  
 ![](figures/AOM中自定义指标.png "AOM中自定义指标")
 
-## 前提及约束<a name="section1439216379382"></a>
+## 前提条件<a name="section1439216379382"></a>
 
--   您已经成功创建一个 Kubernetes 集群，参见[购买混合集群](购买混合集群.md)。
--   您已连接到集群的控制节点，方便快速查看节点标签等信息，参见[通过kubectl或web-terminal插件连接CCE集群](通过kubectl或web-terminal插件连接CCE集群.md)。
+-   您已经成功创建一个Kubernetes集群，参见[购买混合集群](购买混合集群.md)。
+-   您已连接到集群的控制节点，方便快速查看节点标签等信息，参见[通过kubectl或web-terminal插件操作CCE集群](通过kubectl或web-terminal插件操作CCE集群.md)。
 -   在设置自定义监控前，您需先了解和安装[prometheus](https://prometheus.io/)，并在您的工作负载中提供获取自定义指标数据的GET接口，以便能够通过该接口获取您的自定义指标数据。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 

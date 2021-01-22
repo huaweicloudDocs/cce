@@ -29,7 +29,7 @@ PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/statu
 </td>
 <td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.2 "><p id="p27639004"><a name="p27639004"></a><a name="p27639004"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="65.3034696530347%" headers="mcps1.2.4.1.3 "><p id="p24166838"><a name="p24166838"></a><a name="p24166838"></a>name of the DaemonSet</p>
+<td class="cellrowborder" valign="top" width="65.3034696530347%" headers="mcps1.2.4.1.3 "><p id="p24166838"><a name="p24166838"></a><a name="p24166838"></a>name of the Deployment</p>
 </td>
 </tr>
 <tr id="row16174956"><td class="cellrowborder" valign="top" width="17.348265173482652%" headers="mcps1.2.4.1.1 "><p id="p35103070"><a name="p35103070"></a><a name="p35103070"></a>namespace</p>
