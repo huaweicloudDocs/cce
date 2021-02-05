@@ -112,7 +112,7 @@ web-terminal可以在Node.js支持的所有操作系统上运行，而不依赖�
 
 ## 卸载插件<a name="section65651488131"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“ 插件管理“，在“插件实例“页签下，选择对应的集群，单击web-terminal下的“卸载“。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击web-terminal下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
 
 ## 版本记录<a name="section144262219109"></a>

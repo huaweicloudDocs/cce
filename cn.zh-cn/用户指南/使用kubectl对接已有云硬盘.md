@@ -29,7 +29,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
     </td>
     <td class="cellrowborder" valign="top" width="35.34353435343534%" headers="mcps1.1.4.1.2 "><p id="p194315417329"><a name="p194315417329"></a><a name="p194315417329"></a>1.15及以上版本的集群</p>
     </td>
-    <td class="cellrowborder" valign="top" width="31.453145314531454%" headers="mcps1.1.4.1.3 "><p id="p13431164173218"><a name="p13431164173218"></a><a name="p13431164173218"></a>请参见<a href="#li1119882118498">1.15+ yaml文件配置示例</a></p>
+    <td class="cellrowborder" valign="top" width="31.453145314531454%" headers="mcps1.1.4.1.3 "><p id="p13431164173218"><a name="p13431164173218"></a><a name="p13431164173218"></a>请参见<a href="#li4118175205414">1.15+ yaml文件配置示例</a></p>
     </td>
     </tr>
     <tr id="row543118415321"><td class="cellrowborder" valign="top" width="33.2033203320332%" headers="mcps1.1.4.1.1 "><p id="p1743111463216"><a name="p1743111463216"></a><a name="p1743111463216"></a>1.11.7 ≤ K8S version ≤ 1.13</p>
@@ -58,7 +58,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
 
     **1.15+（1.15及以上版本的集群）**
 
-    -   **vi pv-evs-example.yaml**
+    -   <a name="li4118175205414"></a>**vi pv-evs-example.yaml**
 
         **PV yaml文件配置示例如下：**
 
@@ -460,7 +460,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
     </thead>
     <tbody><tr id="row796915557409"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p1896955524012"><a name="p1896955524012"></a><a name="p1896955524012"></a>volume.beta.kubernetes.io/storage-class</p>
     </td>
-    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p0970205513401"><a name="p0970205513401"></a><a name="p0970205513401"></a>存储类型，支持sas, ssd 和 sata。必须和已有PV保持一致。</p>
+    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p0970205513401"><a name="p0970205513401"></a><a name="p0970205513401"></a>存储类型，支持sas，ssd和sata。必须和已有PV保持一致。</p>
     </td>
     </tr>
     <tr id="row234119218414"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p93414212410"><a name="p93414212410"></a><a name="p93414212410"></a>volume.beta.kubernetes.io/storage-provisioner</p>
@@ -609,7 +609,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
     </thead>
     <tbody><tr id="row1439955382818"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p14399145392817"><a name="p14399145392817"></a><a name="p14399145392817"></a>volume.beta.kubernetes.io/storage-class</p>
     </td>
-    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p103996535282"><a name="p103996535282"></a><a name="p103996535282"></a>存储类型，支持sas, ssd 和 sata。必须和已有PV保持一致。</p>
+    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p103996535282"><a name="p103996535282"></a><a name="p103996535282"></a>存储类型，支持sas，ssd和sata。必须和已有PV保持一致。</p>
     </td>
     </tr>
     <tr id="row539935332820"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p15399175319282"><a name="p15399175319282"></a><a name="p15399175319282"></a>volume.beta.kubernetes.io/storage-provisioner</p>
@@ -761,7 +761,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
     </thead>
     <tbody><tr id="row15133142312918"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p21331523182914"><a name="p21331523182914"></a><a name="p21331523182914"></a>volume.beta.kubernetes.io/storage-class</p>
     </td>
-    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p4133723152915"><a name="p4133723152915"></a><a name="p4133723152915"></a>存储类型，支持sas, ssd 和 sata。必须和已有PV保持一致。</p>
+    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p4133723152915"><a name="p4133723152915"></a><a name="p4133723152915"></a>存储类型，支持sas，ssd和sata。必须和已有PV保持一致。</p>
     </td>
     </tr>
     <tr id="row12133123202916"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p81331523122911"><a name="p81331523122911"></a><a name="p81331523122911"></a>volume.beta.kubernetes.io/storage-provisioner</p>

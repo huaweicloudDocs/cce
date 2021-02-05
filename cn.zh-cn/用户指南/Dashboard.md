@@ -24,7 +24,7 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 -   创建、修改Kubernetes上的资源（例如Deployment、Job、DaemonSet等）
 -   展示集群上发生的错误
 
-例如：您可以伸缩一个Deployment、执行滚动更新、重启一个 Pod 或部署一个新的应用程序。
+例如：您可以伸缩一个Deployment、执行滚动更新、重启一个Pod或部署一个新的应用程序。
 
 **开源社区地址：**[https://github.com/kubernetes/dashboard](https://github.com/kubernetes/dashboard)
 
@@ -139,7 +139,7 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
 ## 升级插件<a name="section455343310401"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“ 升级“。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作；
@@ -150,7 +150,7 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
 ## 卸载插件<a name="section20765191931911"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“ 卸载“。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
 
 ## 附：访问报错解决方法<a name="section913875232612"></a>

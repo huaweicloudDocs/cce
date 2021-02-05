@@ -111,7 +111,7 @@ Volcano针对计算型应用提供了作业调度、作业管理、队列管理�
 </td>
 <td class="cellrowborder" valign="top" width="17.44%" headers="mcps1.2.5.1.3 "><p id="p1714832262416"><a name="p1714832262416"></a><a name="p1714832262416"></a>2019/11/18</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p4438634172519"><a name="p4438634172519"></a><a name="p4438634172519"></a>Volcano是一个基于Kubernetes的批处理平台，提供了机器学习、深度学习、生物信息学、基因组学及其他大数据应用所需要的而 Kubernetes当下缺失的一系列特性。</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p4438634172519"><a name="p4438634172519"></a><a name="p4438634172519"></a>Volcano是一个基于Kubernetes的批处理平台，提供了机器学习、深度学习、生物信息学、基因组学及其他大数据应用所需要的而Kubernetes当下缺失的一系列特性。</p>
 </td>
 </tr>
 <tr id="row9487166161815"><td class="cellrowborder" valign="top" width="15.509999999999998%" headers="mcps1.2.5.1.1 "><p id="p1514852242414"><a name="p1514852242414"></a><a name="p1514852242414"></a>1.0.0</p>

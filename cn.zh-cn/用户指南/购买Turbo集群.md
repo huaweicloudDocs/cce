@@ -153,7 +153,7 @@ CCE Turbo支持新一代裸金属容器2.0集群，同时支持传统虚拟机�
     <p id="p2448659163311"><a name="p2448659163311"></a><a name="p2448659163311"></a><strong id="b15868154114358"><a name="b15868154114358"></a><a name="b15868154114358"></a>CPU管理策略：</strong></p>
     <p id="p658055813489"><a name="p658055813489"></a><a name="p658055813489"></a>该参数仅在v1.13.10-r0及以上版本的集群中显示。</p>
     <a name="ul14813182993518"></a><a name="ul14813182993518"></a><ul id="ul14813182993518"><li>开启：支持给工作负载实例配置CPU独占，适用于对CPU缓存和调度延迟敏感的工作负载。</li><li>关闭：关闭工作负载实例独占CPU核的功能，优点是CPU共享池的可分配核数较多。</li></ul>
-    <p id="p1363818291491"><a name="p1363818291491"></a><a name="p1363818291491"></a>更多CPU管理策略内容请参见<a href="https://kubernetes.io/blog/2018/07/24/feature-highlight-cpu-manager/" target="_blank" rel="noopener noreferrer">Feature Highlight: CPU Manager</a>或<a href="https://bbs.huaweicloud.com/forum/thread-28901-1-1.html" target="_blank" rel="noopener noreferrer">深入理解 Kubernetes CPU Mangager</a>。</p>
+    <p id="p1363818291491"><a name="p1363818291491"></a><a name="p1363818291491"></a>更多CPU管理策略内容请参见<a href="https://kubernetes.io/blog/2018/07/24/feature-highlight-cpu-manager/" target="_blank" rel="noopener noreferrer">Feature Highlight: CPU Manager</a>或<a href="https://bbs.huaweicloud.com/forum/thread-28901-1-1.html" target="_blank" rel="noopener noreferrer">深入理解Kubernetes CPU Mangager</a>。</p>
     <p id="p189100474"><a name="p189100474"></a><a name="p189100474"></a>开启CPU管理策略之后，CCE节点变更规格将无法重新拉起或创建工作负载，解决方法详见<a href="https://support.huaweicloud.com/cce_faq/cce_faq_00189.html" target="_blank" rel="noopener noreferrer">CCE节点变更规格后，为什么无法重新拉起或创建工作负载？</a>。</p>
     </td>
     </tr>

@@ -8,15 +8,15 @@
 
 云容器引擎（CCE）提供多种类型的容器部署和管理能力，支持对容器工作负载的部署、配置、监控、扩容、升级、卸载、服务发现及负载均衡等特性。
 
-其中守护进程集（DaemonSet）可以确保全部（或者某些）节点上仅运行一个Pod实例，当有节点加入集群时，也会为他们新增一个 Pod 。 当有节点从集群移除时，这些 Pod 也会被回收。删除 DaemonSet 将会删除它创建的所有 Pod。
+其中守护进程集（DaemonSet）可以确保全部（或者某些）节点上仅运行一个Pod实例，当有节点加入集群时，也会为他们新增一个 Pod 。 当有节点从集群移除时，这些Pod也会被回收。删除 DaemonSet 将会删除它创建的所有Pod。
 
-使用 DaemonSet 的一些典型用法：
+使用DaemonSet的一些典型用法：
 
--   运行集群存储 daemon，例如在每个节点上运行 glusterd、ceph。
--   在每个节点上运行日志收集 daemon，例如fluentd、logstash。
--   在每个节点上运行监控 daemon，例如 Prometheus Node Exporter、collectd、Datadog 代理、New Relic 代理，或 Ganglia gmond。
+-   运行集群存储daemon，例如在每个节点上运行glusterd、ceph。
+-   在每个节点上运行日志收集daemon，例如fluentd、logstash。
+-   在每个节点上运行监控daemon，例如Prometheus Node Exporter、collectd、Datadog代理、New Relic代理，或Ganglia gmond。
 
-一种简单的用法是为每种类型的守护进程在所有的节点上都启动一个DaemonSet。一个稍微复杂的用法是为同一种守护进程部署多个DaemonSet；每个具有不同的标志， 并且对不同硬件类型具有不同的内存、CPU 要求。
+一种简单的用法是为每种类型的守护进程在所有的节点上都启动一个DaemonSet。一个稍微复杂的用法是为同一种守护进程部署多个DaemonSet；每个具有不同的标志， 并且对不同硬件类型具有不同的内存、CPU要求。
 
 ## 前提条件<a name="section7271245481"></a>
 

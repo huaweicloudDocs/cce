@@ -194,7 +194,7 @@ CronJob的配置参数如下所示：
 -   .spec.concurrencyPolicy指定任务的并发策略，支持Allow、Forbid和Replace三个选项。
     -   Allow（默认）：允许并发运行 Job。
     -   Forbid：禁止并发运行，如果前一个还没有完成，则直接跳过下一个。
-    -   Replace：取消当前正在运行的 Job，用一个新的来替换。
+    -   Replace：取消当前正在运行的Job，用一个新的来替换。
 
 
 下面是一个CronJob的示例，保存在cronjob.yaml文件中。

@@ -41,7 +41,7 @@ storage-driver是一款云存储驱动插件，北向遵循标准容器平台存
 
 ## 升级插件<a name="section455343310401"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**storage-driver**下的“ 升级“。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**storage-driver**下的“升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
@@ -52,7 +52,7 @@ storage-driver是一款云存储驱动插件，北向遵循标准容器平台存
 
 ## 卸载插件<a name="section20765191931911"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**storage-driver**下的“ 卸载“。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**storage-driver**下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
 
 ## 版本记录<a name="section1945192816714"></a>
@@ -95,7 +95,7 @@ storage-driver是一款云存储驱动插件，北向遵循标准容器平台存
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p8881202914412"><a name="p8881202914412"></a><a name="p8881202914412"></a>2019/11/28</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p5490936184612"><a name="p5490936184612"></a><a name="p5490936184612"></a>为v1.13.10集群提供EVS RWO非共享卷功能, 增加noresvport作为SFS/SFS Turbo的默认挂载参数增加网络可靠性，设置本插件的资源限制</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p5490936184612"><a name="p5490936184612"></a><a name="p5490936184612"></a>为v1.13.10集群提供EVS RWO非共享卷功能，增加noresvport作为SFS/SFS Turbo的默认挂载参数增加网络可靠性，设置本插件的资源限制</p>
 </td>
 </tr>
 <tr id="row187865919236"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p188826298440"><a name="p188826298440"></a><a name="p188826298440"></a>1.0.18</p>
@@ -125,7 +125,7 @@ storage-driver是一款云存储驱动插件，北向遵循标准容器平台存
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p053417134451"><a name="p053417134451"></a><a name="p053417134451"></a>2019/07/10</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p0492143664610"><a name="p0492143664610"></a><a name="p0492143664610"></a>增加对基于块存储盘符限制的调度支持,重复unmount efs实例失败问题。</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p0492143664610"><a name="p0492143664610"></a><a name="p0492143664610"></a>增加对基于块存储盘符限制的调度支持，重复unmount efs实例失败问题。</p>
 </td>
 </tr>
 <tr id="row832631715452"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p173264174457"><a name="p173264174457"></a><a name="p173264174457"></a>1.0.11</p>

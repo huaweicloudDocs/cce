@@ -18,7 +18,7 @@ CCE权限管理主要分为集群权限、命名空间权限，能够从集群�
 
     集群权限涉及CCE非Kubernetes API，支持IAM细粒度策略、企业项目管理相关能力。
 
--   **[命名空间权限](命名空间权限.md)：**是基于Kubernetes RBAC能力的授权，通过权限设置可以让不同的用户或用户组拥有操作不同Kubernetes资源的权限。同时CCE基于开源能力进行了增强，可以支持基于IAM用户或用户组粒度进行RBAC授权、IAM token直接访问 API进行RBAC认证鉴权。
+-   **[命名空间权限](命名空间权限.md)：**是基于Kubernetes RBAC能力的授权，通过权限设置可以让不同的用户或用户组拥有操作不同Kubernetes资源的权限。同时CCE基于开源能力进行了增强，可以支持基于IAM用户或用户组粒度进行RBAC授权、IAM token直接访问API进行RBAC认证鉴权。
 
     命名空间权限涉及CCE Kubernetes API，基于Kubernetes RBAC能力进行增强，支持对接IAM用户/用户组进行授权和认证鉴权，但与IAM细粒度策略独立。
 
@@ -63,5 +63,5 @@ CCE权限管理主要分为集群权限、命名空间权限，能够从集群�
 
 ## Kubernetes的角色访问控制（RBAC）<a name="section89884567218"></a>
 
-Kubernetes基于角色的访问控制（Role-Based Access Control, 即”RBAC”）使用”rbac.authorization.k8s.io” API Group实现授权决策，允许管理员通过Kubernetes API动态配置策略。详情请参见[命名空间权限](命名空间权限.md)。
+Kubernetes基于角色的访问控制（Role-Based Access Control，即”RBAC”）使用”rbac.authorization.k8s.io” API Group实现授权决策，允许管理员通过Kubernetes API动态配置策略。详情请参见[命名空间权限](命名空间权限.md)。
 

@@ -31,7 +31,7 @@ nginx-ingress插件直接使用社区模板与镜像，CCE不提供额外维护�
 Nginx Ingress由资源对象Ingress、Ingress控制器、Nginx三部分组成，Ingress控制器用以将Ingress资源实例组装成Nginx配置文件（nginx.conf），并重新加载 Nginx使变更的配置生效。当它监听到Service中Pod变化时通过动态变更的方式实现Nginx上游服务器组配置的变更，无须重新加载Nginx进程。工作原理如[图1](#fig204075132570)所示。
 
 -   Ingress：一组基于域名或URL把请求转发到指定Service实例的访问规则，是Kubernetes的一种资源对象，Ingress实例被存储在对象存储服务etcd中，通过接口服务被实现增、删、改、查的操作。
--   Ingress 控制器（Ingress controller）：用以实时监控资源对象Ingress、Service、End-point、Secret（主要是TLS证书和Key）、Node、ConfigMap的变化，自动对Nginx进行相应的操作。
+-   Ingress控制器（Ingress controller）：用以实时监控资源对象Ingress、Service、End-point、Secret（主要是TLS证书和Key）、Node、ConfigMap的变化，自动对Nginx进行相应的操作。
 -   Nginx：实现具体的应用层负载均衡及访问控制。
 
 **图 1**  Nginx Ingress工作原理<a name="fig204075132570"></a>  
@@ -83,7 +83,7 @@ Nginx Ingress由资源对象Ingress、Ingress控制器、Nginx三部分组成，
     <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p9731184313503"><a name="p9731184313503"></a><a name="p9731184313503"></a>此处的设置将会全局生效，该参数直接通过配置nginx.conf生成，将影响管理的全部Ingress，相关参数可通过<a href="https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/" target="_blank" rel="noopener noreferrer">configmap</a>查找，如果您配置的参数不包含在<a href="https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/" target="_blank" rel="noopener noreferrer">configmap</a>所列出的选项中将不会生效。</p>
     <p id="p19774731165611"><a name="p19774731165611"></a><a name="p19774731165611"></a>示例如下：</p>
     <p id="p16768103995619"><a name="p16768103995619"></a><a name="p16768103995619"></a><a name="image146022151543"></a><a name="image146022151543"></a><span><img id="image146022151543" src="figures/zh-cn_image_0000001080616553.png" width="522.69" height="123.844147"></span></p>
-    <a name="ul1284612209318"></a><a name="ul1284612209318"></a><ul id="ul1284612209318"><li>worker-processes：Worker进程数，定义了nginx对外提供web服务时的worker进程数，默认 auto。</li><li>max-worker-connections：单个后台Worker进程的最大并发链接数，默认 16384。</li><li>keep-alive：长连接超时，单位秒，默认 75s。</li></ul>
+    <a name="ul1284612209318"></a><a name="ul1284612209318"></a><ul id="ul1284612209318"><li>worker-processes：Worker进程数，定义了nginx对外提供web服务时的worker进程数，默认auto。</li><li>max-worker-connections：单个后台Worker进程的最大并发链接数，默认16384。</li><li>keep-alive：长连接超时，单位秒，默认 75s。</li></ul>
     </td>
     </tr>
     <tr id="row1624493410514"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p824503418518"><a name="p824503418518"></a><a name="p824503418518"></a>自定义请求头</p>

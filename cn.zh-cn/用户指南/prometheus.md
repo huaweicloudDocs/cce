@@ -13,7 +13,7 @@
 
 ## 插件简介<a name="section173631312185614"></a>
 
-Prometheus是一套开源的系统监控报警框架。它启发于Google的borgmon监控系统，由工作在SoundCloud的google前员工在2012年创建，作为社区开源项目进行开发，并于2015年正式发布。2016年，Prometheus正式加入Cloud Native Computing Foundation，成为受欢迎度仅次于Kubernetes的项目。
+Prometheus是一套开源的系统监控报警框架。它启发于Google的borgmon监控系统，由工作在SoundCloud的Google前员工在2012年创建，作为社区开源项目进行开发，并于2015年正式发布。2016年，Prometheus正式加入Cloud Native Computing Foundation，成为受欢迎度仅次于Kubernetes的项目。
 
 在云容器引擎CCE中，支持以插件的方式快捷安装Prometheus。
 
@@ -134,7 +134,7 @@ prometheus.io/scrape: 'true'
 其中，PATH为访问指标的URL，默认为“/metrics”，PORT为指标服务监听的端口。
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
->若要要采集Pod类型的自定义指标，修改的是Deployment中的spec.templates.metadata.annotations。
+>若要采集Pod类型的自定义指标，修改的是Deployment中的spec.templates.metadata.annotations。
 
 加上配置后，就能在Prometheus的dashboard中查询到应用的自定义指标了。
 
@@ -319,7 +319,7 @@ Kubernetes的自定义指标可用于[工作负载伸缩（HPA）](创建工作�
 
 ## 参考资源<a name="section16331426191116"></a>
 
--   Prometheus 概念及详细配置请参阅  [Prometheus 官方文档](https://prometheus.io/docs/introduction/overview/)
--   Node exporter 安装请参考  [node\_exporter github 仓库](https://github.com/prometheus/node_exporter)
+-   Prometheus概念及详细配置请参阅[Prometheus 官方文档](https://prometheus.io/docs/introduction/overview/)
+-   Node exporter安装请参考[node\_exporter github 仓库](https://github.com/prometheus/node_exporter)
 -   Slack 信息发送请参考  [Incoming Webhooks](https://api.slack.com/incoming-webhooks)
 

@@ -32,7 +32,7 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
 3.  在规格配置页面，配置驱动链接地址。
 
     >![](public_sys-resources/icon-caution.gif) **注意：** 
-    >-   如果下载链接为公网地址，如nvidia官网地址'https://us.download.nvidia.com/tesla/396.37/NVIDIA-Linux-x86\_64-396.37.run'，各GPU节点均需要绑定EIP。获取驱动链接方法请参考[获取驱动链接-公网地址](#section95451728192112)。
+    >-   如果下载链接为公网地址，如nvidia官网地址https://us.download.nvidia.com/tesla/396.37/NVIDIA-Linux-x86\_64-396.37.run，各GPU节点均需要绑定EIP。获取驱动链接方法请参考[获取驱动链接-公网地址](#section95451728192112)。
     >-   如果下载链接为OBS上的链接，无需绑定EIP。获取驱动链接方法请参考[获取驱动链接-OBS地址](#section14922133914508)。
 
 4.  单击“安装”，安装gpu-beta插件的任务即可提交成功。
@@ -42,8 +42,8 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
 
 ## 获取驱动链接-公网地址<a name="section95451728192112"></a>
 
-1.  登录到  _[https://www.nvidia.cn/Download/Find.aspx?lang=cn](https://www.nvidia.cn/Download/Find.aspx?lang=cn) _网站。
-2.  如[图1](#fig11696366517)所示，在“NVIDIA 驱动程序下载“框内选择对应的驱动信息。其中“操作系统“必须选**Linux 64-bit**。
+1.  登录到_[https://www.nvidia.cn/Download/Find.aspx?lang=cn](https://www.nvidia.cn/Download/Find.aspx?lang=cn)_网站。
+2.  如[图1](#fig11696366517)所示，在“NVIDIA驱动程序下载“框内选择对应的驱动信息。其中“操作系统“必须选**Linux 64-bit**。
 
     **图 1**  参数选择<a name="fig11696366517"></a>  
     ![](figures/参数选择.png "参数选择")
@@ -70,12 +70,12 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
 4.  在左侧导航栏，单击“对象”。
 5.  选中目标对象，在对象详情页复制驱动链接。
 
-    ![](figures/zh-cn_image_0298958916.png)
+    ![](figures/001.png)
 
 
 ## 升级插件<a name="section23441939916"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“gpu-beta“下的“ 升级“。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“gpu-beta“下的“升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
@@ -123,7 +123,7 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
 </td>
 <td class="cellrowborder" valign="top" width="16.60833916608339%" headers="mcps1.2.5.1.3 "><p id="p18677172211183"><a name="p18677172211183"></a><a name="p18677172211183"></a>2020/09/19</p>
 </td>
-<td class="cellrowborder" valign="top" width="46.785321467853215%" headers="mcps1.2.5.1.4 "><p id="p116193110190"><a name="p116193110190"></a><a name="p116193110190"></a>支持用户自定义驱动地址下载驱动，支持1.15, 1.17集群</p>
+<td class="cellrowborder" valign="top" width="46.785321467853215%" headers="mcps1.2.5.1.4 "><p id="p116193110190"><a name="p116193110190"></a><a name="p116193110190"></a>支持用户自定义驱动地址下载驱动，支持1.15，1.17集群</p>
 </td>
 </tr>
 <tr id="row7335155311559"><td class="cellrowborder" valign="top" width="12.148785121487851%" headers="mcps1.2.5.1.1 "><p id="p66776221188"><a name="p66776221188"></a><a name="p66776221188"></a>1.1.10</p>
@@ -132,7 +132,7 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
 </td>
 <td class="cellrowborder" valign="top" width="16.60833916608339%" headers="mcps1.2.5.1.3 "><p id="p17677622171816"><a name="p17677622171816"></a><a name="p17677622171816"></a>2020/08/19</p>
 </td>
-<td class="cellrowborder" valign="top" width="46.785321467853215%" headers="mcps1.2.5.1.4 "><p id="p7165531181918"><a name="p7165531181918"></a><a name="p7165531181918"></a>支持用户自定义驱动地址下载驱动，支持1.13, 1.15, 1.17集群</p>
+<td class="cellrowborder" valign="top" width="46.785321467853215%" headers="mcps1.2.5.1.4 "><p id="p7165531181918"><a name="p7165531181918"></a><a name="p7165531181918"></a>支持用户自定义驱动地址下载驱动，支持1.13，1.15，1.17集群</p>
 </td>
 </tr>
 <tr id="row17524111141813"><td class="cellrowborder" valign="top" width="12.148785121487851%" headers="mcps1.2.5.1.1 "><p id="p10677102212180"><a name="p10677102212180"></a><a name="p10677102212180"></a>1.1.6</p>
@@ -150,7 +150,7 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
 </td>
 <td class="cellrowborder" valign="top" width="16.60833916608339%" headers="mcps1.2.5.1.3 "><p id="p196771322101817"><a name="p196771322101817"></a><a name="p196771322101817"></a>2019/12/16</p>
 </td>
-<td class="cellrowborder" valign="top" width="46.785321467853215%" headers="mcps1.2.5.1.4 "><p id="p6166231161912"><a name="p6166231161912"></a><a name="p6166231161912"></a>同时支持默认的驱动链接地址和用户可自定义驱动地址下载驱动，支持1.13, 1.15集群</p>
+<td class="cellrowborder" valign="top" width="46.785321467853215%" headers="mcps1.2.5.1.4 "><p id="p6166231161912"><a name="p6166231161912"></a><a name="p6166231161912"></a>同时支持默认的驱动链接地址和用户可自定义驱动地址下载驱动，支持1.13，1.15集群</p>
 </td>
 </tr>
 <tr id="row9487166161815"><td class="cellrowborder" valign="top" width="12.148785121487851%" headers="mcps1.2.5.1.1 "><p id="p867712220180"><a name="p867712220180"></a><a name="p867712220180"></a>1.1.3</p>

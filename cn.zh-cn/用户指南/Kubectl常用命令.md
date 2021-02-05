@@ -170,7 +170,7 @@ kubectl delete deployment deployname
 
 **rolling-update\***
 
-rolling-update是一个非常重要的命令，对于已经部署并且正在运行的业务，rolling-update提供了不中断业务的更新方式。rolling-update 每次起一个新的pod，等新pod完全起来后删除一个旧的pod，然后再起一个新的pod替换旧的pod，直到替换掉所有的pod。rolling-update 需要确保新的版本有不同的name，Version和label，否则会报错 。
+rolling-update是一个非常重要的命令，对于已经部署并且正在运行的业务，rolling-update提供了不中断业务的更新方式。rolling-update每次起一个新的pod，等新pod完全起来后删除一个旧的pod，然后再起一个新的pod替换旧的pod，直到替换掉所有的pod。rolling-update需要确保新的版本有不同的name，Version和label，否则会报错 。
 
 ```
 kubectl rolling-update poname -f newfilename
@@ -289,7 +289,7 @@ describe类似于get，同样用于获取resource的相关信息。不同的是�
 
 **logs**
 
-logs命令用于显示pod运行中，容器内程序输出到标准输出的内容。如果要获得tail -f 的方式，需使用-f选项。
+logs命令用于显示pod运行中，容器内程序输出到标准输出的内容。如果要获得tail -f的方式，需使用-f选项。
 
 ```
 kubectl logs -f podname

@@ -10,7 +10,7 @@
 
 ## 前提条件<a name="section125311022122915"></a>
 
-配置Istio命令行工具前必须先配置kubectl命令，详细信息请参见[安装和设置 kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)。
+配置Istio命令行工具前必须先配置kubectl命令，详细信息请参见[安装和设置kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)。
 
 ## 操作步骤<a name="section078023812295"></a>
 

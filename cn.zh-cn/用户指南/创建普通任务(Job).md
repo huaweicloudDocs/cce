@@ -254,7 +254,7 @@ spec:
 
 -   apiVersion: batch/v1 是当前job的Version
 -   kind: Job：指定当前资源的类型时Job
--   restartPolicy: Never：是指当前的重启策略。对于Job，只能设置为Never或者OnFailure。对于其他controller（比如 Deployment）可以设置为Always。
+-   restartPolicy: Never：是指当前的重启策略。对于Job，只能设置为Never或者OnFailure。对于其他controller（比如Deployment）可以设置为Always。
 
 **运行该任务，如下：**
 

@@ -24,7 +24,7 @@
     **图 2**  添加网络平面<a name="fig1778184810539"></a>  
     ![](figures/添加网络平面.png "添加网络平面")
 
-    集群默认创建一个“default-network“，默认的network资源包含了tenant\_id、vpc\_id、subnet等等信息。
+    集群默认创建一个“default-network“，默认的network资源包含了tenant\_id、vpc\_id、subnet等信息。
 
     **图 3**  默认网络平面<a name="fig684420255312"></a>  
     ![](figures/默认网络平面.png "默认网络平面")

@@ -284,6 +284,176 @@
     </tbody>
     </table>
 
+    **表 2**  metadata.annotations相关参数（对接Ingress需开启健康检查和会话保持，如下为其所需字段及说明）
+
+    <a name="table1573818114374"></a>
+    <table><thead align="left"><tr id="row073861103710"><th class="cellrowborder" valign="top" width="34.07%" id="mcps1.2.5.1.1"><p id="p1598771718371"><a name="p1598771718371"></a><a name="p1598771718371"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="12.34%" id="mcps1.2.5.1.2"><p id="p998781714376"><a name="p998781714376"></a><a name="p998781714376"></a>是否必填</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="21.23%" id="mcps1.2.5.1.3"><p id="p1498711174378"><a name="p1498711174378"></a><a name="p1498711174378"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="32.36%" id="mcps1.2.5.1.4"><p id="p898781713376"><a name="p898781713376"></a><a name="p898781713376"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row273816123715"><td class="cellrowborder" valign="top" width="34.07%" headers="mcps1.2.5.1.1 "><p id="p82231781713"><a name="p82231781713"></a><a name="p82231781713"></a>kubernetes.io/elb.session-affinity-mode</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="p5119144510201"><a name="p5119144510201"></a><a name="p5119144510201"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="21.23%" headers="mcps1.2.5.1.3 "><p id="p122231983110"><a name="p122231983110"></a><a name="p122231983110"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="32.36%" headers="mcps1.2.5.1.4 "><p id="p722388817"><a name="p722388817"></a><a name="p722388817"></a>负载均衡监听是基于IP地址的会话保持，即来自同一IP地址的访问请求转发到同一台后端服务器上。</p>
+    <a name="ul11223080114"></a><a name="ul11223080114"></a><ul id="ul11223080114"><li>不启用：不填写该参数。</li><li>开启会话保持：需增加该参数，取值“SOURCE_IP”，表示基于源IP地址。</li></ul>
+    </td>
+    </tr>
+    <tr id="row12738111173718"><td class="cellrowborder" valign="top" width="34.07%" headers="mcps1.2.5.1.1 "><p id="p10223188115"><a name="p10223188115"></a><a name="p10223188115"></a>kubernetes.io/elb.session-affinity-option</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="p16119845152010"><a name="p16119845152010"></a><a name="p16119845152010"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="21.23%" headers="mcps1.2.5.1.3 "><p id="p72231581011"><a name="p72231581011"></a><a name="p72231581011"></a><a href="#table11766742521">表3</a> Object</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="32.36%" headers="mcps1.2.5.1.4 "><p id="p13223381116"><a name="p13223381116"></a><a name="p13223381116"></a>七层负载均衡会话保持配置选项。</p>
+    </td>
+    </tr>
+    <tr id="row1373811115378"><td class="cellrowborder" valign="top" width="34.07%" headers="mcps1.2.5.1.1 "><p id="p12246816111"><a name="p12246816111"></a><a name="p12246816111"></a>kubernetes.io/elb.lb-algorithm</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="p161196451204"><a name="p161196451204"></a><a name="p161196451204"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="21.23%" headers="mcps1.2.5.1.3 "><p id="p14224481014"><a name="p14224481014"></a><a name="p14224481014"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="32.36%" headers="mcps1.2.5.1.4 "><p id="p9224681214"><a name="p9224681214"></a><a name="p9224681214"></a>默认值：“ROUND_ROBIN”，为后端云服务器组的负载均衡算法。</p>
+    <p id="p122448918"><a name="p122448918"></a><a name="p122448918"></a>取值范围：</p>
+    <a name="ul7224181919"></a><a name="ul7224181919"></a><ul id="ul7224181919"><li>ROUND_ROBIN：加权轮询算法。</li><li>LEAST_CONNECTIONS：加权最少连接算法。</li><li>SOURCE_IP：源IP算法。</li></ul>
+    <p id="p12241081914"><a name="p12241081914"></a><a name="p12241081914"></a>当该字段的取值为SOURCE_IP时，后端云服务器组绑定的后端云服务器的weight字段无效。</p>
+    </td>
+    </tr>
+    <tr id="row47381915373"><td class="cellrowborder" valign="top" width="34.07%" headers="mcps1.2.5.1.1 "><p id="p18224681113"><a name="p18224681113"></a><a name="p18224681113"></a>kubernetes.io/elb.health-check-flag</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="p31191645112018"><a name="p31191645112018"></a><a name="p31191645112018"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="21.23%" headers="mcps1.2.5.1.3 "><p id="p132241181413"><a name="p132241181413"></a><a name="p132241181413"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="32.36%" headers="mcps1.2.5.1.4 "><p id="p182243814112"><a name="p182243814112"></a><a name="p182243814112"></a>默认开启，为是否开启ELB健康检查功能。</p>
+    <a name="ul122241981110"></a><a name="ul122241981110"></a><ul id="ul122241981110"><li>开启：“”（空值）或“on”</li><li>关闭：“off”</li></ul>
+    </td>
+    </tr>
+    <tr id="row673811116378"><td class="cellrowborder" valign="top" width="34.07%" headers="mcps1.2.5.1.1 "><p id="p32241581611"><a name="p32241581611"></a><a name="p32241581611"></a>kubernetes.io/elb.health-check-option</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.34%" headers="mcps1.2.5.1.2 "><p id="p111994515207"><a name="p111994515207"></a><a name="p111994515207"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="21.23%" headers="mcps1.2.5.1.3 "><p id="p72241981112"><a name="p72241981112"></a><a name="p72241981112"></a><a href="#table576734212218">表4</a> Object</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="32.36%" headers="mcps1.2.5.1.4 "><p id="p12224981819"><a name="p12224981819"></a><a name="p12224981819"></a>ELB健康检查配置选项。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    **表 3**  elb.session-affinity-option字段数据结构说明
+
+    <a name="table11766742521"></a>
+    <table><thead align="left"><tr id="row157668421821"><th class="cellrowborder" valign="top" width="24.759999999999998%" id="mcps1.2.5.1.1"><p id="p5767842222"><a name="p5767842222"></a><a name="p5767842222"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="13.76%" id="mcps1.2.5.1.2"><p id="p078511610257"><a name="p078511610257"></a><a name="p078511610257"></a>是否必填</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="13.99%" id="mcps1.2.5.1.3"><p id="p176712420211"><a name="p176712420211"></a><a name="p176712420211"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="47.49%" id="mcps1.2.5.1.4"><p id="p976794211211"><a name="p976794211211"></a><a name="p976794211211"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row476716420212"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.5.1.1 "><p id="p17679424220"><a name="p17679424220"></a><a name="p17679424220"></a>persistence_timeout</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.76%" headers="mcps1.2.5.1.2 "><p id="p17785166142513"><a name="p17785166142513"></a><a name="p17785166142513"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.99%" headers="mcps1.2.5.1.3 "><p id="p1976717421726"><a name="p1976717421726"></a><a name="p1976717421726"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="47.49%" headers="mcps1.2.5.1.4 "><p id="p176754218219"><a name="p176754218219"></a><a name="p176754218219"></a>当elb.session-affinity-mode是“HTTP_COOKIE”时生效，设置会话保持的超时时间（秒）。</p>
+    <p id="p1776716429220"><a name="p1776716429220"></a><a name="p1776716429220"></a>默认值为：1440，取值范围：1-1440。</p>
+    </td>
+    </tr>
+    <tr id="row197671042828"><td class="cellrowborder" valign="top" width="24.759999999999998%" headers="mcps1.2.5.1.1 "><p id="p17670426218"><a name="p17670426218"></a><a name="p17670426218"></a>app_cookie_name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.76%" headers="mcps1.2.5.1.2 "><p id="p1278546172511"><a name="p1278546172511"></a><a name="p1278546172511"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.99%" headers="mcps1.2.5.1.3 "><p id="p1076716421021"><a name="p1076716421021"></a><a name="p1076716421021"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="47.49%" headers="mcps1.2.5.1.4 "><p id="p1976715421921"><a name="p1976715421921"></a><a name="p1976715421921"></a>当elb.session-affinity-mode是“APP_COOKIE”时生效，设置会话保持的超时时间（秒）。</p>
+    <p id="p2076704212213"><a name="p2076704212213"></a><a name="p2076704212213"></a>取值范围：1-10000字符。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+    **表 4**  elb.health-check-option字段数据结构说明
+
+    <a name="table576734212218"></a>
+    <table><thead align="left"><tr id="row1976716421525"><th class="cellrowborder" valign="top" width="24.67%" id="mcps1.2.5.1.1"><p id="p87675429219"><a name="p87675429219"></a><a name="p87675429219"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="13.77%" id="mcps1.2.5.1.2"><p id="p177215280254"><a name="p177215280254"></a><a name="p177215280254"></a>是否必填</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="14.000000000000002%" id="mcps1.2.5.1.3"><p id="p13767174211218"><a name="p13767174211218"></a><a name="p13767174211218"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="47.56%" id="mcps1.2.5.1.4"><p id="p87678428218"><a name="p87678428218"></a><a name="p87678428218"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row276714220220"><td class="cellrowborder" valign="top" width="24.67%" headers="mcps1.2.5.1.1 "><p id="p1076720429219"><a name="p1076720429219"></a><a name="p1076720429219"></a>delay</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.77%" headers="mcps1.2.5.1.2 "><p id="p1772202812256"><a name="p1772202812256"></a><a name="p1772202812256"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.3 "><p id="p167671421427"><a name="p167671421427"></a><a name="p167671421427"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="47.56%" headers="mcps1.2.5.1.4 "><p id="p1776714422026"><a name="p1776714422026"></a><a name="p1776714422026"></a>开始健康检查的初始等待时间（秒），可选</p>
+    <p id="p3768142526"><a name="p3768142526"></a><a name="p3768142526"></a>默认值：5，取值范围：1-50</p>
+    </td>
+    </tr>
+    <tr id="row676810425213"><td class="cellrowborder" valign="top" width="24.67%" headers="mcps1.2.5.1.1 "><p id="p1676894219213"><a name="p1676894219213"></a><a name="p1676894219213"></a>timeout</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.77%" headers="mcps1.2.5.1.2 "><p id="p272132852516"><a name="p272132852516"></a><a name="p272132852516"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.3 "><p id="p2076815421424"><a name="p2076815421424"></a><a name="p2076815421424"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="47.56%" headers="mcps1.2.5.1.4 "><p id="p117684421727"><a name="p117684421727"></a><a name="p117684421727"></a>健康检查的超时时间（秒），可选</p>
+    <p id="p12768542129"><a name="p12768542129"></a><a name="p12768542129"></a>默认值：10，取值范围1-50</p>
+    </td>
+    </tr>
+    <tr id="row197681742723"><td class="cellrowborder" valign="top" width="24.67%" headers="mcps1.2.5.1.1 "><p id="p197681421929"><a name="p197681421929"></a><a name="p197681421929"></a>max_retries</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.77%" headers="mcps1.2.5.1.2 "><p id="p9721928122518"><a name="p9721928122518"></a><a name="p9721928122518"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.3 "><p id="p10768174213216"><a name="p10768174213216"></a><a name="p10768174213216"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="47.56%" headers="mcps1.2.5.1.4 "><p id="p47689427217"><a name="p47689427217"></a><a name="p47689427217"></a>健康检查的最大重试次数，可选</p>
+    <p id="p20768742124"><a name="p20768742124"></a><a name="p20768742124"></a>默认值：3，取值范围1-10</p>
+    </td>
+    </tr>
+    <tr id="row117682421222"><td class="cellrowborder" valign="top" width="24.67%" headers="mcps1.2.5.1.1 "><p id="p13768134212216"><a name="p13768134212216"></a><a name="p13768134212216"></a>protocol</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.77%" headers="mcps1.2.5.1.2 "><p id="p472528182513"><a name="p472528182513"></a><a name="p472528182513"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.3 "><p id="p1176864214211"><a name="p1176864214211"></a><a name="p1176864214211"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="47.56%" headers="mcps1.2.5.1.4 "><p id="p197681424217"><a name="p197681424217"></a><a name="p197681424217"></a>健康检查的协议，可选</p>
+    <p id="p197681642522"><a name="p197681642522"></a><a name="p197681642522"></a>默认值：取关联服务的协议</p>
+    <p id="p9768842821"><a name="p9768842821"></a><a name="p9768842821"></a>取值范围：“TCP”或者“HTTP”</p>
+    </td>
+    </tr>
+    <tr id="row176874218217"><td class="cellrowborder" valign="top" width="24.67%" headers="mcps1.2.5.1.1 "><p id="p147684421722"><a name="p147684421722"></a><a name="p147684421722"></a>path</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.77%" headers="mcps1.2.5.1.2 "><p id="p37272810254"><a name="p37272810254"></a><a name="p37272810254"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.000000000000002%" headers="mcps1.2.5.1.3 "><p id="p6768542524"><a name="p6768542524"></a><a name="p6768542524"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="47.56%" headers="mcps1.2.5.1.4 "><p id="p7768184213214"><a name="p7768184213214"></a><a name="p7768184213214"></a>健康检查的URL，协议是“HTTP”时配置，可选</p>
+    <p id="p47683421221"><a name="p47683421221"></a><a name="p47683421221"></a>默认值：“/”</p>
+    <p id="p137691642226"><a name="p137691642226"></a><a name="p137691642226"></a>取值范围：1-10000字符</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
 3.  创建工作负载。
 
     **kubectl create -f nginx-deployment.yaml**

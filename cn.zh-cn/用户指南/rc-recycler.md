@@ -18,7 +18,7 @@ rc-recycler是一款可根据用户配置策略对资源进行自动回收的插
 
 ## 安装插件<a name="section1842517810574"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“ 插件管理“，在“插件市场“页签下，单击rc-recycler插件下的“安装插件“。
+1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击rc-recycler插件下的“安装插件“。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  <a name="li1959342211297"></a>参照[表1](#table95961922132915)配置插件安装参数。
 

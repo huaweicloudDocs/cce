@@ -1,6 +1,7 @@
 # CoreDNS（系统资源插件，必装）<a name="cce_01_0129"></a>
 
 -   [插件简介](#section25311744154917)
+-   [约束与限制](#section10849134521812)
 -   [安装插件](#section776571919194)
 -   [为CoreDNS配置存根域](#section5202157467)
 -   [kubernetes中的域名解析逻辑](#section1860523212152)
@@ -21,9 +22,12 @@ CoreDNS官网：[https://coredns.io/](https://coredns.io/)
 开源社区地址：[https://github.com/coredns/coredns](https://github.com/coredns/coredns)
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->-   升级CoreDNS插件时，请确保集群中有两个及以上节点。
 >-   当CoreDNS插件有升级或者BUG修复时，您不必升级集群或新建集群，仅需安装或升级CoreDNS插件即可。
 >-   DNS详细使用方法请参见[Kubernetes集群内置DNS配置说明](Kubernetes集群内置DNS配置说明.md)或[通过kubectl配置kube-dns/CoreDNS高可用](通过kubectl配置kube-dns-CoreDNS高可用.md)。
+
+## 约束与限制<a name="section10849134521812"></a>
+
+CoreDNS正常运行需要集群中至少有两个节点，在升级CoreDNS插件时，请确保CoreDNS的所有实例都处于运行状态。
 
 ## 安装插件<a name="section776571919194"></a>
 
@@ -185,11 +189,11 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 
 ## 升级插件<a name="section19566181513486"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“ 升级“。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
-    >-   升级coredns插件时，会替换原先节点上的旧版本的coredns插件，安装最新版本的coredns插件以实现功能的快速升级。
+    >-   升级coredns插件时，会替换原先节点上的旧版本的coredns插件，安装最新版本的coredns插件以实现功能的快速升级。如果升级出现异常，请卸载插件后重新安装和配置。
 
 2.  在基本信息页面选择插件版本，单击“下一步“。
 3.  参照[表2](#table1410658238)配置插件安装参数。配置完成后，单击“升级“即可升级coredns插件。
@@ -219,7 +223,7 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 
 ## 卸载插件<a name="section7582615184814"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“ 卸载“。
+1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
 
 ## 版本记录<a name="section1945192816714"></a>

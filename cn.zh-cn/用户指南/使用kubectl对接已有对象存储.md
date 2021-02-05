@@ -121,7 +121,7 @@ CCE支持使用已有的对象存储来创建PersistentVolume，并通过创建�
         </tr>
         <tr id="row5819194015382"><td class="cellrowborder" valign="top" width="26.42980935875217%" headers="mcps1.2.3.1.1 "><p id="p15794144011386"><a name="p15794144011386"></a><a name="p15794144011386"></a>fsType</p>
         </td>
-        <td class="cellrowborder" valign="top" width="73.57019064124783%" headers="mcps1.2.3.1.2 "><p id="p9794134093811"><a name="p9794134093811"></a><a name="p9794134093811"></a>文件类型，支持“obsfs”与“s3fs”,取值为s3fs时创建是obs对象桶，配套使用s3fs挂载；取值为obsfs时创建的是obs并行文件系统，配套使用obsfs挂载，推荐使用。</p>
+        <td class="cellrowborder" valign="top" width="73.57019064124783%" headers="mcps1.2.3.1.2 "><p id="p9794134093811"><a name="p9794134093811"></a><a name="p9794134093811"></a>文件类型，支持“obsfs”与“s3fs”，取值为s3fs时创建是obs对象桶，配套使用s3fs挂载；取值为obsfs时创建的是obs并行文件系统，配套使用obsfs挂载，推荐使用。</p>
         </td>
         </tr>
         </tbody>
