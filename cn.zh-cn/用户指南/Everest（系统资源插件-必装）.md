@@ -13,8 +13,6 @@ Everest是一个云原生容器存储系统，基于CSI为Kubernetes v1.15.6及�
 
 **该插件为系统资源插件，kubernetes 1.15及以上版本的集群在创建时默认安装。**
 
-开源社区地址：[https://github.com/EverestAPI/Everest](https://github.com/EverestAPI/Everest)
-
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   v1.13.11-r1升级到v1.15.11-r1集群后，原本v1.13的Flexvolume Fuxi容器存储由v1.15的Everest接管（插件版本v1.1.6及以上），原有功能保持不变。
 >-   Everest插件在**1.2.0版本**优化了使用OBS存储时的**秘钥认证功能**，请在Everest插件升级完成后（从低于1.2.0的版本升级到1.2.0及以上版本），重启集群中使用obs的全部工作负载，否则工作负载使用OBS存储能力将受影响！

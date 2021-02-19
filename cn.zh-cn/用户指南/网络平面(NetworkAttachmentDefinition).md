@@ -51,7 +51,7 @@
 ## 通过kubectl命令行创建<a name="section1111120232202"></a>
 
 1.  登录已配置好kubectl命令的弹性云服务器。登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
-2.  创建networkattachment-test.yaml
+2.  创建networkattachment-test.yaml。
 
     **vi networkattachment-test.yaml**
 
