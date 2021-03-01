@@ -402,7 +402,7 @@
     </tr>
     <tr id="row53581147103917"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p4358164711395"><a name="p4358164711395"></a><a name="p4358164711395"></a>loadBalancerIP</p>
     </td>
-    <td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p179964457"><a name="p179964457"></a><a name="p179964457"></a>是</p>
+    <td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p179964457"><a name="p179964457"></a><a name="p179964457"></a>否</p>
     </td>
     <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.3 "><p id="p11358647173919"><a name="p11358647173919"></a><a name="p11358647173919"></a>String</p>
     </td>

@@ -13,7 +13,7 @@
 
 ## 约束与限制<a name="section332285584912"></a>
 
--   仅网络模型为VPC网络（且未开启IPv6）和Yangtse的集群支持创建网络平面；网络模型为容器隧道网络时列表中仅显示“default-network“，不能新增或修改。
+-   仅网络模型为VPC网络（且未开启IPv6）和云原生网络2.0的集群支持创建网络平面；网络模型为容器隧道网络时列表中仅显示“default-network“，不能新增或修改。
 -   需v1.13.7-r0及以上版本的集群才能启用，v1.13.7-r0以下版本集群需要升级到最新版本后才能启用。
 
 ## 通过界面创建<a name="section1231151981314"></a>
@@ -362,7 +362,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.5.1.3 "><p id="p1779012269263"><a name="p1779012269263"></a><a name="p1779012269263"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.330000000000005%" headers="mcps1.2.5.1.4 "><p id="p11790122642617"><a name="p11790122642617"></a><a name="p11790122642617"></a>ENI网卡的Mac地址，仅支持在Yangtse网络模式下显示。</p>
+<td class="cellrowborder" valign="top" width="56.330000000000005%" headers="mcps1.2.5.1.4 "><p id="p11790122642617"><a name="p11790122642617"></a><a name="p11790122642617"></a>ENI网卡的Mac地址，仅支持在云原生网络2.0网络模式下显示。</p>
 </td>
 </tr>
 <tr id="row95063471292"><td class="cellrowborder" valign="top" width="14.45%" headers="mcps1.2.5.1.1 "><p id="p2507547142920"><a name="p2507547142920"></a><a name="p2507547142920"></a>default</p>

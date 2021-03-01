@@ -48,7 +48,7 @@ CCE基于Kubernetes的网络策略功能进行了加强，通过配置网络策�
         </tr>
         <tr id="row0706372237"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p1871103711232"><a name="p1871103711232"></a><a name="p1871103711232"></a>协议</p>
         </td>
-        <td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p77123712230"><a name="p77123712230"></a><a name="p77123712230"></a>请选择对应的协议类型。</p>
+        <td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p77123712230"><a name="p77123712230"></a><a name="p77123712230"></a>请选择对应的协议类型，目前支持TCP和UDP协议，不支持ICMP协议。</p>
         </td>
         </tr>
         <tr id="row141931728132819"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p18193102819285"><a name="p18193102819285"></a><a name="p18193102819285"></a>目的容器端口</p>

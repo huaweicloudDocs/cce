@@ -17,7 +17,7 @@ CCE Turbo支持新一代裸金属容器2.0集群，同时支持传统虚拟机�
 ## 约束与限制<a name="section1675221242512"></a>
 
 -   单Region下单用户可创建的集群总数限制为50个，如果配额不满足业务需求，请[到“我的配额”提交申请](https://console.huaweicloud.com/quota/?locale=zh-cn#/quota)，查看配额请参见[关于配额](https://support.huaweicloud.com/usermanual-iaas/zh-cn_topic_0040259342.html)。
--   CCE Turbo集群只支持Yangtse网络，Yangtse网络的详细介绍请参见[什么是Yangtse网络，适用于什么场景？](https://support.huaweicloud.com/cce_faq/cce_faq_00246.html)。
+-   CCE Turbo集群的网络模式只支持云原生网络2.0，云原生网络2.0的详细介绍请参见[什么是云原生网络2.0，适用于什么场景？](https://support.huaweicloud.com/cce_faq/cce_faq_00246.html)。
 -   TrunkPort能力仅在1.17版本的CCE Turbo集群中公测使用。
 -   在1.17版本的CCE Turbo集群中添加的共池BMS节点，容器使用的网卡默认配置是4队列，详情请参见[CCE Turbo共池BMS节点容器网卡多队列配置](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0017.html)。
 
@@ -53,7 +53,7 @@ CCE Turbo支持新一代裸金属容器2.0集群，同时支持传统虚拟机�
     <tr id="row12321131519262"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p14322181522614"><a name="p14322181522614"></a><a name="p14322181522614"></a>企业项目</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p19409193818259"><a name="p19409193818259"></a><a name="p19409193818259"></a>该参数仅对开通企业项目的企业客户帐号显示。</p>
-    <p id="p1363744211114"><a name="p1363744211114"></a><a name="p1363744211114"></a>选择某企业项目（如：default）后，集群、集群下节点、集群安全组、节点安全组和自动创建的节点EIP将创建到所选企业项目下。集群创建成功后，建议不要修改集群下节点、集群安全组、节点安全组的企业项目。</p>
+    <p id="p1363744211114"><a name="p1363744211114"></a><a name="p1363744211114"></a>选择某企业项目（如：default）后，集群、集群下节点、集群安全组、节点安全组和自动创建的<span id="ph8521096322"><a name="ph8521096322"></a><a name="ph8521096322"></a>节点EIP（弹性公网IP）</span>将创建到所选企业项目下。<span id="ph348884718307"><a name="ph348884718307"></a><a name="ph348884718307"></a>为方便管理资源，在集群创建成功后，建议不要修改集群下节点、集群安全组、节点安全组的企业项目。</span></p>
     <p id="p73221815122618"><a name="p73221815122618"></a><a name="p73221815122618"></a>企业项目是一种云资源管理方式，企业项目管理服务提供统一的云资源按项目管理，以及项目内的资源管理、成员管理。了解更多企业项目相关信息，请查看<a href="https://support.huaweicloud.com/usermanual-em/zh-cn_topic_0123692049.html" target="_blank" rel="noopener noreferrer">企业管理</a>。</p>
     </td>
     </tr>
@@ -102,8 +102,8 @@ CCE Turbo支持新一代裸金属容器2.0集群，同时支持传统虚拟机�
     </tr>
     <tr id="row482955911270"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p9831659192715"><a name="p9831659192715"></a><a name="p9831659192715"></a>网络模型</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p0724144517209"><a name="p0724144517209"></a><a name="p0724144517209"></a><strong id="b952205617204"><a name="b952205617204"></a><a name="b952205617204"></a><span>Yangtse：</span></strong><span>深度整合华为云</span><a href="https://support.huaweicloud.com/vpc/index.html" target="_blank" rel="noopener noreferrer">虚拟私有云VPC</a><span>原生弹性网卡（Elastic Network Interface，简称ENI）能力，采用VPC网段分配容器地址，支持ELB直通容器，享有高性能。</span></p>
-    <p id="p135701052194711"><a name="p135701052194711"></a><a name="p135701052194711"></a>了解更多请参见<a href="https://support.huaweicloud.com/cce_faq/cce_faq_00246.html" target="_blank" rel="noopener noreferrer">什么是Yangtse网络？</a><a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00162.html" target="_blank" rel="noopener noreferrer">CCE集群创建时如何选择网络模型？</a></p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p0724144517209"><a name="p0724144517209"></a><a name="p0724144517209"></a><strong id="b952205617204"><a name="b952205617204"></a><a name="b952205617204"></a><span>云原生网络2.0：</span></strong><span>深度整合华为云</span><a href="https://support.huaweicloud.com/vpc/index.html" target="_blank" rel="noopener noreferrer">虚拟私有云VPC</a><span>原生弹性网卡（Elastic Network Interface，简称ENI）能力，采用VPC网段分配容器地址，支持ELB直通容器，享有高性能。</span></p>
+    <p id="p135701052194711"><a name="p135701052194711"></a><a name="p135701052194711"></a>了解更多请参见<a href="https://support.huaweicloud.com/cce_faq/cce_faq_00246.html" target="_blank" rel="noopener noreferrer">什么是云原生网络2.0？</a><a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00162.html" target="_blank" rel="noopener noreferrer">CCE集群创建时如何选择网络模型？</a></p>
     </td>
     </tr>
     <tr id="row64648564171234"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p2042307171234"><a name="p2042307171234"></a><a name="p2042307171234"></a>容器网段</p>
