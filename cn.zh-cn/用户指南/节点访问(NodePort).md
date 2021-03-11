@@ -56,7 +56,7 @@
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >如果当前Service被关联到Ingress，则更新Service的端口信息后Ingress将不可用，需要删除重建。
 
-2.  在“访问方式“页签，单击“添加Service”。
+2.  在“Service“页签，单击“添加Service”。
 3.  在“添加Service“页面，访问类型选择“节点访问 \( NodePort \)“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 

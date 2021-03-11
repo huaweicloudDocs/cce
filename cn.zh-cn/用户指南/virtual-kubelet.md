@@ -88,7 +88,16 @@ Virtual Kubelet插件具体如下功能：
 </th>
 </tr>
 </thead>
-<tbody><tr id="row152684214528"><td class="cellrowborder" valign="top" width="15.409999999999998%" headers="mcps1.2.5.1.1 "><p id="p7429205131318"><a name="p7429205131318"></a><a name="p7429205131318"></a>1.0.3</p>
+<tbody><tr id="row20708121810568"><td class="cellrowborder" valign="top" width="15.409999999999998%" headers="mcps1.2.5.1.1 "><p id="p770801811563"><a name="p770801811563"></a><a name="p770801811563"></a>1.0.5</p>
+</td>
+<td class="cellrowborder" valign="top" width="32.62%" headers="mcps1.2.5.1.2 "><p id="p207081418145613"><a name="p207081418145613"></a><a name="p207081418145613"></a>混合集群 v1.13.*|v1.15.*|v1.17.*</p>
+</td>
+<td class="cellrowborder" valign="top" width="16.11%" headers="mcps1.2.5.1.3 "><p id="p157081318115619"><a name="p157081318115619"></a><a name="p157081318115619"></a>2021/03/01</p>
+</td>
+<td class="cellrowborder" valign="top" width="35.86%" headers="mcps1.2.5.1.4 "><p id="p7708141815616"><a name="p7708141815616"></a><a name="p7708141815616"></a>支持v1.17版本集群</p>
+</td>
+</tr>
+<tr id="row152684214528"><td class="cellrowborder" valign="top" width="15.409999999999998%" headers="mcps1.2.5.1.1 "><p id="p7429205131318"><a name="p7429205131318"></a><a name="p7429205131318"></a>1.0.3</p>
 </td>
 <td class="cellrowborder" valign="top" width="32.62%" headers="mcps1.2.5.1.2 "><p id="p3429125131312"><a name="p3429125131312"></a><a name="p3429125131312"></a>混合集群 v1.13.*|v1.15.*</p>
 </td>

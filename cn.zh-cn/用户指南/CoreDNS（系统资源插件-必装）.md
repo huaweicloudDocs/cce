@@ -83,7 +83,11 @@ CoreDNS正常运行需要集群中至少有两个节点，在升级CoreDNS插件
 
 集群管理员可以修改CoreDNS Corefile的ConfigMap以更改服务发现的工作方式。使用插件proxy可对CoreDNS的存根域进行配置。
 
-若集群管理员有一个位于10.150.0.1的Consul域名解析服务器，并且所有Consul的域名都带有.consul.local的后缀。在CoreDNS的ConfigMap中添加如下信息即可将该域名服务器配置在CoreDNS中：
+若集群管理员有一个位于10.150.0.1的Consul域名解析服务器，并且所有Consul的域名都带有.consul.local的后缀。
+
+执行以下命令，在CoreDNS的ConfigMap中添加如下信息即可将该域名服务器配置在CoreDNS中：
+
+**kubectl edit configmap coredns -n kube-system**
 
 ```
 consul.local:5353 {

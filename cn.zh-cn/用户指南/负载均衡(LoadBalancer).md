@@ -95,7 +95,7 @@
 您可以在工作负载创建完成后对Service进行配置，此配置对工作负载状态无影响，且实时生效。具体操作如下：
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 无状态负载 Deployment”或“工作负载 \> 有状态负载 StatefulSet”，在工作负载列表页单击要设置Service的工作负载名称。
-2.  在“访问方式“页签，单击“添加Service”。
+2.  在“Service“页签，单击“添加Service”。
 3.  在“添加service“页面，访问类型选择“**负载均衡 \( LoadBalancer \)**”。
 4.  设置负载均衡参数。
 
