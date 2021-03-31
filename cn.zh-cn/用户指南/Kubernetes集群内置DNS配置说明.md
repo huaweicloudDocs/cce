@@ -119,7 +119,7 @@ options ndots:5
     **示例：**
 
     ```
-    apiVersion: extensions/v1beta1
+    apiVersion: apps/v1
     kind: Deployment
     metadata:
       name: nginx

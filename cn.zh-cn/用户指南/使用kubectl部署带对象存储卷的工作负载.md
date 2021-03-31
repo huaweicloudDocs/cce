@@ -18,7 +18,7 @@
     在无状态工作负载中基于pvc共享式使用对象存储示例：
 
     ```
-    apiVersion: extensions/v1beta1 
+    apiVersion: apps/v1 
     kind: Deployment 
     metadata: 
       name: obs-pod-example                        # 工作负载名称

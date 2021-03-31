@@ -38,7 +38,7 @@ kube-dns/CoreDNS为集群提供了DNS服务。若集群中只部署了单个kube
     示例：
 
     ```
-    apiVersion: extensions/v1beta1
+    apiVersion: apps/v1
     kind: Deployment
     metadata:
       annotations:
@@ -54,7 +54,7 @@ kube-dns/CoreDNS为集群提供了DNS服务。若集群中只部署了单个kube
       name: coredns
       namespace: kube-system
       resourceVersion: "1927"
-      selfLink: /apis/extensions/v1beta1/namespaces/kube-system/deployments/coredns
+      selfLink: /apis/apps/v1/namespaces/kube-system/deployments/coredns
       uid: 737b9296-2de0-11e9-b629-fa163e7fb882
     spec:
       progressDeadlineSeconds: 600

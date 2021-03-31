@@ -21,7 +21,7 @@
     在无状态工作负载中基于pvc共享式使用云硬盘存储示例：
 
     ```
-    apiVersion: extensions/v1beta1 
+    apiVersion: apps/v1 
     kind: Deployment 
     metadata: 
       name: evs-pod-example 

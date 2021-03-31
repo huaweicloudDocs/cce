@@ -22,7 +22,7 @@
 
 ## 前提条件<a name="section1439216379382"></a>
 
--   您已经成功创建一个Kubernetes集群，参见[购买混合集群](购买混合集群.md)。
+-   您已经成功创建一个Kubernetes集群，参见[购买CCE集群](购买CCE集群.md)。
 -   您已连接到集群的控制节点，方便快速查看节点标签等信息，参见[通过kubectl或web-terminal插件操作CCE集群](通过kubectl或web-terminal插件操作CCE集群.md)。
 -   在设置自定义监控前，您需先了解和安装[prometheus](https://prometheus.io/)，并在您的工作负载中提供获取自定义指标数据的GET接口，以便能够通过该接口获取您的自定义指标数据。
 

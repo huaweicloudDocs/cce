@@ -8,7 +8,7 @@
 
 ## 操作场景<a name="section2071541719127"></a>
 
-混合集群支持GPU、NPU等异构节点的混合部署，GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支持多容器共享GPU资源。
+CCE集群支持GPU、NPU等异构节点的混合部署，GPU集群是指使用GPU节点部署的集群，支持主流AI计算框架、支持多容器共享GPU资源。
 
 自从1.8版本开始，Kubernetes已经明确将通过统一的[设备插件方式](https://kubernetes.io/docs/concepts/cluster-administration/device-plugins/)支持像Nvidia GPU，InfiniBand，FPGA等硬件加速设备，而社区的GPU方案已在1.10全面弃用，并在1.11版本彻底从主干代码移除。
 
@@ -16,7 +16,7 @@
 
 ## 前提条件<a name="section103205496263"></a>
 
--   已创建至少一个集群，请参见[购买混合集群](购买混合集群.md)。
+-   已创建至少一个集群，请参见[购买CCE集群](购买CCE集群.md)。
 -   您需要新建一个密钥对，用于远程登录节点时的身份认证。
 
     若使用密码登录节点，请跳过此操作。创建方法请参见[创建密钥对](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0014250631.html)。
@@ -37,7 +37,7 @@
 
 ## 操作步骤<a name="section9343750182712"></a>
 
-混合集群支持GPU、NPU等异构节点的混合部署，其购买步骤与虚拟机节点基本类似，您只需在[购买混合集群](购买混合集群.md)时的“创建节点”步骤中选择**“GPU加速型“**下的节点规格即可。
+CCE集群支持GPU、NPU等异构节点的混合部署，其购买步骤与虚拟机节点基本类似，您只需在[购买CCE集群](购买CCE集群.md)时的“创建节点”步骤中选择**“GPU加速型“**下的节点规格即可。
 
 如果您已经创建一个集群，需要在此集群中使用GPU节点，可按如下步骤操作：
 
@@ -98,7 +98,12 @@
 
     -   **系统盘：**设置工作节点的系统盘空间。您可以设置系统盘的规格为40GB-1024GB之间的数值，缺省值为40GB。
 
-        在默认情况下，系统盘可提供高IO、超高IO两种基本的云硬盘类型，通用SSD类型仅在部分Region公测，若需要使用请提交工单申请。详情请参见[云硬盘概述](https://support.huaweicloud.com/usermanual-ecs/ecs_03_0301.html)。
+        在默认情况下，系统盘可提供高IO、超高IO两种基本的云硬盘类型，关于云硬盘的详细信息请参见[云硬盘概述](https://support.huaweicloud.com/usermanual-ecs/ecs_03_0301.html)。
+
+        加密：数据盘加密功能可为您的数据提供强大的安全防护，加密磁盘生成的快照及通过这些快照创建的磁盘将自动继承加密功能。**目前仅在部分Region显示此选项，具体以界面为准。**
+
+        -   默认不加密。
+        -   点选“加密“后，可在弹出的“加密设置“对话框中，选择已有的密钥，若没有可选的密钥，请单击后方的链接创建新密钥，完成创建后单击刷新按钮。
 
     -   **数据盘：**设置工作节点的数据盘空间。您可以设置数据盘的规格为100GB-32678GB之间的数值，缺省值为100GB。数据盘可提供的云硬盘类型与系统盘一致，此处不再赘述，详情参见系统盘中的云硬盘类型介绍。
 
@@ -145,7 +150,7 @@
         ![](figures/004.png)
 
 
-5.  **弹性IP：**集群开启IPv6时，不显示该参数。独立申请的公网IP地址，若节点有互联网访问的需求，请选择“现在购买“或“使用已有“。
+5.  **弹性IP：**独立申请的公网IP地址，若节点有互联网访问的需求，请选择“现在购买“或“使用已有“。**集群开启IPv6时，不显示该参数。**
 
     弹性公网IP提供外网访问能力，可以灵活绑定及解绑，随时修改带宽。未绑定弹性公网IP的云服务器无法直接访问外网，无法直接对外进行互相通信。详情请查看[弹性公网IP介绍](https://support.huaweicloud.com/usermanual-eip/eip_0007.html)。
 
@@ -159,7 +164,7 @@
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >CCE默认不启用VPC的SNAT。若VPC启用了SNAT，可以不使用EIP去访问外网。SNAT具体请参见[自定义策略](集群权限.md#section1437818291149)。
 
-6.  **共享带宽：**集群开启IPv6时，显示该参数。请选择“暂不使用”或“使用已有”。
+6.  **共享带宽：**请选择“暂不使用”或“使用已有”。**仅在集群开启IPv6时，显示该参数。**
 
     弹性公网IP提供外网访问能力，可以灵活绑定及解绑，随时修改带宽。未绑定弹性公网IP的云服务器无法直接访问外网，无法直接对外进行互相通信。
 
@@ -261,6 +266,13 @@
     <tr id="cce_01_0028_row651036112414"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p1251015692419"><a name="cce_01_0028_p1251015692419"></a><a name="cce_01_0028_p1251015692419"></a>kubectl</p>
     </td>
     <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p35101368242"><a name="cce_01_0028_p35101368242"></a><a name="cce_01_0028_p35101368242"></a>若您需要从客户端计算机连接到kubernetes集群，请使用kubernetes命令行客户端<a href="https://kubernetes.io/docs/user-guide/kubectl/" target="_blank" rel="noopener noreferrer">kubectl</a>，详情请参见<a href="通过kubectl或web-terminal插件操作CCE集群.md">通过kubectl或web-terminal插件操作CCE集群</a>。</p>
+    </td>
+    </tr>
+    <tr id="cce_01_0028_row1442823812251"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p96289022317"><a name="cce_01_0028_p96289022317"></a><a name="cce_01_0028_p96289022317"></a>资源标签</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p11774125042315"><a name="cce_01_0028_p11774125042315"></a><a name="cce_01_0028_p11774125042315"></a>通过为资源添加标签，可以对资源进行自定义标记，实现资源的分类。</p>
+    <p id="cce_01_0028_p177435013232"><a name="cce_01_0028_p177435013232"></a><a name="cce_01_0028_p177435013232"></a>您可以在TMS中创建<span class="uicontrol" id="cce_01_0028_uicontrol7775105022310"><a name="cce_01_0028_uicontrol7775105022310"></a><a name="cce_01_0028_uicontrol7775105022310"></a>“预定义标签”</span>，预定义标签对所有支持标签功能的服务资源可见，通过使用预定义标签可以提升标签创建和迁移效率。具体请参见<a href="https://support.huaweicloud.com/usermanual-tms/zh-cn_topic_0144368884.html" target="_blank" rel="noopener noreferrer">创建预定义标签</a>。</p>
+    <p id="cce_01_0028_p15775125014232"><a name="cce_01_0028_p15775125014232"></a><a name="cce_01_0028_p15775125014232"></a>CCE服务会自动帮您创建CCE-Dynamic-Provisioning-Node=节点id的标签，允许增加5个标签。</p>
     </td>
     </tr>
     <tr id="cce_01_0028_row2701721182419"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p6701721122417"><a name="cce_01_0028_p6701721122417"></a><a name="cce_01_0028_p6701721122417"></a>Istioctl</p>

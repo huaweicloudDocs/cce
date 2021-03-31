@@ -6,7 +6,6 @@
 -   [配置插件](#section18673939131214)
 -   [升级插件](#section23441939916)
 -   [卸载插件](#section65651488131)
--   [版本记录](#section144262219109)
 
 web-terminal是一款非常轻巧的终端服务器，支持在Web界面上使用Kubectl的插件。它支持通过标准的Web浏览器和HTTP协议提供远程CLI，提供灵活的接口便于集成到独立系统中，可直接作为一个服务连接，通过cmdb获取信息并登录服务器。
 
@@ -114,40 +113,4 @@ web-terminal可以在Node.js支持的所有操作系统上运行，而不依赖�
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击web-terminal下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
-
-## 版本记录<a name="section144262219109"></a>
-
-**表 1**  web-terminal版本记录
-
-<a name="table178175952310"></a>
-<table><thead align="left"><tr id="row278175916234"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.1"><p id="p37875972314"><a name="p37875972314"></a><a name="p37875972314"></a>插件版本</p>
-</th>
-<th class="cellrowborder" valign="top" width="24%" id="mcps1.2.5.1.2"><p id="p1178135932311"><a name="p1178135932311"></a><a name="p1178135932311"></a>支持的集群类型</p>
-</th>
-<th class="cellrowborder" valign="top" width="19.900000000000002%" id="mcps1.2.5.1.3"><p id="p178185952316"><a name="p178185952316"></a><a name="p178185952316"></a>更新时间</p>
-</th>
-<th class="cellrowborder" valign="top" width="40.1%" id="mcps1.2.5.1.4"><p id="p2078175942320"><a name="p2078175942320"></a><a name="p2078175942320"></a>更新特性</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row152684214528"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p482131441112"><a name="p482131441112"></a><a name="p482131441112"></a>1.0.5</p>
-</td>
-<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p1782141410114"><a name="p1782141410114"></a><a name="p1782141410114"></a>混合集群 v1.(9|11|13|15|17).*</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.900000000000002%" headers="mcps1.2.5.1.3 "><p id="p14821214201110"><a name="p14821214201110"></a><a name="p14821214201110"></a>2020/08/19</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.1%" headers="mcps1.2.5.1.4 "><p id="p336644151117"><a name="p336644151117"></a><a name="p336644151117"></a>支持1.17版本集群</p>
-</td>
-</tr>
-<tr id="row7335155311559"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p148210146113"><a name="p148210146113"></a><a name="p148210146113"></a>1.0.4</p>
-</td>
-<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p882101417113"><a name="p882101417113"></a><a name="p882101417113"></a>混合集群 v1.(9|11|13|15).*</p>
-</td>
-<td class="cellrowborder" valign="top" width="19.900000000000002%" headers="mcps1.2.5.1.3 "><p id="p882131413111"><a name="p882131413111"></a><a name="p882131413111"></a>2020/06/23</p>
-</td>
-<td class="cellrowborder" valign="top" width="40.1%" headers="mcps1.2.5.1.4 "><a name="ul76091051111116"></a><a name="ul76091051111116"></a><ul id="ul76091051111116"><li>集群管理界面添加新入口</li><li>支持1.13,1.15版本集群</li></ul>
-</td>
-</tr>
-</tbody>
-</table>
 

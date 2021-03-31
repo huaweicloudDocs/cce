@@ -7,7 +7,7 @@
 
 ## 操作场景<a name="section14234115144"></a>
 
-本文将以混合集群为例，介绍如何通过kubectl或web-terminal插件操作CCE集群。
+本文将以CCE集群为例，介绍如何通过kubectl或web-terminal插件操作CCE集群。
 
 ## 通过web-terminal插件操作集群<a name="section6597175818153"></a>
 

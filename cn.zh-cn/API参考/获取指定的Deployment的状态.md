@@ -29,7 +29,7 @@ GET /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/statu
 </td>
 <td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.4.1.2 "><p id="p52135240"><a name="p52135240"></a><a name="p52135240"></a>Yes</p>
 </td>
-<td class="cellrowborder" valign="top" width="67.34326567343265%" headers="mcps1.2.4.1.3 "><p id="p62204941"><a name="p62204941"></a><a name="p62204941"></a>name of the DaemonSet</p>
+<td class="cellrowborder" valign="top" width="67.34326567343265%" headers="mcps1.2.4.1.3 "><p id="p62204941"><a name="p62204941"></a><a name="p62204941"></a>name of the Deployment</p>
 </td>
 </tr>
 <tr id="row22973563"><td class="cellrowborder" valign="top" width="16.328367163283673%" headers="mcps1.2.4.1.1 "><p id="p48919348"><a name="p48919348"></a><a name="p48919348"></a>namespace</p>

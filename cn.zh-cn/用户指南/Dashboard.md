@@ -9,7 +9,6 @@
 -   [升级插件](#section455343310401)
 -   [卸载插件](#section20765191931911)
 -   [附：访问报错解决方法](#section913875232612)
--   [版本记录](#section144262219109)
 
 ## 插件简介<a name="section1418513434428"></a>
 
@@ -37,8 +36,8 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
 ## 约束与限制<a name="section11172124718374"></a>
 
--   1.05版本插件支持[混合集群](购买混合集群.md)和[鲲鹏集群](购买鲲鹏集群.md)，混合集群需Kubernetes 1.9及以上版本，鲲鹏集群需Kubernetes 1.13及以上版本。
--   1.04版本插件支持[混合集群](购买混合集群.md)，需Kubernetes 1.9及以上版本。
+-   1.05版本插件支持[CCE集群](购买CCE集群.md)和[鲲鹏集群](购买鲲鹏集群.md)，CCE集群需Kubernetes 1.9及以上版本，鲲鹏集群需Kubernetes 1.13及以上版本。
+-   1.04版本插件支持[CCE集群](购买CCE集群.md)，需Kubernetes 1.9及以上版本。
 
 ## 安装步骤<a name="section46701613154319"></a>
 
@@ -165,51 +164,4 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
     Windows：保存链接地址，关闭所有已经打开的Chrome浏览器窗口，Windows键 +“R”弹出“运行”对话框，输入“chrome --ignore-certificate-errors”启动新的chrome窗口，输入地址进入登录界面。
 
-
-## 版本记录<a name="section144262219109"></a>
-
-**表 1**  dashboard版本记录
-
-<a name="table178175952310"></a>
-<table><thead align="left"><tr id="row278175916234"><th class="cellrowborder" valign="top" width="16%" id="mcps1.2.5.1.1"><p id="p37875972314"><a name="p37875972314"></a><a name="p37875972314"></a>插件版本</p>
-</th>
-<th class="cellrowborder" valign="top" width="24%" id="mcps1.2.5.1.2"><p id="p1178135932311"><a name="p1178135932311"></a><a name="p1178135932311"></a>支持的集群类型</p>
-</th>
-<th class="cellrowborder" valign="top" width="20%" id="mcps1.2.5.1.3"><p id="p178185952316"><a name="p178185952316"></a><a name="p178185952316"></a>更新时间</p>
-</th>
-<th class="cellrowborder" valign="top" width="40%" id="mcps1.2.5.1.4"><p id="p2078175942320"><a name="p2078175942320"></a><a name="p2078175942320"></a>更新特性</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row152684214528"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p136771045194313"><a name="p136771045194313"></a><a name="p136771045194313"></a>2.0.0</p>
-</td>
-<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p156774456437"><a name="p156774456437"></a><a name="p156774456437"></a>混合集群 v1.17.*</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1667784514312"><a name="p1667784514312"></a><a name="p1667784514312"></a>2020/08/19</p>
-</td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p840516619447"><a name="p840516619447"></a><a name="p840516619447"></a>支持对接kubernetes 1.17</p>
-</td>
-</tr>
-<tr id="row7335155311559"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p56771745114318"><a name="p56771745114318"></a><a name="p56771745114318"></a>1.0.7</p>
-</td>
-<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p7677134519436"><a name="p7677134519436"></a><a name="p7677134519436"></a>混合集群 v1.(9|11|13|15).*</p>
-<p id="p1867774564311"><a name="p1867774564311"></a><a name="p1867774564311"></a>鲲鹏集群 v1.(13|15).*</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p46771745134312"><a name="p46771745134312"></a><a name="p46771745134312"></a>2020/08/05</p>
-</td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><a name="ul19802321114413"></a><a name="ul19802321114413"></a><ul id="ul19802321114413"><li>支持鲲鹏集群</li><li>支持对接kubernetes 1.15</li></ul>
-</td>
-</tr>
-<tr id="row97875912317"><td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.5.1.1 "><p id="p0677645114319"><a name="p0677645114319"></a><a name="p0677645114319"></a>1.0.6</p>
-</td>
-<td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.5.1.2 "><p id="p196776452432"><a name="p196776452432"></a><a name="p196776452432"></a>混合集群 v1.(9|11|13|15).*</p>
-<p id="p3677164544317"><a name="p3677164544317"></a><a name="p3677164544317"></a>鲲鹏集群 v1.(13|15).*</p>
-</td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p id="p1367712452433"><a name="p1367712452433"></a><a name="p1367712452433"></a>2020/06/23</p>
-</td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><a name="ul1439719251448"></a><a name="ul1439719251448"></a><ul id="ul1439719251448"><li>支持鲲鹏集群</li><li>支持对接kubernetes 1.15</li></ul>
-</td>
-</tr>
-</tbody>
-</table>
 

@@ -77,6 +77,11 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
           - ReadWriteOnce
           capacity:
             storage: 10Gi
+          claimRef:
+            apiVersion: v1
+            kind: PersistentVolumeClaim
+            name: pvc-evs-example
+            namespace: default
           csi:
             driver: disk.csi.everest.io
             fsType: ext4
@@ -142,12 +147,32 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
         <tr id="row8618742488"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p12618134114814"><a name="p12618134114814"></a><a name="p12618134114814"></a>volumeHandle</p>
         </td>
         <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p146181448489"><a name="p146181448489"></a><a name="p146181448489"></a>云硬盘的volumeID。</p>
-        <p id="p1069118611491"><a name="p1069118611491"></a><a name="p1069118611491"></a><strong id="b31904107492"><a name="b31904107492"></a><a name="b31904107492"></a>获取方法：</strong>在CCE控制台中，单击左侧栏目树中的<span class="uicontrol" id="uicontrol1312794911"><a name="uicontrol1312794911"></a><a name="uicontrol1312794911"></a>“资源管理-存储管理”</span>，在<span class="uicontrol" id="uicontrol173197154919"><a name="uicontrol173197154919"></a><a name="uicontrol173197154919"></a>“云硬盘存储卷”</span>页签下单击PVC的名称，在PVC详情页中复制<span class="uicontrol" id="uicontrol17311878495"><a name="uicontrol17311878495"></a><a name="uicontrol17311878495"></a>“PVC UID”</span>后的内容即可。</p>
+        <p id="p1069118611491"><a name="p1069118611491"></a><a name="p1069118611491"></a><strong id="b31904107492"><a name="b31904107492"></a><a name="b31904107492"></a>获取方法：</strong>在云服务器控制台中，单击左侧栏目树中的<span class="uicontrol" id="uicontrol1312794911"><a name="uicontrol1312794911"></a><a name="uicontrol1312794911"></a>“云硬盘 &gt; 磁盘”</span>，单击要对接的云硬盘名称进入详情页，在<span class="uicontrol" id="uicontrol10631021112"><a name="uicontrol10631021112"></a><a name="uicontrol10631021112"></a>“概览信息”</span>页签下单击<span class="uicontrol" id="uicontrol17311878495"><a name="uicontrol17311878495"></a><a name="uicontrol17311878495"></a>“ID”</span>后的复制图标即可获取云硬盘的volumeID。</p>
         </td>
         </tr>
         <tr id="row36181548486"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p1561804154811"><a name="p1561804154811"></a><a name="p1561804154811"></a>everest.io/disk-mode</p>
         </td>
         <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p166184444820"><a name="p166184444820"></a><a name="p166184444820"></a>云硬盘磁盘模式，取值支持SCSI。</p>
+        </td>
+        </tr>
+        <tr id="row5449102519252"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p844919252256"><a name="p844919252256"></a><a name="p844919252256"></a><span id="ph04611631631"><a name="ph04611631631"></a><a name="ph04611631631"></a>spec.claimRef</span><span id="ph13024515314"><a name="ph13024515314"></a><a name="ph13024515314"></a>.</span><span id="ph7585531311"><a name="ph7585531311"></a><a name="ph7585531311"></a>apiVersion</span></p>
+        </td>
+        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p34491625162513"><a name="p34491625162513"></a><a name="p34491625162513"></a><span id="ph116414211649"><a name="ph116414211649"></a><a name="ph116414211649"></a>固定值"v1</span><span id="ph88894371252"><a name="ph88894371252"></a><a name="ph88894371252"></a>"。</span></p>
+        </td>
+        </tr>
+        <tr id="row8972110202617"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p12973191018268"><a name="p12973191018268"></a><a name="p12973191018268"></a><span id="ph1477315499420"><a name="ph1477315499420"></a><a name="ph1477315499420"></a>spec.claimRef</span><span id="ph187731149043"><a name="ph187731149043"></a><a name="ph187731149043"></a>.kind</span></p>
+        </td>
+        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p199736108269"><a name="p199736108269"></a><a name="p199736108269"></a><span id="ph1782216511614"><a name="ph1782216511614"></a><a name="ph1782216511614"></a>固定值"PersistentVolumeClaim"</span><span id="ph16967038173314"><a name="ph16967038173314"></a><a name="ph16967038173314"></a>。</span></p>
+        </td>
+        </tr>
+        <tr id="row4481204082618"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p18482840122612"><a name="p18482840122612"></a><a name="p18482840122612"></a><span id="ph1468911581668"><a name="ph1468911581668"></a><a name="ph1468911581668"></a>spec.claimRef</span><span id="ph1668920583612"><a name="ph1668920583612"></a><a name="ph1668920583612"></a>.name</span></p>
+        </td>
+        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p1148224019267"><a name="p1148224019267"></a><a name="p1148224019267"></a><span id="ph1581217267150"><a name="ph1581217267150"></a><a name="ph1581217267150"></a>pvc名称；</span><span id="ph542102163812"><a name="ph542102163812"></a><a name="ph542102163812"></a>与下一步创建的pvc的name一致</span><span id="ph11777183193813"><a name="ph11777183193813"></a><a name="ph11777183193813"></a>。</span></p>
+        </td>
+        </tr>
+        <tr id="row105042642719"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p050419612712"><a name="p050419612712"></a><a name="p050419612712"></a><span id="ph1276717511202"><a name="ph1276717511202"></a><a name="ph1276717511202"></a>spec.claimRef</span><span id="ph12767195142018"><a name="ph12767195142018"></a><a name="ph12767195142018"></a>.name</span><span id="ph365095719205"><a name="ph365095719205"></a><a name="ph365095719205"></a>space</span></p>
+        </td>
+        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p165045614278"><a name="p165045614278"></a><a name="p165045614278"></a><span id="ph279115832114"><a name="ph279115832114"></a><a name="ph279115832114"></a>pvc的namespace；与下一步创建的pvc的namespace一致。</span></p>
         </td>
         </tr>
         </tbody>
@@ -362,6 +387,11 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
       - ReadWriteMany 
       capacity: 
         storage: 10Gi 
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: pvc-evs-example
+        namespace: default
       flexVolume: 
         driver: huawei.com/fuxivol 
         fsType: ext4 
@@ -420,7 +450,27 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
     </td>
     <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p9649653145619"><a name="p9649653145619"></a><a name="p9649653145619"></a>云硬盘磁盘模式，取值可以是VBD和SCSI。</p>
     <p id="p1798412565565"><a name="p1798412565565"></a><a name="p1798412565565"></a>v1.11.7之前的CCE集群，该字段无需填写，默认都是VBD。</p>
-    <p id="p338644415527"><a name="p338644415527"></a><a name="p338644415527"></a>CCE v1.11.7+以及v1.13的Linux x86混合集群要求该字段值必须存在，且基于PVC触发动态创建的都是EVS SCSI模式的卷，因此这里静态PV形式优先选用SCSI模式的云硬盘；同时支持升级后的老集群中VBD卷能够继续正常使用。</p>
+    <p id="p338644415527"><a name="p338644415527"></a><a name="p338644415527"></a>v1.11.7+以及v1.13的Linux x86 CCE集群要求该字段值必须存在，且基于PVC触发动态创建的都是EVS SCSI模式的卷，因此这里静态PV形式优先选用SCSI模式的云硬盘；同时支持升级后的老集群中VBD卷能够继续正常使用。</p>
+    </td>
+    </tr>
+    <tr id="row1320925404611"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p1120905414467"><a name="p1120905414467"></a><a name="p1120905414467"></a><span id="ph17582253104712"><a name="ph17582253104712"></a><a name="ph17582253104712"></a>spec.claimRef.apiVersion</span></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p220911541464"><a name="p220911541464"></a><a name="p220911541464"></a><span id="ph33471211154919"><a name="ph33471211154919"></a><a name="ph33471211154919"></a>固定值"v1"。</span></p>
+    </td>
+    </tr>
+    <tr id="row52872572460"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p62871457164620"><a name="p62871457164620"></a><a name="p62871457164620"></a><span id="ph950116177486"><a name="ph950116177486"></a><a name="ph950116177486"></a>spec.claimRef.kind</span></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p13287195716468"><a name="p13287195716468"></a><a name="p13287195716468"></a><span id="ph1096723124918"><a name="ph1096723124918"></a><a name="ph1096723124918"></a>固定值"PersistentVolumeClaim"。</span></p>
+    </td>
+    </tr>
+    <tr id="row151672034719"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p1616714019477"><a name="p1616714019477"></a><a name="p1616714019477"></a><span id="ph2154112112481"><a name="ph2154112112481"></a><a name="ph2154112112481"></a>spec.claimRef.name</span></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p616717016473"><a name="p616717016473"></a><a name="p616717016473"></a><span id="ph1871715884818"><a name="ph1871715884818"></a><a name="ph1871715884818"></a>pvc名称；与下一步创建的pvc的name一致。</span></p>
+    </td>
+    </tr>
+    <tr id="row19505236477"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p1505173104717"><a name="p1505173104717"></a><a name="p1505173104717"></a><span id="ph58361924104819"><a name="ph58361924104819"></a><a name="ph58361924104819"></a>spec.claimRef.namespace</span></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p95056374715"><a name="p95056374715"></a><a name="p95056374715"></a><span id="ph9278194712487"><a name="ph9278194712487"></a><a name="ph9278194712487"></a>pvc的namespace；与下一步创建的pvc的namespace一致</span><span id="ph14670155374812"><a name="ph14670155374812"></a><a name="ph14670155374812"></a>；</span></p>
     </td>
     </tr>
     </tbody>
@@ -569,7 +619,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
     </td>
     <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p11211547011"><a name="p11211547011"></a><a name="p11211547011"></a>云硬盘磁盘模式，取值可以是VBD和SCSI。</p>
     <p id="p850713616012"><a name="p850713616012"></a><a name="p850713616012"></a>v1.11.7之前的CCE集群，该字段无需填写，默认都是VBD。</p>
-    <p id="p1590145411577"><a name="p1590145411577"></a><a name="p1590145411577"></a>CCE v1.11.7+以及v1.13的Linux x86混合集群要求该字段值必须存在，且基于PVC触发动态创建的都是EVS SCSI模式的卷，因此这里静态PV形式优先选用SCSI模式的云硬盘；同时支持升级后的老集群中VBD卷能够继续正常使用。</p>
+    <p id="p1590145411577"><a name="p1590145411577"></a><a name="p1590145411577"></a>v1.11.7+以及v1.13的Linux x86 CCE集群要求该字段值必须存在，且基于PVC触发动态创建的都是EVS SCSI模式的卷，因此这里静态PV形式优先选用SCSI模式的云硬盘；同时支持升级后的老集群中VBD卷能够继续正常使用。</p>
     </td>
     </tr>
     </tbody>
@@ -720,7 +770,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
     </td>
     <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p7132142322920"><a name="p7132142322920"></a><a name="p7132142322920"></a>云硬盘磁盘模式，取值可以是VBD和SCSI。</p>
     <p id="p213212237296"><a name="p213212237296"></a><a name="p213212237296"></a>v1.11.7之前的CCE集群，该字段无需填写，默认都是VBD。</p>
-    <p id="p161329233297"><a name="p161329233297"></a><a name="p161329233297"></a>CCE v1.11.7+以及v1.13的Linux x86混合集群要求该字段值必须存在，且基于PVC触发动态创建的都是EVS SCSI模式的卷，因此这里静态PV形式优先选用SCSI模式的云硬盘；同时支持升级后的老集群中VBD卷能够继续正常使用。</p>
+    <p id="p161329233297"><a name="p161329233297"></a><a name="p161329233297"></a>v1.11.7+以及v1.13的Linux x86 CCE集群要求该字段值必须存在，且基于PVC触发动态创建的都是EVS SCSI模式的卷，因此这里静态PV形式优先选用SCSI模式的云硬盘；同时支持升级后的老集群中VBD卷能够继续正常使用。</p>
     </td>
     </tr>
     </tbody>

@@ -60,6 +60,11 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
           - ReadWriteMany
           capacity:
             storage: 10Gi
+          claimRef:
+            apiVersion: v1
+            kind: PersistentVolumeClaim
+            name: pvc-efs-example
+            namespace: default
           csi:
             driver: sfsturbo.csi.everest.io
             fsType: nfs
@@ -104,6 +109,26 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
         <tr id="row118294312105"><td class="cellrowborder" valign="top" width="35.89033508723345%" headers="mcps1.2.3.1.1 "><p id="p16741643171012"><a name="p16741643171012"></a><a name="p16741643171012"></a>storageClassName</p>
         </td>
         <td class="cellrowborder" valign="top" width="64.10966491276655%" headers="mcps1.2.3.1.2 "><p id="p127424310105"><a name="p127424310105"></a><a name="p127424310105"></a>指定k8s storage class名称；极速文件存储卷需配置为"csi-sfsturbo”。</p>
+        </td>
+        </tr>
+        <tr id="row1292142194111"><td class="cellrowborder" valign="top" width="35.89033508723345%" headers="mcps1.2.3.1.1 "><p id="p19292122114413"><a name="p19292122114413"></a><a name="p19292122114413"></a><span id="ph8590145813419"><a name="ph8590145813419"></a><a name="ph8590145813419"></a>spec.claimRef.apiVersion</span></p>
+        </td>
+        <td class="cellrowborder" valign="top" width="64.10966491276655%" headers="mcps1.2.3.1.2 "><p id="p162921213418"><a name="p162921213418"></a><a name="p162921213418"></a><span id="ph159381739184215"><a name="ph159381739184215"></a><a name="ph159381739184215"></a>固定值"v1"。</span></p>
+        </td>
+        </tr>
+        <tr id="row12530172512416"><td class="cellrowborder" valign="top" width="35.89033508723345%" headers="mcps1.2.3.1.1 "><p id="p1053018258416"><a name="p1053018258416"></a><a name="p1053018258416"></a><span id="ph316565784218"><a name="ph316565784218"></a><a name="ph316565784218"></a>spec.claimRef.kind</span></p>
+        </td>
+        <td class="cellrowborder" valign="top" width="64.10966491276655%" headers="mcps1.2.3.1.2 "><p id="p1353052584115"><a name="p1353052584115"></a><a name="p1353052584115"></a><span id="ph102980445425"><a name="ph102980445425"></a><a name="ph102980445425"></a>固定值"PersistentVolumeClaim"。</span></p>
+        </td>
+        </tr>
+        <tr id="row1513982864116"><td class="cellrowborder" valign="top" width="35.89033508723345%" headers="mcps1.2.3.1.1 "><p id="p613972844115"><a name="p613972844115"></a><a name="p613972844115"></a><span id="ph159741224431"><a name="ph159741224431"></a><a name="ph159741224431"></a>spec.claimRef.name</span></p>
+        </td>
+        <td class="cellrowborder" valign="top" width="64.10966491276655%" headers="mcps1.2.3.1.2 "><p id="p113912816416"><a name="p113912816416"></a><a name="p113912816416"></a><span id="ph139658481425"><a name="ph139658481425"></a><a name="ph139658481425"></a>与下一步创建的pvc的name一致。</span></p>
+        </td>
+        </tr>
+        <tr id="row86908177417"><td class="cellrowborder" valign="top" width="35.89033508723345%" headers="mcps1.2.3.1.1 "><p id="p8691817114114"><a name="p8691817114114"></a><a name="p8691817114114"></a><span id="ph1665028154312"><a name="ph1665028154312"></a><a name="ph1665028154312"></a>spec.claimRef.namespace</span></p>
+        </td>
+        <td class="cellrowborder" valign="top" width="64.10966491276655%" headers="mcps1.2.3.1.2 "><p id="p1069111754110"><a name="p1069111754110"></a><a name="p1069111754110"></a><span id="ph1078873116423"><a name="ph1078873116423"></a><a name="ph1078873116423"></a>与下一步创建的pvc的namespace一致</span><span id="ph4187172914310"><a name="ph4187172914310"></a><a name="ph4187172914310"></a>。</span></p>
         </td>
         </tr>
         </tbody>
@@ -189,6 +214,11 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
       - ReadWriteMany 
       capacity: 
         storage: 100Gi 
+      claimRef:
+        apiVersion: v1
+        kind: PersistentVolumeClaim
+        name: pvc-efs-example
+        namespace: default
       flexVolume: 
         driver: huawei.com/fuxiefs 
         fsType: efs 
@@ -233,6 +263,26 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
     <tr id="row2057617470102"><td class="cellrowborder" valign="top" width="32.3169894245296%" headers="mcps1.2.3.1.1 "><p id="p557614715108"><a name="p557614715108"></a><a name="p557614715108"></a>storageClassName</p>
     </td>
     <td class="cellrowborder" valign="top" width="67.6830105754704%" headers="mcps1.2.3.1.2 "><p id="p45761947201014"><a name="p45761947201014"></a><a name="p45761947201014"></a>极速文件存储支持的卷类型，当前支持efs-standard、efs-performance（目前SFS Turbo不支持动态创建，所以此参数后续没有使用）。</p>
+    </td>
+    </tr>
+    <tr id="row17100922145816"><td class="cellrowborder" valign="top" width="32.3169894245296%" headers="mcps1.2.3.1.1 "><p id="p31001822145820"><a name="p31001822145820"></a><a name="p31001822145820"></a><span id="ph143731736165814"><a name="ph143731736165814"></a><a name="ph143731736165814"></a>spec.claimRef.apiVersion</span></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="67.6830105754704%" headers="mcps1.2.3.1.2 "><p id="p21000227587"><a name="p21000227587"></a><a name="p21000227587"></a><span id="ph114343010597"><a name="ph114343010597"></a><a name="ph114343010597"></a>固定值"v1"。</span></p>
+    </td>
+    </tr>
+    <tr id="row19278192545812"><td class="cellrowborder" valign="top" width="32.3169894245296%" headers="mcps1.2.3.1.1 "><p id="p122788253581"><a name="p122788253581"></a><a name="p122788253581"></a><span id="ph1749614012582"><a name="ph1749614012582"></a><a name="ph1749614012582"></a>spec.claimRef.kind</span></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="67.6830105754704%" headers="mcps1.2.3.1.2 "><p id="p20278325145819"><a name="p20278325145819"></a><a name="p20278325145819"></a><span id="ph9961334195914"><a name="ph9961334195914"></a><a name="ph9961334195914"></a>固定值"PersistentVolumeClaim"。</span></p>
+    </td>
+    </tr>
+    <tr id="row275172845812"><td class="cellrowborder" valign="top" width="32.3169894245296%" headers="mcps1.2.3.1.1 "><p id="p13753281589"><a name="p13753281589"></a><a name="p13753281589"></a><span id="ph4343104419589"><a name="ph4343104419589"></a><a name="ph4343104419589"></a>spec.claimRef.name</span></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="67.6830105754704%" headers="mcps1.2.3.1.2 "><p id="p1175172855817"><a name="p1175172855817"></a><a name="p1175172855817"></a><span id="ph2042418261595"><a name="ph2042418261595"></a><a name="ph2042418261595"></a>与下一步创建的pvc的name一致。</span></p>
+    </td>
+    </tr>
+    <tr id="row9112631195811"><td class="cellrowborder" valign="top" width="32.3169894245296%" headers="mcps1.2.3.1.1 "><p id="p101121531185818"><a name="p101121531185818"></a><a name="p101121531185818"></a><span id="ph12659174845816"><a name="ph12659174845816"></a><a name="ph12659174845816"></a>spec.claimRef.namespace</span></p>
+    </td>
+    <td class="cellrowborder" valign="top" width="67.6830105754704%" headers="mcps1.2.3.1.2 "><p id="p10112531115815"><a name="p10112531115815"></a><a name="p10112531115815"></a><span id="ph1045172110596"><a name="ph1045172110596"></a><a name="ph1045172110596"></a>与</span><span id="ph32312222590"><a name="ph32312222590"></a><a name="ph32312222590"></a>下一步创建的pvc的namespace一致。</span></p>
     </td>
     </tr>
     </tbody>

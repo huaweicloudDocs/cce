@@ -20,7 +20,7 @@
 
 ## 前提条件<a name="section7271245481"></a>
 
-在创建守护进程集前，您需要存在一个可用集群。若没有可用集群 ，请参照[购买混合集群](购买混合集群.md)中内容创建。
+在创建守护进程集前，您需要存在一个可用集群。若没有可用集群 ，请参照[购买CCE集群](购买CCE集群.md)中内容创建。
 
 ## 操作步骤<a name="section1160483214207"></a>
 
@@ -52,10 +52,17 @@
     <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p2511628354"><a name="p2511628354"></a><a name="p2511628354"></a>在单集群中，不同命名空间中的数据彼此隔离。使应用可以共享同个集群的服务，也能够互不干扰。若您不设置命名空间，系统会默认使用default命名空间。</p>
     </td>
     </tr>
+    <tr id="row8593232161514"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p1522718171417"><a name="p1522718171417"></a><a name="p1522718171417"></a>* 容器运行时</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p1166918711589"><a name="p1166918711589"></a><a name="p1166918711589"></a>节点上运行的容器应用使用的默认运行时，不同运行时场景支持的节点规格不同，创建后不可修改。<strong id="b1631410435919"><a name="b1631410435919"></a><a name="b1631410435919"></a>该参数仅支持CCE Turbo集群。</strong></p>
+    <a name="ul1138261162510"></a><a name="ul1138261162510"></a><ul id="ul1138261162510"><li>docker运行时：普通容器</li><li>安全运行时：安全容器</li></ul>
+    <p id="p11513151810263"><a name="p11513151810263"></a><a name="p11513151810263"></a>两种容器运行时的对比请参见<a href="https://support.huaweicloud.com/zh-cn/cce_faq/cce_faq_00301.html" target="_blank" rel="noopener noreferrer">普通容器与安全容器的区别</a>。</p>
+    </td>
+    </tr>
     <tr id="row32431417251"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p15337247203514"><a name="cce_01_0047_p15337247203514"></a><a name="cce_01_0047_p15337247203514"></a>弹性网卡</p>
     </td>
     <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p476333074117"><a name="cce_01_0047_p476333074117"></a><a name="cce_01_0047_p476333074117"></a>Pod中的容器支持绑定弹性网卡，单击选中<span class="uicontrol" id="cce_01_0047_uicontrol187631230104117"><a name="cce_01_0047_uicontrol187631230104117"></a><a name="cce_01_0047_uicontrol187631230104117"></a>“绑定弹性网卡”</span>可以绑定已有的网络平面。更多网络平面信息请参见<a href="网络平面(NetworkAttachmentDefinition).md">网络平面(NetworkAttachmentDefinition)</a>。</p>
-    <p id="cce_01_0047_p58611513174112"><a name="cce_01_0047_p58611513174112"></a><a name="cce_01_0047_p58611513174112"></a><strong id="cce_01_0047_b10861121314119"><a name="cce_01_0047_b10861121314119"></a><a name="cce_01_0047_b10861121314119"></a>仅v1.13.7-r0及以上版本且网络模型为VPC网络的混合集群才能绑定弹性网卡，不符合条件的集群将不显示<span class="uicontrol" id="cce_01_0047_uicontrol1986171319410"><a name="cce_01_0047_uicontrol1986171319410"></a><a name="cce_01_0047_uicontrol1986171319410"></a>“弹性网卡”</span>选项。</strong></p>
+    <p id="cce_01_0047_p58611513174112"><a name="cce_01_0047_p58611513174112"></a><a name="cce_01_0047_p58611513174112"></a><strong id="cce_01_0047_b10861121314119"><a name="cce_01_0047_b10861121314119"></a><a name="cce_01_0047_b10861121314119"></a>仅v1.13.7-r0及以上版本且网络模型为VPC网络的CCE集群才能绑定弹性网卡，不符合条件的集群将不显示<span class="uicontrol" id="cce_01_0047_uicontrol1986171319410"><a name="cce_01_0047_uicontrol1986171319410"></a><a name="cce_01_0047_uicontrol1986171319410"></a>“弹性网卡”</span>选项。</strong></p>
     <div class="note" id="cce_01_0047_note124412587394"><a name="cce_01_0047_note124412587394"></a><a name="cce_01_0047_note124412587394"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="cce_01_0047_ul1444165810398"></a><a name="cce_01_0047_ul1444165810398"></a><ul id="cce_01_0047_ul1444165810398"><li>网络平面是CCE新增的一种crd资源，记录了租户ID，子网ID，安全组等的配置项，作为申请弹性网卡的配置信息。</li><li>创建工作负载时，在<a href="创建无状态负载(Deployment).md#li3580132418215">设置工作负载访问方式</a>步骤中如果添加了节点级别的Service，将无法绑定弹性网卡；同理，绑定了弹性网卡的工作负载，将无法添加节点级别的Service。</li></ul>
     </div></div>
     </td>

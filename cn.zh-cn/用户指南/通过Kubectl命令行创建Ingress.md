@@ -603,7 +603,7 @@
     **vi ingress-test-ingress.yaml**
 
     -   1.15及以上集群版本中的apiVersion为: networking.k8s.io/v1beta1
-    -   1.13及以下集群版本中的apiVersion为: extensions/v1beta1
+    -   1.13及以下集群版本中的apiVersion为: apps/v1
 
     ```
     apiVersion: networking.k8s.io/v1beta1
@@ -743,47 +743,6 @@
     <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p121821113105112"><a name="p121821113105112"></a><a name="p121821113105112"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p118281305116"><a name="p118281305116"></a><a name="p118281305116"></a>弹性公网IP类型，请参考ELB支持的弹性公网IP类型，具体请参见<a href="https://support.huaweicloud.com/api-eip/eip_api_0001.html" target="_blank" rel="noopener noreferrer">申请弹性公网IP</a>中<strong id="b1182141325114"><a name="b1182141325114"></a><a name="b1182141325114"></a>表3 publicip字段说明type字段</strong>。</p>
-    </td>
-    </tr>
-    <tr id="row1918281319512"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p1182161355113"><a name="p1182161355113"></a><a name="p1182161355113"></a>available_zone</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p13183313175111"><a name="p13183313175111"></a><a name="p13183313175111"></a>是</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p15183141316510"><a name="p15183141316510"></a><a name="p15183141316510"></a>Array of strings</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p61838132512"><a name="p61838132512"></a><a name="p61838132512"></a>负载均衡所在可用区，必填项。</p>
-    <p id="p1418315135518"><a name="p1418315135518"></a><a name="p1418315135518"></a>（独享型负载均衡器独有字段，未申请公测无法使用，如需申请请点此<a href="https://account.huaweicloud.com/usercenter/#/userindex/betaManagement?serviceCode=elb_guaranteed" target="_blank" rel="noopener noreferrer">立即体验</a>。）</p>
-    </td>
-    </tr>
-    <tr id="row718318132518"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p111831013145111"><a name="p111831013145111"></a><a name="p111831013145111"></a>l4_flavor_name</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p12183213175115"><a name="p12183213175115"></a><a name="p12183213175115"></a>否</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p101831613115114"><a name="p101831613115114"></a><a name="p101831613115114"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p818341365117"><a name="p818341365117"></a><a name="p818341365117"></a>四层负载均衡实例名称。</p>
-    <p id="p318491320511"><a name="p318491320511"></a><a name="p318491320511"></a>（独享型负载均衡器独有字段，未申请公测无法使用，如需申请请点此<a href="https://account.huaweicloud.com/usercenter/#/userindex/betaManagement?serviceCode=elb_guaranteed" target="_blank" rel="noopener noreferrer">立即体验</a>。）</p>
-    </td>
-    </tr>
-    <tr id="row20184113155118"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p11844139513"><a name="p11844139513"></a><a name="p11844139513"></a>l7_flavor_name</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p41846134515"><a name="p41846134515"></a><a name="p41846134515"></a>是</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p181845136518"><a name="p181845136518"></a><a name="p181845136518"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p418515139519"><a name="p418515139519"></a><a name="p418515139519"></a>七层负载均衡实例名称，必填项。</p>
-    <p id="p8186101335111"><a name="p8186101335111"></a><a name="p8186101335111"></a>（独享型负载均衡器独有字段，未申请公测无法使用，如需申请请点此<a href="https://account.huaweicloud.com/usercenter/#/userindex/betaManagement?serviceCode=elb_guaranteed" target="_blank" rel="noopener noreferrer">立即体验</a>。）</p>
-    </td>
-    </tr>
-    <tr id="row1518621313519"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p1418681318513"><a name="p1418681318513"></a><a name="p1418681318513"></a>ElbVirSubnetIDs</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p518681345117"><a name="p518681345117"></a><a name="p518681345117"></a>否</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p15186111335119"><a name="p15186111335119"></a><a name="p15186111335119"></a>Array of strings</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p618616131513"><a name="p618616131513"></a><a name="p618616131513"></a>负载均衡后端所在子网，不填默认集群子网。不同实例规格将占用不同数量子网IP，不建议使用其他资源（如集群，节点等）的子网网段。</p>
-    <p id="p0186713115112"><a name="p0186713115112"></a><a name="p0186713115112"></a>默认值：集群所在子网</p>
-    <p id="p31864133511"><a name="p31864133511"></a><a name="p31864133511"></a>（独享型负载均衡器独有字段，未申请公测无法使用，如需申请请点此<a href="https://account.huaweicloud.com/usercenter/#/userindex/betaManagement?serviceCode=elb_guaranteed" target="_blank" rel="noopener noreferrer">立即体验</a>。）</p>
     </td>
     </tr>
     </tbody>

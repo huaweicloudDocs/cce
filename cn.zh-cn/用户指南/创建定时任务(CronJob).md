@@ -58,6 +58,13 @@ CronJob的典型用法如下所示：
     <td class="cellrowborder" valign="top" width="80.23%" headers="mcps1.2.3.1.2 "><p id="p2050991925711"><a name="p2050991925711"></a><a name="p2050991925711"></a>新建任务所在的命名空间。若不选择，默认配置为default。</p>
     </td>
     </tr>
+    <tr id="row421423661617"><td class="cellrowborder" valign="top" width="19.77%" headers="mcps1.2.3.1.1 "><p id="p1522718171417"><a name="p1522718171417"></a><a name="p1522718171417"></a>* 容器运行时</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="80.23%" headers="mcps1.2.3.1.2 "><p id="p1166918711589"><a name="p1166918711589"></a><a name="p1166918711589"></a>节点上运行的容器应用使用的默认运行时，不同运行时场景支持的节点规格不同，创建后不可修改。<strong id="b1631410435919"><a name="b1631410435919"></a><a name="b1631410435919"></a>该参数仅支持CCE Turbo集群。</strong></p>
+    <a name="ul1138261162510"></a><a name="ul1138261162510"></a><ul id="ul1138261162510"><li>docker运行时：普通容器</li><li>安全运行时：安全容器</li></ul>
+    <p id="p11513151810263"><a name="p11513151810263"></a><a name="p11513151810263"></a>两种容器运行时的对比请参见<a href="https://support.huaweicloud.com/zh-cn/cce_faq/cce_faq_00301.html" target="_blank" rel="noopener noreferrer">普通容器与安全容器的区别</a>。</p>
+    </td>
+    </tr>
     <tr id="rdc1b35b8ff3c4072a49b1da4db8f71e5"><td class="cellrowborder" valign="top" width="19.77%" headers="mcps1.2.3.1.1 "><p id="a26499db509ff4ab7a1ac006ca3a8746d"><a name="a26499db509ff4ab7a1ac006ca3a8746d"></a><a name="a26499db509ff4ab7a1ac006ca3a8746d"></a>任务描述</p>
     </td>
     <td class="cellrowborder" valign="top" width="80.23%" headers="mcps1.2.3.1.2 "><p id="a49218e0435a24eb7bdfce65248bef274"><a name="a49218e0435a24eb7bdfce65248bef274"></a><a name="a49218e0435a24eb7bdfce65248bef274"></a>任务描述信息。</p>
