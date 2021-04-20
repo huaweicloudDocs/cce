@@ -1,13 +1,5 @@
 # 节点访问\(NodePort\)<a name="cce_01_0142"></a>
 
--   [操作场景](#section13654155944916)
--   [约束与限制](#section8501151104219)
--   [工作负载创建时设置](#section8124108325)
--   [工作负载创建完成后设置](#section41290043210)
--   [验证访问方式](#section18896114113215)
--   [更新Service](#section14145190183217)
--   [kubectl命令行创建](#section7114174773118)
-
 ## 操作场景<a name="section13654155944916"></a>
 
 节点访问 \( NodePort \)是指在每个节点的IP上开放一个静态端口，通过静态端口对外暴露服务。节点访问 \( NodePort \)会路由到ClusterIP服务，这个ClusterIP服务会自动创建。通过请求 <NodeIP\>:<NodePort\>，可以从集群的外部访问一个NodePort服务。

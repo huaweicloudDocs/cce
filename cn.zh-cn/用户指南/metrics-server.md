@@ -1,13 +1,10 @@
 # metrics-server<a name="cce_01_0205"></a>
 
--   [约束与限制](#section885073715114)
--   [安装插件](#section1962241123816)
--   [升级插件](#section23441939916)
--   [卸载插件](#section1395073191112)
-
 从Kubernetes 1.8开始，Kubernetes通过Metrics API提供资源使用指标，例如容器CPU和内存使用率。这些度量可以由用户直接访问（例如，通过使用kubectl top命令），或者由集群中的控制器（例如，Horizontal Pod Autoscaler）使用来进行决策，具体的组件为Metrics-Server，用来替换之前的heapster，heapster从1.11开始逐渐被废弃。
 
 Metrics Server是集群核心资源监控数据的聚合器，您可以在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中快速安装本插件。
+
+安装本插件后，可在“弹性伸缩“页面的“工作负载伸缩“页签下，创建HPA策略，具体请参见[创建工作负载弹性伸缩（HPA）](创建工作负载弹性伸缩（HPA）.md)。
 
 社区官方项目及文档：[https://github.com/kubernetes-sigs/metrics-server](https://github.com/kubernetes-sigs/metrics-server)。
 
@@ -16,8 +13,6 @@ Metrics Server是集群核心资源监控数据的聚合器，您可以在[CCE�
 仅支持v1.13及以上版本的CCE集群安装本插件。
 
 ## 安装插件<a name="section1962241123816"></a>
-
-安装本插件后，可在“弹性伸缩“页面的“工作负载伸缩“页签下，创建HPA策略，具体请参见[创建工作负载弹性伸缩（HPA）](创建工作负载弹性伸缩（HPA）.md)。
 
 1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击“metrics-server“下的“安装插件“按钮。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。

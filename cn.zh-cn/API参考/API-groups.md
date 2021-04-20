@@ -8,7 +8,7 @@
 
 -   **[listing APIResources of GroupVersion extensions/v1beta1](listing-APIResources-of-GroupVersion-extensions-v1beta1.md)**  
 
--   **[listing APIResources of GroupVersion apps/v1beta1](listing-APIResources-of-GroupVersion-apps-v1beta1.md)**  
+-   **[listing APIResources of GroupVersion apps/v1&apps/v1beta1](listing-APIResources-of-GroupVersion-apps-v1-apps-v1beta1.md)**  
 
 -   **[listing APIResources of GroupVersion authentication.k8s.io/v1](listing-APIResources-of-GroupVersion-authentication-k8s-io-v1.md)**  
 

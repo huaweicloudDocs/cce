@@ -17,9 +17,9 @@ The other fields cannot be updated.
 
 ## URI<a name="section30263877"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\} \(Supports 1.9 and 1.9+\)
+PATCH /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\} （适用于1.9及以上版本的所有集群）
 
-PATCH /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\} \(Supports 1.15 and 1.15-\)
+PATCH /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\} （仅适用于1.15及以下版本的集群）
 
 [表1](#d0e39827)描述该API的参数。
 

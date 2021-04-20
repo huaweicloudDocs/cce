@@ -1,13 +1,5 @@
 # CoreDNS（系统资源插件，必装）<a name="cce_01_0129"></a>
 
--   [插件简介](#section25311744154917)
--   [约束与限制](#section10849134521812)
--   [安装插件](#section776571919194)
--   [为CoreDNS配置存根域](#section5202157467)
--   [kubernetes中的域名解析逻辑](#section1860523212152)
--   [升级插件](#section19566181513486)
--   [卸载插件](#section7582615184814)
-
 ## 插件简介<a name="section25311744154917"></a>
 
 CoreDNS插件是一款通过链式插件的方式为Kubernetes提供域名解析服务的DNS服务器。
@@ -27,8 +19,7 @@ CoreDNS官网：[https://coredns.io/](https://coredns.io/)
 
 ## 约束与限制<a name="section10849134521812"></a>
 
--   若需要升级CoreDNS插件，请确保集群中的节点数大于等于CoreDNS的实例数，且CoreDNS的所有实例都处于运行状态，否则将导致升级失败。
--   CoreDNS正常运行需要集群中至少有两个节点，在升级CoreDNS插件时，请确保CoreDNS的所有实例都处于运行状态。
+CoreDNS正常运行或升级时，请确保集群中的可用节点数大于等于CoreDNS的实例数，且CoreDNS的所有实例都处于运行状态，否则将导致插件异常或升级失败。
 
 ## 安装插件<a name="section776571919194"></a>
 
@@ -90,6 +81,8 @@ CoreDNS官网：[https://coredns.io/](https://coredns.io/)
 
 **kubectl edit configmap coredns -n kube-system**
 
+参照下方示例进行配置：
+
 ```
 consul.local:5353 {
         errors
@@ -102,32 +95,49 @@ consul.local:5353 {
 
 ```
 apiVersion: v1
+metadata:
+  name: coredns
+  namespace: kube-system
+  selfLink: /api/v1/namespaces/kube-system/configmaps/coredns
+  uid: 00cb8f29-62d7-4df8-a769-0a16237903c1
+  resourceVersion: '2074614'
+  creationTimestamp: '2021-04-07T03:52:42Z'
+  labels:
+    app: coredns
+    k8s-app: coredns
+    kubernetes.io/cluster-service: 'true'
+    kubernetes.io/name: CoreDNS
+    release: cceaddon-coredns
 data:
   Corefile: |-
     .:5353 {
+        bind {$POD_IP}
         cache 30
         errors
-        health
+        health {$POD_IP}:8080
         kubernetes cluster.local in-addr.arpa ip6.arpa {
           pods insecure
           upstream /etc/resolv.conf
           fallthrough in-addr.arpa ip6.arpa
         }
         loadbalance round_robin
-        prometheus 0.0.0.0:9153
+        prometheus {$POD_IP}:9153
         forward . /etc/resolv.conf
         reload
     }
 
-    consul.local:5353 {
+    acme.local:5353 {
+        bind {$POD_IP}
         errors
         cache 30
-        forward . 10.150.0.1
+        forward . 1.2.3.4
     }
-kind: ConfigMap
-metadata:
-  name: coredns
-  namespace: kube-system
+    test.com:5353 {
+        bind {$POD_IP}
+        errors
+        cache 30
+        forward . 8.8.8.8
+    }
 ```
 
 **1.15.11之前的集群版本**，修改后最终的ConfigMap如下所示：

@@ -1,4 +1,4 @@
-# 列出指定的StatefulSet<a name="cce_02_0153"></a>
+# 列出所有的StatefulSet<a name="cce_02_0153"></a>
 
 ## 功能介绍<a name="section42877597"></a>
 
@@ -6,9 +6,9 @@ This API is used to list all StatefulSet resource objects.
 
 ## URI<a name="section50354060"></a>
 
-GET /apis/apps/v1/statefulsets \(Supports 1.9 and 1.9+\)
+GET /apis/apps/v1/statefulsets （适用于1.9及以上版本的所有集群）
 
-GET /apis/apps/v1beta1/statefulsets \(Supports 1.15 and 1.15-\)
+GET /apis/apps/v1beta1/statefulsets （仅适用于1.15及以下版本的集群）
 
 [表1](#d0e39528)描述该API的参数。
 

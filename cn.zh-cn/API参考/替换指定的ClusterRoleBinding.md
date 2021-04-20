@@ -59,8 +59,8 @@ PUT /apis/rbac.authorization.k8s.io/v1/clusterrolebindings/\{name\}
 {
 	"kind": "ClusterRoleBinding",
 	"apiVersion": "rbac.authorization.k8s.io/v1",
-	"metadata": ${
-		clusterrolebinding_metadata
+	"metadata": {
+		"name": "read-secrets-global"
 	},
 	"subjects": [{
 		"kind": "Group",

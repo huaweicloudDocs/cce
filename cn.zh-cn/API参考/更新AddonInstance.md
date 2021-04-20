@@ -243,7 +243,7 @@ PUT /api/v3/addons/\{id\}
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>Map&lt;String,Object&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>插件模板安装参数（各插件不同）</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>插件模板安装参数（各插件不同），升级插件时需要填写全量安装参数，未填写参数将使用插件模板中的默认值，当前插件安装参数可通过查询插件实例接口获取。</p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>addonTemplateName</p>
@@ -437,7 +437,7 @@ PUT /api/v3/addons/\{id\}
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Map&lt;String,Object&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板安装参数（各插件不同）</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。</p>
 </td>
 </tr>
 </tbody>

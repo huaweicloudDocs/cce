@@ -8,9 +8,6 @@ The following fields can be updated:
 
 -   metadata.selfLink
 -   metadata.resourceVersion
--   metadata.generation
--   metadata.creationTimestamp
--   metadata.deletionTimestamp
 -   metadata.labels
 -   metadata.clusterName
 -   metadata.generateName
@@ -22,11 +19,9 @@ The following fields can be updated:
 
 ## URI<a name="section1928895"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.9 and 1.9+\)
+PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} （适用于1.9及以上版本的所有集群）
 
-PATCH /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.7\)
-
-PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.15 and 1.15-\)
+PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} （仅适用于1.15及以下版本的集群）
 
 [表1](#d0e36967)描述该API的参数。
 

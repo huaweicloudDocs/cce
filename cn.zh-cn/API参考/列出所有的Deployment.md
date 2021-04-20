@@ -1,4 +1,4 @@
-# 列出指定的Deployment<a name="cce_02_0128"></a>
+# 列出所有的Deployment<a name="cce_02_0128"></a>
 
 ## 功能介绍<a name="section13286196"></a>
 
@@ -6,11 +6,9 @@ This API is used to list all Deployment resource objects.
 
 ## URI<a name="section52466902"></a>
 
-GET /apis/apps/v1/deployments \(Supports 1.9 and 1.9+\)
+GET /apis/apps/v1/deployments （适用于1.9及以上版本的所有集群）
 
-GET /apis/apps/v1beta1/deployments \(Supports only1.7\)
-
-GET /apis/extensions/v1beta1/deployments \(Supports 1.15 and 1.15-\)
+GET /apis/extensions/v1beta1/deployments （仅适用于1.15及以下版本的集群）
 
 [表1](#d0e36743)描述该API的参数。
 

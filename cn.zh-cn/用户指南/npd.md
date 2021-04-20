@@ -1,21 +1,12 @@
-# npd（系统资源插件，必装）<a name="cce_01_0132"></a>
-
--   [插件简介](#section173631312185614)
--   [约束与限制](#section11172124718374)
--   [安装插件](#section189463341114)
--   [卸载插件](#section1395073191112)
--   [升级插件](#section136451128328)
+# npd<a name="cce_01_0132"></a>
 
 ## 插件简介<a name="section173631312185614"></a>
 
 node-problem-detector（简称：npd）是一款监控集群节点异常事件的插件，以及对接第三方监控平台功能的组件。它是一个在每个节点上运行的守护程序，可从不同的守护进程中搜集节点问题并将其报告给apiserver。node-problem-detector可以作为DaemonSet运行， 也可以独立运行。
 
-该插件为系统资源插件，在1.13以上版本的CCE集群中默认启用该插件 。
-
 有关社区开源项目node-problem-detector的详细信息，请参见[node-problem-detector](https://github.com/kubernetes/node-problem-detector)。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->1.15.11和1.17.9版本的CCE集群已发布NPD插件新版本1.13.6，诚邀您升级插件。
 >为快速提升您NPD插件的能力和可靠性，2020年12月30日后系统将定期自动升级插件到最新版本，升级过程会重启各节点上的NPD容器，但不会对您的业务造成影响。若您想提前体验，可以主动在CCE控制台的“插件管理”页面进行升级。升级插件方法请参见[升级插件](#section136451128328)。
 >我们强烈建议您进行此次升级，如果您不希望升级npd插件，可以通过提交工单免除此次升级。
 

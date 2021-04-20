@@ -1,9 +1,5 @@
 # 创建工作负载弹性伸缩（HPA）<a name="cce_01_0208"></a>
 
--   [前提条件](#section194973810277)
--   [约束与限制](#section107429267459)
--   [操作步骤](#section12371183611583)
-
 HPA策略即Horizontal Pod Autoscaling，是Kubernetes中实现POD水平自动伸缩的功能。该策略在kubernetes社区HPA功能的基础上，增加了应用级别的冷却时间窗和扩缩容阈值等功能。
 
 ## 前提条件<a name="section194973810277"></a>

@@ -6,9 +6,9 @@ This API is used to delete collection of DaemonSet.
 
 ## URI<a name="section36307850"></a>
 
-DELETE /apis/apps/v1/namespaces/\{namespace\}/daemonsets \(Supports 1.9 and 1.9+\)
+DELETE /apis/apps/v1/namespaces/\{namespace\}/daemonsets （适用于1.9及以上版本的所有集群）
 
-DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Supports 1.15 and 1.15-\)
+DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets （仅适用于1.15及以下版本的集群）
 
 [表1](#d0e32232)描述该API的参数。
 
@@ -86,7 +86,7 @@ DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Supports 
 
 **请求参数：**
 
-请求参数的详细描述请参见[表2](删除DaemonSet.md#table191461259175715)。
+请求参数的详细描述请参见[表2](删除指定的DaemonSet.md#table191461259175715)。
 
 **请求示例：**
 

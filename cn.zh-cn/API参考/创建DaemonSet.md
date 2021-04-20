@@ -6,9 +6,9 @@ This API is used to create a DaemonSet resource object.
 
 ## URI<a name="section43970798"></a>
 
-POST /apis/apps/v1/namespaces/\{namespace\}/daemonsets \(Supports 1.9 and 1.9+\)
+POST /apis/apps/v1/namespaces/\{namespace\}/daemonsets （适用于1.9及以上版本的所有集群）
 
-POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets \(Supports 1.15 and 1.15-\)
+POST /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets （仅适用于1.15及以下版本的集群）
 
 [表1](#d0e31331)描述该API的参数。
 

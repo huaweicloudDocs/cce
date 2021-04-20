@@ -6,11 +6,9 @@ This API is used to read scale of the specified Scale.
 
 ## URI<a name="section27365698"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports 1.9 and 1.9+\)
+GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale （适用于1.9及以上版本的所有集群）
 
-GET /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports only1.7\)
-
-GET /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports 1.15 and 1.15-\)
+GET /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale （仅适用于1.15及以下版本的集群）
 
 [表1](#d0e35851)描述该API的参数。
 
@@ -64,7 +62,7 @@ N/A
 ```
 {
     "kind": "Scale",
-    "apiVersion": "extensions/v1beta1",
+    "apiVersion": "autoscaling/v1",
     "metadata": {
         "name": "deploy-ex-12130306",
         "namespace": "ns-12130306-s",

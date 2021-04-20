@@ -4,7 +4,7 @@
 
 -   **[删除Secret](删除Secret.md)**  
 
--   **[删除所有的Secret](删除所有的Secret.md)**  
+-   **[删除指定命名空间下所有的Secret](删除指定命名空间下所有的Secret.md)**  
 
 -   **[获取Secret信息](获取Secret信息.md)**  
 

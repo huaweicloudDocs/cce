@@ -22,7 +22,7 @@
 
 -   **[列出指定Namespace下的Deployment](列出指定Namespace下的Deployment.md)**  
 
--   **[列出指定的Deployment](列出指定的Deployment.md)**  
+-   **[列出所有的Deployment](列出所有的Deployment.md)**  
 
 -   **[更新指定的Deployment](更新指定的Deployment.md)**  
 

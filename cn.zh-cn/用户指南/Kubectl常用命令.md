@@ -1,13 +1,5 @@
 # Kubectl常用命令<a name="cce_01_0139"></a>
 
--   [基础命令](#section18967103615461)
--   [部署命令](#section122665712261)
--   [集群管理命令](#section286451412289)
--   [故障诊断和调试命令](#section2283324202914)
--   [高级命令](#section1870143812302)
--   [设置命令](#section20145838123111)
--   [其他命令](#section44619483210)
-
 ## 基础命令<a name="section18967103615461"></a>
 
 **get**
@@ -396,7 +388,7 @@ kubectl label pods my-pod new-label=newlabel
 更新资源上的注释：
 
 ```
-kubectl label pods my-pod icon-url=http://……
+kubectl annotate pods my-pod icon-url=http://……
 ```
 
 **completion**

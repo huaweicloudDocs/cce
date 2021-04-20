@@ -1,14 +1,8 @@
 # virtual-kubelet<a name="cce_01_0135"></a>
 
--   [约束及限制](#section628693291119)
--   [安装插件](#section2237175619515)
--   [使用插件](#section162391856185111)
--   [升级插件](#section23441939916)
--   [卸载插件](#section1624015695110)
-
 Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，作为一种虚拟的kubelet用来连接Kubernetes集群和其他平台的API。Virtual Kubelet的主要场景是将Kubernetes API扩展到无服务器的容器平台（如CCI）。
 
-基于该插件，支持华为云用户在短时高负载场景下，将部署在云容器引擎CCE上的无状态负载（Deployment）、有状态负载（StatefulSet）、普通任务（Job）三种资源类型的容器实例（Pod），弹性创建到[云容器实例CCI](https://support.huaweicloud.com/cci/index.html)服务上，以减少集群扩容带来的消耗。详情请参见[华为云CCE弹性到CCI](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0134.html)。
+基于该插件，支持华为云用户在短时高负载场景下，将部署在云容器引擎CCE上的无状态负载（Deployment）、有状态负载（StatefulSet）、普通任务（Job）三种资源类型的容器实例（Pod），弹性创建到[云容器实例CCI](https://support.huaweicloud.com/cci/index.html)服务上，以减少集群扩容带来的消耗。详情请参见[华为云CCE弹性到CCI](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0133.html)。
 
 开源社区地址：[https://github.com/virtual-kubelet/virtual-kubelet](https://github.com/virtual-kubelet/virtual-kubelet)
 

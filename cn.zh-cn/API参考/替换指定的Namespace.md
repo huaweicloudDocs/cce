@@ -8,9 +8,6 @@
 
 -   metadata.selfLink
 -   metadata.resourceVersion
--   metadata.generation
--   metadata.creationTimestamp
--   metadata.deletionTimestamp
 -   metadata.labels
 -   metadata.generateName
 -   metadata.annotations

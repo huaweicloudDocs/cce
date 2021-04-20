@@ -1,8 +1,5 @@
 # 启用istio<a name="cce_01_1213"></a>
 
--   [操作场景](#section160213214302)
--   [操作步骤](#section9231550479)
-
 ## 操作场景<a name="section160213214302"></a>
 
 应用服务网格（Application Service Mesh，简称ASM）是华为云基于开源Istio推出的服务网格平台，它深度、无缝对接了华为云的企业级Kubernetes集群服务云容器引擎（Cloud Container Engine，简称CCE），在易用性、可靠性、可视化等方面进行了一系列增强，可为客户提供开箱即用的上手体验。

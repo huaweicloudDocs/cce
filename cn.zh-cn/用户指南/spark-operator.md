@@ -1,11 +1,5 @@
 # spark-operator<a name="cce_01_0155"></a>
 
--   [插件简介](#section1880716117376)
--   [约束与限制](#section11172124718374)
--   [安装插件](#section564214328158)
--   [升级插件](#section23441939916)
--   [卸载插件](#section1395073191112)
-
 ## 插件简介<a name="section1880716117376"></a>
 
 Spark operator是一个管理Kubernetes上的Apache Spark应用程序生命周期的operator，旨在像在Kubernetes上运行其他工作负载一样简单的指定和运行spark应用程序。

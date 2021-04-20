@@ -1,11 +1,5 @@
 # CCE容器实例弹性伸缩到CCI服务<a name="cce_01_0295"></a>
 
--   [使用约束](#zh-cn_topic_0287319085_section1925910435328)
--   [安装部署](#zh-cn_topic_0287319085_section1372419715333)
--   [通过CCE控制台创建工作负载](#zh-cn_topic_0287319085_section1370151403414)
--   [通过Yaml文件创建工作负载](#zh-cn_topic_0287319085_section1088133211315)
--   [卸载virtual kubelet](#zh-cn_topic_0287319085_section209521549145718)
-
 Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该插件支持用户在短时高负载场景下，将部署在CCE上的无状态负载（Deployment）、有状态负载（StatefulSet）、普通任务（Job）三种资源类型的容器实例（Pod），弹性创建到华为云云容器实例CCI服务上，以减少集群扩容带来的消耗。
 
 具体功能如下：
@@ -103,9 +97,8 @@ spec:
       app: test-vk
   template:
     metadata:
-      annotations:
-        virtual-kubelet.io/burst-to-cci: 'true'
       labels:
+        virtual-kubelet.io/burst-to-cci: 'auto'
         app: test-vk
     spec:
       containers:
@@ -126,13 +119,13 @@ spec:
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->标红部分为添加annotations。
->创建弹性至CCI的负载时需要在pod的annotations中添加如下字段：
+>标红部分为添加labels。
+>创建弹性至CCI的负载时需要在pod的labels中添加如下字段：
 >```
->virtual-kubelet.io/burst-to-cci: "true"
+>virtual-kubelet.io/burst-to-cci: "auto"
 >```
 >其中，value值支持以下选项：
->-   true或者auto：CCE资源用完时自动弹性至CCI。
+>-   auto：CCE资源用完时自动弹性至CCI。
 >-   enforce：强制调度至CCI。
 >-   off：不调度至CCI。
 

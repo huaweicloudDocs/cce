@@ -1,8 +1,8 @@
-# 删除所有的Secret<a name="cce_02_0114"></a>
+# 删除指定命名空间下所有的Secret<a name="cce_02_0114"></a>
 
 ## 功能介绍<a name="section44856736"></a>
 
-该API用来批量删除Secret。
+该API用来批量删除指定命名空间下所有的Secret。
 
 ## URI<a name="section1057444"></a>
 

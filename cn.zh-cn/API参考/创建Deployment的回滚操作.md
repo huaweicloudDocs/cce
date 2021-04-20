@@ -6,11 +6,11 @@ This API is used to create rollback of a Deployment Rollback.
 
 ## URI<a name="section37041974"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.17 and 1.17+\)
+PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} （仅适用于1.17及以上版本的集群）
 
-POST /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/rollback \(Supports only 1.7\~1.15\)
+POST /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/rollback （仅适用于1.15及以下版本的集群）
 
-POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/rollback \(Supports 1.15 and 1.15-\)
+POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/rollback （仅适用于1.15及以下版本的集群）
 
 [表1](#d0e34843)描述该API的参数。
 

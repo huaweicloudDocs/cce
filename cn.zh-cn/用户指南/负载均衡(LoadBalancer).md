@@ -1,13 +1,5 @@
 # 负载均衡\(LoadBalancer\)<a name="cce_01_0014"></a>
 
--   [操作场景](#section19854101411508)
--   [约束与限制](#section11642143794611)
--   [工作负载创建时设置](#section744117150366)
--   [工作负载创建完成后设置](#section51925078171335)
--   [更新Service](#section1591712812718)
--   [通过kubectl命令行创建-使用已有共享型ELB](#section1984211714368)
--   [通过kubectl命令行创建-自动创建共享型ELB](#section12168131904611)
-
 ## 操作场景<a name="section19854101411508"></a>
 
 负载均衡\( LoadBalancer \)可以通过弹性负载均衡从公网访问到工作负载，与弹性IP方式相比提供了高可靠的保障，一般用于系统中需要暴露到公网的服务。
@@ -230,7 +222,7 @@
     apiVersion: v1 
     kind: Service 
     metadata: 
-      annotations:   
+      annotations:
         kubernetes.io/elb.class: union
         kubernetes.io/session-affinity-mode: SOURCE_IP
         kubernetes.io/elb.id: 3c7caa5a-a641-4bff-801a-feace27424b6
@@ -313,7 +305,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.3 "><p id="p16355204793913"><a name="p16355204793913"></a><a name="p16355204793913"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p13355154723918"><a name="p13355154723918"></a><a name="p13355154723918"></a>为子网的ID，取值范围：1-100字符。</p>
+    <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p13355154723918"><a name="p13355154723918"></a><a name="p13355154723918"></a>为集群所在子网的ID，取值范围：1-100字符。</p>
     <a name="ul93551647173917"></a><a name="ul93551647173917"></a><ul id="ul93551647173917"><li>Kubernetes v1.11.7-r0及以下版本的集群自动创建时：必填，</li><li>Kubernetes v1.11.7-r0以上版本的集群：可不填。</li></ul>
     <p id="p935584714395"><a name="p935584714395"></a><a name="p935584714395"></a>获取方法请参见：<a href="https://support.huaweicloud.com/api-vpc/vpc_api_0005.html" target="_blank" rel="noopener noreferrer">VPC子网接口与OpenStack Neutron子网接口的区别是什么？</a></p>
     </td>
@@ -527,7 +519,7 @@
     deployment "nginx" created
     ```
 
-    **kubectl get po**
+    **kubectl get pod**
 
     回显如下，工作负载状态为Running状态，表示工作负载已运行中。
 
@@ -803,6 +795,6 @@
     可成功访问nginx。
 
     **图 4**  通过负载均衡访问nginx<a name="fig2406102717469"></a>  
-    ![](figures/通过负载均衡访问nginx-22.png "通过负载均衡访问nginx-22")
+    ![](figures/通过负载均衡访问nginx-23.png "通过负载均衡访问nginx-23")
 
 

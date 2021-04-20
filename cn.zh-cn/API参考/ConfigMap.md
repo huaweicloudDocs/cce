@@ -12,7 +12,7 @@
 
 -   **[列出指定Namespace下的ConfigMap](列出指定Namespace下的ConfigMap.md)**  
 
--   **[列出指定的ConfigMap](列出指定的ConfigMap.md)**  
+-   **[列出所有的ConfigMap](列出所有的ConfigMap.md)**  
 
 -   **[更新指定的ConfigMap](更新指定的ConfigMap.md)**  
 

@@ -1,13 +1,5 @@
 # prometheus<a name="cce_01_0221"></a>
 
--   [插件简介](#section173631312185614)
--   [插件特点](#section4740192825614)
--   [约束与限制](#section11172124718374)
--   [安装插件](#section189463341114)
--   [升级插件](#section23441939916)
--   [卸载插件](#section1395073191112)
--   [参考资源](#section16331426191116)
-
 ## 插件简介<a name="section173631312185614"></a>
 
 Prometheus是一套开源的系统监控报警框架。它启发于Google的borgmon监控系统，由工作在SoundCloud的Google前员工在2012年创建，作为社区开源项目进行开发，并于2015年正式发布。2016年，Prometheus正式加入Cloud Native Computing Foundation，成为受欢迎度仅次于Kubernetes的项目。
@@ -74,6 +66,12 @@ Prometheus是一套开源的系统监控报警框架。它启发于Google的borg
     <tr id="row111551253912"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p51551451293"><a name="p51551451293"></a><a name="p51551451293"></a>容器</p>
     </td>
     <td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p1437014065110"><a name="p1437014065110"></a><a name="p1437014065110"></a>选择插件规格后，显示插件容器的CPU和内存配额，此处仅作显示。</p>
+    </td>
+    </tr>
+    <tr id="row1683716231053"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p98372023951"><a name="p98372023951"></a><a name="p98372023951"></a>对接远端</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p103251148141510"><a name="p103251148141510"></a><a name="p103251148141510"></a>可根据实际场景选择对应参数:</p>
+    <a name="ul46735991617"></a><a name="ul46735991617"></a><ul id="ul46735991617"><li>不对接：普罗采集的数据仅存储在本地数据盘中。</li><li>对接CIE：普罗采集的数据将同时存放在本地数据盘和CIE远端服务中。</li><li>自定义：普罗采集的数据将同时存放在本地数据盘和自定义的远端服务中。远端地址、HTTPS认证等所需的信息，需从第三方服务获取。</li></ul>
     </td>
     </tr>
     <tr id="row1535723154615"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p83591731124620"><a name="p83591731124620"></a><a name="p83591731124620"></a>监控数据保留期</p>

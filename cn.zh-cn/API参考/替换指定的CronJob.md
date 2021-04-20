@@ -8,9 +8,6 @@ The following fields can be updated:
 
 -   metadata.selfLink
 -   metadata.resourceVersion
--   metadata.generation
--   metadata.creationTimestamp
--   metadata.deletionTimestamp
 -   metadata.labels
 -   metadata.clusterName
 -   metadata.generateName

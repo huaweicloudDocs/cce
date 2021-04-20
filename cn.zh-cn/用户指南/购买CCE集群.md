@@ -1,11 +1,5 @@
 # 购买CCE集群<a name="cce_01_0028"></a>
 
--   [约束与限制](#section1386743114294)
--   [前提条件](#section1675221242512)
--   [创建集群须知](#section2086419142214)
--   [操作步骤](#section463761220269)
--   [相关操作](#section125261255139)
-
 您可以通过云容器引擎控制台非常方便快速的创建Kubernetes集群。Kubernetes是大规模容器集群管理软件，一个集群可以管理一组节点资源。
 
 CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构节点的混合部署，基于高性能网络模型提供全方位、多场景、安全稳定的容器运行环境，您可以通过[购买虚拟机节点](购买节点.md)、[使用GPU节点](使用GPU节点.md)、[使用裸金属节点](使用裸金属节点.md)实现多种场景的混合部署。
@@ -178,7 +172,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p135701052194711"><a name="p135701052194711"></a><a name="p135701052194711"></a>集群创建成功后，网络模型不可更改，请谨慎选择。如何选择网络模型请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00162.html" target="_blank" rel="noopener noreferrer">CCE集群创建时如何选择网络模型？各模型的区别是什么？</a></p>
     <p id="p6806448162015"><a name="p6806448162015"></a><a name="p6806448162015"></a><strong id="b75401805214"><a name="b75401805214"></a><a name="b75401805214"></a>VPC网络</strong></p>
-    <p id="p1319614613446"><a name="p1319614613446"></a><a name="p1319614613446"></a>VPC网络模式下每个节点占用一条<a href="https://support.huaweicloud.com/usermanual-vpc/route_0002.html" target="_blank" rel="noopener noreferrer">VPC路由规则</a>，Console界面中可显示当前局点支持的VPC路由规则条数，以及每个节点可供分配的容器IP个数（即可创建的Pod实例数目上限），</p>
+    <p id="p1319614613446"><a name="p1319614613446"></a><a name="p1319614613446"></a>VPC网络模式下每个节点占用一条<a href="https://support.huaweicloud.com/usermanual-vpc/route_0002.html" target="_blank" rel="noopener noreferrer">VPC路由规则</a>，Console界面中可显示当前局点支持的VPC路由规则条数，以及每个节点可供分配的容器IP个数（即可创建的Pod实例数目上限）。</p>
     <a name="ul68480277225"></a><a name="ul68480277225"></a><ul id="ul68480277225"><li>采用VPC路由方式与底层网络深度整合，适用于高性能场景，但每个节点占用一条VPC路由规则，节点数量受限于虚拟私有云VPC的路由配额。</li><li>VPC网络集群下的每个节点将会被分配固定大小的IP地址段，由于没有隧道封装的消耗，容器网络性能相对于容器隧道网络有一定优势。VPC网络集群由于VPC路由中配置有容器网段与节点IP的路由，可以支持集群外直接访问容器实例等特殊场景。<div class="note" id="note126721123118"><a name="note126721123118"></a><a name="note126721123118"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul123221124171119"></a><a name="ul123221124171119"></a><ul id="ul123221124171119"><li>VPC网络模式下不支持扩展网段和NetworkPolicy。</li><li>一个VPC下创建多个VPC网络模式的集群时，需要为每个集群选择一个不重叠的地址段，不仅不能和VPC地址重叠，也不和其他容器网段重叠。</li></ul>
     </div></div>
     </li></ul>
@@ -211,9 +205,11 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     <tr id="row1610917221609"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p6655100911"><a name="p6655100911"></a><a name="p6655100911"></a>认证方式</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p933784218111"><a name="p933784218111"></a><a name="p933784218111"></a>认证机制主要用于对集群下的资源做权限控制。例如A用户只能对某个命名空间下的应用有读写权限，B用户对集群下的资源只有读权限等。角色权限控制的操作请参见<a href="集群管理权限控制.md">集群管理权限控制</a>。</p>
-    <a name="ul208851410646"></a><a name="ul208851410646"></a><ul id="ul208851410646"><li>默认状态下不选定<span class="uicontrol" id="uicontrol1371105874614"><a name="uicontrol1371105874614"></a><a name="uicontrol1371105874614"></a>“认证能力增强”</span>，此时默认开启X509认证模式，X509是一种非常通用的证书格式。</li><li>若需要对集群进行权限控制，请勾选“认证能力增强”，选择“认证代理”。<p id="p129632614510"><a name="p129632614510"></a><a name="p129632614510"></a>单击“CA根证书”后的“上传文件”，上传符合规范且合法的证书，并<strong id="b2356470185"><a name="b2356470185"></a><a name="b2356470185"></a>勾选“我已确认上传的证书合法”</strong>。</p>
-    <p id="p36719411534"><a name="p36719411534"></a><a name="p36719411534"></a>证书若不合法，集群将无法创建成功。请上传小于1MB的文件，上传格式支持.crt或.cer格式。</p>
-    </li></ul>
+    <p id="p1186713484551"><a name="p1186713484551"></a><a name="p1186713484551"></a>默认状态下<span class="uicontrol" id="uicontrol1371105874614"><a name="uicontrol1371105874614"></a><a name="uicontrol1371105874614"></a>“认证能力增强”</span>未选中，此时默认开启X509认证模式，X509是一种非常通用的证书格式。</p>
+    <p id="p201651655441"><a name="p201651655441"></a><a name="p201651655441"></a>若需要对集群进行权限控制，请勾选“<strong id="b147071445995"><a name="b147071445995"></a><a name="b147071445995"></a>认证能力增强</strong>”，集群支持通过请求体的头域的信息识别用户，达到认证鉴权的目的。</p>
+    <p id="p16929105085512"><a name="p16929105085512"></a><a name="p16929105085512"></a>用户需要分别上传自己的<strong id="b44714116510"><a name="b44714116510"></a><a name="b44714116510"></a>CA根证书</strong>、<strong id="b14669141413512"><a name="b14669141413512"></a><a name="b14669141413512"></a>客户端证书</strong>和<strong id="b6857112016516"><a name="b6857112016516"></a><a name="b6857112016516"></a>客户端证书私钥</strong>，并勾选“<strong id="b458963217717"><a name="b458963217717"></a><a name="b458963217717"></a>我已确认上传的证书合法</strong>”。</p>
+    <div class="caution" id="note173064357597"><a name="note173064357597"></a><a name="note173064357597"></a><span class="cautiontitle"> 注意： </span><div class="cautionbody"><a name="ul63601125729"></a><a name="ul63601125729"></a><ul id="ul63601125729"><li>请上传<strong id="b1324412411615"><a name="b1324412411615"></a><a name="b1324412411615"></a>小于1MB</strong>的文件，CA根证书和客户端证书上传格式支持<strong id="b142442413620"><a name="b142442413620"></a><a name="b142442413620"></a>.crt或.cer</strong>格式，客户端证书私钥仅支持上传<strong id="b5244124664"><a name="b5244124664"></a><a name="b5244124664"></a>未加密的证书私钥</strong>。</li><li>客户端证书有效期需要5年以上。</li><li>上传的CA根证书既给认证代理使用，也用于配置kube-apiserver聚合层，<strong id="b1507491567"><a name="b1507491567"></a><a name="b1507491567"></a>如不合法，集群将无法成功创建</strong>。</li></ul>
+    </div></div>
     </td>
     </tr>
     <tr id="row463941216264"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p2063961212268"><a name="p2063961212268"></a><a name="p2063961212268"></a>集群描述</p>
@@ -332,7 +328,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
         -   默认不加密。
         -   点选“加密“后，可在弹出的“加密设置“对话框中，选择已有的密钥，若没有可选的密钥，请单击后方的链接创建新密钥，完成创建后单击刷新按钮。
 
-    -   <a name="li12223421320"></a>**数据盘：**设置工作节点的数据盘空间。您可以设置数据盘的规格为100GB-32678GB之间的数值，缺省值为100GB。数据盘可提供的云硬盘类型与上方系统盘一致。
+    -   <a name="li12223421320"></a>**数据盘：**设置工作节点的数据盘空间。您可以设置数据盘的规格为100GB-32768GB之间的数值，缺省值为100GB。数据盘可提供的云硬盘类型与上方系统盘一致。
 
         >![](public_sys-resources/icon-caution.gif) **注意：** 
         >若数据盘卸载或损坏，会导致docker服务异常，最终导致节点不可用。建议不要删除该数据盘。

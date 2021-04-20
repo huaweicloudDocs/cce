@@ -344,7 +344,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18382194013267"><a name="p18382194013267"></a><a name="p18382194013267"></a>获取指定的Node。</p>
 </td>
 </tr>
-<tr id="row10382140132618"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p338216408263"><a name="p338216408263"></a><a name="p338216408263"></a><a href="列出指定的Node.md">列出指定的Node</a></p>
+<tr id="row10382140132618"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p338216408263"><a name="p338216408263"></a><a name="p338216408263"></a><a href="列出所有的Node.md">列出指定的Node</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p20382144062619"><a name="p20382144062619"></a><a name="p20382144062619"></a>获取指定的Node列表。</p>
 </td>
@@ -555,7 +555,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p144365311311"><a name="p144365311311"></a><a name="p144365311311"></a>列出指定命名空间下的所有Deployment资源对象。</p>
 </td>
 </tr>
-<tr id="row1687517313315"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p8875131336"><a name="p8875131336"></a><a name="p8875131336"></a><a href="列出指定的Deployment.md">列出指定的Deployment</a></p>
+<tr id="row1687517313315"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p8875131336"><a name="p8875131336"></a><a name="p8875131336"></a><a href="列出所有的Deployment.md">列出指定的Deployment</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1875163119318"><a name="p1875163119318"></a><a name="p1875163119318"></a>列出指定的Deployment资源对象。</p>
 </td>
@@ -594,7 +594,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p143624044214"><a name="p143624044214"></a><a name="p143624044214"></a>创建一个StatefulSet资源对象。</p>
 </td>
 </tr>
-<tr id="row113664015429"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p10361740154218"><a name="p10361740154218"></a><a name="p10361740154218"></a><a href="删除StatefulSet.md">删除StatefulSet</a></p>
+<tr id="row113664015429"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p10361740154218"><a name="p10361740154218"></a><a name="p10361740154218"></a><a href="删除指定的StatefulSet.md">删除StatefulSet</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p43664010429"><a name="p43664010429"></a><a name="p43664010429"></a>删除一个StatefulSet资源对象。</p>
 </td>
@@ -629,7 +629,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11271928176"><a name="p11271928176"></a><a name="p11271928176"></a>列出指定Namespace下的所有StatefulSet资源对象。</p>
 </td>
 </tr>
-<tr id="row419811311774"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1819903118712"><a name="p1819903118712"></a><a name="p1819903118712"></a><a href="列出指定的StatefulSet.md">列出指定的StatefulSet</a></p>
+<tr id="row419811311774"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1819903118712"><a name="p1819903118712"></a><a name="p1819903118712"></a><a href="列出所有的StatefulSet.md">列出指定的StatefulSet</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p919923112711"><a name="p919923112711"></a><a name="p919923112711"></a>列出所有的StatefulSet资源对象。</p>
 </td>
@@ -663,7 +663,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p241673310344"><a name="p241673310344"></a><a name="p241673310344"></a>创建一个DaemonSet资源对象。</p>
 </td>
 </tr>
-<tr id="row4416183310348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p5417103363410"><a name="p5417103363410"></a><a name="p5417103363410"></a><a href="删除DaemonSet.md">删除DaemonSet</a></p>
+<tr id="row4416183310348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p5417103363410"><a name="p5417103363410"></a><a name="p5417103363410"></a><a href="删除指定的DaemonSet.md">删除DaemonSet</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p74171933143413"><a name="p74171933143413"></a><a name="p74171933143413"></a>删除一个DaemonSet资源对象。</p>
 </td>
@@ -693,7 +693,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p641813316340"><a name="p641813316340"></a><a name="p641813316340"></a>更新指定Namespace下指定DaemonSet对象的状态。</p>
 </td>
 </tr>
-<tr id="row393544218367"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1893611421362"><a name="p1893611421362"></a><a name="p1893611421362"></a><a href="列出指定的DaemonSet.md">列出指定的DaemonSet</a></p>
+<tr id="row393544218367"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1893611421362"><a name="p1893611421362"></a><a name="p1893611421362"></a><a href="列出所有的DaemonSet.md">列出指定的DaemonSet</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19936154212363"><a name="p19936154212363"></a><a name="p19936154212363"></a>列出所有DemonSet资源对象。</p>
 </td>
@@ -1002,7 +1002,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18944913121611"><a name="p18944913121611"></a><a name="p18944913121611"></a>创建一个Service对象。</p>
 </td>
 </tr>
-<tr id="row7944131381618"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p094413136165"><a name="p094413136165"></a><a name="p094413136165"></a><a href="删除Service.md">删除Service</a></p>
+<tr id="row7944131381618"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p094413136165"><a name="p094413136165"></a><a name="p094413136165"></a><a href="删除指定的Service.md">删除Service</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p294401319169"><a name="p294401319169"></a><a name="p294401319169"></a>删除一个Service对象。</p>
 </td>
@@ -1312,7 +1312,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p0660171914413"><a name="p0660171914413"></a><a name="p0660171914413"></a>列出指定Namespace下的所有ConfigMap资源对象。</p>
 </td>
 </tr>
-<tr id="row9660219104410"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p566019194444"><a name="p566019194444"></a><a name="p566019194444"></a><a href="列出指定的ConfigMap.md">列出指定的ConfigMap</a></p>
+<tr id="row9660219104410"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p566019194444"><a name="p566019194444"></a><a name="p566019194444"></a><a href="列出所有的ConfigMap.md">列出指定的ConfigMap</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p126600195445"><a name="p126600195445"></a><a name="p126600195445"></a>获取ConfigMap列表。</p>
 </td>
@@ -1346,7 +1346,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p346517462177"><a name="p346517462177"></a><a name="p346517462177"></a>删除指定Namespace下的Secret对象。</p>
 </td>
 </tr>
-<tr id="row18465646141713"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18465204631717"><a name="p18465204631717"></a><a name="p18465204631717"></a><a href="删除所有的Secret.md">删除所有的Secret</a></p>
+<tr id="row18465646141713"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18465204631717"><a name="p18465204631717"></a><a name="p18465204631717"></a><a href="删除指定命名空间下所有的Secret.md">删除所有的Secret</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p17466144631718"><a name="p17466144631718"></a><a name="p17466144631718"></a>批量删除Secret。</p>
 </td>
@@ -1569,7 +1569,7 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1026319116412"><a name="p1026319116412"></a><a name="p1026319116412"></a>列出 APIGroups。</p>
 </td>
 </tr>
-<tr id="row726361104119"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p162631817413"><a name="p162631817413"></a><a name="p162631817413"></a><a href="listing-APIResources-of-GroupVersion-apps-v1beta1.md">listing APIResources of GroupVersion apps/v1beta1</a></p>
+<tr id="row726361104119"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p162631817413"><a name="p162631817413"></a><a name="p162631817413"></a><a href="listing-APIResources-of-GroupVersion-apps-v1-apps-v1beta1.md">listing APIResources of GroupVersion apps/v1beta1</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1726313114119"><a name="p1726313114119"></a><a name="p1726313114119"></a>列出APIResources of Group Version "apps/v1beta1"。</p>
 </td>
@@ -1658,7 +1658,7 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row1575491519386"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p177541215193813"><a name="p177541215193813"></a><a name="p177541215193813"></a><a href="列出指定的Event.md">列出指定的Event</a></p>
+<tbody><tr id="row1575491519386"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p177541215193813"><a name="p177541215193813"></a><a name="p177541215193813"></a><a href="列出指定命名空间下的Event.md">列出指定的Event</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19754181513388"><a name="p19754181513388"></a><a name="p19754181513388"></a>列出指定Namespace下的所有Event资源对象。</p>
 </td>

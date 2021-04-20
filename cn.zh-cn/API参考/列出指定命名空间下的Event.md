@@ -1,4 +1,4 @@
-# 列出指定的Event<a name="cce_02_0184"></a>
+# 列出指定命名空间下的Event<a name="cce_02_0184"></a>
 
 ## 功能介绍<a name="section6726992"></a>
 

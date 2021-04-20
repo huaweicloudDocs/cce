@@ -1,8 +1,5 @@
 # 使用kubectl自动创建文件存储<a name="cce_01_0260"></a>
 
--   [操作场景](#section1062914713566)
--   [操作步骤](#section1530655595611)
-
 ## 操作场景<a name="section1062914713566"></a>
 
 CCE支持使用PersistentVolumeClaim（PVC）的形式创建文件存储。

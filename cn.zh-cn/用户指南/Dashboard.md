@@ -1,15 +1,5 @@
 # Dashboard<a name="cce_01_0128"></a>
 
--   [插件简介](#section1418513434428)
--   [约束与限制](#section11172124718374)
--   [安装步骤](#section46701613154319)
--   [安装后续操作](#section174811341488)
--   [访问dashboard](#section15288141117362)
--   [权限修改](#section10659162018415)
--   [升级插件](#section455343310401)
--   [卸载插件](#section20765191931911)
--   [附：访问报错解决方法](#section913875232612)
-
 ## 插件简介<a name="section1418513434428"></a>
 
 Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操作Web界面的项目，集合了命令行可以操作的所有命令。
@@ -28,16 +18,11 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 **开源社区地址：**[https://github.com/kubernetes/dashboard](https://github.com/kubernetes/dashboard)
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->当前华为云CCE提供的Dashboard插件已将对应镜像升级到v1.10.1版本，不受Kubernetes Dashboard漏洞CVE-2018-18264影响。
+>当前华为云CCE提供的Dashboard插件已将对应镜像升级到最新版本，不受Kubernetes Dashboard漏洞CVE-2018-18264影响。
 >安全漏洞CVE-2018-18264的详细信息，请参考：
 >-   [https://github.com/kubernetes/dashboard/pull/3289](https://github.com/kubernetes/dashboard/pull/3289?spm=a2c4g.11186623.2.10.34d16d21dGsJMe)
 >-   [https://github.com/kubernetes/dashboard/pull/3400](https://github.com/kubernetes/dashboard/pull/3400?spm=a2c4g.11186623.2.11.34d16d21dGsJMe)
 >-   [https://github.com/kubernetes/dashboard/releases/tag/v1.10.1](https://github.com/kubernetes/dashboard/releases/tag/v1.10.1)
-
-## 约束与限制<a name="section11172124718374"></a>
-
--   1.05版本插件支持[CCE集群](购买CCE集群.md)和[鲲鹏集群](购买鲲鹏集群.md)，CCE集群需Kubernetes 1.9及以上版本，鲲鹏集群需Kubernetes 1.13及以上版本。
--   1.04版本插件支持[CCE集群](购买CCE集群.md)，需Kubernetes 1.9及以上版本。
 
 ## 安装步骤<a name="section46701613154319"></a>
 
@@ -145,7 +130,7 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
     >-   若升级按钮可单击，则单击升级按钮即可升级dashboard插件。
     >-   升级dashboard插件时，会替换原先节点上的旧版本的dashboard插件，安装最新版本的dashboard插件以实现功能的快速升级。
 
-2.  在弹出的窗口中，单击“确认“，可升级该插件。
+2.  在弹出的窗口中，单击“确认“，可升级该插件。配置参数可参考[安装插件](#section46701613154319)中的参数说明。
 
 ## 卸载插件<a name="section20765191931911"></a>
 

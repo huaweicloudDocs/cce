@@ -1,4 +1,4 @@
-# 列出指定的Node<a name="cce_02_0179"></a>
+# 列出所有的Node<a name="cce_02_0179"></a>
 
 ## 功能介绍<a name="section6571091"></a>
 

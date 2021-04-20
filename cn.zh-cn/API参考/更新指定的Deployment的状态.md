@@ -6,11 +6,9 @@ This API is used to update the status of a specified Deployment object under a s
 
 ## URI<a name="section38954717"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports 1.9 and 1.9+\)
+PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/status （适用于1.9及以上版本的所有集群）
 
-PATCH /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports only1.7\)
-
-PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status \(Supports 1.15 and 1.15-\)
+PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status （仅适用于1.15及以下版本的集群）
 
 [表1](#d0e37132)描述该API的参数。
 

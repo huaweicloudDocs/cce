@@ -1,11 +1,6 @@
 # SecurityGroup<a name="cce_01_0288"></a>
 
--   [约束与限制](#section21791218165310)
--   [通过界面创建](#section11870154492516)
--   [通过kubectl命令行创建](#section16951511152313)
--   [其他操作](#section682403717222)
-
-为实现云原生网络2.0网络模式下，CCE对接VPC的SecurityGroup能力，华为云在kubernetes层面设计了一个以SecurityGroup为核心的新的crd资源对象。支持用户自定义特定需求的工作负载的安全组，并对外提供服务。
+云原生网络2.0网络模式下，Pod使用的是华为云VPC的弹性网卡/辅助弹性网卡，它们是华为云VPC子网的一等公民，可直接绑定安全组，绑定弹性公网IP。为方便用户在CCE内直接为Pod关联安全组，CCE新增了一个名为SecurityGroup的自定义资源对象，通过SecurityGroup资源对象，用户可对有特定安全隔离述求的工作负载的工作进行自定义。
 
 ## 约束与限制<a name="section21791218165310"></a>
 
@@ -55,17 +50,18 @@
     </td>
     <td class="cellrowborder" valign="top" width="38.943894389438945%" headers="mcps1.2.4.1.2 "><p id="p1173273219910"><a name="p1173273219910"></a><a name="p1173273219910"></a>选择工作负载。</p>
     </td>
-    <td class="cellrowborder" valign="top" width="33.563356335633564%" headers="mcps1.2.4.1.3 "><p id="p715010280425"><a name="p715010280425"></a><a name="p715010280425"></a>web-terminal</p>
+    <td class="cellrowborder" valign="top" width="33.563356335633564%" headers="mcps1.2.4.1.3 "><p id="p715010280425"><a name="p715010280425"></a><a name="p715010280425"></a>nginx</p>
     </td>
     </tr>
     <tr id="row18733153211911"><td class="cellrowborder" valign="top" width="27.49274927492749%" headers="mcps1.2.4.1.1 "><p id="p187338321199"><a name="p187338321199"></a><a name="p187338321199"></a>安全组</p>
     </td>
-    <td class="cellrowborder" valign="top" width="38.943894389438945%" headers="mcps1.2.4.1.2 "><p id="p1328632118575"><a name="p1328632118575"></a><a name="p1328632118575"></a>安全组给选中的工作负载的弹性网卡提供访问策略，在下拉框中最多可以选择5条，安全组必选，不可缺省。</p>
-    <p id="p147335320917"><a name="p147335320917"></a><a name="p147335320917"></a>如未创建，可单击“创建安全组”，完成创建后单击刷新按钮。</p>
-    <div class="notice" id="note1159255716127"><a name="note1159255716127"></a><a name="note1159255716127"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><a name="ul1543718137385"></a><a name="ul1543718137385"></a><ul id="ul1543718137385"><li>最多可选择5个安全组。</li><li>鼠标悬浮在安全组名称上，可查看安全组的详细信息。</li><li>安全组的出方向需放通ICMP协议（用于容器网络可用性检查）</li></ul>
+    <td class="cellrowborder" valign="top" width="38.943894389438945%" headers="mcps1.2.4.1.2 "><p id="p1328632118575"><a name="p1328632118575"></a><a name="p1328632118575"></a>选中的安全组将绑定到选中的工作负载的弹性网卡/辅助弹性网卡上，在下拉框中最多可以选择5条，安全组必选，不可缺省。</p>
+    <p id="p147335320917"><a name="p147335320917"></a><a name="p147335320917"></a>如将绑定的安全组未创建，可单击“创建安全组”，完成创建后单击刷新按钮。</p>
+    <div class="notice" id="note1159255716127"><a name="note1159255716127"></a><a name="note1159255716127"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><a name="ul1543718137385"></a><a name="ul1543718137385"></a><ul id="ul1543718137385"><li>最多可选择5个安全组。</li><li>鼠标悬浮在安全组名称上，可查看安全组的详细信息。</li></ul>
     </div></div>
     </td>
-    <td class="cellrowborder" valign="top" width="33.563356335633564%" headers="mcps1.2.4.1.3 "><p id="p1973319321791"><a name="p1973319321791"></a><a name="p1973319321791"></a>hddjj-930-cce-node-f05td</p>
+    <td class="cellrowborder" valign="top" width="33.563356335633564%" headers="mcps1.2.4.1.3 "><p id="p62971643205712"><a name="p62971643205712"></a><a name="p62971643205712"></a>64566556-bd6f-48fb-b2c6-df8f44617953</p>
+    <p id="p109894523576"><a name="p109894523576"></a><a name="p109894523576"></a>5451f1b0-bd6f-48fb-b2c6-df8f44617953</p>
     </td>
     </tr>
     </tbody>
@@ -85,22 +81,22 @@
 **操作步骤**
 
 1.  登录已配置好kubectl命令的弹性云服务器。登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
-2.  创建创建一个名为securitygroup-test.yaml的描述文件。其中，securitygroup-test.yaml为自定义名称。
+2.  创建一个名为securitygroup-demo.yaml的描述文件。
 
-    **vi securitygroup-test.yaml**
+    **vi securitygroup-demo.yaml**
 
-    例如，用户创建如下的SecurityGroup资源对象，给所有的app：db业务绑定上对应的已经存在的64566556-bd6f-48fb-b2c6-df8f44617953，5451f1b0-bd6f-48fb-b2c6-df8f44617953的两个安全组。示例如下：
+    例如，用户创建如下的SecurityGroup资源对象，给所有的app：nginx工作负载绑定上提前已经创建的64566556-bd6f-48fb-b2c6-df8f44617953，5451f1b0-bd6f-48fb-b2c6-df8f44617953的两个安全组。示例如下：
 
     ```
     apiVersion: crd.yangtse.cni/v1
     kind: SecurityGroup
     metadata:
-      name: user-security-group
+      name: demo
       namespace: default
     spec:
       podSelector:
         matchLabels:
-          app: db    
+          app: nginx    
       securityGroups:
       - id: 64566556-bd6f-48fb-b2c6-df8f44617953
       - id: 5451f1b0-bd6f-48fb-b2c6-df8f44617953
@@ -163,7 +159,7 @@
     </tr>
     <tr id="row29372135139"><td class="cellrowborder" valign="top" width="36.75%" headers="mcps1.2.4.1.1 "><p id="p1493821315132"><a name="p1493821315132"></a><a name="p1493821315132"></a>podselector</p>
     </td>
-    <td class="cellrowborder" valign="top" width="47.25%" headers="mcps1.2.4.1.2 "><p id="p10938171341312"><a name="p10938171341312"></a><a name="p10938171341312"></a>定义SecurityGroup可管理的容器实例。</p>
+    <td class="cellrowborder" valign="top" width="47.25%" headers="mcps1.2.4.1.2 "><p id="p10938171341312"><a name="p10938171341312"></a><a name="p10938171341312"></a>定义SecurityGroup中需要关联安全组的工作负载。</p>
     </td>
     <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.4.1.3 "><p id="p5939181320135"><a name="p5939181320135"></a><a name="p5939181320135"></a>必选</p>
     </td>
@@ -180,25 +176,25 @@
 
 3.  执行以下命令，创建SecurityGroup。
 
-    **kubectl create -f securitygroup-test.yaml**
+    **kubectl create -f securitygroup-demo.yaml**
 
     回显如下表示已开始创建SecurityGroup
 
     ```
-    securitygroup.crd.yangtse.cni/user-security-group created
+    securitygroup.crd.yangtse.cni/demo created
     ```
 
 4.  执行以下命令，查看SecurityGroup。
 
     **kubectl get sg**
 
-    回显信息中有创建的SecurityGroup名称为user-security-group，表示SecurityGroup已创建成功。
+    回显信息中有创建的SecurityGroup名称为demo，表示SecurityGroup已创建成功。
 
     ```
     NAME                       POD-SELECTOR                      AGE
     all-no                     map[matchLabels:map[app:nginx]]   4h1m
     s001test                   map[matchLabels:map[app:nginx]]   19m
-    user-security-group        map[matchLabels:map[app:nginx]]   2m9s
+    demo                       map[matchLabels:map[app:nginx]]   2m9s
     ```
 
 

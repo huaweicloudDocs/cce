@@ -1,13 +1,5 @@
 # nginx-ingress<a name="cce_01_0034"></a>
 
--   [插件简介](#section26181722164712)
--   [工作原理](#section971014351338)
--   [使用约束](#section3200193614201)
--   [前提条件](#zh-cn_topic_0226102211_section92541494210)
--   [安装插件](#section3590245124519)
--   [升级插件](#section23441939916)
--   [卸载插件](#section85912459455)
-
 ## 插件简介<a name="section26181722164712"></a>
 
 Kubernetes通过kube-proxy服务实现了Service的对外发布及负载均衡，它的各种方式都是基于传输层实现的。在实际的互联网应用场景中，不仅要实现单纯的转发，还有更加细致的策略需求，如果使用真正的负载均衡器更会增加操作的灵活性和转发性能。
@@ -63,17 +55,17 @@ Nginx Ingress由资源对象Ingress、Ingress控制器、Nginx三部分组成，
     </thead>
     <tbody><tr id="row1137014404511"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p11370134095120"><a name="p11370134095120"></a><a name="p11370134095120"></a>插件规格</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p937064085113"><a name="p937064085113"></a><a name="p937064085113"></a>请根据业务需求选择插件规格，可单实例部署、多实例部署或自定义资源规格部署。</p>
+    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p937064085113"><a name="p937064085113"></a><a name="p937064085113"></a>请根据业务需求选择插件规格，可自定义资源规格部署。</p>
     </td>
     </tr>
     <tr id="row83701240105118"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p3370040165116"><a name="p3370040165116"></a><a name="p3370040165116"></a>实例数</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p93701640145120"><a name="p93701640145120"></a><a name="p93701640145120"></a>选择上方插件规格后，显示插件中的实例数，此处仅作显示。</p>
+    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p93701640145120"><a name="p93701640145120"></a><a name="p93701640145120"></a>选择上方插件规格后，显示插件中的实例数。</p>
     </td>
     </tr>
     <tr id="row4370840165119"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p937054045117"><a name="p937054045117"></a><a name="p937054045117"></a>容器</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p1437014065110"><a name="p1437014065110"></a><a name="p1437014065110"></a>选择插件规格后，显示插件容器的CPU和内存配额，此处仅作显示。</p>
+    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p1437014065110"><a name="p1437014065110"></a><a name="p1437014065110"></a>选择插件规格后，显示插件容器的CPU和内存配额。</p>
     <div class="note" id="note323581544217"><a name="note323581544217"></a><a name="note323581544217"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul7274951438"></a><a name="ul7274951438"></a><ul id="ul7274951438"><li>需保证集群下节点资源充足，若资源不足，插件实例无法调度，只能重新安装插件。</li><li>申请值需小于等于限制值，否则无法成功创建。</li><li>建议填写时申请值与限制值相等，因为节点资源不足时优先清理申请值小于限制值的容器资源。</li><li>不同配置所对应的性能结果可参考<a href="https://www.nginx.com/blog/testing-performance-nginx-ingress-controller-kubernetes/" target="_blank" rel="noopener noreferrer">Nginx性能测试报告</a></li></ul>
     </div></div>
     </td>

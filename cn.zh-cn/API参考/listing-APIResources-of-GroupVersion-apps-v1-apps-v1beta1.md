@@ -1,12 +1,14 @@
-# listing APIResources of GroupVersion apps/v1beta1<a name="cce_02_0190"></a>
+# listing APIResources of GroupVersion apps/v1&apps/v1beta1<a name="cce_02_0190"></a>
 
 ## 功能介绍<a name="section1517466"></a>
 
-This API is used to list APIResources of Group Version "apps/v1beta1".
+This API is used to list APIResources of Group Version "apps/v1" and "apps/v1beta1".
 
 ## URI<a name="section13657195"></a>
 
-GET /apis/apps/v1beta1
+GET /apis/apps/v1（适用于1.15以上版本的集群）
+
+GET /apis/apps/v1beta1（仅适用于1.15及以下版本的集群）
 
 ## 请求消息<a name="section55805891"></a>
 
@@ -94,7 +96,7 @@ N/A.
 </tr>
 <tr id="row9338638"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p18232227"><a name="p18232227"></a><a name="p18232227"></a>shortNames</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p415404"><a name="p415404"></a><a name="p415404"></a>Array&nbsp;of&nbsp;strings</p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p415404"><a name="p415404"></a><a name="p415404"></a>Arrayofstrings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p33647762"><a name="p33647762"></a><a name="p33647762"></a>shortNames is a list of suggested short names of the resource.</p>
 </td>
@@ -108,7 +110,7 @@ N/A.
 </tr>
 <tr id="row50238053"><td class="cellrowborder" valign="top" width="25.252525252525253%" headers="mcps1.2.4.1.1 "><p id="p42750513"><a name="p42750513"></a><a name="p42750513"></a>verbs</p>
 </td>
-<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p40239562"><a name="p40239562"></a><a name="p40239562"></a>Array&nbsp;of&nbsp;strings</p>
+<td class="cellrowborder" valign="top" width="30.303030303030305%" headers="mcps1.2.4.1.2 "><p id="p40239562"><a name="p40239562"></a><a name="p40239562"></a>Arrayofstrings</p>
 </td>
 <td class="cellrowborder" valign="top" width="44.44444444444445%" headers="mcps1.2.4.1.3 "><p id="p38179095"><a name="p38179095"></a><a name="p38179095"></a>verbs is a list of supported kube verbs (this includes get, list, watch, create, update, patch, delete, deletecollection, and proxy)</p>
 </td>

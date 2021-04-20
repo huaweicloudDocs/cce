@@ -1,10 +1,5 @@
 # 创建有状态负载\(StatefulSet\)<a name="cce_01_0048"></a>
 
--   [操作场景](#section530452474212)
--   [前提条件](#section1734962819219)
--   [通过控制台创建](#section16385130102112)
--   [通过kubectl命令行创建](#section113441881214)
-
 ## 操作场景<a name="section530452474212"></a>
 
 在运行过程中会保存数据或状态的工作负载称为“有状态工作负载（statefulset）”。例如Mysql，它需要存储产生的新数据。
@@ -71,9 +66,9 @@
     </tr>
     <tr id="row12349181161518"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p1522718171417"><a name="p1522718171417"></a><a name="p1522718171417"></a>* 容器运行时</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p1166918711589"><a name="p1166918711589"></a><a name="p1166918711589"></a>节点上运行的容器应用使用的默认运行时，不同运行时场景支持的节点规格不同，创建后不可修改。<strong id="b1631410435919"><a name="b1631410435919"></a><a name="b1631410435919"></a>该参数仅支持CCE Turbo集群。</strong></p>
-    <a name="ul1138261162510"></a><a name="ul1138261162510"></a><ul id="ul1138261162510"><li>docker运行时：普通容器</li><li>安全运行时：安全容器</li></ul>
-    <p id="p11513151810263"><a name="p11513151810263"></a><a name="p11513151810263"></a>两种容器运行时的对比请参见<a href="https://support.huaweicloud.com/zh-cn/cce_faq/cce_faq_00301.html" target="_blank" rel="noopener noreferrer">普通容器与安全容器的区别</a>。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p1166918711589"><a name="p1166918711589"></a><a name="p1166918711589"></a>请选择容器的运行时（Runtime），创建后不可修改。<strong id="b1631410435919"><a name="b1631410435919"></a><a name="b1631410435919"></a>该参数仅支持CCE Turbo集群。</strong></p>
+    <a name="ul6607165734220"></a><a name="ul6607165734220"></a><ul id="ul6607165734220"><li>docker运行时：普通容器</li><li>安全运行时：选择该运行时后工作负载容器将升级为安全容器，该工作负载只能运行在使用安全运行时的节点上。</li></ul>
+    <p id="p11513151810263"><a name="p11513151810263"></a><a name="p11513151810263"></a>两种容器运行时的对比请参见<a href="节点概述.md#section7201124294111">普通容器与安全容器的区别</a>。</p>
     </td>
     </tr>
     <tr id="cce_01_0047_row1233713478354"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p15337247203514"><a name="cce_01_0047_p15337247203514"></a><a name="cce_01_0047_p15337247203514"></a>弹性网卡</p>
@@ -86,7 +81,7 @@
     </tr>
     <tr id="cce_01_0047_row18442191224514"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p244261214513"><a name="cce_01_0047_p244261214513"></a><a name="cce_01_0047_p244261214513"></a>时区同步</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p644215125454"><a name="cce_01_0047_p644215125454"></a><a name="cce_01_0047_p644215125454"></a>单击<a name="cce_01_0047_image16680652104914"></a><a name="cce_01_0047_image16680652104914"></a><span><img id="cce_01_0047_image16680652104914" src="figures/2020-08-13_092636-16.png"></span>开启后，容器将和节点使用相同时区。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p644215125454"><a name="cce_01_0047_p644215125454"></a><a name="cce_01_0047_p644215125454"></a>单击<a name="cce_01_0047_image16680652104914"></a><a name="cce_01_0047_image16680652104914"></a><span><img id="cce_01_0047_image16680652104914" src="figures/2020-08-13_092636-17.png"></span>开启后，容器将和节点使用相同时区。</p>
     <div class="notice" id="cce_01_0047_note5422953172616"><a name="cce_01_0047_note5422953172616"></a><a name="cce_01_0047_note5422953172616"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="cce_01_0047_p11422145392614"><a name="cce_01_0047_p11422145392614"></a><a name="cce_01_0047_p11422145392614"></a>时区同步功能开启后，在<span class="uicontrol" id="cce_01_0047_uicontrol107671854164714"><a name="cce_01_0047_uicontrol107671854164714"></a><a name="cce_01_0047_uicontrol107671854164714"></a>“数据存储 &gt; 本地磁盘”</span>中，将会自动添加HostPath类型的磁盘，请勿修改删除该磁盘。</p>
     </div></div>
     </td>

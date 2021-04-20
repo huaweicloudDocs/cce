@@ -1,21 +1,16 @@
 # 购买CCE Turbo集群<a name="cce_01_0298"></a>
 
--   [约束与限制](#section1675221242512)
--   [购买集群步骤](#section10209182314553)
--   [购买节点步骤](#section13305183010495)
--   [相关操作](#section473818525817)
-
 CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎服务，具备软硬协同、网络无损、安全可靠、调度智能的优势，为用户提供一站式、高性价比的全新容器服务体验。
 
 ## 约束与限制<a name="section1675221242512"></a>
 
 -   单Region下单用户可创建的集群总数限制为50个，如果配额不满足业务需求，请[到“我的配额”提交申请](https://console.huaweicloud.com/quota/?locale=zh-cn#/quota)，查看配额请参见[关于配额](https://support.huaweicloud.com/usermanual-iaas/zh-cn_topic_0040259342.html)。
--   CCE Turbo集群的网络模式只支持云原生网络2.0，云原生网络2.0的详细介绍请参见[什么是云原生网络2.0，适用于什么场景？](https://support.huaweicloud.com/cce_faq/cce_faq_00246.html)。
+-   CCE Turbo集群的网络模式只支持云原生网络2.0，云原生网络2.0的详细介绍请参见[云原生网络2.0](云原生网络2-0.md)。
 -   CCE Turbo集群的节点目前仅支持基于擎天软硬件协同架构的机型。
--   TrunkPort能力仅在1.19版本的CCE Turbo集群中公测使用。
--   在1.19版本的CCE Turbo集群中添加的共池BMS节点，容器使用的网卡默认配置是4队列，详情请参见[CCE Turbo共池BMS节点容器网卡多队列配置](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0017.html)。
+-   TrunkPort能力仅在1.19版本的CCE Turbo集群中使用。
+-   在1.19版本的CCE Turbo集群中添加的共池BMS节点，容器使用的网卡默认配置是4队列。
 
-## 购买集群步骤<a name="section10209182314553"></a>
+## 购买步骤<a name="section10209182314553"></a>
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中单击“资源管理  \>  集群管理”，单击“CCE Turbo集群“右侧的“购买”。
 
@@ -130,7 +125,7 @@ CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎�
     </tr>
     <tr id="row9381745114114"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p138224519412"><a name="p138224519412"></a><a name="p138224519412"></a>kube-proxy转发模式</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p16382124517417"><a name="p16382124517417"></a><a name="p16382124517417"></a>设置Service和其后端容器Pod之间进行负载均衡的方式，默认为。创建后不可修改。</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p16382124517417"><a name="p16382124517417"></a><a name="p16382124517417"></a>设置Service和其后端容器Pod之间进行负载均衡的方式，创建后不可修改。</p>
     <a name="ul171711948164219"></a><a name="ul171711948164219"></a><ul id="ul171711948164219"><li>iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。</li></ul>
     </td>
     </tr>
@@ -208,9 +203,9 @@ CCE Turbo集群创建完成后，可以在集群中购买节点。
     </tr>
     <tr id="row96694785812"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p7669676587"><a name="p7669676587"></a><a name="p7669676587"></a>容器运行时</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p1166918711589"><a name="p1166918711589"></a><a name="p1166918711589"></a>节点上运行的容器应用使用的默认运行时，不同运行时场景支持的节点规格不同。创建后不可修改。</p>
-    <a name="ul1138261162510"></a><a name="ul1138261162510"></a><ul id="ul1138261162510"><li>docker运行时：普通容器</li><li>安全运行时：安全容器</li></ul>
-    <p id="p11513151810263"><a name="p11513151810263"></a><a name="p11513151810263"></a>两种容器运行时的对比请参见<a href="https://support.huaweicloud.com/zh-cn/cce_faq/cce_faq_00301.html" target="_blank" rel="noopener noreferrer">普通容器与安全容器的区别</a>。</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p1166918711589"><a name="p1166918711589"></a><a name="p1166918711589"></a>选择节点上容器使用的运行时（Runtime），不同容器运行时支持的节点规格不同，创建后不可修改。</p>
+    <a name="ul1138261162510"></a><a name="ul1138261162510"></a><ul id="ul1138261162510"><li>docker运行时：普通容器</li><li>安全运行时：节点选择该容器运行时后，创建工作负载时如果也选择<span class="uicontrol" id="uicontrol2031523310332"><a name="uicontrol2031523310332"></a><a name="uicontrol2031523310332"></a>“安全运行时”</span>，则该工作负载只能运行在使用安全运行时的节点上。</li></ul>
+    <p id="p17135151618277"><a name="p17135151618277"></a><a name="p17135151618277"></a>两种容器运行时的对比请参见<a href="节点概述.md#section7201124294111">普通容器与安全容器的区别</a>。</p>
     </td>
     </tr>
     <tr id="row156691178589"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p1669177185817"><a name="p1669177185817"></a><a name="p1669177185817"></a>节点规格</p>
@@ -264,7 +259,7 @@ CCE Turbo集群创建完成后，可以在集群中购买节点。
     </tr>
     <tr id="row1966913718588"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p0669147185817"><a name="p0669147185817"></a><a name="p0669147185817"></a>数据盘</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p246755017336"><a name="p246755017336"></a><a name="p246755017336"></a>点云服务器使用的数据盘，供容器运行时和Kubelet组件使用。您可以设置数据盘的规格为100GB-32678GB之间的数值，缺省值为100GB。数据盘可提供的云硬盘类型与上方系统盘一致。</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p246755017336"><a name="p246755017336"></a><a name="p246755017336"></a>节点云服务器使用的数据盘，供容器运行时和Kubelet组件使用。您可以设置数据盘的规格为100GB-32768GB之间的数值，缺省值为100GB。数据盘可提供的云硬盘类型与上方系统盘一致。</p>
     <div class="caution" id="note124678507331"><a name="note124678507331"></a><a name="note124678507331"></a><span class="cautiontitle"> 注意： </span><div class="cautionbody"><p id="p3467185013330"><a name="p3467185013330"></a><a name="p3467185013330"></a>若数据盘卸载或损坏，会导致docker服务异常，最终导致节点不可用。建议不要删除该数据盘。</p>
     </div></div>
     <p id="p1770724193511"><a name="p1770724193511"></a><a name="p1770724193511"></a>单击后方的“展开”可设置自定义空间分配。</p>

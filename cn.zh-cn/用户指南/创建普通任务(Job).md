@@ -1,11 +1,5 @@
 # 创建普通任务\(Job\)<a name="cce_01_0150"></a>
 
--   [操作场景](#section142417128434)
--   [前提条件](#s50bf087555b1437aa249c1259138706c)
--   [操作步骤](#sb8a02965b2624dbbabab320046ca4973)
--   [使用kubectl创建Job](#section450152719412)
--   [相关操作](#s9bef0428158a4935b466ea150ccae961)
-
 ## 操作场景<a name="section142417128434"></a>
 
 普通任务是一次性运行的短任务，部署完成后即可执行。正常退出（exit 0）后，任务即执行完成。
@@ -64,9 +58,9 @@
     </tr>
     <tr id="row33213981613"><td class="cellrowborder" valign="top" width="19.77%" headers="mcps1.2.3.1.1 "><p id="p1522718171417"><a name="p1522718171417"></a><a name="p1522718171417"></a>* 容器运行时</p>
     </td>
-    <td class="cellrowborder" valign="top" width="80.23%" headers="mcps1.2.3.1.2 "><p id="p1166918711589"><a name="p1166918711589"></a><a name="p1166918711589"></a>节点上运行的容器应用使用的默认运行时，不同运行时场景支持的节点规格不同，创建后不可修改。<strong id="b1631410435919"><a name="b1631410435919"></a><a name="b1631410435919"></a>该参数仅支持CCE Turbo集群。</strong></p>
-    <a name="ul1138261162510"></a><a name="ul1138261162510"></a><ul id="ul1138261162510"><li>docker运行时：普通容器</li><li>安全运行时：安全容器</li></ul>
-    <p id="p11513151810263"><a name="p11513151810263"></a><a name="p11513151810263"></a>两种容器运行时的对比请参见<a href="https://support.huaweicloud.com/zh-cn/cce_faq/cce_faq_00301.html" target="_blank" rel="noopener noreferrer">普通容器与安全容器的区别</a>。</p>
+    <td class="cellrowborder" valign="top" width="80.23%" headers="mcps1.2.3.1.2 "><div class="p" id="p1192543112451"><a name="p1192543112451"></a><a name="p1192543112451"></a>请选择容器的运行时（Runtime），创建后不可修改。<strong id="b1631410435919"><a name="b1631410435919"></a><a name="b1631410435919"></a>该参数仅支持CCE Turbo集群。</strong><a name="ul149613219450"></a><a name="ul149613219450"></a><ul id="ul149613219450"><li>docker运行时：普通容器</li><li>安全运行时：选择该运行时后将升级为安全容器，该任务只能运行在使用安全运行时的节点上。</li></ul>
+    </div>
+    <p id="p10118529112613"><a name="p10118529112613"></a><a name="p10118529112613"></a>两种容器运行时的对比请参见<a href="节点概述.md#section7201124294111">普通容器与安全容器的区别</a>。</p>
     </td>
     </tr>
     <tr id="row65301051950"><td class="cellrowborder" valign="top" width="19.77%" headers="mcps1.2.3.1.1 "><p id="p4877104910012"><a name="p4877104910012"></a><a name="p4877104910012"></a>CCI弹性承载</p>

@@ -1,8 +1,5 @@
 # 使用kubectl部署带云硬盘存储卷的工作负载<a name="cce_01_0257"></a>
 
--   [操作场景](#section1789161805617)
--   [操作步骤](#section421772310564)
-
 ## 操作场景<a name="section1789161805617"></a>
 
 云硬盘创建或导入CCE后，可以在工作负载中挂载云硬盘。
@@ -12,7 +9,7 @@
 
 ## 操作步骤<a name="section421772310564"></a>
 
-1.  执行如下命令，配置名为“evs-pod-example.yaml“的创建Pod的yaml文件。
+1.  执行如下命令，配置名为“evs-pod-example.yaml“的创建无状态工作负载的yaml文件。
 
     **touch evs-pod-example.yaml**
 
@@ -42,6 +39,8 @@
             volumeMounts: 
             - mountPath: /tmp 
               name: pvc-evs-example 
+          imagePullSecrets:
+            - name: default-secret
           restartPolicy: Always 
           volumes: 
           - name: pvc-evs-example 

@@ -1,7 +1,4 @@
-# 使用已有PVC创建有状态工作负载<a name="cce_01_0262"></a>
-
--   [操作场景](#section1062914713566)
--   [操作步骤](#section1530655595611)
+# 使用kubectl部署带文件存储卷的有状态工作负载<a name="cce_01_0262"></a>
 
 ## 操作场景<a name="section1062914713566"></a>
 
@@ -11,7 +8,7 @@ CCE支持使用已有的文件存储（PersistentVolumeClaim），创建有状�
 
 1.  参照[创建文件存储卷](使用文件存储卷.md#section1191025105819)中操作创建文件存储卷，记录文件存储卷名称。
 2.  请参见[通过kubectl或web-terminal插件操作CCE集群](通过kubectl或web-terminal插件操作CCE集群.md)配置kubectl命令。
-3.  新建一个PVC文件，用于创建工作负载。假设文件名为**sfs-statefulset-example**.**yaml**。
+3.  新建一个YAML文件，用于创建工作负载。假设文件名为**sfs-statefulset-example**.**yaml**。
 
     **touch sfs-statefulset-example.yaml**
 

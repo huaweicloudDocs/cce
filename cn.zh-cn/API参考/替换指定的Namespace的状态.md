@@ -104,7 +104,7 @@ PUT /api/v1/namespaces/\{name\}/status
         ]
     },
     "status": {
-        "phase": "Terminating"
+        "phase": "Active"
     }
 }
 ```

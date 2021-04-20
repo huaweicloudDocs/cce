@@ -1,9 +1,5 @@
 # 使用kubectl对接已有云硬盘<a name="cce_01_0256"></a>
 
--   [操作场景](#section1934656185510)
--   [操作步骤](#section265070105619)
--   [历史版本示例](#section1696992513179)
-
 ## 操作场景<a name="section1934656185510"></a>
 
 CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，通过创建相应的PersistentVolumeClaim绑定当前PersistentVolume使用。
@@ -155,30 +151,30 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
         <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p166184444820"><a name="p166184444820"></a><a name="p166184444820"></a>云硬盘磁盘模式，取值支持SCSI。</p>
         </td>
         </tr>
-        <tr id="row5449102519252"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p844919252256"><a name="p844919252256"></a><a name="p844919252256"></a><span id="ph04611631631"><a name="ph04611631631"></a><a name="ph04611631631"></a>spec.claimRef</span><span id="ph13024515314"><a name="ph13024515314"></a><a name="ph13024515314"></a>.</span><span id="ph7585531311"><a name="ph7585531311"></a><a name="ph7585531311"></a>apiVersion</span></p>
+        <tr id="row5449102519252"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p844919252256"><a name="p844919252256"></a><a name="p844919252256"></a>spec.claimRef.apiVersion</p>
         </td>
-        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p34491625162513"><a name="p34491625162513"></a><a name="p34491625162513"></a><span id="ph116414211649"><a name="ph116414211649"></a><a name="ph116414211649"></a>固定值"v1</span><span id="ph88894371252"><a name="ph88894371252"></a><a name="ph88894371252"></a>"。</span></p>
-        </td>
-        </tr>
-        <tr id="row8972110202617"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p12973191018268"><a name="p12973191018268"></a><a name="p12973191018268"></a><span id="ph1477315499420"><a name="ph1477315499420"></a><a name="ph1477315499420"></a>spec.claimRef</span><span id="ph187731149043"><a name="ph187731149043"></a><a name="ph187731149043"></a>.kind</span></p>
-        </td>
-        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p199736108269"><a name="p199736108269"></a><a name="p199736108269"></a><span id="ph1782216511614"><a name="ph1782216511614"></a><a name="ph1782216511614"></a>固定值"PersistentVolumeClaim"</span><span id="ph16967038173314"><a name="ph16967038173314"></a><a name="ph16967038173314"></a>。</span></p>
+        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p34491625162513"><a name="p34491625162513"></a><a name="p34491625162513"></a>固定值"v1"。</p>
         </td>
         </tr>
-        <tr id="row4481204082618"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p18482840122612"><a name="p18482840122612"></a><a name="p18482840122612"></a><span id="ph1468911581668"><a name="ph1468911581668"></a><a name="ph1468911581668"></a>spec.claimRef</span><span id="ph1668920583612"><a name="ph1668920583612"></a><a name="ph1668920583612"></a>.name</span></p>
+        <tr id="row8972110202617"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p12973191018268"><a name="p12973191018268"></a><a name="p12973191018268"></a>spec.claimRef.kind</p>
         </td>
-        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p1148224019267"><a name="p1148224019267"></a><a name="p1148224019267"></a><span id="ph1581217267150"><a name="ph1581217267150"></a><a name="ph1581217267150"></a>pvc名称；</span><span id="ph542102163812"><a name="ph542102163812"></a><a name="ph542102163812"></a>与下一步创建的pvc的name一致</span><span id="ph11777183193813"><a name="ph11777183193813"></a><a name="ph11777183193813"></a>。</span></p>
+        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p199736108269"><a name="p199736108269"></a><a name="p199736108269"></a>固定值"PersistentVolumeClaim"。</p>
         </td>
         </tr>
-        <tr id="row105042642719"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p050419612712"><a name="p050419612712"></a><a name="p050419612712"></a><span id="ph1276717511202"><a name="ph1276717511202"></a><a name="ph1276717511202"></a>spec.claimRef</span><span id="ph12767195142018"><a name="ph12767195142018"></a><a name="ph12767195142018"></a>.name</span><span id="ph365095719205"><a name="ph365095719205"></a><a name="ph365095719205"></a>space</span></p>
+        <tr id="row4481204082618"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p18482840122612"><a name="p18482840122612"></a><a name="p18482840122612"></a>spec.claimRef.name</p>
         </td>
-        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p165045614278"><a name="p165045614278"></a><a name="p165045614278"></a><span id="ph279115832114"><a name="ph279115832114"></a><a name="ph279115832114"></a>pvc的namespace；与下一步创建的pvc的namespace一致。</span></p>
+        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p1148224019267"><a name="p1148224019267"></a><a name="p1148224019267"></a>pvc名称；与下一步创建的pvc的name一致。</p>
+        </td>
+        </tr>
+        <tr id="row105042642719"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p050419612712"><a name="p050419612712"></a><a name="p050419612712"></a>spec.claimRef.namespace</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p165045614278"><a name="p165045614278"></a><a name="p165045614278"></a>pvc的namespace；与下一步创建的pvc的namespace一致。</p>
         </td>
         </tr>
         </tbody>
         </table>
 
-    -   **vi pv-evs-example.yaml**
+    -   **vi pvc-evs-example.yaml**
 
         **PVC yaml文件配置示例如下：**
 
@@ -453,24 +449,24 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
     <p id="p338644415527"><a name="p338644415527"></a><a name="p338644415527"></a>v1.11.7+以及v1.13的Linux x86 CCE集群要求该字段值必须存在，且基于PVC触发动态创建的都是EVS SCSI模式的卷，因此这里静态PV形式优先选用SCSI模式的云硬盘；同时支持升级后的老集群中VBD卷能够继续正常使用。</p>
     </td>
     </tr>
-    <tr id="row1320925404611"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p1120905414467"><a name="p1120905414467"></a><a name="p1120905414467"></a><span id="ph17582253104712"><a name="ph17582253104712"></a><a name="ph17582253104712"></a>spec.claimRef.apiVersion</span></p>
+    <tr id="row1320925404611"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p1120905414467"><a name="p1120905414467"></a><a name="p1120905414467"></a>spec.claimRef.apiVersion</p>
     </td>
-    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p220911541464"><a name="p220911541464"></a><a name="p220911541464"></a><span id="ph33471211154919"><a name="ph33471211154919"></a><a name="ph33471211154919"></a>固定值"v1"。</span></p>
-    </td>
-    </tr>
-    <tr id="row52872572460"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p62871457164620"><a name="p62871457164620"></a><a name="p62871457164620"></a><span id="ph950116177486"><a name="ph950116177486"></a><a name="ph950116177486"></a>spec.claimRef.kind</span></p>
-    </td>
-    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p13287195716468"><a name="p13287195716468"></a><a name="p13287195716468"></a><span id="ph1096723124918"><a name="ph1096723124918"></a><a name="ph1096723124918"></a>固定值"PersistentVolumeClaim"。</span></p>
+    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p220911541464"><a name="p220911541464"></a><a name="p220911541464"></a>固定值"v1"。</p>
     </td>
     </tr>
-    <tr id="row151672034719"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p1616714019477"><a name="p1616714019477"></a><a name="p1616714019477"></a><span id="ph2154112112481"><a name="ph2154112112481"></a><a name="ph2154112112481"></a>spec.claimRef.name</span></p>
+    <tr id="row52872572460"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p62871457164620"><a name="p62871457164620"></a><a name="p62871457164620"></a>spec.claimRef.kind</p>
     </td>
-    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p616717016473"><a name="p616717016473"></a><a name="p616717016473"></a><span id="ph1871715884818"><a name="ph1871715884818"></a><a name="ph1871715884818"></a>pvc名称；与下一步创建的pvc的name一致。</span></p>
+    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p13287195716468"><a name="p13287195716468"></a><a name="p13287195716468"></a>固定值"PersistentVolumeClaim"。</p>
     </td>
     </tr>
-    <tr id="row19505236477"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p1505173104717"><a name="p1505173104717"></a><a name="p1505173104717"></a><span id="ph58361924104819"><a name="ph58361924104819"></a><a name="ph58361924104819"></a>spec.claimRef.namespace</span></p>
+    <tr id="row151672034719"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p1616714019477"><a name="p1616714019477"></a><a name="p1616714019477"></a>spec.claimRef.name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p95056374715"><a name="p95056374715"></a><a name="p95056374715"></a><span id="ph9278194712487"><a name="ph9278194712487"></a><a name="ph9278194712487"></a>pvc的namespace；与下一步创建的pvc的namespace一致</span><span id="ph14670155374812"><a name="ph14670155374812"></a><a name="ph14670155374812"></a>；</span></p>
+    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p616717016473"><a name="p616717016473"></a><a name="p616717016473"></a>pvc名称；与下一步创建的pvc的name一致。</p>
+    </td>
+    </tr>
+    <tr id="row19505236477"><td class="cellrowborder" valign="top" width="43.81293971582287%" headers="mcps1.2.3.1.1 "><p id="p1505173104717"><a name="p1505173104717"></a><a name="p1505173104717"></a>spec.claimRef.namespace</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="56.18706028417713%" headers="mcps1.2.3.1.2 "><p id="p95056374715"><a name="p95056374715"></a><a name="p95056374715"></a>pvc的namespace；与下一步创建的pvc的namespace一致；</p>
     </td>
     </tr>
     </tbody>

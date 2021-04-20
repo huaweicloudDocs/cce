@@ -12,11 +12,9 @@ The following fields can be updated:
 
 ## URI<a name="section61960472"></a>
 
-PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports 1.9 and 1.9+\)
+PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale （适用于1.9及以上版本的所有集群）
 
-PUT /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports only1.7\)
-
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale \(Supports 1.15 and 1.15-\)
+PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale （仅适用于1.15及以下版本的集群）
 
 [表1](#d0e36373)描述该API的参数。
 
@@ -64,7 +62,7 @@ PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale
 **请求示例：**
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->如果使用第一个URI：/apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale\(Supports 1.9 and 1.9+\)，请将apiVersion的值修改为autoscaling/v1。
+>如果使用第一个URI：/apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale（适用于1.9及以上版本的所有集群），请将apiVersion的值修改为autoscaling/v1。
 
 ```
 {

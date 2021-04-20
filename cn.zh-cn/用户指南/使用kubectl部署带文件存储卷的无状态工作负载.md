@@ -1,7 +1,4 @@
-# 使用kubectl部署带文件存储卷的工作负载<a name="cce_01_0263"></a>
-
--   [操作场景](#section1062914713566)
--   [操作步骤](#section1530655595611)
+# 使用kubectl部署带文件存储卷的无状态工作负载<a name="cce_01_0263"></a>
 
 ## 操作场景<a name="section1062914713566"></a>
 
@@ -39,6 +36,8 @@
             volumeMounts: 
             - mountPath: /tmp                                # 挂载路径
               name: pvc-sfs-example 
+          imagePullSecrets:
+            - name: default-secret
           restartPolicy: Always 
           volumes: 
           - name: pvc-sfs-example 

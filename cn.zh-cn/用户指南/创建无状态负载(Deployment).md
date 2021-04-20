@@ -1,10 +1,5 @@
 # 创建无状态负载\(Deployment\)<a name="cce_01_0047"></a>
 
--   [操作场景](#section686591217411)
--   [前提条件](#section7271245481)
--   [通过控制台创建](#section1996635141916)
--   [通过kubectl命令行创建](#section155246177178)
-
 ## 操作场景<a name="section686591217411"></a>
 
 在运行中始终不保存任何数据或状态的工作负载称为“无状态负载 Deployment”，例如nginx。您可以通过控制台或kubectl命令行创建无状态负载。
@@ -69,9 +64,9 @@
     </tr>
     <tr id="row2211182143"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p1522718171417"><a name="p1522718171417"></a><a name="p1522718171417"></a>* 容器运行时</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p1166918711589"><a name="p1166918711589"></a><a name="p1166918711589"></a>节点上运行的容器应用使用的默认运行时，不同运行时场景支持的节点规格不同，创建后不可修改。<strong id="b1631410435919"><a name="b1631410435919"></a><a name="b1631410435919"></a>该参数仅支持CCE Turbo集群。</strong></p>
-    <a name="ul1138261162510"></a><a name="ul1138261162510"></a><ul id="ul1138261162510"><li>docker运行时：普通容器</li><li>安全运行时：安全容器</li></ul>
-    <p id="p11513151810263"><a name="p11513151810263"></a><a name="p11513151810263"></a>两种容器运行时的对比请参见<a href="https://support.huaweicloud.com/zh-cn/cce_faq/cce_faq_00301.html" target="_blank" rel="noopener noreferrer">普通容器与安全容器的区别</a>。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p1166918711589"><a name="p1166918711589"></a><a name="p1166918711589"></a>请选择容器的运行时（Runtime），创建后不可修改。<strong id="b1631410435919"><a name="b1631410435919"></a><a name="b1631410435919"></a>该参数仅支持CCE Turbo集群。</strong></p>
+    <a name="ul1138261162510"></a><a name="ul1138261162510"></a><ul id="ul1138261162510"><li>docker运行时：普通容器</li><li>安全运行时：选择该运行时后工作负载容器将升级为安全容器，该工作负载只能运行在使用安全运行时的节点上。</li></ul>
+    <p id="p11513151810263"><a name="p11513151810263"></a><a name="p11513151810263"></a>两种容器运行时的对比请参见<a href="节点概述.md#section7201124294111">普通容器与安全容器的区别</a>。</p>
     </td>
     </tr>
     <tr id="row1233713478354"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p15337247203514"><a name="p15337247203514"></a><a name="p15337247203514"></a>弹性网卡</p>
@@ -84,7 +79,7 @@
     </tr>
     <tr id="row18442191224514"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p244261214513"><a name="p244261214513"></a><a name="p244261214513"></a>时区同步</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p644215125454"><a name="p644215125454"></a><a name="p644215125454"></a>单击<a name="image16680652104914"></a><a name="image16680652104914"></a><span><img id="image16680652104914" src="figures/2020-08-13_092636-15.png"></span>开启后，容器将和节点使用相同时区。</p>
+    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p644215125454"><a name="p644215125454"></a><a name="p644215125454"></a>单击<a name="image16680652104914"></a><a name="image16680652104914"></a><span><img id="image16680652104914" src="figures/2020-08-13_092636-16.png"></span>开启后，容器将和节点使用相同时区。</p>
     <div class="notice" id="note5422953172616"><a name="note5422953172616"></a><a name="note5422953172616"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="p11422145392614"><a name="p11422145392614"></a><a name="p11422145392614"></a>时区同步功能开启后，在<span class="uicontrol" id="uicontrol107671854164714"><a name="uicontrol107671854164714"></a><a name="uicontrol107671854164714"></a>“数据存储 &gt; 本地磁盘”</span>中，将会自动添加HostPath类型的磁盘，请勿修改删除该磁盘。</p>
     </div></div>
     </td>
@@ -306,7 +301,8 @@
     <tbody><tr id="row112346841018"><td class="cellrowborder" valign="top" width="37%" headers="mcps1.2.4.1.1 "><p id="p182345811107"><a name="p182345811107"></a><a name="p182345811107"></a>apiVersion</p>
     </td>
     <td class="cellrowborder" valign="top" width="47%" headers="mcps1.2.4.1.2 "><p id="p2023458141014"><a name="p2023458141014"></a><a name="p2023458141014"></a>表示API的版本号。</p>
-    <div class="note" id="note143305521379"><a name="note143305521379"></a><a name="note143305521379"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p19331452133715"><a name="p19331452133715"></a><a name="p19331452133715"></a>集群版本为1.9之前的无状态应用apiVersion格式为extensions/v1beta1，1.9之后的集群兼容apps/v1两种格式Version，请根据集群版本输入。</p>
+    <div class="note" id="note143305521379"><a name="note143305521379"></a><a name="note143305521379"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p1819911527102"><a name="p1819911527102"></a><a name="p1819911527102"></a>请根据集群版本输入：</p>
+    <a name="ul1823483313109"></a><a name="ul1823483313109"></a><ul id="ul1823483313109"><li>1.17及以上版本的集群中无状态应用apiVersion格式为<strong id="b19984186775"><a name="b19984186775"></a><a name="b19984186775"></a>apps/v1</strong></li><li>1.15及以下版本的集群中无状态应用apiVersion格式为<strong id="b620619367112"><a name="b620619367112"></a><a name="b620619367112"></a>extensions/v1beta1</strong></li></ul>
     </div></div>
     </td>
     <td class="cellrowborder" valign="top" width="16%" headers="mcps1.2.4.1.3 "><p id="p6234158101019"><a name="p6234158101019"></a><a name="p6234158101019"></a>必选</p>

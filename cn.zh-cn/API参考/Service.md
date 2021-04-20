@@ -2,7 +2,7 @@
 
 -   **[创建Service](创建Service.md)**  
 
--   **[删除Service](删除Service.md)**  
+-   **[删除指定的Service](删除指定的Service.md)**  
 
 -   **[获取指定的Service](获取指定的Service.md)**  
 

@@ -2,7 +2,7 @@
 
 -   **[创建DaemonSet](创建DaemonSet.md)**  
 
--   **[删除DaemonSet](删除DaemonSet.md)**  
+-   **[删除指定的DaemonSet](删除指定的DaemonSet.md)**  
 
 -   **[删除所有的Daemonset](删除所有的Daemonset.md)**  
 
@@ -14,7 +14,7 @@
 
 -   **[更新指定的DaemonSet的状态](更新指定的DaemonSet的状态.md)**  
 
--   **[列出指定的DaemonSet](列出指定的DaemonSet.md)**  
+-   **[列出所有的DaemonSet](列出所有的DaemonSet.md)**  
 
 -   **[列出指定Namespace下的DaemonSet](列出指定Namespace下的DaemonSet.md)**  
 

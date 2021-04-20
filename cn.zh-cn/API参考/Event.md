@@ -2,6 +2,6 @@
 
 -   **[获取Event](获取Event.md)**  
 
--   **[列出指定的Event](列出指定的Event.md)**  
+-   **[列出指定命名空间下的Event](列出指定命名空间下的Event.md)**  
 
 

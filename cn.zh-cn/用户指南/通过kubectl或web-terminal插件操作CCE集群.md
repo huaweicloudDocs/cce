@@ -1,10 +1,5 @@
 # 通过kubectl或web-terminal插件操作CCE集群<a name="cce_01_0107"></a>
 
--   [操作场景](#section14234115144)
--   [通过web-terminal插件操作集群](#section6597175818153)
--   [使用kubectl操作集群](#section37321625113110)
--   [相关操作](#section422912118536)
-
 ## 操作场景<a name="section14234115144"></a>
 
 本文将以CCE集群为例，介绍如何通过kubectl或web-terminal插件操作CCE集群。
@@ -19,7 +14,7 @@
 
 **背景信息**
 
-若您需要从客户端计算机连接到kubernetes集群，请使用kubernetes命令行客户端[kubectl](https://kubernetes.io/docs/user-guide/kubectl/)。
+若您需要从客户端计算机连接到kubernetes集群，请使用kubernetes命令行客户端kubectl，使用方法请参见[安装并配置 kubectl](https://kubernetes.io/zh/docs/tasks/tools/install-kubectl/)。
 
 **前提条件**
 

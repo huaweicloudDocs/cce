@@ -282,7 +282,7 @@ GET /api/v3/addons/\{id\}
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Map&lt;String,Object&gt;</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板安装参数（各插件不同）</p>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板安装参数（各插件不同），请根据具体插件模板信息填写安装参数。</p>
 </td>
 </tr>
 </tbody>

@@ -1,10 +1,5 @@
 # 通过Kubectl命令行创建Ingress<a name="cce_01_0252"></a>
 
--   [操作场景](#section12681123215510)
--   [前提条件](#section1186074313511)
--   [创建Ingress-对接已有ELB](#section88349576517)
--   [创建Ingress-自动创建ELB](#section12426658105015)
-
 ## 操作场景<a name="section12681123215510"></a>
 
 本节以nginx为例，说明kubectl命令实现ingress访问的方法。
@@ -202,7 +197,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="13.821382138213819%" headers="mcps1.2.5.1.3 "><p id="p172221881413"><a name="p172221881413"></a><a name="p172221881413"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="47.714771477147714%" headers="mcps1.2.5.1.4 "><p id="p52226812119"><a name="p52226812119"></a><a name="p52226812119"></a>为子网的ID，取值范围：1-100字符。</p>
+    <td class="cellrowborder" valign="top" width="47.714771477147714%" headers="mcps1.2.5.1.4 "><p id="p52226812119"><a name="p52226812119"></a><a name="p52226812119"></a>为集群所在子网的ID，取值范围：1-100字符。</p>
     <a name="ul1822214810112"></a><a name="ul1822214810112"></a><ul id="ul1822214810112"><li>Kubernetes v1.11.7-r0及以下版本的集群自动创建时：必填，</li><li>Kubernetes v1.11.7-r0以上版本的集群：可不填。</li></ul>
     <p id="p2222158718"><a name="p2222158718"></a><a name="p2222158718"></a>获取方法请参见：<a href="https://support.huaweicloud.com/api-vpc/vpc_api_0005.html" target="_blank" rel="noopener noreferrer">VPC子网接口与OpenStack Neutron子网接口的区别是什么？</a></p>
     </td>
@@ -852,6 +847,6 @@
     其中，10.154.76.63为统一负载均衡实例的IP地址。
 
     **图 2**  访问healthz<a name="fig17193181335118"></a>  
-    ![](figures/访问healthz-24.png "访问healthz-24")
+    ![](figures/访问healthz-25.png "访问healthz-25")
 
 

@@ -8,9 +8,6 @@
 
 -   metadata.selfLink
 -   metadata.resourceVersion
--   metadata.generation
--   metadata.creationTimestamp
--   metadata.deletionTimestamp
 -   metadata.labels
 -   metadata.clusterName
 -   metadata.generateName
@@ -22,11 +19,9 @@
 
 ## URI<a name="section1524832914503"></a>
 
-PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.9 and 1.9+\)
+PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} （适用于1.9及以上版本的所有集群）
 
-PUT /apis/apps/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports only1.7\)
-
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} \(Supports 1.15 and 1.15-\)
+PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} （仅适用于1.15及以下版本的集群）
 
 [表1](#table14970324122818)描述该API的参数
 

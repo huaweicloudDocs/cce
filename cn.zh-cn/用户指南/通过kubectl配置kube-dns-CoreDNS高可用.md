@@ -1,9 +1,5 @@
 # 通过kubectl配置kube-dns/CoreDNS高可用<a name="cce_01_0162"></a>
 
--   [操作场景](#section4341202011411)
--   [前提条件](#s749b044f6e864a919f0c0616cfad1dab)
--   [操作步骤](#s6797453bdad1452db7d603668deda069)
-
 ## 操作场景<a name="section4341202011411"></a>
 
 通过kubernetes命令行工具来配置kube-dns/CoreDNS的高可用。

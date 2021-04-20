@@ -1,11 +1,5 @@
 # 创建定时任务\(CronJob\)<a name="cce_01_0151"></a>
 
--   [操作场景](#section6515233144317)
--   [前提条件](#s50bf087555b1437aa249c1259138706c)
--   [操作步骤](#s631f9f0386834b23ae6d1e4d19d53382)
--   [使用kubectl创建CronJob](#section13519162224919)
--   [相关操作](#s28175da725cf46d49a4cfca59155a5d2)
-
 ## 操作场景<a name="section6515233144317"></a>
 
 定时任务是按照指定时间周期运行的短任务。使用场景为在某个固定时间点，为所有运行中的节点做时间同步。
@@ -60,9 +54,9 @@ CronJob的典型用法如下所示：
     </tr>
     <tr id="row421423661617"><td class="cellrowborder" valign="top" width="19.77%" headers="mcps1.2.3.1.1 "><p id="p1522718171417"><a name="p1522718171417"></a><a name="p1522718171417"></a>* 容器运行时</p>
     </td>
-    <td class="cellrowborder" valign="top" width="80.23%" headers="mcps1.2.3.1.2 "><p id="p1166918711589"><a name="p1166918711589"></a><a name="p1166918711589"></a>节点上运行的容器应用使用的默认运行时，不同运行时场景支持的节点规格不同，创建后不可修改。<strong id="b1631410435919"><a name="b1631410435919"></a><a name="b1631410435919"></a>该参数仅支持CCE Turbo集群。</strong></p>
-    <a name="ul1138261162510"></a><a name="ul1138261162510"></a><ul id="ul1138261162510"><li>docker运行时：普通容器</li><li>安全运行时：安全容器</li></ul>
-    <p id="p11513151810263"><a name="p11513151810263"></a><a name="p11513151810263"></a>两种容器运行时的对比请参见<a href="https://support.huaweicloud.com/zh-cn/cce_faq/cce_faq_00301.html" target="_blank" rel="noopener noreferrer">普通容器与安全容器的区别</a>。</p>
+    <td class="cellrowborder" valign="top" width="80.23%" headers="mcps1.2.3.1.2 "><div class="p" id="p79481571462"><a name="p79481571462"></a><a name="p79481571462"></a>请选择容器的运行时（Runtime），创建后不可修改。<strong id="b1631410435919"><a name="b1631410435919"></a><a name="b1631410435919"></a>该参数仅支持CCE Turbo集群。</strong><a name="ul15996804467"></a><a name="ul15996804467"></a><ul id="ul15996804467"><li>docker运行时：普通容器</li><li>安全运行时：选择该运行时后将升级为安全容器，该定时任务只能运行在使用安全运行时的节点上。</li></ul>
+    </div>
+    <p id="p164214514263"><a name="p164214514263"></a><a name="p164214514263"></a>两种容器运行时的对比请参见<a href="节点概述.md#section7201124294111">普通容器与安全容器的区别</a>。</p>
     </td>
     </tr>
     <tr id="rdc1b35b8ff3c4072a49b1da4db8f71e5"><td class="cellrowborder" valign="top" width="19.77%" headers="mcps1.2.3.1.1 "><p id="a26499db509ff4ab7a1ac006ca3a8746d"><a name="a26499db509ff4ab7a1ac006ca3a8746d"></a><a name="a26499db509ff4ab7a1ac006ca3a8746d"></a>任务描述</p>

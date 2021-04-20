@@ -1,11 +1,5 @@
 # Tf-operator<a name="cce_01_0199"></a>
 
--   [插件简介](#section173631312185614)
--   [约束与限制](#section58764833810)
--   [安装插件](#section3843632115420)
--   [升级插件](#section23441939916)
--   [卸载插件](#section1484453212546)
-
 ## 插件简介<a name="section173631312185614"></a>
 
 Tf-operator是一个管理Kubernetes上tensorflow应用程序生命周期的operator，旨在像在Kubernetes上运行其他工作负载一样简单的指定和运行tensorflow应用程序。

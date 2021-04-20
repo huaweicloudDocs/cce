@@ -1,7 +1,4 @@
-# 使用kubectl挂载极速文件存储<a name="cce_01_0274"></a>
-
--   [操作场景](#section1062914713566)
--   [操作步骤](#section1530655595611)
+# 使用kubectl部署带极速文件存储卷的无状态工作负载<a name="cce_01_0274"></a>
 
 ## 操作场景<a name="section1062914713566"></a>
 
@@ -9,11 +6,11 @@
 
 ## 操作步骤<a name="section1530655595611"></a>
 
-1.  执行如下命令，配置名为“efs-pod-example.yaml”的创建Pod的yaml文件。
+1.  执行如下命令，配置名为“efs-deployment-example.yaml”的创建deployment的yaml文件。
 
-    **_touch efs-pod-example.yaml_**
+    **_touch efs-deployment-example.yaml_**
 
-    **_vi efs-pod-example.yaml_**
+    **_vi efs-deployment-example.yaml_**
 
     在无状态工作负载中基于pvc共享式使用极速文件存储示例：
 
@@ -21,17 +18,17 @@
     apiVersion: apps/v1  
     kind: Deployment  
     metadata:  
-      name: efs-pod-example                                # 工作负载名称 
+      name: efs-deployment-example                                # 工作负载名称 
       namespace: default  
     spec:  
       replicas: 1  
       selector:  
         matchLabels:  
-          app: efs-pod-example  
+          app: efs-deployment-example  
       template:  
         metadata:  
           labels:  
-            app: efs-pod-example  
+            app: efs-deployment-example  
         spec:  
           containers:  
           - image: nginx  
@@ -39,7 +36,9 @@
             volumeMounts:  
             - mountPath: /tmp                                # 挂载路径 
               name: pvc-efs-example  
-          restartPolicy: Always  
+          restartPolicy: Always
+          imagePullSecrets:
+            - name: default-secret
           volumes:  
           - name: pvc-efs-example  
             persistentVolumeClaim:  
@@ -57,12 +56,12 @@
     </thead>
     <tbody><tr id="row18143134041612"><td class="cellrowborder" valign="top" width="26.42980935875217%" headers="mcps1.2.3.1.1 "><p id="p11431840161611"><a name="p11431840161611"></a><a name="p11431840161611"></a>name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.57019064124783%" headers="mcps1.2.3.1.2 "><p id="p714434016164"><a name="p714434016164"></a><a name="p714434016164"></a>为创建的Pod名称。</p>
+    <td class="cellrowborder" valign="top" width="73.57019064124783%" headers="mcps1.2.3.1.2 "><p id="p714434016164"><a name="p714434016164"></a><a name="p714434016164"></a>为创建的无状态工作负载名称。</p>
     </td>
     </tr>
     <tr id="row1339295514152"><td class="cellrowborder" valign="top" width="26.42980935875217%" headers="mcps1.2.3.1.1 "><p id="p83921559156"><a name="p83921559156"></a><a name="p83921559156"></a>app</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.57019064124783%" headers="mcps1.2.3.1.2 "><p id="p1839395518152"><a name="p1839395518152"></a><a name="p1839395518152"></a>为Pod工作负载名称。</p>
+    <td class="cellrowborder" valign="top" width="73.57019064124783%" headers="mcps1.2.3.1.2 "><p id="p1839395518152"><a name="p1839395518152"></a><a name="p1839395518152"></a>为无状态工作负载名称。</p>
     </td>
     </tr>
     <tr id="row1339365571519"><td class="cellrowborder" valign="top" width="26.42980935875217%" headers="mcps1.2.3.1.1 "><p id="p239365513155"><a name="p239365513155"></a><a name="p239365513155"></a>mountPath</p>
@@ -78,7 +77,7 @@
 
 2.  执行如下命令创建Pod。
 
-    **kubectl create -f efs-pod-example.yaml**
+    **kubectl create -f efs-deployment-example.yaml**
 
     创建完成后，在CCE界面“存储管理 \> 极速文件存储卷”中单击PVC名称，在PVC详情页面可查看极速文件存储服务和PVC的绑定关系。
 

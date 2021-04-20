@@ -1,4 +1,4 @@
-# 列出指定的ConfigMap<a name="cce_02_0175"></a>
+# 列出所有的ConfigMap<a name="cce_02_0175"></a>
 
 ## 功能介绍<a name="section13111539"></a>
 

@@ -6,9 +6,9 @@ This API is used to read the ReplicaSets in a specified namespace.
 
 ## URI<a name="section10326103011818"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/replicasets/\{name\} \(Supports 1.9 and 1.9+\)
+GET /apis/apps/v1/namespaces/\{namespace\}/replicasets/\{name\} （适用于1.9及以上版本的所有集群）
 
-GET /apis/extensions/v1beta1/namespaces/\{namespace\}/replicasets/\{name\}\(Supports 1.15 and 1.15-\)
+GET /apis/extensions/v1beta1/namespaces/\{namespace\}/replicasets/\{name\}（仅适用于1.15及以下版本的集群）
 
 **表 1**  Query参数
 

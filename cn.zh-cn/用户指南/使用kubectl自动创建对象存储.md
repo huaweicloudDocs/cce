@@ -1,8 +1,5 @@
 # 使用kubectl自动创建对象存储<a name="cce_01_0266"></a>
 
--   [操作场景](#section1062914713566)
--   [操作步骤](#section1530655595611)
-
 ## 操作场景<a name="section1062914713566"></a>
 
 动态使用OBS云硬盘可以自动创建并挂载所期望的OBS对象存储，目前支持标准、低频两种类型的桶，分别对应obs-standard、obs-standard-ia。
@@ -24,7 +21,7 @@
     metadata:
       annotations:
         everest.io/obs-volume-type: STANDARD
-        csi.storage.k8s.io/fstype: s3fs
+        csi.storage.k8s.io/fstype: s3fs    # 支持“obsfs”与“s3fs”，s3fs和obsfs不可混用。取值为s3fs时创建是obs对象桶，配套使用s3fs挂载；取值为obsfs时创建的是obs并行文件系统，配套使用obsfs挂载，推荐使用。
       name: obs-warm-provision-pvc
       namespace: default
     spec:

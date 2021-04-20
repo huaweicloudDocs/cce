@@ -1,8 +1,5 @@
 # 使用kubectl自动创建云硬盘<a name="cce_01_0255"></a>
 
--   [操作场景](#section16500136145518)
--   [操作步骤](#section15671218115516)
-
 ## 操作场景<a name="section16500136145518"></a>
 
 CCE支持使用PersistentVolumeClaim（PVC）的形式创建云硬盘。
@@ -94,7 +91,7 @@ CCE支持使用PersistentVolumeClaim（PVC）的形式创建云硬盘。
           name: pvc-evs-auto-example
           namespace: default
           annotations:
-            volume.beta.kubernetes.io/storage-class: SAS
+            volume.beta.kubernetes.io/storage-class: sas
           labels:
             failure-domain.beta.kubernetes.io/region: cn-north-4
             failure-domain.beta.kubernetes.io/zone: cn-north-4a
@@ -117,8 +114,8 @@ CCE支持使用PersistentVolumeClaim（PVC）的形式创建云硬盘。
         </thead>
         <tbody><tr id="row1261764813422"><td class="cellrowborder" valign="top" width="45.53643452541006%" headers="mcps1.2.3.1.1 "><p id="p86174487428"><a name="p86174487428"></a><a name="p86174487428"></a>volume.beta.kubernetes.io/storage-class</p>
         </td>
-        <td class="cellrowborder" valign="top" width="54.46356547458995%" headers="mcps1.2.3.1.2 "><p id="p661712486425"><a name="p661712486425"></a><a name="p661712486425"></a>云硬盘类型，全大写。</p>
-        <p id="p4617124844212"><a name="p4617124844212"></a><a name="p4617124844212"></a>当前支持高I/O（SAS）、超高I/O（SSD）和普通I/O（SATA）。</p>
+        <td class="cellrowborder" valign="top" width="54.46356547458995%" headers="mcps1.2.3.1.2 "><p id="p661712486425"><a name="p661712486425"></a><a name="p661712486425"></a>云硬盘类型，小写。</p>
+        <p id="p4617124844212"><a name="p4617124844212"></a><a name="p4617124844212"></a>当前支持高I/O（sas）、超高I/O（ssd）和普通I/O（sata）。</p>
         </td>
         </tr>
         <tr id="row26171848134218"><td class="cellrowborder" valign="top" width="45.53643452541006%" headers="mcps1.2.3.1.1 "><p id="p8617174874217"><a name="p8617174874217"></a><a name="p8617174874217"></a>failure-domain.beta.kubernetes.io/region</p>

@@ -1,4 +1,4 @@
-# 列出指定的DaemonSet<a name="cce_02_0141"></a>
+# 列出所有的DaemonSet<a name="cce_02_0141"></a>
 
 ## 功能介绍<a name="section4435211"></a>
 
@@ -6,9 +6,9 @@ This API is used to list all DemonSet resource objects.
 
 ## URI<a name="section39916899"></a>
 
-GET /apis/apps/v1/daemonsets \(Supports 1.9 and 1.9+\)
+GET /apis/apps/v1/daemonsets （适用于1.9及以上版本的所有集群）
 
-GET /apis/extensions/v1beta1/daemonsets \(Supports 1.15 and 1.15-\)
+GET /apis/extensions/v1beta1/daemonsets （仅适用于1.15及以下版本的集群）
 
 [表1](#d0e33270)描述该API的参数。
 

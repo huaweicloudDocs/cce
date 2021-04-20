@@ -1,11 +1,5 @@
 # 网络平面\(NetworkAttachmentDefinition\)<a name="cce_01_0196"></a>
 
--   [约束与限制](#section332285584912)
--   [通过界面创建](#section1231151981314)
--   [通过kubectl命令行创建](#section1111120232202)
--   [Pod使用ENI能力](#section17897104515244)
--   [其他操作](#section2314125415245)
-
 网络平面（NetworkAttachmentDefinition）是集群的一种crd资源，为容器对接ENI（Elastic Network Interface，弹性网络接口）提供配置项，如VPC，子网等。关联网络平面的工作负载支持对接弹性网卡服务，容器能直接绑定弹性网卡，并对外提供服务。
 
 **图 1**  网络平面<a name="fig8117226195717"></a>  
@@ -51,7 +45,7 @@
 ## 通过kubectl命令行创建<a name="section1111120232202"></a>
 
 1.  登录已配置好kubectl命令的弹性云服务器。登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
-2.  创建networkattachment-test.yaml。
+2.  修改networkattachment-test.yaml。
 
     **vi networkattachment-test.yaml**
 
@@ -66,9 +60,7 @@
       namespace: kube-system
     spec:
       config: >-
-        {"cniVersion":"0.2.0","name":"networkattach","type":"eni-neutron","bridge":"br0","args":{"phynet":"phy_net2","vpc_id":"7a4d731e-fe17-4b72-aa17-962b8363b2d3","securityGroups":"3289d598-8e05-40d8-b726-1f2c425d4935","subnetID":"2945a96b-03a0-4e11-9012-746fe09f714d","cidr":"192.168.1.0/24","availableZone":"cn-north-7b","region":"cn-north-7"}}
-    status:
-      state: Active
+        {"cniVersion":"0.2.0","name":"test","type":"eni-neutron","bridge":"br0","args":{"phynet":"phy_net2","vpc_id":"7a4d731e-fe17-4b72-aa17-962b8363b2d3","securityGroups":"3289d598-8e05-40d8-b726-1f2c425d4935","subnetID":"2945a96b-03a0-4e11-9012-746fe09f714d","cidr":"192.168.1.0/24","availableZone":"cn-north-7b","region":"cn-north-7"}}
     ```
 
     **表 1**  关键参数说明
@@ -90,7 +82,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="18.05%" headers="mcps1.2.5.1.3 "><p id="p519065016538"><a name="p519065016538"></a><a name="p519065016538"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="47.620000000000005%" headers="mcps1.2.5.1.4 "><p id="p14190850165311"><a name="p14190850165311"></a><a name="p14190850165311"></a>租户ID</p>
+    <td class="cellrowborder" valign="top" width="47.620000000000005%" headers="mcps1.2.5.1.4 "><p id="p14190850165311"><a name="p14190850165311"></a><a name="p14190850165311"></a>Project ID</p>
     </td>
     </tr>
     <tr id="row1190185013533"><td class="cellrowborder" valign="top" width="18.360000000000003%" headers="mcps1.2.5.1.1 "><p id="p2019111500531"><a name="p2019111500531"></a><a name="p2019111500531"></a>config</p>
@@ -124,7 +116,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="17.72%" headers="mcps1.2.5.1.3 "><p id="p10439105495317"><a name="p10439105495317"></a><a name="p10439105495317"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="47.69%" headers="mcps1.2.5.1.4 "><p id="p134391054155313"><a name="p134391054155313"></a><a name="p134391054155313"></a>cni版本</p>
+    <td class="cellrowborder" valign="top" width="47.69%" headers="mcps1.2.5.1.4 "><p id="p134391054155313"><a name="p134391054155313"></a><a name="p134391054155313"></a>cni版本，支持版本：0.3.1</p>
     </td>
     </tr>
     <tr id="row743916543538"><td class="cellrowborder" valign="top" width="18.240000000000002%" headers="mcps1.2.5.1.1 "><p id="p660861418561"><a name="p660861418561"></a><a name="p660861418561"></a>name</p>
@@ -153,7 +145,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="17.72%" headers="mcps1.2.5.1.3 "><p id="p124402054185318"><a name="p124402054185318"></a><a name="p124402054185318"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="47.69%" headers="mcps1.2.5.1.4 "><p id="p10440175455315"><a name="p10440175455315"></a><a name="p10440175455315"></a>网桥</p>
+    <td class="cellrowborder" valign="top" width="47.69%" headers="mcps1.2.5.1.4 "><p id="p10440175455315"><a name="p10440175455315"></a><a name="p10440175455315"></a>网桥（已废弃）</p>
     </td>
     </tr>
     <tr id="row7440145465316"><td class="cellrowborder" valign="top" width="18.240000000000002%" headers="mcps1.2.5.1.1 "><p id="p15440175414534"><a name="p15440175414534"></a><a name="p15440175414534"></a>args</p>
@@ -188,7 +180,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="17.73%" headers="mcps1.2.5.1.3 "><p id="p1169811815411"><a name="p1169811815411"></a><a name="p1169811815411"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="47.75%" headers="mcps1.2.5.1.4 "><p id="p20145115201915"><a name="p20145115201915"></a><a name="p20145115201915"></a>物理网络平面</p>
+    <td class="cellrowborder" valign="top" width="47.75%" headers="mcps1.2.5.1.4 "><p id="p20145115201915"><a name="p20145115201915"></a><a name="p20145115201915"></a>物理网络平面（已废弃）</p>
     </td>
     </tr>
     <tr id="row146989181347"><td class="cellrowborder" valign="top" width="18.41%" headers="mcps1.2.5.1.1 "><p id="p86983189411"><a name="p86983189411"></a><a name="p86983189411"></a>vpc_id</p>
@@ -197,7 +189,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="17.73%" headers="mcps1.2.5.1.3 "><p id="p1569813189420"><a name="p1569813189420"></a><a name="p1569813189420"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="47.75%" headers="mcps1.2.5.1.4 "><p id="p3698918946"><a name="p3698918946"></a><a name="p3698918946"></a>虚拟私有云ID</p>
+    <td class="cellrowborder" valign="top" width="47.75%" headers="mcps1.2.5.1.4 "><p id="p3698918946"><a name="p3698918946"></a><a name="p3698918946"></a>当前集群的虚拟私有云ID</p>
     </td>
     </tr>
     <tr id="row126981918346"><td class="cellrowborder" valign="top" width="18.41%" headers="mcps1.2.5.1.1 "><p id="p206986181540"><a name="p206986181540"></a><a name="p206986181540"></a>securityGroups</p>
@@ -217,7 +209,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="17.73%" headers="mcps1.2.5.1.3 "><p id="p3698618645"><a name="p3698618645"></a><a name="p3698618645"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="47.75%" headers="mcps1.2.5.1.4 "><p id="p869813182419"><a name="p869813182419"></a><a name="p869813182419"></a>子网ID，取值范围：1-100字符。</p>
+    <td class="cellrowborder" valign="top" width="47.75%" headers="mcps1.2.5.1.4 "><p id="p869813182419"><a name="p869813182419"></a><a name="p869813182419"></a>同一VPC下非集群的子网ID，取值范围：1-100字符。</p>
     <p id="p1458517992217"><a name="p1458517992217"></a><a name="p1458517992217"></a>获取方式：</p>
     <p id="p8194415162211"><a name="p8194415162211"></a><a name="p8194415162211"></a>在控制台的<span class="uicontrol" id="uicontrol16592112613227"><a name="uicontrol16592112613227"></a><a name="uicontrol16592112613227"></a>“服务列表”</span>中，单击<span class="uicontrol" id="uicontrol14592326192217"><a name="uicontrol14592326192217"></a><a name="uicontrol14592326192217"></a>“网络 &gt; 弹性负载均衡 ELB”</span>，单击“子网”，单击子网名称，在子网详情页的<span class="uicontrol" id="uicontrol13592122672214"><a name="uicontrol13592122672214"></a><a name="uicontrol13592122672214"></a>“基本信息”</span>页签下找到<span class="uicontrol" id="uicontrol7592132692220"><a name="uicontrol7592132692220"></a><a name="uicontrol7592132692220"></a>“子网ID”</span>字段复制即可。</p>
     </td>
@@ -228,7 +220,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="17.73%" headers="mcps1.2.5.1.3 "><p id="p1769814181043"><a name="p1769814181043"></a><a name="p1769814181043"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="47.75%" headers="mcps1.2.5.1.4 "><p id="p1269818185412"><a name="p1269818185412"></a><a name="p1269818185412"></a>无类别域间路由</p>
+    <td class="cellrowborder" valign="top" width="47.75%" headers="mcps1.2.5.1.4 "><p id="p1269818185412"><a name="p1269818185412"></a><a name="p1269818185412"></a>无类别域间路由，即容器所在子网的网段。</p>
     </td>
     </tr>
     <tr id="row580942914514"><td class="cellrowborder" valign="top" width="18.41%" headers="mcps1.2.5.1.1 "><p id="p13809529252"><a name="p13809529252"></a><a name="p13809529252"></a>availableZone</p>
@@ -254,10 +246,25 @@
     </tbody>
     </table>
 
+3.  创建网络平面。
+
+    **kubectl create -f networkattachment-test.yaml**
+
+    回显如下，表示服务已创建。
+
+    ```
+    networkattachmentdefinition.k8s.cni.cncf.io/networkattachment-test created
+    ```
+
 
 ## Pod使用ENI能力<a name="section17897104515244"></a>
 
-创建Pod时，在annotations中指定“**k8s.v1.cni.cncf.io/networks: test**”字段即可指定网络相关能力，目前仅支持一个网络平面，当配置多个网络平面，仅第一个网络平面生效，暂不支持更新操作。“**k8s.v1.cni.cncf.io/networks: test**”数组中每个元素的数据结构说明请参考[表4](#table157916567165)。
+创建Pod时，在annotations中指定“**k8s.v1.cni.cncf.io/networks: test**”字段即可指定网络平面，目前仅支持一个网络平面，当配置多个网络平面，仅第一个网络平面生效，暂不支持更新操作。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>CCE Turbo集群创建pod时，网络平面默认选择“**default-network**”，不需要设置“**k8s.v1.cni.cncf.io/networks**”字段。
+
+“**k8s.v1.cni.cncf.io/networks: test**”数组中每个元素的数据结构说明请参考[表4](#table157916567165)。
 
 **表 4**  k8s.v1.cni.cncf.io/networks元素数据结构说明
 
@@ -278,7 +285,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="14.64853514648535%" headers="mcps1.2.5.1.3 "><p id="p187955614164"><a name="p187955614164"></a><a name="p187955614164"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.23437656234377%" headers="mcps1.2.5.1.4 "><p id="p17985610167"><a name="p17985610167"></a><a name="p17985610167"></a>Pod实例所要引用的network名称。</p>
+<td class="cellrowborder" valign="top" width="56.23437656234377%" headers="mcps1.2.5.1.4 "><p id="p17985610167"><a name="p17985610167"></a><a name="p17985610167"></a>Pod实例所要引用的网络平面（NetworkAttachmentDefinition）名称。</p>
 </td>
 </tr>
 </tbody>
@@ -292,7 +299,6 @@
     "kind":"Pod",
     "metadata":{
         "annotations":{
-
             "k8s.v1.cni.cncf.io/networks":"test"
         },
         "labels":{
@@ -323,7 +329,7 @@
 }
 ```
 
-查看Pod时，网络相关属性将回写在annotations中“**k8s.v1.cni.cncf.io/network-status**”字段下。详情请参考[表5](#table42941427162412)
+查看Pod时，网络平面相关属性将回写在annotations中“**k8s.v1.cni.cncf.io/network-status**”字段下。详情请参考[表5](#table42941427162412)
 
 **表 5**  k8s.v1.cni.cncf.io/network-status字段数据结构说明
 
@@ -344,7 +350,7 @@
 </td>
 <td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.5.1.3 "><p id="p1829512274243"><a name="p1829512274243"></a><a name="p1829512274243"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="56.330000000000005%" headers="mcps1.2.5.1.4 "><p id="p1729516278248"><a name="p1729516278248"></a><a name="p1729516278248"></a>Pod实例所在的网络名称</p>
+<td class="cellrowborder" valign="top" width="56.330000000000005%" headers="mcps1.2.5.1.4 "><p id="p1729516278248"><a name="p1729516278248"></a><a name="p1729516278248"></a>Pod实例所在的网络平面名称</p>
 </td>
 </tr>
 <tr id="row176242402611"><td class="cellrowborder" valign="top" width="14.45%" headers="mcps1.2.5.1.1 "><p id="p1163112419267"><a name="p1163112419267"></a><a name="p1163112419267"></a>ips</p>
@@ -381,145 +387,199 @@
 响应示例
 
 ```
-{
-    "apiVersion":"v1",
-    "kind":"Pod",
-    "metadata":{
-        "annotations":{
-           "k8s.v1.cni.cncf.io/networks":"test",
-            "k8s.v1.cni.cncf.io/network-status":"[{"name":"test","ips":["192.168.81.57",""],"mac":"fa:16:3e:b0:d7:44","default":true}]"
-        },
-        "creationTimestamp":"2020-04-23T07:34:07Z",
-        "generateName":"test-59bbdbb86d-",
-        "labels":{
-            "app":"test"
-        },
-        "name":"test-59bbdbb86d-dhrcp",
-        "namespace":"default",
-        "ownerReferences":[
-            {
-                "apiVersion":"apps/v1",
-                "blockOwnerDeletion":true,
-                "controller":true,
-                "kind":"ReplicaSet",
-                "name":"test-59bbdbb86d",
-                "uid":"724f9c56-480b-4e9d-ad02-4c689f36ab82"
-            }
-        ],
-        "resourceVersion":"1096408",
-        "selfLink":"/api/v1/namespaces/default/pods/test-59bbdbb86d-dhrcp",
-        "uid":"15fef2bf-c8f5-4e1c-8b53-0855f659c619"
-    },
-    "spec":{
-        "containers":[
-            {
-                "image":"100.125.4.7:20202/cce/nginx",
-                "imagePullPolicy":"IfNotPresent",
-                "name":"test",
-                "terminationMessagePath":"/dev/termination-log",
-                "terminationMessagePolicy":"File"
-            }
-        ],
-        "dnsConfig":{
-            "options":[
-                {
-                    "name":"single-request-reopen",
-                    "value":""
-                },
-                {
-                    "name":"timeout",
-                    "value":"2"
-                }
-            ]
-        },
-        "dnsPolicy":"ClusterFirst",
-        "enableServiceLinks":true,
-        "imagePullSecrets":[
-            {
-                "name":"default-secret"
-            }
-        ],
-        "nodeName":"192.168.0.9",
-        "priority":0,
-        "restartPolicy":"Always",
-        "schedulerName":"default-scheduler",
-        "securityContext":{
-
-        },
-        "serviceAccount":"default",
-        "serviceAccountName":"default",
-        "terminationGracePeriodSeconds":30,
-        "tolerations":[
-            {
-                "effect":"NoExecute",
-                "key":"node.kubernetes.io/not-ready",
-                "operator":"Exists",
-                "tolerationSeconds":300
-            },
-            {
-                "effect":"NoExecute",
-                "key":"node.kubernetes.io/unreachable",
-                "operator":"Exists",
-                "tolerationSeconds":300
-            }
-        ]
-    },
-    "status":{
-        "conditions":[
-            {
-                "lastProbeTime":null,
-                "lastTransitionTime":"2020-04-23T07:48:01Z",
-                "status":"True",
-                "type":"Initialized"
-            },
-            {
-                "lastProbeTime":null,
-                "lastTransitionTime":"2020-04-23T07:48:23Z",
-                "status":"True",
-                "type":"Ready"
-            },
-            {
-                "lastProbeTime":null,
-                "lastTransitionTime":"2020-04-23T07:48:23Z",
-                "status":"True",
-                "type":"ContainersReady"
-            },
-            {
-                "lastProbeTime":null,
-                "lastTransitionTime":"2020-04-23T07:48:01Z",
-                "status":"True",
-                "type":"PodScheduled"
-            }
-        ],
-        "containerStatuses":[
-            {
-                "containerID":"docker://b5cf9a92d5004dbc9143947ab48294e67332135b5fbccbaab639d6f7e18dc953",
-                "image":"100.125.4.7:20202/cce-test/nginx:latest",
-                "imageID":"docker-pullable://100.125.4.7:20202/cce/nginx@sha256:18c8411a66ef352ba7fc857d924c8c9357dbd37551760fd6deba40ee68c9e62a",
-                "lastState":{
-
-                },
-                "name":"test",
-                "ready":true,
-                "restartCount":0,
-                "state":{
-                    "running":{
-                        "startedAt":"2020-04-23T07:48:23Z"
-                    }
-                }
-            }
-        ],
-        "hostIP":"192.168.0.9",
-        "phase":"Running",
-        "podIP":"192.168.81.57",
-        "podIPs":[
-            {
-                "ip":"192.168.81.57"
-            }
-        ],
-        "startTime":"2020-04-23T07:48:01Z"
-    }
-}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pod
+  namespace: default
+  selfLink: /api/v1/namespaces/default/pods/test-pod
+  uid: 0fd06c29-99ad-4e8d-90f9-35366afbb048
+  resourceVersion: '640691'
+  creationTimestamp: '2021-04-08T08:14:46Z'
+  labels:
+    name: test-pod
+  annotations:
+    k8s.v1.cni.cncf.io/network-status: |-
+      [{
+          "name": "test",
+          "ips": [
+              "192.168.45.115"
+          ],
+          "default": true,
+          "extras": {
+              "cni.yangtse.io/vpc-port-id": "61b0db5f-333f-4237-ac5b-f8adda236334"
+          }
+      }]
+    k8s.v1.cni.cncf.io/networks: test
+    kubernetes.io/psp: psp-global
+  managedFields:
+    - manager: kubectl-create
+      operation: Update
+      apiVersion: v1
+      time: '2021-04-08T08:14:46Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            .: {}
+            'f:k8s.v1.cni.cncf.io/networks': {}
+          'f:labels':
+            .: {}
+            'f:name': {}
+        'f:spec':
+          'f:containers':
+            'k:{"name":"test"}':
+              .: {}
+              'f:image': {}
+              'f:imagePullPolicy': {}
+              'f:name': {}
+              'f:resources':
+                .: {}
+                'f:requests':
+                  .: {}
+                  'f:cpu': {}
+              'f:terminationMessagePath': {}
+              'f:terminationMessagePolicy': {}
+          'f:dnsPolicy': {}
+          'f:enableServiceLinks': {}
+          'f:imagePullSecrets':
+            .: {}
+            'k:{"name":"default-secret"}':
+              .: {}
+              'f:name': {}
+          'f:restartPolicy': {}
+          'f:schedulerName': {}
+          'f:securityContext': {}
+          'f:terminationGracePeriodSeconds': {}
+    - manager: eni-neutron
+      operation: Update
+      apiVersion: v1
+      time: '2021-04-08T08:14:47Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:metadata':
+          'f:annotations':
+            'f:k8s.v1.cni.cncf.io/network-status': {}
+    - manager: kubelet
+      operation: Update
+      apiVersion: v1
+      time: '2021-04-08T08:14:48Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        'f:status':
+          'f:conditions':
+            'k:{"type":"ContainersReady"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Initialized"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+            'k:{"type":"Ready"}':
+              .: {}
+              'f:lastProbeTime': {}
+              'f:lastTransitionTime': {}
+              'f:status': {}
+              'f:type': {}
+          'f:containerStatuses': {}
+          'f:hostIP': {}
+          'f:phase': {}
+          'f:podIP': {}
+          'f:podIPs':
+            .: {}
+            'k:{"ip":"192.168.45.115"}':
+              .: {}
+              'f:ip': {}
+          'f:startTime': {}
+spec:
+  volumes:
+    - name: default-token-hssgv
+      secret:
+        secretName: default-token-hssgv
+        defaultMode: 420
+  containers:
+    - name: test
+      image: 'swr.cn-north-7.myhuaweicloud.com/p***67/nginx:latest'
+      resources:
+        requests:
+          cpu: 100m
+      volumeMounts:
+        - name: default-token-hssgv
+          readOnly: true
+          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      imagePullPolicy: IfNotPresent
+  restartPolicy: Always
+  terminationGracePeriodSeconds: 30
+  dnsPolicy: ClusterFirst
+  serviceAccountName: default
+  serviceAccount: default
+  nodeName: 192.168.0.238
+  securityContext: {}
+  imagePullSecrets:
+    - name: default-secret
+  schedulerName: default-scheduler
+  tolerations:
+    - key: node.kubernetes.io/not-ready
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+    - key: node.kubernetes.io/unreachable
+      operator: Exists
+      effect: NoExecute
+      tolerationSeconds: 300
+  priority: 0
+  dnsConfig:
+    options:
+      - name: single-request-reopen
+        value: ''
+      - name: timeout
+        value: '2'
+  enableServiceLinks: true
+  preemptionPolicy: PreemptLowerPriority
+status:
+  phase: Running
+  conditions:
+    - type: Initialized
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2021-04-08T08:14:46Z'
+    - type: Ready
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2021-04-08T08:14:47Z'
+    - type: ContainersReady
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2021-04-08T08:14:47Z'
+    - type: PodScheduled
+      status: 'True'
+      lastProbeTime: null
+      lastTransitionTime: '2021-04-08T08:14:46Z'
+  hostIP: 192.168.0.238
+  podIP: 192.168.45.115
+  podIPs:
+    - ip: 192.168.45.115
+  startTime: '2021-04-08T08:14:46Z'
+  containerStatuses:
+    - name: test
+      state:
+        running:
+          startedAt: '2021-04-08T08:14:47Z'
+      lastState: {}
+      ready: true
+      restartCount: 0
+      image: 'swr.cn-north-7.myhuaweicloud.com/p***67/nginx:latest'
+      imageID: 'docker-pullable://swr.cn-north-7.myhuaweicloud.com/p***67/nginx@sha256:18c8411a66ef352ba7fc857d924c8c9357dbd37551760fd6deba40ee68c9e62a'
+      containerID: 'docker://b19912a4b9265adf323fa55b19f08ee0e7600a9edb3505b45e2a5e718ff0e550'
+      started: true
+  qosClass: Burstable
 ```
 
 ## 其他操作<a name="section2314125415245"></a>

@@ -1,4 +1,4 @@
-# 删除Service<a name="cce_02_0026"></a>
+# 删除指定的Service<a name="cce_02_0026"></a>
 
 ## 功能介绍<a name="se5309007813b47538be7080cd63898e3"></a>
 

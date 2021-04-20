@@ -69,6 +69,7 @@ PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses/\{name\}/statu
 **请求示例：**
 
 ```
+Content-Type: application/merge-patch+json
 {
     "status": {
         "loadBalancer": {

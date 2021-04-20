@@ -1,12 +1,5 @@
 # autoscaler<a name="cce_01_0154"></a>
 
--   [插件简介](#section25311744154917)
--   [插件说明](#section11187642115211)
--   [约束与限制](#section202191122814)
--   [安装插件](#section15573161754711)
--   [升级插件](#section3578191413712)
--   [卸载插件](#section610455514114)
-
 ## 插件简介<a name="section25311744154917"></a>
 
 autoscaler是Kubernetes中非常重要的一个Controller，它提供了微服务的弹性能力，并且和Serverless密切相关。
@@ -176,7 +169,7 @@ autoscaler可分成扩容和缩容两个方面：
     </td>
     <td class="cellrowborder" valign="top" width="19.71802819718028%" headers="mcps1.2.4.1.2 "><p id="p9813132834516"><a name="p9813132834516"></a><a name="p9813132834516"></a>部分版本无此参数</p>
     </td>
-    <td class="cellrowborder" valign="top" width="61.75382461753826%" headers="mcps1.2.4.1.3 "><div class="p" id="p16199190205513"><a name="p16199190205513"></a><a name="p16199190205513"></a>系统盘和数据盘：设置节点磁盘空间。<a name="ul1220313142710"></a><a name="ul1220313142710"></a><ul id="ul1220313142710"><li>系统盘：规格为[40,1024]GB，用户可以配置，缺省值为40GB。</li><li>数据盘：规格为[100,32678]GB，用户可以配置，缺省值为100GB。<p id="p149151439185614"><a name="p149151439185614"></a><a name="p149151439185614"></a>勾选<span class="uicontrol" id="uicontrol5468812165717"><a name="uicontrol5468812165717"></a><a name="uicontrol5468812165717"></a>“资源分配自定义”</span>后，您可以对数据盘中的Docker和Kubelet资源占比进行自定义设置。</p>
+    <td class="cellrowborder" valign="top" width="61.75382461753826%" headers="mcps1.2.4.1.3 "><div class="p" id="p16199190205513"><a name="p16199190205513"></a><a name="p16199190205513"></a>系统盘和数据盘：设置节点磁盘空间。<a name="ul1220313142710"></a><a name="ul1220313142710"></a><ul id="ul1220313142710"><li>系统盘：规格为[40,1024]GB，用户可以配置，缺省值为40GB。</li><li>数据盘：规格为[100,32768]GB，用户可以配置，缺省值为100GB。<p id="p149151439185614"><a name="p149151439185614"></a><a name="p149151439185614"></a>勾选<span class="uicontrol" id="uicontrol5468812165717"><a name="uicontrol5468812165717"></a><a name="uicontrol5468812165717"></a>“资源分配自定义”</span>后，您可以对数据盘中的Docker和Kubelet资源占比进行自定义设置。</p>
     <div class="notice" id="note1420420141375"><a name="note1420420141375"></a><a name="note1420420141375"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><a name="ul6609174914587"></a><a name="ul6609174914587"></a><ul id="ul6609174914587"><li>磁盘使用direct-lvm模式，移除将使用loop-lvm模式，有影响系统稳定性的风险。</li><li>Docker资源包含Docker镜像数据以及镜像元数据，Kubelet资源包含Pod配置文件、密钥以及临时存储EmptyDir等挂载数据。</li></ul>
     </div></div>
     </li><li>数据盘：单击<span class="uicontrol" id="uicontrol14989121667"><a name="uicontrol14989121667"></a><a name="uicontrol14989121667"></a>“新增数据盘”</span>，您可以增加一块数据盘。</li></ul>
