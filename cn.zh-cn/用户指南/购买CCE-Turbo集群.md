@@ -2,6 +2,8 @@
 
 CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎服务，具备软硬协同、网络无损、安全可靠、调度智能的优势，为用户提供一站式、高性价比的全新容器服务体验。
 
+点此[了解CCE Turbo集群](https://support.huaweicloud.com/productdesc-cce/cce_productdesc_0021.html)更多信息。
+
 ## 约束与限制<a name="section1675221242512"></a>
 
 -   单Region下单用户可创建的集群总数限制为50个，如果配额不满足业务需求，请[到“我的配额”提交申请](https://console.huaweicloud.com/quota/?locale=zh-cn#/quota)，查看配额请参见[关于配额](https://support.huaweicloud.com/usermanual-iaas/zh-cn_topic_0040259342.html)。
@@ -10,7 +12,7 @@ CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎�
 -   TrunkPort能力仅在1.19版本的CCE Turbo集群中使用。
 -   在1.19版本的CCE Turbo集群中添加的共池BMS节点，容器使用的网卡默认配置是4队列。
 
-## 购买步骤<a name="section10209182314553"></a>
+## 操作步骤<a name="section10209182314553"></a>
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中单击“资源管理  \>  集群管理”，单击“CCE Turbo集群“右侧的“购买”。
 
@@ -170,7 +172,11 @@ CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎�
 
 4.  确认规格和费用后，单击“提交”，集群开始创建。
 
-    集群创建预计需要6-10分钟，您可以单击“返回集群管理“进行其他操作或单击“查看集群事件列表“后查看集群详情。待集群状态为“正常”，表示集群创建成功。
+    集群创建预计需要6-10分钟，您可以单击“返回集群管理“进行其他操作或单击“查看集群事件列表“后查看集群详情。
+
+5.  待集群状态为“正常”，表示CCE Turbo集群创建成功，集群名称后方显示为Turbo字样。
+
+    ![](figures/zh-cn_image_0000001105637792.png)
 
     集群创建完成后，您需要为集群添加节点，请参见[购买节点](购买节点.md)。
 

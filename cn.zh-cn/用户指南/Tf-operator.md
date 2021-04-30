@@ -8,7 +8,7 @@ Tf-operator是一个管理Kubernetes上tensorflow应用程序生命周期的oper
 
 ## 约束与限制<a name="section58764833810"></a>
 
--   插件支持[CCE集群](购买CCE集群.md)，仅支持1.13和1.15版本的集群。
+-   仅支持在1.13和1.15版本的[CCE集群](购买CCE集群.md)中安装本插件。
 -   部分Region不支持本插件，具体以控制台为准。
 
 ## 安装插件<a name="section3843632115420"></a>

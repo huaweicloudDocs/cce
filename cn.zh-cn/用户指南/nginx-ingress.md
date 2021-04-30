@@ -31,7 +31,7 @@ Nginx Ingress由资源对象Ingress、Ingress控制器、Nginx三部分组成，
 
 ## 使用约束<a name="section3200193614201"></a>
 
--   仅支持1.15及以上版本的集群安装此插件。
+-   仅支持在1.15及以上版本的CCE集群中安装此插件，暂不支持鲲鹏集群。
 -   通过api调接口创建的Ingress annotation必须添加kubernetes.io/ingress.class: "nginx"，如果是对接老的Ingress，annotation需添加为kubernetes.io/ingress.class: "cce"。
 
 ## 前提条件<a name="zh-cn_topic_0226102211_section92541494210"></a>

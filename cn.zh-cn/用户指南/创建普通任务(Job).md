@@ -162,7 +162,7 @@
         </tr>
         <tr id="r547f9887aa95447fae37c69bf28e8d09"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="a4a93ff2a806b494c8d80b89595802cbe"><a name="a4a93ff2a806b494c8d80b89595802cbe"></a><a name="a4a93ff2a806b494c8d80b89595802cbe"></a>容器日志</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="ac6fc6fa08da64fdc9d6366f5f9834e11"><a name="ac6fc6fa08da64fdc9d6366f5f9834e11"></a><a name="ac6fc6fa08da64fdc9d6366f5f9834e11"></a>CCE支持配置工作负载日志策略，便于日志收集分析，以及按周期防爆处理。详细步骤请参见<a href="采集容器标准输出日志.md">采集容器标准输出日志</a>。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="ac6fc6fa08da64fdc9d6366f5f9834e11"><a name="ac6fc6fa08da64fdc9d6366f5f9834e11"></a><a name="ac6fc6fa08da64fdc9d6366f5f9834e11"></a>CCE支持配置工作负载日志策略，便于日志收集分析，以及按周期防爆处理。详细步骤请参见<a href="采集容器默认的标准输出日志.md">采集容器默认的标准输出日志</a>。</p>
         </td>
         </tr>
         </tbody>

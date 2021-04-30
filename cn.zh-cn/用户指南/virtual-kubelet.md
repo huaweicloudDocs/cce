@@ -16,7 +16,7 @@ Virtual Kubelet插件具体如下功能：
 
 ## 约束及限制<a name="section628693291119"></a>
 
--   仅支持VPC网络模式的CCE集群，仅限于v1.13及以上版本的集群使用。
+-   仅支持在**v1.11\~v1.15版本**的CCE集群中安装本插件，且集群需为**VPC网络模式**，暂不支持鲲鹏集群。
 -   使用时需同时配置Request和Limit，且实例的规格须满足云容器实例CCI的[容器规范](https://support.huaweicloud.com/productdesc-cci/cci_03_0007.html)，pod才可以部署到CCI侧。
 -   调度到CCI的实例的存储类型只支持ConfigMap、Secret、emptyDir三种Volume类型，其中emptyDir不支持子路径。
 -   暂不支持定时任务、守护进程集（DaemonSet）以及HostNetwork网络模式的容器实例（Pod）弹性到CCI。

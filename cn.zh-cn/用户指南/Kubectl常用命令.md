@@ -227,11 +227,15 @@ kubectl autoscale deployment deployname --min=minnumber --max=maxnumber
     kubectl cordon nodename
     ```
 
+    备注：nodename为节点IP。
+
 2.  使用drain命令，将运行在该node上运行的pod平滑的搬迁到其他节点上。
 
     ```
-    kubectl drain newnodename
+    kubectl drain nodename --ignore-daemonsets --ignore-emptydir
     ```
+
+    备注：ignore-emptydir为用户挂载空目录的数据。
 
 3.  对该节点进行一些节点维护的操作，如升级内核、升级Docker等。
 4.  节点维护完后，使用uncordon命令解锁该node，使其重新变得可调度。

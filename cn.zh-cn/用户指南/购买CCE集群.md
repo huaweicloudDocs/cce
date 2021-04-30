@@ -17,69 +17,6 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
 
 更多内容请参见[约束与限制](https://support.huaweicloud.com/productdesc-cce/cce_productdesc_0005.html)。
 
-## 前提条件<a name="section1675221242512"></a>
-
--   创建首个集群前，您必须先确保已存在虚拟私有云，否则无法创建集群。若您已有虚拟私有云，可重复使用，无需重复创建。
-
-    虚拟私有云为CCE集群提供一个隔离的、用户自主配置和管理的虚拟网络环境。创建方法请参见[创建虚拟私有云和子网](https://support.huaweicloud.com/usermanual-vpc/zh-cn_topic_0013935842.html)。
-
--   您需要新建一个密钥对，用于远程登录节点时的身份认证。
-
-    若使用密码登录节点，请跳过此操作。创建方法请参见[创建密钥对](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0014250631.html)。
-
--   创建集群前，请提前规划好容器网段和服务网段。网段参数在集群创建后不可更改，需要重新创建集群才能调整，请谨慎选择。
-
-## 创建集群须知<a name="section2086419142214"></a>
-
-创建集群过程中会同步创建一些基础资源，列表如下：
-
-**表 1**  创建集群须知
-
-<a name="table108111152195919"></a>
-<table><thead align="left"><tr id="row20811252105914"><th class="cellrowborder" valign="top" width="30%" id="mcps1.2.3.1.1"><p id="p14811135212593"><a name="p14811135212593"></a><a name="p14811135212593"></a>资源名称</p>
-</th>
-<th class="cellrowborder" valign="top" width="70%" id="mcps1.2.3.1.2"><p id="p15811452145913"><a name="p15811452145913"></a><a name="p15811452145913"></a>描述</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row88111652155915"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.3.1.1 "><p id="p1298265916593"><a name="p1298265916593"></a><a name="p1298265916593"></a><span class="keyword" id="keyword15202446173210"><a name="keyword15202446173210"></a><a name="keyword15202446173210"></a>控制节点</span>及其相关资源</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.2.3.1.2 "><p id="p6982145965918"><a name="p6982145965918"></a><a name="p6982145965918"></a>存在于云容器引擎资源租户下，用户不可见。</p>
-</td>
-</tr>
-<tr id="row981135210590"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.3.1.1 "><p id="p199826593596"><a name="p199826593596"></a><a name="p199826593596"></a><span class="keyword" id="keyword17259922113319"><a name="keyword17259922113319"></a><a name="keyword17259922113319"></a>弹性云服务器</span>（可选创建）</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.2.3.1.2 "><p id="p11801128222"><a name="p11801128222"></a><a name="p11801128222"></a>集群节点，即用户的计算资源，对应“弹性云服务器”中的ECS。</p>
-<p id="p1498225945915"><a name="p1498225945915"></a><a name="p1498225945915"></a>ECS命名规则为：集群名称-随机数，可自定义，批量创建时会再加一串随机数。</p>
-</td>
-</tr>
-<tr id="row6811952165919"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.3.1.1 "><p id="p1298215925914"><a name="p1298215925914"></a><a name="p1298215925914"></a><span class="keyword" id="keyword139400255332"><a name="keyword139400255332"></a><a name="keyword139400255332"></a>安全组</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.2.3.1.2 "><p id="p598216599595"><a name="p598216599595"></a><a name="p598216599595"></a>集群会创建两个安全组，一个用于管理集群控制节点的安全组，一个用于管理集群工作节点的安全组。</p>
-<div class="warning" id="note112646412277"><a name="note112646412277"></a><a name="note112646412277"></a><span class="warningtitle"> 警告： </span><div class="warningbody"><p id="p18264184110273"><a name="p18264184110273"></a><a name="p18264184110273"></a>集群创建时自动创建的安全组以及安全组规则禁止删除，否则会导致集群异常。</p>
-</div></div>
-<a name="ol57751237359"></a><a name="ol57751237359"></a><ol id="ol57751237359"><li><span class="keyword" id="keyword146861932113312"><a name="keyword146861932113312"></a><a name="keyword146861932113312"></a>控制节点安全组</span><p id="p1383640122418"><a name="p1383640122418"></a><a name="p1383640122418"></a>命名规则：集群名称-cce-control-随机数</p>
-<p id="p2477145154415"><a name="p2477145154415"></a><a name="p2477145154415"></a>作用：</p>
-<a name="ul516535584419"></a><a name="ul516535584419"></a><ul id="ul516535584419"><li>出方向允许。</li><li>其他节点访问控制节点kubernetes相关服务。</li></ul>
-</li><li><span class="keyword" id="keyword399619357338"><a name="keyword399619357338"></a><a name="keyword399619357338"></a>工作节点安全组</span><p id="p1872943734519"><a name="p1872943734519"></a><a name="p1872943734519"></a>命名规则：集群名称-cce-node-随机数</p>
-<p id="p15118379456"><a name="p15118379456"></a><a name="p15118379456"></a>作用：</p>
-<a name="ul1579276164613"></a><a name="ul1579276164613"></a><ul id="ul1579276164613"><li>出方向允许。</li><li>开放linux或windows远程登录（22、3389）。</li><li>kubernetes组件之间访问使用（4789、10250）。</li><li>kubernetes用于对外开放的端口（30000-32767）。</li><li>相同安全组之间可以互相访问。</li></ul>
-</li></ol>
-</td>
-</tr>
-<tr id="row7811135245911"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.3.1.1 "><p id="p16982155995917"><a name="p16982155995917"></a><a name="p16982155995917"></a><span class="keyword" id="keyword16104542193315"><a name="keyword16104542193315"></a><a name="keyword16104542193315"></a>磁盘</span>（可选创建）</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.2.3.1.2 "><p id="p398225975918"><a name="p398225975918"></a><a name="p398225975918"></a>分别给各个节点创建两个磁盘，一个是节点的系统盘，一个是给docker运行使用的数据盘。</p>
-</td>
-</tr>
-<tr id="row13811752135919"><td class="cellrowborder" valign="top" width="30%" headers="mcps1.2.3.1.1 "><p id="p1298215916594"><a name="p1298215916594"></a><a name="p1298215916594"></a><span class="keyword" id="keyword825419557333"><a name="keyword825419557333"></a><a name="keyword825419557333"></a>弹性IP</span>（可选创建）</p>
-</td>
-<td class="cellrowborder" valign="top" width="70%" headers="mcps1.2.3.1.2 "><p id="p42997393017"><a name="p42997393017"></a><a name="p42997393017"></a>需用户选择，给节点绑定弹性IP ，可以使节点访问外网。</p>
-</td>
-</tr>
-</tbody>
-</table>
-
 ## 操作步骤<a name="section463761220269"></a>
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在总览页面单击“购买Kubernetes集群“，或在左侧导航栏中单击“资源管理  \>  集群管理”，单击“CCE集群“右侧的“购买”按钮。
@@ -87,9 +24,9 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     **图 1**  集群管理-购买CCE集群<a name="fig11806912127"></a>  
     ![](figures/集群管理-购买CCE集群.png "集群管理-购买CCE集群")
 
-2.  参照[表2](#table8638121213265)设置集群参数，其中带“\*”的参数需重点关注。
+2.  参照[表1](#table8638121213265)设置集群参数，其中带“\*”的参数需重点关注。
 
-    **表 2**  创建集群参数配置
+    **表 1**  创建集群参数配置
 
     <a name="table8638121213265"></a>
     <table><thead align="left"><tr id="row10638181262612"><th class="cellrowborder" valign="top" width="20.02%" id="mcps1.2.3.1.1"><p id="p1063821214265"><a name="p1063821214265"></a><a name="p1063821214265"></a>参数</p>
@@ -205,9 +142,9 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     <tr id="row1610917221609"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p6655100911"><a name="p6655100911"></a><a name="p6655100911"></a>认证方式</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p933784218111"><a name="p933784218111"></a><a name="p933784218111"></a>认证机制主要用于对集群下的资源做权限控制。例如A用户只能对某个命名空间下的应用有读写权限，B用户对集群下的资源只有读权限等。角色权限控制的操作请参见<a href="集群管理权限控制.md">集群管理权限控制</a>。</p>
-    <p id="p1186713484551"><a name="p1186713484551"></a><a name="p1186713484551"></a>默认状态下<span class="uicontrol" id="uicontrol1371105874614"><a name="uicontrol1371105874614"></a><a name="uicontrol1371105874614"></a>“认证能力增强”</span>未选中，此时默认开启X509认证模式，X509是一种非常通用的证书格式。</p>
+    <p id="p1186713484551"><a name="p1186713484551"></a><a name="p1186713484551"></a>默认开启X509认证模式，X509是一种非常通用的证书格式。</p>
     <p id="p201651655441"><a name="p201651655441"></a><a name="p201651655441"></a>若需要对集群进行权限控制，请勾选“<strong id="b147071445995"><a name="b147071445995"></a><a name="b147071445995"></a>认证能力增强</strong>”，集群支持通过请求体的头域的信息识别用户，达到认证鉴权的目的。</p>
-    <p id="p16929105085512"><a name="p16929105085512"></a><a name="p16929105085512"></a>用户需要分别上传自己的<strong id="b44714116510"><a name="b44714116510"></a><a name="b44714116510"></a>CA根证书</strong>、<strong id="b14669141413512"><a name="b14669141413512"></a><a name="b14669141413512"></a>客户端证书</strong>和<strong id="b6857112016516"><a name="b6857112016516"></a><a name="b6857112016516"></a>客户端证书私钥</strong>，并勾选“<strong id="b458963217717"><a name="b458963217717"></a><a name="b458963217717"></a>我已确认上传的证书合法</strong>”。</p>
+    <p id="p16929105085512"><a name="p16929105085512"></a><a name="p16929105085512"></a>用户需要分别上传自己的<strong id="b44714116510"><a name="b44714116510"></a><a name="b44714116510"></a>CA根证书</strong>、<strong id="b14669141413512"><a name="b14669141413512"></a><a name="b14669141413512"></a>客户端证书</strong>和<strong id="b6857112016516"><a name="b6857112016516"></a><a name="b6857112016516"></a>客户端证书私钥</strong>（证书制作方法可参考<a href="https://kubernetes.io/zh/docs/tasks/administer-cluster/certificates/" target="_blank" rel="noopener noreferrer">Certificates</a>），并勾选“<strong id="b458963217717"><a name="b458963217717"></a><a name="b458963217717"></a>我已确认上传的证书合法</strong>”。</p>
     <div class="caution" id="note173064357597"><a name="note173064357597"></a><a name="note173064357597"></a><span class="cautiontitle"> 注意： </span><div class="cautionbody"><a name="ul63601125729"></a><a name="ul63601125729"></a><ul id="ul63601125729"><li>请上传<strong id="b1324412411615"><a name="b1324412411615"></a><a name="b1324412411615"></a>小于1MB</strong>的文件，CA根证书和客户端证书上传格式支持<strong id="b142442413620"><a name="b142442413620"></a><a name="b142442413620"></a>.crt或.cer</strong>格式，客户端证书私钥仅支持上传<strong id="b5244124664"><a name="b5244124664"></a><a name="b5244124664"></a>未加密的证书私钥</strong>。</li><li>客户端证书有效期需要5年以上。</li><li>上传的CA根证书既给认证代理使用，也用于配置kube-apiserver聚合层，<strong id="b1507491567"><a name="b1507491567"></a><a name="b1507491567"></a>如不合法，集群将无法成功创建</strong>。</li></ul>
     </div></div>
     </td>
@@ -455,7 +392,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
         -   **子网IP：**可选择“自动分配IP地址“和“手动分配IP地址“，推荐使用“自动分配IP地址“。
 
     -   **Kubernetes高级设置：**（可选），单击![](figures/zh-cn_image_0183134479.png)展开后可对集群进行如下高级功能配置：
-        -   **最大实例数：**节点最大允许创建的实例数\(Pod\)，该数量包含系统默认实例，取值范围为16\~128。
+        -   **最大实例数：**节点最大允许创建的实例数\(Pod\)，该数量包含系统默认实例，取值范围为16\~250。集群网络模型为“VPC网络“时，此处的最大值取决于您选择的每个节点可供分配的容器IP个数。
 
             该设置的目的为防止节点因管理过多实例而负载过重，请根据您的业务需要进行设置。
 
@@ -492,7 +429,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
 -   创建工作负载：集群创建完成后，您可以使用镜像创建一个可公网访问的应用，请参见[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)或[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)。
 -   单击已成功创建的集群名称，进入“集群详情“页可查看集群详情。
 
-    **表 3**  已创建的集群详情
+    **表 2**  已创建的集群详情
 
     <a name="table1642185503514"></a>
     <table><thead align="left"><tr id="row1264365516359"><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.3.1.1"><p id="p76431955153512"><a name="p76431955153512"></a><a name="p76431955153512"></a>页签类别</p>

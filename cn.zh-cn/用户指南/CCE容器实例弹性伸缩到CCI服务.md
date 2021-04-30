@@ -12,7 +12,7 @@ Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该�
 
 ## 使用约束<a name="zh-cn_topic_0287319085_section1925910435328"></a>
 
--   仅支持VPC网络模式的CCE集群，仅限于v1.11及以上版本的集群使用。
+-   仅支持VPC网络模式的CCE集群，Virtual Kubelet仅限于v1.15及以下版本的集群安装使用。
 -   调度到CCI的实例的存储类型只支持SFS、ConfigMap、Secret三种Volume类型。
 -   暂不支持HostNetwork网络模式的容器实例（Pod）弹性到CCI。
 -   实例的规格必须满足云容器实例CCI的容器规范。

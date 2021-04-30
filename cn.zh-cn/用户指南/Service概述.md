@@ -51,7 +51,7 @@ Kubernetes允许指定一个需要的类型的Service，类型的取值以及行
 ## 查看事件<a name="section932032011188"></a>
 
 1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 网络管理”。
-2.  在“Service“页签，勾选服务名称，单击“删除Service”。
+2.  在“Service“页签，单击“查看事件”。
 
 ## 更多操作<a name="section11985163132117"></a>
 

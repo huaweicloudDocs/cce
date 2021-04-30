@@ -12,7 +12,7 @@ HPA策略即Horizontal Pod Autoscaling，是Kubernetes中实现POD水平自动�
 ## 约束与限制<a name="section107429267459"></a>
 
 -   HPA策略：仅支持1.13及以上版本的集群创建。
--   HPA策略不支持鲲鹏集群。
+-   HPA所依赖的metrics-server和prometheus插件暂不支持鲲鹏集群。
 -   每个工作负载只能创建一个策略，即如果您创建了一个HPA策略，则不能再对其创建[CustomedHPA策略](创建工作负载弹性伸缩（CustomedHPA）.md)或其他HPA策略，您可以删除该HPA策略后再创建。
 
 ## 操作步骤<a name="section12371183611583"></a>
