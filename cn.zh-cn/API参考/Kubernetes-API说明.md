@@ -2,7 +2,7 @@
 
 ## Kubernetes API URL说明<a name="section41207155509"></a>
 
-Kubernetes原生接口的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。
+Kubernetes原生接口的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中**\{clusterid\}**为集群ID，**uri**为资源路径，也即API访问的路径。
 
 **表 1**  URL中的参数说明
 

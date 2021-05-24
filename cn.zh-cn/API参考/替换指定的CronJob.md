@@ -13,7 +13,7 @@ The following fields can be updated:
 -   metadata.generateName
 -   metadata.annotations
 -   spec.replicas
--   template.contaions
+-   template.containers
 -   spec.restartPolicy
 -   spec.activeDeadlineSeconds
 

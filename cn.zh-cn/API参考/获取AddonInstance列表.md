@@ -70,7 +70,7 @@ GET /api/v3/addons
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0004.html#cce_02_0004__section2417768214391" target="_blank" rel="noopener noreferrer">获取token</a>。</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>"调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0004.html#cce_02_0004__section2417768214391" target="_blank" rel="noopener noreferrer">获取token</a>。"</p>
 <p>最大长度：<strong>16384</strong></p>
 </td>
 </tr>

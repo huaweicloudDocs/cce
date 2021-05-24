@@ -19,18 +19,46 @@ v1.17.17版本的集群默认启用Pod安全策略准入控制组件，并创建
 
 ## Pod安全策略开放非安全系统配置示例<a name="section155111941177"></a>
 
-节点池管理中可以为相应的节点池配置allowed-unsafe-sysctls，CCE从**1.17.17**集群版本开始，需要在pod安全策略的allowedUnsafeSysctls中增加相应的配置才能生效。详情请参见[PodSecurityPolicy](https://kubernetes.io/zh/docs/tasks/administer-cluster/sysctl-cluster/#podsecuritypolicy)。
+节点池管理中可以为相应的节点池配置allowed-unsafe-sysctls，CCE从**1.17.17**集群版本开始，需要在pod安全策略的allowedUnsafeSysctls中增加相应的配置才能生效，详情请参见[PodSecurityPolicy](https://kubernetes.io/zh/docs/tasks/administer-cluster/sysctl-cluster/#podsecuritypolicy)。
 
-若开放net.core.somaxconn非安全系统配置，示例参考如下：
+除修改全局Pod安全策略外，也可增加新的Pod安全策略，如开放net.core.somaxconn非安全系统配置，新增Pod安全策略示例参考如下：
 
 ```
 apiVersion: policy/v1beta1
 kind: PodSecurityPolicy
 metadata:
+  annotations:
+    seccomp.security.alpha.kubernetes.io/allowedProfileNames: '*'
   name: sysctl-psp
 spec:
   allowedUnsafeSysctls:
   - net.core.somaxconn
+  allowPrivilegeEscalation: true
+  allowedCapabilities:
+  - '*'
+  fsGroup:
+    rule: RunAsAny
+  hostIPC: true
+  hostNetwork: true
+  hostPID: true
+  hostPorts:
+  - max: 65535
+    min: 0
+  privileged: true
+  runAsGroup:
+    rule: RunAsAny
+  runAsUser:
+    rule: RunAsAny
+  seLinux:
+    rule: RunAsAny
+  supplementalGroups:
+    rule: RunAsAny
+  volumes:
+  - '*'
+```
+
+```
+
 
 ---
 kind: ClusterRole

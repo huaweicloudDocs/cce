@@ -87,7 +87,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>"集群ID，使用<strong>https://Endpoint/uri</strong>这种URL格式时必须指定此参数。获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0271.html" target="_blank" rel="noopener noreferrer">如何获取接口URI中参数</a>"</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>集群ID，使用<strong>https://Endpoint/uri</strong>这种URL格式时必须指定此参数。获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0271.html" target="_blank" rel="noopener noreferrer">如何获取接口URI中参数</a></p>
 </td>
 </tr>
 </tbody>
@@ -225,7 +225,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。</p>
-<ul><li><p>bs：EVS云硬盘存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html" target="_blank" rel="noopener noreferrer">使用云硬盘存储卷</a> 。</p>
+<ul><li><p>bs：EVS云存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html" target="_blank" rel="noopener noreferrer">使用云硬盘存储卷</a> 。</p>
 </li><li><p>nfs：SFS弹性文件存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html" target="_blank" rel="noopener noreferrer">使用文件存储卷</a> 。</p>
 </li><li><p>obs：OBS对象存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html" target="_blank" rel="noopener noreferrer">使用对象存储卷</a> 。</p>
 </li><li><p>efs：SFS Turbo极速文件存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html" target="_blank" rel="noopener noreferrer">使用极速文件存储卷</a>。</p>
@@ -479,7 +479,7 @@ POST /api/v1/namespaces/\{namespace\}/cloudpersistentvolumeclaims
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>云存储的类型，和volumeID搭配使用。即volumeID和storageType必须同时被配置。</p>
-<ul><li><p>bs：EVS云硬盘存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html" target="_blank" rel="noopener noreferrer">使用云硬盘存储卷</a> 。</p>
+<ul><li><p>bs：EVS云存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0044.html" target="_blank" rel="noopener noreferrer">使用云硬盘存储卷</a> 。</p>
 </li><li><p>nfs：SFS弹性文件存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0111.html" target="_blank" rel="noopener noreferrer">使用文件存储卷</a> 。</p>
 </li><li><p>obs：OBS对象存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0160.html" target="_blank" rel="noopener noreferrer">使用对象存储卷</a> 。</p>
 </li><li><p>efs：SFS Turbo极速文件存储，详情可参见<a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0125.html" target="_blank" rel="noopener noreferrer">使用极速文件存储卷</a>。</p>

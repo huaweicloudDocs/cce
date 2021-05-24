@@ -13,7 +13,7 @@
 -   metadata.generateName
 -   metadata.annotations
 -   spec.replicas
--   template.contaions
+-   template.containers
 -   spec.restartPolicy
 -   spec.activeDeadlineSeconds
 

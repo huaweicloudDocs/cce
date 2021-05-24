@@ -61,7 +61,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     </tr>
     <tr id="row6649879161231"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p1769363161231"><a name="p1769363161231"></a><a name="p1769363161231"></a>版本</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p9100682161231"><a name="p9100682161231"></a><a name="p9100682161231"></a>Kubernetes社区基线版本，建议选择最新的版本。版本升级请参见<a href="集群版本升级说明.md">集群版本升级说明</a>。</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p9100682161231"><a name="p9100682161231"></a><a name="p9100682161231"></a>Kubernetes社区基线版本，建议选择最新的版本。版本升级请参见<a href="集群升级概述.md">集群升级概述</a>。</p>
     <p id="p1022520483"><a name="p1022520483"></a><a name="p1022520483"></a>若有<strong id="b20728225518"><a name="b20728225518"></a><a name="b20728225518"></a>Beta</strong>版本时，您可以选择试用，但不建议您将该版本用于商用场景。</p>
     </td>
     </tr>

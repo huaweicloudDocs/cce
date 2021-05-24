@@ -11,7 +11,7 @@ The following fields can be updated:
 -   metadata.generateName
 -   metadata.annotations
 -   spec.replicas
--   template.contaions
+-   template.containers
 
 The other fields cannot be updated.
 

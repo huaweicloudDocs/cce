@@ -97,7 +97,6 @@ CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎�
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p2046855174516"><a name="p2046855174516"></a><a name="p2046855174516"></a>选择一个虚拟私有云后可显示该选项。</p>
     <p id="p156731551122820"><a name="p156731551122820"></a><a name="p156731551122820"></a>集群下容器使用的子网，决定了集群下容器的数量上限，集群创建后该网段不可更改。</p>
     <p id="p31209167171234"><a name="p31209167171234"></a><a name="p31209167171234"></a>请根据业务需求选择容器子网，确定容器子网后，容器实例将在规划的网段内分配IP。</p>
-    <p id="p873618346117"><a name="p873618346117"></a><a name="p873618346117"></a>容器子网要设置合理的掩码，掩码决定集群内可用节点数量。集群中容器网段掩码设置不合适，会导致集群实际可用的节点较少。设置掩码后，选项下方会有当前网段最多支持的实例估算值，请作参考。详情请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00004.html" target="_blank" rel="noopener noreferrer">如何规划CCE集群的网络地址段？</a>。</p>
     <div class="note" id="note1052111161767"><a name="note1052111161767"></a><a name="note1052111161767"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p9522716564"><a name="p9522716564"></a><a name="p9522716564"></a>如果容器子网和节点子网相同，容器和节点将共同使用子网下剩余IP，易出现IP资源不足的场景导致容器或节点创建失败。</p>
     </div></div>
     </td>
@@ -121,8 +120,8 @@ CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎�
     <tbody><tr id="row13913122623018"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p139133267303"><a name="p139133267303"></a><a name="p139133267303"></a>服务网段</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p209134265308"><a name="p209134265308"></a><a name="p209134265308"></a>服务网段为kubernetes service ip网段，集群创建后该网段不可更改。服务网段与已创建的路由不能冲突，如果冲突，请重新选择。</p>
-    <a name="ul1291314265304"></a><a name="ul1291314265304"></a><ul id="ul1291314265304"><li>使用默认网段：默认设置为10.247.0.0/16网段。</li><li>手动设置网段：请根据业务需求设置合理的网段和掩码，掩码决定集群内可用service ip数量。</li></ul>
-    <p id="p2091312612308"><a name="p2091312612308"></a><a name="p2091312612308"></a>详情请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00004.html" target="_blank" rel="noopener noreferrer">如何规划CCE集群的网络地址段？</a>。</p>
+    <p id="p8287115855510"><a name="p8287115855510"></a><a name="p8287115855510"></a>默认设置为10.247.0.0/16网段。请根据业务需求设置合理的网段和掩码，掩码决定集群内可用service ip数量。</p>
+    <p id="p8398153875620"><a name="p8398153875620"></a><a name="p8398153875620"></a>服务网段要设置合理的掩码，掩码决定集群内可用service数量。集群中服务网段掩码设置不合适，会导致集群实际可用的service较少。设置掩码后，选项右侧会有当前网段最多支持的实例估算值，请作参考。详情请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00004.html" target="_blank" rel="noopener noreferrer">如何规划CCE集群的网络地址段？</a>。</p>
     </td>
     </tr>
     <tr id="row9381745114114"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p138224519412"><a name="p138224519412"></a><a name="p138224519412"></a>kube-proxy转发模式</p>
@@ -178,14 +177,12 @@ CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎�
 
     ![](figures/zh-cn_image_0000001105637792.png)
 
-    集群创建完成后，您需要为集群添加节点，请参见[购买节点](购买节点.md)。
-
 
 ## 购买节点步骤<a name="section13305183010495"></a>
 
-CCE Turbo集群创建完成后，可以在集群中购买节点。
+CCE Turbo集群创建完成后，您可以在集群中购买节点。
 
-1.  单击左侧栏目树的“资源管理 \> 节点管理“，选择创建的CCE Turbo集群，单击右上方的“购买节点”，在节点配置步骤中参照如下表格设置节点参数。
+1.  单击创建的CCE Turbo集群卡片下方的“购买节点”按钮，在节点配置步骤中参照如下表格设置节点参数。
 
     **计算配置**：
 
@@ -303,66 +300,61 @@ CCE Turbo集群创建完成后，可以在集群中购买节点。
     **表 7**  高级配置参数
 
     <a name="table101545619373"></a>
-    <table><thead align="left"><tr id="row115205619372"><th class="cellrowborder" valign="top" width="33.96%" id="mcps1.2.3.1.1"><p id="p2152561377"><a name="p2152561377"></a><a name="p2152561377"></a>参数</p>
+    <table><thead align="left"><tr id="row115205619372"><th class="cellrowborder" valign="top" width="23.68%" id="mcps1.2.3.1.1"><p id="p2152561377"><a name="p2152561377"></a><a name="p2152561377"></a>参数</p>
     </th>
-    <th class="cellrowborder" valign="top" width="66.03999999999999%" id="mcps1.2.3.1.2"><p id="p1515195616375"><a name="p1515195616375"></a><a name="p1515195616375"></a>参数说明</p>
+    <th class="cellrowborder" valign="top" width="76.32%" id="mcps1.2.3.1.2"><p id="p1515195616375"><a name="p1515195616375"></a><a name="p1515195616375"></a>参数说明</p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row653985164019"><td class="cellrowborder" valign="top" width="33.96%" headers="mcps1.2.3.1.1 "><p id="p1253915513402"><a name="p1253915513402"></a><a name="p1253915513402"></a>K8S标签</p>
+    <tbody><tr id="row653985164019"><td class="cellrowborder" valign="top" width="23.68%" headers="mcps1.2.3.1.1 "><p id="p1253915513402"><a name="p1253915513402"></a><a name="p1253915513402"></a>K8S标签</p>
     </td>
-    <td class="cellrowborder" valign="top" width="66.03999999999999%" headers="mcps1.2.3.1.2 "><p id="p11258124419136"><a name="p11258124419136"></a><a name="p11258124419136"></a>单击<span class="uicontrol" id="uicontrol18258644131312"><a name="uicontrol18258644131312"></a><a name="uicontrol18258644131312"></a>“添加标签”</span>可以设置附加到Kubernetes 对象（比如Pods）上的键值对，最多可以添加10条标签</p>
+    <td class="cellrowborder" valign="top" width="76.32%" headers="mcps1.2.3.1.2 "><p id="p11258124419136"><a name="p11258124419136"></a><a name="p11258124419136"></a>单击<span class="uicontrol" id="uicontrol18258644131312"><a name="uicontrol18258644131312"></a><a name="uicontrol18258644131312"></a>“添加标签”</span>可以设置附加到Kubernetes 对象（比如Pods）上的键值对，最多可以添加10条标签</p>
     <p id="p1442572821211"><a name="p1442572821211"></a><a name="p1442572821211"></a>使用该标签可区分不同节点，可结合工作负载的亲和能力实现容器Pod调度到指定节点的功能。详细请参见<a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/" target="_blank" rel="noopener noreferrer">Labels and Selectors</a>。</p>
     </td>
     </tr>
-    <tr id="row25394514014"><td class="cellrowborder" valign="top" width="33.96%" headers="mcps1.2.3.1.1 "><p id="p25391859406"><a name="p25391859406"></a><a name="p25391859406"></a>资源标签</p>
+    <tr id="row25394514014"><td class="cellrowborder" valign="top" width="23.68%" headers="mcps1.2.3.1.1 "><p id="p25391859406"><a name="p25391859406"></a><a name="p25391859406"></a>资源标签</p>
     </td>
-    <td class="cellrowborder" valign="top" width="66.03999999999999%" headers="mcps1.2.3.1.2 "><p id="p14909254174019"><a name="p14909254174019"></a><a name="p14909254174019"></a>通过为资源添加标签，可以对资源进行自定义标记，实现资源的分类。</p>
+    <td class="cellrowborder" valign="top" width="76.32%" headers="mcps1.2.3.1.2 "><p id="p14909254174019"><a name="p14909254174019"></a><a name="p14909254174019"></a>通过为资源添加标签，可以对资源进行自定义标记，实现资源的分类。</p>
     <p id="p10327184710426"><a name="p10327184710426"></a><a name="p10327184710426"></a>您可以在TMS中创建<span class="uicontrol" id="uicontrol922854293212"><a name="uicontrol922854293212"></a><a name="uicontrol922854293212"></a>“预定义标签”</span>，预定义标签对所有支持标签功能的服务资源可见，通过使用预定义标签可以提升标签创建和迁移效率。具体请参见<a href="https://support.huaweicloud.com/usermanual-tms/zh-cn_topic_0144368884.html" target="_blank" rel="noopener noreferrer">创建预定义标签</a>。</p>
     <p id="p1738110524401"><a name="p1738110524401"></a><a name="p1738110524401"></a>CCE服务会自动帮您创建CCE-Dynamic-Provisioning-Node=节点id的标签，允许增加5个标签。</p>
     </td>
     </tr>
-    <tr id="row115391952402"><td class="cellrowborder" valign="top" width="33.96%" headers="mcps1.2.3.1.1 "><p id="p55391457404"><a name="p55391457404"></a><a name="p55391457404"></a>Taints</p>
+    <tr id="row115391952402"><td class="cellrowborder" valign="top" width="23.68%" headers="mcps1.2.3.1.1 "><p id="p55391457404"><a name="p55391457404"></a><a name="p55391457404"></a>Taints</p>
     </td>
-    <td class="cellrowborder" valign="top" width="66.03999999999999%" headers="mcps1.2.3.1.2 "><div class="p" id="p2875141354415"><a name="p2875141354415"></a><a name="p2875141354415"></a>默认为空。支持给该节点池扩容出来的节点加Taints来设置反亲和性，每个节点池最多配置10条Taints，每条Taints包含以下3个参数：<a name="ul17274222121015"></a><a name="ul17274222121015"></a><ul id="ul17274222121015"><li>Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。</li><li>Value：必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。</li><li>Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。</li></ul>
+    <td class="cellrowborder" valign="top" width="76.32%" headers="mcps1.2.3.1.2 "><div class="p" id="p2875141354415"><a name="p2875141354415"></a><a name="p2875141354415"></a>默认为空。支持给节点加Taints来设置反亲和性，每个节点最多配置10条Taints，每条Taints包含以下3个参数：<a name="ul17274222121015"></a><a name="ul17274222121015"></a><ul id="ul17274222121015"><li>Key：必须以字母或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符；另外可以使用DNS子域作为前缀。</li><li>Value：必须以字符或数字开头，可以包含字母、数字、连字符、下划线和点，最长63个字符。</li><li>Effect：只可选NoSchedule，PreferNoSchedule或NoExecute。</li></ul>
     <div class="notice" id="note77443231113"><a name="note77443231113"></a><a name="note77443231113"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><a name="ul104271158181515"></a><a name="ul104271158181515"></a><ul id="ul104271158181515"><li>Taints配置时需要配合Pod的toleration使用，否则可能导致扩容失败或者Pod无法调度到扩容节点。</li><li>节点池创建后可单击列表项的<span class="uicontrol" id="uicontrol144721126174416"><a name="uicontrol144721126174416"></a><a name="uicontrol144721126174416"></a>“编辑”</span>修改配置，修改后将同步到节点池下的已有节点。</li></ul>
     </div></div>
     </div>
     </td>
     </tr>
-    <tr id="row155390520404"><td class="cellrowborder" valign="top" width="33.96%" headers="mcps1.2.3.1.1 "><p id="p054015516406"><a name="p054015516406"></a><a name="p054015516406"></a>最大实例数</p>
+    <tr id="row155390520404"><td class="cellrowborder" valign="top" width="23.68%" headers="mcps1.2.3.1.1 "><p id="p054015516406"><a name="p054015516406"></a><a name="p054015516406"></a>最大实例数</p>
     </td>
-    <td class="cellrowborder" valign="top" width="66.03999999999999%" headers="mcps1.2.3.1.2 "><p id="p18611194424216"><a name="p18611194424216"></a><a name="p18611194424216"></a>节点最大可以正常运行的实例数(Pod)，该数量包含系统默认实例，取值范围为16~128。</p>
+    <td class="cellrowborder" valign="top" width="76.32%" headers="mcps1.2.3.1.2 "><p id="p18611194424216"><a name="p18611194424216"></a><a name="p18611194424216"></a>节点最大可以正常运行的实例数(Pod)，该数量包含系统默认实例，取值范围为16~128。</p>
     <p id="p272611351429"><a name="p272611351429"></a><a name="p272611351429"></a>该设置的目的为防止节点因管理过多实例而负载过重，请根据您的业务需要进行设置。</p>
     </td>
     </tr>
-    <tr id="row124141558173910"><td class="cellrowborder" valign="top" width="33.96%" headers="mcps1.2.3.1.1 "><p id="p154141258193916"><a name="p154141258193916"></a><a name="p154141258193916"></a>云服务器组</p>
+    <tr id="row124141558173910"><td class="cellrowborder" valign="top" width="23.68%" headers="mcps1.2.3.1.1 "><p id="p154141258193916"><a name="p154141258193916"></a><a name="p154141258193916"></a>云服务器组</p>
     </td>
-    <td class="cellrowborder" valign="top" width="66.03999999999999%" headers="mcps1.2.3.1.2 "><p id="p53431536184014"><a name="p53431536184014"></a><a name="p53431536184014"></a>云服务器组是对云服务器的一种逻辑划分，同一云服务器组中的云服务器遵从同一策略。</p>
+    <td class="cellrowborder" valign="top" width="76.32%" headers="mcps1.2.3.1.2 "><p id="p53431536184014"><a name="p53431536184014"></a><a name="p53431536184014"></a>云服务器组是对云服务器的一种逻辑划分，同一云服务器组中的云服务器遵从同一策略。</p>
     <p id="p135011254181618"><a name="p135011254181618"></a><a name="p135011254181618"></a>反亲和性策略：同一云服务器组中的云服务器分散地创建在不同主机上，提高业务的可靠性。</p>
     <p id="p19871173217401"><a name="p19871173217401"></a><a name="p19871173217401"></a>选择已创建的云服务器组，或单击<span class="uicontrol" id="uicontrol4227114233214"><a name="uicontrol4227114233214"></a><a name="uicontrol4227114233214"></a>“新建云服务器组”</span>创建，创建完成后单击刷新按钮。</p>
     </td>
     </tr>
-    <tr id="row23431056203915"><td class="cellrowborder" valign="top" width="33.96%" headers="mcps1.2.3.1.1 "><p id="p534319566391"><a name="p534319566391"></a><a name="p534319566391"></a>安装前执行脚本</p>
+    <tr id="row23431056203915"><td class="cellrowborder" valign="top" width="23.68%" headers="mcps1.2.3.1.1 "><p id="p534319566391"><a name="p534319566391"></a><a name="p534319566391"></a>安装前执行脚本</p>
     </td>
-    <td class="cellrowborder" valign="top" width="66.03999999999999%" headers="mcps1.2.3.1.2 "><p id="p11569142494118"><a name="p11569142494118"></a><a name="p11569142494118"></a>请输入脚本命令，大小限制为0~1000字符。</p>
+    <td class="cellrowborder" valign="top" width="76.32%" headers="mcps1.2.3.1.2 "><p id="p11569142494118"><a name="p11569142494118"></a><a name="p11569142494118"></a>请输入脚本命令，大小限制为0~1000字符。</p>
     <p id="p03368579295"><a name="p03368579295"></a><a name="p03368579295"></a>脚本将在Kubernetes软件安装前执行，可能导致Kubernetes软件无法正常安装，需谨慎使用。常用于格式化数据盘等场景。</p>
     </td>
     </tr>
-    <tr id="row1167794673912"><td class="cellrowborder" valign="top" width="33.96%" headers="mcps1.2.3.1.1 "><p id="p18677104643916"><a name="p18677104643916"></a><a name="p18677104643916"></a>安装后执行脚本</p>
+    <tr id="row1167794673912"><td class="cellrowborder" valign="top" width="23.68%" headers="mcps1.2.3.1.1 "><p id="p18677104643916"><a name="p18677104643916"></a><a name="p18677104643916"></a>安装后执行脚本</p>
     </td>
-    <td class="cellrowborder" valign="top" width="66.03999999999999%" headers="mcps1.2.3.1.2 "><p id="p1114204119418"><a name="p1114204119418"></a><a name="p1114204119418"></a>请输入脚本命令，大小限制为0~1000字符。</p>
+    <td class="cellrowborder" valign="top" width="76.32%" headers="mcps1.2.3.1.2 "><p id="p1114204119418"><a name="p1114204119418"></a><a name="p1114204119418"></a>请输入脚本命令，大小限制为0~1000字符。</p>
     <p id="p13471136154110"><a name="p13471136154110"></a><a name="p13471136154110"></a>脚本将在Kubernetes软件安装后执行，不影响Kubernetes软件安装。常用于修改Docker配置参数等场景。</p>
     </td>
     </tr>
-    <tr id="row8356164413910"><td class="cellrowborder" valign="top" width="33.96%" headers="mcps1.2.3.1.1 "><p id="p1435614417397"><a name="p1435614417397"></a><a name="p1435614417397"></a>单容器可用数据空间</p>
+    <tr id="row1864641094712"><td class="cellrowborder" valign="top" width="23.68%" headers="mcps1.2.3.1.1 "><p id="p18875831124716"><a name="p18875831124716"></a><a name="p18875831124716"></a>计费</p>
     </td>
-    <td class="cellrowborder" valign="top" width="66.03999999999999%" headers="mcps1.2.3.1.2 "><p id="p1335794483917"><a name="p1335794483917"></a><a name="p1335794483917"></a>该参数用于设置一个容器可用的数据空间大小，设置范围为10G到80G。如果设置的参数超过数据盘中Docker可占用的实际数据空间（由数据盘设置项中的资源分配自定义参数指定，默认为数据盘大小的90%），将以Docker的实际空间大小为主。</p>
-    </td>
-    </tr>
-    <tr id="row1864641094712"><td class="cellrowborder" valign="top" width="33.96%" headers="mcps1.2.3.1.1 "><p id="p18875831124716"><a name="p18875831124716"></a><a name="p18875831124716"></a>计费</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="66.03999999999999%" headers="mcps1.2.3.1.2 "><a name="ul1387543119476"></a><a name="ul1387543119476"></a><ul id="ul1387543119476"><li><span class="keyword" id="keyword13875123194718"><a name="keyword13875123194718"></a><a name="keyword13875123194718"></a>包年/包月</span>：预付费模式，按订单的购买周期计费，适用于可预估资源使用周期的场景，价格比按需计费模式更优惠。若选择创建<span class="uicontrol" id="uicontrol198751312470"><a name="uicontrol198751312470"></a><a name="uicontrol198751312470"></a>“包年/包月”</span>的集群，请设置购买时长。包年/包月集群创建后不能删除，如需停止使用，请到<a href="https://account.huaweicloud.com/usercenter/#/userindex/retreatManagement" target="_blank" rel="noopener noreferrer">费用中心</a>执行退订操作。</li><li><span class="keyword" id="keyword58758311476"><a name="keyword58758311476"></a><a name="keyword58758311476"></a>按需计费</span>：后付费模式，按资源的实际使用时长计费，可以随时开通/删除资源。</li></ul>
+    <td class="cellrowborder" valign="top" width="76.32%" headers="mcps1.2.3.1.2 "><a name="ul1387543119476"></a><a name="ul1387543119476"></a><ul id="ul1387543119476"><li><span class="keyword" id="keyword13875123194718"><a name="keyword13875123194718"></a><a name="keyword13875123194718"></a>包年/包月</span>：预付费模式，按订单的购买周期计费，适用于可预估资源使用周期的场景，价格比按需计费模式更优惠。若选择创建<span class="uicontrol" id="uicontrol198751312470"><a name="uicontrol198751312470"></a><a name="uicontrol198751312470"></a>“包年/包月”</span>的集群，请设置购买时长。包年/包月集群创建后不能删除，如需停止使用，请到<a href="https://account.huaweicloud.com/usercenter/#/userindex/retreatManagement" target="_blank" rel="noopener noreferrer">费用中心</a>执行退订操作。</li><li><span class="keyword" id="keyword58758311476"><a name="keyword58758311476"></a><a name="keyword58758311476"></a>按需计费</span>：后付费模式，按资源的实际使用时长计费，可以随时开通/删除资源。</li></ul>
     </td>
     </tr>
     </tbody>

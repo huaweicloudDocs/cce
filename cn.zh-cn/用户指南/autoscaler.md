@@ -33,7 +33,7 @@ autoscaler可分成扩容和缩容两个方面：
     -   pod由于一些限制，如亲和、反亲和等，无法调度到其他节点，节点不会缩容。
     -   pod拥有cluster-autoscaler.kubernetes.io/safe-to-evict: 'false'这个annotations时，节点不缩容。
     -   节点上存在kube-system namespace下的Pod（除kube-system daemonset创建的Pod），节点不缩容。
-    -   节点上有非controller（deployment/replica set/job/stateful set）创建的Pod，节点不缩容。
+    -   节点上如果有非controller（deployment/replica set/job/stateful set）创建的Pod，节点不缩容。
 
 
 ## 约束与限制<a name="section202191122814"></a>
