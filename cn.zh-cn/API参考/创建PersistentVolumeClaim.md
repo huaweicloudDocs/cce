@@ -346,7 +346,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
             },
             "annotations":{
                 "everest.io/crypt-key-id":"527cbece-428d-463b-a92c-936a11077b5d", //创建加密卷必需，若无或不全，则不加密；
-                "everest.io/disk-volume-type":"SATA"
+                "everest.io/disk-volume-type":"SAS"
             },
             "finalizers":[
                 "kubernetes.io/pvc-protection"
@@ -378,7 +378,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
             "namespace": "default",
             "annotations": {
             "paas.storage.io/cryptKeyId": "1ed68cb7-b09b-423c-8d66-fdd2e063769d",     //此annotation表明是否加密，若无，则不加密；
-    	"volume.beta.kubernetes.io/storage-class": "sata",
+    	"volume.beta.kubernetes.io/storage-class": "SAS",
     	"volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
             },
             "labels": {
@@ -491,7 +491,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
             },
             "annotations":{
                 "everest.io/crypt-key-id":"527cbece-428d-463b-a92c-936a11077b5d",//若为加密卷，则存在
-                "everest.io/disk-volume-type":"SATA"
+                "everest.io/disk-volume-type":"SAS"
             },
             "finalizers":[
                 "kubernetes.io/pvc-protection"
@@ -538,7 +538,7 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
                 "paas.storage.io/cryptKeyId": "1ed68cb7-b09b-423c-8d66-fdd2e063769d"   //若为加密卷，则存在
                 "pv.kubernetes.io/bind-completed": "yes",
                 "pv.kubernetes.io/bound-by-controller": "yes",
-                "volume.beta.kubernetes.io/storage-class": "sata",
+                "volume.beta.kubernetes.io/storage-class": "SAS",
                 "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
             }
         },

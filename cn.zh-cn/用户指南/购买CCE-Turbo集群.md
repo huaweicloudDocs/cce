@@ -6,15 +6,16 @@ CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎�
 
 ## 约束与限制<a name="section1675221242512"></a>
 
+-   创建节点过程中会使用域名方式从OBS下载软件包，需要能够使用云上内网DNS解析OBS域名，否则会导致创建不成功。为此，节点所在子网需要配置为[内网DNS地址](https://support.huaweicloud.com/dns_faq/dns_faq_002.html)，从而使得节点使用内网DNS。在创建子网时DNS默认配置为内网DNS，如果您修改过子网的DNS，请务必**确保子网下的DNS服务器可以解析OBS服务域名**，否则需要将DNS改成内网DNS。
 -   单Region下单用户可创建的集群总数限制为50个，如果配额不满足业务需求，请[到“我的配额”提交申请](https://console.huaweicloud.com/quota/?locale=zh-cn#/quota)，查看配额请参见[关于配额](https://support.huaweicloud.com/usermanual-iaas/zh-cn_topic_0040259342.html)。
 -   CCE Turbo集群的网络模式只支持云原生网络2.0，云原生网络2.0的详细介绍请参见[云原生网络2.0](云原生网络2-0.md)。
 -   CCE Turbo集群的节点目前仅支持基于擎天软硬件协同架构的机型。
 -   TrunkPort能力仅在1.19版本的CCE Turbo集群中使用。
--   在1.19版本的CCE Turbo集群中添加的共池BMS节点，容器使用的网卡默认配置是4队列。
+-   在1.19版本的CCE Turbo集群中添加的共池BMS节点，容器使用的网卡默认配置是4队列，详情请参见[CCE Turbo共池BMS节点容器网卡多队列配置](CCE-Turbo共池BMS节点容器网卡多队列配置.md)。
 
 ## 操作步骤<a name="section10209182314553"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中单击“资源管理  \>  集群管理”，单击“CCE Turbo集群“右侧的“购买”。
+1.  登录CCE控制台，在左侧导航栏中单击“资源管理  \>  集群管理”，单击“CCE Turbo集群“右侧的“购买”。
 
     **图 1**  购买CCE Turbo集群<a name="fig11806912127"></a>  
     ![](figures/购买CCE-Turbo集群.png "购买CCE-Turbo集群")
@@ -79,7 +80,7 @@ CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎�
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p20558173114298"><a name="p20558173114298"></a><a name="p20558173114298"></a>请选择新建集群下节点和容器使用的虚拟私有云VPC，集群创建后不可更改。</p>
     <p id="p116393128265"><a name="p116393128265"></a><a name="p116393128265"></a>虚拟私有云是通过逻辑方式进行网络隔离，提供安全、隔离的网络环境。</p>
-    <p id="p1063941211266"><a name="p1063941211266"></a><a name="p1063941211266"></a>若没有虚拟私有云可选择，请单击<a href="https://console.huaweicloud.com/vpc/?region=cn-north-4&amp;locale=zh-cn#/vpcs" target="_blank" rel="noopener noreferrer">虚拟私有云控制台</a>进行创建，完成创建后单击刷新按钮。操作步骤请参见<a href="https://support.huaweicloud.com/usermanual-vpc/zh-cn_topic_0013935842.html" target="_blank" rel="noopener noreferrer">创建虚拟私有云和子网</a>。</p>
+    <p id="p1063941211266"><a name="p1063941211266"></a><a name="p1063941211266"></a>若没有虚拟私有云可选择，请单击<a href="https://console.huaweicloud.com/vpc/?region=cn-north-4&amp;locale=zh-cn#/vpcs" target="_blank" rel="noopener noreferrer">虚拟私有云控制台</a><span class="uicontrol" id="uicontrol89112416553"><a name="uicontrol89112416553"></a><a name="uicontrol89112416553"></a>“虚拟私有云控制台”</span>进行创建，完成创建后单击刷新按钮。操作步骤请参见<a href="https://support.huaweicloud.com/usermanual-vpc/zh-cn_topic_0013935842.html" target="_blank" rel="noopener noreferrer">创建虚拟私有云和子网</a>。</p>
     </td>
     </tr>
     <tr id="row9961959174010"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p36391812172618"><a name="p36391812172618"></a><a name="p36391812172618"></a>节点子网</p>
@@ -88,7 +89,7 @@ CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎�
     <p id="p572616338520"><a name="p572616338520"></a><a name="p572616338520"></a>集群下节点使用的子网，决定了集群下节点的数量上限。创建节点时支持选择相同VPC下的其他子网。</p>
     <p id="p594513252114"><a name="p594513252114"></a><a name="p594513252114"></a>通过节点子网提供与其他网络隔离的、可以独享的网络资源，以提高网络安全。</p>
     <p id="p1108371202"><a name="p1108371202"></a><a name="p1108371202"></a>若没有节点子网可选择，请单击<span class="uicontrol" id="uicontrol626432718115"><a name="uicontrol626432718115"></a><a name="uicontrol626432718115"></a>“<span id="text82642277119"><a name="text82642277119"></a><a name="text82642277119"></a>新建子网</span>”</span>进行创建，完成创建后单击刷新按钮。虚拟私有云、子网、集群的关系请参见<a href="集群概述.md">集群概述</a>。</p>
-    <p id="p1369519572172"><a name="p1369519572172"></a><a name="p1369519572172"></a><strong id="b13695957131719"><a name="b13695957131719"></a><a name="b13695957131719"></a>请确保子网下的DNS服务器可以解析OBS服务域名，否则无法创建节点。</strong></p>
+    <p id="p1369519572172"><a name="p1369519572172"></a><a name="p1369519572172"></a>创建节点过程中会使用域名方式从OBS下载软件包，需要能够使用内网DNS解析OBS域名，否则会导致创建不成功。为此，节点所在子网需要配置为<a href="https://support.huaweicloud.com/dns_faq/dns_faq_002.html" target="_blank" rel="noopener noreferrer">内网DNS地址</a>，从而使得节点使用内网DNS。在创建子网时DNS默认配置为内网DNS，如果您修改过子网的DNS，请务必<strong id="cce_01_0028_b8921731141716"><a name="cce_01_0028_b8921731141716"></a><a name="cce_01_0028_b8921731141716"></a>确保子网下的DNS服务器可以解析OBS服务域名</strong>，否则需要将DNS改成内网DNS。</p>
     <p id="p9619101653511"><a name="p9619101653511"></a><a name="p9619101653511"></a><strong id="b1119161703511"><a name="b1119161703511"></a><a name="b1119161703511"></a>集群创建后子网无法修改，请谨慎选择。</strong></p>
     </td>
     </tr>
@@ -127,7 +128,15 @@ CCE Turbo集群是基于云原生基础设施构建的云原生2.0容器引擎�
     <tr id="row9381745114114"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p138224519412"><a name="p138224519412"></a><a name="p138224519412"></a>kube-proxy转发模式</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p16382124517417"><a name="p16382124517417"></a><a name="p16382124517417"></a>设置Service和其后端容器Pod之间进行负载均衡的方式，创建后不可修改。</p>
-    <a name="ul171711948164219"></a><a name="ul171711948164219"></a><ul id="ul171711948164219"><li>iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。</li></ul>
+    <a name="ul171711948164219"></a><a name="ul171711948164219"></a><ul id="ul171711948164219"><li>IPVS：由华为主导开发并在社区获得广泛支持的kube-proxy模式，采用增量式更新，吞吐更高，速度更快，并可以保证service更新期间连接保持不断开，适用于大规模场景。<p id="p6171104810422"><a name="p6171104810422"></a><a name="p6171104810422"></a>IPVS模式下，ingress和service使用相同的ELB实例时，无法在集群内的节点和容器中访问ingress。</p>
+    </li><li>iptables：社区传统的kube-proxy模式，完全以iptables规则的方式来实现service负载均衡。该方式最主要的问题是在服务多的时候产生太多的iptables规则，非增量式更新会引入一定的时延，大规模情况下有明显的性能问题。</li></ul>
+    <div class="note" id="note1417164874212"><a name="note1417164874212"></a><a name="note1417164874212"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul1617174814217"></a><a name="ul1617174814217"></a><ul id="ul1617174814217"><li>IPVS为大型集群提供了更好的可扩展性和性能。</li><li>IPVS支持比iptables更复杂的负载平衡算法（最小负载，最少连接，位置，加权等）。</li><li>IPVS支持服务器健康检查和连接重试等。</li></ul>
+    </div></div>
+    </td>
+    </tr>
+    <tr id="row12310175135716"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p131017575713"><a name="p131017575713"></a><a name="p131017575713"></a>CPU管理策略</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><a name="ul14813182993518"></a><a name="ul14813182993518"></a><ul id="ul14813182993518"><li>开启：支持给工作负载实例配置CPU独占，适用于对CPU缓存和调度延迟敏感的工作负载。</li><li>关闭：关闭工作负载实例独占CPU核的功能，优点是CPU共享池的可分配核数较多。</li></ul>
     </td>
     </tr>
     <tr id="row1640647144410"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p9231104613468"><a name="p9231104613468"></a><a name="p9231104613468"></a>计费</p>
@@ -220,7 +229,7 @@ CCE Turbo集群创建完成后，您可以在集群中购买节点。
     <tr id="row146695755817"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p176690785813"><a name="p176690785813"></a><a name="p176690785813"></a>操作系统</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p1058345314295"><a name="p1058345314295"></a><a name="p1058345314295"></a>公共镜像：请选择节点对应的操作系统。</p>
-    <p id="p65923115292"><a name="p65923115292"></a><a name="p65923115292"></a>公共镜像是常见的标准操作系统镜像，所有用户可见，包括操作系统以及预装的公共应用，更多介绍请参见<a href="https://support.huaweicloud.com/productdesc-ecs/ecs_01_0049.html" target="_blank" rel="noopener noreferrer">公共镜像概述</a>。</p>
+    <p id="p89866115220"><a name="p89866115220"></a><a name="p89866115220"></a>私有镜像：裸金属服务器支持使用私有镜像，私有镜像制作方法具体请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00026.html" target="_blank" rel="noopener noreferrer">制作CCE节点自定义镜像</a>。</p>
     </td>
     </tr>
     <tr id="row209270458578"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p15928144516578"><a name="p15928144516578"></a><a name="p15928144516578"></a>节点名称</p>
@@ -287,7 +296,7 @@ CCE Turbo集群创建完成后，您可以在集群中购买节点。
     </thead>
     <tbody><tr id="row1067237145814"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p1367219735815"><a name="p1367219735815"></a><a name="p1367219735815"></a>节点子网与IP</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p46731571584"><a name="p46731571584"></a><a name="p46731571584"></a>节点子网默认使用创建集群时的子网配置，可在此进行修改。创建后不可修改</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p46731571584"><a name="p46731571584"></a><a name="p46731571584"></a>节点子网默认使用创建集群时的子网配置，可在此进行修改。创建后不可修改。</p>
     </td>
     </tr>
     </tbody>
@@ -371,7 +380,7 @@ CCE Turbo集群创建完成后，您可以在集群中购买节点。
 
 ## 相关操作<a name="section473818525817"></a>
 
--   通过命令行工具连接集群：请参见[通过kubectl或web-terminal插件操作CCE集群](通过kubectl或web-terminal插件操作CCE集群.md)。
+-   通过命令行工具连接集群：请参见[通过kubectl连接集群](通过kubectl连接集群.md)。
 -   登录节点：请参见[登录节点](登录节点.md)。
 
 -   创建命名空间：同个集群内可创建多个命名空间，形成逻辑上的不同分组，便于不同的分组在共享使用集群资源时还能被分别管理。若您需要为集群创建命名空间，请参见[命名空间](命名空间.md)。
@@ -410,7 +419,7 @@ CCE Turbo集群创建完成后，您可以在集群中购买节点。
     </tr>
     <tr id="cce_01_0028_row651036112414"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p1251015692419"><a name="cce_01_0028_p1251015692419"></a><a name="cce_01_0028_p1251015692419"></a>kubectl</p>
     </td>
-    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p35101368242"><a name="cce_01_0028_p35101368242"></a><a name="cce_01_0028_p35101368242"></a>若您需要从客户端计算机连接到kubernetes集群，请使用kubernetes命令行客户端<a href="https://kubernetes.io/docs/user-guide/kubectl/" target="_blank" rel="noopener noreferrer">kubectl</a>，详情请参见<a href="通过kubectl或web-terminal插件操作CCE集群.md">通过kubectl或web-terminal插件操作CCE集群</a>。</p>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p35101368242"><a name="cce_01_0028_p35101368242"></a><a name="cce_01_0028_p35101368242"></a>若您需要从客户端计算机连接到kubernetes集群，请使用kubernetes命令行客户端<a href="https://kubernetes.io/docs/user-guide/kubectl/" target="_blank" rel="noopener noreferrer">kubectl</a>，详情请参见<a href="通过kubectl连接集群.md">通过kubectl连接集群</a>。</p>
     </td>
     </tr>
     <tr id="row1562810082313"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="p96289022317"><a name="p96289022317"></a><a name="p96289022317"></a>资源标签</p>
@@ -422,7 +431,7 @@ CCE Turbo集群创建完成后，您可以在集群中购买节点。
     </tr>
     <tr id="cce_01_0028_row2701721182419"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="cce_01_0028_p6701721122417"><a name="cce_01_0028_p6701721122417"></a><a name="cce_01_0028_p6701721122417"></a>Istioctl</p>
     </td>
-    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p1701821112418"><a name="cce_01_0028_p1701821112418"></a><a name="cce_01_0028_p1701821112418"></a>在集群开启istio服务网格功能后，您使用Istio命令行工具Istioctl配置多种路由策略，从而管理服务流量，包括流量转移、故障注入、限流熔断等。详情请参见<a href="通过Istioctl配置路由策略.md">通过Istioctl配置路由策略</a>。</p>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="cce_01_0028_p1701821112418"><a name="cce_01_0028_p1701821112418"></a><a name="cce_01_0028_p1701821112418"></a>在集群开启istio服务网格功能后，您使用Istio命令行工具Istioctl配置多种路由策略，从而管理服务流量，包括流量转移、故障注入、限流熔断等。详情请参见<a href="启用istio.md">启用istio</a>。</p>
     </td>
     </tr>
     </tbody>

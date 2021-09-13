@@ -78,7 +78,6 @@
          }' -v
         ```
 
-
     响应Header中“X-Subject-Token“的值即为Token：
 
     ```
@@ -145,12 +144,12 @@
             },
             "rootVolume": {
                 "size": 40,
-                "volumetype": "SATA"
+                "volumetype": "SAS"
             },
             "dataVolumes": [
               {
                   "size": 100,
-                  "volumetype": "SATA"
+                  "volumetype": "SAS"
               }
             ],
             "publicIP": {

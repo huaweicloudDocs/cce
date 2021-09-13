@@ -26,7 +26,7 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
 ## 安装步骤<a name="section46701613154319"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击dashboard插件下的“安装插件“。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击dashboard插件下的“安装插件“。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置”。
 3.  在规格配置页面，配置以下参数。
     -   证书配置：dashboard服务端使用的证书。
@@ -46,9 +46,8 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
                 该插件默认以NodePort形式提供访问，需为集群任意一个节点绑定弹性IP才能使用。
 
-
         -   负载均衡：
-            -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建[共享型弹性负载均衡](https://console.huaweicloud.com/vpc/#/ulb/createUlb)，完成后单击刷新按钮。
+            -   负载均衡：选择弹性负载均衡实例。若无弹性负载均衡实例，需新建共享型弹性负载均衡，完成后单击刷新按钮。
 
                 >![](public_sys-resources/icon-note.gif) **说明：** 
                 >负载均衡实例需与当前集群处于相同VPC且为公网类型。
@@ -57,7 +56,6 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
                 -   协议：默认为TCP。
                 -   容器端口：默认为8443。
                 -   访问端口：容器端口最终映射到负载均衡服务地址的端口，用负载均衡服务地址访问工作负载时使用，端口范围为1-65535，可任意指定。
-
 
 
 
@@ -83,7 +81,7 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
 确认dashboard插件状态为“运行中“后，单击“访问地址“中的链接并登录，详细操作如下：
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例”页签下，确认dashboard插件状态为“运行中“后，单击插件名称“dashboard“进入插件实例详情页。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件实例”页签下，确认dashboard插件状态为“运行中“后，单击插件名称“dashboard“进入插件实例详情页。
 2.  在详情页下方的“说明”页签下，单击“获取默认token”右侧的![](figures/zh-cn_image_0219106095.png)，复制“值”栏中的信息。
 
     **图 1**  复制token<a name="fig118242010184815"></a>  
@@ -123,7 +121,7 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
 ## 升级插件<a name="section455343310401"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“升级“。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作；
@@ -134,7 +132,7 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
 ## 卸载插件<a name="section20765191931911"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“卸载“。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击dashboard下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
 
 ## 附：访问报错解决方法<a name="section913875232612"></a>

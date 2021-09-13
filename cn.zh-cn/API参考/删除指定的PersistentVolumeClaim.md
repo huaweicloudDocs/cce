@@ -111,7 +111,7 @@ DELETE  /api/v1/namespaces/\{namespace\}/persistentvolumeclaims/\{name\}
             },
             "annotations":{
                 "everest.io/crypt-key-id":"527cbece-428d-463b-a92c-936a11077b5d",//若为加密卷，则存在
-                "everest.io/disk-volume-type":"SATA",
+                "everest.io/disk-volume-type":"SAS",
                 "pv.kubernetes.io/bind-completed": "yes",
                 "pv.kubernetes.io/bound-by-controller": "yes",
                 "volume.beta.kubernetes.io/storage-provisioner":"everest-csi-provisioner"
@@ -161,7 +161,7 @@ DELETE  /api/v1/namespaces/\{namespace\}/persistentvolumeclaims/\{name\}
             "annotations": {
                 "pv.kubernetes.io/bind-completed": "yes",
                 "pv.kubernetes.io/bound-by-controller": "yes",
-                "volume.beta.kubernetes.io/storage-class": "sata",
+                "volume.beta.kubernetes.io/storage-class": "SAS",
                 "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
             }
         },

@@ -100,8 +100,8 @@ DELETE /api/v1/persistentvolumes/\{name\}
             "everest-csi-attacher/disk-csi-everest-io"
         ],
         "labels": {
-            "failure-domain.beta.kubernetes.io/region": "cn-north-7",
-            "failure-domain.beta.kubernetes.io/zone": "cn-north-7b"
+            "failure-domain.beta.kubernetes.io/region": "cn-north-4",
+            "failure-domain.beta.kubernetes.io/zone": "cn-north-4b"
         },
         "name": "pvc-efe92ec5-fb39-4e17-bb26-c5d336ce5c14",
         "resourceVersion": "5025500",
@@ -128,7 +128,7 @@ DELETE /api/v1/persistentvolumes/\{name\}
             "fsType": "ext4",
             "volumeAttributes": {
                 "everest.io/disk-mode": "SCSI",
-                "everest.io/disk-volume-type": "SATA",
+                "everest.io/disk-volume-type": "SAS",
                 "storage.kubernetes.io/csiProvisionerIdentity": "everest-csi-provisioner"
             },
             "volumeHandle": "9c44d068-42ab-4fcf-bb8f-1609823da5bb"
@@ -164,7 +164,7 @@ DELETE /api/v1/persistentvolumes/\{name\}
         },
         "annotations": {
             "pv.kubernetes.io/bound-by-controller": "yes",
-            "volume.beta.kubernetes.io/storage-class": "sata",
+            "volume.beta.kubernetes.io/storage-class": "SAS",
             "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
         }
     },

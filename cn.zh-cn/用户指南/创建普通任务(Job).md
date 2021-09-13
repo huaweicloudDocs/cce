@@ -16,13 +16,14 @@
 
 已创建资源，具体操作请参见[购买节点（按需计费）](购买节点.md)。若已有集群和节点资源，无需重复操作。
 
+
 ## 操作步骤<a name="sb8a02965b2624dbbabab320046ca4973"></a>
 
 1.  （可选）普通任务需要基于镜像创建，若选择私有镜像，用户首先需要将镜像上传至镜像仓库。
 
     镜像仓库的使用步骤请参考[上传镜像至容器镜像服务](https://support.huaweicloud.com/usermanual-swr/swr_01_0009.html)。
 
-2.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 普通任务 Job“，单击“创建普通任务”_。_
+2.  登录CCE控制台，在左侧导航栏中选择“工作负载 \> 普通任务 Job“，单击“创建普通任务”_。_
 3.  参照[表1](#t70ce3a99637a44ce8f7274857fb245b1)配置任务基本信息，其中带“\*”标志的参数为必填参数。
 
     **表 1**  任务基本信息
@@ -157,7 +158,7 @@
         <tr id="r23157569d21e4f1eaca7fddbb384abd8"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="a8540d286ec904152a0ae2a7706f81b13"><a name="a8540d286ec904152a0ae2a7706f81b13"></a><a name="a8540d286ec904152a0ae2a7706f81b13"></a>数据存储</p>
         </td>
         <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="a8b0122d13c334988999081ca36bcd194"><a name="a8b0122d13c334988999081ca36bcd194"></a><a name="a8b0122d13c334988999081ca36bcd194"></a>支持挂载本地磁盘或者云存储到容器中，以实现数据文件的持久化存储<span>。</span></p>
-        <p id="a15513eb91b5c4c3daf720ca0b6365c60"><a name="a15513eb91b5c4c3daf720ca0b6365c60"></a><a name="a15513eb91b5c4c3daf720ca0b6365c60"></a>详细步骤请参见<a href="存储管理.md">存储管理</a>。</p>
+        <p id="a15513eb91b5c4c3daf720ca0b6365c60"><a name="a15513eb91b5c4c3daf720ca0b6365c60"></a><a name="a15513eb91b5c4c3daf720ca0b6365c60"></a>详细步骤请参见<a href="存储管理-CSI.md">存储管理-CSI</a>。</p>
         </td>
         </tr>
         <tr id="r547f9887aa95447fae37c69bf28e8d09"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="a4a93ff2a806b494c8d80b89595802cbe"><a name="a4a93ff2a806b494c8d80b89595802cbe"></a><a name="a4a93ff2a806b494c8d80b89595802cbe"></a>容器日志</p>

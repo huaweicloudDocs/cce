@@ -2,10 +2,11 @@
 
 您可以通过云容器引擎控制台非常方便快速的创建Kubernetes集群。Kubernetes是大规模容器集群管理软件，一个集群可以管理一组节点资源。
 
-CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构节点的混合部署，基于高性能网络模型提供全方位、多场景、安全稳定的容器运行环境，您可以通过[购买虚拟机节点](购买节点.md)、[使用GPU节点](使用GPU节点.md)、[使用裸金属节点](使用裸金属节点.md)实现多种场景的混合部署。
+CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构节点的混合部署，基于高性能网络模型提供全方位、多场景、安全稳定的容器运行环境，您可以实现多种场景的混合部署。
 
 ## 约束与限制<a name="section1386743114294"></a>
 
+-   创建节点过程中会使用域名方式从OBS下载软件包，需要能够使用云上内网DNS解析OBS域名，否则会导致创建不成功。为此，节点所在子网需要配置为[内网DNS地址](https://support.huaweicloud.com/dns_faq/dns_faq_002.html)，从而使得节点使用内网DNS。在创建子网时DNS默认配置为内网DNS，如果您修改过子网的DNS，请务必**确保子网下的DNS服务器可以解析OBS服务域名**，否则需要将DNS改成内网DNS。
 -   单Region下单用户可创建的集群总数限制为50个，如果配额不满足业务需求，请[到“我的配额”提交申请](https://console.huaweicloud.com/quota/?locale=zh-cn#/quota)。
 -   集群一旦创建以后，不支持变更以下项：
     -   变更集群类型，例如“鲲鹏集群“变更为“CCE集群“。
@@ -19,7 +20,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
 
 ## 操作步骤<a name="section463761220269"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在总览页面单击“购买Kubernetes集群“，或在左侧导航栏中单击“资源管理  \>  集群管理”，单击“CCE集群“右侧的“购买”按钮。
+1.  登录CCE控制台，在总览页面单击“购买Kubernetes集群“，或在左侧导航栏中单击“资源管理  \>  集群管理”，单击“CCE集群“右侧的“购买”按钮。
 
     **图 1**  集群管理-购买CCE集群<a name="fig11806912127"></a>  
     ![](figures/集群管理-购买CCE集群.png "集群管理-购买CCE集群")
@@ -67,7 +68,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     </tr>
     <tr id="row572593234714"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p14725432104718"><a name="p14725432104718"></a><a name="p14725432104718"></a>集群管理规模</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p14899102111550"><a name="p14899102111550"></a><a name="p14899102111550"></a>集群管理规模是指当前集群的控制节点可以管理的最大工作节点规模，您可以选择50节点、200节点、1000节点或2000节点（仅1.15.11及以上版本的集群支持）四种管理规模，请根据您的业务需求选择，该规模在集群创建后不可更改，请慎重选择。如果您需要创建5000节点规模的集群，请<a href="https://console.huaweicloud.com/quota/?locale=zh-cn#/quota" target="_blank" rel="noopener noreferrer">提交工单</a>申请。</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p14899102111550"><a name="p14899102111550"></a><a name="p14899102111550"></a>集群管理规模是指当前集群的控制节点可以管理的最大工作节点规模，您可以选择50节点、200节点、1000节点或2000节点（仅1.15.11及以上版本的集群支持）的管理规模，请根据您的业务需求选择，该规模在集群创建后不可更改，请慎重选择。如果您需要创建5000节点规模的集群，请<a href="https://console.huaweicloud.com/quota/?locale=zh-cn#/quota" target="_blank" rel="noopener noreferrer">提交工单</a>申请。</p>
     <p id="p192696516218"><a name="p192696516218"></a><a name="p192696516218"></a>若选择<span class="uicontrol" id="uicontrol35596531909"><a name="uicontrol35596531909"></a><a name="uicontrol35596531909"></a>“1000节点”</span>，表示当前集群的控制节点最多可管理1000个工作节点。由于不同管理规模的控制节点规格不同，因此配置费用会有差异。</p>
     <div class="p" id="p102308301014"><a name="p102308301014"></a><a name="p102308301014"></a>任何一个集群中均包含<span class="uicontrol" id="uicontrol144772569118"><a name="uicontrol144772569118"></a><a name="uicontrol144772569118"></a>“Master Node”</span>和<span class="uicontrol" id="uicontrol1458610581110"><a name="uicontrol1458610581110"></a><a name="uicontrol1458610581110"></a>“Worker Node”</span>，每一个Node对应一台云服务器。<a name="ul1045015327013"></a><a name="ul1045015327013"></a><ul id="ul1045015327013"><li>Master Node：集群的控制节点，在创建集群时会自动创建控制节点，负责整个集群的管理和调度。</li><li>Worker Node：集群的工作节点，即用户购买或纳管的节点。工作负载是由控制节点分配的，当某个工作节点宕机时，控制节点会将工作负载转移到其他工作节点上。</li></ul>
     </div>
@@ -95,21 +96,21 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p924510014306"><a name="p924510014306"></a><a name="p924510014306"></a>节点虚拟机运行的子网环境，集群创建后不可更改。</p>
     <p id="p594513252114"><a name="p594513252114"></a><a name="p594513252114"></a>通过子网提供与其他网络隔离的、可以独享的网络资源，以提高网络安全。</p>
     <p id="p1108371202"><a name="p1108371202"></a><a name="p1108371202"></a>若没有子网可选择，请单击<span class="uicontrol" id="uicontrol626432718115"><a name="uicontrol626432718115"></a><a name="uicontrol626432718115"></a>“<span id="text82642277119"><a name="text82642277119"></a><a name="text82642277119"></a>创建子网</span>”</span>进行创建，完成创建后单击刷新按钮。虚拟私有云、子网、集群的关系请参见<a href="集群概述.md">集群概述</a>。</p>
-    <p id="p1369519572172"><a name="p1369519572172"></a><a name="p1369519572172"></a><strong id="b13695957131719"><a name="b13695957131719"></a><a name="b13695957131719"></a>请确保子网下的DNS服务器可以解析OBS服务域名，否则无法创建节点。</strong></p>
+    <p id="p1369519572172"><a name="p1369519572172"></a><a name="p1369519572172"></a>创建节点过程中会使用域名方式从OBS下载软件包，需要能够使用内网DNS解析OBS域名，否则会导致创建不成功。为此，节点所在子网需要配置为<a href="https://support.huaweicloud.com/dns_faq/dns_faq_002.html" target="_blank" rel="noopener noreferrer">内网DNS地址</a>，从而使得节点使用内网DNS。在创建子网时DNS默认配置为内网DNS，如果您修改过子网的DNS，请务必<strong id="cce_01_0028_b8921731141716"><a name="cce_01_0028_b8921731141716"></a><a name="cce_01_0028_b8921731141716"></a>确保子网下的DNS服务器可以解析OBS服务域名</strong>，否则需要将DNS改成内网DNS。</p>
     <p id="p9619101653511"><a name="p9619101653511"></a><a name="p9619101653511"></a><strong id="b1119161703511"><a name="b1119161703511"></a><a name="b1119161703511"></a>集群创建后子网无法修改，请谨慎选择。</strong></p>
     </td>
     </tr>
     <tr id="row115671413307"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p16567134113303"><a name="p16567134113303"></a><a name="p16567134113303"></a>IPv6双栈</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p36131511317"><a name="p36131511317"></a><a name="p36131511317"></a>默认不开启。<strong id="b3710124814376"><a name="b3710124814376"></a><a name="b3710124814376"></a>该功能仅在1.15及以上版本的集群下显示，方法请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html" target="_blank" rel="noopener noreferrer">通过CCE搭建IPv4/IPv6双栈集群</a>。</strong></p>
-    <p id="p1656714414305"><a name="p1656714414305"></a><a name="p1656714414305"></a>开启IPv6：开启后将自动创建IPv6地址的容器网段与服务网段，支持通过IPv6地址段访问集群资源，包括节点，工作负载等。具体使用及限制请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html" target="_blank" rel="noopener noreferrer">如何通过CCE搭建IPv4/IPv6双栈集群？</a>。</p>
+    <p id="p1656714414305"><a name="p1656714414305"></a><a name="p1656714414305"></a>开启IPv6：开启后将自动创建IPv6地址的容器网段与服务网段，支持通过IPv6地址段访问集群资源，包括节点，工作负载等。</p>
     </td>
     </tr>
     <tr id="row482955911270"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p9831659192715"><a name="p9831659192715"></a><a name="p9831659192715"></a>网络模型</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p135701052194711"><a name="p135701052194711"></a><a name="p135701052194711"></a>集群创建成功后，网络模型不可更改，请谨慎选择。如何选择网络模型请参见<a href="https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00162.html" target="_blank" rel="noopener noreferrer">CCE集群创建时如何选择网络模型？各模型的区别是什么？</a></p>
     <p id="p6806448162015"><a name="p6806448162015"></a><a name="p6806448162015"></a><strong id="b75401805214"><a name="b75401805214"></a><a name="b75401805214"></a>VPC网络</strong></p>
-    <p id="p1319614613446"><a name="p1319614613446"></a><a name="p1319614613446"></a>VPC网络模式下每个节点占用一条<a href="https://support.huaweicloud.com/usermanual-vpc/route_0002.html" target="_blank" rel="noopener noreferrer">VPC路由规则</a>，Console界面中可显示当前局点支持的VPC路由规则条数，以及每个节点可供分配的容器IP个数（即可创建的Pod实例数目上限）。</p>
+    <p id="p1319614613446"><a name="p1319614613446"></a><a name="p1319614613446"></a>VPC网络模式下每个节点占用一条VPC路由规则，Console界面中可显示当前局点支持的VPC路由规则条数，以及每个节点可供分配的容器IP个数（即可创建的Pod实例数目上限）。</p>
     <a name="ul68480277225"></a><a name="ul68480277225"></a><ul id="ul68480277225"><li>采用VPC路由方式与底层网络深度整合，适用于高性能场景，但每个节点占用一条VPC路由规则，节点数量受限于虚拟私有云VPC的路由配额。</li><li>VPC网络集群下的每个节点将会被分配固定大小的IP地址段，由于没有隧道封装的消耗，容器网络性能相对于容器隧道网络有一定优势。VPC网络集群由于VPC路由中配置有容器网段与节点IP的路由，可以支持集群外直接访问容器实例等特殊场景。<div class="note" id="note126721123118"><a name="note126721123118"></a><a name="note126721123118"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul123221124171119"></a><a name="ul123221124171119"></a><ul id="ul123221124171119"><li>VPC网络模式下不支持扩展网段和NetworkPolicy。</li><li>一个VPC下创建多个VPC网络模式的集群时，需要为每个集群选择一个不重叠的地址段，不仅不能和VPC地址重叠，也不和其他容器网段重叠。</li></ul>
     </div></div>
     </li></ul>
@@ -136,12 +137,12 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     <tr id="row773511171567"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p37371717105616"><a name="p37371717105616"></a><a name="p37371717105616"></a>鉴权方式</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p2017413473382"><a name="p2017413473382"></a><a name="p2017413473382"></a><span class="uicontrol" id="uicontrol217464712384"><a name="uicontrol217464712384"></a><a name="uicontrol217464712384"></a>“RBAC”</span>默认选择，不可取消。</p>
-    <p id="p16141515161117"><a name="p16141515161117"></a><a name="p16141515161117"></a>开启RBAC能力后，设置了细粒度权限的IAM用户使用集群下资源将受到权限控制。详细请参见<a href="设置命名空间权限.md">设置命名空间权限</a>。</p>
+    <p id="p16141515161117"><a name="p16141515161117"></a><a name="p16141515161117"></a>开启RBAC能力后，设置了细粒度权限的IAM用户使用集群下资源将受到权限控制。详细请参见<a href="命名空间权限（Kubernetes-RBAC授权）.md">命名空间权限（Kubernetes RBAC授权）</a>。</p>
     </td>
     </tr>
     <tr id="row1610917221609"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p6655100911"><a name="p6655100911"></a><a name="p6655100911"></a>认证方式</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p933784218111"><a name="p933784218111"></a><a name="p933784218111"></a>认证机制主要用于对集群下的资源做权限控制。例如A用户只能对某个命名空间下的应用有读写权限，B用户对集群下的资源只有读权限等。角色权限控制的操作请参见<a href="集群管理权限控制.md">集群管理权限控制</a>。</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p933784218111"><a name="p933784218111"></a><a name="p933784218111"></a>认证机制主要用于对集群下的资源做权限控制。</p>
     <p id="p1186713484551"><a name="p1186713484551"></a><a name="p1186713484551"></a>默认开启X509认证模式，X509是一种非常通用的证书格式。</p>
     <p id="p201651655441"><a name="p201651655441"></a><a name="p201651655441"></a>若需要对集群进行权限控制，请勾选“<strong id="b147071445995"><a name="b147071445995"></a><a name="b147071445995"></a>认证能力增强</strong>”，集群支持通过请求体的头域的信息识别用户，达到认证鉴权的目的。</p>
     <p id="p16929105085512"><a name="p16929105085512"></a><a name="p16929105085512"></a>用户需要分别上传自己的<strong id="b44714116510"><a name="b44714116510"></a><a name="b44714116510"></a>CA根证书</strong>、<strong id="b14669141413512"><a name="b14669141413512"></a><a name="b14669141413512"></a>客户端证书</strong>和<strong id="b6857112016516"><a name="b6857112016516"></a><a name="b6857112016516"></a>客户端证书私钥</strong>（证书制作方法可参考<a href="https://kubernetes.io/zh/docs/tasks/administer-cluster/certificates/" target="_blank" rel="noopener noreferrer">Certificates</a>），并勾选“<strong id="b458963217717"><a name="b458963217717"></a><a name="b458963217717"></a>我已确认上传的证书合法</strong>”。</p>
@@ -204,7 +205,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
 
     -   **节点类型：**选择节点类型。
         -   虚拟机节点：选中后创建虚拟机节点。
-        -   裸金属节点：创建集群过程中不可选，需在集群创建完成后才可以为集群增加裸金属节点。点此了解[裸金属服务器](https://support.huaweicloud.com/bms/index.html)。
+        -   裸金属节点：创建集群过程中不可选，需在集群创建完成后才可以为集群增加裸金属节点。
 
             >![](public_sys-resources/icon-note.gif) **说明：** 
             >CCE集群中创建裸金属节点需满足以下条件：
@@ -258,7 +259,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
 
     -   **系统盘：**设置工作节点的系统盘空间。您可以设置系统盘的规格为40GB-1024GB之间的数值，缺省值为40GB。
 
-        在默认情况下，系统盘可提供高IO、超高IO两种基本的云硬盘类型，关于云硬盘的详细信息请参见[云硬盘概述](https://support.huaweicloud.com/usermanual-ecs/ecs_03_0301.html)。
+        在默认情况下，系统盘可提供高I/O（SAS）、超高I/O（SSD）几种基本的云硬盘类型，关于云硬盘的详细信息请参见[云硬盘概述](https://support.huaweicloud.com/usermanual-ecs/ecs_03_0301.html)。
 
         加密：数据盘加密功能可为您的数据提供强大的安全防护，加密磁盘生成的快照及通过这些快照创建的磁盘将自动继承加密功能。**目前仅在部分Region显示此选项，具体以界面为准。**
 
@@ -276,7 +277,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
 
                 >![](public_sys-resources/icon-caution.gif) **注意：** 
                 >-   开启LVM管理的数据盘将按照设置的比例进行统一分配。
-                >-   1.13.10及更高版本的集群创建节点时，若未开启LVM管理的数据盘，请参考[为CCE节点添加第二块数据盘](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00190.html)填写安装前执行脚本进行格式化，否则该数据盘仍会被LVM管理。
+                >-   1.13.10及更高版本的集群创建节点时，若未开启LVM管理的数据盘，请参考[给CCE集群的节点添加第二块数据盘](给CCE集群的节点添加第二块数据盘.md)填写安装前执行脚本进行格式化，否则该数据盘仍会被LVM管理。
                 >-   1.13.10之前版本的集群创建节点时，若未开启LVM管理的数据盘请务必格式化，否则会与第一块数据盘进行二选一被LVM管理，进而导致与预期不符的情况。
 
 
@@ -290,20 +291,16 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
         -   新增数据盘：当前仅支持挂载两块数据盘，您可以在节点创建完成后前往ECS添加更多数据盘。部分集群版本不支持此功能，具体以界面为准。
         -   数据盘空间分配：单击后方的![](figures/2020-08-28_101153.png)，可以对数据盘中的“k8s空间“和“用户空间“占比进行自定义设置，开启LVM管理的数据盘将按照设置的比例进行统一分配。部分集群版本不支持此功能，具体以界面为准。
             -   k8s空间：您可以自定义数据盘中Docker和Kubelet的资源占比。Docker资源包含Docker工作目录、Docker镜像数据以及镜像元数据；Kubelet资源包含Pod配置文件、密钥以及临时存储EmptyDir等挂载数据。
+
+                Docker空间大小配置跟实际业务有关，详细的说明请参见[数据盘空间分配说明](数据盘空间分配说明.md)。
+
             -   用户空间：定义本地盘中不分配给kubernetes使用的空间大小和用户空间挂载路径。
 
                 >![](public_sys-resources/icon-note.gif) **说明：** 
-                >请注意“挂载路径“不能设置为根目录“/”，否则将导致挂载失败。挂载路径一般设置为：
-                >-   /opt/xxxx（但不能为/opt/cloud）
-                >-   /mnt/xxxx（但不能为/mnt/paas）
-                >-   /tmp/xxx
-                >-   /var/xxx （但不能为/var/lib、/var/script、/var/paas等关键目录）
-                >-   /xxxx（但不能和系统目录冲突，例如bin、lib、home、root、boot、dev、etc、lost+found、mnt、proc、sbin、srv、tmp、var、media、opt、selinux、sys、usr等）
-                >注意不能设置为/home/paas、/var/paas、/var/lib、/var/script、/mnt/paas、/opt/cloud，否则会导致系统或节点安装失败。
+                >注意挂载路径不能设置为 /、/home/paas、/var/paas、/var/lib、/var/script、/var/log/、/mnt/paas、/opt/cloud，不能和系统目录冲突（例如bin、lib、home、root、boot、dev、etc、lost+found、mnt、proc、sbin、srv、tmp、var、media、opt、selinux、sys、usr等），否则会导致系统或节点安装失败。
 
 
-
-        **当集群版本为v1.13.10-r0及以上，且节点类型为“磁盘增强型“或“超高I/O型“时，数据盘将显示如下选项：**
+        **当集群版本为v1.13.10-r0及以上，且节点类型为“磁盘增强型”或“超高I/O型”时，数据盘将显示如下选项：**
 
         -   云硬盘：与节点类型为非“磁盘增强型”或“超高I/O型”时的数据盘一致，此处不再赘述，详情参见上方的[数据盘](#li12223421320)。
         -   本地磁盘：本地磁盘实例有宕机风险，不保证数据可靠性，建议您使用**云硬盘**存储您的业务数据。
@@ -315,7 +312,6 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
             -   k8s空间：您可以自定义数据盘中Docker和Kubelet的资源占比。Docker资源包含Docker工作目录、Docker镜像数据以及镜像元数据；Kubelet资源包含Pod配置文件、密钥以及临时存储EmptyDir等挂载数据。
             -   用户空间：定义本地盘中不分配给kubernetes使用的空间大小和用户空间挂载路径。
 
-
         >![](public_sys-resources/icon-notice.gif) **须知：** 
         >-   在数据盘中设置“k8s空间“和“用户空间“占比时，需满足k8s空间和用户空间总和为100%，设置后可单击![](figures/zh-cn_image_0220702939.png)自动调整数据。
         >-   磁盘使用direct-lvm模式，移除将使用loop-lvm模式，有影响系统稳定性的风险。
@@ -326,13 +322,13 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     -   **虚拟私有云：**不可修改，仅用于展示当前集群所在的虚拟私有云，该参数仅在v1.13.10-r0及以上版本的集群中显示。
     -   **所在子网：**通过子网提供与其他网络隔离的、可以独享的网络资源，以提高网络安全。可选择该集群虚拟私有云下的任意子网，集群节点支持跨子网。
 
-        该参数仅在v1.13.10-r0及以上版本的集群中显示，请务必**确保子网下的DNS服务器可以解析OBS服务域名**，否则无法创建节点。
+        创建节点过程中会使用域名方式从OBS下载软件包，需要能够使用内网DNS解析OBS域名，否则会导致创建不成功。为此，节点所在子网需要配置为[内网DNS地址](https://support.huaweicloud.com/dns_faq/dns_faq_002.html)，从而使得节点使用内网DNS。在创建子网时DNS默认配置为内网DNS，如果您修改过子网的DNS，请务必**确保子网下的DNS服务器可以解析OBS服务域名**，否则需要将DNS改成内网DNS。
 
         已有集群添加节点时，如果子网对应的VPC新增了扩展网段且子网是扩展网段，要在控制节点安全组（即集群名称-cce-control-随机数）中添加如下三条安全组规则，以保证集群添加的节点功能可用（新建集群时如果VPC已经新增了扩展网段则不涉及此场景）：
 
         ![](figures/004.png)
 
-    -   **弹性IP：**独立申请的公网IP地址，若节点有互联网访问的需求，请选择“现在购买“或“使用已有“。**集群开启IPv6时，不显示该参数。**
+    -   **弹性IP：**独立申请的公网IP地址，若节点有互联网访问的需求，请选择“自动创建“或“使用已有“。**集群开启IPv6时，不显示该参数。**
 
         弹性公网IP提供外网访问能力，可以灵活绑定及解绑，随时修改带宽。未绑定弹性公网IP的云服务器无法直接访问外网，无法直接对外进行互相通信。详情请查看[弹性公网IP介绍](https://support.huaweicloud.com/usermanual-eip/eip_0007.html)。
 
@@ -344,7 +340,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
         -   使用已有：请选择已有的弹性IP，将为当前节点分配已有弹性IP。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
-        >CCE默认不启用VPC的SNAT。若VPC启用了SNAT，可以不使用EIP去访问外网。SNAT具体请参见[自定义策略](集群权限.md#section1437818291149)。
+        >CCE默认不启用VPC的SNAT。若VPC启用了SNAT，可以不使用EIP去访问外网。SNAT具体请参见[自定义策略](集群权限（IAM授权）.md#section1437818291149)。
 
     -   **共享带宽：**请选择“暂不使用”或“使用已有”。**仅在集群开启IPv6时，显示该参数。**
 
@@ -365,7 +361,6 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
             **图 5**  密钥对<a name="fig82271742193213"></a>  
             ![](figures/密钥对.png "密钥对")
 
-
     -   **云服务器高级设置：**（可选），单击![](figures/zh-cn_image_0183134608.png)展开后可对节点进行如下高级功能配置：
         -   **云服务器组：**云服务器组是对云服务器的一种逻辑划分，同一云服务器组中的云服务器遵从同一策略。
 
@@ -380,7 +375,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
 
             CCE服务会自动帮您创建CCE-Dynamic-Provisioning-Node=节点id的标签，允许增加5个标签。
 
-        -   **委托：**委托是由租户管理员在[统一身份认证服务](https://console.huaweicloud.com/iam/#/iam/agencies)上创建的。通过委托，可以将云主机资源共享给其他帐号，或委托更专业的人或团队来代为管理。新建委托请参见[委托其他云服务管理资源](https://support.huaweicloud.com/usermanual-iam/iam_06_0004.html)，创建委托时委托类型选择“云服务“，单击“选择“按钮并在弹出的窗口中选择“ECS BMS“，即允许ECS或BMS调用云服务。
+        -   **委托：**委托是由租户管理员在统一身份认证服务上创建的。通过委托，可以将云主机资源共享给其他帐号，或委托更专业的人或团队来代为管理。新建委托请参见[委托其他云服务管理资源](https://support.huaweicloud.com/usermanual-iam/iam_06_0004.html)，创建委托时委托类型选择“云服务“，单击“选择“按钮并在弹出的窗口中选择“ECS BMS“，即允许ECS或BMS调用云服务。
         -   **安装前执行脚本：**请输入脚本命令，大小限制为0\~1000字符。
 
             脚本将在Kubernetes软件安装前执行，可能导致Kubernetes软件无法正常安装，需谨慎使用。常用于格式化数据盘等场景。
@@ -392,13 +387,9 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
         -   **子网IP：**可选择“自动分配IP地址“和“手动分配IP地址“，推荐使用“自动分配IP地址“。
 
     -   **Kubernetes高级设置：**（可选），单击![](figures/zh-cn_image_0183134479.png)展开后可对集群进行如下高级功能配置：
-        -   **最大实例数：**节点最大允许创建的实例数\(Pod\)，该数量包含系统默认实例，取值范围为16\~250。集群网络模型为“VPC网络“时，此处的最大值取决于您选择的每个节点可供分配的容器IP个数。
+        -   **最大实例数：**节点最大允许创建的实例数\(Pod\)，该数量包含系统默认实例。集群网络模型为“VPC网络“时，此处的最大值取决于您选择的每个节点可供分配的容器IP个数。
 
             该设置的目的为防止节点因管理过多实例而负载过重，请根据您的业务需要进行设置。
-
-        -   **自定义镜像仓库：**单击“新增自定义镜像仓库地址“输入镜像仓库地址。
-
-            添加自定义镜像仓库地址（非SSL镜像源地址）到docker启动参数中，避免拉取个人镜像仓库的镜像失败，格式可为“IP地址:端口或者域名”。安装后执行脚本与自定义镜像仓库不能同时使用。
 
         -   **单容器可用数据空间：**该参数用于设置一个容器可用的数据空间大小，设置范围为10G到80G。如果设置的参数超过数据盘中Docker可占用的实际数据空间（由数据盘设置项中的资源分配自定义参数指定，默认为数据盘大小的90%），将以Docker的实际空间大小为主。该参数仅在v1.13.10-r0及以上版本的集群中显示。
 
@@ -421,7 +412,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
 
 ## 相关操作<a name="section125261255139"></a>
 
--   通过命令行工具连接集群：请参见[通过kubectl或web-terminal插件操作CCE集群](通过kubectl或web-terminal插件操作CCE集群.md)。
+-   通过命令行工具连接集群：请参见[通过kubectl连接集群](通过kubectl连接集群.md)。
 -   添加节点：集群创建完成后，若您需要为集群添加更多节点，请参见[购买节点](购买节点.md)。
 -   登录节点：请参见[登录节点](登录节点.md)。
 
@@ -461,7 +452,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     </tr>
     <tr id="row651036112414"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="p1251015692419"><a name="p1251015692419"></a><a name="p1251015692419"></a>kubectl</p>
     </td>
-    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="p35101368242"><a name="p35101368242"></a><a name="p35101368242"></a>若您需要从客户端计算机连接到kubernetes集群，请使用kubernetes命令行客户端<a href="https://kubernetes.io/docs/user-guide/kubectl/" target="_blank" rel="noopener noreferrer">kubectl</a>，详情请参见<a href="通过kubectl或web-terminal插件操作CCE集群.md">通过kubectl或web-terminal插件操作CCE集群</a>。</p>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="p35101368242"><a name="p35101368242"></a><a name="p35101368242"></a>若您需要从客户端计算机连接到kubernetes集群，请使用kubernetes命令行客户端<a href="https://kubernetes.io/docs/user-guide/kubectl/" target="_blank" rel="noopener noreferrer">kubectl</a>，详情请参见<a href="通过kubectl连接集群.md">通过kubectl连接集群</a>。</p>
     </td>
     </tr>
     <tr id="row1442823812251"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="p96289022317"><a name="p96289022317"></a><a name="p96289022317"></a>资源标签</p>
@@ -473,7 +464,7 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     </tr>
     <tr id="row2701721182419"><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.3.1.1 "><p id="p6701721122417"><a name="p6701721122417"></a><a name="p6701721122417"></a>Istioctl</p>
     </td>
-    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="p1701821112418"><a name="p1701821112418"></a><a name="p1701821112418"></a>在集群开启istio服务网格功能后，您使用Istio命令行工具Istioctl配置多种路由策略，从而管理服务流量，包括流量转移、故障注入、限流熔断等。详情请参见<a href="通过Istioctl配置路由策略.md">通过Istioctl配置路由策略</a>。</p>
+    <td class="cellrowborder" valign="top" width="80%" headers="mcps1.2.3.1.2 "><p id="p1701821112418"><a name="p1701821112418"></a><a name="p1701821112418"></a>在集群开启istio服务网格功能后，您使用Istio命令行工具Istioctl配置多种路由策略，从而管理服务流量，包括流量转移、故障注入、限流熔断等。详情请参见<a href="启用istio.md">启用istio</a>。</p>
     </td>
     </tr>
     </tbody>

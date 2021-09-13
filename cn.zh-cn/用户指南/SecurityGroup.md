@@ -1,6 +1,6 @@
 # SecurityGroup<a name="cce_01_0288"></a>
 
-云原生网络2.0网络模式下，Pod使用的是华为云VPC的弹性网卡/辅助弹性网卡，可直接绑定安全组，绑定弹性公网IP。为方便用户在CCE内直接为Pod关联安全组，CCE新增了一个名为SecurityGroup的自定义资源对象，通过SecurityGroup资源对象，用户可对有特定安全隔离述求的工作负载的工作进行自定义。
+云原生网络2.0网络模式下，Pod使用的是华为云VPC的弹性网卡/辅助弹性网卡，可直接绑定安全组，绑定弹性公网IP。为方便用户在CCE内直接为Pod关联安全组，CCE新增了一个名为SecurityGroup的自定义资源对象，通过SecurityGroup资源对象，用户可对有特定安全隔离诉求的工作负载的工作进行自定义。
 
 ## 约束与限制<a name="section21791218165310"></a>
 
@@ -74,13 +74,7 @@
 
 ## 通过kubectl命令行创建<a name="section16951511152313"></a>
 
-**前提条件**
-
-请参见[通过kubectl或web-terminal插件操作CCE集群](通过kubectl或web-terminal插件操作CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
-
-**操作步骤**
-
-1.  登录已配置好kubectl命令的弹性云服务器。登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
+1.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
 2.  创建一个名为securitygroup-demo.yaml的描述文件。
 
     **vi securitygroup-demo.yaml**

@@ -2,22 +2,21 @@
 
 ## 插件简介<a name="section25311744154917"></a>
 
-Everest是一个云原生容器存储系统，基于CSI为Kubernetes v1.15.6及以上版本集群对接华为云云硬盘服务 EVS、对象存储服务 OBS、弹性文件服务 SFS、极速文件存储 SFS Turbo等存储服务的能力。
+Everest是一个云原生容器存储系统，基于CSI（即Container Storage Interface）为Kubernetes v1.15.6及以上版本集群对接华为云云硬盘服务 EVS、对象存储服务 OBS、弹性文件服务 SFS、极速文件存储 SFS Turbo等存储服务的能力。
 
 **该插件为系统资源插件，kubernetes 1.15及以上版本的集群在创建时默认安装。**
 
 ## 约束与限制<a name="section202191122814"></a>
 
--   v1.13.11-r1升级到v1.15.11-r1集群后，原本v1.13的Flexvolume Fuxi容器存储由v1.15的Everest接管（插件版本v1.1.6及以上），原有功能保持不变。
--   Everest插件在**1.2.0版本**优化了使用OBS存储时的**秘钥认证功能**，请在Everest插件升级完成后（从低于1.2.0的版本升级到1.2.0及以上版本），重启集群中使用obs的全部工作负载，否则工作负载使用OBS存储能力将受影响！
--   仅支持**v1.15及以上版本**的CCE集群和鲲鹏集群安装本插件。
--   v1.13及以下版本集群创建时默认必装[storage-driver](storage-driver（系统资源插件-必装）.md)插件。
+-   集群版本由v1.13升级到v1.15后，v1.13版本集群中的Flexvolume容器存储插件（[storage-driver](storage-driver（系统资源插件-必装）.md)）能力将由v1.15的CSI插件（Everest，插件版本v1.1.6及以上）接管，接管后原有功能保持不变。CSI和Flexvolume能力对比请参见[CSI和Flexvolume存储插件的区别](存储CSI概述.md#section1690993510317)。
+-   插件版本为1.2.0的Everest优化了使用OBS存储时的**密钥认证功能**，低于该版本的Everest插件在升级完成后，需要重启集群中使用OBS存储的全部工作负载，否则工作负载使用存储的能力将受影响！
+-   **v1.15及以上版本**的集群默认安装本插件，v1.13及以下版本集群创建时默认安装[storage-driver](storage-driver（系统资源插件-必装）.md)插件。
 
 ## 安装插件<a name="section168341157155317"></a>
 
 本插件为系统默认安装，若因特殊情况卸载后，可参照如下步骤重新安装。
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击“everest“插件下的“安装插件“。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击“everest“插件下的“安装插件“。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  该插件可配置“单实例“或“高可用“规格，选择后单击“安装“。
 
@@ -26,7 +25,7 @@ Everest是一个云原生容器存储系统，基于CSI为Kubernetes v1.15.6及�
 
 ## 升级插件<a name="section414918421496"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“everest“下的“ 升级“。
+1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“everest“下的“ 升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
@@ -37,6 +36,6 @@ Everest是一个云原生容器存储系统，基于CSI为Kubernetes v1.15.6及�
 
 ## 卸载插件<a name="section610455514114"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击“everest“下的“卸载“。
+1.  在CCE控制台中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击“everest“下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
 

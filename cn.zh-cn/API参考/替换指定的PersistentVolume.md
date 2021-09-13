@@ -66,7 +66,7 @@ PUT /api/v1/persistentvolumes/\{name\}
         }, 
         "name": "pv-test-02",
         "annotations": {
-	"volume.beta.kubernetes.io/storage-class": "sata",
+	"volume.beta.kubernetes.io/storage-class": "SAS",
 	"volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
         },
         "generateName": "pv-demo"
@@ -112,7 +112,7 @@ PUT /api/v1/persistentvolumes/\{name\}
             "name": "pv-test-03"
         },
         "annotations": {
-            "volume.beta.kubernetes.io/storage-class": "sata",
+            "volume.beta.kubernetes.io/storage-class": "SAS",
             "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
         }
     },

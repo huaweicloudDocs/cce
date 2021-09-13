@@ -6,8 +6,11 @@
 
 其中以下字段支持更新：
 
+-   metadata.name
+-   metadata.namespace
 -   metadata.selfLink
 -   metadata.resourceVersion
+-   metadata.uid
 -   metadata.labels
 -   metadata.clusterName
 -   metadata.generateName
@@ -24,6 +27,8 @@
 -   spec.externalIPs
 -   spec.loadBalancerIP
 -   spec.loadBalancerSourceRanges
+-   metadata.deletionGracePeriodSeconds
+-   service.spec.clusterIP
 
 ## URI<a name="sd473d9d2d140486eb450698f18eb16e1"></a>
 

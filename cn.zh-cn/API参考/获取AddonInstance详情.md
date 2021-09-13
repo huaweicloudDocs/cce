@@ -4,9 +4,6 @@
 
 获取插件实例详情。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->插件管理的URL格式为：https://\{clusterid\}.Endpoint/uri。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。
-
 ## 调试
 
 您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=ShowAddonInstance)中调试该接口。
@@ -109,7 +106,7 @@ GET /api/v3/addons/\{id\}
 
 **表 4**  响应Body参数
 
-<a name="responseParameter"></a>
+<a name="response_AddonInstance"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.2"><p>参数类型</p>
@@ -273,10 +270,9 @@ GET /api/v3/addons/\{id\}
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>description</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板描述</p>
-</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 ">&nbsp;</td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>values</p>
 </td>
@@ -305,10 +301,17 @@ GET /api/v3/addons/\{id\}
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件实例状态</p>
 <p>枚举值：</p>
-<ul><li><p><strong>installing</strong></p>
+<ul><li><p><strong>running</strong></p>
+</li><li><p><strong>abnormal</strong></p>
+</li><li><p><strong>installing</strong></p>
+</li><li><p><strong>installFailed</strong></p>
 </li><li><p><strong>upgrading</strong></p>
-</li><li><p><strong>failed</strong></p>
-</li><li><p><strong>running</strong></p>
+</li><li><p><strong>upgradeFailed</strong></p>
+</li><li><p><strong>deleting</strong></p>
+</li><li><p><strong>deleteSuccess</strong></p>
+</li><li><p><strong>deleteFailed</strong></p>
+</li><li><p><strong>available</strong></p>
+</li><li><p><strong>rollbacking</strong></p>
 </li></ul>
 </td>
 </tr>
@@ -474,6 +477,7 @@ OK
     "status" : "installing",
     "Reason" : "",
     "message" : "",
+    "targetVersions" : null,
     "currentVersion" : {
       "version" : "1.0.0",
       "input" : {
@@ -498,6 +502,7 @@ OK
           }
         }
       },
+      "supportVersions" : null,
       "creationTimestamp" : "2018-10-23T13:14:55Z",
       "updateTimestamp" : "2018-12-07T09:40:24Z"
     }

@@ -4,9 +4,6 @@
 
 插件模板查询接口，查询插件信息。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->插件管理的URL格式为：https://\{clusterid\}.Endpoint/uri。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。
-
 ## 调试
 
 您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=ListAddonTemplates)中调试该接口。
@@ -85,7 +82,7 @@ GET /api/v3/addontemplates
 
 **表 3**  响应Body参数
 
-<a name="responseParameter"></a>
+<a name="response_AddonTemplates"></a>
 <table><thead align="left"><tr><th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.1"><p>参数</p>
 </th>
 <th class="cellrowborder" valign="top" width="20%" id="mcps1.2.4.1.2"><p>参数类型</p>
@@ -271,10 +268,9 @@ GET /api/v3/addontemplates
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>description</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Object</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>模板描述</p>
-</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 ">&nbsp;</td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>versions</p>
 </td>
@@ -439,10 +435,7 @@ OK
               "changeLog" : "none",
               "description" : "A plug-in that allows users to run kubectl commands using a web browser."
             },
-            "description" : {
-              "Parameters.flavor1.description" : "Deploy with one instance",
-              "Parameters.flavor1.name" : "Single"
-            },
+            "description" : "",
             "key" : {
               "Parameters.custom.password" : "password"
             }
@@ -452,10 +445,7 @@ OK
               "changeLog" : "无",
               "description" : "一款支持在web界面上使用kubectl的插件。"
             },
-            "description" : {
-              "Parameters.flavor1.description" : "单实例部署",
-              "Parameters.flavor1.name" : "单实例"
-            },
+            "description" : "",
             "key" : {
               "Parameters.custom.password" : "密码"
             }
@@ -510,11 +500,7 @@ OK
               "changeLog" : "1.include service creation  2.simplify operation  3.support access via elb",
               "description" : "A plug-in that allows users to run kubectl commands using a web browser."
             },
-            "description" : {
-              "Parameters.custom.serviceType" : "Service type for accessing web-terminal",
-              "Parameters.flavor1.description" : "Deploy with one instance",
-              "Parameters.flavor1.name" : "Single"
-            },
+            "description" : "",
             "key" : {
               "Parameters.custom.serviceType" : "Access type"
             }
@@ -524,11 +510,7 @@ OK
               "changeLog" : "1.包含service创建  2.操作简化  3.支持通过elb访问",
               "description" : "一款支持在web界面上使用kubectl的插件。"
             },
-            "description" : {
-              "Parameters.custom.serviceType" : "访问web-terminal的service类型",
-              "Parameters.flavor1.description" : "单实例部署",
-              "Parameters.flavor1.name" : "单实例"
-            },
+            "description" : "",
             "key" : {
               "Parameters.custom.serviceType" : "访问类型"
             }

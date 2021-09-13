@@ -11,7 +11,7 @@ rc-recycler是一款可根据用户配置策略对资源进行自动回收的插
 
 ## 安装插件<a name="section1842517810574"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击rc-recycler插件下的“安装插件“。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击rc-recycler插件下的“安装插件“。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  <a name="li1959342211297"></a>参照[表1](#table95961922132915)配置插件安装参数。
 
@@ -51,7 +51,7 @@ rc-recycler是一款可根据用户配置策略对资源进行自动回收的插
 
 ## 升级插件<a name="section23441939916"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“rc-recycler“下的“ 升级“。
+1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“rc-recycler“下的“ 升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
@@ -62,6 +62,6 @@ rc-recycler是一款可根据用户配置策略对资源进行自动回收的插
 
 ## 卸载插件<a name="section8166134965710"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击rc-recycler下的“卸载“。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击rc-recycler下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
 

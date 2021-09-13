@@ -7,7 +7,8 @@
 
 ## 约束与限制<a name="section332285584912"></a>
 
--   仅网络模型为VPC网络（且未开启IPv6）和云原生网络2.0的集群支持创建网络平面；网络模型为容器隧道网络时列表中仅显示“default-network“，不能新增或修改。
+-   VPC网络模型的集群使用ENI为受限功能，未全面开放，如有使用ENI需求请创建CCE Turbo集群。
+-   仅网络模型为VPC网络（且未开启IPv6）的集群支持创建网络平面；网络模型为容器隧道网络时列表中仅显示“default-network“，不能新增或修改。
 -   需v1.13.7-r0及以上版本的集群才能启用，v1.13.7-r0以下版本集群需要升级到最新版本后才能启用。
 
 ## 通过界面创建<a name="section1231151981314"></a>
@@ -44,7 +45,7 @@
 
 ## 通过kubectl命令行创建<a name="section1111120232202"></a>
 
-1.  登录已配置好kubectl命令的弹性云服务器。登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
+1.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
 2.  修改networkattachment-test.yaml。
 
     **vi networkattachment-test.yaml**
@@ -60,7 +61,7 @@
       namespace: kube-system
     spec:
       config: >-
-        {"cniVersion":"0.2.0","name":"test","type":"eni-neutron","bridge":"br0","args":{"phynet":"phy_net2","vpc_id":"7a4d731e-fe17-4b72-aa17-962b8363b2d3","securityGroups":"3289d598-8e05-40d8-b726-1f2c425d4935","subnetID":"2945a96b-03a0-4e11-9012-746fe09f714d","cidr":"192.168.1.0/24","availableZone":"cn-north-7b","region":"cn-north-7"}}
+        {"cniVersion":"0.2.0","name":"test","type":"eni-neutron","bridge":"br0","args":{"phynet":"phy_net2","vpc_id":"7a4d731e-fe17-4b72-aa17-962b8363b2d3","securityGroups":"3289d598-8e05-40d8-b726-1f2c425d4935","subnetID":"2945a96b-03a0-4e11-9012-746fe09f714d","cidr":"192.168.1.0/24","availableZone":"cn-north-4b","region":"cn-north-4"}}
     ```
 
     **表 1**  关键参数说明
@@ -412,90 +413,6 @@ metadata:
       }]
     k8s.v1.cni.cncf.io/networks: test
     kubernetes.io/psp: psp-global
-  managedFields:
-    - manager: kubectl-create
-      operation: Update
-      apiVersion: v1
-      time: '2021-04-08T08:14:46Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            .: {}
-            'f:k8s.v1.cni.cncf.io/networks': {}
-          'f:labels':
-            .: {}
-            'f:name': {}
-        'f:spec':
-          'f:containers':
-            'k:{"name":"test"}':
-              .: {}
-              'f:image': {}
-              'f:imagePullPolicy': {}
-              'f:name': {}
-              'f:resources':
-                .: {}
-                'f:requests':
-                  .: {}
-                  'f:cpu': {}
-              'f:terminationMessagePath': {}
-              'f:terminationMessagePolicy': {}
-          'f:dnsPolicy': {}
-          'f:enableServiceLinks': {}
-          'f:imagePullSecrets':
-            .: {}
-            'k:{"name":"default-secret"}':
-              .: {}
-              'f:name': {}
-          'f:restartPolicy': {}
-          'f:schedulerName': {}
-          'f:securityContext': {}
-          'f:terminationGracePeriodSeconds': {}
-    - manager: eni-neutron
-      operation: Update
-      apiVersion: v1
-      time: '2021-04-08T08:14:47Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            'f:k8s.v1.cni.cncf.io/network-status': {}
-    - manager: kubelet
-      operation: Update
-      apiVersion: v1
-      time: '2021-04-08T08:14:48Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:status':
-          'f:conditions':
-            'k:{"type":"ContainersReady"}':
-              .: {}
-              'f:lastProbeTime': {}
-              'f:lastTransitionTime': {}
-              'f:status': {}
-              'f:type': {}
-            'k:{"type":"Initialized"}':
-              .: {}
-              'f:lastProbeTime': {}
-              'f:lastTransitionTime': {}
-              'f:status': {}
-              'f:type': {}
-            'k:{"type":"Ready"}':
-              .: {}
-              'f:lastProbeTime': {}
-              'f:lastTransitionTime': {}
-              'f:status': {}
-              'f:type': {}
-          'f:containerStatuses': {}
-          'f:hostIP': {}
-          'f:phase': {}
-          'f:podIP': {}
-          'f:podIPs':
-            .: {}
-            'k:{"ip":"192.168.45.115"}':
-              .: {}
-              'f:ip': {}
-          'f:startTime': {}
 spec:
   volumes:
     - name: default-token-hssgv
@@ -504,7 +421,7 @@ spec:
         defaultMode: 420
   containers:
     - name: test
-      image: 'swr.cn-north-7.myhuaweicloud.com/p***67/nginx:latest'
+      image: 'nginx:latest'
       resources:
         requests:
           cpu: 100m
@@ -575,8 +492,8 @@ status:
       lastState: {}
       ready: true
       restartCount: 0
-      image: 'swr.cn-north-7.myhuaweicloud.com/p***67/nginx:latest'
-      imageID: 'docker-pullable://swr.cn-north-7.myhuaweicloud.com/p***67/nginx@sha256:18c8411a66ef352ba7fc857d924c8c9357dbd37551760fd6deba40ee68c9e62a'
+      image: 'swr.cn-north-4.myhuaweicloud.com/p***67/nginx:latest'
+      imageID: 'docker-pullable://swr.cn-north-4.myhuaweicloud.com/p***67/nginx@sha256:18c8411a66ef352ba7fc857d924c8c9357dbd37551760fd6deba40ee68c9e62a'
       containerID: 'docker://b19912a4b9265adf323fa55b19f08ee0e7600a9edb3505b45e2a5e718ff0e550'
       started: true
   qosClass: Burstable

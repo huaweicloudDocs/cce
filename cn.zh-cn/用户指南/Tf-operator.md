@@ -13,7 +13,7 @@ Tf-operator是一个管理Kubernetes上tensorflow应用程序生命周期的oper
 
 ## 安装插件<a name="section3843632115420"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击**tf-operator**下的“安装插件“按钮。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击**tf-operator**下的“安装插件“按钮。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  tf-operator插件暂未开放可配置参数，直接单击“安装“。
 
@@ -22,7 +22,7 @@ Tf-operator是一个管理Kubernetes上tensorflow应用程序生命周期的oper
 
 ## 升级插件<a name="section23441939916"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“tf-operator“下的“ 升级“。
+1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“tf-operator“下的“ 升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
@@ -33,6 +33,6 @@ Tf-operator是一个管理Kubernetes上tensorflow应用程序生命周期的oper
 
 ## 卸载插件<a name="section1484453212546"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击**tf-operator**下的“卸载“。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击**tf-operator**下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
 

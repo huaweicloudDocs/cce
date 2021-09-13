@@ -21,7 +21,7 @@ Kubernetes集群中的Pod存在如下两种使用途径：
 
 可通过在线YAML编辑窗对容器组（Pod）的YAML文件进行修改和下载。
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 容器组 Pod”。
+1.  登录CCE控制台，在左侧导航栏中选择“工作负载 \> 容器组 Pod”。
 2.  单击实例列表中后的“编辑YAML“，在弹出的“编辑YAML“窗中可对当前容器组（Pod）的YAML文件进行修改。
 3.  单击“修改“，在弹出的提示框中单击“确定“，完成修改。
 
@@ -34,7 +34,7 @@ Kubernetes集群中的Pod存在如下两种使用途径：
 
 您可以通过CCE控制台查看工作负载实例的CPU、内存使用情况以及网络上行和下行速率、磁盘的读写速率，以确定需要的资源规格。
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 容器组 Pod”。
+1.  登录CCE控制台，在左侧导航栏中选择“工作负载 \> 容器组 Pod”。
 2.  单击实例列表中后的“监控“，可查看相应实例的CPU使用率、内存使用率以及网络上行和下行速率、磁盘的读写速率。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
@@ -45,7 +45,7 @@ Kubernetes集群中的Pod存在如下两种使用途径：
 
 若实例无需再使用，您可以将其删除。实例删除后，将无法恢复，请谨慎操作。
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 容器组 Pod”。
+1.  登录CCE控制台，在左侧导航栏中选择“工作负载 \> 容器组 Pod”。
 2.  单击待删除实例后的“删除“。
 
     请仔细阅读系统提示，删除操作无法恢复，请谨慎操作。

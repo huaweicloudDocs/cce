@@ -51,7 +51,7 @@ CCE还支持创建CA策略，根据CPU/内存分配率扩容、还可以按照�
 
     构建完成后上传到SWR镜像仓库，上传镜像的步骤请参见[客户端上传镜像](https://support.huaweicloud.com/usermanual-swr/swr_01_0011.html)。
 
--   创建一个有1个节点的集群，节点规格2U4G。
+-   创建一个有1个节点的集群，节点规格2U4G，节点需要带弹性公网IP，以便从外部访问。
 -   给集群安装插件。
 
     cce-hpa-controller：HPA插件。
@@ -115,6 +115,10 @@ spec:
 ```
 
 然后再为这个负载创建一个Nodeport类型的Service，以便能从外部访问。
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>Nodeport类型的Service从外网访问需要为集群某个节点购买EIP，购买完后需要同步节点信息，具体请参见[同步节点信息](https://support.huaweicloud.com/usermanual-cce/cce_01_0184.html)。如果节点已有EIP则无需再次购买。
+>或者您也可以创建带ELB的Service从外部访问，具体请参见[通过kubectl命令行创建-自动创建ELB](https://support.huaweicloud.com/usermanual-cce/cce_01_0014.html#section6)。
 
 ```
 kind: Service
@@ -189,6 +193,9 @@ spec:
     **while true;do wget -q -O- http://**_\{ip:port\}_**; done**
 
     ![](figures/zh-cn_image_0000001102115470.png)
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >如果此处不显示公网IP地址，则说明集群节点没有弹性公网IP，请购买弹性公网IP并绑定到节点，购买完后需要同步节点信息，具体请参见[同步节点信息](https://support.huaweicloud.com/usermanual-cce/cce_01_0184.html)。
 
     观察负载的伸缩过程。
 

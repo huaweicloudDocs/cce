@@ -315,7 +315,7 @@ N/A
                 "failure-domain.beta.kubernetes.io/zone":"cn-north-5a"
             },
             "annotations":{
-                "everest.io/disk-volume-type":"SATA",
+                "everest.io/disk-volume-type":"SAS",
                 "pv.kubernetes.io/bind-completed":"yes",
                 "pv.kubernetes.io/bound-by-controller":"yes",
                 "volume.beta.kubernetes.io/storage-provisioner":"everest-csi-provisioner"
@@ -369,7 +369,7 @@ N/A
             "annotations": {
                 "pv.kubernetes.io/bind-completed": "yes",
                 "pv.kubernetes.io/bound-by-controller": "yes",
-                "volume.beta.kubernetes.io/storage-class": "sata",
+                "volume.beta.kubernetes.io/storage-class": "SAS",
                 "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
             }
         },

@@ -10,11 +10,14 @@ Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该�
 -   支持查看虚拟弹性节点的节点容量信息。
 -   支持CCE和CCI两侧实例的service网络互通。
 
-## 使用约束<a name="zh-cn_topic_0287319085_section1925910435328"></a>
+## 约束及限制<a name="zh-cn_topic_0287319085_section1925910435328"></a>
 
--   仅支持VPC网络模式的CCE集群，Virtual Kubelet仅限于v1.15及以下版本的集群安装使用。
--   调度到CCI的实例的存储类型只支持SFS、ConfigMap、Secret三种Volume类型。
--   暂不支持HostNetwork网络模式的容器实例（Pod）弹性到CCI。
+-   仅支持VPC网络模式的CCE集群。
+
+-   调度到CCI的实例的存储类型只支持ConfigMap、Secret、emptyDir、SFS、SFS Turbo几种Volume类型，其中emptyDir不支持子路径。
+-   暂不支持守护进程集（DaemonSet）以及HostNetwork网络模式的容器实例（Pod）弹性到CCI。
+-   跨CCE和CCI实例Service网络互通只支持集群内访问（ClusterIP）类型。
+-   使用插件前需要用户在[CCI界面](https://console.huaweicloud.com/cci/?locale=zh-cn#/dashboard)对CCI服务进行授信。
 -   实例的规格必须满足云容器实例CCI的容器规范。
     1.  Pod的CPU取值范围为：0.25核\~32核，另外还可选48核和64核，且单个容器的CPU必须为0.25核的整数倍。
     2.  Pod的内存取值范围为：1GB\~512GB，且内存必须为1GB的整数倍。
@@ -22,7 +25,6 @@ Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该�
     4.  一个Pod内最多支持5个容器，单个容器最小配置是0.25核、0.2GB，最大同容器实例的最大配置。
     5.  资源的requests等于limits。
 
--   使用插件前需要用户在CCI界面对CCI服务进行授信。
 
 ## 安装部署<a name="zh-cn_topic_0287319085_section1372419715333"></a>
 

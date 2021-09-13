@@ -40,7 +40,7 @@ Nginx Ingress由资源对象Ingress、Ingress控制器、Nginx三部分组成，
 
 ## 安装插件<a name="section3590245124519"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“中，单击nginx-ingress插件下的“安装插件“。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件市场“中，单击nginx-ingress插件下的“安装插件“。
 2.  在安装插件页面，在“基本信息“步骤中选择集群和插件版本，单击“下一步：规格配置“。
 3.  在“规格配置“步骤中，参照[表1](#table924319911495)设置服务选型参数，其中带“\*”的参数为必填参数。
 
@@ -74,7 +74,7 @@ Nginx Ingress由资源对象Ingress、Ingress控制器、Nginx三部分组成，
     </td>
     <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p9731184313503"><a name="p9731184313503"></a><a name="p9731184313503"></a>此处的设置将会全局生效，该参数直接通过配置nginx.conf生成，将影响管理的全部Ingress，相关参数可通过<a href="https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/" target="_blank" rel="noopener noreferrer">configmap</a>查找，如果您配置的参数不包含在<a href="https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/" target="_blank" rel="noopener noreferrer">configmap</a>所列出的选项中将不会生效。</p>
     <p id="p19774731165611"><a name="p19774731165611"></a><a name="p19774731165611"></a>示例如下：</p>
-    <p id="p16768103995619"><a name="p16768103995619"></a><a name="p16768103995619"></a><a name="image146022151543"></a><a name="image146022151543"></a><span><img id="image146022151543" src="figures/zh-cn_image_0000001080616553.png" width="522.69" height="123.844147"></span></p>
+    <p id="p16768103995619"><a name="p16768103995619"></a><a name="p16768103995619"></a><a name="image146022151543"></a><a name="image146022151543"></a><span><img id="image146022151543" src="figures/zh-cn_image_0000001080616553.png" width="392.35" height="92.961946"></span></p>
     <a name="ul1284612209318"></a><a name="ul1284612209318"></a><ul id="ul1284612209318"><li>worker-processes：Worker进程数，定义了nginx对外提供web服务时的worker进程数，默认auto。</li><li>max-worker-connections：单个后台Worker进程的最大并发链接数，默认16384。</li><li>keep-alive：长连接超时，单位秒，默认 75s。</li></ul>
     </td>
     </tr>
@@ -110,9 +110,24 @@ Nginx Ingress由资源对象Ingress、Ingress控制器、Nginx三部分组成，
     ![](figures/查看安装的插件.png "查看安装的插件")
 
 
+## 安装插件-新UI<a name="section1152424015224"></a>
+
+新UI支持使用独享型负载均衡实例。
+
+1.  登录CCE控制台。
+2.  在左侧选择“插件市场“，找到“nginx-ingress“插件，单击“安装“。
+3.  填写配置参数。
+    -   **选择集群**：选择要安装的集群
+    -   **规格配置**：请根据业务需求选择插件规格，可自定义资源规格部署。
+    -   **负载均衡器**：支持对接共享型或独享型负载均衡实例，如果可用实例，请先创建。负载均衡器需要拥有至少两个监听器配额，且端口 80 和 443 没有被监听器占用。
+    -   **nginx配置参数**：配置nginx.conf文件，将影响管理的全部Ingress，相关参数可通过[configmap](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/)查找，如果您配置的参数不包含在[configmap](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/)所列出的选项中将不会生效。
+    -   **默认404服务**：默认使用插件自带的404服务。支持自定义404服务，填写“命名空间/服务名称“，如果服务不存在，插件会安装失败。
+
+4.  单击“安装“。
+
 ## 升级插件<a name="section23441939916"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击nginx-ingress下的“ 升级“。
+1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击nginx-ingress下的“ 升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
@@ -125,6 +140,6 @@ Nginx Ingress由资源对象Ingress、Ingress控制器、Nginx三部分组成，
 
 ## 卸载插件<a name="section85912459455"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签中，选择对应的集群，单击nginx-ingress下的“卸载“。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件实例“页签中，选择对应的集群，单击nginx-ingress下的“卸载“。
 2.  在弹出的窗口中，单击“确认“，可卸载该插件。
 

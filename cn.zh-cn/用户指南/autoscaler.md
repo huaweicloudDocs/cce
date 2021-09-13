@@ -44,7 +44,7 @@ autoscaler可分成扩容和缩容两个方面：
 
 ## 安装插件<a name="section15573161754711"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“ 插件管理“，在“插件市场“页签下，单击**autoscaler**插件下的“安装插件“。
+1.  登录CCE控制台，在左侧导航栏中选择“ 插件管理“，在“插件市场“页签下，单击**autoscaler**插件下的“安装插件“。
 2.  在安装插件页面，选择您要安装插件的集群和插件版本，单击“下一步：规格配置“。
 3.  参照[表1](#table1582194517429)配置插件安装参数。
 
@@ -63,8 +63,8 @@ autoscaler可分成扩容和缩容两个方面：
     </td>
     <td class="cellrowborder" valign="top" width="19.919999999999998%" headers="mcps1.2.4.1.2 "><p id="p111958230594"><a name="p111958230594"></a><a name="p111958230594"></a>所有版本</p>
     </td>
-    <td class="cellrowborder" valign="top" width="61.75000000000001%" headers="mcps1.2.4.1.3 "><p id="p1861133733913"><a name="p1861133733913"></a><a name="p1861133733913"></a>插件部署可选择<span class="uicontrol" id="uicontrol183682402402"><a name="uicontrol183682402402"></a><a name="uicontrol183682402402"></a>“单实例”</span>和<span class="uicontrol" id="uicontrol12789143104015"><a name="uicontrol12789143104015"></a><a name="uicontrol12789143104015"></a>“高可用”</span>两种规格。</p>
-    <a name="ul1634319358233"></a><a name="ul1634319358233"></a><ul id="ul1634319358233"><li>单实例：以单实例部署插件。</li><li>高可用：以多实例部署插件，具有高可用能力，需占用更多的计算资源。</li></ul>
+    <td class="cellrowborder" valign="top" width="61.75000000000001%" headers="mcps1.2.4.1.3 "><p id="p1861133733913"><a name="p1861133733913"></a><a name="p1861133733913"></a>插件部署可选择如下几种规格。</p>
+    <a name="ul1634319358233"></a><a name="ul1634319358233"></a><ul id="ul1634319358233"><li>单实例：以单实例部署插件。</li><li>高可用50：50节点集群规模多实例部署，实例数为2，具有高可用能力。</li><li>高可用200：200节点集群规模多实例部署，实例数为2，具有高可用能力，每个实例使用资源比高可用50的实例更多。</li><li>自定义：根据需要自定义实例数量和实例规格。</li></ul>
     </td>
     </tr>
     <tr id="row921611101579"><td class="cellrowborder" valign="top" width="18.33%" headers="mcps1.2.4.1.1 "><p id="p13217111055715"><a name="p13217111055715"></a><a name="p13217111055715"></a>实例数</p>
@@ -89,7 +89,7 @@ autoscaler可分成扩容和缩容两个方面：
     <p id="p14460644195117"><a name="p14460644195117"></a><a name="p14460644195117"></a><strong id="b9415460515"><a name="b9415460515"></a><a name="b9415460515"></a>选择<span class="uicontrol" id="uicontrol1488552616504"><a name="uicontrol1488552616504"></a><a name="uicontrol1488552616504"></a>“密码”</span>方式：</strong></p>
     <a name="ul427315025119"></a><a name="ul427315025119"></a><ul id="ul427315025119"><li>密码：自动扩容工作节点密码。通过该密码登录工作节点执行相关操作，用户名为root。</li><li>确认密码：再次输入自动扩容工作节点密码。</li></ul>
     <p id="p1973095275113"><a name="p1973095275113"></a><a name="p1973095275113"></a><strong id="b189751355125320"><a name="b189751355125320"></a><a name="b189751355125320"></a>选择<span class="uicontrol" id="uicontrol13155165310"><a name="uicontrol13155165310"></a><a name="uicontrol13155165310"></a>“密钥对”</span>方式：</strong></p>
-    <p id="p1863961317528"><a name="p1863961317528"></a><a name="p1863961317528"></a>密钥对：密钥对用于远程登录节点时的身份认证，请选择已有密钥对或<a href="https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0014250631.html" target="_blank" rel="noopener noreferrer">创建密钥对</a>。</p>
+    <p id="p9299140193120"><a name="p9299140193120"></a><a name="p9299140193120"></a>密钥对：密钥对用于远程登录节点时的身份认证，请选择已有密钥对或创建密钥对。</p>
     </td>
     </tr>
     <tr id="row7820124544210"><td class="cellrowborder" valign="top" width="18.33%" headers="mcps1.2.4.1.1 "><p id="p7820184519425"><a name="p7820184519425"></a><a name="p7820184519425"></a><span class="keyword" id="keyword93481830179"><a name="keyword93481830179"></a><a name="keyword93481830179"></a>自动缩容</span></p>
@@ -114,7 +114,7 @@ autoscaler可分成扩容和缩容两个方面：
     <div class="notice" id="note77443231113"><a name="note77443231113"></a><a name="note77443231113"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><a name="ul104271158181515"></a><a name="ul104271158181515"></a><ul id="ul104271158181515"><li>Taints配置时需要配合Pod的toleration使用，否则可能导致扩容失败或者Pod无法调度到扩容节点。</li><li>配置后无法修改，请您谨慎配置，错误的配置可能会导致扩容失败或pod无法调度。</li></ul>
     </div></div>
     </div>
-    </li><li>标签管理：通过为资源添加标签，可以对资源进行自定义标记，实现资源的分类。<div class="note" id="note1873655813232"><a name="note1873655813232"></a><a name="note1873655813232"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p1682495163615"><a name="p1682495163615"></a><a name="p1682495163615"></a>您可以在TMS中创建<span class="uicontrol" id="uicontrol1152414253303"><a name="uicontrol1152414253303"></a><a name="uicontrol1152414253303"></a>“预定义标签”</span>，预定义标签对所有支持标签功能的服务资源可见，通过使用预定义标签可以提升标签创建和迁移效率。具体请参见<a href="https://support.huaweicloud.com/usermanual-tms/zh-cn_topic_0144368884.html" target="_blank" rel="noopener noreferrer">创建预定义标签</a>。</p>
+    </li><li>标签管理：通过为资源添加标签，可以对资源进行自定义标记，实现资源的分类。<div class="note" id="note1873655813232"><a name="note1873655813232"></a><a name="note1873655813232"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p75776214816"><a name="p75776214816"></a><a name="p75776214816"></a>您可以在TMS中创建<span class="uicontrol" id="uicontrol1657782124819"><a name="uicontrol1657782124819"></a><a name="uicontrol1657782124819"></a>“预定义标签”</span>，预定义标签对所有支持标签功能的服务资源可见，通过使用预定义标签可以提升标签创建和迁移效率。</p>
     </div></div>
     </li><li>节点规格：节点的CPU配置和内存配置。</li></ul>
     </td>
@@ -175,7 +175,7 @@ autoscaler可分成扩容和缩容两个方面：
     </li><li>数据盘：单击<span class="uicontrol" id="uicontrol14989121667"><a name="uicontrol14989121667"></a><a name="uicontrol14989121667"></a>“新增数据盘”</span>，您可以增加一块数据盘。</li></ul>
     </div>
     <p id="p220415148710"><a name="p220415148710"></a><a name="p220415148710"></a>系统盘和数据盘均可提供以下性能规格的云硬盘：</p>
-    <a name="ul82049141772"></a><a name="ul82049141772"></a><ul id="ul82049141772"><li>普通IO：是指由SATA存储提供资源的磁盘类型。提供可靠的块存储，单个云硬盘的最大IOPS可达到1000，可运行关键应用程序。</li><li>高IO：是指由SAS存储提供资源的磁盘类型。提供可达到3000的高IO和低至1 ms的读写延时，支持NoSQL/关系型数据库，数据仓库，文件系统等应用。</li><li>超高IO：是指由SSD存储提供资源的磁盘类型。提供可达到20000的超高IO和低至1 ms超低读写时延，支持NoSQL/关系型数据库，数据仓库等应用。</li></ul>
+    <a name="ul82049141772"></a><a name="ul82049141772"></a><ul id="ul82049141772"><li>高IO：是指由SAS存储提供资源的磁盘类型。提供可达到3000的高IO和低至1 ms的读写延时，支持NoSQL/关系型数据库，数据仓库，文件系统等应用。</li><li>超高IO：是指由SSD存储提供资源的磁盘类型。提供可达到20000的超高IO和低至1 ms超低读写时延，支持NoSQL/关系型数据库，数据仓库等应用。</li></ul>
     </td>
     </tr>
     <tr id="row144889497367"><td class="cellrowborder" valign="top" width="18.528147185281473%" headers="mcps1.2.4.1.1 "><p id="p94899496360"><a name="p94899496360"></a><a name="p94899496360"></a>命令行注入</p>
@@ -197,7 +197,7 @@ autoscaler可分成扩容和缩容两个方面：
 
 ## 升级插件<a name="section3578191413712"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击autoscaler下的“ 升级“。
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击autoscaler下的“ 升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作；
@@ -208,6 +208,6 @@ autoscaler可分成扩容和缩容两个方面：
 
 ## 卸载插件<a name="section610455514114"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“ 插件管理“，在“插件实例“页签下，选择对应的集群，单击**autoscaler**下的“卸载“。
+1.  登录CCE控制台，在左侧导航栏中选择“ 插件管理“，在“插件实例“页签下，选择对应的集群，单击**autoscaler**下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
 

@@ -4,7 +4,7 @@
 
 集群内访问表示工作负载暴露给同一集群内其他工作负载访问的方式，可以通过“集群内部域名“访问。
 
-集群内部域名格式为“<自定义的服务名称\>.<工作负载所在命名空间\>.svc.cluster.local:<端口号\>“，例如“nginx.default.svc.cluster.local:80“。
+集群内部域名格式为“<服务名称\>.<工作负载所在命名空间\>.svc.cluster.local:<端口号\>“，例如“nginx.default.svc.cluster.local:80“。
 
 访问通道、容器端口与访问端口映射如[图1](#fig192245420557)所示。
 
@@ -25,7 +25,6 @@
         -   容器端口：工作负载程序实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
         -   访问端口：容器端口映射到集群虚拟IP上的端口，用虚拟IP访问工作负载时使用，端口范围为1-65535，可任意指定。
 
-
     **图 2**  访问类型为集群内访问 \( ClusterIP \)<a name="fig56211834134312"></a>  
     ![](figures/访问类型为集群内访问-(-ClusterIP-).png "访问类型为集群内访问-(-ClusterIP-)")
 
@@ -36,7 +35,7 @@
 
 您可以在工作负载创建完成后对Service进行配置，此配置对工作负载状态无影响，且实时生效。具体操作如下：
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“工作负载 \> 无状态负载 Deployment”，在工作负载列表页单击要设置Service的工作负载名称。
+1.  登录CCE控制台，在左侧导航栏中选择“工作负载 \> 无状态负载 Deployment”，在工作负载列表页单击要设置Service的工作负载名称。
 2.  在“Service“页签，单击“添加Service”。
 3.  在“添加Service“页面，访问类型选择“集群内访问 \( ClusterIP \)“。
 4.  设置集群内访问参数。
@@ -50,15 +49,12 @@
         -   容器端口：工作负载程序实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
         -   访问端口：容器端口映射到集群虚拟IP上的端口，用虚拟IP访问工作负载时使用，端口范围为1-65535，可任意指定。
 
-
 5.  单击“创建”。工作负载已添加“集群内访问 \( ClusterIP \)”的服务。
 
 ## 验证访问方式<a name="section127671412133313"></a>
 
-1.  在管理控制台首页，单击“计算 \>  弹性云服务器“。
-2.  在弹性云服务器页面，找到同一VPC内任意一台云服务器，并确认连接到访问地址中IP与端口的安全组是开放的。
-3.  登录工作负载所在集群的任意节点，登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
-4.  使用curl命令访问工作负载验证工作负载是否可以正常访问。您可以通过IP或者域名的方式来验证。
+1.  登录工作负载所在集群的任意节点。
+2.  使用curl命令访问工作负载验证工作负载是否可以正常访问。您可以通过IP或者域名的方式来验证。
 
     **方式一：通过IP地址验证。**
 
@@ -131,37 +127,11 @@
     ```
 
 
-## 更新Service<a name="section170649161816"></a>
-
-您可以在添加完Service后，更新此Service的端口配置，操作步骤如下：
-
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 网络管理”，在**Service**页签下，选择对应的集群和命名空间，单击需要更新端口配置的Service后的“更新”。
-2.  在“更新Service“页面，访问类型选择“集群内访问 \( ClusterIP \)“。
-3.  更新集群内访问参数。
-    -   **Service名称：**您创建的Service名称，此处不可修改。
-    -   **集群名称：**工作负载所在集群的名称，此处不可修改。
-    -   **命名空间：**工作负载所在命名空间，此处不可修改。
-    -   **关联工作负载：**要添加Service的工作负载，此处不可修改。
-    -   **IPv6：**该功能仅在1.15及以上版本的集群创建时开启了IPv6功能才会显示，此处不可修改。
-    -   **端口配置：**
-        -   协议：请根据业务的协议类型选择。
-        -   容器端口：工作负载程序实际监听的端口，需用户确定。nginx程序实际监听的端口为80。
-        -   访问端口：容器端口映射到集群虚拟IP上的端口，用虚拟IP访问工作负载时使用，端口范围为1-65535，可任意指定。
-
-
-4.  单击“更新”，工作负载已更新Service。
-
 ## 通过kubectl命令行创建<a name="section9813121512319"></a>
 
 您可以通过kubectl命令行设置Service访问方式。本节以nginx为例，说明kubectl命令实现集群内访问的方法。
 
-**前提条件**
-
-请参见[通过kubectl或web-terminal插件操作CCE集群](通过kubectl或web-terminal插件操作CCE集群.md)配置kubectl命令，使弹性云服务器连接集群。
-
-**操作步骤**
-
-1.  登录已配置好kubectl命令的弹性云服务器。登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
+1.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
 2.  创建并编辑nginx-deployment.yaml和nginx-clusterip-svc.yaml文件。
 
     其中，nginx-deployment.yaml和nginx-clusterip-svc.yaml为自定义名称，您可以随意命名。

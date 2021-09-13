@@ -45,7 +45,7 @@ CCE通过云审计服务（Cloud Trace Service，简称CTS）为您提供云服�
 </td>
 <td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.4.1.2 "><p id="p155208351618"><a name="p155208351618"></a><a name="p155208351618"></a>集群</p>
 </td>
-<td class="cellrowborder" valign="top" width="46.400000000000006%" headers="mcps1.2.4.1.3 "><p id="p29392059115015"><a name="p29392059115015"></a><a name="p29392059115015"></a>upgradeCluster</p>
+<td class="cellrowborder" valign="top" width="46.400000000000006%" headers="mcps1.2.4.1.3 "><p id="p29392059115015"><a name="p29392059115015"></a><a name="p29392059115015"></a>clusterUpgrade</p>
 </td>
 </tr>
 <tr id="row18494524910"><td class="cellrowborder" valign="top" width="28.37%" headers="mcps1.2.4.1.1 "><p id="p17909162174912"><a name="p17909162174912"></a><a name="p17909162174912"></a>删除集群</p>
@@ -108,7 +108,7 @@ CCE通过云审计服务（Cloud Trace Service，简称CTS）为您提供云服�
 </td>
 <td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.4.1.2 "><p id="p1162245314111"><a name="p1162245314111"></a><a name="p1162245314111"></a>集群</p>
 </td>
-<td class="cellrowborder" valign="top" width="46.400000000000006%" headers="mcps1.2.4.1.3 "><p id="p1393995915502"><a name="p1393995915502"></a><a name="p1393995915502"></a>updateClusterConfiguration</p>
+<td class="cellrowborder" valign="top" width="46.400000000000006%" headers="mcps1.2.4.1.3 "><p id="p1393995915502"><a name="p1393995915502"></a><a name="p1393995915502"></a>updateConfiguration</p>
 </td>
 </tr>
 <tr id="row108501254498"><td class="cellrowborder" valign="top" width="28.37%" headers="mcps1.2.4.1.1 "><p id="p16909112184915"><a name="p16909112184915"></a><a name="p16909112184915"></a>创建节点池</p>
@@ -214,13 +214,6 @@ CCE通过云审计服务（Cloud Trace Service，简称CTS）为您提供云服�
 <td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.4.1.2 "><p id="p171112818311"><a name="p171112818311"></a><a name="p171112818311"></a>模板</p>
 </td>
 <td class="cellrowborder" valign="top" width="46.400000000000006%" headers="mcps1.2.4.1.3 "><p id="p209401159165020"><a name="p209401159165020"></a><a name="p209401159165020"></a>deleteChart</p>
-</td>
-</tr>
-<tr id="row184465910459"><td class="cellrowborder" valign="top" width="28.37%" headers="mcps1.2.4.1.1 "><p id="p69102211491"><a name="p69102211491"></a><a name="p69102211491"></a>下载模板</p>
-</td>
-<td class="cellrowborder" valign="top" width="25.230000000000004%" headers="mcps1.2.4.1.2 "><p id="p19711528135"><a name="p19711528135"></a><a name="p19711528135"></a>模板</p>
-</td>
-<td class="cellrowborder" valign="top" width="46.400000000000006%" headers="mcps1.2.4.1.3 "><p id="p894035935016"><a name="p894035935016"></a><a name="p894035935016"></a>downloadChart</p>
 </td>
 </tr>
 <tr id="row118441759144514"><td class="cellrowborder" valign="top" width="28.37%" headers="mcps1.2.4.1.1 "><p id="p4910122114496"><a name="p4910122114496"></a><a name="p4910122114496"></a>创建模板实例</p>

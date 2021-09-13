@@ -6,12 +6,17 @@
 
 其中以下字段支持更新：
 
+-   metadata.name
+-   metadata.namespace
 -   metadata.selfLink
 -   metadata.resourceVersion
+-   metadata.uid
 -   metadata.labels
 -   metadata.clusterName
 -   metadata.generateName
 -   metadata.annotations
+-   metadata.deletionGracePeriodSeconds
+-   spec.type
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   当“type“的值为“Opaque“时，“data“的“key“和“value“都可以更新。

@@ -50,18 +50,18 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
 
 ## 获取驱动链接-OBS地址<a name="section14922133914508"></a>
 
-1.  将驱动上传到对象存储服务OBS中，方法请参见[上传文件](https://support.huaweicloud.com/usermanual-obs/zh-cn_topic_0045829661.html)。
+1.  将驱动上传到对象存储服务OBS中，并将驱动文件设置为公共读，方法请参见[上传文件](https://support.huaweicloud.com/usermanual-obs/zh-cn_topic_0045829661.html)。
 2.  在OBS管理控制台左侧导航栏选择“对象存储”。
 3.  在桶列表单击待操作的桶，进入“概览”页面。
 4.  在左侧导航栏，单击“对象”。
 5.  选中目标对象，在对象详情页复制驱动链接。
 
-    ![](figures/001-26.png)
+    ![](figures/001-33.png)
 
 
 ## 升级插件<a name="section23441939916"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“gpu-beta“下的“升级“。
+1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“gpu-beta“下的“升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
@@ -71,7 +71,7 @@ gpu-beta插件是支持在容器中使用GPU显卡的设备管理插件，仅支
 3.  参考[安装插件](#section14115341020)中参数说明配置参数后，单击“升级“即可升级“gpu-beta“插件。
 4.  重启节点（必须）。
 
-    在[ECS控制台](https://console.huaweicloud.com/ecm/#/ecs/manager/vmList)重启节点。登录华为云官网，选择“控制台”，选择弹性云服务器所在区域，选择“计算 \> 弹性云服务器ECS”，在弹性云服务器列表中找到目标节点，并单击“操作”列下的“更多 \> 重启”。
+    在ECS控制台重启节点。登录华为云官网，选择“控制台”，选择弹性云服务器所在区域，选择“计算 \> 弹性云服务器ECS”，在弹性云服务器列表中找到目标节点，并单击“操作”列下的“更多 \> 重启”。
 
 
 ## 卸载插件<a name="section5548228142111"></a>

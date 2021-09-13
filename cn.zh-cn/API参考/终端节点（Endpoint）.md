@@ -4,8 +4,8 @@
 
 请您根据业务需要选择对应区域的终端节点。
 
--   [集群管理](集群管理.md)的URL格式为：**https://Endpoint/uri**。其中**uri**为资源路径，也即API访问的路径。
--   [Kubernetes API](Kubernetes-API.md)、[存储管理](存储管理.md)、[插件管理](插件管理.md)的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中**\{clusterid\}**为集群ID，**uri**为资源路径，也即API访问的路径。
+-   [集群管理](cce_02_0092.md)的URL格式为：**https://Endpoint/uri**。其中**uri**为资源路径，也即API访问的路径。
+-   [Kubernetes API](Kubernetes-API.md)、[存储管理](cce_02_0251.md)、[插件管理](cce_02_0320.md)的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中**\{clusterid\}**为集群ID，**uri**为资源路径，也即API访问的路径。
 
 **表 1**  URL中的参数说明
 

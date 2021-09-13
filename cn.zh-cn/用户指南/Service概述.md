@@ -1,8 +1,28 @@
 # Service概述<a name="cce_01_0249"></a>
 
-Service是将运行在一组Pods上的应用程序公开为网络服务的抽象方法。
+## 直接访问Pod的问题<a name="section674023294115"></a>
 
-使用Kubernetes，您无需修改应用程序即可使用不熟悉的服务发现机制。 Kubernetes为Pods提供自己的IP地址和一组Pod的单个DNS名称，并且可以在它们之间进行负载平衡。
+Pod创建完成后，如何访问Pod呢？直接访问Pod会有如下几个问题：
+
+-   Pod会随时被Deployment这样的控制器删除重建，那访问Pod的结果就会变得不可预知。
+-   Pod的IP地址是在Pod启动后才被分配，在启动前并不知道Pod的IP地址。
+-   应用往往都是由多个运行相同镜像的一组Pod组成，逐个访问Pod也变得不现实。
+
+举个例子，假设有这样一个应用程序，使用Deployment创建了前台和后台，前台会调用后台做一些计算处理，如[图1](#zh-cn_topic_0249851121_fig2173165051811)所示。后台运行了3个Pod，这些Pod是相互独立且可被替换的，当Pod出现状况被重建时，新建的Pod的IP地址是新IP，前台的Pod无法直接感知。
+
+**图 1**  Pod间访问<a name="zh-cn_topic_0249851121_fig2173165051811"></a>  
+![](figures/Pod间访问.png "Pod间访问")
+
+## 使用Service解决Pod的访问问题<a name="section84961935194115"></a>
+
+Kubernetes中的Service对象就是用来解决上述Pod访问问题的。Service有一个固定IP地址（在创建CCE集群时有一个服务网段的设置，这个网段专门用于给Service分配IP地址），Service将访问它的流量转发给Pod，具体转发给哪些Pod通过Label来选择，而且Service可以给这些Pod做负载均衡。
+
+那么对于上面的例子，为后台添加一个Service，通过Service来访问Pod，这样前台Pod就无需感知后台Pod的变化，如[图2](#zh-cn_topic_0249851121_fig163156154816)所示。
+
+**图 2**  通过Service访问Pod<a name="zh-cn_topic_0249851121_fig163156154816"></a>  
+![](figures/通过Service访问Pod.png "通过Service访问Pod")
+
+## Service的类型<a name="section12500411413"></a>
 
 Kubernetes允许指定一个需要的类型的Service，类型的取值以及行为如下：
 
@@ -15,65 +35,16 @@ Kubernetes允许指定一个需要的类型的Service，类型的取值以及行
 
     节点访问 \( NodePort \)是指在每个节点的IP上开放一个静态端口，通过静态端口对外暴露服务。节点访问 \( NodePort \)会路由到ClusterIP服务，这个ClusterIP服务会自动创建。通过请求<NodeIP\>:<NodePort\>，可以从集群的外部访问一个NodePort服务。
 
--   [负载均衡\(LoadBalancer\)](cce_01_0114.md)
+-   [负载均衡\(LoadBalancer\)](负载均衡(LoadBalancer).md)
 
     负载均衡\( LoadBalancer \)可以通过弹性负载均衡从公网访问到工作负载，与弹性IP方式相比提供了高可靠的保障，一般用于系统中需要暴露到公网的服务。
+
+-   [ENI负载均衡\(ENI LoadBalancer\)](ENI负载均衡-(-ENI-LoadBalancer-).md)
+
+    ENI负载均衡 \( ENI LoadBalancer \)使用弹性负载均衡器直通容器，使部署在容器中的业务时延降低、性能无损耗。
 
 -   [DNAT网关\(DNAT\)](DNAT网关(DNAT).md)
 
     可以为集群节点提供网络地址转换服务，使多个节点可以共享使用弹性IP。与弹性IP方式相比增强了可靠性，弹性IP无需与单个节点绑定，任何节点状态的异常不影响其访问。
 
-
-## 添加Service<a name="section1150318179359"></a>
-
-若工作负载需要和其它服务互访，或需要被公网访问，您需要添加服务，设置工作负载的访问方式。
-
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 网络管理”，在工作负载列表页单击要设置Service的工作负载名称。
-2.  在“Service“页签，单击“添加Service”。
-3.  您可根据实际选择工作负载的访问方式，执行对应的操作。
-    -   [集群内访问\(ClusterIP\)](集群内访问(ClusterIP).md)
-    -   [节点访问\(NodePort\)](节点访问(NodePort).md)
-    -   [负载均衡\(LoadBalancer\)](cce_01_0114.md)
-    -   [DNAT网关\(DNAT\)](DNAT网关(DNAT).md)
-
-
-## 删除Service<a name="section5959462326"></a>
-
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 网络管理”。
-2.  在“Service“页签，勾选服务名称，单击“删除Service”。也可在服务名称后的“操作列”，单击“删除”
-3.  在弹出的窗口，单击“是”。
-
-    >![](public_sys-resources/icon-notice.gif) **须知：** 
-    >-   删除操作无法恢复，请谨慎操作。
-    >-   服务关联的自动创建的ELB实例和EIP也会被删除。
-
-
-## 查看事件<a name="section932032011188"></a>
-
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 网络管理”。
-2.  在“Service“页签，单击“查看事件”。
-
-## 更多操作<a name="section11985163132117"></a>
-
-**表 1**  更多操作
-
-<a name="table1796194117217"></a>
-<table><thead align="left"><tr id="row18962104182116"><th class="cellrowborder" valign="top" width="31.900000000000002%" id="mcps1.2.3.1.1"><p id="p19962841142119"><a name="p19962841142119"></a><a name="p19962841142119"></a>操作</p>
-</th>
-<th class="cellrowborder" valign="top" width="68.10000000000001%" id="mcps1.2.3.1.2"><p id="p15962241132111"><a name="p15962241132111"></a><a name="p15962241132111"></a>说明</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row396244114219"><td class="cellrowborder" valign="top" width="31.900000000000002%" headers="mcps1.2.3.1.1 "><p id="p189624419212"><a name="p189624419212"></a><a name="p189624419212"></a><span>编辑YAML</span></p>
-</td>
-<td class="cellrowborder" valign="top" width="68.10000000000001%" headers="mcps1.2.3.1.2 "><p id="p99624411219"><a name="p99624411219"></a><a name="p99624411219"></a><span>单击服务名称后的</span><span>“编辑YAML”</span><span>，可查看、修改和下载到当前服务的YAML文件。</span></p>
-</td>
-</tr>
-<tr id="row14962174142113"><td class="cellrowborder" valign="top" width="31.900000000000002%" headers="mcps1.2.3.1.1 "><p id="p9962114112215"><a name="p9962114112215"></a><a name="p9962114112215"></a>更新</p>
-</td>
-<td class="cellrowborder" valign="top" width="68.10000000000001%" headers="mcps1.2.3.1.2 "><a name="ol435223014297"></a><a name="ol435223014297"></a><ol id="ol435223014297"><li>选择需要更新的服务名称，单击“更新”。</li><li>更改信息后，单击“更新”。</li></ol>
-</td>
-</tr>
-</tbody>
-</table>
 

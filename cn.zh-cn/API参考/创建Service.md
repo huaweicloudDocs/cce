@@ -353,7 +353,7 @@ POST /api/v1/namespaces/\{namespace\}/services
 <td class="cellrowborder" valign="top" width="19.74%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p18968549"><a name="zh-cn_topic_0079615000_p18968549"></a><a name="zh-cn_topic_0079615000_p18968549"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="39.290000000000006%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0079615000_p60057505"><a name="zh-cn_topic_0079615000_p60057505"></a><a name="zh-cn_topic_0079615000_p60057505"></a>Type of exposed service. Must be ClusterIP, NodePort, or LoadBalancer. Defaults to ClusterIP.</p>
-<p id="p939314015208"><a name="p939314015208"></a><a name="p939314015208"></a>The <span class="parmname" id="p142747974e2045eea6c2862545e07ed2"><a name="p142747974e2045eea6c2862545e07ed2"></a><a name="p142747974e2045eea6c2862545e07ed2"></a>“LoadBalancer”</span>&nbsp;value indicates that Elastic Load Balance (ELB) is in use. For details about how to use ELB with a cluster created by the CCE console, see section&nbsp;<a href="集群中使用ELB的操作方法.md">集群中使用ELB的操作方法</a>。</p>
+<p id="p939314015208"><a name="p939314015208"></a><a name="p939314015208"></a>The <span class="parmname" id="p142747974e2045eea6c2862545e07ed2"><a name="p142747974e2045eea6c2862545e07ed2"></a><a name="p142747974e2045eea6c2862545e07ed2"></a>“LoadBalancer”</span>&nbsp;value indicates that Elastic Load Balance (ELB) is in use.</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0079615000_row45038152"><td class="cellrowborder" valign="top" width="21.8%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p24211670"><a name="zh-cn_topic_0079615000_p24211670"></a><a name="zh-cn_topic_0079615000_p24211670"></a>externalIPs</p>

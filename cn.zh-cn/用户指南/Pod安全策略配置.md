@@ -55,11 +55,6 @@ spec:
     rule: RunAsAny
   volumes:
   - '*'
-```
-
-```
-
-
 ---
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1

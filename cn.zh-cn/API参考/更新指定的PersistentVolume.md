@@ -90,7 +90,7 @@ Content-Type: application/json-patch+json
             "name": "pv-test-03"
         },
         "annotations": {
-            "volume.beta.kubernetes.io/storage-class": "sata",
+            "volume.beta.kubernetes.io/storage-class": "SAS",
             "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
         }
     },

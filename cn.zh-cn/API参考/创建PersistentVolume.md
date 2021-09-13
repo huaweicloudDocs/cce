@@ -619,7 +619,7 @@ sfsturbo.csi.everest.io.</pre>
 </td>
 <td class="cellrowborder" valign="top" width="42.05%" headers="mcps1.2.5.1.4 "><p id="p256625412314"><a name="p256625412314"></a><a name="p256625412314"></a>This parameter is required only when the storage type is EVS,</p>
 <p id="p16232560225"><a name="p16232560225"></a><a name="p16232560225"></a>used to specify the type of EVS disk to be used.</p>
-<p id="p183671642164716"><a name="p183671642164716"></a><a name="p183671642164716"></a>EVS disk type, high I/O (SAS), ultra-high I/O (SSD), or common I/O (SATA).</p>
+<p id="p183671642164716"><a name="p183671642164716"></a><a name="p183671642164716"></a>EVS disk type, high I/O (SAS), ultra-high I/O (SSD).</p>
 </td>
 </tr>
 <tr id="row416082210172"><td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.2.5.1.1 "><p id="p20160112211172"><a name="p20160112211172"></a><a name="p20160112211172"></a>everest.io/obs-volume-type</p>
@@ -683,7 +683,7 @@ sfsturbo.csi.everest.io.</pre>
             "fsType": "ext4",
             "volumeAttributes": {
                 "everest.io/disk-mode": "SCSI",
-                "everest.io/disk-volume-type": "SATA",
+                "everest.io/disk-volume-type": "SAS",
                 "storage.kubernetes.io/csiProvisionerIdentity": "everest-csi-provisioner"
             },
             "volumeHandle": "9c44d068-42ab-4fcf-bb8f-1609823da5bb"
@@ -727,7 +727,7 @@ sfsturbo.csi.everest.io.</pre>
       }
     },
     "persistentVolumeReclaimPolicy": "Delete",
-    "storageClassName": "sata"
+    "storageClassName": "SAS"
   }
 }
 ```
@@ -774,7 +774,7 @@ sfsturbo.csi.everest.io.</pre>
             "fsType": "ext4",
             "volumeAttributes": {
                 "everest.io/disk-mode": "SCSI",
-                "everest.io/disk-volume-type": "SATA",
+                "everest.io/disk-volume-type": "SAS",
                 "storage.kubernetes.io/csiProvisionerIdentity": "everest-csi-provisioner"
             },
             "volumeHandle": "9c44d068-42ab-4fcf-bb8f-1609823da5bb"
@@ -805,7 +805,7 @@ sfsturbo.csi.everest.io.</pre>
             "name": "pv-test-02"
         },
         "annotations": {
-            "volume.beta.kubernetes.io/storage-class": "sata",
+            "volume.beta.kubernetes.io/storage-class": "SAS",
             "volume.beta.kubernetes.io/storage-provisioner": "flexvolume-huawei.com/fuxivol"
         }
     },

@@ -4,9 +4,7 @@ HPA策略即Horizontal Pod Autoscaling，是Kubernetes中实现POD水平自动�
 
 ## 前提条件<a name="section194973810277"></a>
 
--   若使用系统指标，则需要安装[metrics-server](metrics-server.md)和[prometheus](prometheus.md)插件：
-    -   metrics-server：负责采集kubernetes集群中kubelet的公开指标项，包含CPU利用率、内存利用率。HPA弹性策略如基于CPU/MEM利用率，必须安装此插件。
-    -   prometheus：负责采集kubernetes集群中kubelet的公开指标项（CPU利用率、内存利用率）。
+需要安装[metrics-server](metrics-server.md)插件，metrics-server责采集kubernetes集群中kubelet的公开指标项，包含CPU利用率、内存利用率。HPA弹性策略如基于CPU/MEM利用率，必须安装此插件。
 
 
 ## 约束与限制<a name="section107429267459"></a>
@@ -17,7 +15,7 @@ HPA策略即Horizontal Pod Autoscaling，是Kubernetes中实现POD水平自动�
 
 ## 操作步骤<a name="section12371183611583"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“弹性伸缩“，在“工作负载伸缩“页签下，单击“创建HPA策略“。
+1.  在CCE控制台中，单击左侧导航栏的“弹性伸缩“，在“工作负载伸缩“页签下，单击“创建HPA策略“。
 2.  进入创建工作负载HPA策略页面，在“插件检测“步骤中：
     -   若插件名称后方显示![](figures/zh-cn_image_0259716601.png)，请单击插件后方的“现在安装“，根据业务需求配置插件参数后单击“立即安装“，等待插件安装完成。
     -   若插件名称后方显示![](figures/zh-cn_image_0259714782.png)，则说明插件已安装成功。

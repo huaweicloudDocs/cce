@@ -8,7 +8,7 @@ kube-dns/CoreDNS为集群提供了DNS服务。若集群中只部署了单个kube
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   在CCE中新建的kubernetes 1.11及以上版本集群默认会安装CoreDNS插件。
->-   更多DNS相关信息请参见[CoreDNS（系统资源插件，必装）](CoreDNS（系统资源插件-必装）.md)或[Kubernetes集群内置DNS配置说明](Kubernetes集群内置DNS配置说明.md)。
+>-   更多DNS相关信息请参见[CoreDNS（系统资源插件，必装）](CoreDNS（系统资源插件-必装）.md)或[工作负载DNS配置说明](工作负载DNS配置说明.md)。
 
 ## 前提条件<a name="s749b044f6e864a919f0c0616cfad1dab"></a>
 
@@ -16,7 +16,7 @@ kube-dns/CoreDNS为集群提供了DNS服务。若集群中只部署了单个kube
 
 ## 操作步骤<a name="s6797453bdad1452db7d603668deda069"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 集群管理”，单击待连接集群下的“kubectl“。
+1.  登录CCE控制台，在左侧导航栏中选择“资源管理 \> 集群管理”，单击待连接集群下的“kubectl“。
 2.  根据界面提示的步骤设置集群API访问方式。
 3.  根据界面提示的步骤配置命令行工具。
 

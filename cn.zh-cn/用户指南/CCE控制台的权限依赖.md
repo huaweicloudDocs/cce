@@ -2,8 +2,7 @@
 
 CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略授权后，在CCE Console控制台中的各项功能需要配置相应的服务权限后才能正常查看或使用，详细说明如下：
 
--   依赖服务的权限配置均基于您已设置了IAM系统策略授权的CCE FullAccess或CCE ReadOnlyAccess策略权限，详细设置方法请参见[设置集群权限](设置集群权限.md)。
--   Tenant Guest权限在您开启IAM系统策略授权之后将不再生效，也不会再有全局只读的效果。
+-   依赖服务的权限配置均基于您已设置了IAM系统策略授权的CCE FullAccess或CCE ReadOnlyAccess策略权限，详细设置方法请参见[集群权限（IAM授权）](集群权限（IAM授权）.md)。
 -   1.11.7-r2及以上版本的集群，显示情况依赖于命名空间权限的设置情况，如果没有设置命名空间权限，则无法查看集群下的资源。
     -   如果您设置了全部命名空间的view权限，则可以查看到对应集群的全部命名空间下的资源，但密钥 \( Secret \)除外，密钥 \( Secret \)需要在命名空间权限下设置admin或者edit权限才能查看。
     -   CustomedHPA与HPA策略需要配置命名空间cluster-admin权限下才能生效。
@@ -88,9 +87,9 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 <p id="p126411556163811"><a name="p126411556163811"></a><a name="p126411556163811"></a>弹性文件服务 SFS</p>
 <p id="p344642920405"><a name="p344642920405"></a><a name="p344642920405"></a>极速文件存储 EFS（SFS Turbo）</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul146023714385"></a><a name="ul146023714385"></a><ul id="ul146023714385"><li>如果使用对象存储，需要全局设置OBS Administrator。<div class="note" id="note927810178150"><a name="note927810178150"></a><a name="note927810178150"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p8278617181514"><a name="p8278617181514"></a><a name="p8278617181514"></a>由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的RBAC策略后，大概需要等待13分钟RBAC策略才能生效；授予OBS相关的系统策略后，大概需要等待5分钟系统策略才能生效。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul146023714385"></a><a name="ul146023714385"></a><ul id="ul146023714385"><li>如果使用对象存储，需要全局设置OBS Administrator权限。<div class="note" id="cce_01_0190_note1215220141518"><a name="cce_01_0190_note1215220141518"></a><a name="cce_01_0190_note1215220141518"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="cce_01_0190_p0153120121518"><a name="cce_01_0190_p0153120121518"></a><a name="cce_01_0190_p0153120121518"></a>由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的RBAC策略后，大概需要等待13分钟RBAC策略才能生效；授予OBS相关的系统策略后，大概需要等待5分钟系统策略能生效。</p>
 </div></div>
-</li><li>如果使用文件存储，需要设置SFS Administrator权限。</li><li>如果使用极速文件存储，需要设置SFS Turbo Admin权限</li></ul>
+</li><li>如果使用文件存储，需要设置SFS FullAccess权限。</li><li>如果使用极速文件存储，需要设置SFS Turbo Admin权限</li></ul>
 </td>
 </tr>
 <tr id="row1488112216362"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p144881022123614"><a name="p144881022123614"></a><a name="p144881022123614"></a>命名空间</p>
@@ -143,7 +142,7 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 <p id="p581510413526"><a name="p581510413526"></a><a name="p581510413526"></a>多云容器平台 MCP</p>
 <p id="p458184745311"><a name="p458184745311"></a><a name="p458184745311"></a>云监控服务 Cloud Eye（存储管理与节点管理的<span class="uicontrol" id="uicontrol11578121711418"><a name="uicontrol11578121711418"></a><a name="uicontrol11578121711418"></a>“监控”</span>跳转）</p>
 </td>
-<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p253325815496"><a name="p253325815496"></a><a name="p253325815496"></a>为便于您快速进入CCE相关服务的控制台，在<a href="https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter" target="_blank" rel="noopener noreferrer">CCE控制台</a>中增加了其他服务的跳转链接，CCE默认没有这些服务的全部权限，如果IAM用户需要查看或使用其功能，请按照该服务的权限策略说明设置相应的权限策略。</p>
+<td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><p id="p253325815496"><a name="p253325815496"></a><a name="p253325815496"></a>为便于您快速进入CCE相关服务的控制台，在CCE控制台中增加了其他服务的跳转链接，CCE默认没有这些服务的全部权限，如果IAM用户需要查看或使用其功能，请按照该服务的权限策略说明设置相应的权限策略。</p>
 </td>
 </tr>
 </tbody>
@@ -160,7 +159,7 @@ IAM用户“James”在用户组“开发人员组”，“开发人员组”仅
 
 ## 步骤一：验证用户当前权限<a name="section330722611126"></a>
 
-1.  使用IAM用户“James”登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，IAM用户如何登录请参见[IAM用户登录](https://support.huaweicloud.com/usermanual-iam/iam_01_0552.html)。
+1.  使用IAM用户“James”登录CCE控制台，IAM用户如何登录请参见[IAM用户登录](https://support.huaweicloud.com/usermanual-iam/iam_01_0552.html)。
 2.  单击左侧导航栏中的“总览“，进入总览页面，可以看到该用户无权查看监控相关的模块信息。
 
     **图 2**  无权查看监控信息<a name="fig1825716752613"></a>  
@@ -169,7 +168,7 @@ IAM用户“James”在用户组“开发人员组”，“开发人员组”仅
 
 ## 步骤二：为用户组增加系统策略<a name="section10561192612817"></a>
 
-1.  IAM用户“James”退出登录，使用华为云帐号登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)。
+1.  IAM用户“James”退出登录，使用华为云主帐号登录CCE控制台。
 2.  在CCE控制台中，单击左侧导航栏中的“权限管理“，在“集群权限“页签下单击“开发人员组”后的“设置权限“。
 
     **图 3**  设置用户组权限<a name="fig1511051633412"></a>  
@@ -200,7 +199,7 @@ IAM用户“James”在用户组“开发人员组”，“开发人员组”仅
     **图 8**  确认添加策略<a name="fig17730855195315"></a>  
     ![](figures/确认添加策略.png "确认添加策略")
 
-8.  返回[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在“权限管理“的“集群权限“页签下单击右上角的刷新图标![](figures/zh-cn_image_0173364181.png)，可以看到“AOM FullAccess“权限策略已添加成功。
+8.  返回CCE控制台，在“权限管理“的“集群权限“页签下单击右上角的刷新图标![](figures/zh-cn_image_0173364181.png)，可以看到“AOM FullAccess“权限策略已添加成功。
 
     **图 9**  权限策略添加成功<a name="fig4349250117"></a>  
     ![](figures/权限策略添加成功.png "权限策略添加成功")
@@ -208,7 +207,7 @@ IAM用户“James”在用户组“开发人员组”，“开发人员组”仅
 
 ## 步骤三：验证用户新增权限<a name="section787411356120"></a>
 
-1.  使用IAM用户“James”登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)。
+1.  使用IAM用户“James”登录CCE控制台。
 2.  单击左侧导航栏中的“总览“，进入总览页面，可以看到该用户已有权查看监控相关的模块信息。
 
     **图 10**  可正常查看总览页监控信息<a name="fig7651125010199"></a>  

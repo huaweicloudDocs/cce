@@ -1,6 +1,6 @@
 # CCE权限概述<a name="cce_01_0187"></a>
 
-CCE权限管理是在[统一身份认证服务（IAM）](#section1752652204618)与[Kubernetes的角色访问控制（RBAC）](#section89884567218)的能力基础上，打造的细粒度权限管理功能，支持基于IAM的细粒度权限控制和IAM Token认证，支持集群级别、命名空间级别的权限控制，帮助用户便捷灵活的对租户下的IAM用户、用户组设定不同的操作权限。
+CCE权限管理是在统一身份认证服务（IAM）与Kubernetes的角色访问控制（RBAC）的能力基础上，打造的细粒度权限管理功能，支持基于IAM的细粒度权限控制和IAM Token认证，支持集群级别、命名空间级别的权限控制，帮助用户便捷灵活的对租户下的IAM用户、用户组设定不同的操作权限。
 
 如果您需要对华为云上购买的CCE集群及相关资源进行精细的权限管理，例如限制不同部门的员工拥有部门内资源的细粒度权限，您可以使用CCE权限管理提供的增强能力进行多维度的权限管理。
 
@@ -10,54 +10,77 @@ CCE权限管理是在[统一身份认证服务（IAM）](#section1752652204618)�
 
 CCE的权限管理包括“集群权限”和“命名空间权限”两种能力，能够从集群和命名空间层面对用户组或用户进行细粒度授权，具体解释如下：
 
--   **[集群权限](集群权限.md)：**是基于IAM系统策略的授权，可以通过用户组功能实现IAM用户的授权。用户组是用户的集合，通过集群权限设置可以让某些用户组操作集群（如创建/删除集群、节点、节点池、模板、插件等），而让某些用户组仅能查看集群。
+-   **[集群权限](集群权限（IAM授权）.md)：**是基于IAM系统策略的授权，可以通过用户组功能实现IAM用户的授权。用户组是用户的集合，通过集群权限设置可以让某些用户组操作集群（如创建/删除集群、节点、节点池、模板、插件等），而让某些用户组仅能查看集群。
 
     集群权限涉及CCE非Kubernetes API，支持IAM细粒度策略、企业项目管理相关能力。
 
--   **[命名空间权限](命名空间权限.md)：**是基于Kubernetes RBAC能力的授权，通过权限设置可以让不同的用户或用户组拥有操作不同Kubernetes资源的权限。同时CCE基于开源能力进行了增强，可以支持基于IAM用户或用户组粒度进行RBAC授权、IAM token直接访问API进行RBAC认证鉴权。
+-   **[命名空间权限](命名空间权限（Kubernetes-RBAC授权）.md)：**是基于Kubernetes RBAC（Role-Based Access Control，基于角色的访问控制）能力的授权，通过权限设置可以让不同的用户或用户组拥有操作不同Kubernetes资源的权限。同时CCE基于开源能力进行了增强，可以支持基于IAM用户或用户组粒度进行RBAC授权、IAM token直接访问API进行RBAC认证鉴权。
 
     命名空间权限涉及CCE Kubernetes API，基于Kubernetes RBAC能力进行增强，支持对接IAM用户/用户组进行授权和认证鉴权，但与IAM细粒度策略独立。
 
+    CCE从v1.11.7-r2版本起的集群支持配置命名空间权限，1.11.7-r2之前的版本默认拥有全部命名空间权限。
 
->![](public_sys-resources/icon-caution.gif) **注意：** 
->“集群权限“仅针对与集群相关的资源（如创建/删除集群、节点、节点池、模板、插件等）有效，您必须确保同时配置了“命名空间权限“，才能有操作Kubernetes资源（如工作负载、Service等）的权限。
 
-**图 1**  CCE权限管理<a name="fig1867613273114"></a>  
-![](figures/CCE权限管理.png "CCE权限管理")
+CCE的权限可以从使用的阶段分为两个阶段来看，第一个阶段是创建和管理集群的权限，也就是拥有创建/删除集群、节点等资源的权限。第二个阶段是使用集群Kubernetes资源（如工作负载、Service等）的权限。
 
-## 统一身份认证服务（IAM）<a name="section1752652204618"></a>
+**图 1**  权限示例图<a name="fig11818185173613"></a>  
+![](figures/权限示例图.png "权限示例图")
 
-统一身份认证（Identity and Access Management，简称IAM）是华为云提供权限管理的基础服务，可以帮助您安全地控制华为云服务和资源的访问权限。
+清楚了集群权限和命名空间权限后，您就可以通过这两步授权，做到精细化的权限控制。
 
-关于帐号\(租户\)、IAM用户、帐号与IAM用户的关系、用户组、权限、授权、项目等使用IAM服务时常用的基本概念，请参见[IAM基本概念](https://support.huaweicloud.com/productdesc-iam/iam_01_0023.html)。
+## 集群权限（IAM授权）与命名空间权限（Kubernetes RBAC授权）的关系<a name="section1464135853519"></a>
 
-**以下为IAM的优势：**
+拥有不同集群权限（IAM授权）的用户，其拥有的命名空间权限（Kubernetes RBAC授权）不同。[表1](#table886210176509)给出了不同用户拥有的命名空间权限详情。
 
-**对华为云的资源进行精细访问控制**
+**表 1**  不同用户拥有的命名空间权限
 
-您注册华为云后，系统自动创建帐号，帐号是资源的归属以及使用计费的主体，对其所拥有的资源具有完全控制权限，可以访问华为云所有的云服务。
+<a name="table886210176509"></a>
+<table><thead align="left"><tr id="row14863201719502"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="p14863111718502"><a name="p14863111718502"></a><a name="p14863111718502"></a>用户类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="28.28282828282828%" id="mcps1.2.4.1.2"><p id="p18636175506"><a name="p18636175506"></a><a name="p18636175506"></a>1.11.7-r2以下版本的集群</p>
+</th>
+<th class="cellrowborder" valign="top" width="38.38383838383838%" id="mcps1.2.4.1.3"><p id="p98631617175014"><a name="p98631617175014"></a><a name="p98631617175014"></a>1.11.7-r2及以上版本的集群</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row138631617185012"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p1787744075015"><a name="p1787744075015"></a><a name="p1787744075015"></a>拥有Tenant Administrator权限的用户（例如华为云账号）</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.2 "><p id="p14863717165019"><a name="p14863717165019"></a><a name="p14863717165019"></a>全部命名空间权限</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.38383838383838%" headers="mcps1.2.4.1.3 "><a name="ul988783620518"></a><a name="ul988783620518"></a><ul id="ul988783620518"><li>在CCE控制台拥有全部命名空间权限</li><li>使用<a href="访问集群.md">kubectl</a>需要按Kubernetes RBAC授权</li></ul>
+<div class="note" id="note123863251168"><a name="note123863251168"></a><a name="note123863251168"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p9386172515164"><a name="p9386172515164"></a><a name="p9386172515164"></a>控制台访问时CCE会加上一个管理员用户组，所以有全部命名空间权限。</p>
+</div></div>
+</td>
+</tr>
+<tr id="row138631317205019"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p3878104075018"><a name="p3878104075018"></a><a name="p3878104075018"></a>拥有CCE Administrator权限的IAM用户</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.2 "><p id="p270032114512"><a name="p270032114512"></a><a name="p270032114512"></a>全部命名空间权限</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.38383838383838%" headers="mcps1.2.4.1.3 "><a name="ul172151105617"></a><a name="ul172151105617"></a><ul id="ul172151105617"><li>在CCE控制台拥有全部命名空间权限</li><li>使用<a href="访问集群.md">kubectl</a>需要按Kubernetes RBAC授权</li></ul>
+<div class="note" id="note9368141513435"><a name="note9368141513435"></a><a name="note9368141513435"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p14368515204319"><a name="p14368515204319"></a><a name="p14368515204319"></a>控制台访问时CCE会加上一个管理员用户组，所以有全部命名空间权限。</p>
+</div></div>
+</td>
+</tr>
+<tr id="row1386412176506"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p187854025013"><a name="p187854025013"></a><a name="p187854025013"></a>拥有CCE&nbsp;FullAccess或者CCE&nbsp;ReadOnlyAccess权限的IAM用户</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.2 "><p id="p12703172316516"><a name="p12703172316516"></a><a name="p12703172316516"></a>全部命名空间权限</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.38383838383838%" headers="mcps1.2.4.1.3 "><p id="p2033852118610"><a name="p2033852118610"></a><a name="p2033852118610"></a>按Kubernetes RBAC授权</p>
+</td>
+</tr>
+<tr id="row28641117145019"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="p11879440195014"><a name="p11879440195014"></a><a name="p11879440195014"></a>拥有Tenant Guest权限的IAM用户</p>
+</td>
+<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.2 "><p id="p1490645915120"><a name="p1490645915120"></a><a name="p1490645915120"></a>全部命名空间权限</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.38383838383838%" headers="mcps1.2.4.1.3 "><p id="p14337621561"><a name="p14337621561"></a><a name="p14337621561"></a>按Kubernetes RBAC授权</p>
+</td>
+</tr>
+</tbody>
+</table>
 
-如果您在华为云购买了多种资源，例如弹性云服务器、云硬盘、裸金属服务器等，您的团队或应用程序需要使用您在华为云中的资源，您可以使用IAM的用户管理功能，给员工或应用程序创建IAM用户，并授予IAM用户刚好能完成工作所需的权限，新创建的IAM用户可以使用自己单独的用户名和密码登录华为云。IAM用户的作用是多用户协同操作同一帐号时，避免分享帐号的密码。
+## kubectl权限说明<a name="section118521730124516"></a>
 
-除了IAM外，还有企业管理服务同样可以进行资源权限管理，相对于IAM，企业管理对资源的控制粒度更为精细，同时还支持企业项目费用的管理，建议结合企业需求选择IAM或是企业管理进行资源权限管理，关于两者的详细区别，请参见：[IAM与企业管理的区别](https://support.huaweicloud.com/iam_faq/iam_01_0101.html)及[IAM项目和企业项目的区别](https://support.huaweicloud.com/iam_faq/iam_01_0606.html)。
+您可以通过[kubectl访问集群](通过kubectl连接集群.md)的Kubernetes资源，那kubectl拥有哪些Kubernetes资源的权限呢？
 
-![](figures/zh-cn_image_0173711399.png)
-
-**跨帐号的资源操作与授权**
-
-如果您在华为云购买了多种资源，其中一种资源希望由其它帐号管理，您可以使用IAM提供的委托功能。
-
-例如您在华为云上购买的部分资源，希望委托给一家专业的代运维公司来运维，通过IAM的委托功能，代运维公司可以使用自己的帐号对您委托的资源进行运维。当委托关系发生变化时，您可以随时修改或撤消对代运维公司的授权。下图中帐号A即为委托方，帐号B为被委托方。
-
-![](figures/zh-cn_image_0175908341.png)
-
-**使用企业已有帐号登录华为云**
-
-当您希望本企业员工可以使用企业内部的认证系统登录华为云，而不需要在华为云中重新创建对应的IAM用户，您可以使用IAM的身份提供商功能，建立您所在企业与华为云的信任关系，通过联合认证使员工使用企业已有帐号直接登录华为云，实现单点登录。
-
-![](figures/zh-cn_image_0173712088.png)
-
-## Kubernetes的角色访问控制（RBAC）<a name="section89884567218"></a>
-
-Kubernetes基于角色的访问控制（Role-Based Access Control，即”RBAC”）使用”rbac.authorization.k8s.io” API Group实现授权决策，允许管理员通过Kubernetes API动态配置策略。详情请参见[命名空间权限](命名空间权限.md)。
+kubectl访问CCE集群是通过集群上生成的配置文件（kubeconfig.json）进行认证，kubeconfig.json文件内包含用户信息，CCE根据用户信息的权限判断kubectl有权限访问哪些Kubernetes资源。即哪个用户获取的kubeconfig.json文件，kubeconfig.json就拥有哪个用户的信息，这样使用kubectl访问时就拥有这个用户的权限。而用户拥有的权限就是[表1](#table886210176509)所示的权限。
 

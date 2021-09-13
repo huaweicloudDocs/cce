@@ -6,7 +6,7 @@
 
 ## 连接集群<a name="section223415528535"></a>
 
--   [通过Kubectl连接集群](通过kubectl或web-terminal插件操作CCE集群.md)
+-   [通过Kubectl连接集群](通过kubectl连接集群.md)
 -   [通过web-terminal插件连接集群](web-terminal.md)
 
 ## CoreDNS高可用<a name="section4965217185418"></a>
@@ -32,7 +32,7 @@
 -   [通过kubectl命令实现集群内访问](集群内访问(ClusterIP).md#section9813121512319)
 -   [通过kubectl命令实现节点访问](节点访问(NodePort).md#section7114174773118)
 -   [通过kubectl命令行实现四层负载均衡](负载均衡(LoadBalancer).md#section1984211714368)
--   [通过kubectl命令行实现NAT网关](DNAT网关(DNAT).md#section646312404363)
+-   [通过kubectl命令行实现DNAT网关](DNAT网关(DNAT).md#section646312404363)
 -   [通过kubectl命令实现七层负载均衡](通过Kubectl命令行创建Ingress.md)
 
 ## 工作负载高级设置<a name="section927251814582"></a>

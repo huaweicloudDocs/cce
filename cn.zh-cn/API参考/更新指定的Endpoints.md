@@ -6,13 +6,17 @@
 
 其中以下字段支持更新：
 
+-   metadata.name
+-   metadata.namespace
 -   metadata.selfLink
 -   metadata.resourceVersion
+-   metadata.uid
 -   metadata.labels
 -   metadata.clusterName
 -   metadata.generateName
 -   metadata.annotations
 -   subnet.\*
+-   metadata.deletionGracePeriodSeconds
 
 ## URI<a name="sf83f35293a2a41608535afbee14767bf"></a>
 

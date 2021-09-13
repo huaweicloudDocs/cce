@@ -15,7 +15,7 @@ CoreDNS官网：[https://coredns.io/](https://coredns.io/)
 开源社区地址：[https://github.com/coredns/coredns](https://github.com/coredns/coredns)
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->DNS详细使用方法请参见[Kubernetes集群内置DNS配置说明](Kubernetes集群内置DNS配置说明.md)或[通过kubectl配置kube-dns/CoreDNS高可用](通过kubectl配置kube-dns-CoreDNS高可用.md)。
+>DNS详细使用方法请参见[工作负载DNS配置说明](工作负载DNS配置说明.md)或[通过kubectl配置kube-dns/CoreDNS高可用](通过kubectl配置kube-dns-CoreDNS高可用.md)。
 
 ## 约束与限制<a name="section10849134521812"></a>
 
@@ -25,11 +25,11 @@ CoreDNS正常运行或升级时，请确保集群中的可用节点数大于等�
 
 本插件为系统默认安装，若因特殊情况卸载后，可参照如下步骤重新安装。
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件市场“页签下，单击**coredns**插件下的“安装插件“。
+1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件市场“页签下，单击**coredns**插件下的“安装插件“。
 2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  在“规格配置“步骤中，可配置如下参数：
 
-    **表 1**  cordns插件参数配置
+    **表 1**  coredns插件参数配置
 
     <a name="table924319911495"></a>
     <table><thead align="left"><tr id="row42442974913"><th class="cellrowborder" valign="top" width="24%" id="mcps1.2.3.1.1"><p id="p17244793496"><a name="p17244793496"></a><a name="p17244793496"></a>参数</p>
@@ -204,7 +204,7 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 
 ## 升级插件<a name="section19566181513486"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“升级“。
+1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
@@ -238,6 +238,6 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 
 ## 卸载插件<a name="section7582615184814"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“卸载“。
+1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
 

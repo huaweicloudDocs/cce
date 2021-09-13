@@ -8,6 +8,10 @@
 
 -   **[负载均衡\(LoadBalancer\)](负载均衡(LoadBalancer).md)**  
 
+-   **[ENI负载均衡 \( ENI LoadBalancer \)](ENI负载均衡-(-ENI-LoadBalancer-).md)**  
+
 -   **[DNAT网关\(DNAT\)](DNAT网关(DNAT).md)**  
+
+-   **[LoadBalancer类型Service使用pass-through能力](LoadBalancer类型Service使用pass-through能力.md)**  
 
 

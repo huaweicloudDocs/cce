@@ -4,9 +4,6 @@
 
 删除插件实例的功能。
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->插件管理的URL格式为：https://\{clusterid\}.Endpoint/uri。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。
-
 ## 调试
 
 您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=DeleteAddonInstance)中调试该接口。

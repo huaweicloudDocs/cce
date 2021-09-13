@@ -16,16 +16,23 @@ Virtual Kubelet插件具体如下功能：
 
 ## 约束及限制<a name="section628693291119"></a>
 
--   仅支持在**v1.11\~v1.15版本**的CCE集群中安装本插件，且集群需为**VPC网络模式**，暂不支持鲲鹏集群。
--   使用时需同时配置Request和Limit，且实例的规格须满足云容器实例CCI的[容器规范](https://support.huaweicloud.com/productdesc-cci/cci_03_0007.html)，pod才可以部署到CCI侧。
--   调度到CCI的实例的存储类型只支持ConfigMap、Secret、emptyDir三种Volume类型，其中emptyDir不支持子路径。
--   暂不支持定时任务、守护进程集（DaemonSet）以及HostNetwork网络模式的容器实例（Pod）弹性到CCI。
+-   仅支持VPC网络模式的CCE集群。
+
+-   调度到CCI的实例的存储类型只支持ConfigMap、Secret、emptyDir、SFS、SFS Turbo几种Volume类型，其中emptyDir不支持子路径。
+-   暂不支持守护进程集（DaemonSet）以及HostNetwork网络模式的容器实例（Pod）弹性到CCI。
 -   跨CCE和CCI实例Service网络互通只支持集群内访问（ClusterIP）类型。
 -   使用插件前需要用户在[CCI界面](https://console.huaweicloud.com/cci/?locale=zh-cn#/dashboard)对CCI服务进行授信。
+-   实例的规格必须满足云容器实例CCI的容器规范。
+    1.  Pod的CPU取值范围为：0.25核\~32核，另外还可选48核和64核，且单个容器的CPU必须为0.25核的整数倍。
+    2.  Pod的内存取值范围为：1GB\~512GB，且内存必须为1GB的整数倍。
+    3.  Pod的CPU/内存配比值必须在1:2到1:8之间。
+    4.  一个Pod内最多支持5个容器，单个容器最小配置是0.25核、0.2GB，最大同容器实例的最大配置。
+    5.  资源的requests等于limits。
+
 
 ## 安装插件<a name="section2237175619515"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击virtual-kubelet插件下的“安装插件“。
+1.  在CCE控制台中，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击virtual-kubelet插件下的“安装插件“。
 2.  在“基本信息“步骤中，选择安装的集群和插件版本，单击“下一步：规格配置“。
 3.  在“规格配置“步骤中，勾选“跨服务互通“后的选择框，可实现CCE集群中的Pod与CCI集群中的Pod通过Kubernetes Service互通。
 
@@ -41,7 +48,7 @@ Virtual Kubelet插件具体如下功能：
 
 您成功安装virtual-kubelet插件后，按如下步骤创建可弹性到CCI的负载：
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“工作负载“。
+1.  在CCE控制台中，单击左侧导航栏的“工作负载“。
 2.  在创建无状态工作负载或Job时，在“工作负载基本信息“步骤中，勾选“CCI弹性承载“。
 
     **图 2**  勾选“CCI弹性承载“<a name="fig610418228234"></a>  
@@ -51,7 +58,7 @@ Virtual Kubelet插件具体如下功能：
 
 ## 升级插件<a name="section23441939916"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“virtual-kubelet“下的“升级“。
+1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“virtual-kubelet“下的“升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
@@ -62,6 +69,6 @@ Virtual Kubelet插件具体如下功能：
 
 ## 卸载插件<a name="section1624015695110"></a>
 
-1.  在[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击virtual-kubelet下的“卸载“。
+1.  在CCE控制台中，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击virtual-kubelet下的“卸载“。
 2.  在弹出的窗口中，单击“是“，可卸载该插件。
 

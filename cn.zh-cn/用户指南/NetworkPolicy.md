@@ -10,6 +10,7 @@ CCE基于Kubernetes的网络策略功能进行了加强，通过配置网络策�
 
 -   当前仅容器隧道网络模式的集群支持网络策略（NetworkPolicy）。
 -   网络策略（NetworkPolicy）暂不支持设置出方向（egress）。
+-   不支持对IPv6地址网络隔离。
 -   v1.13及v1.15版本的容器隧道网络类型的集群，节点操作系统内核为Centos时，如果使用NetworkPolicy请升级openvswitch的版本，升级方法请参考[操作系统内核升级](https://support.huaweicloud.com/usermanual-cce/cce_01_0179.html)。
 
 ## 使用说明<a name="section146088501667"></a>
@@ -18,7 +19,7 @@ CCE基于Kubernetes的网络策略功能进行了加强，通过配置网络策�
 
 ## 设置网络策略<a name="section19894131402011"></a>
 
-1.  登录[CCE控制台](https://console.huaweicloud.com/cce2.0/?utm_source=helpcenter)，在左侧导航栏中选择“资源管理 \> 网络管理”。在NetworkPolicy页签，单击“添加NetworkPolicy“。
+1.  登录CCE控制台，在左侧导航栏中选择“资源管理 \> 网络管理”。在NetworkPolicy页签，单击“添加NetworkPolicy“。
     -   NetworkPolicy名称：自定义输入NetworkPolicy名称。
     -   集群名称：选择网络策略所在集群。
     -   命名空间：选择网络策略所在命名空间。
@@ -61,7 +62,6 @@ CCE基于Kubernetes的网络策略功能进行了加强，通过配置网络策�
         </tr>
         </tbody>
         </table>
-
 
 2.  设置完成后，单击“创建“。
 3.  若需要为当前工作负载添加更多网络策略，例如其它端口需要被某个工作负载访问，可单击“添加NetworkPolicy“，继续添加更多策略。
