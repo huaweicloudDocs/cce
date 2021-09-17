@@ -600,10 +600,10 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
         </table>
 
         **图 1**  获取磁盘ID<a name="fig186361614133614"></a>  
-        ![](figures/获取磁盘ID-30.png "获取磁盘ID-30")
+        ![](figures/获取磁盘ID-31.png "获取磁盘ID-31")
 
         **图 2**  获取cluster\_id<a name="fig3188153914187"></a>  
-        ![](figures/获取cluster_id-31.png "获取cluster_id-31")
+        ![](figures/获取cluster_id-32.png "获取cluster_id-32")
 
         例如，执行如下命令：
 

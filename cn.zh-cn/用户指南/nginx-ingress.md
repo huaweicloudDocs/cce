@@ -15,7 +15,7 @@ nginx-ingress插件直接使用社区模板与镜像，CCE不提供额外维护�
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   **nginx-ingress示例模板即将下线**，**如果您已经通过“模板市场“的“示例模板“安装过nginx-ingress，请务必卸载后再安装此插件。**
 >-   安装该插件时，你可以通过“定义nginx配置“添加配置，此处的设置将会全局生效，该参数直接通过配置nginx.conf生成，将影响管理的全部Ingress，相关参数可通过[configmap](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/)查找，如果您配置的参数不包含在[configmap](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/configmap/)所列出的选项中将不会生效。
->-   安装该插件后，您在CCE控制台中[创建Ingress](基本功能操作.md)时可以开启“对接Nginx“按钮，并通过“Nginx配置“下的“自定义配置“将Kubernetes annotations添加到特定的Ingress对象，以自定义其行为，Kubernetes annotations字段详情请参见[Annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/)。
+>-   安装该插件后，您在CCE控制台中[创建Ingress](基本功能操作.md#section690793316343)时可以开启“对接Nginx“按钮，并通过“Nginx配置“下的“自定义配置“将Kubernetes annotations添加到特定的Ingress对象，以自定义其行为，Kubernetes annotations字段详情请参见[Annotations](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/)。
 >-   请勿手动修改和删除CCE自动创建的ELB和监听器，否则将出现工作负载异常；若您已经误修改或删除，请卸载Nginx Ingress插件后重装。
 
 ## 工作原理<a name="section971014351338"></a>

@@ -28,8 +28,8 @@
     **图 2**  访问类型为集群内访问 \( ClusterIP \)<a name="fig56211834134312"></a>  
     ![](figures/访问类型为集群内访问-(-ClusterIP-).png "访问类型为集群内访问-(-ClusterIP-)")
 
-2.  <a name="li090492615184"></a>单击“下一步“进入“高级设置“页面，直接单击“创建“。
-3.  <a name="li16964121448"></a>单击“查看工作负载详情“，在“访问方式“页签下获取访问地址，例如10.247.74.100:8080。
+2.  单击“下一步“进入“高级设置“页面，直接单击“创建“。
+3.  单击“查看工作负载详情“，在“访问方式“页签下获取访问地址，例如10.247.74.100:8080。
 
 ## 工作负载创建完成后设置<a name="section51925078171335"></a>
 
@@ -50,82 +50,6 @@
         -   访问端口：容器端口映射到集群虚拟IP上的端口，用虚拟IP访问工作负载时使用，端口范围为1-65535，可任意指定。
 
 5.  单击“创建”。工作负载已添加“集群内访问 \( ClusterIP \)”的服务。
-
-## 验证访问方式<a name="section127671412133313"></a>
-
-1.  登录工作负载所在集群的任意节点。
-2.  使用curl命令访问工作负载验证工作负载是否可以正常访问。您可以通过IP或者域名的方式来验证。
-
-    **方式一：通过IP地址验证。**
-
-    **curl **_10.247.74.100:8080_
-
-    其中10.247.74.100:8080为[步骤3](#li090492615184)中获取的访问地址。
-
-    回显如下表示工作负载可正常访问。
-
-    ```
-    <html>
-    <head>
-    <title>Welcome to nginx!</title>
-    <style>
-        body {
-            width: 35em;
-            margin: 0 auto;
-            font-family: Tahoma, Verdana, Arial, sans-serif;
-        }
-    </style>
-    </head>
-    <body>
-    <h1>Welcome to nginx!</h1>
-    <p>If you see this page, the nginx web server is successfully installed and
-    working. Further configuration is required.</p>
-    
-    <p>For online documentation and support please refer to
-    <a href="http://nginx.org/">nginx.org</a>.<br/>
-    Commercial support is available at
-    <a href="http://nginx.com/">nginx.com</a>.</p>
-    
-    <p><em>Thank you for using nginx.</em></p>
-    </body>
-    </html>
-    ```
-
-    **方式二：进入容器，在容器内通过域名验证。**
-
-    **curl **_nginx.default.svc.cluster.local:8080_
-
-    其中_nginx.default.svc.cluster.local_为[步骤3](#li16964121448)中获取的域名访问地址。
-
-    回显如下表示工作负载可正常访问。
-
-    ```
-    <html>
-    <head>
-    <title>Welcome to nginx!</title>
-    <style>
-        body {
-            width: 35em;
-            margin: 0 auto;
-            font-family: Tahoma, Verdana, Arial, sans-serif;
-        }
-    </style>
-    </head>
-    <body>
-    <h1>Welcome to nginx!</h1>
-    <p>If you see this page, the nginx web server is successfully installed and
-    working. Further configuration is required.</p>
-    
-    <p>For online documentation and support please refer to
-    <a href="http://nginx.org/">nginx.org</a>.<br/>
-    Commercial support is available at
-    <a href="http://nginx.com/">nginx.com</a>.</p>
-    
-    <p><em>Thank you for using nginx.</em></p>
-    </body>
-    </html>
-    ```
-
 
 ## 通过kubectl命令行创建<a name="section9813121512319"></a>
 
@@ -148,22 +72,19 @@
       selector:
         matchLabels:
           app: nginx
-      strategy:
-        type: RollingUpdate
       template:
         metadata:
           labels:
             app: nginx
         spec:
           containers:
-          - image: nginx 
-            imagePullPolicy: Always
+          - image: nginx:latest
             name: nginx
           imagePullSecrets:
           - name: default-secret
     ```
 
-    **vi nginx-ClusterIp-svc.yaml**
+    **vi nginx-clusterip-svc.yaml**
 
     ```
     apiVersion: v1
@@ -175,64 +96,19 @@
     spec:
       ports:
       - name: service0
-        port: 8080
-        protocol: TCP
-        targetPort: 80
-      selector:
+        port: 8080                # 访问Service的端口
+        protocol: TCP             # 访问Service的协议，支持TCP和UDP
+        targetPort: 80            # Service访问目标容器的端口，此端口与容器中运行的应用强相关，如本例中nginx镜像默认使用80端口
+      selector:                   # 标签选择器，Service通过标签选择Pod，将访问Service的流量转发给Pod，此处选择带有 app:nginx 标签的Pod
         app: nginx
-      type: ClusterIP
+      type: ClusterIP             # Service的类型，ClusterIP表示在集群内访问
     ```
-
-    **表 1**  关键参数说明
-
-    <a name="table56443210447"></a>
-    <table><thead align="left"><tr id="row157011325448"><th class="cellrowborder" valign="top" width="17.580000000000002%" id="mcps1.2.5.1.1"><p id="p127013213445"><a name="p127013213445"></a><a name="p127013213445"></a>参数</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="16.27%" id="mcps1.2.5.1.2"><p id="p41549595118"><a name="p41549595118"></a><a name="p41549595118"></a>是否必填</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="17.05%" id="mcps1.2.5.1.3"><p id="p070113234410"><a name="p070113234410"></a><a name="p070113234410"></a>参数类型</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="49.1%" id="mcps1.2.5.1.4"><p id="p870832124415"><a name="p870832124415"></a><a name="p870832124415"></a>描述</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row19708321446"><td class="cellrowborder" valign="top" width="17.580000000000002%" headers="mcps1.2.5.1.1 "><p id="p2705327445"><a name="p2705327445"></a><a name="p2705327445"></a>port</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="16.27%" headers="mcps1.2.5.1.2 "><p id="p31545518517"><a name="p31545518517"></a><a name="p31545518517"></a>是</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="17.05%" headers="mcps1.2.5.1.3 "><p id="p37133244415"><a name="p37133244415"></a><a name="p37133244415"></a>Integer</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="49.1%" headers="mcps1.2.5.1.4 "><p id="p164654108492"><a name="p164654108492"></a><a name="p164654108492"></a>将由此服务公开的端口，对应界面上的访问端口。</p>
-    </td>
-    </tr>
-    <tr id="row13718321449"><td class="cellrowborder" valign="top" width="17.580000000000002%" headers="mcps1.2.5.1.1 "><p id="p971532194415"><a name="p971532194415"></a><a name="p971532194415"></a>targetPort</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="16.27%" headers="mcps1.2.5.1.2 "><p id="p41541517515"><a name="p41541517515"></a><a name="p41541517515"></a>是</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="17.05%" headers="mcps1.2.5.1.3 "><p id="p127153274418"><a name="p127153274418"></a><a name="p127153274418"></a>Integer</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="49.1%" headers="mcps1.2.5.1.4 "><p id="p571173210447"><a name="p571173210447"></a><a name="p571173210447"></a>对应界面上的容器端口。</p>
-    </td>
-    </tr>
-    <tr id="row1671532144412"><td class="cellrowborder" valign="top" width="17.580000000000002%" headers="mcps1.2.5.1.1 "><p id="p127115322447"><a name="p127115322447"></a><a name="p127115322447"></a>type</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="16.27%" headers="mcps1.2.5.1.2 "><p id="p81541516516"><a name="p81541516516"></a><a name="p81541516516"></a>否</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="17.05%" headers="mcps1.2.5.1.3 "><p id="p1147421514515"><a name="p1147421514515"></a><a name="p1147421514515"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="49.1%" headers="mcps1.2.5.1.4 "><p id="p1962118433512"><a name="p1962118433512"></a><a name="p1962118433512"></a>对应界面上的访问类型，必须是：</p>
-    <a name="ul1735917148524"></a><a name="ul1735917148524"></a><ul id="ul1735917148524"><li>ClusterIP</li><li>NodePort</li><li>LoadBalancer</li></ul>
-    <p id="p1262218433513"><a name="p1262218433513"></a><a name="p1262218433513"></a>默认值：ClusterIP，表示“集群虚拟IP”。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
 
 3.  创建工作负载。
 
     **kubectl create -f nginx-deployment.yaml**
 
-    回显如下，表示工作负载已开始创建。
+    回显如下，表示工作负载已经创建。
 
     ```
     deployment "nginx" created
@@ -244,14 +120,12 @@
 
     ```
     NAME                     READY     STATUS             RESTARTS   AGE
-    etcd-0                   0/1       ImagePullBackOff   0          27m
-    icagent-m9dkt            0/0       Running            0          3d
     nginx-2601814895-znhbr   1/1       Running            0          15s
     ```
 
 4.  创建服务。
 
-    **kubectl create -f nginx-ClusterIp-svc.yaml**
+    **kubectl create -f nginx-clusterip-svc.yaml**
 
     回显如下，表示服务已开始创建。
 
@@ -264,22 +138,25 @@
     回显如下，表示服务已创建成功，CLUSTER-IP已生成。
 
     ```
-    NAME              TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
-    etcd-svc          ClusterIP   None             <none>        3120/TCP   30m
-    kubernetes        ClusterIP   10.247.0.1       <none>        443/TCP    3d
-    nginx-clusterip   ClusterIP   10.247.200.134   <none>        80/TCP     20s
+    # kubectl get svc
+    NAME              TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE
+    kubernetes        ClusterIP   10.247.0.1     <none>        443/TCP    4d6h
+    nginx-clusterip   ClusterIP   10.247.74.52   <none>        8080/TCP   14m
     ```
 
-5.  登录工作负载所在集群的任意节点，登录方法请参见[登录Linux弹性云服务器](https://support.huaweicloud.com/usermanual-ecs/zh-cn_topic_0013771089.html)。
-6.  采用curl命令访问工作负载验证工作负载是否可以正常访问。您可以通过IP或者域名的方式来验证。
+5.  访问Service。
 
-    **方式一：通过IP地址验证。**
+    在集群内的容器或节点上都能够访问Service。
 
-    **curl **_10.247.200.134__:80_
+    创建一个Pod并进入到容器内，使用curl命令访问Service的IP:Port或域名，如下所示。
 
-    回显如下表示工作负载可正常访问。
+    其中域名后缀可以省略，在同个命名空间内可以直接使用nginx-clusterip:8080访问，跨命名空间可以使用nginx-clusterip.default:8080访问。
 
     ```
+    # kubectl run -i --tty --image nginx:alpine test --rm /bin/sh
+    If you don't see a command prompt, try pressing enter.
+    / # curl 10.247.74.52:8080
+    <!DOCTYPE html>
     <html>
     <head>
     <title>Welcome to nginx!</title>
@@ -304,39 +181,18 @@
     <p><em>Thank you for using nginx.</em></p>
     </body>
     </html>
-    ```
-
-    **方式二：通过域名验证。**
-
-    **curl **_nginx-_**clusterip.default.svc.cluster.local:**_8080_
-
-    回显如下表示工作负载可正常访问。
-
-    ```
-    <html>
-    <head>
-    <title>Welcome to nginx!</title>
-    <style>
-        body {
-            width: 35em;
-            margin: 0 auto;
-            font-family: Tahoma, Verdana, Arial, sans-serif;
-        }
-    </style>
-    </head>
-    <body>
+    / # curl nginx-clusterip.default.svc.cluster.local:8080
+    ...
     <h1>Welcome to nginx!</h1>
-    <p>If you see this page, the nginx web server is successfully installed and
-    working. Further configuration is required.</p>
-    
-    <p>For online documentation and support please refer to
-    <a href="http://nginx.org/">nginx.org</a>.<br/>
-    Commercial support is available at
-    <a href="http://nginx.com/">nginx.com</a>.</p>
-    
-    <p><em>Thank you for using nginx.</em></p>
-    </body>
-    </html>
+    ...
+    / # curl nginx-clusterip.default:8080
+    ...
+    <h1>Welcome to nginx!</h1>
+    ...
+    / # curl nginx-clusterip:8080
+    ...
+    <h1>Welcome to nginx!</h1>
+    ...
     ```
 
 

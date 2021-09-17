@@ -11,7 +11,6 @@
 
 -   “节点访问 \( NodePort \)“默认为VPC内网访问，如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。
 -   创建service后，如果[服务亲和](#li195904442002)从集群级别切换为节点级别，连接跟踪表将不会被清理，建议用户创建service后不要修改服务亲和属性，如需修改请重新创建service。
--   同一个节点内的容器不支持访问**externalTrafficPolicy**为local的service。
 -   通过控制台创建的NodePort类型Service，Service端口与设置的容器端口一致。
 
 ## 工作负载创建时设置<a name="section8124108325"></a>
@@ -40,7 +39,7 @@
 
 2.  完成配置后，单击“确定“。
 3.  单击“下一步：高级设置“进入高级设置页面，直接单击“创建“。
-4.  <a name="li13702330143312"></a>单击“查看工作负载详情“，在访问方式页签下获取访问地址，例如“192.168.0.160:30358“。
+4.  单击“查看工作负载详情“，在访问方式页签下获取访问地址，例如“192.168.0.160:30358“。
 
 ## 工作负载创建完成后设置<a name="section41290043210"></a>
 
@@ -77,54 +76,6 @@
 
 5.  单击“创建”。工作负载已添加“节点访问 \( NodePort \)”的服务。
 
-## 验证访问方式<a name="section18896114113215"></a>
-
-1.  在管理控制台首页，单击“计算 \>  弹性云服务器“。
-2.  在弹性云服务器页面，找到同一VPC内任意一台云服务器，并确认连接到访问地址中IP与端口的安全组是开放的。
-
-    **图 2**  确认安全组开放<a name="fig4156913155815"></a>  
-    ![](figures/确认安全组开放.png "确认安全组开放")
-
-3.  单击“远程登录“，弹出登录页面，输入用户密码登录。
-4.  使用curl命令访问工作负载验证工作负载是否可以正常访问。
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >如果需要使用弹性IP通过公网访问该服务，请提前在集群的节点上绑定弹性IP。
-
-    **curl **_192.168.0.160:_30358
-
-    其中“192.168.0.160:30358“为[4](#li13702330143312)中获取到的访问地址，即节点虚拟IP+访问端口。
-
-    回显如下表示访问成功。
-
-    ```
-    <html>
-    <head>
-    <title>Welcome to nginx!</title>
-    <style>
-        body {
-            width: 35em;
-            margin: 0 auto;
-            font-family: Tahoma, Verdana, Arial, sans-serif;
-        }
-    </style>
-    </head>
-    <body>
-    <h1>Welcome to nginx!</h1>
-    <p>If you see this page, the nginx web server is successfully installed and
-    working. Further configuration is required.</p>
-    
-    <p>For online documentation and support please refer to
-    <a href="http://nginx.org/">nginx.org</a>.<br/>
-    Commercial support is available at
-    <a href="http://nginx.com/">nginx.com</a>.</p>
-    
-    <p><em>Thank you for using nginx.</em></p>
-    </body>
-    </html>
-    ```
-
-
 ## kubectl命令行创建<a name="section7114174773118"></a>
 
 您可以通过kubectl命令行设置Service访问方式。本节以nginx为例，说明kubectl命令实现节点访问的方法。
@@ -146,16 +97,13 @@
       selector:
         matchLabels:
           app: nginx
-      strategy:
-        type: RollingUpdate
       template:
         metadata:
           labels:
             app: nginx
         spec:
           containers:
-          - image: nginx 
-            imagePullPolicy: Always
+          - image: nginx:latest
             name: nginx
           imagePullSecrets:
           - name: default-secret
@@ -173,76 +121,14 @@
     spec:
       ports:
       - name: service
-        nodePort: 30000
-        port: 80
-        protocol: TCP
-        targetPort: 80
-      selector:
+        nodePort: 30000     # 节点端口，取值范围为30000-32767
+        port: 8080          # 访问Service的端口
+        protocol: TCP       # 访问Service的协议，支持TCP和UDP
+        targetPort: 80      # Service访问目标容器的端口，此端口与容器中运行的应用强相关，如本例中nginx镜像默认使用80端口
+      selector:             # 标签选择器，Service通过标签选择Pod，将访问Service的流量转发给Pod，此处选择带有 app:nginx 标签的Pod
         app: nginx
-      type: NodePort
+      type: NodePort        # Service的类型，NodePort表示在通过节点端口访问
     ```
-
-    **表 1**  关键参数说明
-
-    <a name="table56443210447"></a>
-    <table><thead align="left"><tr id="row157011325448"><th class="cellrowborder" valign="top" width="15.55%" id="mcps1.2.5.1.1"><p id="p127013213445"><a name="p127013213445"></a><a name="p127013213445"></a>参数</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="14.23%" id="mcps1.2.5.1.2"><p id="p14772424935"><a name="p14772424935"></a><a name="p14772424935"></a>是否必填</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="14.01%" id="mcps1.2.5.1.3"><p id="p070113234410"><a name="p070113234410"></a><a name="p070113234410"></a>参数类型</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="56.21000000000001%" id="mcps1.2.5.1.4"><p id="p870832124415"><a name="p870832124415"></a><a name="p870832124415"></a>描述</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row19708321446"><td class="cellrowborder" valign="top" width="15.55%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p41087597"><a name="zh-cn_topic_0079615000_p41087597"></a><a name="zh-cn_topic_0079615000_p41087597"></a>nodePort</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.23%" headers="mcps1.2.5.1.2 "><p id="p87721824533"><a name="p87721824533"></a><a name="p87721824533"></a>否</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p66528668"><a name="zh-cn_topic_0079615000_p66528668"></a><a name="zh-cn_topic_0079615000_p66528668"></a>Integer</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="56.21000000000001%" headers="mcps1.2.5.1.4 "><p id="p164654108492"><a name="p164654108492"></a><a name="p164654108492"></a>对应界面上的访问端口，取值范围为30000 ~ 32767，不填写表示自动生成。</p>
-    </td>
-    </tr>
-    <tr id="row2787832142320"><td class="cellrowborder" valign="top" width="15.55%" headers="mcps1.2.5.1.1 "><p id="p5788113218236"><a name="p5788113218236"></a><a name="p5788113218236"></a>port</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.23%" headers="mcps1.2.5.1.2 "><p id="p1877242417320"><a name="p1877242417320"></a><a name="p1877242417320"></a>是</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p54093956"><a name="zh-cn_topic_0079615000_p54093956"></a><a name="zh-cn_topic_0079615000_p54093956"></a>Integer</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="56.21000000000001%" headers="mcps1.2.5.1.4 "><p id="p167881320237"><a name="p167881320237"></a><a name="p167881320237"></a>集群虚拟IP的访问端口，取值范围为1 ~ 65535。</p>
-    </td>
-    </tr>
-    <tr id="row13718321449"><td class="cellrowborder" valign="top" width="15.55%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p11039195"><a name="zh-cn_topic_0079615000_p11039195"></a><a name="zh-cn_topic_0079615000_p11039195"></a>protocol</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.23%" headers="mcps1.2.5.1.2 "><p id="p377216245314"><a name="p377216245314"></a><a name="p377216245314"></a>否</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p17699892"><a name="zh-cn_topic_0079615000_p17699892"></a><a name="zh-cn_topic_0079615000_p17699892"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="56.21000000000001%" headers="mcps1.2.5.1.4 "><p id="p835181810259"><a name="p835181810259"></a><a name="p835181810259"></a>该端口的IP协议，支持“TCP”和“UDP”。</p>
-    <p id="p1298491011365"><a name="p1298491011365"></a><a name="p1298491011365"></a>默认值：TCP</p>
-    </td>
-    </tr>
-    <tr id="row1671532144412"><td class="cellrowborder" valign="top" width="15.55%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0079615000_p53639231"><a name="zh-cn_topic_0079615000_p53639231"></a><a name="zh-cn_topic_0079615000_p53639231"></a>targetPort</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.23%" headers="mcps1.2.5.1.2 "><p id="p1577262411315"><a name="p1577262411315"></a><a name="p1577262411315"></a>是</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p8117426"><a name="zh-cn_topic_0079615000_p8117426"></a><a name="zh-cn_topic_0079615000_p8117426"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="56.21000000000001%" headers="mcps1.2.5.1.4 "><p id="p1262218433513"><a name="p1262218433513"></a><a name="p1262218433513"></a>对应界面上的容器端口，取值范围为1 ~ 65535。</p>
-    </td>
-    </tr>
-    <tr id="row371674812911"><td class="cellrowborder" valign="top" width="15.55%" headers="mcps1.2.5.1.1 "><p id="p6716134816295"><a name="p6716134816295"></a><a name="p6716134816295"></a>type</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.23%" headers="mcps1.2.5.1.2 "><p id="p1977218241317"><a name="p1977218241317"></a><a name="p1977218241317"></a>是</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="14.01%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0079615000_p18968549"><a name="zh-cn_topic_0079615000_p18968549"></a><a name="zh-cn_topic_0079615000_p18968549"></a>String</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="56.21000000000001%" headers="mcps1.2.5.1.4 "><p id="p13717148202913"><a name="p13717148202913"></a><a name="p13717148202913"></a>对应界面上的访问类型，NodePort表示“节点私有IP”。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
 
 3.  创建工作负载。
 
@@ -260,8 +146,6 @@
 
     ```
     NAME                     READY     STATUS             RESTARTS   AGE
-    etcd-0                   0/1       ImagePullBackOff   0          48m
-    icagent-m9dkt            0/0       Running            0          3d
     nginx-2601814895-qhxqv   1/1       Running            0          9s
     ```
 
@@ -280,21 +164,27 @@
     回显如下，表示服务已创建完成。
 
     ```
-    NAME             TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
-    etcd-svc         ClusterIP   None           <none>        3120/TCP       49m
-    kubernetes       ClusterIP   10.247.0.1     <none>        443/TCP        3d
-    nginx-nodeport   NodePort    10.247.4.225   <none>        80:30000/TCP   7s
+    # kubectl get svc
+    NAME             TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)          AGE
+    kubernetes       ClusterIP   10.247.0.1     <none>        443/TCP          4d8h
+    nginx-nodeport   NodePort    10.247.30.40   <none>        8080:30000/TCP   18s
     ```
 
-5.  采用curl命令访问工作负载验证工作负载是否可以正常访问。
+5.  访问Service。
 
-    **curl **_192.168.2.240:30000_
+    默认情况下，NodePort类型Service可以通过**任意节点IP:节点端口**访问。
 
-    其中192.168.2.240为集群中任意一个节点的IP地址，30000为节点开放的端口号。
-
-    回显如下，表示可正常访问。
+    在集群同VPC下或集群容器内容都可以访问，如果给节点绑定公网IP，也可以使用公网IP访问。如下所示，在集群上创建一个容器，从容器中使用节点IP:节点端口访问。
 
     ```
+    # kubectl get node -owide
+    NAME           STATUS   ROLES    AGE    INTERNAL-IP    EXTERNAL-IP   OS-IMAGE                KERNEL-VERSION                CONTAINER-RUNTIME
+    10.100.0.136   Ready    <none>   152m   10.100.0.136   <none>        CentOS Linux 7 (Core)   3.10.0-1160.25.1.el7.x86_64   docker://18.9.0
+    10.100.0.5     Ready    <none>   152m   10.100.0.5     <none>        CentOS Linux 7 (Core)   3.10.0-1160.25.1.el7.x86_64   docker://18.9.0
+    # kubectl run -i --tty --image nginx:alpine test --rm /bin/sh
+    If you don't see a command prompt, try pressing enter.
+    / # curl 10.100.0.136:30000
+    <!DOCTYPE html>
     <html>
     <head>
     <title>Welcome to nginx!</title>
@@ -319,6 +209,7 @@
     <p><em>Thank you for using nginx.</em></p>
     </body>
     </html>
+    / # 
     ```
 
 
@@ -350,7 +241,7 @@ spec:
 
 externalTrafficPolicy还有一个取值是**cluster**，也是默认取值，就是前面说的请求会在集群内转发。
 
-在CCE 控制台创建NodePort类型Service时也可以配置该参数，如下图所示。
+在CCE 控制台创建NodePort类型Service时也可以配置该参数。
 
 ![](figures/zh-cn_image_0000001153383696.png)
 

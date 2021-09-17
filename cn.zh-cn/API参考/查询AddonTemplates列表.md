@@ -268,9 +268,10 @@ GET /api/v3/addontemplates
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>description</p>
 </td>
-<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>Object</p>
+<td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 ">&nbsp;</td>
+<td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>模板描述</p>
+</td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>versions</p>
 </td>
@@ -435,7 +436,10 @@ OK
               "changeLog" : "none",
               "description" : "A plug-in that allows users to run kubectl commands using a web browser."
             },
-            "description" : "",
+            "description" : {
+              "Parameters.flavor1.description" : "Deploy with one instance",
+              "Parameters.flavor1.name" : "Single"
+            },
             "key" : {
               "Parameters.custom.password" : "password"
             }
@@ -445,7 +449,10 @@ OK
               "changeLog" : "无",
               "description" : "一款支持在web界面上使用kubectl的插件。"
             },
-            "description" : "",
+            "description" : {
+              "Parameters.flavor1.description" : "单实例部署",
+              "Parameters.flavor1.name" : "单实例"
+            },
             "key" : {
               "Parameters.custom.password" : "密码"
             }
@@ -500,7 +507,11 @@ OK
               "changeLog" : "1.include service creation  2.simplify operation  3.support access via elb",
               "description" : "A plug-in that allows users to run kubectl commands using a web browser."
             },
-            "description" : "",
+            "description" : {
+              "Parameters.custom.serviceType" : "Service type for accessing web-terminal",
+              "Parameters.flavor1.description" : "Deploy with one instance",
+              "Parameters.flavor1.name" : "Single"
+            },
             "key" : {
               "Parameters.custom.serviceType" : "Access type"
             }
@@ -510,7 +521,11 @@ OK
               "changeLog" : "1.包含service创建  2.操作简化  3.支持通过elb访问",
               "description" : "一款支持在web界面上使用kubectl的插件。"
             },
-            "description" : "",
+            "description" : {
+              "Parameters.custom.serviceType" : "访问web-terminal的service类型",
+              "Parameters.flavor1.description" : "单实例部署",
+              "Parameters.flavor1.name" : "单实例"
+            },
             "key" : {
               "Parameters.custom.serviceType" : "访问类型"
             }

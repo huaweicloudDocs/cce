@@ -33,7 +33,7 @@
 -   [通过kubectl命令实现节点访问](节点访问(NodePort).md#section7114174773118)
 -   [通过kubectl命令行实现四层负载均衡](负载均衡(LoadBalancer).md#section1984211714368)
 -   [通过kubectl命令行实现DNAT网关](DNAT网关(DNAT).md#section646312404363)
--   [通过kubectl命令实现七层负载均衡](通过Kubectl命令行创建Ingress.md)
+-   [通过kubectl命令实现七层负载均衡](通过Kubectl命令行添加ELB型Ingress.md)
 
 ## 工作负载高级设置<a name="section927251814582"></a>
 

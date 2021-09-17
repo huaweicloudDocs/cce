@@ -18,7 +18,6 @@
     -   正在使用的ELB实例请不要修改监听器名称，否则可能导致无法正常访问。
 
 -   创建service后，如果[服务亲和](#li36098269511)从集群级别切换为节点级别，连接跟踪表将不会被清理，建议用户创建service后不要修改服务亲和属性，如需修改请重新创建service。
--   容器内不支持访问**externalTrafficPolicy**为local的service。
 -   独享型ELB仅支持1.17及以上集群。
 -   使用控制台创建LoadBalancer类型Service时会自动生成一个节点端口（nodeport），端口号随机。使用kubectl创建LoadBalancer类型Service时，如不指定节点端口，也会随机生成一个节点端口，端口号随机。
 
@@ -112,8 +111,6 @@
       selector:
         matchLabels:
           app: nginx
-      strategy:
-        type: RollingUpdate
       template:
         metadata:
           labels:
@@ -121,7 +118,6 @@
         spec:
           containers:
           - image: nginx 
-            imagePullPolicy: Always
             name: nginx
           imagePullSecrets:
           - name: default-secret
@@ -143,11 +139,8 @@
         kubernetes.io/session-affinity-mode: SOURCE_IP
         kubernetes.io/elb.id: 3c7caa5a-a641-4bff-801a-feace27424b6
         kubernetes.io/elb.subnet-id: 5083f225-9bf8-48fa-9c8b-67bd9693c4c0
-      labels: 
-        app: nginx 
       name: nginx 
     spec: 
-      loadBalancerIP: 10.78.42.242
       externalTrafficPolicy: Local
       ports: 
       - name: service0 
@@ -222,7 +215,7 @@
     <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.3 "><p id="p16355204793913"><a name="p16355204793913"></a><a name="p16355204793913"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p13355154723918"><a name="p13355154723918"></a><a name="p13355154723918"></a>为集群所在子网的ID，取值范围：1-100字符。</p>
-    <a name="ul93551647173917"></a><a name="ul93551647173917"></a><ul id="ul93551647173917"><li>Kubernetes v1.11.7-r0及以下版本的集群自动创建时：必填，</li><li>Kubernetes v1.11.7-r0以上版本的集群：可不填。</li></ul>
+    <a name="ul93551647173917"></a><a name="ul93551647173917"></a><ul id="ul93551647173917"><li>Kubernetes v1.11.7-r0及以下版本的集群自动创建时：必填</li><li>Kubernetes v1.11.7-r0以上版本的集群：可不填</li></ul>
     <p id="p935584714395"><a name="p935584714395"></a><a name="p935584714395"></a>获取方法请参见：<a href="https://support.huaweicloud.com/api-vpc/vpc_api_0005.html" target="_blank" rel="noopener noreferrer">VPC子网接口与OpenStack Neutron子网接口的区别是什么？</a></p>
     </td>
     </tr>
@@ -398,8 +391,6 @@
 
     ```
     NAME                     READY     STATUS             RESTARTS   AGE
-    etcd-0                   0/1       ImagePullBackOff   0          1h
-    icagent-m9dkt            0/0       Running            0          3d
     nginx-2601814895-c1xhw   1/1       Running            0          6s
     ```
 
@@ -419,7 +410,6 @@
 
     ```
     NAME         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
-    etcd-svc     ClusterIP      None             <none>        3120/TCP       1h
     kubernetes   ClusterIP      10.247.0.1       <none>        443/TCP        3d
     nginx        LoadBalancer   10.247.130.196   10.78.42.242   80:31540/TCP   51s
     ```
@@ -453,8 +443,6 @@
       selector:
         matchLabels:
           app: nginx
-      strategy:
-        type: RollingUpdate
       template:
         metadata:
           labels:
@@ -462,7 +450,6 @@
         spec:
           containers:
           - image: nginx 
-            imagePullPolicy: Always
             name: nginx
           imagePullSecrets:
           - name: default-secret
@@ -855,8 +842,6 @@
 
     ```
     NAME                     READY     STATUS             RESTARTS   AGE
-    etcd-0                   0/1       ImagePullBackOff   0          1h
-    icagent-m9dkt            0/0       Running            0          3d
     nginx-2601814895-c1xhw   1/1       Running            0          6s
     ```
 
@@ -876,7 +861,6 @@
 
     ```
     NAME         TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
-    etcd-svc     ClusterIP      None             <none>        3120/TCP       1h
     kubernetes   ClusterIP      10.247.0.1       <none>        443/TCP        3d
     nginx        LoadBalancer   10.247.130.196   10.78.42.242   80:31540/TCP   51s
     ```
@@ -888,4 +872,13 @@
     **图 4**  通过负载均衡访问nginx<a name="fig2406102717469"></a>  
     ![](figures/通过负载均衡访问nginx-20.png "通过负载均衡访问nginx-20")
 
+
+## ELB转发说明<a name="section18120261746"></a>
+
+LoadBalancer类型Service创建完后，可以在ELB控制台查看ELB实例的监听器转发规则，如下所示。
+
+**图 5**  ELB转发说明<a name="fig18958180171116"></a>  
+![](figures/ELB转发说明.png "ELB转发说明")
+
+可以看到这个ELB实例创建了一个监听器，其后端服务器为Pod所在的节点，后端服务器端口为Service的NodePort（节点端口）。当有流量通过ELB请求时，会转发给Pod所在节点IP:节点端口，也就是访问到了Service，从而访问到Pod，这跟[操作场景](#section19854101411508)中所述是一致的。
 

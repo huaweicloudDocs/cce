@@ -79,12 +79,6 @@ ENI负载均衡 \( ENI LoadBalancer \)使用弹性负载均衡器直通容器，
 
 4.  单击“创建”。工作负载已添加“ENI负载均衡 \( ENI LoadBalancer \)”的服务。
 
-## ELB转发说明<a name="section1959173710195"></a>
-
-因为Pod使用了ENI，ELB会直通Pod，从ELB实例的控制台中可以看到，ELB的监听器的后端服务器组下，指向了Pod的辅助弹性网卡。
-
-![](figures/zh-cn_image_0000001153109692.png)
-
 ## 使用kubectl创建-自动创建ELB<a name="section132363317202"></a>
 
 相对于非ENI类型[ENI负载均衡 \( ENI LoadBalancer \)](ENI负载均衡-(-ENI-LoadBalancer-).md)，ENI LoadBalancer Service仅支持独享型ELB，在创建Service时无需要指定nodeport。
@@ -128,6 +122,8 @@ spec:
     type: LoadBalancer
 ```
 
+详细的参数说明请参见[表4](负载均衡(LoadBalancer).md#table133089105019)。
+
 ## 使用kubectl创建-使用已有ELB<a name="section740235552010"></a>
 
 使用已有ELB实例创建时，指定ELB实例的类型和ID即可。
@@ -150,4 +146,13 @@ spec:
             protocol: TCP
     type: LoadBalancer
 ```
+
+## ELB转发说明<a name="section1959173710195"></a>
+
+ENI LoadBalancer类型Service创建完后，可以在ELB控制台查看ELB实例的监听器转发规则，如下所示。
+
+**图 1**  ELB转发说明<a name="fig18321515105911"></a>  
+![](figures/ELB转发说明-21.png "ELB转发说明-21")
+
+可以看到这个ELB实例创建了一个监听器，其后端服务器地址是Pod的IP地址，业务端口是容器端口。这是因为Pod使用了ENI，ELB会直通Pod，当有流量通过ELB请求时，会直接转发给Pod，从而访问到Pod，这跟[操作场景](#section025118182286)中所述是一致的。
 

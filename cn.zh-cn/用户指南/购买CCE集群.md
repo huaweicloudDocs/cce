@@ -68,10 +68,8 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     </tr>
     <tr id="row572593234714"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p14725432104718"><a name="p14725432104718"></a><a name="p14725432104718"></a>集群管理规模</p>
     </td>
-    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p14899102111550"><a name="p14899102111550"></a><a name="p14899102111550"></a>集群管理规模是指当前集群的控制节点可以管理的最大工作节点规模，您可以选择50节点、200节点、1000节点或2000节点（仅1.15.11及以上版本的集群支持）的管理规模，请根据您的业务需求选择，该规模在集群创建后不可更改，请慎重选择。如果您需要创建5000节点规模的集群，请<a href="https://console.huaweicloud.com/quota/?locale=zh-cn#/quota" target="_blank" rel="noopener noreferrer">提交工单</a>申请。</p>
+    <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p14899102111550"><a name="p14899102111550"></a><a name="p14899102111550"></a>集群管理规模是指当前集群的控制节点可以管理的最大工作节点规模，您可以选择50节点、200节点、1000节点或2000节点（仅1.15.11及以上版本的集群支持）的管理规模，请根据您的业务需求选择。如果您需要创建5000节点规模的集群，请<a href="https://console.huaweicloud.com/quota/?locale=zh-cn#/quota" target="_blank" rel="noopener noreferrer">提交工单</a>申请。</p>
     <p id="p192696516218"><a name="p192696516218"></a><a name="p192696516218"></a>若选择<span class="uicontrol" id="uicontrol35596531909"><a name="uicontrol35596531909"></a><a name="uicontrol35596531909"></a>“1000节点”</span>，表示当前集群的控制节点最多可管理1000个工作节点。由于不同管理规模的控制节点规格不同，因此配置费用会有差异。</p>
-    <div class="p" id="p102308301014"><a name="p102308301014"></a><a name="p102308301014"></a>任何一个集群中均包含<span class="uicontrol" id="uicontrol144772569118"><a name="uicontrol144772569118"></a><a name="uicontrol144772569118"></a>“Master Node”</span>和<span class="uicontrol" id="uicontrol1458610581110"><a name="uicontrol1458610581110"></a><a name="uicontrol1458610581110"></a>“Worker Node”</span>，每一个Node对应一台云服务器。<a name="ul1045015327013"></a><a name="ul1045015327013"></a><ul id="ul1045015327013"><li>Master Node：集群的控制节点，在创建集群时会自动创建控制节点，负责整个集群的管理和调度。</li><li>Worker Node：集群的工作节点，即用户购买或纳管的节点。工作负载是由控制节点分配的，当某个工作节点宕机时，控制节点会将工作负载转移到其他工作节点上。</li></ul>
-    </div>
     </td>
     </tr>
     <tr id="row17367436403"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p16736194318408"><a name="p16736194318408"></a><a name="p16736194318408"></a>控制节点数</p>
@@ -163,9 +161,6 @@ CCE集群支持虚拟机与裸金属服务器混合、支持GPU、NPU等异构�
     </li></ul>
     <div class="note" id="note551324732117"><a name="note551324732117"></a><a name="note551324732117"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="ul2513447132113"></a><a name="ul2513447132113"></a><ul id="ul2513447132113"><li>ipvs为大型集群提供了更好的可扩展性和性能。</li><li>ipvs支持比iptables更复杂的负载平衡算法（最小负载，最少连接，位置，加权等）。</li><li>ipvs支持服务器健康检查和连接重试等。</li></ul>
     </div></div>
-    <p id="p1530611329220"><a name="p1530611329220"></a><a name="p1530611329220"></a><strong id="b203061532132217"><a name="b203061532132217"></a><a name="b203061532132217"></a>资源标签：</strong></p>
-    <p id="p153521813102212"><a name="p153521813102212"></a><a name="p153521813102212"></a>通过为资源添加标签，可以对资源进行自定义标记，实现资源的分类。</p>
-    <p id="p1746516915228"><a name="p1746516915228"></a><a name="p1746516915228"></a>您可以在TMS中创建<span class="uicontrol" id="uicontrol9465129142213"><a name="uicontrol9465129142213"></a><a name="uicontrol9465129142213"></a>“预定义标签”</span>，预定义标签对所有支持标签功能的服务资源可见，通过使用预定义标签可以提升标签创建和迁移效率。具体请参见<a href="https://support.huaweicloud.com/usermanual-tms/zh-cn_topic_0144368884.html" target="_blank" rel="noopener noreferrer">创建预定义标签</a>。</p>
     <p id="p2448659163311"><a name="p2448659163311"></a><a name="p2448659163311"></a><strong id="b15868154114358"><a name="b15868154114358"></a><a name="b15868154114358"></a>CPU管理策略：</strong></p>
     <p id="p658055813489"><a name="p658055813489"></a><a name="p658055813489"></a>该参数仅在v1.13.10-r0及以上版本的集群中显示。</p>
     <a name="ul14813182993518"></a><a name="ul14813182993518"></a><ul id="ul14813182993518"><li>开启：支持给工作负载实例配置CPU独占，适用于对CPU缓存和调度延迟敏感的工作负载。</li><li>关闭：关闭工作负载实例独占CPU核的功能，优点是CPU共享池的可分配核数较多。</li></ul>

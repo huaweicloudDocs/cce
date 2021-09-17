@@ -1,11 +1,11 @@
 # API URL说明<a name="cce_02_0363"></a>
 
--   [集群管理](cce_02_0092.md)的URL格式为：**https://Endpoint/uri**。其中**uri**为资源路径，也即API访问的路径。
--   [Kubernetes API](Kubernetes-API.md)、[存储管理](cce_02_0251.md)、[插件管理](cce_02_0320.md)的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中**\{clusterid\}**为集群ID，**uri**为资源路径，也即API访问的路径。
+-   集群管理、节点管理、节点池管理的URL格式为：**https://Endpoint/uri**。其中**uri**为资源路径，也即API访问的路径。
+-   Kubernetes API、存储管理、插件管理的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中**\{clusterid\}**为集群ID，**uri**为资源路径，也即API访问的路径。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   插件管理接口调用的URL格式为：**https://\{clusterid\}.Endpoint/uri**，但**\{clusterid\}**参数仅用于域名，不会被接口校验和使用。插件管理实际使用的**\{clusterid\}**参数请参考[插件管理](cce_02_0320.md)，填写在query或body体中。
-    >-   **\{clusterid\}**参数对[Kubernetes API](Kubernetes-API.md)、[存储管理](cce_02_0251.md)生效，对应需要调用接口访问的集群。
+    >-   插件管理接口调用的URL格式为：**https://\{clusterid\}.Endpoint/uri**，但**\{clusterid\}**参数仅用于域名，不会被接口校验和使用。插件管理实际使用的**\{clusterid\}**参数请参考插件管理，填写在query或body体中。
+    >-   **\{clusterid\}**参数对Kubernetes API、存储管理生效，对应需要调用接口访问的集群。
 
 
 **表 1**  URL中的参数说明

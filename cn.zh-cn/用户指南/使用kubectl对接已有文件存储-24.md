@@ -309,7 +309,7 @@ CCE支持使用已有的文件存储来创建PersistentVolume，创建成功后�
         </table>
 
     **图 1**  弹性文件存储-共享路径<a name="fig9360194915556"></a>  
-    ![](figures/弹性文件存储-共享路径-32.png "弹性文件存储-共享路径-32")
+    ![](figures/弹性文件存储-共享路径-33.png "弹性文件存储-共享路径-33")
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >文件存储所在VPC必须与工作负载规划部署的ECS虚拟机的VPC保持一致。

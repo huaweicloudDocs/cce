@@ -13,7 +13,7 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
 
 关于NAT网关的使用，您需要注意以下几点：
 
--   VPC网络模式集群不支持集群内容器访问externalTrafficPolicy为local模式的DNAT Service。
+-   VPC网络模型集群不支持集群内容器访问externalTrafficPolicy为local模式的DNAT Service。
 -   同一个NAT网关下的多条规则可以复用同一个弹性公网IP，不同网关下的规则必须使用不同的弹性公网IP。
 -   每个VPC支持的NAT网关数为1。
 -   用户不能在VPC下手动添加默认路由。
@@ -110,16 +110,13 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
       selector:
         matchLabels:
           app: nginx
-      strategy:
-        type: RollingUpdate
       template:
         metadata:
           labels:
             app: nginx
         spec:
           containers:
-          - image: nginx 
-            imagePullPolicy: Always
+          - image: nginx:latest
             name: nginx
           imagePullSecrets:
           - name: default-secret
@@ -133,8 +130,6 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
     apiVersion: v1 
     kind: Service 
     metadata: 
-      labels: 
-        app: nginx 
       name: nginx 
       annotations:
         kubernetes.io/elb.class: dnat
@@ -237,8 +232,6 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
 
     ```
     NAME                     READY     STATUS             RESTARTS   AGE
-    etcd-0                   0/1       ImagePullBackOff   0          59m
-    icagent-m9dkt            0/0       Running            0          3d
     nginx-2601814895-sf71t   1/1       Running            0          8s
     ```
 
@@ -258,7 +251,6 @@ NAT网关与弹性IP方式相比增强了可靠性，弹性IP无需与单个节�
 
     ```
     NAME         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE 
-    etcd-svc     ClusterIP   None             <none>        3120/TCP       59m 
     kubernetes   ClusterIP   10.247.0.1       <none>        443/TCP        3d 
     nginx-nat    LoadBalancer 10.247.226.2  10.154.74.98   80:30589/TCP  5s
     ```

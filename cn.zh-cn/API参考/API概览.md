@@ -11,22 +11,32 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row46758134145910"><td class="cellrowborder" rowspan="3" valign="top" width="19.8%" headers="mcps1.1.4.1.1 "><p id="p1772819209011"><a name="p1772819209011"></a><a name="p1772819209011"></a>CCE接口</p>
+<tbody><tr id="row46758134145910"><td class="cellrowborder" rowspan="5" valign="top" width="19.8%" headers="mcps1.1.4.1.1 "><p id="p1772819209011"><a name="p1772819209011"></a><a name="p1772819209011"></a>CCE接口</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.78%" headers="mcps1.1.4.1.2 "><p id="p19868352442"><a name="p19868352442"></a><a name="p19868352442"></a><a href="cce_02_0092.md">集群管理</a></p>
+<td class="cellrowborder" valign="top" width="21.78%" headers="mcps1.1.4.1.2 "><p id="p19868352442"><a name="p19868352442"></a><a name="p19868352442"></a>集群管理</p>
 </td>
-<td class="cellrowborder" valign="top" width="58.42%" headers="mcps1.1.4.1.3 "><p id="p44662802145910"><a name="p44662802145910"></a><a name="p44662802145910"></a>集群和节点管理接口，包括创建、删除集群和节点的接口等。</p>
-<p id="p3384875145910"><a name="p3384875145910"></a><a name="p3384875145910"></a>通过这些接口，您可以创建集群、为集群添加节点、获取已创建集群和节点的信息。</p>
-<div class="notice" id="note613187134219"><a name="note613187134219"></a><a name="note613187134219"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="p16761103512440"><a name="p16761103512440"></a><a name="p16761103512440"></a>在创建、删除、扩容和缩容集群的操作中，请不要在统一身份认证服务（IAM）中执行权限变更或修改的操作，可能会导致创建、删除、扩容和缩容集群执行失败。</p>
-</div></div>
+<td class="cellrowborder" valign="top" width="58.42%" headers="mcps1.1.4.1.3 "><p id="p44662802145910"><a name="p44662802145910"></a><a name="p44662802145910"></a>集群管理接口，包括创建、删除集群的接口等。</p>
+<p id="p3384875145910"><a name="p3384875145910"></a><a name="p3384875145910"></a>通过这些接口，您可以创建集群、获取已创建集群的信息。</p>
 </td>
 </tr>
-<tr id="row85396435151"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7970931652"><a name="p7970931652"></a><a name="p7970931652"></a><a href="cce_02_0251.md">存储管理</a></p>
+<tr id="row79150261205"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7916426202013"><a name="p7916426202013"></a><a name="p7916426202013"></a>节点管理</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6630122311237"><a name="p6630122311237"></a><a name="p6630122311237"></a>节点管理接口，包括创建、删除节点的接口等。</p>
+<p id="p1163042313239"><a name="p1163042313239"></a><a name="p1163042313239"></a>通过这些接口，您可以为集群添加节点、获取已创建节点的信息。</p>
+</td>
+</tr>
+<tr id="row952715513225"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1352735512217"><a name="p1352735512217"></a><a name="p1352735512217"></a>节点池管理</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1814325132316"><a name="p1814325132316"></a><a name="p1814325132316"></a>节点池管理接口，包括创建、删除节点池的接口等。</p>
+<p id="p181422518234"><a name="p181422518234"></a><a name="p181422518234"></a>通过这些接口，您可以创建节点池、获取已创建节点池的信息。</p>
+</td>
+</tr>
+<tr id="row85396435151"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7970931652"><a name="p7970931652"></a><a name="p7970931652"></a>存储管理</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p854044313156"><a name="p854044313156"></a><a name="p854044313156"></a>存储管理接口，包括PersistentVolumeClaim、PersistentVolume的创建、删除。</p>
 </td>
 </tr>
-<tr id="row17928112575213"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p14435181417519"><a name="p14435181417519"></a><a name="p14435181417519"></a><a href="cce_02_0320.md">插件管理</a></p>
+<tr id="row17928112575213"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p14435181417519"><a name="p14435181417519"></a><a name="p14435181417519"></a>插件管理</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1492918251523"><a name="p1492918251523"></a><a name="p1492918251523"></a>插件管理接口，包括AddonTemplates的查询，AddonInstance的创建、更新、删除和获取。</p>
 </td>
@@ -36,7 +46,7 @@
 <td class="cellrowborder" valign="top" width="21.78%" headers="mcps1.1.4.1.2 "><p id="p5699090519278"><a name="p5699090519278"></a><a name="p5699090519278"></a><a href="Node.md">Node</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="58.42%" headers="mcps1.1.4.1.3 "><p id="p4572971519278"><a name="p4572971519278"></a><a name="p4572971519278"></a>Node对象管理接口，包括Node对象的获取，查询和更新。</p>
-<div class="note" id="note18462175954313"><a name="note18462175954313"></a><a name="note18462175954313"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p18866114810316"><a name="p18866114810316"></a><a name="p18866114810316"></a>CCE仅支持使用<a href="cce_02_0092.md">集群管理</a>中的接口创建、删除节点，不能使用Kubernetes原生接口来创建、删除节点。</p>
+<div class="note" id="note18462175954313"><a name="note18462175954313"></a><a name="note18462175954313"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p18866114810316"><a name="p18866114810316"></a><a name="p18866114810316"></a>CCE仅支持使用<a href="API.md">API</a>中的接口创建、删除节点，不能使用Kubernetes原生接口来创建、删除节点。</p>
 </div></div>
 </td>
 </tr>
