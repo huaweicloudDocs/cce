@@ -132,7 +132,7 @@ spec:
 
 ## Rewrite<a name="section142741813151619"></a>
 
-在一些使用场景中后端服务暴露的URL与Ingress规则中指定的路径不同，如果不进行Rewrite配置，所有访问都将返回404。Rewrite配置可以使用inginx.ingress.kubernetes.io/rewrite-target 注解实现，如下所示：
+在一些使用场景中后端服务暴露的URL与Ingress规则中指定的路径不同，如果不进行Rewrite配置，所有访问都将返回404。Rewrite配置可以使用nginx.ingress.kubernetes.io/rewrite-target 注解实现，如下所示：
 
 ```
 apiVersion: networking.k8s.io/v1beta1
@@ -184,13 +184,13 @@ nginx-ingress-controller容器中，/etc/nginx路径下的nginx.conf文件可查
 
 对于一些复杂高级的Rewrite需求，可以通过如下注解来实现，其本质是修改Nginx的配置。
 
--   nginx.ingress.kubernetes.io/server-snippet：扩展到Nginx配置的Server章节。
--   nginx.ingress.kubernetes.io/configuration-snippet：扩展到Nginx配置的Location章节。
+-   nginx.ingress.kubernetes.io/server-snippet：在nginx.conf的server字段中添加自定义配置。
+-   nginx.ingress.kubernetes.io/configuration-snippet：在nginx.conf的location字段中添加自定义配置。
 
-Server和Location配置中通过rewrite指令完成URL的重写，其基本语法结构为：
+server和location配置字段中可以通过rewrite指令完成URL的重写，其基本语法结构为：
 
 ```
-rewrite regex replacement flag;
+rewrite regex replacement [flag];
 ```
 
 -   regex：匹配URI的正则表达式。

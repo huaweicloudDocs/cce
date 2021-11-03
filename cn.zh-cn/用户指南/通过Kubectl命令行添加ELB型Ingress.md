@@ -81,7 +81,7 @@
               "bandwidth_chargemode": "bandwidth",
               "bandwidth_size": 1,
               "bandwidth_sharetype": "PER",
-              "eip_type": "5_gray",
+              "eip_type": "5_bgp",
               "available_zone": [
                   "cn-south-2b"
               ],
@@ -309,7 +309,6 @@
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p5507337195110"><a name="p5507337195110"></a><a name="p5507337195110"></a>弹性公网IP类型。</p>
     <a name="ul550719375516"></a><a name="ul550719375516"></a><ul id="ul550719375516"><li>5_telcom：电信</li><li>5_union：联通</li><li>5_bgp：全动态BGP</li><li>5_sbgp：静态BGP</li></ul>
-    <p id="p1641910277425"><a name="p1641910277425"></a><a name="p1641910277425"></a>独享型负载均衡的类型为<span class="uicontrol" id="uicontrol1365173224116"><a name="uicontrol1365173224116"></a><a name="uicontrol1365173224116"></a>“5_gray”</span>。</p>
     </td>
     </tr>
     <tr id="row194917913265"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p209611962610"><a name="p209611962610"></a><a name="p209611962610"></a>name</p>

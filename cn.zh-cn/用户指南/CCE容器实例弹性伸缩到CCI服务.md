@@ -17,6 +17,7 @@ Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该�
 -   调度到CCI的实例的存储类型只支持ConfigMap、Secret、emptyDir、SFS、SFS Turbo几种Volume类型，其中emptyDir不支持子路径。
 -   暂不支持守护进程集（DaemonSet）以及HostNetwork网络模式的容器实例（Pod）弹性到CCI。
 -   跨CCE和CCI实例Service网络互通只支持集群内访问（ClusterIP）类型。
+-   集群所在子网不能与10.247.0.0/16重叠，否则会与CCI命名空间下的Service网段冲突，导致无法使用。
 -   使用插件前需要用户在[CCI界面](https://console.huaweicloud.com/cci/?locale=zh-cn#/dashboard)对CCI服务进行授信。
 -   实例的规格必须满足云容器实例CCI的容器规范。
     1.  Pod的CPU取值范围为：0.25核\~32核，另外还可选48核和64核，且单个容器的CPU必须为0.25核的整数倍。

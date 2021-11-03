@@ -6,7 +6,7 @@
 
 get命令用于获取集群的一个或一些resource信息。
 
-该命令可以列出集群所有资源的详细信息，resource包括集群节点、运行的pod、Replication Controller、service等。
+该命令可以列出集群所有资源的详细信息，resource包括集群节点、运行的Pod、Deployment、Service等。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >集群中可以创建多个namespace，未指定namespace的情况下，所有操作都是针对--namespace=default。
@@ -38,7 +38,7 @@ kubectl get namespace
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->查询其他节点需要加-s指定节点，类似可以使用“kubectl get rc”，“kubectl get svc”，“kubectl get nodes”，“kubectl get deploy”等获取其他resource信息。
+>查询其他节点需要加-s指定节点，类似可以使用“kubectl get svc”，“kubectl get nodes”，“kubectl get deploy”等获取其他resource信息。
 
 以yaml格式输出pod的详细信息：
 
@@ -71,7 +71,7 @@ kubectl create -f filename
 
 **expose**
 
-expose将一个资源包括pod、Replication Controller、service、deployment等公开为一个新的service。
+expose将一个资源包括Pod、Service、Deployment等公开为一个新的Service。
 
 ```
 kubectl expose deployment deployname --port=81 --type=NodePort --target-port=80 --name=service-name
@@ -135,10 +135,10 @@ kubectl replace -f /tmp/nginx-tmp.yaml
 
 例如：
 
-查看pods/service的相关文档：
+查看pod的相关文档：
 
 ```
-kubectl explain pods,svc
+kubectl explain pod
 ```
 
 **delete**
@@ -227,7 +227,7 @@ kubectl autoscale deployment deployname --min=minnumber --max=maxnumber
     kubectl cordon nodename
     ```
 
-    备注：nodename为节点IP。
+    备注：CCE中nodename为节点私网IP。
 
 2.  使用drain命令，将运行在该node上运行的pod平滑的搬迁到其他节点上。
 
@@ -355,7 +355,7 @@ kubectl replace -f filename
 ```
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->名字不能被更新。另外，如果是更新label，原有标签的pod将会与更新label后的rc断开联系，有新label的rc将会创建指定副本数的新的pod，但是默认并不会删除原来的pod。所以此时如果使用get po将会发现pod数翻倍，进一步check会发现原来的pod已经不会被新rc控制。
+>名字不能被更新。
 
 **apply\***
 
@@ -370,7 +370,7 @@ kubectl apply -f
 如果一个容器已经在运行，这时需要对一些容器属性进行修改，又不想删除容器，或不方便通过replace的方式进行更新。kubernetes还提供了一种在容器运行时，直接对容器进行修改的方式，就是patch命令。 例如已存在一个pod的label为app=nginx1，如果需要在运行过程中，将其修改为app=nginx2。
 
 ```
-kubectl patch pod podname -p '{"metadata":{"lables":{"app":"nginx1"}}}'
+kubectl patch pod podname -p '{"metadata":{"labels":{"app":"nginx2"}}}'
 ```
 
 **convent\***

@@ -71,7 +71,7 @@ options ndots:5
     spec:
       containers:
       - name: test
-        image: nginx
+        image: nginx:alpine
       dnsPolicy: ClusterFirst
     ```
 
@@ -100,7 +100,7 @@ options ndots:5
     spec:
       containers:
       - name: test
-        image: nginx
+        image: nginx:alpine
       dnsPolicy: Default //使用kubelet的“--resolv-conf”参数指向的域名解析文件（CCE集群在该配置下对接云DNS）
     ```
 
@@ -119,23 +119,18 @@ options ndots:5
     **示例：**
 
     ```
-    apiVersion: apps/v1
-    kind: Deployment
+    apiVersion: v1
+    kind: Pod
     metadata:
       name: nginx
     spec:
-      template:
-        metadata:
-          labels:
-            app: nginx
-        spec:
-          hostNetwork: true
-          dnsPolicy: ClusterFirstWithHostNet
-          containers:
-          - name: nginx
-            image: nginx:1.7.9
-            ports:
-            - containerPort: 80
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
+      containers:
+      - name: nginx
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
     ```
 
     该配置下容器的域名解析文件将如下所示：
@@ -165,7 +160,7 @@ options ndots:5
     spec:
       containers:
       - name: test
-        image: nginx
+        image: nginx:alpine
       dnsPolicy: "None"
       dnsConfig:
         nameservers:
@@ -201,7 +196,7 @@ options ndots:5
     spec:
       containers:
       - name: test
-        image: nginx
+        image: nginx:alpine
       dnsPolicy: "ClusterFirst"
       dnsConfig:
         options:

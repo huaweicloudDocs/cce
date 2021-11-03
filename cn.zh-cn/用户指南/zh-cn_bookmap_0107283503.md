@@ -4,7 +4,6 @@
 -   [高危操作及解决方案](高危操作及解决方案.md)
 -   [集群管理](集群管理.md)
     -   [集群概述](集群概述.md)
-    -   [集群生命周期](集群生命周期.md)
     -   [CCE Turbo集群与CCE集群的区别](CCE-Turbo集群与CCE集群的区别.md)
     -   [购买CCE Turbo集群](购买CCE-Turbo集群.md)
     -   [购买CCE集群](购买CCE集群.md)
@@ -139,7 +138,6 @@
     -   [DNS](DNS.md)
         -   [DNS概述](DNS概述.md)
         -   [工作负载DNS配置说明](工作负载DNS配置说明-0.md)
-        -   [使用CoreDNS实现自定义域名解析](使用CoreDNS实现自定义域名解析.md)
         -   [使用NodeLocal DNSCache提升DNS性能](使用NodeLocal-DNSCache提升DNS性能.md)
 
     -   [容器如何访问VPC内部网络](容器如何访问VPC内部网络.md)

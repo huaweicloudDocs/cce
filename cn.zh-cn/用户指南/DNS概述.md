@@ -2,7 +2,7 @@
 
 ## CoreDNS介绍<a name="section092613718475"></a>
 
-购买集群时会安装[CoreDNS插件](CoreDNS（系统资源插件-必装）.md)，CoreDNS是用来做集群内容域名解析。
+购买集群时会安装[CoreDNS插件](CoreDNS（系统资源插件-必装）.md)，CoreDNS是用来做集群内部域名解析。
 
 在kube-system命名空间下可以查看到CoreDNS的Pod。
 
@@ -45,8 +45,6 @@ options ndots:5 timeout single-request-reopen
 ## 相关操作<a name="section15985263473"></a>
 
 您还可以在工作负载中进行DNS配置，具体请参见[工作负载DNS配置说明](工作负载DNS配置说明.md)。
-
-您还可以使用CoreDNS实现自定义域名解析，具体请参见[使用CoreDNS实现自定义域名解析](使用CoreDNS实现自定义域名解析.md)。
 
 您还可以使用DNSCache提升DNS解析的性能，具体请参见[使用NodeLocal DNSCache提升DNS性能](使用NodeLocal-DNSCache提升DNS性能.md)。
 

@@ -345,7 +345,7 @@ spec:
         operator: "Exists"
       containers:
       - name: node-cache
-        image: swr.cn-north-4.myhuaweicloud.com/hwstaff_pub_cbuinfo/k8s-dns-node-cache:1.17.0
+        image: k8s.gcr.io/dns/k8s-dns-node-cache:1.17.0
         resources:
           requests:
             cpu: 25m
@@ -443,7 +443,7 @@ spec:
   - name: default-secret
 ```
 
-进入容器，访问外部域名或内部Service域名，如果能正常访问，则说明NodeLocal DNSCache连接了CoreDNS，可以正常使用。
+进入容器，访问外部域名或内部Service域名，如果能正常访问，则说明NodeLocal DNSCache连接了CoreDNS，访问域名正常。
 
 ```
 # kubectl exec nginx -it -- /bin/sh

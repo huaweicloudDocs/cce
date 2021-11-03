@@ -295,39 +295,25 @@
 请求示例：
 
 ```
-{
-    "apiVersion":"v1",
-    "kind":"Pod",
-    "metadata":{
-        "annotations":{
-            "k8s.v1.cni.cncf.io/networks":"test"
-        },
-        "labels":{
-            "name":"test-pod"
-        },
-        "name":"test-pod"
-    },
-    "spec":{
-        "containers":[
-            {
-                "image":"test-image",
-                "imagePullPolicy":"IfNotPresent",
-                "name":"test",
-                "resources":{
-                    "requests":{
-                        "cpu":"100m"
-                    }
-                }
-            }
-        ],
-        "imagePullSecrets":[
-            {
-                "name":"default-secret"
-            }
-        ],
-        "restartPolicy":"Always"
-    }
-}
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    k8s.v1.cni.cncf.io/networks: test
+  labels:
+    name: test-pod
+  name: test-pod
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: IfNotPresent
+    name: test
+    resources:
+      requests:
+        cpu: 100m
+  imagePullSecrets:
+  - name: default-secret
+  restartPolicy: Always
 ```
 
 查看Pod时，网络平面相关属性将回写在annotations中“**k8s.v1.cni.cncf.io/network-status**”字段下。详情请参考[表5](#table42941427162412)
@@ -335,50 +321,40 @@
 **表 5**  k8s.v1.cni.cncf.io/network-status字段数据结构说明
 
 <a name="table42941427162412"></a>
-<table><thead align="left"><tr id="row20295127112412"><th class="cellrowborder" valign="top" width="14.45%" id="mcps1.2.5.1.1"><p id="p9777922205616"><a name="p9777922205616"></a><a name="p9777922205616"></a>参数</p>
+<table><thead align="left"><tr id="row20295127112412"><th class="cellrowborder" valign="top" width="16.78%" id="mcps1.2.4.1.1"><p id="p9777922205616"><a name="p9777922205616"></a><a name="p9777922205616"></a>参数</p>
 </th>
-<th class="cellrowborder" valign="top" width="13.889999999999999%" id="mcps1.2.5.1.2"><p id="p17589151815302"><a name="p17589151815302"></a><a name="p17589151815302"></a>是否必填</p>
+<th class="cellrowborder" valign="top" width="17.8%" id="mcps1.2.4.1.2"><p id="p1777717223565"><a name="p1777717223565"></a><a name="p1777717223565"></a>参数类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="15.329999999999998%" id="mcps1.2.5.1.3"><p id="p1777717223565"><a name="p1777717223565"></a><a name="p1777717223565"></a>参数类型</p>
-</th>
-<th class="cellrowborder" valign="top" width="56.330000000000005%" id="mcps1.2.5.1.4"><p id="p157771522195616"><a name="p157771522195616"></a><a name="p157771522195616"></a>描述</p>
+<th class="cellrowborder" valign="top" width="65.42%" id="mcps1.2.4.1.3"><p id="p157771522195616"><a name="p157771522195616"></a><a name="p157771522195616"></a>描述</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row429512715241"><td class="cellrowborder" valign="top" width="14.45%" headers="mcps1.2.5.1.1 "><p id="p22954273245"><a name="p22954273245"></a><a name="p22954273245"></a>name</p>
+<tbody><tr id="row429512715241"><td class="cellrowborder" valign="top" width="16.78%" headers="mcps1.2.4.1.1 "><p id="p22954273245"><a name="p22954273245"></a><a name="p22954273245"></a>name</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.889999999999999%" headers="mcps1.2.5.1.2 "><p id="p105890187301"><a name="p105890187301"></a><a name="p105890187301"></a>是</p>
+<td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p1829512274243"><a name="p1829512274243"></a><a name="p1829512274243"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.5.1.3 "><p id="p1829512274243"><a name="p1829512274243"></a><a name="p1829512274243"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.330000000000005%" headers="mcps1.2.5.1.4 "><p id="p1729516278248"><a name="p1729516278248"></a><a name="p1729516278248"></a>Pod实例所在的网络平面名称</p>
+<td class="cellrowborder" valign="top" width="65.42%" headers="mcps1.2.4.1.3 "><p id="p1729516278248"><a name="p1729516278248"></a><a name="p1729516278248"></a>Pod实例所在的网络平面名称</p>
 </td>
 </tr>
-<tr id="row176242402611"><td class="cellrowborder" valign="top" width="14.45%" headers="mcps1.2.5.1.1 "><p id="p1163112419267"><a name="p1163112419267"></a><a name="p1163112419267"></a>ips</p>
+<tr id="row176242402611"><td class="cellrowborder" valign="top" width="16.78%" headers="mcps1.2.4.1.1 "><p id="p1163112419267"><a name="p1163112419267"></a><a name="p1163112419267"></a>ips</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.889999999999999%" headers="mcps1.2.5.1.2 "><p id="p1858981811307"><a name="p1858981811307"></a><a name="p1858981811307"></a>是</p>
+<td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p20631924132612"><a name="p20631924132612"></a><a name="p20631924132612"></a>Array</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.5.1.3 "><p id="p20631924132612"><a name="p20631924132612"></a><a name="p20631924132612"></a>Array</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.330000000000005%" headers="mcps1.2.5.1.4 "><p id="p11631224192619"><a name="p11631224192619"></a><a name="p11631224192619"></a>Pod实例的内网地址</p>
+<td class="cellrowborder" valign="top" width="65.42%" headers="mcps1.2.4.1.3 "><p id="p11631224192619"><a name="p11631224192619"></a><a name="p11631224192619"></a>Pod实例的内网地址</p>
 </td>
 </tr>
-<tr id="row16790172618265"><td class="cellrowborder" valign="top" width="14.45%" headers="mcps1.2.5.1.1 "><p id="p779062619262"><a name="p779062619262"></a><a name="p779062619262"></a>mac</p>
+<tr id="row16790172618265"><td class="cellrowborder" valign="top" width="16.78%" headers="mcps1.2.4.1.1 "><p id="p779062619262"><a name="p779062619262"></a><a name="p779062619262"></a>mac</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.889999999999999%" headers="mcps1.2.5.1.2 "><p id="p155899181303"><a name="p155899181303"></a><a name="p155899181303"></a>是</p>
+<td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p1779012269263"><a name="p1779012269263"></a><a name="p1779012269263"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.5.1.3 "><p id="p1779012269263"><a name="p1779012269263"></a><a name="p1779012269263"></a>String</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.330000000000005%" headers="mcps1.2.5.1.4 "><p id="p11790122642617"><a name="p11790122642617"></a><a name="p11790122642617"></a>ENI网卡的Mac地址，仅支持在云原生网络2.0网络模式下显示。</p>
+<td class="cellrowborder" valign="top" width="65.42%" headers="mcps1.2.4.1.3 "><p id="p11790122642617"><a name="p11790122642617"></a><a name="p11790122642617"></a>ENI网卡的Mac地址，仅支持在云原生网络2.0网络模式下显示。</p>
 </td>
 </tr>
-<tr id="row95063471292"><td class="cellrowborder" valign="top" width="14.45%" headers="mcps1.2.5.1.1 "><p id="p2507547142920"><a name="p2507547142920"></a><a name="p2507547142920"></a>default</p>
+<tr id="row95063471292"><td class="cellrowborder" valign="top" width="16.78%" headers="mcps1.2.4.1.1 "><p id="p2507547142920"><a name="p2507547142920"></a><a name="p2507547142920"></a>default</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.889999999999999%" headers="mcps1.2.5.1.2 "><p id="p8589171819301"><a name="p8589171819301"></a><a name="p8589171819301"></a>是</p>
+<td class="cellrowborder" valign="top" width="17.8%" headers="mcps1.2.4.1.2 "><p id="p8507174720293"><a name="p8507174720293"></a><a name="p8507174720293"></a>Bool</p>
 </td>
-<td class="cellrowborder" valign="top" width="15.329999999999998%" headers="mcps1.2.5.1.3 "><p id="p8507174720293"><a name="p8507174720293"></a><a name="p8507174720293"></a>Bool</p>
-</td>
-<td class="cellrowborder" valign="top" width="56.330000000000005%" headers="mcps1.2.5.1.4 "><p id="p750712476293"><a name="p750712476293"></a><a name="p750712476293"></a>true：表示此网络平面为主网络平面。</p>
+<td class="cellrowborder" valign="top" width="65.42%" headers="mcps1.2.4.1.3 "><p id="p750712476293"><a name="p750712476293"></a><a name="p750712476293"></a>true：表示此网络平面为主网络平面。</p>
 <p id="p8864122543214"><a name="p8864122543214"></a><a name="p8864122543214"></a>false：表示此网络平面为非主网络平面。</p>
 </td>
 </tr>
@@ -414,89 +390,7 @@ metadata:
     k8s.v1.cni.cncf.io/networks: test
     kubernetes.io/psp: psp-global
 spec:
-  volumes:
-    - name: default-token-hssgv
-      secret:
-        secretName: default-token-hssgv
-        defaultMode: 420
-  containers:
-    - name: test
-      image: 'nginx:latest'
-      resources:
-        requests:
-          cpu: 100m
-      volumeMounts:
-        - name: default-token-hssgv
-          readOnly: true
-          mountPath: /var/run/secrets/kubernetes.io/serviceaccount
-      terminationMessagePath: /dev/termination-log
-      terminationMessagePolicy: File
-      imagePullPolicy: IfNotPresent
-  restartPolicy: Always
-  terminationGracePeriodSeconds: 30
-  dnsPolicy: ClusterFirst
-  serviceAccountName: default
-  serviceAccount: default
-  nodeName: 192.168.0.238
-  securityContext: {}
-  imagePullSecrets:
-    - name: default-secret
-  schedulerName: default-scheduler
-  tolerations:
-    - key: node.kubernetes.io/not-ready
-      operator: Exists
-      effect: NoExecute
-      tolerationSeconds: 300
-    - key: node.kubernetes.io/unreachable
-      operator: Exists
-      effect: NoExecute
-      tolerationSeconds: 300
-  priority: 0
-  dnsConfig:
-    options:
-      - name: single-request-reopen
-        value: ''
-      - name: timeout
-        value: '2'
-  enableServiceLinks: true
-  preemptionPolicy: PreemptLowerPriority
-status:
-  phase: Running
-  conditions:
-    - type: Initialized
-      status: 'True'
-      lastProbeTime: null
-      lastTransitionTime: '2021-04-08T08:14:46Z'
-    - type: Ready
-      status: 'True'
-      lastProbeTime: null
-      lastTransitionTime: '2021-04-08T08:14:47Z'
-    - type: ContainersReady
-      status: 'True'
-      lastProbeTime: null
-      lastTransitionTime: '2021-04-08T08:14:47Z'
-    - type: PodScheduled
-      status: 'True'
-      lastProbeTime: null
-      lastTransitionTime: '2021-04-08T08:14:46Z'
-  hostIP: 192.168.0.238
-  podIP: 192.168.45.115
-  podIPs:
-    - ip: 192.168.45.115
-  startTime: '2021-04-08T08:14:46Z'
-  containerStatuses:
-    - name: test
-      state:
-        running:
-          startedAt: '2021-04-08T08:14:47Z'
-      lastState: {}
-      ready: true
-      restartCount: 0
-      image: 'swr.cn-north-4.myhuaweicloud.com/p***67/nginx:latest'
-      imageID: 'docker-pullable://swr.cn-north-4.myhuaweicloud.com/p***67/nginx@sha256:18c8411a66ef352ba7fc857d924c8c9357dbd37551760fd6deba40ee68c9e62a'
-      containerID: 'docker://b19912a4b9265adf323fa55b19f08ee0e7600a9edb3505b45e2a5e718ff0e550'
-      started: true
-  qosClass: Burstable
+ ...
 ```
 
 ## 其他操作<a name="section2314125415245"></a>

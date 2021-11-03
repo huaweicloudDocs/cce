@@ -107,6 +107,12 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
         <td class="cellrowborder" valign="top" width="64.11%" headers="mcps1.2.3.1.2 "><p id="p1069111754110"><a name="p1069111754110"></a><a name="p1069111754110"></a>与下一步创建的pvc的namespace一致。</p>
         </td>
         </tr>
+        <tr id="row753415095617"><td class="cellrowborder" valign="top" width="35.89%" headers="mcps1.2.3.1.1 "><p id="p35351408567"><a name="p35351408567"></a><a name="p35351408567"></a>spec.persistentVolumeReclaimPolicy</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="64.11%" headers="mcps1.2.3.1.2 "><p id="p453518012564"><a name="p453518012564"></a><a name="p453518012564"></a>PV的回收策略。</p>
+        <a name="ul148511578516"></a><a name="ul148511578516"></a><ul id="ul148511578516"><li>Delete：删除pvc时，pv资源与云硬盘均被删除；</li><li>Retain：删除pvc时，pv资源与云硬盘资源均不会被删除，且pv资源状态为“Released”，不能直接再次pvc绑定使用，建议手动删除“Released”状态的pv。</li></ul>
+        </td>
+        </tr>
         </tbody>
         </table>
 

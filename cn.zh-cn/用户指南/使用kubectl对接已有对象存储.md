@@ -34,7 +34,8 @@ CCE支持使用已有的对象存储来创建PersistentVolume，并通过创建�
         spec:
           mountOptions:
           - umask=0027
-          - uid=10000,gid=10000
+          - uid=10000
+          - gid=10000
           accessModes:
           - ReadWriteMany
           capacity:

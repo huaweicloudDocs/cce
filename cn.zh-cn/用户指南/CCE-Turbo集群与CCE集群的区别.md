@@ -60,7 +60,7 @@ CCE支持多种类型的集群创建，以满足您各种业务需求，如下�
 </tr>
 <tr id="zh-cn_topic_0000001151389047_row1328914432215"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0000001151389047_p1362811017275"><a name="zh-cn_topic_0000001151389047_p1362811017275"></a><a name="zh-cn_topic_0000001151389047_p1362811017275"></a>容器网络隔离</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0000001151389047_p519910842911"><a name="zh-cn_topic_0000001151389047_p519910842911"></a><a name="zh-cn_topic_0000001151389047_p519910842911"></a>基于安全组的隔离策略，支持集群内外部统一的安全隔离，支持SecurityGroup<span id="zh-cn_topic_0000001151389047_ph12796165216015"><a name="zh-cn_topic_0000001151389047_ph12796165216015"></a><a name="zh-cn_topic_0000001151389047_ph12796165216015"></a>，Pod可直接关联安全组</span>。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0000001151389047_p519910842911"><a name="zh-cn_topic_0000001151389047_p519910842911"></a><a name="zh-cn_topic_0000001151389047_p519910842911"></a>Pod可直接关联安全组，基于安全组的隔离策略，支持集群内外部统一的安全隔离。</p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0000001151389047_ul29571941173617"></a><a name="zh-cn_topic_0000001151389047_ul29571941173617"></a><ul id="zh-cn_topic_0000001151389047_ul29571941173617"><li>隧道网络模式：集群内部网络隔离策略，支持Networkpolicy。</li><li>VPC网络模式：不支持</li></ul>
 </td>

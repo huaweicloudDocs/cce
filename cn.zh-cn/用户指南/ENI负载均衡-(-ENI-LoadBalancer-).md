@@ -17,7 +17,7 @@ ENI负载均衡 \( ENI LoadBalancer \)使用弹性负载均衡器直通容器，
 
 ## 工作负载创建时设置<a name="section17753911588"></a>
 
-可以在创建工作负载时通过CCE控制台设置Service访问方式，本节以nginx为例进行说明。
+可以在创建工作负载时通过CCE控制台设置Service，本节以nginx为例进行说明。
 
 1.  参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)、[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)或[创建守护进程集\(DaemonSet\)](创建守护进程集(DaemonSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
 
@@ -71,13 +71,12 @@ ENI负载均衡 \( ENI LoadBalancer \)使用弹性负载均衡器直通容器，
 
 您可以在工作负载创建完成后对Service进行配置，此配置对工作负载状态无影响，且实时生效。具体操作如下：
 
-1.  登录CCE控制台，在左侧导航栏中选择“工作负载 \> 无状态负载 Deployment”或“工作负载 \> 有状态负载 StatefulSet”，在工作负载列表页单击要设置Service的工作负载名称。
-2.  在“访问方式“页签，单击“添加Service”。
-3.  在“添加service“页面，配置参数。
+1.  登录CCE控制台，在左侧导航栏中选择“资源管理 \> 网络管理”。
+2.  在Service页签下单击“添加Service”。
 
     参数与[工作负载创建时设置](#section17753911588)一致。
 
-4.  单击“创建”。工作负载已添加“ENI负载均衡 \( ENI LoadBalancer \)”的服务。
+3.  单击“创建”。工作负载已添加“ENI负载均衡 \( ENI LoadBalancer \)”的服务。
 
 ## 使用kubectl创建-自动创建ELB<a name="section132363317202"></a>
 
@@ -90,7 +89,7 @@ metadata:
     name: example
     annotations:
         kubernetes.io/elb.class: performance
-        kubernetes.io/elb.subnet-id: f7c755be-77f4-48f0-8305-788573931ef7
+        kubernetes.io/elb.subnet-id: f7c755be-77f4-48f0-8305-788573931ef7    # ELB实例所在子网ID，替换为实际取值
         kubernetes.io/elb.enterpriseID: '0'
         kubernetes.io/elb.autocreate: 
           '
@@ -135,7 +134,7 @@ metadata:
     name: example
     annotations:
         kubernetes.io/elb.class: performance
-        kubernetes.io/elb.id: bcc44e84-d0b5-4192-8bec-b2ca55ce5025
+        kubernetes.io/elb.id: bcc44e84-d0b5-4192-8bec-b2ca55ce5025     # ELB实例ID，替换为实际取值
 spec:
     selector:
         app: example
@@ -154,5 +153,5 @@ ENI LoadBalancer类型Service创建完后，可以在ELB控制台查看ELB实例
 **图 1**  ELB转发说明<a name="fig18321515105911"></a>  
 ![](figures/ELB转发说明-21.png "ELB转发说明-21")
 
-可以看到这个ELB实例创建了一个监听器，其后端服务器地址是Pod的IP地址，业务端口是容器端口。这是因为Pod使用了ENI，ELB会直通Pod，当有流量通过ELB请求时，会直接转发给Pod，从而访问到Pod，这跟[操作场景](#section025118182286)中所述是一致的。
+可以看到这个ELB实例创建了一个监听器，其后端服务器地址是Pod的IP地址，业务端口是容器端口。这是因为Pod使用了ENI或Sub-ENI，ELB会直通Pod，当有流量通过ELB请求时，会直接转发给Pod，从而访问到Pod，这跟[操作场景](#section025118182286)中所述是一致的。
 

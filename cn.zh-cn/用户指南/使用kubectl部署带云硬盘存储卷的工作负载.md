@@ -15,7 +15,7 @@
 
 如下配置示例适用于Kubernetes 1.15及以上版本的集群。
 
-## 操作步骤<a name="section421772310564"></a>
+## 无状态负载使用云硬盘<a name="section421772310564"></a>
 
 1.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
 2.  执行如下命令，配置名为“evs-deployment-example.yaml“的创建无状态工作负载的yaml文件。
@@ -102,6 +102,22 @@
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >“spec.template.spec.containers.volumeMounts.name ”和 “spec.template.spec.volumes.name”有映射关系，必须保持一致。
 
+3.  执行如下命令创建Pod。
+
+    **kubectl create -f evs-deployment-example.yaml**
+
+    创建完成后，登录CCE控制台，在左侧导航栏中选择“存储管理 \> 云硬盘存储卷“。单击PVC名称，在PVC详情页面可查看云硬盘和PVC的绑定关系。
+
+
+## 有状态负载使用云硬盘<a name="section1104163720107"></a>
+
+1.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
+2.  执行如下命令，配置名为“evs-statefulset-example.yaml“的创建有状态工作负载的yaml文件。
+
+    **touch evs-statefulset-example.yaml**
+
+    **vi evs-statefulset-example.yaml**
+
     在有状态工作负载中基于PVCTemplate独占式使用云硬盘存储。
 
     **yaml示例如下：**
@@ -151,41 +167,41 @@
 
     **表 2**  关键参数说明
 
-    <a name="table178541528175011"></a>
-    <table><thead align="left"><tr id="row148549288509"><th class="cellrowborder" valign="top" width="30.570000000000004%" id="mcps1.2.4.1.1"><p id="p151822347237"><a name="p151822347237"></a><a name="p151822347237"></a>前置路径</p>
+    <a name="table37966951119"></a>
+    <table><thead align="left"><tr id="row17796159151117"><th class="cellrowborder" valign="top" width="30.570000000000004%" id="mcps1.2.4.1.1"><p id="p779629181113"><a name="p779629181113"></a><a name="p779629181113"></a>前置路径</p>
     </th>
-    <th class="cellrowborder" valign="top" width="16.150000000000002%" id="mcps1.2.4.1.2"><p id="p1285412815015"><a name="p1285412815015"></a><a name="p1285412815015"></a>参数</p>
+    <th class="cellrowborder" valign="top" width="16.150000000000002%" id="mcps1.2.4.1.2"><p id="p079615917118"><a name="p079615917118"></a><a name="p079615917118"></a>参数</p>
     </th>
-    <th class="cellrowborder" valign="top" width="53.28000000000001%" id="mcps1.2.4.1.3"><p id="p9854162825019"><a name="p9854162825019"></a><a name="p9854162825019"></a>描述</p>
+    <th class="cellrowborder" valign="top" width="53.28000000000001%" id="mcps1.2.4.1.3"><p id="p1179619111112"><a name="p1179619111112"></a><a name="p1179619111112"></a>描述</p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row1485422813506"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p18182034202319"><a name="p18182034202319"></a><a name="p18182034202319"></a>metadata</p>
+    <tbody><tr id="row079615921119"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p20796691110"><a name="p20796691110"></a><a name="p20796691110"></a>metadata</p>
     </td>
-    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p58541728145016"><a name="p58541728145016"></a><a name="p58541728145016"></a>name</p>
+    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p179617921112"><a name="p179617921112"></a><a name="p179617921112"></a>name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p88541128115014"><a name="p88541128115014"></a><a name="p88541128115014"></a>创建的工作负载名称。</p>
-    </td>
-    </tr>
-    <tr id="row1185413289501"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p81821534152313"><a name="p81821534152313"></a><a name="p81821534152313"></a>spec.template.spec.containers</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p385452810506"><a name="p385452810506"></a><a name="p385452810506"></a>image</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p685442865018"><a name="p685442865018"></a><a name="p685442865018"></a>工作负载的镜像。</p>
+    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p1979620951115"><a name="p1979620951115"></a><a name="p1979620951115"></a>创建的工作负载名称。</p>
     </td>
     </tr>
-    <tr id="row385415281508"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p518313482317"><a name="p518313482317"></a><a name="p518313482317"></a>spec.template.spec.containers.volumeMount</p>
+    <tr id="row177961797115"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p4796119161110"><a name="p4796119161110"></a><a name="p4796119161110"></a>spec.template.spec.containers</p>
     </td>
-    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p38541928175017"><a name="p38541928175017"></a><a name="p38541928175017"></a>mountPath</p>
+    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p879699101113"><a name="p879699101113"></a><a name="p879699101113"></a>image</p>
     </td>
-    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p1485518283507"><a name="p1485518283507"></a><a name="p1485518283507"></a>容器内挂载路径，示例中挂载到“/tmp”路径。</p>
+    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p979689131114"><a name="p979689131114"></a><a name="p979689131114"></a>工作负载的镜像。</p>
     </td>
     </tr>
-    <tr id="row1585562835012"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p1718323482320"><a name="p1718323482320"></a><a name="p1718323482320"></a>spec</p>
+    <tr id="row179617915117"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p13796189161112"><a name="p13796189161112"></a><a name="p13796189161112"></a>spec.template.spec.containers.volumeMount</p>
     </td>
-    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p1285512281506"><a name="p1285512281506"></a><a name="p1285512281506"></a>serviceName</p>
+    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p157966913118"><a name="p157966913118"></a><a name="p157966913118"></a>mountPath</p>
     </td>
-    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p17855152895015"><a name="p17855152895015"></a><a name="p17855152895015"></a>工作负载对应的服务，服务创建过程请参见<a href="创建有状态负载(StatefulSet).md">创建有状态负载(StatefulSet)</a>。</p>
+    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p1796189101112"><a name="p1796189101112"></a><a name="p1796189101112"></a>容器内挂载路径，示例中挂载到“/tmp”路径。</p>
+    </td>
+    </tr>
+    <tr id="row197963921111"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p379618918119"><a name="p379618918119"></a><a name="p379618918119"></a>spec</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p579610915115"><a name="p579610915115"></a><a name="p579610915115"></a>serviceName</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p079610971112"><a name="p079610971112"></a><a name="p079610971112"></a>工作负载对应的服务，服务创建过程请参见<a href="创建有状态负载(StatefulSet).md">创建有状态负载(StatefulSet)</a>。</p>
     </td>
     </tr>
     </tbody>
@@ -196,7 +212,7 @@
 
 3.  执行如下命令创建Pod。
 
-    **kubectl create -f evs-deployment-example.yaml**
+    **kubectl create -f evs-statefulset-example.yaml**
 
     创建完成后，登录CCE控制台，在左侧导航栏中选择“存储管理 \> 云硬盘存储卷“。单击PVC名称，在PVC详情页面可查看云硬盘和PVC的绑定关系。
 

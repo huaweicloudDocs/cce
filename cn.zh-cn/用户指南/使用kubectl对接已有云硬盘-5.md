@@ -546,7 +546,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
     1.  <a name="li6891526204113"></a>获取租户Token，详情请参见[获取用户Token](https://support.huaweicloud.com/api-cce/cce_02_0102.html)  。
     2.  <a name="li17017349418"></a>获取EVS访问地址EVS\_ENDPOINT，详情请参见[区域和终端节点](https://developer.huaweicloud.com/endpoint?EVS)。
 
-        ![](figures/zh-cn_image_0297538982.png)
+        ![](figures/zh-cn_image_0000001160756068.png)
 
     3.  给EVS静态PV关联的EVS盘补充集群关联的metadata。
 

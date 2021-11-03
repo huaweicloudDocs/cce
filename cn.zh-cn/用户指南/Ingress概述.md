@@ -44,9 +44,9 @@ Nginx型的Ingress Controller通过pod部署在工作节点上，因此引入了
 **图 3**  Nginx Ingress Controller工作原理<a name="fig10473974419"></a>  
 ![](figures/Nginx-Ingress-Controller工作原理.png "Nginx-Ingress-Controller工作原理")
 
-## ELB型和Nginx型Ingress Controller对比<a name="section1048715559515"></a>
+## Ingress特性<a name="section1048715559515"></a>
 
-**表 1**  ELB型和Nginx型Ingress Controller对比
+**表 1**  Ingress特性
 
 <a name="table202288537526"></a>
 <table><thead align="left"><tr id="row9228053165215"><th class="cellrowborder" valign="top" width="33.24332433243324%" id="mcps1.2.4.1.1"><p id="p922895316521"><a name="p922895316521"></a><a name="p922895316521"></a>特性</p>
@@ -104,4 +104,60 @@ Nginx型的Ingress Controller通过pod部署在工作节点上，因此引入了
 </tr>
 </tbody>
 </table>
+
+由于华为云自研的ELB型Ingress和社区开源的Nginx型Ingress在原理上存在本质区别，因此支持的Service类型不同，如[表2](#table2470112719444)中所示。
+
+**表 2**  支持Service类型
+
+<a name="table2470112719444"></a>
+<table><thead align="left"><tr id="row947015271448"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.1"><p id="p3470182764415"><a name="p3470182764415"></a><a name="p3470182764415"></a>Ingress类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="24.959999999999997%" id="mcps1.2.5.1.2"><p id="p3869017153517"><a name="p3869017153517"></a><a name="p3869017153517"></a>访问类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="24.990000000000002%" id="mcps1.2.5.1.3"><p id="p147012276442"><a name="p147012276442"></a><a name="p147012276442"></a>集群内访问（ClusterIP）</p>
+</th>
+<th class="cellrowborder" valign="top" width="25.05%" id="mcps1.2.5.1.4"><p id="p847082754411"><a name="p847082754411"></a><a name="p847082754411"></a>节点访问（NodePort）</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row3470182718442"><td class="cellrowborder" rowspan="2" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p14605135412356"><a name="p14605135412356"></a><a name="p14605135412356"></a>ELB型Ingress</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.959999999999997%" headers="mcps1.2.5.1.2 "><p id="p1786941773516"><a name="p1786941773516"></a><a name="p1786941773516"></a>负载均衡路由</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.990000000000002%" headers="mcps1.2.5.1.3 "><p id="p947042718448"><a name="p947042718448"></a><a name="p947042718448"></a>不支持</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.05%" headers="mcps1.2.5.1.4 "><p id="p7470112784412"><a name="p7470112784412"></a><a name="p7470112784412"></a>支持</p>
+</td>
+</tr>
+<tr id="row1282441143612"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p983184118361"><a name="p983184118361"></a><a name="p983184118361"></a>ENI负载均衡路由</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p3392123216378"><a name="p3392123216378"></a><a name="p3392123216378"></a>支持</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p98354110364"><a name="p98354110364"></a><a name="p98354110364"></a>不支持</p>
+</td>
+</tr>
+<tr id="row12470142713442"><td class="cellrowborder" rowspan="2" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p134701027144413"><a name="p134701027144413"></a><a name="p134701027144413"></a>Nginx型Ingress</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.959999999999997%" headers="mcps1.2.5.1.2 "><p id="p47775145373"><a name="p47775145373"></a><a name="p47775145373"></a>负载均衡路由</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.990000000000002%" headers="mcps1.2.5.1.3 "><p id="p18470112720447"><a name="p18470112720447"></a><a name="p18470112720447"></a>支持</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.05%" headers="mcps1.2.5.1.4 "><p id="p14708278442"><a name="p14708278442"></a><a name="p14708278442"></a>支持</p>
+</td>
+</tr>
+<tr id="row191924423618"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p16777141483718"><a name="p16777141483718"></a><a name="p16777141483718"></a>ENI负载均衡路由</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p162311840143712"><a name="p162311840143712"></a><a name="p162311840143712"></a>支持</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p111913440361"><a name="p111913440361"></a><a name="p111913440361"></a>不支持</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+ELB型Ingress Controller部署在master节点，所有策略配置和转发行为均在ELB侧完成。不使用ENI负载均衡的情况下，集群外部的ELB只能通过VPC的IP对接集群内部节点，因此ELB型Ingress也只支持NodePort类型的Service。使用ENI负载均衡后，ELB可直接将流量转发到集群内Pod，此时Ingress仅支持对接ClusterIP类型的Service。
+
+Nginx型Ingress Controller运行在集群中，作为服务通过NodePort对外暴露，流量经过Nginx-ingress转发到集群内其他业务，流量转发行为及转发对象均在集群内部，因此支持ClusterIP和NodePort类型的Service。
+
+综上，华为云自研的ELB型Ingress使用企业级LB进行流量转发，拥有高性能和高稳定性的优点，而Nginx型Ingress Controller部署在集群节点上，牺牲了一定的集群资源但可配置性相对更好。
 

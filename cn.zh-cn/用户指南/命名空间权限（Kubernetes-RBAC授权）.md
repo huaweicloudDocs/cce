@@ -28,44 +28,40 @@ Role和ClusterRole指定了可以对哪些资源做哪些动作，RoleBinding和
 **表 1**  不同用户拥有的命名空间权限
 
 <a name="cce_01_0187_table886210176509"></a>
-<table><thead align="left"><tr id="cce_01_0187_row14863201719502"><th class="cellrowborder" valign="top" width="33.33333333333333%" id="mcps1.2.4.1.1"><p id="cce_01_0187_p14863111718502"><a name="cce_01_0187_p14863111718502"></a><a name="cce_01_0187_p14863111718502"></a>用户类型</p>
+<table><thead align="left"><tr id="cce_01_0187_row14863201719502"><th class="cellrowborder" valign="top" width="31.91752577319587%" id="mcps1.2.4.1.1"><p id="cce_01_0187_p14863111718502"><a name="cce_01_0187_p14863111718502"></a><a name="cce_01_0187_p14863111718502"></a>用户类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="28.28282828282828%" id="mcps1.2.4.1.2"><p id="cce_01_0187_p18636175506"><a name="cce_01_0187_p18636175506"></a><a name="cce_01_0187_p18636175506"></a>1.11.7-r2以下版本的集群</p>
+<th class="cellrowborder" valign="top" width="31.422680412371136%" id="mcps1.2.4.1.2"><p id="cce_01_0187_p18636175506"><a name="cce_01_0187_p18636175506"></a><a name="cce_01_0187_p18636175506"></a>1.11.7-r2以下版本的集群</p>
 </th>
-<th class="cellrowborder" valign="top" width="38.38383838383838%" id="mcps1.2.4.1.3"><p id="cce_01_0187_p98631617175014"><a name="cce_01_0187_p98631617175014"></a><a name="cce_01_0187_p98631617175014"></a>1.11.7-r2及以上版本的集群</p>
+<th class="cellrowborder" valign="top" width="36.65979381443299%" id="mcps1.2.4.1.3"><p id="cce_01_0187_p10295153183913"><a name="cce_01_0187_p10295153183913"></a><a name="cce_01_0187_p10295153183913"></a>1.13及以上版本的集群</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="cce_01_0187_row138631617185012"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p1787744075015"><a name="cce_01_0187_p1787744075015"></a><a name="cce_01_0187_p1787744075015"></a>拥有Tenant Administrator权限的用户（例如华为云账号）</p>
+<tbody><tr id="cce_01_0187_row138631617185012"><td class="cellrowborder" valign="top" width="31.91752577319587%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p1787744075015"><a name="cce_01_0187_p1787744075015"></a><a name="cce_01_0187_p1787744075015"></a>拥有Tenant Administrator权限的用户（例如华为云账号）</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p14863717165019"><a name="cce_01_0187_p14863717165019"></a><a name="cce_01_0187_p14863717165019"></a>全部命名空间权限</p>
+<td class="cellrowborder" valign="top" width="31.422680412371136%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p14863717165019"><a name="cce_01_0187_p14863717165019"></a><a name="cce_01_0187_p14863717165019"></a>全部命名空间权限</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.38383838383838%" headers="mcps1.2.4.1.3 "><a name="cce_01_0187_ul988783620518"></a><a name="cce_01_0187_ul988783620518"></a><ul id="cce_01_0187_ul988783620518"><li>在CCE控制台拥有全部命名空间权限</li><li>使用<a href="访问集群.md">kubectl</a>需要按Kubernetes RBAC授权</li></ul>
-<div class="note" id="cce_01_0187_note123863251168"><a name="cce_01_0187_note123863251168"></a><a name="cce_01_0187_note123863251168"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="cce_01_0187_p9386172515164"><a name="cce_01_0187_p9386172515164"></a><a name="cce_01_0187_p9386172515164"></a>控制台访问时CCE会加上一个管理员用户组，所以有全部命名空间权限。</p>
-</div></div>
+<td class="cellrowborder" valign="top" width="36.65979381443299%" headers="mcps1.2.4.1.3 "><p id="cce_01_0187_p1829523133913"><a name="cce_01_0187_p1829523133913"></a><a name="cce_01_0187_p1829523133913"></a>全部命名空间权限</p>
 </td>
 </tr>
-<tr id="cce_01_0187_row138631317205019"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p3878104075018"><a name="cce_01_0187_p3878104075018"></a><a name="cce_01_0187_p3878104075018"></a>拥有CCE Administrator权限的IAM用户</p>
+<tr id="cce_01_0187_row138631317205019"><td class="cellrowborder" valign="top" width="31.91752577319587%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p3878104075018"><a name="cce_01_0187_p3878104075018"></a><a name="cce_01_0187_p3878104075018"></a>拥有CCE Administrator权限的IAM用户</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p270032114512"><a name="cce_01_0187_p270032114512"></a><a name="cce_01_0187_p270032114512"></a>全部命名空间权限</p>
+<td class="cellrowborder" valign="top" width="31.422680412371136%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p270032114512"><a name="cce_01_0187_p270032114512"></a><a name="cce_01_0187_p270032114512"></a>全部命名空间权限</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.38383838383838%" headers="mcps1.2.4.1.3 "><a name="cce_01_0187_ul172151105617"></a><a name="cce_01_0187_ul172151105617"></a><ul id="cce_01_0187_ul172151105617"><li>在CCE控制台拥有全部命名空间权限</li><li>使用<a href="访问集群.md">kubectl</a>需要按Kubernetes RBAC授权</li></ul>
-<div class="note" id="cce_01_0187_note9368141513435"><a name="cce_01_0187_note9368141513435"></a><a name="cce_01_0187_note9368141513435"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="cce_01_0187_p14368515204319"><a name="cce_01_0187_p14368515204319"></a><a name="cce_01_0187_p14368515204319"></a>控制台访问时CCE会加上一个管理员用户组，所以有全部命名空间权限。</p>
-</div></div>
+<td class="cellrowborder" valign="top" width="36.65979381443299%" headers="mcps1.2.4.1.3 "><p id="cce_01_0187_p172951435393"><a name="cce_01_0187_p172951435393"></a><a name="cce_01_0187_p172951435393"></a>全部命名空间权限</p>
 </td>
 </tr>
-<tr id="cce_01_0187_row1386412176506"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p187854025013"><a name="cce_01_0187_p187854025013"></a><a name="cce_01_0187_p187854025013"></a>拥有CCE&nbsp;FullAccess或者CCE&nbsp;ReadOnlyAccess权限的IAM用户</p>
+<tr id="cce_01_0187_row1386412176506"><td class="cellrowborder" valign="top" width="31.91752577319587%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p187854025013"><a name="cce_01_0187_p187854025013"></a><a name="cce_01_0187_p187854025013"></a>拥有CCE&nbsp;FullAccess或者CCE&nbsp;ReadOnlyAccess权限的IAM用户</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p12703172316516"><a name="cce_01_0187_p12703172316516"></a><a name="cce_01_0187_p12703172316516"></a>全部命名空间权限</p>
+<td class="cellrowborder" valign="top" width="31.422680412371136%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p12703172316516"><a name="cce_01_0187_p12703172316516"></a><a name="cce_01_0187_p12703172316516"></a>全部命名空间权限</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.38383838383838%" headers="mcps1.2.4.1.3 "><p id="cce_01_0187_p2033852118610"><a name="cce_01_0187_p2033852118610"></a><a name="cce_01_0187_p2033852118610"></a>按Kubernetes RBAC授权</p>
+<td class="cellrowborder" valign="top" width="36.65979381443299%" headers="mcps1.2.4.1.3 "><p id="cce_01_0187_p7321956194312"><a name="cce_01_0187_p7321956194312"></a><a name="cce_01_0187_p7321956194312"></a>按Kubernetes RBAC授权</p>
 </td>
 </tr>
-<tr id="cce_01_0187_row28641117145019"><td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p11879440195014"><a name="cce_01_0187_p11879440195014"></a><a name="cce_01_0187_p11879440195014"></a>拥有Tenant Guest权限的IAM用户</p>
+<tr id="cce_01_0187_row28641117145019"><td class="cellrowborder" valign="top" width="31.91752577319587%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p11879440195014"><a name="cce_01_0187_p11879440195014"></a><a name="cce_01_0187_p11879440195014"></a>拥有Tenant Guest权限的IAM用户</p>
 </td>
-<td class="cellrowborder" valign="top" width="28.28282828282828%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p1490645915120"><a name="cce_01_0187_p1490645915120"></a><a name="cce_01_0187_p1490645915120"></a>全部命名空间权限</p>
+<td class="cellrowborder" valign="top" width="31.422680412371136%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p1490645915120"><a name="cce_01_0187_p1490645915120"></a><a name="cce_01_0187_p1490645915120"></a>全部命名空间权限</p>
 </td>
-<td class="cellrowborder" valign="top" width="38.38383838383838%" headers="mcps1.2.4.1.3 "><p id="cce_01_0187_p14337621561"><a name="cce_01_0187_p14337621561"></a><a name="cce_01_0187_p14337621561"></a>按Kubernetes RBAC授权</p>
+<td class="cellrowborder" valign="top" width="36.65979381443299%" headers="mcps1.2.4.1.3 "><p id="cce_01_0187_p1932115664317"><a name="cce_01_0187_p1932115664317"></a><a name="cce_01_0187_p1932115664317"></a>按Kubernetes RBAC授权</p>
 </td>
 </tr>
 </tbody>

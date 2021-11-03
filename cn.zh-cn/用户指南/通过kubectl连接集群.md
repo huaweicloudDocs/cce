@@ -18,6 +18,7 @@ CloudShell是一款用于管理与运维云资源的网页版Shell工具，CCE�
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >CloudShell中kubectl证书有效期为1天，从云容器引擎重新跳转可以重置有效期。
+>CloudShell基于VPCEP实现，在CloudShell中使用kubectl访问集群需要在集群控制节点的安全组（安全组名称：集群名称-cce-control-随机数）中放通198.19.128.0/20网段访问5443端口。5443端口默认对所有网段放通，如果您对安全组做过加固，当出现在CloudShell中无法访问集群时，请检查5443端口是否放通了198.19.128.0/20网段。
 
 **图 1**  CloudShell<a name="fig143888334518"></a>  
 ![](figures/CloudShell.png "CloudShell")

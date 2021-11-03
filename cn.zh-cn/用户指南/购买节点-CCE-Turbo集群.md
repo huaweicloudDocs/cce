@@ -44,7 +44,7 @@ CCE Turbo集群创建完成后，您可以在集群中购买节点。
     <tr id="row96694785812"><td class="cellrowborder" valign="top" width="20.02%" headers="mcps1.2.3.1.1 "><p id="p7669676587"><a name="p7669676587"></a><a name="p7669676587"></a>容器运行时</p>
     </td>
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p1166918711589"><a name="p1166918711589"></a><a name="p1166918711589"></a>选择节点上容器使用的运行时（Runtime），不同容器运行时支持的节点规格不同，创建后不可修改。</p>
-    <a name="ul1138261162510"></a><a name="ul1138261162510"></a><ul id="ul1138261162510"><li>docker运行时：普通容器</li><li>安全运行时：节点选择该容器运行时后，创建工作负载时如果也选择<span class="uicontrol" id="uicontrol2031523310332"><a name="uicontrol2031523310332"></a><a name="uicontrol2031523310332"></a>“安全运行时”</span>，则该工作负载只能运行在使用安全运行时的节点上。</li></ul>
+    <a name="ul1138261162510"></a><a name="ul1138261162510"></a><ul id="ul1138261162510"><li>普通容器：runc运行时。</li><li>安全容器：kata运行时。节点选择安全容器后，创建工作负载时如果也选择<span class="uicontrol" id="uicontrol2031523310332"><a name="uicontrol2031523310332"></a><a name="uicontrol2031523310332"></a>“安全容器”</span>，则该工作负载只能运行在使用安全容器的节点上。</li></ul>
     <p id="p17135151618277"><a name="p17135151618277"></a><a name="p17135151618277"></a>两种容器运行时的对比请参见<a href="节点概述.md#section7201124294111">普通容器与安全容器的区别</a>。</p>
     </td>
     </tr>

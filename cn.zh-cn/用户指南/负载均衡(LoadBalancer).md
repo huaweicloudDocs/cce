@@ -4,7 +4,7 @@
 
 负载均衡\( LoadBalancer \)可以通过弹性负载均衡从公网访问到工作负载，与弹性IP方式相比提供了高可靠的保障，一般用于系统中需要暴露到公网的服务。
 
-负载均衡访问方式由公网弹性负载均衡ELB服务地址以及设置的访问端口组成，例如“10.117.117.117:80“。
+负载均衡访问方式由公网弹性负载均衡服务地址以及设置的访问端口组成，例如“10.117.117.117:80“。
 
 在访问时从ELB过来的流量会先访问到节点，然后通过Service转发到Pod。
 
@@ -15,7 +15,7 @@
 
 -   CCE中的负载均衡 \( LoadBalancer \)访问类型使用弹性负载均衡 ELB提供网络访问，存在如下产品约束：
     -   自动创建的ELB实例建议不要被其他资源使用，否则会在删除时被占用，导致资源残留。
-    -   正在使用的ELB实例请不要修改监听器名称，否则可能导致无法正常访问。
+    -   1.15及之前版本集群使用的ELB实例请不要修改监听器名称，否则可能导致无法正常访问。
 
 -   创建service后，如果[服务亲和](#li36098269511)从集群级别切换为节点级别，连接跟踪表将不会被清理，建议用户创建service后不要修改服务亲和属性，如需修改请重新创建service。
 -   独享型ELB仅支持1.17及以上集群。
@@ -23,7 +23,7 @@
 
 ## 工作负载创建时设置<a name="section744117150366"></a>
 
-可以在创建工作负载时通过CCE控制台设置Service访问方式，本节以nginx为例进行说明。
+可以在创建工作负载时通过CCE控制台设置Service，本节以nginx为例进行说明。
 
 1.  参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)、[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)或[创建守护进程集\(DaemonSet\)](创建守护进程集(DaemonSet).md)，在“工作负载访问设置“步骤，单击“添加服务“。
 
@@ -83,8 +83,8 @@
 
 您可以在工作负载创建完成后对Service进行配置，此配置对工作负载状态无影响，且实时生效。具体操作如下：
 
-1.  登录CCE控制台，在左侧导航栏中选择“工作负载 \> 无状态负载 Deployment”或“工作负载 \> 有状态负载 StatefulSet”，在工作负载列表页单击要设置Service的工作负载名称。
-2.  在“访问方式“页签，单击“添加Service”。
+1.  登录CCE控制台，在左侧导航栏中选择“资源管理 \> 网络管理”。
+2.  在Service页签下单击“添加Service”。
 
     参数与[工作负载创建时设置](#section744117150366)一致。
 
@@ -137,8 +137,8 @@
       annotations:
         kubernetes.io/elb.class: union
         kubernetes.io/session-affinity-mode: SOURCE_IP
-        kubernetes.io/elb.id: 3c7caa5a-a641-4bff-801a-feace27424b6
-        kubernetes.io/elb.subnet-id: 5083f225-9bf8-48fa-9c8b-67bd9693c4c0
+        kubernetes.io/elb.id: 3c7caa5a-a641-4bff-801a-feace27424b6          # ELB实例ID，替换为实际值
+        kubernetes.io/elb.subnet-id: 5083f225-9bf8-48fa-9c8b-67bd9693c4c0   # ELB实例所在子网ID，替换为实际值
       name: nginx 
     spec: 
       externalTrafficPolicy: Local
@@ -471,7 +471,7 @@
       annotations:   
         kubernetes.io/elb.class: union
         kubernetes.io/session-affinity-mode: SOURCE_IP
-        kubernetes.io/elb.subnet-id: ca5b861e-4e13-480a-996a-6c84c1d9538d
+        kubernetes.io/elb.subnet-id: ca5b861e-4e13-480a-996a-6c84c1d9538d    # ELB实例所在子网ID，替换为实际取值
         kubernetes.io/elb.enterpriseID: '0'
         kubernetes.io/elb.autocreate: 
             '{
@@ -510,7 +510,7 @@
       namespace: default
       annotations:
         kubernetes.io/elb.class: performance
-        kubernetes.io/elb.subnet-id: ca5b861e-4e13-480a-996a-6c84c1d9538d
+        kubernetes.io/elb.subnet-id: ca5b861e-4e13-480a-996a-6c84c1d9538d     # ELB实例所在子网ID，替换为实际取值
         kubernetes.io/elb.enterpriseID: '0'
         kubernetes.io/elb.autocreate: 
             '{
@@ -519,7 +519,7 @@
                 "bandwidth_chargemode": "bandwidth",
                 "bandwidth_size": 1,
                 "bandwidth_sharetype": "PER",
-                "eip_type": "5_gray",
+                "eip_type": "5_bgp",
                 "available_zone": [
                     "cn-south-2b",
                     "cn-south-1c"
@@ -780,7 +780,6 @@
     </td>
     <td class="cellrowborder" valign="top" width="49.08%" headers="mcps1.2.5.1.4 "><p id="p440013273464"><a name="p440013273464"></a><a name="p440013273464"></a>弹性公网IP类型。</p>
     <a name="ul18765175214406"></a><a name="ul18765175214406"></a><ul id="ul18765175214406"><li>5_telcom：电信</li><li>5_union：联通</li><li>5_bgp：全动态BGP</li><li>5_sbgp：静态BGP</li></ul>
-    <p id="p367234613416"><a name="p367234613416"></a><a name="p367234613416"></a>独享型负载均衡的类型请填<span class="uicontrol" id="uicontrol9881125856"><a name="uicontrol9881125856"></a><a name="uicontrol9881125856"></a>“5_gray”</span>。</p>
     </td>
     </tr>
     <tr id="row20400102713466"><td class="cellrowborder" valign="top" width="25.069999999999997%" headers="mcps1.2.5.1.1 "><p id="p140015271469"><a name="p140015271469"></a><a name="p140015271469"></a>available_zone</p>
