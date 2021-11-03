@@ -557,46 +557,44 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses \(Supports 1.15
 
 ```
 {
-    "apiVersion": "extensions/v1beta1",
-    "kind": "Ingress",
-    "metadata": {
-        "annotations": {
-            "ingress.kubernetes.io/secure-backends": "false",
-            "ingress.beta.kubernetes.io/role": "data",
-            "kubernetes.io/elb.ip": "192.168.0.39",
-            "kubernetes.io/elb.port": "80",
-            "kubernetes.io/elb.subnet-id": "bf04639b-9e67-4f02-ac63-379e9ce48ea2"
-        },
-        "labels": {
-            "zone": "data",
-            "isExternal": "true",
-            "deploy-ingress": "ingress-test"
-        },
-        "name": "ingress-test"
+  "apiVersion": "networking.k8s.io/v1beta1",
+  "kind": "Ingress",
+  "metadata": {
+    "labels": {
+      "zone": "data",
+      "isExternal": "true"
     },
-    "spec": {
-        "tls": {
-            "secretName: ": "ingress-test"
-        },
-        "rules": [
-            {
-                "http": {
-                    "paths": [
-                        {
-                            "backend": {
-                                "serviceName": "ingress-test",
-                                "servicePort": 8080
-                            },
-                            "path": "/healthz",
-                            "property": {
-                                "ingress.beta.kubernetes.io/url-match-mode": "EQUAL_TO"
-                            }
-                        }
-                    ]
-                }
-            }
-        ]
+    "name": "test-ingres",
+    "namespace": "development",
+    "annotations": {
+      "kubernetes.io/ingress.class": "cce",
+      "kubernetes.io/elb.port": "80",
+      "kubernetes.io/elb.subnet-id": "",
+      "kubernetes.io/elb.autocreate": "{\"type\":\"public\",\"bandwidth_name\":\"cce-bandwidth-1634178286799\",\"bandwidth_chargemode\":\"bandwidth\",\"bandwidth_size\":5,\"bandwidth_sharetype\":\"PER\",\"eip_type\":\"5_bgp\"}",
+      "kubernetes.io/elb.enterpriseID": "0"
     }
+  },
+  "spec": {
+    "rules": [
+      {
+        "host": "",
+        "http": {
+          "paths": [
+            {
+              "backend": {
+                "serviceName": "test-service",
+                "servicePort": 80
+              },
+              "path": "/",
+              "property": {
+                "ingress.beta.kubernetes.io/url-match-mode": "STARTS_WITH"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
 }
 ```
 
@@ -611,40 +609,38 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/ingresses \(Supports 1.15
 ```
 {
     "kind": "Ingress",
-    "apiVersion": "extensions/v1beta1",
+    "apiVersion": "networking.k8s.io/v1beta1",
     "metadata": {
-        "name": "ingress-test",
-        "namespace": "default",
-        "selfLink": "/apis/extensions/v1beta1/namespaces/default/ingresses/ingress-test",
-        "uid": "3acdf7b4-7ac5-11e8-a5f8-fa163e458c2a",
-        "resourceVersion": "1473939",
+        "name": "test-ingres",
+        "namespace": "development",
+        "selfLink": "/apis/networking.k8s.io/v1beta1/namespaces/development/ingresses/test-ingres",
+        "uid": "20368cb4-bf87-4a1b-b5f5-6b5a00d866b8",
+        "resourceVersion": "23541",
         "generation": 1,
-        "creationTimestamp": "2018-06-28T11:20:14Z",
+        "creationTimestamp": "2021-10-14T02:25:42Z",
         "labels": {
             "isExternal": "true",
             "zone": "data"
         },
         "annotations": {
-            "ingress.beta.kubernetes.io/role": "data",
-            "ingress.kubernetes.io/secure-backends": "false",
-            "kubernetes.io/elb.subnet-id": "bf04639b-9e67-4f02-ac63-379e9ce48ea2",
-            "kubernetes.io/elb.ip": "192.168.0.39",
+            "kubernetes.io/elb.autocreate": "{\"type\":\"public\",\"bandwidth_name\":\"cce-bandwidth-1634178286799\",\"bandwidth_chargemode\":\"bandwidth\",\"bandwidth_size\":5,\"bandwidth_sharetype\":\"PER\",\"eip_type\":\"5_bgp\"}",
+            "kubernetes.io/elb.enterpriseID": "0",
             "kubernetes.io/elb.port": "80",
-            "kubernetes.io/ingress.class": "public-elb",
-            "protocol": "HTTP"
+            "kubernetes.io/elb.subnet-id": "",
+            "kubernetes.io/ingress.class": "cce"
         }
     },
     "spec": {
         "rules": [
             {
-                "host": "test",
                 "http": {
                     "paths": [
                         {
-                            "path": "/healthz",
+                            "path": "/",
+                            "pathType": "ImplementationSpecific",
                             "backend": {
-                                "serviceName": "ingress-test",
-                                "servicePort": 8080
+                                "serviceName": "test-service",
+                                "servicePort": 80
                             },
                             "property": {
                                 "ingress.beta.kubernetes.io/url-match-mode": "STARTS_WITH"

@@ -4,26 +4,9 @@
 
 该API用于替换指定的Deployment对象。
 
-其中以下字段支持更新：
-
--   metadata.selfLink
--   metadata.resourceVersion
--   metadata.labels
--   metadata.clusterName
--   metadata.generateName
--   metadata.annotations
--   spec.replicas
--   template.containers
--   spec.restartPolicy
--   spec.activeDeadlineSeconds
-
 ## URI<a name="section1524832914503"></a>
 
-PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} （适用于1.9及以上版本的所有集群）
-
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} （仅适用于1.15及以下版本的集群）
-
-[表1](#table14970324122818)描述该API的参数
+PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}
 
 **表 1**  参数
 

@@ -4,15 +4,6 @@
 
 This API is used to update the specified Node.
 
-The following fields can be updated:
-
--   metadata.selfLink
--   metadata.resourceVersion
--   metadata.creationTimestamp
--   metadata.name
--   metadata.namespace
--   metadata.labels
-
 ## URI<a name="section65036556"></a>
 
 PATCH /api/v1/nodes/\{name\}

@@ -6,11 +6,7 @@ This API is used to read the status of a specified StatefulSet object under a sp
 
 ## URI<a name="section43853730"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status （适用于1.9及以上版本的所有集群）
-
-GET /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\}/status （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e38842)描述该API的参数。
+GET /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status
 
 **表 1**  参数解释
 

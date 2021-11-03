@@ -59,7 +59,7 @@ POST /api/v1/namespaces/\{namespace\}/pods
     "spec": {
         "containers": [
             {
-                "image": "172.16.5.235:20202/test/nginx",
+                "image": "nginx:alpine",
                 "imagePullPolicy": "Always",
                 "name": "test",
                 "resources": {
@@ -93,30 +93,32 @@ POST /api/v1/namespaces/\{namespace\}/pods
     "apiVersion": "v1",
     "metadata": {
         "name": "pod-test",
-        "namespace": "default",
-        "selfLink": "/api/v1/namespaces/default/pods/pod-test",
-        "uid": "8917ec2a-fc20-11e7-9c3c-fa163eb8ad1a",
-        "resourceVersion": "486125",
-        "creationTimestamp": "2018-01-18T07:23:52Z",
+        "namespace": "development",
+        "selfLink": "/api/v1/namespaces/development/pods/pod-test",
+        "uid": "6f4ed218-b737-4466-981e-be231a631718",
+        "resourceVersion": "10203",
+        "creationTimestamp": "2021-10-14T01:47:36Z",
         "labels": {
             "name": "pod-test"
         },
-        "enable": true
+        "annotations": {
+            "kubernetes.io/psp": "psp-global"
+        }
     },
     "spec": {
         "volumes": [
             {
-                "name": "default-token-512lg",
+                "name": "default-token-ddq7k",
                 "secret": {
-                    "secretName": "default-token-512lg",
-                    "defaultMode": 384
+                    "secretName": "default-token-ddq7k",
+                    "defaultMode": 420
                 }
             }
         ],
         "containers": [
             {
                 "name": "test",
-                "image": "72.16.5.235:20202/test/nginx",
+                "image": "nginx:alpine",
                 "resources": {
                     "requests": {
                         "cpu": "100m"
@@ -124,7 +126,7 @@ POST /api/v1/namespaces/\{namespace\}/pods
                 },
                 "volumeMounts": [
                     {
-                        "name": "default-token-512lg",
+                        "name": "default-token-ddq7k",
                         "readOnly": true,
                         "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount"
                     }
@@ -145,7 +147,36 @@ POST /api/v1/namespaces/\{namespace\}/pods
                 "name": "default-secret"
             }
         ],
-        "schedulerName": "default-scheduler"
+        "schedulerName": "default-scheduler",
+        "tolerations": [
+            {
+                "key": "node.kubernetes.io/not-ready",
+                "operator": "Exists",
+                "effect": "NoExecute",
+                "tolerationSeconds": 300
+            },
+            {
+                "key": "node.kubernetes.io/unreachable",
+                "operator": "Exists",
+                "effect": "NoExecute",
+                "tolerationSeconds": 300
+            }
+        ],
+        "priority": 0,
+        "dnsConfig": {
+            "options": [
+                {
+                    "name": "single-request-reopen",
+                    "value": ""
+                },
+                {
+                    "name": "timeout",
+                    "value": "2"
+                }
+            ]
+        },
+        "enableServiceLinks": true,
+        "preemptionPolicy": "PreemptLowerPriority"
     },
     "status": {
         "phase": "Pending",

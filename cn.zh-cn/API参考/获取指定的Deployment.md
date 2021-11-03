@@ -6,11 +6,7 @@
 
 ## URI<a name="section158974212501"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} （适用于1.9及以上版本的所有集群）
-
-GET /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} （仅适用于1.15及以下版本的集群）
-
-[表1](#table2027961241820)描述该API的参数。
+GET /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}
 
 **表 1**  参数描述
 

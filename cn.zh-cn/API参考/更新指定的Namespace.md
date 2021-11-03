@@ -4,18 +4,6 @@
 
 该API用于更新指定Namespace部分信息。
 
-其中以下字段支持更新：
-
--   metadata.name
--   metadata.namespace
--   metadata.selfLink
--   metadata.resourceVersion
--   metadata.uid
--   metadata.labels
--   metadata.generateName
--   metadata.annotations
--   metadata.deletionGracePeriodSeconds
-
 ## URI<a name="s5c4ede3df2254d4f9f948470a4167390"></a>
 
 PATCH /api/v1/namespaces/\{name\}

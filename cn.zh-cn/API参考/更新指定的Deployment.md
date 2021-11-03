@@ -4,26 +4,9 @@
 
 This API is used to update a Deployment object under a specific Namespace.
 
-The following fields can be updated:
-
--   metadata.selfLink
--   metadata.resourceVersion
--   metadata.labels
--   metadata.clusterName
--   metadata.generateName
--   metadata.annotations
--   spec.replicas
--   template.containers
--   spec.restartPolicy
--   spec.activeDeadlineSeconds
-
 ## URI<a name="section1928895"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} （适用于1.9及以上版本的所有集群）
-
-PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e36967)描述该API的参数。
+PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}
 
 **表 1**  参数解释
 

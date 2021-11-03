@@ -6,11 +6,7 @@ This API is used to list all StatefulSet resource objects.
 
 ## URI<a name="section50354060"></a>
 
-GET /apis/apps/v1/statefulsets （适用于1.9及以上版本的所有集群）
-
-GET /apis/apps/v1beta1/statefulsets （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e39528)描述该API的参数。
+GET /apis/apps/v1/statefulsets
 
 **表 1**  参数解释
 

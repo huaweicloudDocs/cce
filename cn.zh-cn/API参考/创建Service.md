@@ -722,7 +722,6 @@ POST /api/v1/namespaces/\{namespace\}/services
     "apiVersion":"v1",
     "metadata":{
        "name":"service-test",
-       "creationTimestamp":null,
        "labels":{
           "app":"cce"
        }
@@ -734,12 +733,9 @@ POST /api/v1/namespaces/\{namespace\}/services
           "targetPort":0
        }],
        "selector":{
-       "app":"cce"
+       "name":"statefulset-test"
        },
        "clusterIP":"None"
-   },
-   "status":{
-      "loadBalancer":{}
    }
 }
 ```
@@ -754,34 +750,38 @@ POST /api/v1/namespaces/\{namespace\}/services
 
 ```
 {
-   "kind":"Service",
-   "apiVersion":"v1",
-   "metadata":{
-      "name":"service-test",
-      "namespace":"default",
-      "selfLink":"/api/v1/namespaces/default/services/service-test",
-      "uid":"61c9aee7-29aa-11e7-896b-fa163ebe5340",
-      "resourceVersion":"1349201",
-      "creationTimestamp":"2017-04-25T11:29:01Z",
-      "labels":{
-         "app":"cce"     
-      }
-   },
-   "spec":{
-      "ports":[{
-         "name":"http",
-         "protocol":"TCP",
-         "port":80,
-         "targetPort":80
-      }],
-      "selector":{"app":"cce"},
-      "clusterIP":"None",
-      "type":"ClusterIP",
-      "sessionAffinity":"None"
-   },
-   "status":{
-      "loadBalancer":{}
-   }
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "service-test",
+        "namespace": "development",
+        "selfLink": "/api/v1/namespaces/development/services/service-test",
+        "uid": "7475fb8b-60e6-454f-83b4-c34c0bf05427",
+        "resourceVersion": "15258",
+        "creationTimestamp": "2021-10-14T02:02:03Z",
+        "labels": {
+            "app": "cce"
+        }
+    },
+    "spec": {
+        "ports": [
+            {
+                "name": "http",
+                "protocol": "TCP",
+                "port": 80,
+                "targetPort": 80
+            }
+        ],
+        "selector": {
+            "name": "statefulset-test"
+        },
+        "clusterIP": "None",
+        "type": "ClusterIP",
+        "sessionAffinity": "None"
+    },
+    "status": {
+        "loadBalancer": {}
+    }
 }
 ```
 

@@ -6,9 +6,7 @@ This API is used to delete a Deployment resource object.
 
 ## URI<a name="section51020189"></a>
 
-DELETE /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\} （适用于1.9及以上版本的所有集群）
-
-DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\} （仅适用于1.15及以下版本的集群）
+DELETE /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}
 
 [表1](#table2758112513516)描述该API的参数。
 

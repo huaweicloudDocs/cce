@@ -4,21 +4,6 @@
 
 该API用于替换指定Namespace下的一个Pod对象。
 
-其中以下字段支持更新：
-
--   metadata.selfLink
--   metadata.resourceVersion
--   metadata.clusterName
--   metadata.generateName
--   metadata.labels
--   metadata.annotations
--   spec.initContainers\[\*\].image
--   spec.containers\[\*\].image
--   spec.activeDeadlineSeconds
--   spec.tolerations
-
-其余部分不支持更新。
-
 ## URI<a name="scc13338839174f99b35830d9cbad55b0"></a>
 
 PUT /api/v1/namespaces/\{namespace\}/pods/\{name\}

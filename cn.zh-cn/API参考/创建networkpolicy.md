@@ -427,7 +427,7 @@ POST /apis/networking.k8s.io/v1/namespaces/\{namespace\}/networkpolicies
 </td>
 <td class="cellrowborder" valign="top" width="19%" headers="mcps1.2.5.1.3 "><p id="p38575333129"><a name="p38575333129"></a><a name="p38575333129"></a>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p1859233141213"><a name="p1859233141213"></a><a name="p1859233141213"></a>matchExpressions is a list of label selector requirements. The requirements are ANDed.</p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p id="p16951103912507"><a name="p16951103912507"></a><a name="p16951103912507"></a>The port on the given protocol. This can either be a numerical or named port on a pod. If this field is not provided, this matches all port names and numbers.</p>
 </td>
 </tr>
 <tr id="row14861533111212"><td class="cellrowborder" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p450583014251"><a name="p450583014251"></a><a name="p450583014251"></a>protocol</p>

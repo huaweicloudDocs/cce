@@ -6,11 +6,7 @@ This API is used to create a StatefulSet resource object.
 
 ## URI<a name="section33235568"></a>
 
-POST /apis/apps/v1/namespaces/\{namespace\}/statefulsets （适用于1.9及以上版本的所有集群）
-
-POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e37523)描述该API的参数。
+POST /apis/apps/v1/namespaces/\{namespace\}/statefulsets
 
 **表 1**  参数解释
 
@@ -448,7 +444,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets （仅适用于1.1
 
 ```
 {
-    "apiVersion": "apps/v1beta1",
+    "apiVersion": "apps/v1",
     "kind": "StatefulSet",
     "metadata": {
         "labels": {
@@ -473,7 +469,7 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets （仅适用于1.1
             "spec": {
                 "containers": [
                     {
-                        "image": "172.16.5.235:20202/test/nginx",
+                        "image": "nginx:alpine",
                         "name": "statefulset-test"
                     }
                 ],
@@ -497,19 +493,18 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets （仅适用于1.1
 ```
 {
     "kind": "StatefulSet",
-    "apiVersion": "apps/v1beta1",
+    "apiVersion": "apps/v1",
     "metadata": {
         "name": "statefulset-test",
-        "namespace": "default",
-        "selfLink": "/apis/apps/v1beta1/namespaces/default/statefulsets/statefulset-test",
-        "uid": "d9e1118c-fc20-11e7-9c3c-fa163eb8ad1a",
-        "resourceVersion": "486277",
+        "namespace": "development",
+        "selfLink": "/apis/apps/v1/namespaces/development/statefulsets/statefulset-test",
+        "uid": "0669a8ed-cc9e-44a9-a54c-ea90f94aa4ca",
+        "resourceVersion": "16781",
         "generation": 1,
-        "creationTimestamp": "2018-01-18T07:26:08Z",
+        "creationTimestamp": "2021-10-14T02:06:20Z",
         "labels": {
             "name": "statefulset-test"
-        },
-        "enable": true
+        }
     },
     "spec": {
         "replicas": 1,
@@ -523,18 +518,17 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets （仅适用于1.1
                 "creationTimestamp": null,
                 "labels": {
                     "name": "statefulset-test"
-                },
-                "enable": true
+                }
             },
             "spec": {
                 "containers": [
                     {
                         "name": "statefulset-test",
-                        "image": "172.16.5.235:20202/test/nginx",
+                        "image": "nginx:alpine",
                         "resources": {},
                         "terminationMessagePath": "/dev/termination-log",
                         "terminationMessagePolicy": "File",
-                        "imagePullPolicy": "Always"
+                        "imagePullPolicy": "IfNotPresent"
                     }
                 ],
                 "restartPolicy": "Always",
@@ -552,7 +546,10 @@ POST /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets （仅适用于1.1
         "serviceName": "service-test",
         "podManagementPolicy": "OrderedReady",
         "updateStrategy": {
-            "type": "OnDelete"
+            "type": "RollingUpdate",
+            "rollingUpdate": {
+                "partition": 0
+            }
         },
         "revisionHistoryLimit": 10
     },

@@ -6,11 +6,7 @@ This API is used to delete collection of Deployment.
 
 ## URI<a name="section59073635"></a>
 
-DELETE /apis/apps/v1/namespaces/\{namespace\}/deployments （适用于1.9及以上版本的所有集群）
-
-DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e35322)描述该API的参数。
+DELETE /apis/apps/v1/namespaces/\{namespace\}/deployments
 
 **表 1**  参数解释
 

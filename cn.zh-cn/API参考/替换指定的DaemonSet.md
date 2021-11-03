@@ -4,25 +4,9 @@
 
 This API is used to replace a DaemonSet object under a specified Namespace.
 
-The following fields can be updated:
-
--   metadata.selfLink
--   metadata.resourceVersion
--   metadata.labels
--   spec.selector
--   spec.template.spec.containers
--   spec.templateGeneration
--   spec.revisionHistoryLimit
-
-The other fields cannot be updated.
-
 ## URI<a name="section17794137"></a>
 
-PUT /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\} （适用于1.9及以上版本的所有集群）
-
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e32763)描述该API的参数。
+PUT /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\}
 
 **表 1**  参数描述
 

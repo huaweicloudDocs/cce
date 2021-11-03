@@ -6,11 +6,7 @@ This API is used to replace the status of a specified Deployment object under a 
 
 ## URI<a name="section59413503"></a>
 
-PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/status （适用于1.9及以上版本的所有集群）
-
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/status （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e36203)描述该API的参数。
+PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/status
 
 **表 1**  参数解释
 

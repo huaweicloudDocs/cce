@@ -6,11 +6,7 @@ This API is used to delete a DaemonSet resource object.
 
 ## URI<a name="section42527017"></a>
 
-DELETE /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\} （适用于1.9及以上版本的所有集群）
-
-DELETE /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\} （仅适用于1.15及以下版本的集群）
-
-[表1](#table137278403473)描述该API的参数。
+DELETE /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\}
 
 **表 1**  参数解释
 

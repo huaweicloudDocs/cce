@@ -4,18 +4,6 @@
 
 This API is used to update the specified Job.
 
-The following fields can be updated:
-
--   metadata.selfLink
--   metadata.resourceVersion
--   metadata.creationTimestamp
--   metadata.name
--   metadata.namespace
--   metadata.labels
--   spec.parallelism
--   spec.completions
--   spec.selector
-
 ## URI<a name="section62572474"></a>
 
 PATCH /apis/batch/v1/namespaces/\{namespace\}/jobs/\{name\}

@@ -4,19 +4,9 @@
 
 This API is used to replace scale of the specified Scale.
 
-The following fields can be updated:
-
--   metadata.resourceVersion
--   metadata.creationTimestamp
--   spec.replicas
-
 ## URI<a name="section61960472"></a>
 
-PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale （适用于1.9及以上版本的所有集群）
-
-PUT /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e36373)描述该API的参数。
+PUT /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale
 
 **表 1**  参数解释
 

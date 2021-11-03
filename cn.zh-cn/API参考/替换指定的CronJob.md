@@ -4,19 +4,6 @@
 
 This API is used to replace the specified CronJob.
 
-The following fields can be updated:
-
--   metadata.selfLink
--   metadata.resourceVersion
--   metadata.labels
--   metadata.clusterName
--   metadata.generateName
--   metadata.annotations
--   spec.replicas
--   template.containers
--   spec.restartPolicy
--   spec.activeDeadlineSeconds
-
 ## URI<a name="section32769029"></a>
 
 PUT /apis/batch/v1beta1/namespaces/\{namespace\}/cronjobs/\{name\}

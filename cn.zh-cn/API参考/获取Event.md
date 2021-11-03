@@ -8,8 +8,6 @@ list or watch objects of kind Event.
 
 GET /api/v1/events
 
-GET /apis/events.k8s.io/v1beta1/events
-
 **表 1**  Query参数
 
 <a name="table165216295189"></a>

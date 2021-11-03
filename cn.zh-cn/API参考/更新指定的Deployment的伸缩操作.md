@@ -4,19 +4,9 @@
 
 This API is used to partially update scale of the specified Scale.
 
-The following fields can be updated:
-
--   metadata.resourceVersion
--   metadata.creationTimestamp
--   spec.replicas
-
 ## URI<a name="section23520938"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale （适用于1.9及以上版本的所有集群）
-
-PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments/\{name\}/scale （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e37306)描述该API的参数。
+PATCH /apis/apps/v1/namespaces/\{namespace\}/deployments/\{name\}/scale
 
 **表 1**  参数解释
 

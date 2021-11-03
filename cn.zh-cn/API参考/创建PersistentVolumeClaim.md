@@ -332,38 +332,30 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 
     ```
     {
-        "kind":"PersistentVolumeClaim",
-        "apiVersion":"v1",
-        "metadata":{
-            "name":"cce-evs-k6m16atm-3ays",
-            "namespace":"default",
-            "selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/cce-evs-k6m16atm-3ays",
-            "uid":"80f111e7-7d7e-4841-bd73-7ef97df0ee51",
-            "creationTimestamp":"2020-02-14T10:30:20Z",
-            "labels":{
-                "failure-domain.beta.kubernetes.io/region":"cn-north-5",
-                "failure-domain.beta.kubernetes.io/zone":"cn-north-5a"
-            },
-            "annotations":{
-                "everest.io/crypt-key-id":"527cbece-428d-463b-a92c-936a11077b5d", //创建加密卷必需，若无或不全，则不加密；
-                "everest.io/disk-volume-type":"SAS"
-            },
-            "finalizers":[
-                "kubernetes.io/pvc-protection"
-            ]
+      "apiVersion": "v1",
+      "kind": "PersistentVolumeClaim",
+      "metadata": {
+        "name": "pvc-evs-auto-example",
+        "namespace": "development",
+        "annotations": {
+          "everest.io/disk-volume-type": "SSD"
         },
-        "spec":{
-            "accessModes":[
-                "ReadWriteOnce"
-            ],
-            "resources":{
-                "requests":{
-                    "storage":"10Gi"
-                }
-            },
-            "storageClassName":"csi-disk",
-            "volumeMode":"Filesystem"
+        "labels": {
+          "failure-domain.beta.kubernetes.io/region": "cn-south-1",
+          "failure-domain.beta.kubernetes.io/zone": "cn-south-2b"
         }
+      },
+      "spec": {
+        "accessModes": [
+          "ReadWriteOnce"
+        ],
+        "resources": {
+          "requests": {
+            "storage": "10Gi"
+          }
+        },
+        "storageClassName": "csi-disk"
+      }
     }
     ```
 
@@ -476,42 +468,40 @@ POST /api/v1/namespaces/\{namespace\}/persistentvolumeclaims
 
     ```
     {
-        "kind":"PersistentVolumeClaim",
-        "apiVersion":"v1",
-        "metadata":{
-            "name":"cce-evs-k6m16atm-3ays",
-            "namespace":"default",
-            "selfLink":"/api/v1/namespaces/default/persistentvolumeclaims/cce-evs-k6m16atm-3ays",
-            "uid":"80f111e7-7d7e-4841-bd73-7ef97df0ee51",
-            "resourceVersion":"2287083",
-            "creationTimestamp":"2020-02-14T10:30:20Z",
-            "labels":{
-                "failure-domain.beta.kubernetes.io/region":"cn-north-5",
-                "failure-domain.beta.kubernetes.io/zone":"cn-north-5a"
+        "kind": "PersistentVolumeClaim",
+        "apiVersion": "v1",
+        "metadata": {
+            "name": "pvc-evs-auto-example",
+            "namespace": "development",
+            "selfLink": "/api/v1/namespaces/development/persistentvolumeclaims/pvc-evs-auto-example",
+            "uid": "045b763b-9a82-4520-bba9-0dfecbdfe383",
+            "resourceVersion": "26465",
+            "creationTimestamp": "2021-10-14T02:34:05Z",
+            "labels": {
+                "failure-domain.beta.kubernetes.io/region": "cn-south-1",
+                "failure-domain.beta.kubernetes.io/zone": "cn-south-2b"
             },
-            "annotations":{
-                "everest.io/crypt-key-id":"527cbece-428d-463b-a92c-936a11077b5d",//若为加密卷，则存在
-                "everest.io/disk-volume-type":"SAS"
+            "annotations": {
+                "everest.io/disk-volume-type": "SSD"
             },
-            "finalizers":[
+            "finalizers": [
                 "kubernetes.io/pvc-protection"
             ]
         },
-        "spec":{
-            "accessModes":[
+        "spec": {
+            "accessModes": [
                 "ReadWriteOnce"
             ],
-            "resources":{
-                "requests":{
-                    "storage":"10Gi"
+            "resources": {
+                "requests": {
+                    "storage": "10Gi"
                 }
             },
-            "storageClassName":"csi-disk",
-            "volumeName": "pvc-d34f6a93-9eba-4a33-9320-8fa4addd3753",
-            "volumeMode":"Filesystem"
+            "storageClassName": "csi-disk",
+            "volumeMode": "Filesystem"
         },
-        "status":{
-            "phase":"Pending"
+        "status": {
+            "phase": "Pending"
         }
     }
     ```

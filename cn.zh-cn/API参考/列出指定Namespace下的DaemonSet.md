@@ -6,11 +6,7 @@ This API is used to list all DaemonSet resource objects under a specified Namesp
 
 ## URI<a name="section27053763"></a>
 
-GET /apis/apps/v1/namespaces/\{namespace\}/daemonsets （适用于1.9及以上版本的所有集群）
-
-GET /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e33074)描述该API的参数。
+GET /apis/apps/v1/namespaces/\{namespace\}/daemonsets
 
 **表 1**  参数解释
 

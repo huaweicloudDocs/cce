@@ -6,11 +6,7 @@ This API is used to update the status of a specified StatefulSet object under a 
 
 ## URI<a name="section59145013"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status （适用于1.9及以上版本的所有集群）
-
-PATCH /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\}/status （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e39989)描述该API的参数。
+PATCH /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}/status
 
 **表 1**  参数解释
 

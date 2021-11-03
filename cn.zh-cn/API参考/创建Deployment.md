@@ -20,11 +20,7 @@ labels:
 
 ## URI<a name="section764545414815"></a>
 
-POST /apis/apps/v1/namespaces/\{namespace\}/deployments （适用于1.15以上版本的所有集群）
-
-POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments （仅适用于1.15及以下版本的集群）
-
-[表1](#table167042013408)描述该API的参数。
+POST /apis/apps/v1/namespaces/\{namespace\}/deployments
 
 **表 1**  参数描述
 
@@ -541,7 +537,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments （仅适用�
 
 ```
 {
-    "apiVersion": "apps/v1beta1",
+    "apiVersion": "apps/v1",
     "kind": "Deployment",
     "metadata": {
         "labels": {
@@ -565,7 +561,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments （仅适用�
             "spec": {
                 "containers": [
                     {
-                        "image": "172.16.5.235:20202/test/nginx",
+                        "image": "nginx:alpine",
                         "imagePullPolicy": "IfNotPresent",
                         "name": "deployment-test"
                     }
@@ -590,40 +586,38 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments （仅适用�
 ```
 {
     "kind": "Deployment",
-    "apiVersion": "apps/v1beta1",
+    "apiVersion": "apps/v1",
     "metadata": {
         "name": "deployment-test",
-        "namespace": "default",
-        "selfLink": "/apis/apps/v1beta1/namespaces/default/deployments/deployment-test",
-        "uid": "d079d1a0-fc1f-11e7-9c3c-fa163eb8ad1a",
-        "resourceVersion": "485774",
+        "namespace": "development",
+        "selfLink": "/apis/apps/v1/namespaces/development/deployments/deployment-test",
+        "uid": "31ddc359-d9f2-45aa-b6be-b26bf7194722",
+        "resourceVersion": "12521",
         "generation": 1,
-        "creationTimestamp": "2018-01-18T07:18:42Z",
+        "creationTimestamp": "2021-10-14T01:54:14Z",
         "labels": {
-            "name": "deployment-test"
-        },
-        "enable": true
+            "app": "deployment-test"
+        }
     },
     "spec": {
         "replicas": 1,
         "selector": {
             "matchLabels": {
-                "name": "deployment-test"
+                "app": "deployment-test"
             }
         },
         "template": {
             "metadata": {
                 "creationTimestamp": null,
                 "labels": {
-                    "name": "deployment-test"
-                },
-                "enable": true
+                    "app": "deployment-test"
+                }
             },
             "spec": {
                 "containers": [
                     {
                         "name": "deployment-test",
-                        "image": "172.16.5.235:20202/test/nginx",
+                        "image": "nginx:alpine",
                         "resources": {},
                         "terminationMessagePath": "/dev/termination-log",
                         "terminationMessagePolicy": "File",
@@ -649,7 +643,7 @@ POST /apis/extensions/v1beta1/namespaces/\{namespace\}/deployments （仅适用�
                 "maxSurge": "25%"
             }
         },
-        "revisionHistoryLimit": 2,
+        "revisionHistoryLimit": 10,
         "progressDeadlineSeconds": 600
     },
     "status": {}

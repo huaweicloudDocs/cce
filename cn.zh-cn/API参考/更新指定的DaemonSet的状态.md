@@ -6,11 +6,7 @@ This API is used to update the status of a specified DaemonSet object under a sp
 
 ## URI<a name="section41699700"></a>
 
-PATCH /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\}/status （适用于1.9及以上版本的所有集群）
-
-PATCH /apis/extensions/v1beta1/namespaces/\{namespace\}/daemonsets/\{name\}/status （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e33741)描述该API的参数。
+PATCH /apis/apps/v1/namespaces/\{namespace\}/daemonsets/\{name\}/status
 
 **表 1**  参数解释
 

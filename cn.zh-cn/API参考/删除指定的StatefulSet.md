@@ -6,11 +6,7 @@ This API is used to delete a StatefulSet resource object.
 
 ## URI<a name="section13914160"></a>
 
-DELETE /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\} （适用于1.9及以上版本的所有集群）
-
-DELETE /apis/apps/v1beta1/namespaces/\{namespace\}/statefulsets/\{name\} （仅适用于1.15及以下版本的集群）
-
-[表1](#d0e38270)描述该API的参数。
+DELETE /apis/apps/v1/namespaces/\{namespace\}/statefulsets/\{name\}
 
 **表 1**  参数解释
 
