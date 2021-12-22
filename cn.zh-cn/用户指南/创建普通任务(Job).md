@@ -14,7 +14,7 @@
 
 ## 前提条件<a name="s50bf087555b1437aa249c1259138706c"></a>
 
-已创建资源，具体操作请参见[购买节点（按需计费）](购买节点.md)。若已有集群和节点资源，无需重复操作。
+已创建资源，具体操作请参见[购买节点](购买节点.md)。若已有集群和节点资源，无需重复操作。
 
 
 ## 操作步骤<a name="sb8a02965b2624dbbabab320046ca4973"></a>
@@ -163,7 +163,7 @@
         </tr>
         <tr id="r547f9887aa95447fae37c69bf28e8d09"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="a4a93ff2a806b494c8d80b89595802cbe"><a name="a4a93ff2a806b494c8d80b89595802cbe"></a><a name="a4a93ff2a806b494c8d80b89595802cbe"></a>容器日志</p>
         </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="ac6fc6fa08da64fdc9d6366f5f9834e11"><a name="ac6fc6fa08da64fdc9d6366f5f9834e11"></a><a name="ac6fc6fa08da64fdc9d6366f5f9834e11"></a>CCE支持配置工作负载日志策略，便于日志收集分析，以及按周期防爆处理。详细步骤请参见<a href="采集容器默认的标准输出日志.md">采集容器默认的标准输出日志</a>。</p>
+        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="ac6fc6fa08da64fdc9d6366f5f9834e11"><a name="ac6fc6fa08da64fdc9d6366f5f9834e11"></a><a name="ac6fc6fa08da64fdc9d6366f5f9834e11"></a>CCE支持配置工作负载日志策略，便于日志收集分析，以及按周期防爆处理。详细步骤请参见<a href="容器日志.md">容器日志</a>。</p>
         </td>
         </tr>
         </tbody>

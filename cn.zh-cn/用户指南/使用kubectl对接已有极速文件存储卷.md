@@ -16,11 +16,11 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
 
 1.  登录SFS控制台，创建一个文件存储，记录文件存储的ID、共享路径和容量。
 2.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
-3.  新建两个yaml文件，用于创建PersistentVolume（PV）、PersistentVolumeClaim（PVC）。假设文件名分别为**pv-efs-example.yaml**、**pvc-efs-example.yaml**。
+3.  新建两个yaml文件，用于创建PersistentVolume（PV）、PersistentVolumeClaim（PVC）。假设文件名分别为**pv-sfsturbo-example.yaml**、**pvc-sfsturbo-example.yaml**。
 
-    **touch pv-efs-example.yaml** **pvc-efs-example.yaml**
+    **touch pv-sfsturbo-example.yaml** **pvc-sfsturbo-example.yaml**
 
-    -   **vi pv-efs-example.yaml**
+    -   **vi pv-sfsturbo-example.yaml**
 
         **PV yaml文件配置示例如下：**
 
@@ -28,10 +28,14 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
         apiVersion: v1
         kind: PersistentVolume
         metadata:
-          name: pv-efs-example
+          name: pv-sfsturbo-example
           annotations:
             pv.kubernetes.io/provisioned-by: everest-csi-provisioner
         spec:
+          mountOptions:
+          - hard
+          - timeo=600
+          - nolock
           accessModes:
           - ReadWriteMany
           capacity:
@@ -39,7 +43,7 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
           claimRef:
             apiVersion: v1
             kind: PersistentVolumeClaim
-            name: pvc-efs-example
+            name: pvc-sfsturbo-example
             namespace: default
           csi:
             driver: sfsturbo.csi.everest.io
@@ -87,6 +91,17 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
         <td class="cellrowborder" valign="top" width="64.11%" headers="mcps1.2.3.1.2 "><p id="p127424310105"><a name="p127424310105"></a><a name="p127424310105"></a>指定k8s storage class名称；极速文件存储卷需配置为"csi-sfsturbo”。</p>
         </td>
         </tr>
+        <tr id="row11470121133316"><td class="cellrowborder" valign="top" width="35.89%" headers="mcps1.2.3.1.1 "><p id="p201237171151"><a name="p201237171151"></a><a name="p201237171151"></a>spec.mountOptions</p>
+        </td>
+        <td class="cellrowborder" valign="top" width="64.11%" headers="mcps1.2.3.1.2 "><p id="p1912313175512"><a name="p1912313175512"></a><a name="p1912313175512"></a>挂载参数。</p>
+        <p id="p78621554981"><a name="p78621554981"></a><a name="p78621554981"></a>不设置时默认配置为如下配置，具体说明请参见<a href="设置挂载参数.md#section14888047833">文件存储挂载参数</a>。</p>
+        <pre class="screen" id="screen1779155351116"><a name="screen1779155351116"></a><a name="screen1779155351116"></a>mountOptions:
+        - vers=3
+        - timeo=600
+        - nolock
+        - hard</pre>
+        </td>
+        </tr>
         <tr id="row1292142194111"><td class="cellrowborder" valign="top" width="35.89%" headers="mcps1.2.3.1.1 "><p id="p19292122114413"><a name="p19292122114413"></a><a name="p19292122114413"></a>spec.claimRef.apiVersion</p>
         </td>
         <td class="cellrowborder" valign="top" width="64.11%" headers="mcps1.2.3.1.2 "><p id="p162921213418"><a name="p162921213418"></a><a name="p162921213418"></a>固定值"v1"。</p>
@@ -116,7 +131,7 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
         </tbody>
         </table>
 
-    -   **vi pvc-efs-example.yaml**
+    -   **vi pvc-sfsturbo-example.yaml**
 
         **PVC yaml文件配置示例如下：**
 
@@ -126,7 +141,7 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
         metadata:
           annotations:
             volume.beta.kubernetes.io/storage-provisioner: everest-csi-provisioner
-          name: pvc-efs-example
+          name: pvc-sfsturbo-example
           namespace: default
         spec:
           accessModes:
@@ -135,7 +150,7 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
             requests:
               storage: 10Gi
           storageClassName: csi-sfsturbo
-          volumeName: pv-efs-example
+          volumeName: pv-sfsturbo-example
         ```
 
         **表 2**  关键参数说明
@@ -170,10 +185,10 @@ CCE支持使用已有的极速文件存储来创建PersistentVolume，创建成�
 
 4.  创建PV。
 
-    **kubectl create -f pv-efs-example.yaml**
+    **kubectl create -f pv-sfsturbo-example.yaml**
 
 5.  创建PVC。
 
-    **kubectl create -f pvc-efs-example.yaml**
+    **kubectl create -f pvc-sfsturbo-example.yaml**
 
 

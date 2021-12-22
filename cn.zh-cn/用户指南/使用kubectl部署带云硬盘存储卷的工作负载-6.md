@@ -139,7 +139,7 @@
               volume.beta.kubernetes.io/storage-provisioner: flexvolume-huawei.com/fuxivol
           spec:
             accessModes:
-              - ReadWriteMany
+              - ReadWriteOnce
             resources:
               requests:
                 storage: 10Gi

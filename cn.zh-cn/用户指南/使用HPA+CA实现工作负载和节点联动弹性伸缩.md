@@ -104,11 +104,11 @@ spec:
       - name: container-1
         image: 'swr.cn-east-3.myhuaweicloud.com/group/hpa-example:latest'
         resources:
-          limits:
+          limits:                  # limits与requests建议取值保持一致，避免扩缩容过程中出现震荡
             cpu: 500m
             memory: 200Mi
           requests:
-            cpu: 250m
+            cpu: 500m
             memory: 200Mi
       imagePullSecrets:
       - name: default-secret

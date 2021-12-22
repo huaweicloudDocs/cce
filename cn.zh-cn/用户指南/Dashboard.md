@@ -37,7 +37,7 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
         -   不选择，将不需要上传证书。
 
             >![](public_sys-resources/icon-notice.gif) **须知：** 
-            >dashboard默认生成的证书不合法，将影响浏览器正常访问，建议您选择手动上传合法证书，以便通过浏览器校验，保证连接的安全性，合法证书购买方法请参见[购买证书](https://support.huaweicloud.com/qs-scm/scm_07_0002.html)。
+            >dashboard默认生成的证书不合法，将影响浏览器正常访问，建议您选择手动上传合法证书，以便通过浏览器校验，保证连接的安全性，合法证书购买方法请参见[购买证书](https://support.huaweicloud.com/usermanual-scm/scm_01_0221.html)。
 
 
     -   访问类型：可以选择节点访问（NodePort）和负载均衡（LoadBalancer）两种类型。

@@ -36,7 +36,7 @@ CCE支持使用PersistentVolumeClaim（PVC）的形式创建云硬盘。
         failure-domain.beta.kubernetes.io/zone: cn-north-4b
     spec:
       accessModes:
-      - ReadWriteMany
+      - ReadWriteOnce
       resources:
         requests:
           storage: 10Gi
@@ -77,7 +77,7 @@ CCE支持使用PersistentVolumeClaim（PVC）的形式创建云硬盘。
     <tr id="row761774811423"><td class="cellrowborder" valign="top" width="45.540000000000006%" headers="mcps1.2.3.1.1 "><p id="p12617448124215"><a name="p12617448124215"></a><a name="p12617448124215"></a>accessModes</p>
     </td>
     <td class="cellrowborder" valign="top" width="54.459999999999994%" headers="mcps1.2.3.1.2 "><p id="p76171248174211"><a name="p76171248174211"></a><a name="p76171248174211"></a>指定读写模式，显示volume实际具有的访问模式。</p>
-    <p id="p2617348184218"><a name="p2617348184218"></a><a name="p2617348184218"></a>支持配置“ReadWriteMany”（共享卷）与“ReadWriteOnly”（非共享卷）</p>
+    <p id="p2617348184218"><a name="p2617348184218"></a><a name="p2617348184218"></a>支持配置“ReadWriteMany”（共享卷）与“ReadWriteOnce”（非共享卷）</p>
     </td>
     </tr>
     </tbody>

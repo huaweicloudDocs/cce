@@ -164,6 +164,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
             requests:
               storage: 10Gi
           volumeName:  pv-evs-example
+          storageClassName: csi-disk
         ```
 
         **表 2**  关键参数说明

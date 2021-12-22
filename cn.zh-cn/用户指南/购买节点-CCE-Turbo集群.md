@@ -12,7 +12,6 @@
 
 -   创建节点过程中会使用域名方式从OBS下载软件包，需要能够使用云上内网DNS解析OBS域名，否则会导致创建不成功。为此，节点所在子网需要配置为[内网DNS地址](https://support.huaweicloud.com/dns_faq/dns_faq_002.html)，从而使得节点使用内网DNS。在创建子网时DNS默认配置为内网DNS，如果您修改过子网的DNS，请务必**确保子网下的DNS服务器可以解析OBS服务域名**，否则需要将DNS改成内网DNS。
 -   CCE Turbo集群的节点目前仅支持基于擎天软硬件协同架构的机型。
--   TrunkPort能力仅在1.19版本的CCE Turbo集群中使用。
 -   在1.19版本的CCE Turbo集群中添加的共池BMS节点，容器使用的网卡默认配置是4队列，详情请参见[CCE Turbo共池BMS节点容器网卡多队列配置](CCE-Turbo共池BMS节点容器网卡多队列配置.md)。
 
 ## 购买节点步骤<a name="cce_01_0298_section13305183010495"></a>
@@ -154,7 +153,7 @@ CCE Turbo集群创建完成后，您可以在集群中购买节点。
     </td>
     <td class="cellrowborder" valign="top" width="76.32%" headers="mcps1.2.3.1.2 "><p id="p14909254174019"><a name="p14909254174019"></a><a name="p14909254174019"></a>通过为资源添加标签，可以对资源进行自定义标记，实现资源的分类。</p>
     <p id="p10327184710426"><a name="p10327184710426"></a><a name="p10327184710426"></a>您可以在TMS中创建<span class="uicontrol" id="uicontrol922854293212"><a name="uicontrol922854293212"></a><a name="uicontrol922854293212"></a>“预定义标签”</span>，预定义标签对所有支持标签功能的服务资源可见，通过使用预定义标签可以提升标签创建和迁移效率。具体请参见<a href="https://support.huaweicloud.com/usermanual-tms/zh-cn_topic_0144368884.html" target="_blank" rel="noopener noreferrer">创建预定义标签</a>。</p>
-    <p id="p1738110524401"><a name="p1738110524401"></a><a name="p1738110524401"></a>CCE服务会自动帮您创建CCE-Dynamic-Provisioning-Node=节点id的标签，允许增加5个标签。</p>
+    <p id="p1738110524401"><a name="p1738110524401"></a><a name="p1738110524401"></a>CCE服务会自动帮您创建CCE-Dynamic-Provisioning-Node=节点id的标签。</p>
     </td>
     </tr>
     <tr id="row115391952402"><td class="cellrowborder" valign="top" width="23.68%" headers="mcps1.2.3.1.1 "><p id="p55391457404"><a name="p55391457404"></a><a name="p55391457404"></a>Taints</p>
@@ -188,6 +187,12 @@ CCE Turbo集群创建完成后，您可以在集群中购买节点。
     </td>
     <td class="cellrowborder" valign="top" width="76.32%" headers="mcps1.2.3.1.2 "><p id="p1114204119418"><a name="p1114204119418"></a><a name="p1114204119418"></a>请输入脚本命令，大小限制为0~1000字符。</p>
     <p id="p13471136154110"><a name="p13471136154110"></a><a name="p13471136154110"></a>脚本将在Kubernetes软件安装后执行，不影响Kubernetes软件安装。常用于修改Docker配置参数等场景。</p>
+    </td>
+    </tr>
+    <tr id="row3366174093118"><td class="cellrowborder" valign="top" width="23.68%" headers="mcps1.2.3.1.1 "><p id="p123672040183119"><a name="p123672040183119"></a><a name="p123672040183119"></a>委托</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="76.32%" headers="mcps1.2.3.1.2 "><p id="p15869944123119"><a name="p15869944123119"></a><a name="p15869944123119"></a>委托是由租户管理员在统一身份认证服务上创建的。通过委托，可以将云主机资源共享给其他帐号，或委托更专业的人或团队来代为管理。</p>
+    <p id="p151464163220"><a name="p151464163220"></a><a name="p151464163220"></a>如果没有委托请单击右侧<span class="uicontrol" id="uicontrol1182452533216"><a name="uicontrol1182452533216"></a><a name="uicontrol1182452533216"></a>“新建委托”</span>创建。</p>
     </td>
     </tr>
     <tr id="row1864641094712"><td class="cellrowborder" valign="top" width="23.68%" headers="mcps1.2.3.1.1 "><p id="p18875831124716"><a name="p18875831124716"></a><a name="p18875831124716"></a>计费</p>

@@ -16,6 +16,10 @@ NodeLocal DNSCache 通过在集群节点上运行 DNS缓存代理来提高集群
 **图 1**  NodeLocal DNSCache查询路径<a name="fig36421622164815"></a>  
 ![](figures/NodeLocal-DNSCache查询路径.png "NodeLocal-DNSCache查询路径")
 
+## 约束与限制<a name="section14526182184014"></a>
+
+本文方法暂时仅适用CCE集群。CCE Turbo集群方法后续提供。
+
 ## 安装NodeLocal DNSCache<a name="section11787193017350"></a>
 
 NodeLocal DNSCache定义地址为[https://github.com/kubernetes/kubernetes/blob/master/cluster/addons/dns/nodelocaldns/nodelocaldns.yaml](https://github.com/kubernetes/kubernetes/blob/master/cluster/addons/dns/nodelocaldns/nodelocaldns.yaml)

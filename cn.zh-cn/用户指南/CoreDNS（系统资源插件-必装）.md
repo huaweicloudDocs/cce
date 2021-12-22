@@ -15,7 +15,7 @@ CoreDNS官网：[https://coredns.io/](https://coredns.io/)
 开源社区地址：[https://github.com/coredns/coredns](https://github.com/coredns/coredns)
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->DNS详细使用方法请参见[工作负载DNS配置说明](工作负载DNS配置说明.md)或[通过kubectl配置kube-dns/CoreDNS高可用](通过kubectl配置kube-dns-CoreDNS高可用.md)。
+>DNS详细使用方法请参见[工作负载DNS配置说明](工作负载DNS配置说明.md)。
 
 ## 约束与限制<a name="section10849134521812"></a>
 
@@ -202,12 +202,91 @@ DNS策略可以在每个pod基础上进行设置，目前，Kubernetes支持**De
 **图 1**  路由请求流程<a name="fig7582181514118"></a>  
 ![](figures/路由请求流程.png "路由请求流程")
 
+## 自定义CoreDNS规格<a name="section4821153719377"></a>
+
+CoreDNS在插件界面仅支持按预设规格配置，通常情况下，这满足绝大多数使用场景。但在一些少数对CoreDNS资源用量有要求的场景下，不能根据需要灵活配置。
+
+下面介绍CoreDNS参数自定义配置方法，包括副本数量、CPU/内存的大小等。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>-   CoreDNS修改配置需额外谨慎，因为CoreDNS负责集群的域名解析任务，修改不当可能会导致集群解析出现异常。请做好修改前后的测试验证。
+>-   CoreDNS使用资源的规格与解析能力相关，修改CoreDNS副本数量、CPU/内存的大小会对影响解析性能，请经过评估后再做修改。
+>-   CoreDNS插件默认配置了podAntiAffinity（Pod反亲和），当一个节点已有一个CoreDNS Pod时无法再添加新的Pod，即一个节点上只能运行一个CoreDNS Pod。如果您配置的CoreDNS副本数量大于集群节点数量，会导致多出的Pod无法调度。建议Pod的副本数量不大于节点的数量。
+
+1.  调用[插件查询接口](https://support.huaweicloud.com/api-cce/cce_02_0326.html)查看已安装CoreDNS的插件ID。
+
+    GET https://\{cluster\_id\}.\{endpoint\}/api/v3/addons?cluster\_id=\{cluster\_id\}
+
+    接口调用方法请参见[如何调用API](https://support.huaweicloud.com/api-cce/cce_02_0099.html)，其中\{cluster\_id\}为集群的ID，集群ID可以在控制台的集群详情页面中查看；\{endpoint\}为CCE的访问地址，可以从[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)获取，例如上海一区域为cce.east-3.myhuaweicloud.com。
+
+    在响应中查看CoreDNS的uid，和spec定义，如下所示。
+
+    ```
+    {
+        "kind": "Addon",
+        "apiVersion": "v3",
+        "items": [
+            {
+                "kind": "Addon",
+                "apiVersion": "v3",
+                "metadata": {
+                    "uid": "2083381d-46ae-11ec-91a8-0255ac1000c5",
+                    "name": "coredns",
+                    "creationTimestamp": "2021-11-16T07:23:42Z",
+                    "updateTimestamp": "2021-11-16T07:27:35Z"
+                },
+                "spec": {
+                    "clusterID": "15d748b4-3de1-11ec-9199-0255ac1000c9",
+                    "version": "1.17.9",
+                    "addonTemplateName": "coredns",
+                    "addonTemplateType": "helm",
+    ...
+    ```
+
+2.  调用[修改插件接口](https://support.huaweicloud.com/api-cce/cce_02_0323.html)修改插件的规格。
+
+    PUT https://\{cluster\_id\}.\{endpoint\}/api/v3/addons/\{uid\}
+
+    其中\{cluster\_id\}为集群的ID；\{endpoint\}为CCE的访问地址，可以从[地区和终端节点](https://developer.huaweicloud.com/endpoint?CCE)获取；\{uid\}为上一步查询到的插件ID。
+
+    请求Body示例如下，spec定义从上一步中查询到的内容，根据需求修改其中replicas（副本数量），resources（单个Pod的CPU/内存的使用量配置）；clusterID、version保持不变，addon.upgrade/type的取值必须为patch。
+
+    ```
+    {
+        "metadata": {
+            "annotations": {
+                "addon.upgrade/type": "patch"
+            }
+        },
+        "spec": {
+            "clusterID": "15d748b4-3de1-11ec-9199-0255ac1000c9",
+            "version": "1.17.9",
+            "addonTemplateName": "coredns",
+            "values": {
+                "flavor": {
+                    "replicas": 2,
+                    "resources": [
+                        {
+                            "limitsCpu": "500m",
+                            "limitsMem": "512Mi",
+                            "requestsCpu": "500m",
+                            "requestsMem": "512Mi"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+    ```
+
+
 ## 升级插件<a name="section19566181513486"></a>
 
 1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“升级“。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
+    >-   升级时之前的配置会丢失，需要重新配置。
     >-   升级coredns插件时，会替换原先节点上的旧版本的coredns插件，安装最新版本的coredns插件以实现功能的快速升级。如果升级出现异常，请卸载插件后重新安装和配置。
 
 2.  在基本信息页面选择插件版本，单击“下一步“。

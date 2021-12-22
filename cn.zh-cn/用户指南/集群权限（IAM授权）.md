@@ -23,6 +23,9 @@ CCE控制台“权限管理 \> 集群权限“页面中创建用户组和具体�
 
     在IAM控制台创建用户组，并授予CCE权限，例如CCEReadOnlyAccess。
 
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >CCE服务按区域部署，在IAM控制台中授予CCE权限时请选择“区域级项目“。
+
 2.  [创建用户并加入用户组](https://support.huaweicloud.com/usermanual-iam/iam_02_0001.html)。
 
     在IAM控制台创建用户，并将其加入[1](#li10176121316284)中创建的用户组。

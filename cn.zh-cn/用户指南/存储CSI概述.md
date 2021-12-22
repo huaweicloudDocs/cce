@@ -2,7 +2,7 @@
 
 容器存储是为容器工作负载提供存储的组件，支持多种类型的存储，同一个工作负载（pod\)可以使用任意数量的存储。
 
-云容器引擎CCE的容器存储功能基于Kubernetes存储系统，并深度融合华为云存储服务，完全兼容Kubernetes原生的存储服务，例如EmptyDir、HostPath、Secret、ConfigMap等存储。CCE基于Kubernetes社区容器存储接口（CSI，即Container Storage Interface）实现了华为云存储服务接入能力，旨在能为容器编排引擎和存储系统间建立一套标准的存储调用接口，通过该接口能为容器编排引擎提供存储服务。
+云容器引擎CCE的容器存储功能基于Kubernetes存储系统，并深度融合云存储服务，完全兼容Kubernetes原生的存储服务，例如EmptyDir、HostPath、Secret、ConfigMap等存储。CCE基于Kubernetes社区容器存储接口（CSI，即Container Storage Interface）实现了云存储服务接入能力，旨在能为容器编排引擎和存储系统间建立一套标准的存储调用接口，通过该接口能为容器编排引擎提供存储服务。
 
 **在CCE集群中的CSI容器存储插件名为[Everest](Everest（系统资源插件-必装）.md)**，集群版本为Kubernetes 1.15及以上时默认安装该插件。
 

@@ -41,7 +41,7 @@ Everest在1.2.8及以上版本提供了设置自定义访问密钥的能力，�
 
     获取访问密钥的方法，具体请参见[获取访问密钥（AK/SK）](https://support.huaweicloud.com/qs-obs/obs_qs_0005.html)。
 
-2.  对访问密钥进行base64编码（假设上文获取到的ak为“xxx”，sk为“yyy”）
+2.  对访问密钥进行base64编码（假设上文获取到的ak为“xxx”，sk为“yyy”）。
 
     **echo -n xxx|base64**
 
@@ -49,17 +49,19 @@ Everest在1.2.8及以上版本提供了设置自定义访问密钥的能力，�
 
     记录编码后的AK和SK。
 
-3.  新建一个secret的yaml，如test-user.yaml
+3.  新建一个secret的yaml，如test-user.yaml。
 
     ```
     apiVersion: v1
     data:
-      access.key: WE5WWVhVNUMyTjNGTkFXSkEzQUE=
-      secret.key: Nnk4emJyZ0FiUnlrcHBvMnJ2b2kxSTk0ekRnd1pYOVh3akxnQVJxUw==
+      access.key: WE5WWVhVNU*****
+      secret.key: Nnk4emJyZ0*****
     kind: Secret
     metadata:
       name: test-user
       namespace: default
+      labels:
+        secret.kubernetes.io/used-by: csi
     type: cfe/secure-opaque
     ```
 
@@ -92,6 +94,11 @@ Everest在1.2.8及以上版本提供了设置自定义访问密钥的能力，�
     <td class="cellrowborder" valign="top" width="73.57000000000001%" headers="mcps1.1.3.1.2 "><p id="p551243461015"><a name="p551243461015"></a><a name="p551243461015"></a>secret的命名空间</p>
     </td>
     </tr>
+    <tr id="row16799198182814"><td class="cellrowborder" valign="top" width="26.43%" headers="mcps1.1.3.1.1 "><p id="p0245182232816"><a name="p0245182232816"></a><a name="p0245182232816"></a>secret.kubernetes.io/used-by: csi</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="73.57000000000001%" headers="mcps1.1.3.1.2 "><p id="p380018122814"><a name="p380018122814"></a><a name="p380018122814"></a>带上这个标签才能在CCE新版控制台UI上创建OBS PV/PVC时可见。</p>
+    </td>
+    </tr>
     <tr id="row1451283421016"><td class="cellrowborder" valign="top" width="26.43%" headers="mcps1.1.3.1.1 "><p id="p25121234161018"><a name="p25121234161018"></a><a name="p25121234161018"></a>type</p>
     </td>
     <td class="cellrowborder" valign="top" width="73.57000000000001%" headers="mcps1.1.3.1.2 "><p id="p851212346102"><a name="p851212346102"></a><a name="p851212346102"></a>密钥类型，该值必须为cfe/secure-opaque</p>
@@ -108,11 +115,10 @@ Everest在1.2.8及以上版本提供了设置自定义访问密钥的能力，�
 
 ## 静态创建对象存储卷时指定挂载Secret<a name="section14417324114618"></a>
 
-使用访问密钥创建Secret后，在创建PV时只需要关联上Secret，就可以使用Secret中的访问密钥（AK/SK）挂载对象存储卷。如下所示。
+使用访问密钥创建Secret后，在创建PV时只需要关联上Secret，就可以使用Secret中的访问密钥（AK/SK）挂载对象存储卷。
 
-1.  新建一个pv的yaml文件，如pv-example.yaml
-
-    以并行文件系统为例，仅展示pv的创建示例。
+1.  登录OBS控制台，创建对象存储桶，记录桶名称和存储类型，以并行文件系统为例。
+2.  新建一个pv的yaml文件，如pv-example.yaml。
 
     ```
     apiVersion: v1
@@ -138,6 +144,7 @@ Everest在1.2.8及以上版本提供了设置自定义访问密钥的能力，�
           storage.kubernetes.io/csiProvisionerIdentity: everest-csi-provisioner
         volumeHandle: obs-normal-static-pv
       persistentVolumeReclaimPolicy: Delete
+      storageClassName: csi-obs
     ```
 
     <a name="table6615161819296"></a>
@@ -153,21 +160,83 @@ Everest在1.2.8及以上版本提供了设置自定义访问密钥的能力，�
     <a name="ul1061862010115"></a><a name="ul1061862010115"></a><ul id="ul1061862010115"><li>name：指定secret的名字</li><li>namespace：指定secret的命令空间</li></ul>
     </td>
     </tr>
+    <tr id="row17768552185616"><td class="cellrowborder" valign="top" width="26.43%" headers="mcps1.1.3.1.1 "><p id="p98321261573"><a name="p98321261573"></a><a name="p98321261573"></a>fsType</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="73.57000000000001%" headers="mcps1.1.3.1.2 "><p id="p168323610576"><a name="p168323610576"></a><a name="p168323610576"></a>文件类型，支持“obsfs”与“s3fs”，取值为s3fs时创建是obs对象桶，配套使用s3fs挂载；取值为obsfs时创建的是obs并行文件系统，配套使用obsfs挂载，推荐使用。</p>
+    </td>
+    </tr>
+    <tr id="row78891119135511"><td class="cellrowborder" valign="top" width="26.43%" headers="mcps1.1.3.1.1 "><p id="p17889141914554"><a name="p17889141914554"></a><a name="p17889141914554"></a>volumeHandle</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="73.57000000000001%" headers="mcps1.1.3.1.2 "><p id="p12890141918554"><a name="p12890141918554"></a><a name="p12890141918554"></a>对象存储的桶名称。</p>
+    </td>
+    </tr>
     </tbody>
     </table>
 
-2.  创建PV。
+3.  创建PV。
 
     **kubectl create -f pv-example.yaml**
 
-    PV创建完成后，就可以创建PVC（此时PVC不需要指定密钥）关联PV，然后创建工作负载关联PVC使用存储了。
+    PV创建完成后，就可以创建PVC关联PV。
+
+4.  新建一个PVC的yaml文件，如pvc-example.yaml。
+
+    **PVC yaml文件配置示例：**
+
+    ```
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      annotations:
+        csi.storage.k8s.io/node-publish-secret-name: test-user
+        csi.storage.k8s.io/node-publish-secret-namespace: default
+        volume.beta.kubernetes.io/storage-provisioner: everest-csi-provisioner
+        everest.io/obs-volume-type: STANDARD
+        csi.storage.k8s.io/fstype: obsfs
+      name: obs-secret
+      namespace: default
+    spec:
+      accessModes:
+      - ReadWriteMany
+      resources:
+        requests:
+          storage: 1Gi
+      storageClassName: csi-obs
+      volumeName: pv-obs-example
+    ```
+
+    <a name="table36670218280"></a>
+    <table><thead align="left"><tr id="row166713212813"><th class="cellrowborder" valign="top" width="44.89%" id="mcps1.1.3.1.1"><p id="p16675202812"><a name="p16675202812"></a><a name="p16675202812"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="55.11000000000001%" id="mcps1.1.3.1.2"><p id="p156674217284"><a name="p156674217284"></a><a name="p156674217284"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row866717219285"><td class="cellrowborder" valign="top" width="44.89%" headers="mcps1.1.3.1.1 "><p id="p196674219287"><a name="p196674219287"></a><a name="p196674219287"></a>csi.storage.k8s.io/node-publish-secret-name</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="55.11000000000001%" headers="mcps1.1.3.1.2 "><p id="p1466715214280"><a name="p1466715214280"></a><a name="p1466715214280"></a>指定secret的名字</p>
+    </td>
+    </tr>
+    <tr id="row1966762142811"><td class="cellrowborder" valign="top" width="44.89%" headers="mcps1.1.3.1.1 "><p id="p866718272816"><a name="p866718272816"></a><a name="p866718272816"></a>csi.storage.k8s.io/node-publish-secret-namespace</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="55.11000000000001%" headers="mcps1.1.3.1.2 "><p id="p11667142182814"><a name="p11667142182814"></a><a name="p11667142182814"></a>指定secret的命令空间</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
+5.  创建PVC。
+
+    **kubectl create -f pvc-example.yaml**
+
+    PVC创建后，就可以创建工作负载挂载PVC使用存储。
 
 
 ## 动态创建对象存储卷时指定挂载密钥<a name="section204171024144619"></a>
 
 动态创建对象存储卷时，可通过如下方法指定挂载密钥。
 
-1.  新建一个pvc的yaml文件，如pvc-example.yaml
+1.  新建一个pvc的yaml文件，如pvc-example.yaml。
 
     ```
     apiVersion: v1

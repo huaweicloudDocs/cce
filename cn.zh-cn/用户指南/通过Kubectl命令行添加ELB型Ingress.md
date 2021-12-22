@@ -241,9 +241,9 @@
     <a name="table16506637185112"></a>
     <table><thead align="left"><tr id="row2050623765112"><th class="cellrowborder" valign="top" width="24.612461246124614%" id="mcps1.2.5.1.1"><p id="p150643718512"><a name="p150643718512"></a><a name="p150643718512"></a>参数</p>
     </th>
-    <th class="cellrowborder" valign="top" width="14.481448144814483%" id="mcps1.2.5.1.2"><p id="p10506237155119"><a name="p10506237155119"></a><a name="p10506237155119"></a>是否必填</p>
+    <th class="cellrowborder" valign="top" width="14.471447144714473%" id="mcps1.2.5.1.2"><p id="p10506237155119"><a name="p10506237155119"></a><a name="p10506237155119"></a>是否必填</p>
     </th>
-    <th class="cellrowborder" valign="top" width="15.771577157715772%" id="mcps1.2.5.1.3"><p id="p135061837115111"><a name="p135061837115111"></a><a name="p135061837115111"></a>参数类型</p>
+    <th class="cellrowborder" valign="top" width="15.781578157815781%" id="mcps1.2.5.1.3"><p id="p135061837115111"><a name="p135061837115111"></a><a name="p135061837115111"></a>参数类型</p>
     </th>
     <th class="cellrowborder" valign="top" width="45.13451345134513%" id="mcps1.2.5.1.4"><p id="p17506137145113"><a name="p17506137145113"></a><a name="p17506137145113"></a>描述</p>
     </th>
@@ -251,9 +251,9 @@
     </thead>
     <tbody><tr id="row125065373511"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p1750693775120"><a name="p1750693775120"></a><a name="p1750693775120"></a>type</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p25065377517"><a name="p25065377517"></a><a name="p25065377517"></a>否</p>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p25065377517"><a name="p25065377517"></a><a name="p25065377517"></a>否</p>
     </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p8506103715114"><a name="p8506103715114"></a><a name="p8506103715114"></a>String</p>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p8506103715114"><a name="p8506103715114"></a><a name="p8506103715114"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p0506163719514"><a name="p0506163719514"></a><a name="p0506163719514"></a>负载均衡实例网络类型，公网或者私网。</p>
     <a name="ul050623710510"></a><a name="ul050623710510"></a><ul id="ul050623710510"><li>public：公网型负载均衡</li><li>inner：私网型负载均衡</li></ul>
@@ -262,9 +262,9 @@
     </tr>
     <tr id="row1350611372510"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p125061337135114"><a name="p125061337135114"></a><a name="p125061337135114"></a>bandwidth_name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p1950613795114"><a name="p1950613795114"></a><a name="p1950613795114"></a>是</p>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p1950613795114"><a name="p1950613795114"></a><a name="p1950613795114"></a>公网型负载均衡必填</p>
     </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p155071337165110"><a name="p155071337165110"></a><a name="p155071337165110"></a>String</p>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p155071337165110"><a name="p155071337165110"></a><a name="p155071337165110"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p13507103712516"><a name="p13507103712516"></a><a name="p13507103712516"></a>带宽的名称，默认值为：cce-bandwidth-******。</p>
     <p id="p12507737155120"><a name="p12507737155120"></a><a name="p12507737155120"></a>取值范围：1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</p>
@@ -272,19 +272,20 @@
     </tr>
     <tr id="row115075378519"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p1950703714517"><a name="p1950703714517"></a><a name="p1950703714517"></a>bandwidth_chargemode</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p350711377513"><a name="p350711377513"></a><a name="p350711377513"></a>是</p>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p350711377513"><a name="p350711377513"></a><a name="p350711377513"></a>是</p>
     </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p1150715373512"><a name="p1150715373512"></a><a name="p1150715373512"></a>String</p>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p1150715373512"><a name="p1150715373512"></a><a name="p1150715373512"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p35071337125116"><a name="p35071337125116"></a><a name="p35071337125116"></a>带宽付费模式。</p>
     <a name="ul15507737175114"></a><a name="ul15507737175114"></a><ul id="ul15507737175114"><li>bandwidth：按带宽计费</li><li>traffic：按流量计费</li></ul>
+    <p id="p6473347426"><a name="p6473347426"></a><a name="p6473347426"></a>默认值：bandwidth</p>
     </td>
     </tr>
     <tr id="row1650773718518"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p19507153718517"><a name="p19507153718517"></a><a name="p19507153718517"></a>bandwidth_size</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p1250783785118"><a name="p1250783785118"></a><a name="p1250783785118"></a>是</p>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p1250783785118"><a name="p1250783785118"></a><a name="p1250783785118"></a>公网型负载均衡必填</p>
     </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p55071837115117"><a name="p55071837115117"></a><a name="p55071837115117"></a>Integer</p>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p55071837115117"><a name="p55071837115117"></a><a name="p55071837115117"></a>Integer</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p6507153735115"><a name="p6507153735115"></a><a name="p6507153735115"></a>带宽大小，默认取值范围为1Mbit/s~2000Mbit/s，具体范围请根据各Region配置为准。</p>
     <a name="ul751320276014"></a><a name="ul751320276014"></a><ul id="ul751320276014"><li>注意：调整带宽时的最小单位会根据带宽范围不同存在差异。<a name="ul95134272011"></a><a name="ul95134272011"></a><ul id="ul95134272011"><li>小于等于300Mbit/s：默认最小单位为1Mbit/s。</li><li>300Mbit/s~1000Mbit/s：默认最小单位为50Mbit/s。</li><li>大于1000Mbit/s：默认最小单位为500Mbit/s。</li></ul>
@@ -293,9 +294,9 @@
     </tr>
     <tr id="row2050743716519"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p65071937195115"><a name="p65071937195115"></a><a name="p65071937195115"></a>bandwidth_sharetype</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p1850793715120"><a name="p1850793715120"></a><a name="p1850793715120"></a>是</p>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p1850793715120"><a name="p1850793715120"></a><a name="p1850793715120"></a>公网型负载均衡必填</p>
     </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p105071937185111"><a name="p105071937185111"></a><a name="p105071937185111"></a>String</p>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p105071937185111"><a name="p105071937185111"></a><a name="p105071937185111"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p125077372515"><a name="p125077372515"></a><a name="p125077372515"></a>带宽类型。</p>
     <a name="ul85073373515"></a><a name="ul85073373515"></a><ul id="ul85073373515"><li>PER：独享带宽</li></ul>
@@ -303,9 +304,9 @@
     </tr>
     <tr id="row1250703712518"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p105077373513"><a name="p105077373513"></a><a name="p105077373513"></a>eip_type</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p95078375516"><a name="p95078375516"></a><a name="p95078375516"></a>是</p>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p95078375516"><a name="p95078375516"></a><a name="p95078375516"></a>公网型负载均衡必填</p>
     </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p15507937155113"><a name="p15507937155113"></a><a name="p15507937155113"></a>String</p>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p15507937155113"><a name="p15507937155113"></a><a name="p15507937155113"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p5507337195110"><a name="p5507337195110"></a><a name="p5507337195110"></a>弹性公网IP类型。</p>
     <a name="ul550719375516"></a><a name="ul550719375516"></a><ul id="ul550719375516"><li>5_telcom：电信</li><li>5_union：联通</li><li>5_bgp：全动态BGP</li><li>5_sbgp：静态BGP</li></ul>
@@ -313,20 +314,30 @@
     </tr>
     <tr id="row194917913265"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p209611962610"><a name="p209611962610"></a><a name="p209611962610"></a>name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p196115910262"><a name="p196115910262"></a><a name="p196115910262"></a>否</p>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p196115910262"><a name="p196115910262"></a><a name="p196115910262"></a>否</p>
     </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p69611890269"><a name="p69611890269"></a><a name="p69611890269"></a>String</p>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p69611890269"><a name="p69611890269"></a><a name="p69611890269"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p1996110992612"><a name="p1996110992612"></a><a name="p1996110992612"></a>自动创建的负载均衡的名称。</p>
     <p id="p1496112982611"><a name="p1496112982611"></a><a name="p1496112982611"></a>取值范围：1-64个字符，小写字母，数字，下划线，小写字母开头，小写字母或者数字结尾。</p>
     <p id="p1696112912269"><a name="p1696112912269"></a><a name="p1696112912269"></a>默认值：cce-lb+ingress.UID</p>
     </td>
     </tr>
+    <tr id="row0137103719206"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p11871111191717"><a name="p11871111191717"></a><a name="p11871111191717"></a>vip_subnet_cidr_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p9871121112173"><a name="p9871121112173"></a><a name="p9871121112173"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p3871151131716"><a name="p3871151131716"></a><a name="p3871151131716"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p1687141121716"><a name="p1687141121716"></a><a name="p1687141121716"></a>指定ELB所在的子网。</p>
+    <p id="p1579416343117"><a name="p1579416343117"></a><a name="p1579416343117"></a>如不指定，则ELB与集群在同一个子网。</p>
+    </td>
+    </tr>
     <tr id="row119615269436"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p1621154554316"><a name="p1621154554316"></a><a name="p1621154554316"></a>available_zone</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p56211945184314"><a name="p56211945184314"></a><a name="p56211945184314"></a>是</p>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p56211945184314"><a name="p56211945184314"></a><a name="p56211945184314"></a>是</p>
     </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p1262194504316"><a name="p1262194504316"></a><a name="p1262194504316"></a>Array of strings</p>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p1262194504316"><a name="p1262194504316"></a><a name="p1262194504316"></a>Array of strings</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p17621114516437"><a name="p17621114516437"></a><a name="p17621114516437"></a>负载均衡所在可用区，必填项。</p>
     <p id="p662116457436"><a name="p662116457436"></a><a name="p662116457436"></a>独享型负载均衡器独有字段。</p>
@@ -334,9 +345,9 @@
     </tr>
     <tr id="row29101738204312"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p1962144584315"><a name="p1962144584315"></a><a name="p1962144584315"></a>l4_flavor_name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p20621194524315"><a name="p20621194524315"></a><a name="p20621194524315"></a>否</p>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p20621194524315"><a name="p20621194524315"></a><a name="p20621194524315"></a>否</p>
     </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p8621545164313"><a name="p8621545164313"></a><a name="p8621545164313"></a>String</p>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p8621545164313"><a name="p8621545164313"></a><a name="p8621545164313"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p116211455432"><a name="p116211455432"></a><a name="p116211455432"></a>四层负载均衡实例名称。</p>
     <p id="p15621164504310"><a name="p15621164504310"></a><a name="p15621164504310"></a>独享型负载均衡器独有字段。</p>
@@ -344,9 +355,9 @@
     </tr>
     <tr id="row3201342184318"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p0622174510434"><a name="p0622174510434"></a><a name="p0622174510434"></a>l7_flavor_name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p66221145124315"><a name="p66221145124315"></a><a name="p66221145124315"></a>是</p>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p66221145124315"><a name="p66221145124315"></a><a name="p66221145124315"></a>是</p>
     </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p1862216457432"><a name="p1862216457432"></a><a name="p1862216457432"></a>String</p>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p1862216457432"><a name="p1862216457432"></a><a name="p1862216457432"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p1662213454436"><a name="p1662213454436"></a><a name="p1662213454436"></a>七层负载均衡实例名称，必填项。</p>
     <p id="p762215452435"><a name="p762215452435"></a><a name="p762215452435"></a>独享型负载均衡器独有字段。</p>
@@ -354,9 +365,9 @@
     </tr>
     <tr id="row5152644104313"><td class="cellrowborder" valign="top" width="24.612461246124614%" headers="mcps1.2.5.1.1 "><p id="p12622104584315"><a name="p12622104584315"></a><a name="p12622104584315"></a>ElbVirSubnetIDs</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.481448144814483%" headers="mcps1.2.5.1.2 "><p id="p146225456438"><a name="p146225456438"></a><a name="p146225456438"></a>否</p>
+    <td class="cellrowborder" valign="top" width="14.471447144714473%" headers="mcps1.2.5.1.2 "><p id="p146225456438"><a name="p146225456438"></a><a name="p146225456438"></a>否</p>
     </td>
-    <td class="cellrowborder" valign="top" width="15.771577157715772%" headers="mcps1.2.5.1.3 "><p id="p36221145174313"><a name="p36221145174313"></a><a name="p36221145174313"></a>Array of strings</p>
+    <td class="cellrowborder" valign="top" width="15.781578157815781%" headers="mcps1.2.5.1.3 "><p id="p36221145174313"><a name="p36221145174313"></a><a name="p36221145174313"></a>Array of strings</p>
     </td>
     <td class="cellrowborder" valign="top" width="45.13451345134513%" headers="mcps1.2.5.1.4 "><p id="p2622114574311"><a name="p2622114574311"></a><a name="p2622114574311"></a>负载均衡后端所在子网，不填默认集群子网。不同实例规格将占用不同数量子网IP，不建议使用其他资源（如集群，节点等）的子网网段。</p>
     <p id="p10622645114312"><a name="p10622645114312"></a><a name="p10622645114312"></a>默认值：集群所在子网</p>
@@ -638,6 +649,32 @@ spec:
     <td class="cellrowborder" valign="top" width="57.92%" headers="mcps1.2.4.1.3 "><p id="p1692413685915"><a name="p1692413685915"></a><a name="p1692413685915"></a>ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:AES128-SHA256:AES256-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384</p>
     </td>
     </tr>
+    <tr id="row119241736105915"><td class="cellrowborder" valign="top" width="16.37%" headers="mcps1.2.4.1.1 "><p id="p192493605915"><a name="p192493605915"></a><a name="p192493605915"></a>TLS-1-0-WITH-1-3（独享型实例）</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.71%" headers="mcps1.2.4.1.2 "><p id="p6924203635910"><a name="p6924203635910"></a><a name="p6924203635910"></a>TLS 1.3</p>
+    <p id="p192412369599"><a name="p192412369599"></a><a name="p192412369599"></a>TLS 1.2</p>
+    <p id="p1892493675912"><a name="p1892493675912"></a><a name="p1892493675912"></a>TLS 1.1</p>
+    <p id="p209249369599"><a name="p209249369599"></a><a name="p209249369599"></a>TLS 1.0</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.92%" headers="mcps1.2.4.1.3 "><p id="p892433605916"><a name="p892433605916"></a><a name="p892433605916"></a>ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:AES128-SHA256:AES256-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES128-SHA:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:AES128-SHA:AES256-SHA:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:TLS_AES_128_CCM_8_SHA256:TLS_AES_128_CCM_SHA256</p>
+    </td>
+    </tr>
+    <tr id="row6924336155912"><td class="cellrowborder" valign="top" width="16.37%" headers="mcps1.2.4.1.1 "><p id="p1692493616591"><a name="p1692493616591"></a><a name="p1692493616591"></a>TLS-1-2-FS（独享型实例）</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.71%" headers="mcps1.2.4.1.2 "><p id="p15924113665912"><a name="p15924113665912"></a><a name="p15924113665912"></a>TLS 1.3</p>
+    <p id="p492453695917"><a name="p492453695917"></a><a name="p492453695917"></a>TLS 1.2</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.92%" headers="mcps1.2.4.1.3 "><p id="p16924113635914"><a name="p16924113635914"></a><a name="p16924113635914"></a>ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384</p>
+    </td>
+    </tr>
+    <tr id="row79249365599"><td class="cellrowborder" valign="top" width="16.37%" headers="mcps1.2.4.1.1 "><p id="p6924183612594"><a name="p6924183612594"></a><a name="p6924183612594"></a>TLS-1-2-FS-WITH-1-3（独享型实例）</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="25.71%" headers="mcps1.2.4.1.2 "><p id="p17924136155912"><a name="p17924136155912"></a><a name="p17924136155912"></a>TLS 1.3</p>
+    <p id="p492415366598"><a name="p492415366598"></a><a name="p492415366598"></a>TLS 1.2</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="57.92%" headers="mcps1.2.4.1.3 "><p id="p16924153616596"><a name="p16924153616596"></a><a name="p16924153616596"></a>ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:TLS_AES_128_CCM_8_SHA256:TLS_AES_128_CCM_SHA256</p>
+    </td>
+    </tr>
     </tbody>
     </table>
 
@@ -673,7 +710,7 @@ SNI允许同一个IP地址和端口号下对外提供多个基于TLS的访问域
 >-   用于SNI的证书需要指定域名，每个证书只能指定一个域名。支持泛域名证书。
 >-   安全策略选择（kubernetes.io/elb.tls-ciphers-policy）仅在1.17.11及以上版本的集群中支持。
 
-满足以上条件时可进行SNI配置，以自动创建关联ELB为例，yaml文件配置如下，本例中**sni-test-secret-1**、**sni-test-secret-2**为SNI证书，该证书指定的域名必须与证书中的域名一致。：
+满足以上条件时可进行SNI配置，以自动创建关联ELB为例，yaml文件配置如下，本例中**sni-test-secret-1**、**sni-test-secret-2**为SNI证书，该证书指定的域名必须与证书中的域名一致。
 
 ```
 apiVersion: networking.k8s.io/v1beta1

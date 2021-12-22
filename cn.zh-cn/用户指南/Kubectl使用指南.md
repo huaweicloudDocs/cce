@@ -9,10 +9,6 @@
 -   [通过Kubectl连接集群](通过kubectl连接集群.md)
 -   [通过web-terminal插件连接集群](web-terminal.md)
 
-## CoreDNS高可用<a name="section4965217185418"></a>
-
--   [通过kubectl配置kube-dns高可用](通过kubectl配置kube-dns-CoreDNS高可用.md)
-
 ## 创建工作负载<a name="section81661268550"></a>
 
 -   [通过Kubectl创建无状态工作负载](创建无状态负载(Deployment).md#section155246177178)

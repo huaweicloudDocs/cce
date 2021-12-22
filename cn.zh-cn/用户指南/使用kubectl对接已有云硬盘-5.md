@@ -69,7 +69,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
           name: pv-evs-example 
         spec: 
           accessModes: 
-          - ReadWriteMany 
+          - ReadWriteOnce 
           capacity: 
             storage: 10Gi 
           claimRef:
@@ -177,7 +177,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
           namespace: default  
         spec:  
           accessModes:  
-          - ReadWriteMany  
+          - ReadWriteOnce  
           resources:  
             requests:  
               storage: 10Gi
@@ -243,7 +243,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
           name: pv-evs-example 
         spec: 
           accessModes: 
-          - ReadWriteMany 
+          - ReadWriteOnce
           capacity: 
             storage: 10Gi 
           flexVolume: 
@@ -325,7 +325,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
           namespace: default  
         spec:  
           accessModes:  
-          - ReadWriteMany  
+          - ReadWriteOnce
           resources:  
             requests:  
               storage: 10Gi
@@ -392,7 +392,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
           namespace: default 
         spec: 
           accessModes: 
-          - ReadWriteMany 
+          - ReadWriteOnce
           capacity: 
             storage: 10Gi 
           flexVolume: 
@@ -475,7 +475,7 @@ CCE支持使用已有的EVS云硬盘创建PersistentVolume。创建成功后，�
           namespace: default  
         spec:  
           accessModes:  
-          - ReadWriteMany  
+          - ReadWriteOnce 
           resources:  
             requests:  
               storage: 10Gi

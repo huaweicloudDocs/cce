@@ -18,8 +18,10 @@
     -   1.15及之前版本集群使用的ELB实例请不要修改监听器名称，否则可能导致无法正常访问。
 
 -   创建service后，如果[服务亲和](#li36098269511)从集群级别切换为节点级别，连接跟踪表将不会被清理，建议用户创建service后不要修改服务亲和属性，如需修改请重新创建service。
+-   当服务亲和设置为节点级别（即externalTrafficPolicy为local）时，集群内部可能使用ELB地址访问不通，具体情况请参见[集群内使用ELB地址无法访问Service说明](#section52631714117)。
 -   独享型ELB仅支持1.17及以上集群。
 -   使用控制台创建LoadBalancer类型Service时会自动生成一个节点端口（nodeport），端口号随机。使用kubectl创建LoadBalancer类型Service时，如不指定节点端口，也会随机生成一个节点端口，端口号随机。
+-   使用CCE集群时，如果LoadBalancer类型Service的服务亲和类型为集群级别（cluster），当请求进入到集群时，会使用SNAT分发到各个节点的节点端口（nodeport），不能超过节点可用的nodeport数量，而服务亲和为节点级别（local）则无此约束。使用CCE Turbo集群时，如果是使用共享型ELB依然有此约束，而独享型ELB无此约束，建议使用CCE Turbo时配合使用独享型ELB。
 
 ## 工作负载创建时设置<a name="section744117150366"></a>
 
@@ -136,12 +138,11 @@
     metadata: 
       annotations:
         kubernetes.io/elb.class: union
-        kubernetes.io/session-affinity-mode: SOURCE_IP
+        kubernetes.io/elb.session-affinity-mode: SOURCE_IP
         kubernetes.io/elb.id: 3c7caa5a-a641-4bff-801a-feace27424b6          # ELB实例ID，替换为实际值
         kubernetes.io/elb.subnet-id: 5083f225-9bf8-48fa-9c8b-67bd9693c4c0   # ELB实例所在子网ID，替换为实际值
       name: nginx 
     spec: 
-      externalTrafficPolicy: Local
       ports: 
       - name: service0 
         port: 80
@@ -177,7 +178,7 @@
     <p id="p861911425283"><a name="p861911425283"></a><a name="p861911425283"></a>默认值：union</p>
     </td>
     </tr>
-    <tr id="row8353174763911"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p6353144783916"><a name="p6353144783916"></a><a name="p6353144783916"></a>kubernetes.io/session-affinity-mode</p>
+    <tr id="row8353174763911"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p6353144783916"><a name="p6353144783916"></a><a name="p6353144783916"></a>kubernetes.io/elb.session-affinity-mode</p>
     </td>
     <td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p157989412514"><a name="p157989412514"></a><a name="p157989412514"></a>否</p>
     </td>
@@ -249,6 +250,24 @@
     <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.3 "><p id="p187081019312"><a name="p187081019312"></a><a name="p187081019312"></a><a href="#table236017471397">表3</a> Object</p>
     </td>
     <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p7870111013310"><a name="p7870111013310"></a><a name="p7870111013310"></a>ELB健康检查配置选项。</p>
+    </td>
+    </tr>
+    <tr id="row1574163314103"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p25247365105"><a name="p25247365105"></a><a name="p25247365105"></a>kubernetes.io/elb.protocol-port</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p1352419363103"><a name="p1352419363103"></a><a name="p1352419363103"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.3 "><p id="p115244366104"><a name="p115244366104"></a><a name="p115244366104"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p17524143691013"><a name="p17524143691013"></a><a name="p17524143691013"></a>Service使用7层能力配置端口。具体请参见<a href="#section833011453318">Service使用HTTP</a>。</p>
+    </td>
+    </tr>
+    <tr id="row19579142951016"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p652493681013"><a name="p652493681013"></a><a name="p652493681013"></a>kubernetes.io/elb.cert-id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p352512369106"><a name="p352512369106"></a><a name="p352512369106"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.3 "><p id="p14525113691012"><a name="p14525113691012"></a><a name="p14525113691012"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p17525536181016"><a name="p17525536181016"></a><a name="p17525536181016"></a>Service使用7层能力配置HTTPS证书。具体请参见<a href="#section833011453318">Service使用HTTP</a>。</p>
     </td>
     </tr>
     <tr id="row133406444451"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p16341194444516"><a name="p16341194444516"></a><a name="p16341194444516"></a>kubernetes.io/elb.pass-through</p>
@@ -470,7 +489,7 @@
     metadata: 
       annotations:   
         kubernetes.io/elb.class: union
-        kubernetes.io/session-affinity-mode: SOURCE_IP
+        kubernetes.io/elb.session-affinity-mode: SOURCE_IP
         kubernetes.io/elb.subnet-id: ca5b861e-4e13-480a-996a-6c84c1d9538d    # ELB实例所在子网ID，替换为实际取值
         kubernetes.io/elb.enterpriseID: '0'
         kubernetes.io/elb.autocreate: 
@@ -487,7 +506,6 @@
         app: nginx 
       name: nginx 
     spec: 
-      externalTrafficPolicy: Local
       ports: 
       - name: service0 
         port: 80
@@ -535,7 +553,6 @@
     spec:
       selector:
         app: nginx
-      externalTrafficPolicy: Local
       ports:
       - name: cce-service-0
         targetPort: 80
@@ -648,6 +665,24 @@
     <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p933489175020"><a name="p933489175020"></a><a name="p933489175020"></a>ELB健康检查配置选项。</p>
     </td>
     </tr>
+    <tr id="row3360134514319"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p14360154510319"><a name="p14360154510319"></a><a name="p14360154510319"></a>kubernetes.io/elb.protocol-port</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p1936024518318"><a name="p1936024518318"></a><a name="p1936024518318"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.3 "><p id="p12360164512310"><a name="p12360164512310"></a><a name="p12360164512310"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p113603453318"><a name="p113603453318"></a><a name="p113603453318"></a>Service使用7层能力配置端口。具体请参见<a href="#section833011453318">Service使用HTTP</a>。</p>
+    </td>
+    </tr>
+    <tr id="row6360174119318"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p19360541138"><a name="p19360541138"></a><a name="p19360541138"></a>kubernetes.io/elb.cert-id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p20360441734"><a name="p20360441734"></a><a name="p20360441734"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.3 "><p id="p536024112315"><a name="p536024112315"></a><a name="p536024112315"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p1236011413313"><a name="p1236011413313"></a><a name="p1236011413313"></a>Service使用7层能力配置HTTPS证书。具体请参见<a href="#section833011453318">Service使用HTTP</a>。</p>
+    </td>
+    </tr>
     <tr id="row68561030194816"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p751093484811"><a name="p751093484811"></a><a name="p751093484811"></a>kubernetes.io/elb.pass-through</p>
     </td>
     <td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p155106348481"><a name="p155106348481"></a><a name="p155106348481"></a>否</p>
@@ -657,7 +692,7 @@
     <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p10510123411481"><a name="p10510123411481"></a><a name="p10510123411481"></a>集群内访问Service是否经过ELB。具体使用场景和说明请参见<a href="LoadBalancer类型Service使用pass-through能力.md">LoadBalancer类型Service使用pass-through能力</a>。</p>
     </td>
     </tr>
-    <tr id="row638444875814"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p9331159155018"><a name="p9331159155018"></a><a name="p9331159155018"></a>kubernetes.io/session-affinity-mode</p>
+    <tr id="row638444875814"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p9331159155018"><a name="p9331159155018"></a><a name="p9331159155018"></a>kubernetes.io/elb.session-affinity-mode</p>
     </td>
     <td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p7331179125018"><a name="p7331179125018"></a><a name="p7331179125018"></a>否</p>
     </td>
@@ -682,7 +717,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.3 "><p id="p33341990503"><a name="p33341990503"></a><a name="p33341990503"></a>String</p>
     </td>
-    <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p6334798502"><a name="p6334798502"></a><a name="p6334798502"></a>为标记工作负载服务是否使用主机网络模式。</p>
+    <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p6334798502"><a name="p6334798502"></a><a name="p6334798502"></a>为标记工作负载服务是否使用主机网络模式。如果Pod使用的主机网络，开启这个annotation会ELB转发到主机网络的方式对接。</p>
     <p id="p14334095506"><a name="p14334095506"></a><a name="p14334095506"></a>默认是未使用主机网络，取值范围：“true”或者“false”</p>
     </td>
     </tr>
@@ -735,7 +770,7 @@
     </tr>
     <tr id="row2397927194613"><td class="cellrowborder" valign="top" width="25.069999999999997%" headers="mcps1.2.5.1.1 "><p id="p12397122718464"><a name="p12397122718464"></a><a name="p12397122718464"></a>bandwidth_name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="12.29%" headers="mcps1.2.5.1.2 "><p id="p1129745332217"><a name="p1129745332217"></a><a name="p1129745332217"></a>否</p>
+    <td class="cellrowborder" valign="top" width="12.29%" headers="mcps1.2.5.1.2 "><p id="p1129745332217"><a name="p1129745332217"></a><a name="p1129745332217"></a>公网型负载均衡必填</p>
     </td>
     <td class="cellrowborder" valign="top" width="13.56%" headers="mcps1.2.5.1.3 "><p id="p16397182734610"><a name="p16397182734610"></a><a name="p16397182734610"></a>String</p>
     </td>
@@ -751,11 +786,12 @@
     </td>
     <td class="cellrowborder" valign="top" width="49.08%" headers="mcps1.2.5.1.4 "><p id="p83981227124616"><a name="p83981227124616"></a><a name="p83981227124616"></a>带宽付费模式。</p>
     <a name="ul33989277466"></a><a name="ul33989277466"></a><ul id="ul33989277466"><li>bandwidth：按带宽计费</li><li>traffic：按流量计费</li></ul>
+    <p id="p12711141632814"><a name="p12711141632814"></a><a name="p12711141632814"></a>默认类型：bandwidth</p>
     </td>
     </tr>
     <tr id="row19398122716461"><td class="cellrowborder" valign="top" width="25.069999999999997%" headers="mcps1.2.5.1.1 "><p id="p739892794619"><a name="p739892794619"></a><a name="p739892794619"></a>bandwidth_size</p>
     </td>
-    <td class="cellrowborder" valign="top" width="12.29%" headers="mcps1.2.5.1.2 "><p id="p639862719463"><a name="p639862719463"></a><a name="p639862719463"></a>否</p>
+    <td class="cellrowborder" valign="top" width="12.29%" headers="mcps1.2.5.1.2 "><p id="p639862719463"><a name="p639862719463"></a><a name="p639862719463"></a>公网型负载均衡必填</p>
     </td>
     <td class="cellrowborder" valign="top" width="13.56%" headers="mcps1.2.5.1.3 "><p id="p439882734619"><a name="p439882734619"></a><a name="p439882734619"></a>Integer</p>
     </td>
@@ -764,7 +800,7 @@
     </tr>
     <tr id="row193991627164615"><td class="cellrowborder" valign="top" width="25.069999999999997%" headers="mcps1.2.5.1.1 "><p id="p15399627174614"><a name="p15399627174614"></a><a name="p15399627174614"></a>bandwidth_sharetype</p>
     </td>
-    <td class="cellrowborder" valign="top" width="12.29%" headers="mcps1.2.5.1.2 "><p id="p1239962754620"><a name="p1239962754620"></a><a name="p1239962754620"></a>否</p>
+    <td class="cellrowborder" valign="top" width="12.29%" headers="mcps1.2.5.1.2 "><p id="p1239962754620"><a name="p1239962754620"></a><a name="p1239962754620"></a>公网型负载均衡必填</p>
     </td>
     <td class="cellrowborder" valign="top" width="13.56%" headers="mcps1.2.5.1.3 "><p id="p4399327124618"><a name="p4399327124618"></a><a name="p4399327124618"></a>String</p>
     </td>
@@ -774,12 +810,22 @@
     </tr>
     <tr id="row139952712463"><td class="cellrowborder" valign="top" width="25.069999999999997%" headers="mcps1.2.5.1.1 "><p id="p1139952764611"><a name="p1139952764611"></a><a name="p1139952764611"></a>eip_type</p>
     </td>
-    <td class="cellrowborder" valign="top" width="12.29%" headers="mcps1.2.5.1.2 "><p id="p266247192314"><a name="p266247192314"></a><a name="p266247192314"></a>否</p>
+    <td class="cellrowborder" valign="top" width="12.29%" headers="mcps1.2.5.1.2 "><p id="p266247192314"><a name="p266247192314"></a><a name="p266247192314"></a>公网型负载均衡必填</p>
     </td>
     <td class="cellrowborder" valign="top" width="13.56%" headers="mcps1.2.5.1.3 "><p id="p84001027124612"><a name="p84001027124612"></a><a name="p84001027124612"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="49.08%" headers="mcps1.2.5.1.4 "><p id="p440013273464"><a name="p440013273464"></a><a name="p440013273464"></a>弹性公网IP类型。</p>
     <a name="ul18765175214406"></a><a name="ul18765175214406"></a><ul id="ul18765175214406"><li>5_telcom：电信</li><li>5_union：联通</li><li>5_bgp：全动态BGP</li><li>5_sbgp：静态BGP</li></ul>
+    </td>
+    </tr>
+    <tr id="row1387015112170"><td class="cellrowborder" valign="top" width="25.069999999999997%" headers="mcps1.2.5.1.1 "><p id="p11871111191717"><a name="p11871111191717"></a><a name="p11871111191717"></a>vip_subnet_cidr_id</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="12.29%" headers="mcps1.2.5.1.2 "><p id="p9871121112173"><a name="p9871121112173"></a><a name="p9871121112173"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.56%" headers="mcps1.2.5.1.3 "><p id="p3871151131716"><a name="p3871151131716"></a><a name="p3871151131716"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="49.08%" headers="mcps1.2.5.1.4 "><p id="p1687141121716"><a name="p1687141121716"></a><a name="p1687141121716"></a>指定ELB所在的子网。</p>
+    <p id="p1579416343117"><a name="p1579416343117"></a><a name="p1579416343117"></a>如不指定，则ELB与集群在同一个子网。</p>
     </td>
     </tr>
     <tr id="row20400102713466"><td class="cellrowborder" valign="top" width="25.069999999999997%" headers="mcps1.2.5.1.1 "><p id="p140015271469"><a name="p140015271469"></a><a name="p140015271469"></a>available_zone</p>
@@ -880,4 +926,142 @@ LoadBalancer类型Service创建完后，可以在ELB控制台查看ELB实例的�
 ![](figures/ELB转发说明.png "ELB转发说明")
 
 可以看到这个ELB实例创建了一个监听器，其后端服务器为Pod所在的节点，后端服务器端口为Service的NodePort（节点端口）。当有流量通过ELB请求时，会转发给Pod所在节点IP:节点端口，也就是访问到了Service，从而访问到Pod，这跟[操作场景](#section19854101411508)中所述是一致的。
+
+## Service使用HTTP<a name="section833011453318"></a>
+
+Service支持使用ELB的7层能力，共享型和独享型ELB都支持对接。独享型ELB实例有如下限制：
+
+-   对接已有的独享型ELB实例，需要独享型ELB实例支持7层的flavor，否则会功能不可用。
+-   使用自动创建的ELB实例，注意使用独享型ELB实例的7层能力，需要在kubernetes.io/elb.autocreate的annotation中指定7层flavor。
+
+使用ELB的7层能力时，需要添加如下annotation
+
+-   **kubernetes.io/elb.protocol-port**: "https:443,http:80"
+
+    protocol-port的取值需要和service的spec.ports字段中的端口对应，格式为protocol:port，port中的端口会匹配service.spec.ports中端口，并将该端口发布成对应的protocol协议。
+
+-   **kubernetes.io/elb.cert-id**: "17e3b4f4bc40471c86741dc3aa211379"
+
+    cert-id内容为ELB证书管理的证书ID，当protocol-port指定了https协议，ELB监听器的证书会设置为cert-id证书，当发布多个HTTPS的服务，会使用同一份证书。
+
+
+配置示例如下，其中spec.ports中两个端口与kubernetes.io/elb.protocol-port中对应，443端口、80端口分别发布成HTTPS、HTTP协议。
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubernetes.io/elb.autocreate: '
+      {
+          "type": "public",
+          "bandwidth_name": "cce-bandwidth-1634816602057",
+          "bandwidth_chargemode": "bandwidth",
+          "bandwidth_size": 5,
+          "bandwidth_sharetype": "PER",
+          "eip_type": "5_g-vm",
+          "available_zone": [
+              "cn-north-7b"
+          ],
+          "l7_flavor_name": "L7_flavor.elb.s2.small",
+          "l4_flavor_name": "L4_flavor.elb.s1.medium",
+          "elb_virsubnet_ids": [
+              "ae290b16-3e92-49b2-8ee8-9da8cdc51f9e"
+          ]
+      }'
+    kubernetes.io/elb.class: performance
+    kubernetes.io/elb.health-check-flag: "on"
+    kubernetes.io/elb.health-check-option: '{"protocol":"TCP","delay":"5","timeout":"10","max_retries":"3"}'
+    kubernetes.io/elb.lb-algorithm: LEAST_CONNECTIONS
+    kubernetes.io/elb.session-affinity-mode: SOURCE_IP
+    kubernetes.io/elb.protocol-port: "https:443,http:80"
+    kubernetes.io/elb.cert-id: "17e3b4f4bc40471c86741dc3aa211379"
+  labels:
+    app: nginx
+    name: test
+  name: test
+  namespace: default
+spec:
+  ports:
+  - name: cce-service-0
+    port: 443
+    protocol: TCP
+    targetPort: 80
+  - name: cce-service-1
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+    version: v1
+  sessionAffinity: None
+  type: LoadBalancer
+```
+
+使用上面的示例创建Service，在新建的ELB实例中可以看到创建了443端口和80端口的监听器。
+
+![](figures/zh-cn_image_0000001223517245.png)
+
+## 集群内使用ELB地址无法访问Service说明<a name="section52631714117"></a>
+
+当LoadBalancer Service设置了服务亲和为节点级别，即externalTrafficPolicy取值为Local时，在使用中可能会碰到从集群内部（节点上或容器中）使用ELB地址访问不通的情况。
+
+这是因为创建LoadBalancer Service时，kube-proxy会把ELB的访问地址（external-ip）添加到iptables或IPVS中，当在集群内部访问ELB地址时不会经过ELB，而是kube-proxy直接转发。不同容器网络模型和服务转发模式下会有情况不同。
+
+解决这个问题通常有如下办法：
+
+-   （**推荐**）在集群内部访问使用Service的ClusterIP或服务域名访问。
+-   将Service的externalTrafficPolicy设置为Cluster，即集群级别服务亲和。不过需要注意这会影响源地址保持。
+
+    ```
+    apiVersion: v1 
+    kind: Service
+    metadata: 
+      annotations:   
+        kubernetes.io/elb.class: union
+        kubernetes.io/session-affinity-mode: SOURCE_IP
+        kubernetes.io/elb.subnet-id: a9cf6d24-ad43-4f75-94d1-4e0e0464afac
+        kubernetes.io/elb.autocreate: '{"type":"public","bandwidth_name":"cce-bandwidth","bandwidth_chargemode":"bandwidth","bandwidth_size":5,"bandwidth_sharetype":"PER","eip_type":"5_bgp","name":"james"}'
+      labels: 
+        app: nginx 
+      name: nginx 
+    spec: 
+      externalTrafficPolicy: Cluster
+      ports: 
+      - name: service0 
+        port: 80
+        protocol: TCP 
+        targetPort: 80
+      selector: 
+        app: nginx 
+      type: LoadBalancer
+    ```
+
+-   使用Service的pass-through特性，使用ELB地址访问时绕过kube-proxy，先访问ELB，进过ELB再访问到负载。具体请参见[LoadBalancer类型Service使用pass-through能力](https://support.huaweicloud.com/usermanual-cce/cce_01_0355.html)。
+
+    ```
+    apiVersion: v1 
+    kind: Service 
+    metadata: 
+      annotations:   
+        kubernetes.io/elb.pass-through: "true"
+        kubernetes.io/elb.class: union
+        kubernetes.io/session-affinity-mode: SOURCE_IP
+        kubernetes.io/elb.subnet-id: a9cf6d24-ad43-4f75-94d1-4e0e0464afac
+        kubernetes.io/elb.autocreate: '{"type":"public","bandwidth_name":"cce-bandwidth","bandwidth_chargemode":"bandwidth","bandwidth_size":5,"bandwidth_sharetype":"PER","eip_type":"5_bgp","name":"james"}'
+      labels: 
+        app: nginx 
+      name: nginx 
+    spec: 
+      externalTrafficPolicy: Local
+      ports: 
+      - name: service0 
+        port: 80
+        protocol: TCP 
+        targetPort: 80
+      selector: 
+        app: nginx 
+      type: LoadBalancer
+    ```
+
 

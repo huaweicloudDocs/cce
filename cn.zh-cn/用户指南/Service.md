@@ -14,4 +14,6 @@
 
 -   **[LoadBalancer类型Service使用pass-through能力](LoadBalancer类型Service使用pass-through能力.md)**  
 
+-   **[Service Annotations说明](Service-Annotations说明.md)**  
+
 

@@ -90,6 +90,7 @@ CCE对其他云服务有诸多依赖关系，因此在您开启IAM系统策略�
 <td class="cellrowborder" valign="top" width="49.48494849484948%" headers="mcps1.2.4.1.3 "><a name="ul146023714385"></a><a name="ul146023714385"></a><ul id="ul146023714385"><li>如果使用对象存储，需要全局设置OBS Administrator权限。<div class="note" id="cce_01_0190_note1215220141518"><a name="cce_01_0190_note1215220141518"></a><a name="cce_01_0190_note1215220141518"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="cce_01_0190_p0153120121518"><a name="cce_01_0190_p0153120121518"></a><a name="cce_01_0190_p0153120121518"></a>由于缓存的存在，对用户、用户组以及企业项目授予OBS相关的RBAC策略后，大概需要等待13分钟RBAC策略才能生效；授予OBS相关的系统策略后，大概需要等待5分钟系统策略能生效。</p>
 </div></div>
 </li><li>如果使用文件存储，需要设置SFS FullAccess权限。</li><li>如果使用极速文件存储，需要设置SFS Turbo Admin权限</li></ul>
+<p id="p533161762815"><a name="p533161762815"></a><a name="p533161762815"></a>导入存储的功能需要设置CCE Administrator权限。</p>
 </td>
 </tr>
 <tr id="row1488112216362"><td class="cellrowborder" valign="top" width="21.872187218721873%" headers="mcps1.2.4.1.1 "><p id="p144881022123614"><a name="p144881022123614"></a><a name="p144881022123614"></a>命名空间</p>

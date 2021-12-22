@@ -16,11 +16,11 @@ CCE支持使用已有的极速文件存储（SFS Turbo），创建有状态工�
 
 1.  参照创建文件存储卷中操作创建极速文件存储卷，记录极速文件存储卷名称。
 2.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
-3.  新建一个文件，用于创建工作负载。假设文件名为**efs-statefulset-example**.**yaml**。
+3.  新建一个文件，用于创建工作负载。假设文件名为**sfsturbo-statefulset-example**.**yaml**。
 
-    **touch efs-statefulset-example.yaml**
+    **touch sfsturbo-statefulset-example.yaml**
 
-    **vi efs-statefulset-example.yaml**
+    **vi sfsturbo-statefulset-example.yaml**
 
     配置示例：
 
@@ -28,32 +28,32 @@ CCE支持使用已有的极速文件存储（SFS Turbo），创建有状态工�
     apiVersion: apps/v1
     kind: StatefulSet
     metadata:
-      name: efs-statefulset-example
+      name: sfsturbo-statefulset-example
       namespace: default
     spec:
       replicas: 1
       selector:
         matchLabels:
-          app: efs-statefulset-example
+          app: sfsturbo-statefulset-example
       template:
         metadata:
           labels:
-            app: efs-statefulset-example
+            app: sfsturbo-statefulset-example
         spec:
           volumes: 
-          - name: pvc-efs-example 
+          - name: pvc-sfsturbo-example 
             persistentVolumeClaim:
-              claimName: pvc-efs-example     
+              claimName: pvc-sfsturbo-example     
           containers:
           - name: container-0
             image: 'nginx:latest'
             volumeMounts:
-              - name: pvc-efs-example
+              - name: pvc-sfsturbo-example
                 mountPath: /tmp
           restartPolicy: Always
           imagePullSecrets:
           - name: default-secret 
-      serviceName: efs-statefulset-example-headless
+      serviceName: sfsturbo-statefulset-example-headless
       updateStrategy:
         type: RollingUpdate
     ```
@@ -105,28 +105,28 @@ CCE支持使用已有的极速文件存储（SFS Turbo），创建有状态工�
 
 4.  创建有状态工作负载。
 
-    **kubectl create -f  efs-statefulset-example.yaml**
+    **kubectl create -f  sfsturbo-statefulset-example.yaml**
 
 
 ## 验证极速文件系统的持久化存储<a name="section179416310352"></a>
 
-1.  查询部署的工作负载（以**efs-statefulset-example**为例）的实例和极速文件存储文件。
+1.  查询部署的工作负载（以**sfsturbo-statefulset-example**为例）的实例和极速文件存储文件。
     1.  执行以下命令，查看工作负载对应的实例名称。
 
         ```
-        kubectl get po | grep efs-statefulset-example
+        kubectl get po | grep sfsturbo-statefulset-example
         ```
 
         期望输出：
 
         ```
-        efs-statefulset-example-0   1/1     Running   0          2m5s
+        sfsturbo-statefulset-example-0   1/1     Running   0          2m5s
         ```
 
     2.  执行以下命令，查看/tmp目录下是否挂载了极速文件存储。
 
         ```
-        kubectl exec efs-statefulset-example-0 -- mount|grep /tmp
+        kubectl exec sfsturbo-statefulset-example-0 -- mount|grep /tmp
         ```
 
         期望输出：
@@ -138,13 +138,13 @@ CCE支持使用已有的极速文件存储（SFS Turbo），创建有状态工�
 2.  执行以下命令，在/tmp路径下创建问题test。
 
     ```
-    kubectl exec efs-statefulset-example-0 -- touch /tmp/test
+    kubectl exec sfsturbo-statefulset-example-0 -- touch /tmp/test
     ```
 
 3.  执行以下命令，查看/tmp路径下的文件。
 
     ```
-    kubectl exec efs-statefulset-example-0 -- ls -l /tmp
+    kubectl exec sfsturbo-statefulset-example-0 -- ls -l /tmp
     ```
 
     预期输出：
@@ -153,10 +153,10 @@ CCE支持使用已有的极速文件存储（SFS Turbo），创建有状态工�
     -rw-r--r-- 1 root root     0 Jun  1 02:50 test
     ```
 
-4.  执行以下命令，删除名称为efs-statefulset-example-0的实例。
+4.  执行以下命令，删除名称为sfsturbo-statefulset-example-0的实例。
 
     ```
-    kubectl delete po efs-statefulset-example-0
+    kubectl delete po sfsturbo-statefulset-example-0
     ```
 
 5.  验证重建后的实例，文件是否仍然存在。
@@ -169,13 +169,13 @@ CCE支持使用已有的极速文件存储（SFS Turbo），创建有状态工�
         预期输出：
 
         ```
-        efs-statefulset-example-0   1/1     Running   0          2m
+        sfsturbo-statefulset-example-0   1/1     Running   0          2m
         ```
 
     2.  执行以下命令，查看/tmp路径下的文件。
 
         ```
-        kubectl exec efs-statefulset-example-0 -- ls -l /tmp
+        kubectl exec sfsturbo-statefulset-example-0 -- ls -l /tmp
         ```
 
         预期输出：
@@ -184,7 +184,7 @@ CCE支持使用已有的极速文件存储（SFS Turbo），创建有状态工�
         -rw-r--r-- 1 root root     0 Jun  1 02:50 test
         ```
 
-        test文件在实例重建之后仍然存在，说明急速文件系统数据可持久化保存。
+        test文件在实例重建之后仍然存在，说明极速文件系统数据可持久化保存。
 
 
 
