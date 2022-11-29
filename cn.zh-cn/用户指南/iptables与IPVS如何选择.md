@@ -1,4 +1,4 @@
-# iptables与IPVS如何选择<a name="cce_01_0349"></a>
+# iptables与IPVS如何选择<a name="cce_10_0349"></a>
 
 kube-proxy是Kubernetes集群的关键组件，负责Service和其后端容器Pod之间进行负载均衡转发。
 
@@ -6,6 +6,10 @@ CCE当前支持iptables和IPVS两种转发模式，各有优缺点。
 
 -   IPVS: 吞吐更高，速度更快的转发模式。适用于集群规模较大或Service数量较多的场景。
 -   iptables: 社区传统的kube-proxy模式。适用于Service数量较少或客户端会出现大量并发短链接的场景。
+
+## 约束与限制<a name="section64409397216"></a>
+
+IPVS模式集群下，Ingress和Service使用相同ELB实例时，无法在集群内的节点和容器中访问Ingress，因为kube-proxy会在ipvs-0的网桥上挂载LB类型的Service地址，Ingress对接的ELB的流量会被ipvs-0网桥劫持。建议Ingress和Service使用不同ELB实例。
 
 ## iptables<a name="section13695343122418"></a>
 
@@ -17,7 +21,7 @@ kube-proxy 的用法是一种 O\(n\) 算法，其中的 n 随集群规模同步�
 
 IPVS\(IP Virtual Server\)是在Netfilter上层构建的，并作为Linux内核的一部分，实现传输层负载均衡。IPVS可以将基于TCP和UDP服务的请求定向到真实服务器，并使真实服务器的服务在单个IP地址上显示为虚拟服务。
 
-IPVS 模式下，kube-proxy 使用 IPVS 负载均衡代替了 iptable。这种模式同样有效，IPVS 的设计就是用来为大量服务进行负载均衡的，它有一套优化过的 API，使用优化的查找算法，而不是简单的从列表中查找规则。
+IPVS 模式下，kube-proxy 使用 IPVS 负载均衡代替了 iptables。这种模式同样有效，IPVS 的设计就是用来为大量服务进行负载均衡的，它有一套优化过的 API，使用优化的查找算法，而不是简单的从列表中查找规则。
 
 kube-proxy 在 IPVS 模式下，其连接过程的复杂度为 O\(1\)。换句话说，多数情况下，他的连接处理效率是和集群规模无关的。
 

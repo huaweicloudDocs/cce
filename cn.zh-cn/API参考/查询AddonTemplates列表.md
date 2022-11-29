@@ -4,9 +4,9 @@
 
 插件模板查询接口，查询插件信息。
 
-## 调试
+## 调试<a name="atuogenerate_1"></a>
 
-您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=ListAddonTemplates)中调试该接口。
+您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=ListAddonTemplates)中调试该接口，支持自动认证鉴权。API Explorer可以自动生成SDK代码示例，并提供SDK代码示例调试功能。
 
 ## URI
 
@@ -31,8 +31,6 @@ GET /api/v3/addontemplates
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>指定的模板名称，不填写则查询列表。</p>
-<p>最小长度：<strong>2</strong></p>
-<p>最大长度：<strong>30</strong></p>
 </td>
 </tr>
 </tbody>
@@ -60,7 +58,6 @@ GET /api/v3/addontemplates
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>消息体的类型（格式）</p>
-<p>缺省值：<strong>application/json</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>X-Auth-Token</p>
@@ -69,8 +66,7 @@ GET /api/v3/addontemplates
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>"调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0004.html#cce_02_0004__section2417768214391" target="_blank" rel="noopener noreferrer">获取token</a>。"</p>
-<p>最大长度：<strong>16384</strong></p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="认证鉴权.md">获取token</a>。</p>
 </td>
 </tr>
 </tbody>
@@ -96,7 +92,6 @@ GET /api/v3/addontemplates
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API类型，固定值“Addon”，该值不可修改。</p>
-<p>缺省值：<strong>Addon</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>apiVersion</p>
@@ -104,7 +99,6 @@ GET /api/v3/addontemplates
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API版本，固定值“v3”，该值不可修改。</p>
-<p>缺省值：<strong>v3</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>items</p>
@@ -133,7 +127,6 @@ GET /api/v3/addontemplates
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API类型，固定值“Addon”，该值不可修改。</p>
-<p>缺省值：<strong>Addon</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>apiVersion</p>
@@ -141,7 +134,6 @@ GET /api/v3/addontemplates
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API版本，固定值“v3”，该值不可修改。</p>
-<p>缺省值：<strong>v3</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>metadata</p>
@@ -392,39 +384,74 @@ OK
     "kind" : "Addon",
     "apiVersion" : "v3",
     "metadata" : {
-      "uid" : "web-terminal",
-      "name" : "web-terminal",
-      "creationTimestamp" : "2019-01-07T13:22:48Z",
-      "updateTimestamp" : "2019-03-28T06:52:58Z"
+      "uid" : "coredns",
+      "name" : "coredns",
+      "creationTimestamp" : "2018-11-04T16:15:56Z",
+      "updateTimestamp" : "2022-01-11T14:32:10Z"
     },
     "spec" : {
       "type" : "helm",
-      "labels" : [ "Maintenance" ],
-      "logoURL" : "https://192.149.48.66/cce-addon-southchina-aw1hz2u/web-terminallogo.svg",
-      "readmeURL" : "https://192.149.48.66/cce-addon-southchina-y24tcmvhzg1l/web-terminalcn-readme.md##https://192.149.48.66/cce-addon-southchina-zw4tcmvhzg1l/web-terminalen-readme.md",
-      "description" : "A plug-in that allows users to run kubectl commands using a web browser.",
+      "require" : true,
+      "labels" : [ "ServiceDiscovery" ],
+      "logoURL" : "",
+      "description" : "CoreDNS is a DNS server that chains plugins and provides Kubernetes DNS Services",
       "versions" : [ {
-        "version" : "1.0.0",
+        "version" : "1.13.6",
         "input" : {
           "basic" : {
-            "euleros_version" : "2.2.5",
-            "swr_addr" : "100.125.6.246:20202",
+            "cluster_ip" : "10.247.3.10",
+            "ipv6" : false,
+            "platform" : "linux-amd64",
+            "swr_addr" : "100.125.16.65:20202",
             "swr_user" : "hwofficial"
           },
           "parameters" : {
             "custom" : {
-              "password" : "hwcloud_cce"
+              "stub_domains" : "",
+              "upstream_nameservers" : ""
             },
             "flavor1" : {
-              "description" : "Has only one instance",
-              "name" : "Single",
-              "replicas" : 1,
+              "name" : 2500,
+              "replicas" : 2,
               "resources" : [ {
-                "limitsCpu" : "200m",
+                "limitsCpu" : "500m",
                 "limitsMem" : "512Mi",
-                "name" : "web-terminal",
-                "requestsCpu" : "100m",
-                "requestsMem" : "256Mi"
+                "name" : "coredns",
+                "requestsCpu" : "500m",
+                "requestsMem" : "512Mi"
+              } ]
+            },
+            "flavor2" : {
+              "name" : 5000,
+              "replicas" : 2,
+              "resources" : [ {
+                "limitsCpu" : "1000m",
+                "limitsMem" : "1024Mi",
+                "name" : "coredns",
+                "requestsCpu" : "1000m",
+                "requestsMem" : "1024Mi"
+              } ]
+            },
+            "flavor3" : {
+              "name" : 10000,
+              "replicas" : 2,
+              "resources" : [ {
+                "limitsCpu" : "2000m",
+                "limitsMem" : "2048Mi",
+                "name" : "coredns",
+                "requestsCpu" : "2000m",
+                "requestsMem" : "2048Mi"
+              } ]
+            },
+            "flavor4" : {
+              "name" : 20000,
+              "replicas" : 4,
+              "resources" : [ {
+                "limitsCpu" : "2000m",
+                "limitsMem" : "2048Mi",
+                "name" : "coredns",
+                "requestsCpu" : "2000m",
+                "requestsMem" : "2048Mi"
               } ]
             }
           }
@@ -433,113 +460,83 @@ OK
         "translate" : {
           "en_US" : {
             "addon" : {
-              "changeLog" : "none",
-              "description" : "A plug-in that allows users to run kubectl commands using a web browser."
+              "changeLog" : "Support for clusters with new version",
+              "description" : "CoreDNS is a DNS server that chains plugins and provides Kubernetes DNS Services"
             },
             "description" : {
-              "Parameters.flavor1.description" : "Deploy with one instance",
-              "Parameters.flavor1.name" : "Single"
+              "Parameters.custom.stub_domains" : "The target nameserver may itself be a Kubernetes service. For instance, you can run your own copy of dnsmasq to export custom DNS names into the ClusterDNS namespace, a JSON map using a DNS suffix key (e.g. “acme.local”) and a value consisting of a JSON array of DNS IPs.",
+              "Parameters.custom.upstream_nameservers" : "If specified, then the values specified replace the nameservers taken by default from the node’s /etc/resolv.conf. Limits:a maximum of three upstream nameservers can be specified, A JSON array of DNS IPs.",
+              "Parameters.flavor1.description" : "Concurrent domain name resolution ability  -  External domain name：2500 qps,  Internal domain name：10000 qps",
+              "Parameters.flavor1.name" : 2500,
+              "Parameters.flavor2.description" : "Concurrent domain name resolution ability  -  External domain name：5000 qps, Internal domain name：20000 qps",
+              "Parameters.flavor2.name" : 5000,
+              "Parameters.flavor3.description" : "Concurrent domain name resolution ability  -  External domain name：10000 qps, Internal domain name：40000 qps",
+              "Parameters.flavor3.name" : 10000,
+              "Parameters.flavor4.description" : "Concurrent domain name resolution ability  -  External domain name：20000 qps, Internal domain name：80000 qps",
+              "Parameters.flavor4.name" : 20000
             },
             "key" : {
-              "Parameters.custom.password" : "password"
+              "Parameters.custom.stub_domains" : "stub domain",
+              "Parameters.custom.upstream_nameservers" : "upstream nameservers"
+            }
+          },
+          "fr_FR" : {
+            "addon" : {
+              "changeLog" : "Prise en charge des clusters avec une nouvelle version",
+              "description" : "Un serveur DNS qui enchaîne les plug-ins et fournit des services DNS Kubernetes."
+            },
+            "description" : {
+              "Parameters.custom.stub_domains" : "Le serveur de noms cible peut lui-même être un service Kubernetes. Par exemple, vous pouvez exécuter votre propre copie de dnsmasq pour exporter des noms DNS personnalisés dans l'espace de noms ClusterDNS, une carte JSON à l'aide d'une clé de suffixe DNS (par exemple, «acme.local») et une valeur constituée d'un tableau JSON d'adresses IP DNS.",
+              "Parameters.custom.upstream_nameservers" : "Si spécifié, les valeurs spécifiées remplacent les serveurs de noms pris par défaut dans le fichier /etc/resolv.conf du nœud. Limites: un maximum de trois serveurs de noms en amont peuvent être spécifiés, un tableau JSON d'adresses IP DNS.",
+              "Parameters.flavor1.description" : "Capacité de résolution de nom de domaine simultanée - Nom de domaine externe: 2500 qps, Nom de domaine interne: 10000 qp",
+              "Parameters.flavor1.name" : 2500,
+              "Parameters.flavor2.description" : "Capacité de résolution de nom de domaine simultanée - Nom de domaine externe: 5000 qps, Nom de domaine interne: 20000 qp",
+              "Parameters.flavor2.name" : 5000,
+              "Parameters.flavor3.description" : "Capacité de résolution de nom de domaine simultanée - Nom de domaine externe: 10000 qps, Nom de domaine interne: 40000 qp",
+              "Parameters.flavor3.name" : 10000,
+              "Parameters.flavor4.description" : "Capacité de résolution de nom de domaine simultanée - Nom de domaine externe: 20000 qps, Nom de domaine interne: 80000 qp",
+              "Parameters.flavor4.name" : 20000
+            },
+            "key" : {
+              "Parameters.custom.stub_domains" : "domaine stub",
+              "Parameters.custom.upstream_nameservers" : "serveurs de noms en amont"
             }
           },
           "zh_CN" : {
             "addon" : {
-              "changeLog" : "无",
-              "description" : "一款支持在web界面上使用kubectl的插件。"
+              "changeLog" : "",
+              "description" : ""
             },
             "description" : {
-              "Parameters.flavor1.description" : "单实例部署",
-              "Parameters.flavor1.name" : "单实例"
+              "Parameters.custom.stub_domains" : "",
+              "Parameters.custom.upstream_nameservers" : "",
+              "Parameters.flavor1.description" : "",
+              "Parameters.flavor1.name" : 2500,
+              "Parameters.flavor2.description" : "",
+              "Parameters.flavor2.name" : 5000,
+              "Parameters.flavor3.description" : "",
+              "Parameters.flavor3.name" : 10000,
+              "Parameters.flavor4.description" : "",
+              "Parameters.flavor4.name" : 20000
             },
             "key" : {
-              "Parameters.custom.password" : "密码"
+              "Parameters.custom.stub_domains" : "",
+              "Parameters.custom.upstream_nameservers" : ""
             }
           }
         },
         "supportVersions" : [ {
           "clusterType" : "VirtualMachine",
-          "clusterVersion" : [ "v1.(9|11).*" ]
+          "clusterVersion" : [ "v1.13.*" ]
         }, {
           "clusterType" : "BareMetal",
-          "clusterVersion" : [ "v1.(9|11).*" ]
-        } ],
-        "creationTimestamp" : "2019-01-07T13:22:48Z",
-        "updateTimestamp" : "2019-02-22T07:01:16Z"
-      }, {
-        "version" : "1.0.1",
-        "input" : {
-          "basic" : {
-            "euleros_version" : "2.2.5",
-            "rbac_enabled" : true,
-            "swr_addr" : "100.125.6.246:20202",
-            "swr_user" : "hwofficial"
-          },
-          "parameters" : {
-            "custom" : {
-              "elbClass" : "union",
-              "elbID" : 0,
-              "loadBalancerIP" : "127.0.0.1",
-              "password" : "hwcloud_cce",
-              "port" : 3000,
-              "serviceType" : "NodePort",
-              "targetPort" : 3000
-            },
-            "flavor1" : {
-              "description" : "Has only one instance",
-              "name" : "Single",
-              "replicas" : 1,
-              "resources" : [ {
-                "limitsCpu" : "200m",
-                "limitsMem" : "512Mi",
-                "name" : "web-terminal",
-                "requestsCpu" : "100m",
-                "requestsMem" : "256Mi"
-              } ]
-            }
-          }
-        },
-        "stable" : true,
-        "translate" : {
-          "en_US" : {
-            "addon" : {
-              "changeLog" : "1.include service creation  2.simplify operation  3.support access via elb",
-              "description" : "A plug-in that allows users to run kubectl commands using a web browser."
-            },
-            "description" : {
-              "Parameters.custom.serviceType" : "Service type for accessing web-terminal",
-              "Parameters.flavor1.description" : "Deploy with one instance",
-              "Parameters.flavor1.name" : "Single"
-            },
-            "key" : {
-              "Parameters.custom.serviceType" : "Access type"
-            }
-          },
-          "zh_CN" : {
-            "addon" : {
-              "changeLog" : "1.包含service创建  2.操作简化  3.支持通过elb访问",
-              "description" : "一款支持在web界面上使用kubectl的插件。"
-            },
-            "description" : {
-              "Parameters.custom.serviceType" : "访问web-terminal的service类型",
-              "Parameters.flavor1.description" : "单实例部署",
-              "Parameters.flavor1.name" : "单实例"
-            },
-            "key" : {
-              "Parameters.custom.serviceType" : "访问类型"
-            }
-          }
-        },
-        "supportVersions" : [ {
-          "clusterType" : "VirtualMachine",
-          "clusterVersion" : [ "v1.(9|11).*" ]
+          "clusterVersion" : [ "v1.13.*" ]
         }, {
-          "clusterType" : "BareMetal",
-          "clusterVersion" : [ "v1.(9|11).*" ]
+          "clusterType" : "ARM64",
+          "clusterVersion" : [ "v1.13.*" ]
         } ],
-        "creationTimestamp" : "2019-03-28T06:52:57Z",
-        "updateTimestamp" : "2019-03-28T06:52:57Z"
+        "creationTimestamp" : "2021-03-18T12:51:05Z",
+        "updateTimestamp" : "2021-03-18T12:51:05Z"
       } ]
     }
   } ]

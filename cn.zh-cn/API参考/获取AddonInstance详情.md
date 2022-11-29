@@ -4,9 +4,9 @@
 
 获取插件实例详情。
 
-## 调试
+## 调试<a name="atuogenerate_1"></a>
 
-您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=ShowAddonInstance)中调试该接口。
+您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=ShowAddonInstance)中调试该接口，支持自动认证鉴权。API Explorer可以自动生成SDK代码示例，并提供SDK代码示例调试功能。
 
 ## URI
 
@@ -31,8 +31,6 @@ GET /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>插件实例id</p>
-<p>最小长度：<strong>1</strong></p>
-<p>最大长度：<strong>255</strong></p>
 </td>
 </tr>
 </tbody>
@@ -56,7 +54,7 @@ GET /api/v3/addons/\{id\}
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>集群 ID，获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0271.html" target="_blank" rel="noopener noreferrer">如何获取接口URI中参数</a></p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>集群 ID，获取方式请参见<a href="如何获取接口URI中参数.md">如何获取接口URI中参数</a></p>
 </td>
 </tr>
 </tbody>
@@ -84,7 +82,6 @@ GET /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>消息体的类型（格式）</p>
-<p>缺省值：<strong>application/json</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>X-Auth-Token</p>
@@ -93,8 +90,7 @@ GET /api/v3/addons/\{id\}
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>"调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0004.html#cce_02_0004__section2417768214391" target="_blank" rel="noopener noreferrer">获取token</a>。"</p>
-<p>最大长度：<strong>16384</strong></p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="认证鉴权.md">获取token</a>。</p>
 </td>
 </tr>
 </tbody>
@@ -120,7 +116,6 @@ GET /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API类型，固定值“Addon”，该值不可修改。</p>
-<p>缺省值：<strong>Addon</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>apiVersion</p>
@@ -128,7 +123,6 @@ GET /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API版本，固定值“v3”，该值不可修改。</p>
-<p>缺省值：<strong>v3</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>metadata</p>
@@ -258,7 +252,6 @@ GET /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板logo图片的地址</p>
-<p>最大长度：<strong>200</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>addonTemplateLabels</p>
@@ -301,19 +294,6 @@ GET /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件实例状态</p>
-<p>枚举值：</p>
-<ul><li><p><strong>running</strong></p>
-</li><li><p><strong>abnormal</strong></p>
-</li><li><p><strong>installing</strong></p>
-</li><li><p><strong>installFailed</strong></p>
-</li><li><p><strong>upgrading</strong></p>
-</li><li><p><strong>upgradeFailed</strong></p>
-</li><li><p><strong>deleting</strong></p>
-</li><li><p><strong>deleteSuccess</strong></p>
-</li><li><p><strong>deleteFailed</strong></p>
-</li><li><p><strong>available</strong></p>
-</li><li><p><strong>rollbacking</strong></p>
-</li></ul>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>Reason</p>
@@ -498,8 +478,8 @@ OK
         },
         "zh_CN" : {
           "addon" : {
-            "changeLog" : "支持容器里使用GPU显卡的设备管理插件，仅支持nvidia驱动",
-            "description" : "支持容器里使用GPU显卡的设备管理插件，仅支持nvidia驱动"
+            "changeLog" : "",
+            "description" : ""
           }
         }
       },

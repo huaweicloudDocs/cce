@@ -1,4 +1,4 @@
-# Service概述<a name="cce_01_0249"></a>
+# Service概述<a name="cce_10_0249"></a>
 
 ## 直接访问Pod的问题<a name="section674023294115"></a>
 
@@ -38,10 +38,6 @@ Kubernetes允许指定一个需要的类型的Service，类型的取值以及行
 -   [负载均衡\(LoadBalancer\)](负载均衡(LoadBalancer).md)
 
     负载均衡\( LoadBalancer \)可以通过弹性负载均衡从公网访问到工作负载，与弹性IP方式相比提供了高可靠的保障，一般用于系统中需要暴露到公网的服务。
-
--   [ENI负载均衡\(ENI LoadBalancer\)](ENI负载均衡-(-ENI-LoadBalancer-).md)
-
-    ENI负载均衡 \( ENI LoadBalancer \)使用弹性负载均衡器直通容器，使部署在容器中的业务时延降低、性能无损耗。
 
 -   [DNAT网关\(DNAT\)](DNAT网关(DNAT).md)
 

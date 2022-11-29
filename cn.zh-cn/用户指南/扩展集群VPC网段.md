@@ -1,4 +1,4 @@
-# 扩展集群VPC网段<a name="cce_01_0387"></a>
+# 扩展集群VPC网段<a name="cce_10_0387"></a>
 
 ## 操作场景<a name="section669391746"></a>
 
@@ -26,7 +26,7 @@
 
 2.  在扩展网段下创建子网，供集群使用。
 
-    ![](figures/zh-cn_image_0000001179912016.png)
+    ![](figures/zh-cn_image_0000001199501228.png)
 
 
 ## 使用扩展网段<a name="section362618288152"></a>

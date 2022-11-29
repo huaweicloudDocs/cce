@@ -1,4 +1,4 @@
-# DNS概述<a name="cce_01_0360"></a>
+# DNS概述<a name="cce_10_0360"></a>
 
 ## CoreDNS介绍<a name="section092613718475"></a>
 
@@ -45,6 +45,8 @@ options ndots:5 timeout single-request-reopen
 ## 相关操作<a name="section15985263473"></a>
 
 您还可以在工作负载中进行DNS配置，具体请参见[工作负载DNS配置说明](工作负载DNS配置说明.md)。
+
+您还可以使用CoreDNS实现自定义域名解析，具体请参见[使用CoreDNS实现自定义域名解析](使用CoreDNS实现自定义域名解析.md)。
 
 您还可以使用DNSCache提升DNS解析的性能，具体请参见[使用NodeLocal DNSCache提升DNS性能](使用NodeLocal-DNSCache提升DNS性能.md)。
 

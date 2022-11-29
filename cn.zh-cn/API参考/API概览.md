@@ -11,148 +11,47 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row46758134145910"><td class="cellrowborder" rowspan="5" valign="top" width="19.8%" headers="mcps1.1.4.1.1 "><p id="p1772819209011"><a name="p1772819209011"></a><a name="p1772819209011"></a>CCE接口</p>
+<tbody><tr id="row46758134145910"><td class="cellrowborder" rowspan="6" valign="top" width="19.8%" headers="mcps1.1.4.1.1 "><p id="p1772819209011"><a name="p1772819209011"></a><a name="p1772819209011"></a>CCE接口</p>
+<p id="p1360114922520"><a name="p1360114922520"></a><a name="p1360114922520"></a></p>
 </td>
-<td class="cellrowborder" valign="top" width="21.78%" headers="mcps1.1.4.1.2 "><p id="p19868352442"><a name="p19868352442"></a><a name="p19868352442"></a>集群管理</p>
+<td class="cellrowborder" valign="top" width="21.78%" headers="mcps1.1.4.1.2 "><p id="p19868352442"><a name="p19868352442"></a><a name="p19868352442"></a><a href="#section1921916017577">集群管理</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="58.42%" headers="mcps1.1.4.1.3 "><p id="p44662802145910"><a name="p44662802145910"></a><a name="p44662802145910"></a>集群管理接口，包括创建、删除集群的接口等。</p>
 <p id="p3384875145910"><a name="p3384875145910"></a><a name="p3384875145910"></a>通过这些接口，您可以创建集群、获取已创建集群的信息。</p>
 </td>
 </tr>
-<tr id="row79150261205"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7916426202013"><a name="p7916426202013"></a><a name="p7916426202013"></a>节点管理</p>
+<tr id="row79150261205"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7916426202013"><a name="p7916426202013"></a><a name="p7916426202013"></a><a href="#section559991319280">节点管理</a></p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6630122311237"><a name="p6630122311237"></a><a name="p6630122311237"></a>节点管理接口，包括创建、删除节点的接口等。</p>
 <p id="p1163042313239"><a name="p1163042313239"></a><a name="p1163042313239"></a>通过这些接口，您可以为集群添加节点、获取已创建节点的信息。</p>
 </td>
 </tr>
-<tr id="row952715513225"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1352735512217"><a name="p1352735512217"></a><a name="p1352735512217"></a>节点池管理</p>
+<tr id="row952715513225"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1352735512217"><a name="p1352735512217"></a><a name="p1352735512217"></a><a href="#section56971705342">节点池管理</a></p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1814325132316"><a name="p1814325132316"></a><a name="p1814325132316"></a>节点池管理接口，包括创建、删除节点池的接口等。</p>
 <p id="p181422518234"><a name="p181422518234"></a><a name="p181422518234"></a>通过这些接口，您可以创建节点池、获取已创建节点池的信息。</p>
 </td>
 </tr>
-<tr id="row85396435151"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7970931652"><a name="p7970931652"></a><a name="p7970931652"></a>存储管理</p>
+<tr id="row85396435151"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7970931652"><a name="p7970931652"></a><a name="p7970931652"></a><a href="#section7558510185812">存储管理</a></p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p854044313156"><a name="p854044313156"></a><a name="p854044313156"></a>存储管理接口，包括PersistentVolumeClaim、PersistentVolume的创建、删除。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p854044313156"><a name="p854044313156"></a><a name="p854044313156"></a>存储管理接口，包括PersistentVolumeClaim的创建、删除。</p>
 </td>
 </tr>
-<tr id="row17928112575213"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p14435181417519"><a name="p14435181417519"></a><a name="p14435181417519"></a>插件管理</p>
+<tr id="row17928112575213"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p14435181417519"><a name="p14435181417519"></a><a name="p14435181417519"></a><a href="#section146435191572">插件管理</a></p>
 </td>
 <td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1492918251523"><a name="p1492918251523"></a><a name="p1492918251523"></a>插件管理接口，包括AddonTemplates的查询，AddonInstance的创建、更新、删除和获取。</p>
 </td>
 </tr>
-<tr id="row33762552145910"><td class="cellrowborder" rowspan="22" valign="top" width="19.8%" headers="mcps1.1.4.1.1 "><p id="p11594550145910"><a name="p11594550145910"></a><a name="p11594550145910"></a>Kubernetes原生接口</p>
+<tr id="row136001495256"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p146010912516"><a name="p146010912516"></a><a name="p146010912516"></a><a href="#section13810125012265">配额管理</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="21.78%" headers="mcps1.1.4.1.2 "><p id="p5699090519278"><a name="p5699090519278"></a><a name="p5699090519278"></a><a href="Node.md">Node</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="58.42%" headers="mcps1.1.4.1.3 "><p id="p4572971519278"><a name="p4572971519278"></a><a name="p4572971519278"></a>Node对象管理接口，包括Node对象的获取，查询和更新。</p>
-<div class="note" id="note18462175954313"><a name="note18462175954313"></a><a name="note18462175954313"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p18866114810316"><a name="p18866114810316"></a><a name="p18866114810316"></a>CCE仅支持使用<a href="API.md">API</a>中的接口创建、删除节点，不能使用Kubernetes原生接口来创建、删除节点。</p>
-</div></div>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1360149172518"><a name="p1360149172518"></a><a name="p1360149172518"></a>配额管理接口，支持查询CCE服务下资源配额。</p>
 </td>
 </tr>
-<tr id="row127941236152711"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p44725375145910"><a name="p44725375145910"></a><a name="p44725375145910"></a><a href="Namespace.md">Namespace</a></p>
+<tr id="row33762552145910"><td class="cellrowborder" valign="top" width="19.8%" headers="mcps1.1.4.1.1 "><p id="p11594550145910"><a name="p11594550145910"></a><a name="p11594550145910"></a>Kubernetes原生接口</p>
 </td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p66449515145910"><a name="p66449515145910"></a><a name="p66449515145910"></a>Namespace对象管理接口，包括Namespace对象的创建，查询，修改，删除等接口。</p>
+<td class="cellrowborder" valign="top" width="21.78%" headers="mcps1.1.4.1.2 "><p id="p5699090519278"><a name="p5699090519278"></a><a name="p5699090519278"></a>-</p>
 </td>
-</tr>
-<tr id="row124231810172813"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1542341010280"><a name="p1542341010280"></a><a name="p1542341010280"></a><a href="Resourcequotas.md">Resourcequotas</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p942381092810"><a name="p942381092810"></a><a name="p942381092810"></a>ResourceQuotas资源配额接口，包括查询接口。</p>
-</td>
-</tr>
-<tr id="row205721428203112"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p49554995145910"><a name="p49554995145910"></a><a name="p49554995145910"></a><a href="Pod.md">Pod</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p26187931145910"><a name="p26187931145910"></a><a name="p26187931145910"></a>Pod对象管理接口，包括Pod对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row19515163917311"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p379336831112"><a name="p379336831112"></a><a name="p379336831112"></a><a href="Deployment.md">Deployment</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p48033961112"><a name="p48033961112"></a><a name="p48033961112"></a>Deployment对象管理接口，包括Deployment对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row7980195320316"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1267985011044"><a name="p1267985011044"></a><a name="p1267985011044"></a><a href="StatefulSet.md">Statefulset</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p4969678411044"><a name="p4969678411044"></a><a name="p4969678411044"></a>Statefulset对象管理接口，包括Statefulset对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row1949954320"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p4671625719274"><a name="p4671625719274"></a><a name="p4671625719274"></a><a href="DaemonSet.md">Daemonset</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6664593719274"><a name="p6664593719274"></a><a name="p6664593719274"></a>Daemonset对象管理接口，包括Daemonset对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row10260164310320"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p3094168219276"><a name="p3094168219276"></a><a name="p3094168219276"></a><a href="Job.md">Job</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p3689587219276"><a name="p3689587219276"></a><a name="p3689587219276"></a>Job对象管理接口，包括Job对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row152602043143211"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p995412315275"><a name="p995412315275"></a><a name="p995412315275"></a><a href="CronJob.md">CronJob</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1195415319277"><a name="p1195415319277"></a><a name="p1195415319277"></a>CronJob对象管理接口，包括CronJob对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row1419213219339"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6028906019279"><a name="p6028906019279"></a><a name="p6028906019279"></a><a href="ReplicaSet.md">ReplicaSet</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p5915636019279"><a name="p5915636019279"></a><a name="p5915636019279"></a>ReplicaSet对象的查询。</p>
-</td>
-</tr>
-<tr id="row10957421145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p30771534145910"><a name="p30771534145910"></a><a name="p30771534145910"></a><a href="ReplicationController.md">ReplicationController</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p61441166145910"><a name="p61441166145910"></a><a name="p61441166145910"></a>ReplicationController对象管理接口，包括ReplicationController对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row45945772145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p46200155145910"><a name="p46200155145910"></a><a name="p46200155145910"></a><a href="Endpoints.md">Endpoints</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p60436584145910"><a name="p60436584145910"></a><a name="p60436584145910"></a>Endpoint对象管理接口，包括Endpoint对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row2032595553314"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p28882047145910"><a name="p28882047145910"></a><a name="p28882047145910"></a><a href="Service.md">Service</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p27305587145910"><a name="p27305587145910"></a><a name="p27305587145910"></a>Service对象管理接口，包括Service对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row1643488143411"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p191324141413"><a name="p191324141413"></a><a name="p191324141413"></a><a href="Ingress.md">Ingress</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1991324101413"><a name="p1991324101413"></a><a name="p1991324101413"></a>Ingress对象管理接口，包括Ingress对象的创建，更新，删除等接口。</p>
-</td>
-</tr>
-<tr id="row17767622163414"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p15974819191220"><a name="p15974819191220"></a><a name="p15974819191220"></a><a href="NetworkPolicy.md">NetworkPolicy</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p7975141920121"><a name="p7975141920121"></a><a name="p7975141920121"></a>NetworkPolicy对象管理接口，包括NetworkPolicy对象的创建，更新，删除等接口。</p>
-</td>
-</tr>
-<tr id="row14719244145910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6643479711057"><a name="p6643479711057"></a><a name="p6643479711057"></a><a href="PersistentVolume.md">PersistentVolume</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p4547635511057"><a name="p4547635511057"></a><a name="p4547635511057"></a>PersistentVolume对象管理接口，包括PersistentVolume对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row16808163913413"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p4151121811057"><a name="p4151121811057"></a><a name="p4151121811057"></a><a href="PersistentVolumeClaim.md">PersistentVolumeClaim</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6268924811057"><a name="p6268924811057"></a><a name="p6268924811057"></a>PersistentVolumeClaim对象管理接口，包括PersistentVolumeClaim对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row785542119277"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p2163363219277"><a name="p2163363219277"></a><a name="p2163363219277"></a><a href="ConfigMap.md">ConfigMap</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p3197595019277"><a name="p3197595019277"></a><a name="p3197595019277"></a>ConfigMap对象管理接口，包括ConfigMap对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row4534259183411"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p10599255145910"><a name="p10599255145910"></a><a name="p10599255145910"></a><a href="Secret.md">Secret</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p44056569145910"><a name="p44056569145910"></a><a name="p44056569145910"></a>Secret对象管理接口，包括Sercret对象的创建，查询，修改，删除等接口。</p>
-</td>
-</tr>
-<tr id="row0570056103410"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p18959115215129"><a name="p18959115215129"></a><a name="p18959115215129"></a><a href="RBAC.md">RBAC</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1795945216128"><a name="p1795945216128"></a><a name="p1795945216128"></a>通过权限设置可以让不同的用户或用户组拥有操作不同Kubernetes资源的权限。</p>
-</td>
-</tr>
-<tr id="row9621141015358"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p22396136193538"><a name="p22396136193538"></a><a name="p22396136193538"></a><a href="API-groups.md">API groups</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p65344911193538"><a name="p65344911193538"></a><a name="p65344911193538"></a>API group对象管理接口，包括列出API group和APIVersion。</p>
-</td>
-</tr>
-<tr id="row65712929193538"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p32547626193538"><a name="p32547626193538"></a><a name="p32547626193538"></a><a href="Event.md">Event</a></p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p35799742193538"><a name="p35799742193538"></a><a name="p35799742193538"></a>Event对象管理的查询。</p>
+<td class="cellrowborder" valign="top" width="58.42%" headers="mcps1.1.4.1.3 "><p id="p4572971519278"><a name="p4572971519278"></a><a name="p4572971519278"></a>Kubernetes原生接口。</p>
 </td>
 </tr>
 </tbody>
@@ -207,59 +106,9 @@
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18413163718147"><a name="p18413163718147"></a><a name="p18413163718147"></a>唤醒一个指定的已休眠集群。</p>
 </td>
 </tr>
-<tr id="row1268164714123"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18430134931216"><a name="p18430134931216"></a><a name="p18430134931216"></a><a href="集群唤醒.md">获取集群证书</a></p>
+<tr id="row1268164714123"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18430134931216"><a name="p18430134931216"></a><a name="p18430134931216"></a><a href="获取集群证书.md">获取集群证书</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p194305493127"><a name="p194305493127"></a><a name="p194305493127"></a><span>获取指定集群的证书信息。</span></p>
-</td>
-</tr>
-<tr id="row2985204221018"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p2985142131017"><a name="p2985142131017"></a><a name="p2985142131017"></a><a href="创建节点.md">创建节点</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1198544215108"><a name="p1198544215108"></a><a name="p1198544215108"></a>在指定集群下创建节点。</p>
-</td>
-</tr>
-<tr id="row72181343191012"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1218184351019"><a name="p1218184351019"></a><a name="p1218184351019"></a><a href="获取指定的节点.md">获取指定的节点</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p162181432102"><a name="p162181432102"></a><a name="p162181432102"></a>通过节点ID获取指定节点的详细信息。</p>
-</td>
-</tr>
-<tr id="row64371543161013"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p443824316107"><a name="p443824316107"></a><a name="p443824316107"></a><a href="获取集群下所有节点.md">获取集群下所有节点</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1643817436103"><a name="p1643817436103"></a><a name="p1643817436103"></a>通过集群ID获取指定集群下所有节点的详细信息。</p>
-</td>
-</tr>
-<tr id="row261644318105"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p86161943171015"><a name="p86161943171015"></a><a name="p86161943171015"></a><a href="更新指定的节点.md">更新指定的节点</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p561694310106"><a name="p561694310106"></a><a name="p561694310106"></a>更新指定的节点。</p>
-</td>
-</tr>
-<tr id="row58991443201010"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1589912437109"><a name="p1589912437109"></a><a name="p1589912437109"></a><a href="删除节点.md">删除节点</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p12900174319104"><a name="p12900174319104"></a><a name="p12900174319104"></a>删除指定的节点。</p>
-</td>
-</tr>
-<tr id="row55115292153"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p55218293153"><a name="p55218293153"></a><a name="p55218293153"></a><a href="创建节点池.md">创建节点池</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1521929191511"><a name="p1521929191511"></a><a name="p1521929191511"></a>在指定集群下创建节点池。</p>
-</td>
-</tr>
-<tr id="row652112901511"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p85222912158"><a name="p85222912158"></a><a name="p85222912158"></a><a href="获取指定的节点池.md">获取指定的节点池</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p17521296154"><a name="p17521296154"></a><a name="p17521296154"></a>获取指定节点池的详细信息。</p>
-</td>
-</tr>
-<tr id="row4527299155"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p25282919156"><a name="p25282919156"></a><a name="p25282919156"></a><a href="获取集群下所有节点池.md">获取集群下所有节点池</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1052229111514"><a name="p1052229111514"></a><a name="p1052229111514"></a>获取集群下所有节点池。</p>
-</td>
-</tr>
-<tr id="row155232931510"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p352142918155"><a name="p352142918155"></a><a name="p352142918155"></a><a href="更新指定节点池.md">更新指定节点池</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1552529161518"><a name="p1552529161518"></a><a name="p1552529161518"></a>更新指定的节点池。</p>
-</td>
-</tr>
-<tr id="row8521629141518"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p7521229191510"><a name="p7521229191510"></a><a name="p7521229191510"></a><a href="删除节点池.md">删除节点池</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p12521029171516"><a name="p12521029171516"></a><a name="p12521029171516"></a>删除指定的节点池。</p>
 </td>
 </tr>
 <tr id="row3198154021214"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14611442592"><a name="p14611442592"></a><a name="p14611442592"></a><a href="获取任务信息.md">获取任务信息</a></p>
@@ -270,9 +119,107 @@
 </tbody>
 </table>
 
+## 节点管理<a name="section559991319280"></a>
+
+**表 2**  节点管理
+
+<a name="table759910133286"></a>
+<table><thead align="left"><tr id="row259931322817"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p13599161332817"><a name="p13599161332817"></a><a name="p13599161332817"></a>API</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p16599913182811"><a name="p16599913182811"></a><a name="p16599913182811"></a>说明</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row186001713112814"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p6600413172815"><a name="p6600413172815"></a><a name="p6600413172815"></a><a href="创建节点.md">创建节点</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p760012134281"><a name="p760012134281"></a><a name="p760012134281"></a>在指定集群下创建节点。</p>
+</td>
+</tr>
+<tr id="row160021317281"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p9600013152817"><a name="p9600013152817"></a><a name="p9600013152817"></a><a href="获取指定的节点.md">获取指定的节点</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1960115132283"><a name="p1960115132283"></a><a name="p1960115132283"></a>通过节点ID获取指定节点的详细信息。</p>
+</td>
+</tr>
+<tr id="row18601713152813"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1960111318288"><a name="p1960111318288"></a><a name="p1960111318288"></a><a href="获取集群下所有节点.md">获取集群下所有节点</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p116017134283"><a name="p116017134283"></a><a name="p116017134283"></a>通过集群ID获取指定集群下所有节点的详细信息。</p>
+</td>
+</tr>
+<tr id="row16011613162815"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p20601111313286"><a name="p20601111313286"></a><a name="p20601111313286"></a><a href="更新指定的节点.md">更新指定的节点</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p860151302815"><a name="p860151302815"></a><a name="p860151302815"></a>更新指定的节点。</p>
+</td>
+</tr>
+<tr id="row260191302814"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p9601131313286"><a name="p9601131313286"></a><a name="p9601131313286"></a><a href="删除节点.md">删除节点</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p8601141316280"><a name="p8601141316280"></a><a name="p8601141316280"></a>删除指定的节点。</p>
+</td>
+</tr>
+<tr id="row166011313172813"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p2654041122911"><a name="p2654041122911"></a><a name="p2654041122911"></a><a href="纳管节点.md">纳管节点</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p365411414299"><a name="p365411414299"></a><a name="p365411414299"></a><span>在指定集群下纳管节点</span>。</p>
+</td>
+</tr>
+<tr id="row13601141322810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p156543417292"><a name="p156543417292"></a><a name="p156543417292"></a><a href="重置节点.md">重置节点</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11653134111297"><a name="p11653134111297"></a><a name="p11653134111297"></a><span>在指定集群下重置节点。</span></p>
+</td>
+</tr>
+<tr id="row1560181313289"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1465364142911"><a name="p1465364142911"></a><a name="p1465364142911"></a><a href="节点移除.md">移除节点</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p2652134117298"><a name="p2652134117298"></a><a name="p2652134117298"></a><span>将节点从指定集群中移除。</span></p>
+</td>
+</tr>
+<tr id="row16601201312283"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p965274117299"><a name="p965274117299"></a><a name="p965274117299"></a><a href="节点迁移.md">迁移节点</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p14651164116294"><a name="p14651164116294"></a><a name="p14651164116294"></a><span>将节点从指定集群下迁移到另一集群</span>。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+## 节点池管理<a name="section56971705342"></a>
+
+**表 3**  节点池管理
+
+<a name="table1969710103419"></a>
+<table><thead align="left"><tr id="row1669811011346"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p196983053411"><a name="p196983053411"></a><a name="p196983053411"></a>API</p>
+</th>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p1269815013348"><a name="p1269815013348"></a><a name="p1269815013348"></a>说明</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row2069816018347"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p469850163412"><a name="p469850163412"></a><a name="p469850163412"></a><a href="创建节点池.md">创建节点池</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1969860133415"><a name="p1969860133415"></a><a name="p1969860133415"></a>在指定集群下创建节点池。</p>
+</td>
+</tr>
+<tr id="row13698130153414"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p2069830163420"><a name="p2069830163420"></a><a name="p2069830163420"></a><a href="获取指定的节点池.md">获取指定的节点池</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p56981604348"><a name="p56981604348"></a><a name="p56981604348"></a>通过节点ID获取指定节点池的详细信息。</p>
+</td>
+</tr>
+<tr id="row06983018348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p146981106349"><a name="p146981106349"></a><a name="p146981106349"></a><a href="获取集群下所有节点池.md">获取集群下所有节点池</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1869814003411"><a name="p1869814003411"></a><a name="p1869814003411"></a>通过集群ID获取指定集群下所有节点池的详细信息。</p>
+</td>
+</tr>
+<tr id="row1869860113417"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p169811033410"><a name="p169811033410"></a><a name="p169811033410"></a><a href="更新指定节点池.md">更新指定的节点池</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p369820113411"><a name="p369820113411"></a><a name="p369820113411"></a>更新指定的节点池。</p>
+</td>
+</tr>
+<tr id="row96981209341"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1269812073415"><a name="p1269812073415"></a><a name="p1269812073415"></a><a href="删除节点池.md">删除节点池</a></p>
+</td>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19698804342"><a name="p19698804342"></a><a name="p19698804342"></a>删除指定的节点池。</p>
+</td>
+</tr>
+</tbody>
+</table>
+
 ## 存储管理<a name="section7558510185812"></a>
 
-**表 2**  存储管理
+**表 4**  存储管理
 
 <a name="table7642161835811"></a>
 <table><thead align="left"><tr id="row96431718185811"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p5643118145819"><a name="p5643118145819"></a><a name="p5643118145819"></a>API</p>
@@ -281,12 +228,12 @@
 </th>
 </tr>
 </thead>
-<tbody><tr id="row2643518165810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p10643171815819"><a name="p10643171815819"></a><a name="p10643171815819"></a><a href="创建PVC.md">创建PVC</a></p>
+<tbody><tr id="row2643518165810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p10643171815819"><a name="p10643171815819"></a><a name="p10643171815819"></a><a href="创建PVC（待废弃）.md">创建PVC</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p264311865818"><a name="p264311865818"></a><a name="p264311865818"></a>在指定的Namespace下通过华为云存储服务中的云存储（EVS、SFS、OBS）去创建PersistentVolumeClaim。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p264311865818"><a name="p264311865818"></a><a name="p264311865818"></a>在指定的Namespace下通过云存储服务中的云存储（EVS、SFS、OBS）去创建PersistentVolumeClaim。</p>
 </td>
 </tr>
-<tr id="row176431418185819"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p66435189586"><a name="p66435189586"></a><a name="p66435189586"></a><a href="删除PVC.md">删除PVC</a></p>
+<tr id="row176431418185819"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p66435189586"><a name="p66435189586"></a><a name="p66435189586"></a><a href="删除PVC（待废弃）.md">删除PVC</a></p>
 </td>
 <td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p7644218105810"><a name="p7644218105810"></a><a name="p7644218105810"></a>删除指定Namespace下的PersistentVolumeClaim对象，并可以选择保留后端的云存储。</p>
 </td>
@@ -296,7 +243,7 @@
 
 ## 插件管理<a name="section146435191572"></a>
 
-**表 3**  插件管理
+**表 5**  插件管理
 
 <a name="table45364351772"></a>
 <table><thead align="left"><tr id="row1553718351171"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p397312401879"><a name="p397312401879"></a><a name="p397312401879"></a>API</p>
@@ -338,1339 +285,1268 @@
 </tbody>
 </table>
 
-## Node<a name="section45001632162618"></a>
+## 配额管理<a name="section13810125012265"></a>
 
-**表 4**  Node
+**表 6**  配额管理
 
-<a name="table73818402263"></a>
-<table><thead align="left"><tr id="row7382640182612"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p5101556263"><a name="p5101556263"></a><a name="p5101556263"></a>API</p>
+<a name="table13235201142713"></a>
+<table><thead align="left"><tr id="row1023691182712"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p18236101162714"><a name="p18236101162714"></a><a name="p18236101162714"></a>API</p>
 </th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p910185516260"><a name="p910185516260"></a><a name="p910185516260"></a>说明</p>
+<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p1236181182712"><a name="p1236181182712"></a><a name="p1236181182712"></a>说明</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row83821040102618"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p163821440182616"><a name="p163821440182616"></a><a name="p163821440182616"></a><a href="获取指定的Node.md">获取指定的Node</a></p>
+<tbody><tr id="row13236811279"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p202366118278"><a name="p202366118278"></a><a name="p202366118278"></a><a href="查询CCE服务下的资源配额.md">查询CCE服务下的资源配额</a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18382194013267"><a name="p18382194013267"></a><a name="p18382194013267"></a>获取指定的Node。</p>
-</td>
-</tr>
-<tr id="row10382140132618"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p338216408263"><a name="p338216408263"></a><a name="p338216408263"></a><a href="列出所有的Node.md">列出指定的Node</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p20382144062619"><a name="p20382144062619"></a><a name="p20382144062619"></a>获取指定的Node列表。</p>
-</td>
-</tr>
-<tr id="row33831404263"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p53833400267"><a name="p53833400267"></a><a name="p53833400267"></a><a href="更新指定的Node.md">更新指定的Node</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1438374032619"><a name="p1438374032619"></a><a name="p1438374032619"></a>更新指定的Node。</p>
+<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p52362152712"><a name="p52362152712"></a><a name="p52362152712"></a><span>查询CCE服务下的资源配额。</span></p>
 </td>
 </tr>
 </tbody>
 </table>
 
-## Namespace<a name="section5670526195718"></a>
+## Kubernetes API<a name="section996118115215"></a>
 
-**表 5**  Namespace
-
-<a name="table557663355712"></a>
-<table><thead align="left"><tr id="row4577113314579"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p14311242105712"><a name="p14311242105712"></a><a name="p14311242105712"></a>API</p>
+<a name="table1134184152518"></a>
+<table><thead align="left"><tr id="row134115442516"><th class="cellrowborder" valign="top" width="13.278672132786722%" id="mcps1.1.4.1.1"><p id="p4444714451"><a name="p4444714451"></a><a name="p4444714451"></a>API</p>
 </th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p131104210577"><a name="p131104210577"></a><a name="p131104210577"></a>说明</p>
+<th class="cellrowborder" valign="top" width="31.286871312868712%" id="mcps1.1.4.1.2"><p id="p108591245164418"><a name="p108591245164418"></a><a name="p108591245164418"></a>功能</p>
 </th>
-</tr>
-</thead>
-<tbody><tr id="row957773375714"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p457783395710"><a name="p457783395710"></a><a name="p457783395710"></a><a href="创建Namespace.md">创建Namespace</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p145773337575"><a name="p145773337575"></a><a name="p145773337575"></a>创建一个Namespace。</p>
-</td>
-</tr>
-<tr id="row85770333571"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p6577113315711"><a name="p6577113315711"></a><a name="p6577113315711"></a><a href="删除Namespace.md">删除Namespace</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615060_p976457"><a name="zh-cn_topic_0079615060_p976457"></a><a name="zh-cn_topic_0079615060_p976457"></a>删除一个Namespace。</p>
-</td>
-</tr>
-<tr id="row95776336570"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p16577153319579"><a name="p16577153319579"></a><a name="p16577153319579"></a><a href="获取指定的Namespace.md">获取指定的Namespace</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p5577533145715"><a name="p5577533145715"></a><a name="p5577533145715"></a>获取指定的Namespace的详细信息。</p>
-</td>
-</tr>
-<tr id="row557783313574"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18577193315717"><a name="p18577193315717"></a><a name="p18577193315717"></a><a href="替换指定的Namespace.md">替换指定的Namespace</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9578133355719"><a name="p9578133355719"></a><a name="p9578133355719"></a>替换指定的Namespace的部分信息。</p>
-</td>
-</tr>
-<tr id="row957833355716"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p8578103355715"><a name="p8578103355715"></a><a name="p8578103355715"></a><a href="替换指定的Namespace的状态.md">替换指定的Namespace的状态</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1057873318577"><a name="p1057873318577"></a><a name="p1057873318577"></a>更新指定Namespace的状态信息，即修改namespace对象status各字段的值。</p>
-</td>
-</tr>
-<tr id="row95781233155710"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1578143345717"><a name="p1578143345717"></a><a name="p1578143345717"></a><a href="替换指定的Namespace的Finalize值.md">替换指定的Namespace的Finalize值</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p75781338577"><a name="p75781338577"></a><a name="p75781338577"></a>替换指定Namespce的finalize的值。</p>
-</td>
-</tr>
-<tr id="row11833145152014"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p88341851192018"><a name="p88341851192018"></a><a name="p88341851192018"></a><a href="列出Namespace.md">列出Namespace</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18834155142018"><a name="p18834155142018"></a><a name="p18834155142018"></a>获取集群中所有Namespace的详细信息。</p>
-</td>
-</tr>
-<tr id="row760445692014"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1760414568206"><a name="p1760414568206"></a><a name="p1760414568206"></a><a href="更新指定的Namespace.md">更新指定的Namespace</a></p>
-</td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18604556152017"><a name="p18604556152017"></a><a name="p18604556152017"></a>更新指定Namespace部分信息。</p>
-</td>
-</tr>
-</tbody>
-</table>
-
-## Resourcequotas<a name="section117341227528"></a>
-
-**表 6**  Resourcequotas
-
-<a name="table13734202135211"></a>
-<table><thead align="left"><tr id="row17354219523"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p1173510245214"><a name="p1173510245214"></a><a name="p1173510245214"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p573511219526"><a name="p573511219526"></a><a name="p573511219526"></a>说明</p>
+<th class="cellrowborder" valign="top" width="55.43445655434457%" id="mcps1.1.4.1.3"><p id="p3306134164016"><a name="p3306134164016"></a><a name="p3306134164016"></a>URI</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row177351421524"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p43071355125211"><a name="p43071355125211"></a><a name="p43071355125211"></a><a href="获取Resourcequotas.md">获取Resourcequotas</a></p>
+<tbody><tr id="row034234192519"><td class="cellrowborder" rowspan="3" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p734220410259"><a name="p734220410259"></a><a name="p734220410259"></a>Node</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p77351121529"><a name="p77351121529"></a><a name="p77351121529"></a>列出或查询Resourcequotas的详细信息。</p>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p518611332409"><a name="p518611332409"></a><a name="p518611332409"></a>获取指定的Node</p>
 </td>
-</tr>
-</tbody>
-</table>
-
-## Pod<a name="section16809427204612"></a>
-
-**表 7**  Pod
-
-<a name="table17286173704617"></a>
-<table><thead align="left"><tr id="row02881637174620"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p88778451466"><a name="p88778451466"></a><a name="p88778451466"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p1587784504613"><a name="p1587784504613"></a><a name="p1587784504613"></a>说明</p>
-</th>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p5356962"><a name="p5356962"></a><a name="p5356962"></a>GET /api/v1/nodes/{name}</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row11288123712462"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1228853774614"><a name="p1228853774614"></a><a name="p1228853774614"></a><a href="创建Pod.md">创建Pod</a></p>
+<tr id="row11801191615470"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p2080112165472"><a name="p2080112165472"></a><a name="p2080112165472"></a>列出所有的Node</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p6288183712462"><a name="p6288183712462"></a><a name="p6288183712462"></a>在指定Namespace下创建一个Pod对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p7801141612471"><a name="p7801141612471"></a><a name="p7801141612471"></a>GET /api/v1/nodes</p>
 </td>
 </tr>
-<tr id="row728819376462"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1128843720461"><a name="p1128843720461"></a><a name="p1128843720461"></a><a href="删除Pod.md">删除Pod</a></p>
+<tr id="row6011146472"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p41101484712"><a name="p41101484712"></a><a name="p41101484712"></a>更新指定的Node</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p228883794616"><a name="p228883794616"></a><a name="p228883794616"></a>删除指定Namespace下的某个Pod对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p65340500"><a name="p65340500"></a><a name="p65340500"></a>PATCH /api/v1/nodes/{name}</p>
 </td>
 </tr>
-<tr id="row20288133719466"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p32881437194612"><a name="p32881437194612"></a><a name="p32881437194612"></a><a href="删除所有的Pod.md">删除所有的Pod</a></p>
+<tr id="row127941236152711"><td class="cellrowborder" rowspan="8" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p44725375145910"><a name="p44725375145910"></a><a name="p44725375145910"></a>Namespace</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p101861933104012"><a name="p101861933104012"></a><a name="p101861933104012"></a>创建Namespace</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p142881379465"><a name="p142881379465"></a><a name="p142881379465"></a>删除所有Pod对象。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p13307144184015"><a name="p13307144184015"></a><a name="p13307144184015"></a>POST /api/v1/namespaces</p>
 </td>
 </tr>
-<tr id="row15288173714462"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p42881037114619"><a name="p42881037114619"></a><a name="p42881037114619"></a><a href="获取指定的Pod.md">获取指定的Pod</a></p>
+<tr id="row176921440185710"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p269685816582"><a name="p269685816582"></a><a name="p269685816582"></a>删除Namespace</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1288193718467"><a name="p1288193718467"></a><a name="p1288193718467"></a>获取指定Namespace下指定Pod的详细信息。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p19693740135712"><a name="p19693740135712"></a><a name="p19693740135712"></a>DELETE /api/v1/namespaces/{name}</p>
 </td>
 </tr>
-<tr id="row928843724615"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p928883734616"><a name="p928883734616"></a><a name="p928883734616"></a><a href="替换指定的Pod.md">替换指定的Pod</a></p>
+<tr id="row1443812111585"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p164392116588"><a name="p164392116588"></a><a name="p164392116588"></a>获取指定的Namespace</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1228863724614"><a name="p1228863724614"></a><a name="p1228863724614"></a>替换指定Namespace下的一个Pod对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614931_p5973303"><a name="zh-cn_topic_0079614931_p5973303"></a><a name="zh-cn_topic_0079614931_p5973303"></a>GET /api/v1/namespaces/{name}</p>
 </td>
 </tr>
-<tr id="row92888375465"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p172881437104615"><a name="p172881437104615"></a><a name="p172881437104615"></a><a href="替换指定的Pod的状态.md">替换指定的Pod的状态</a></p>
+<tr id="row1844789586"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p98452865816"><a name="p98452865816"></a><a name="p98452865816"></a>替换指定的Namespace</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p8288153714610"><a name="p8288153714610"></a><a name="p8288153714610"></a>替换指定Namespace下的一个Pod对象的status，即修改Pod对象status各字段的值。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1884511819588"><a name="p1884511819588"></a><a name="p1884511819588"></a>PUT /api/v1/namespaces/{name}</p>
 </td>
 </tr>
-<tr id="row1448014120501"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p3481161225011"><a name="p3481161225011"></a><a name="p3481161225011"></a><a href="列出指定Namespaces下的所有Pod.md">列出指定Namespaces下的所有Pod</a></p>
+<tr id="row153801843587"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p8380249583"><a name="p8380249583"></a><a name="p8380249583"></a>替换指定的Namespace的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19481112125013"><a name="p19481112125013"></a><a name="p19481112125013"></a>列出指定Namespaces下面的所有Pod资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p7380847585"><a name="p7380847585"></a><a name="p7380847585"></a>PUT /api/v1/namespaces/{name}/status</p>
 </td>
 </tr>
-<tr id="row32631139509"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p82631213185014"><a name="p82631213185014"></a><a name="p82631213185014"></a><a href="列出Pod.md">列出Pod</a></p>
+<tr id="row1273231915817"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p9227131016016"><a name="p9227131016016"></a><a name="p9227131016016"></a>替换指定的Namespace的Finalize值</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1626381315503"><a name="p1626381315503"></a><a name="p1626381315503"></a>获取一个Pod列表。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079615020_p1565979"><a name="zh-cn_topic_0079615020_p1565979"></a><a name="zh-cn_topic_0079615020_p1565979"></a>PUT /api/v1/namespaces/{name}/finalize</p>
 </td>
 </tr>
-<tr id="row1983419154501"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p583418157505"><a name="p583418157505"></a><a name="p583418157505"></a><a href="更新指定的Pod.md">更新指定的Pod</a></p>
+<tr id="row68671215145810"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1274319241013"><a name="p1274319241013"></a><a name="p1274319241013"></a>列出Namespace</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p168355155507"><a name="p168355155507"></a><a name="p168355155507"></a>更新指定Namespace下一个Pod对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614949_p15165719"><a name="zh-cn_topic_0079614949_p15165719"></a><a name="zh-cn_topic_0079614949_p15165719"></a>GET /api/v1/namespaces</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## Deployment<a name="section1861515491505"></a>
-
-**表 8**  Deployment
-
-<a name="table1465775418016"></a>
-<table><thead align="left"><tr id="row13658165414018"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p174111052112"><a name="p174111052112"></a><a name="p174111052112"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p441118510119"><a name="p441118510119"></a><a name="p441118510119"></a>说明</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row165885412010"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1265817546017"><a name="p1265817546017"></a><a name="p1265817546017"></a><a href="创建Deployment.md">创建Deployment</a></p>
+<tr id="row34191412145811"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1894210391003"><a name="p1894210391003"></a><a name="p1894210391003"></a>更新指定的Namespace</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p16658354301"><a name="p16658354301"></a><a name="p16658354301"></a>创建一个Deployment资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614923_p19521038"><a name="zh-cn_topic_0079614923_p19521038"></a><a name="zh-cn_topic_0079614923_p19521038"></a>PATCH /api/v1/namespaces/{name}</p>
 </td>
 </tr>
-<tr id="row1665818541302"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p165820540015"><a name="p165820540015"></a><a name="p165820540015"></a><a href="创建Deployment的回滚操作.md">创建Deployment的回滚操作</a></p>
+<tr id="row124231810172813"><td class="cellrowborder" rowspan="4" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p1542341010280"><a name="p1542341010280"></a><a name="p1542341010280"></a>Resourcequotas</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p141868338408"><a name="p141868338408"></a><a name="p141868338408"></a>获取Resourcequotas</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1165814549016"><a name="p1165814549016"></a><a name="p1165814549016"></a>创建一个Deployment资源对象的回滚操作。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p13071541184015"><a name="p13071541184015"></a><a name="p13071541184015"></a>GET /api/v1/resourcequotas</p>
 </td>
 </tr>
-<tr id="row19658454209"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1565812548010"><a name="p1565812548010"></a><a name="p1565812548010"></a><a href="删除Deployment.md">删除Deployment</a></p>
+<tr id="row137201859133016"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p4720205993013"><a name="p4720205993013"></a><a name="p4720205993013"></a>创建Resourcequota</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1465817542017"><a name="p1465817542017"></a><a name="p1465817542017"></a>删除一个Deployment资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p12720459163010"><a name="p12720459163010"></a><a name="p12720459163010"></a>POST /api/v1/namespaces/{namespace}/resourcequotas</p>
 </td>
 </tr>
-<tr id="row126586541709"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p19659054403"><a name="p19659054403"></a><a name="p19659054403"></a><a href="删除所有的Deployment.md">删除所有的Deployment</a></p>
+<tr id="row178101757123012"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1781025718306"><a name="p1781025718306"></a><a name="p1781025718306"></a>更新Resourcequota</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p17659754303"><a name="p17659754303"></a><a name="p17659754303"></a>删除所有的Deployment资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p15822047104910"><a name="p15822047104910"></a><a name="p15822047104910"></a>PUT /api/v1/namespaces/{namespace}/resourcequotas/{name}</p>
 </td>
 </tr>
-<tr id="row146597541803"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p156594541509"><a name="p156594541509"></a><a name="p156594541509"></a><a href="获取指定的Deployment.md">获取指定的Deployment</a></p>
+<tr id="row520275212305"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p720335263012"><a name="p720335263012"></a><a name="p720335263012"></a>删除Resourcequota</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p16659135413013"><a name="p16659135413013"></a><a name="p16659135413013"></a>获取某个Namespace下指定的Deployment对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p946914519320"><a name="p946914519320"></a><a name="p946914519320"></a>DELETE /api/v1/namespaces/{namespace}/resourcequotas/{name}</p>
 </td>
 </tr>
-<tr id="row1865916544016"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p106596544019"><a name="p106596544019"></a><a name="p106596544019"></a><a href="获取指定的Deployment的状态.md">获取指定的Deployment的状态</a></p>
+<tr id="row205721428203112"><td class="cellrowborder" rowspan="9" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p49554995145910"><a name="p49554995145910"></a><a name="p49554995145910"></a>Pod</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p186594548016"><a name="p186594548016"></a><a name="p186594548016"></a>获取某个Namespace下指定的Deployment对象的状态。</p>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p14246348131"><a name="p14246348131"></a><a name="p14246348131"></a>创建Pod</p>
 </td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0079615001_p23885112"><a name="zh-cn_topic_0079615001_p23885112"></a><a name="zh-cn_topic_0079615001_p23885112"></a>POST /api/v1/namespaces/{namespace}/pods</p>
+</td>
 </tr>
-<tr id="row156591754600"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p765912549015"><a name="p765912549015"></a><a name="p765912549015"></a><a href="获取指定的Deployment的伸缩操作.md">获取指定的Deployment的伸缩操作</a></p>
+<tr id="row8696165319318"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p18696753734"><a name="p18696753734"></a><a name="p18696753734"></a>删除Pod</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p147913171810"><a name="p147913171810"></a><a name="p147913171810"></a>获取指定的Deployment的伸缩操作。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p769665320320"><a name="p769665320320"></a><a name="p769665320320"></a>DELETE /api/v1/namespaces/{namespace}/pods/{name}</p>
 </td>
 </tr>
-<tr id="row105245261335"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1952513265316"><a name="p1952513265316"></a><a name="p1952513265316"></a><a href="替换指定的Deployment.md">替换指定的Deployment</a></p>
+<tr id="row8831175615317"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p163531038518"><a name="p163531038518"></a><a name="p163531038518"></a>删除所有的Pod</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p135258261031"><a name="p135258261031"></a><a name="p135258261031"></a>替换指定的Deployment对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1083112561238"><a name="p1083112561238"></a><a name="p1083112561238"></a>DELETE /api/v1/namespaces/{namespace}/pods</p>
 </td>
 </tr>
-<tr id="row645310301314"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p19453123011317"><a name="p19453123011317"></a><a name="p19453123011317"></a><a href="替换指定的Deployment的状态.md">替换指定的Deployment的状态</a></p>
+<tr id="row41761192413"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p71761598410"><a name="p71761598410"></a><a name="p71761598410"></a>获取指定的Pod</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1732015719245"><a name="p1732015719245"></a><a name="p1732015719245"></a>替换指定命名空间下指定Deployment的状态，即修改Deployment的status字段的值。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p3176591420"><a name="p3176591420"></a><a name="p3176591420"></a>GET /api/v1/namespaces/{namespace}/pods/{name}</p>
 </td>
 </tr>
-<tr id="row1894633011314"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p29463301732"><a name="p29463301732"></a><a name="p29463301732"></a><a href="替换指定的Deployment的伸缩操作.md">替换指定的Deployment的伸缩操作</a></p>
+<tr id="row1079111112411"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p76188421057"><a name="p76188421057"></a><a name="p76188421057"></a>替换指定的Pod</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1994693016318"><a name="p1994693016318"></a><a name="p1994693016318"></a>替换指定的Deployment的伸缩操作。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1779111111041"><a name="p1779111111041"></a><a name="p1779111111041"></a>PUT /api/v1/namespaces/{namespace}/pods/{name}</p>
 </td>
 </tr>
-<tr id="row04369311318"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1043613319316"><a name="p1043613319316"></a><a name="p1043613319316"></a><a href="列出指定Namespace下的Deployment.md">列出指定Namespace下的Deployment</a></p>
+<tr id="row1673111410419"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p156733141648"><a name="p156733141648"></a><a name="p156733141648"></a>替换指定的Pod的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p144365311311"><a name="p144365311311"></a><a name="p144365311311"></a>列出指定命名空间下的所有Deployment资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614908_p16802851"><a name="zh-cn_topic_0079614908_p16802851"></a><a name="zh-cn_topic_0079614908_p16802851"></a>PUT /api/v1/namespaces/{namespace}/pods/{name}/status</p>
 </td>
 </tr>
-<tr id="row1687517313315"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p8875131336"><a name="p8875131336"></a><a name="p8875131336"></a><a href="列出所有的Deployment.md">列出指定的Deployment</a></p>
+<tr id="row019961718413"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p619918171140"><a name="p619918171140"></a><a name="p619918171140"></a>列出指定Namespaces下的所有Pod</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1875163119318"><a name="p1875163119318"></a><a name="p1875163119318"></a>列出指定的Deployment资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079615024_p25896589"><a name="zh-cn_topic_0079615024_p25896589"></a><a name="zh-cn_topic_0079615024_p25896589"></a>GET /api/v1/namespaces/{namespace}/pods</p>
 </td>
 </tr>
-<tr id="row143005321439"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p11300163211313"><a name="p11300163211313"></a><a name="p11300163211313"></a><a href="更新指定的Deployment.md">更新指定的Deployment</a></p>
+<tr id="row1387152219414"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1787114222415"><a name="p1787114222415"></a><a name="p1787114222415"></a>列出Pod</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1830010327313"><a name="p1830010327313"></a><a name="p1830010327313"></a>更新指定Namespace下的Deployment对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614951_p225290"><a name="zh-cn_topic_0079614951_p225290"></a><a name="zh-cn_topic_0079614951_p225290"></a>GET /api/v1/pods</p>
 </td>
 </tr>
-<tr id="row77441532835"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p47441432335"><a name="p47441432335"></a><a name="p47441432335"></a><a href="更新指定的Deployment的状态.md">更新指定的Deployment的状态</a></p>
+<tr id="row2016817201411"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p61688202415"><a name="p61688202415"></a><a name="p61688202415"></a>更新指定的Pod</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p674417321834"><a name="p674417321834"></a><a name="p674417321834"></a>更新指定Namespace下指定Deployment 对象的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614948_p2556583"><a name="zh-cn_topic_0079614948_p2556583"></a><a name="zh-cn_topic_0079614948_p2556583"></a>PATCH /api/v1/namespaces/{namespace}/pods/{name}</p>
 </td>
 </tr>
-<tr id="row321010339320"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p122101433338"><a name="p122101433338"></a><a name="p122101433338"></a><a href="更新指定的Deployment的伸缩操作.md">更新指定的Deployment的伸缩操作</a></p>
+<tr id="row19515163917311"><td class="cellrowborder" rowspan="15" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p379336831112"><a name="p379336831112"></a><a name="p379336831112"></a>Deployment</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p121861033164015"><a name="p121861033164015"></a><a name="p121861033164015"></a>创建Deployment</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p172101933832"><a name="p172101933832"></a><a name="p172101933832"></a>更新指定的Deployment的伸缩操作。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p11307114144010"><a name="p11307114144010"></a><a name="p11307114144010"></a>POST /apis/apps/v1/namespaces/{namespace}/deployments</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## StatefulSet<a name="section3492103213420"></a>
-
-**表 9**  StatefulSet
-
-<a name="table33414017423"></a>
-<table><thead align="left"><tr id="row53684074215"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p13545448194218"><a name="p13545448194218"></a><a name="p13545448194218"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p1854594813425"><a name="p1854594813425"></a><a name="p1854594813425"></a>说明</p>
-</th>
+<tr id="row641862313119"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p24184231111"><a name="p24184231111"></a><a name="p24184231111"></a>创建Deployment的回滚操作</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p10863195414914"><a name="p10863195414914"></a><a name="p10863195414914"></a>PATCH /apis/apps/v1/namespaces/{namespace}/deployments/{name} （仅适用于1.17及以上版本的集群）</p>
+<p id="p13496002"><a name="p13496002"></a><a name="p13496002"></a>POST /apis/apps/v1beta1/namespaces/{namespace}/deployments/{name}/rollback （仅适用于1.15及以下版本的集群）</p>
+<p id="p1499555"><a name="p1499555"></a><a name="p1499555"></a>POST /apis/extensions/v1beta1/namespaces/{namespace}/deployments/{name}/rollback （仅适用于1.15及以下版本的集群）</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row236140134219"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p23611402427"><a name="p23611402427"></a><a name="p23611402427"></a><a href="创建StatefulSet.md">创建StatefulSet</a></p>
+<tr id="row481413251113"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p9814173210117"><a name="p9814173210117"></a><a name="p9814173210117"></a>删除Deployment</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p143624044214"><a name="p143624044214"></a><a name="p143624044214"></a>创建一个StatefulSet资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1781463218110"><a name="p1781463218110"></a><a name="p1781463218110"></a>DELETE /apis/apps/v1/namespaces/{namespace}/deployments/{name}</p>
 </td>
 </tr>
-<tr id="row113664015429"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p10361740154218"><a name="p10361740154218"></a><a name="p10361740154218"></a><a href="删除指定的StatefulSet.md">删除StatefulSet</a></p>
+<tr id="row3449330131116"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1450830101118"><a name="p1450830101118"></a><a name="p1450830101118"></a>删除所有的Deployment</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p43664010429"><a name="p43664010429"></a><a name="p43664010429"></a>删除一个StatefulSet资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p204502301113"><a name="p204502301113"></a><a name="p204502301113"></a>DELETE /apis/apps/v1/namespaces/{namespace}/deployments</p>
 </td>
 </tr>
-<tr id="row1036540194210"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p536140124210"><a name="p536140124210"></a><a name="p536140124210"></a><a href="删除所有的StatefulSet.md">删除所有的StatefulSet</a></p>
+<tr id="row192971028191120"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p16564853131411"><a name="p16564853131411"></a><a name="p16564853131411"></a>获取指定的Deployment</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p636134016423"><a name="p636134016423"></a><a name="p636134016423"></a>删除所有的StatefulSet资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p029732812119"><a name="p029732812119"></a><a name="p029732812119"></a>GET /apis/apps/v1/namespaces/{namespace}/deployments/{name}</p>
 </td>
 </tr>
-<tr id="row133712401424"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1137154024212"><a name="p1137154024212"></a><a name="p1137154024212"></a><a href="获取指定的StatefulSet.md">获取指定的StatefulSet</a></p>
+<tr id="row1416864716108"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1816920479102"><a name="p1816920479102"></a><a name="p1816920479102"></a>获取指定的Deployment的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13764094219"><a name="p13764094219"></a><a name="p13764094219"></a>获取指定Namespace下的StatefulSet对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p2169144721020"><a name="p2169144721020"></a><a name="p2169144721020"></a>GET /apis/apps/v1/namespaces/{namespace}/deployments/{name}/status</p>
 </td>
 </tr>
-<tr id="row1337144024215"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14371840194219"><a name="p14371840194219"></a><a name="p14371840194219"></a><a href="获取指定的StatefulSet的状态.md">获取指定的StatefulSet的状态</a></p>
+<tr id="row2306518131120"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p330619181118"><a name="p330619181118"></a><a name="p330619181118"></a>获取指定的Deployment的伸缩操作</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p123744074216"><a name="p123744074216"></a><a name="p123744074216"></a>获取指定Namespace下指定StatefulSet对象的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p330631851112"><a name="p330631851112"></a><a name="p330631851112"></a>GET /apis/apps/v1/namespaces/{namespace}/deployments/{name}/scale</p>
 </td>
 </tr>
-<tr id="row1137340114215"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1537104015421"><a name="p1537104015421"></a><a name="p1537104015421"></a><a href="替换指定的StatefulSet.md">替换指定的StatefulSet</a></p>
+<tr id="row252102114118"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p85342111112"><a name="p85342111112"></a><a name="p85342111112"></a>替换指定的Deployment</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p537184034218"><a name="p537184034218"></a><a name="p537184034218"></a>替换指定Namespace下的StatefulSet对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p125352111116"><a name="p125352111116"></a><a name="p125352111116"></a>PUT /apis/apps/v1/namespaces/{namespace}/deployments/{name}</p>
 </td>
 </tr>
-<tr id="row637840114213"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1137114094215"><a name="p1137114094215"></a><a name="p1137114094215"></a><a href="替换指定的StatefulSet的状态.md">替换指定的StatefulSet的状态</a></p>
+<tr id="row4864192171118"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p68645261119"><a name="p68645261119"></a><a name="p68645261119"></a>替换指定的Deployment的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p203754010423"><a name="p203754010423"></a><a name="p203754010423"></a>替换指定Namespace下指定StatefulSet对象的状态，即修改StatefulSet对象的status字段的值。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1027875518326"><a name="p1027875518326"></a><a name="p1027875518326"></a>PUT /apis/apps/v1/namespaces/{namespace}/deployments/{name}/status</p>
 </td>
 </tr>
-<tr id="row161261528178"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p191271128975"><a name="p191271128975"></a><a name="p191271128975"></a><a href="列出指定Namespace下的StatefulSet.md">列出指定Namespace下的StatefulSet</a></p>
+<tr id="row9564151381119"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p115647136119"><a name="p115647136119"></a><a name="p115647136119"></a>替换指定的Deployment的伸缩操作</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11271928176"><a name="p11271928176"></a><a name="p11271928176"></a>列出指定Namespace下的所有StatefulSet资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p8155161363313"><a name="p8155161363313"></a><a name="p8155161363313"></a>PUT /apis/apps/v1/namespaces/{namespace}/deployments/{name}/scale</p>
 </td>
 </tr>
-<tr id="row419811311774"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1819903118712"><a name="p1819903118712"></a><a name="p1819903118712"></a><a href="列出所有的StatefulSet.md">列出指定的StatefulSet</a></p>
+<tr id="row9915175917109"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p49151759111016"><a name="p49151759111016"></a><a name="p49151759111016"></a>列出指定Namespace下的Deployment</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p919923112711"><a name="p919923112711"></a><a name="p919923112711"></a>列出所有的StatefulSet资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p22991240163317"><a name="p22991240163317"></a><a name="p22991240163317"></a>GET /apis/apps/v1/namespaces/{namespace}/deployments</p>
 </td>
 </tr>
-<tr id="row062839679"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p262239978"><a name="p262239978"></a><a name="p262239978"></a><a href="更新指定的StatefulSet.md">更新指定的StatefulSet</a></p>
+<tr id="row948925720103"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p19489357111019"><a name="p19489357111019"></a><a name="p19489357111019"></a>列出所有的Deployment</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p15621039171"><a name="p15621039171"></a><a name="p15621039171"></a>更新指定Namespace下的StatefulSet对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p153111593332"><a name="p153111593332"></a><a name="p153111593332"></a>GET /apis/apps/v1/deployments</p>
 </td>
 </tr>
-<tr id="row891912416710"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1919541172"><a name="p1919541172"></a><a name="p1919541172"></a><a href="更新指定的StatefulSet的状态.md">更新指定的StatefulSet的状态</a></p>
+<tr id="row189121654161017"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p49121954101013"><a name="p49121954101013"></a><a name="p49121954101013"></a>更新指定的Deployment</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p10919194112719"><a name="p10919194112719"></a><a name="p10919194112719"></a>更新指定Namespace下指定StatefulSet对象的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p139121254121011"><a name="p139121254121011"></a><a name="p139121254121011"></a>PATCH /apis/apps/v1/namespaces/{namespace}/deployments/{name}</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## DaemonSet<a name="section6431713133319"></a>
-
-**表 10**  DaemonSet
-
-<a name="table741312332346"></a>
-<table><thead align="left"><tr id="row241653313346"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p1453185115343"><a name="p1453185115343"></a><a name="p1453185115343"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p1545318512342"><a name="p1545318512342"></a><a name="p1545318512342"></a>说明</p>
-</th>
+<tr id="row1630752181014"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p93045210101"><a name="p93045210101"></a><a name="p93045210101"></a>更新指定的Deployment的状态</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p23035221017"><a name="p23035221017"></a><a name="p23035221017"></a>PATCH /apis/apps/v1/namespaces/{namespace}/deployments/{name}/status</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row174164337342"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14161333113411"><a name="p14161333113411"></a><a name="p14161333113411"></a><a href="创建DaemonSet.md">创建DaemonSet</a></p>
+<tr id="row166589185"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p031018132189"><a name="p031018132189"></a><a name="p031018132189"></a>更新指定的Deployment的伸缩操作</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p241673310344"><a name="p241673310344"></a><a name="p241673310344"></a>创建一个DaemonSet资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p868810189"><a name="p868810189"></a><a name="p868810189"></a>PATCH /apis/apps/v1/namespaces/{namespace}/deployments/{name}/scale</p>
 </td>
 </tr>
-<tr id="row4416183310348"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p5417103363410"><a name="p5417103363410"></a><a name="p5417103363410"></a><a href="删除指定的DaemonSet.md">删除DaemonSet</a></p>
+<tr id="row7980195320316"><td class="cellrowborder" rowspan="11" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p1267985011044"><a name="p1267985011044"></a><a name="p1267985011044"></a>Statefulset</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p74171933143413"><a name="p74171933143413"></a><a name="p74171933143413"></a>删除一个DaemonSet资源对象。</p>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p93272602315"><a name="p93272602315"></a><a name="p93272602315"></a>创建StatefulSet</p>
 </td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p16372123412277"><a name="p16372123412277"></a><a name="p16372123412277"></a>POST /apis/apps/v1/namespaces/{namespace}/statefulsets</p>
+</td>
 </tr>
-<tr id="row1441733310344"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1441733373414"><a name="p1441733373414"></a><a name="p1441733373414"></a><a href="删除所有的Daemonset.md">删除所有的Daemonset</a></p>
+<tr id="row148641428132216"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1986462819229"><a name="p1986462819229"></a><a name="p1986462819229"></a>删除指定的StatefulSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p16417833153420"><a name="p16417833153420"></a><a name="p16417833153420"></a>删除所有DaemonSet资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p198641228132215"><a name="p198641228132215"></a><a name="p198641228132215"></a>DELETE /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}</p>
 </td>
 </tr>
-<tr id="row1841763314343"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p9417533183410"><a name="p9417533183410"></a><a name="p9417533183410"></a><a href="获取指定的DaemonSet.md">获取指定的DaemonSet</a></p>
+<tr id="row1869731562213"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1969731572219"><a name="p1969731572219"></a><a name="p1969731572219"></a>删除所有的StatefulSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p16417183353416"><a name="p16417183353416"></a><a name="p16417183353416"></a>读取指定Namespace下的DaemonSet对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p5697121512229"><a name="p5697121512229"></a><a name="p5697121512229"></a>DELETE /apis/apps/v1/namespaces/{namespace}/statefulsets</p>
 </td>
 </tr>
-<tr id="row5417633183415"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p341719332349"><a name="p341719332349"></a><a name="p341719332349"></a><a href="获取指定的DaemonSet的状态.md">获取指定的DaemonSet的状态</a></p>
+<tr id="row17289114715226"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1128994710224"><a name="p1128994710224"></a><a name="p1128994710224"></a>获取指定的StatefulSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1941712336348"><a name="p1941712336348"></a><a name="p1941712336348"></a>读取指定Namespace下指定DaemonSet对象的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1228964762214"><a name="p1228964762214"></a><a name="p1228964762214"></a>GET /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}</p>
 </td>
 </tr>
-<tr id="row1441753333410"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p9418113319348"><a name="p9418113319348"></a><a name="p9418113319348"></a><a href="更新指定的DaemonSet.md">更新指定的DaemonSet</a></p>
+<tr id="row131922506221"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p4192105072217"><a name="p4192105072217"></a><a name="p4192105072217"></a>获取指定的StatefulSet的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9418103383417"><a name="p9418103383417"></a><a name="p9418103383417"></a>更新指定Namespace下的DaemonSet对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p133631931122413"><a name="p133631931122413"></a><a name="p133631931122413"></a>GET /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/status</p>
 </td>
 </tr>
-<tr id="row16418203319342"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p741810336341"><a name="p741810336341"></a><a name="p741810336341"></a><a href="更新指定的DaemonSet的状态.md">更新指定的DaemonSet的状态</a></p>
+<tr id="row12336153672220"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p0336123632216"><a name="p0336123632216"></a><a name="p0336123632216"></a>替换指定的StatefulSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p641813316340"><a name="p641813316340"></a><a name="p641813316340"></a>更新指定Namespace下指定DaemonSet对象的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1133653617228"><a name="p1133653617228"></a><a name="p1133653617228"></a>PUT /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}</p>
 </td>
 </tr>
-<tr id="row393544218367"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1893611421362"><a name="p1893611421362"></a><a name="p1893611421362"></a><a href="列出所有的DaemonSet.md">列出指定的DaemonSet</a></p>
+<tr id="row78906332221"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p28905338224"><a name="p28905338224"></a><a name="p28905338224"></a>替换指定的StatefulSet的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19936154212363"><a name="p19936154212363"></a><a name="p19936154212363"></a>列出所有DemonSet资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p789023312228"><a name="p789023312228"></a><a name="p789023312228"></a>PUT /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/status</p>
 </td>
 </tr>
-<tr id="row1426194615369"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p642794615366"><a name="p642794615366"></a><a name="p642794615366"></a><a href="列出指定Namespace下的DaemonSet.md">列出指定Namespace下的DaemonSet</a></p>
+<tr id="row135351658132213"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p253512581226"><a name="p253512581226"></a><a name="p253512581226"></a>列出指定Namespace下的StatefulSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1142724618360"><a name="p1142724618360"></a><a name="p1142724618360"></a>列出指定Namespace下的所有DaemonSet资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p17535175817225"><a name="p17535175817225"></a><a name="p17535175817225"></a>GET /apis/apps/v1/namespaces/{namespace}/statefulsets</p>
 </td>
 </tr>
-<tr id="row5700114916365"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1701194915368"><a name="p1701194915368"></a><a name="p1701194915368"></a><a href="替换指定的DaemonSet.md">替换指定的DaemonSet</a></p>
+<tr id="row2606183132215"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p10784105772510"><a name="p10784105772510"></a><a name="p10784105772510"></a>列出所有的StatefulSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p17701449153620"><a name="p17701449153620"></a><a name="p17701449153620"></a>替换指定Namespace下的DaemonSet对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1030971092611"><a name="p1030971092611"></a><a name="p1030971092611"></a>GET /apis/apps/v1/statefulsets</p>
 </td>
 </tr>
-<tr id="row16291855133620"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p132911553364"><a name="p132911553364"></a><a name="p132911553364"></a><a href="替换指定的DaemonSet的状态.md">替换指定的DaemonSet的状态</a></p>
+<tr id="row9360823102216"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7460815142614"><a name="p7460815142614"></a><a name="p7460815142614"></a>更新指定的StatefulSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p929655113613"><a name="p929655113613"></a><a name="p929655113613"></a>替换指定Namespace下指定DaemonSet对象的状态，即修改DaemonSet对象的status字段的值。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p13360192310225"><a name="p13360192310225"></a><a name="p13360192310225"></a>PATCH /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## Job<a name="section4614175410203"></a>
-
-**表 11**  Job
-
-<a name="table8653422152114"></a>
-<table><thead align="left"><tr id="row1565511225219"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p20146738192118"><a name="p20146738192118"></a><a name="p20146738192118"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p61471138152117"><a name="p61471138152117"></a><a name="p61471138152117"></a>说明</p>
-</th>
+<tr id="row14289102617221"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1696283622618"><a name="p1696283622618"></a><a name="p1696283622618"></a>更新指定的StatefulSet的状态</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p842824917268"><a name="p842824917268"></a><a name="p842824917268"></a>PATCH /apis/apps/v1/namespaces/{namespace}/statefulsets/{name}/status</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row9655102202116"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p5655222142112"><a name="p5655222142112"></a><a name="p5655222142112"></a><a href="创建Job.md">创建Job</a></p>
+<tr id="row1949954320"><td class="cellrowborder" rowspan="11" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p4671625719274"><a name="p4671625719274"></a><a name="p4671625719274"></a>Daemonset</p>
+<p id="p43674211290"><a name="p43674211290"></a><a name="p43674211290"></a></p>
+<p id="p1161219453290"><a name="p1161219453290"></a><a name="p1161219453290"></a></p>
+<p id="p7541204814291"><a name="p7541204814291"></a><a name="p7541204814291"></a></p>
+<p id="p94196531298"><a name="p94196531298"></a><a name="p94196531298"></a></p>
+<p id="p893155612910"><a name="p893155612910"></a><a name="p893155612910"></a></p>
+<p id="p1675195932915"><a name="p1675195932915"></a><a name="p1675195932915"></a></p>
+<p id="p156341313018"><a name="p156341313018"></a><a name="p156341313018"></a></p>
+<p id="p1922918673014"><a name="p1922918673014"></a><a name="p1922918673014"></a></p>
+<p id="p161120516295"><a name="p161120516295"></a><a name="p161120516295"></a></p>
+<p id="p1561683719295"><a name="p1561683719295"></a><a name="p1561683719295"></a></p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p3186033114010"><a name="p3186033114010"></a><a name="p3186033114010"></a>创建DaemonSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p46551122192115"><a name="p46551122192115"></a><a name="p46551122192115"></a>创建Job资源对象。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p1030754174016"><a name="p1030754174016"></a><a name="p1030754174016"></a>POST /apis/apps/v1/namespaces/{namespace}/daemonsets</p>
 </td>
 </tr>
-<tr id="row16553228218"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18655192220217"><a name="p18655192220217"></a><a name="p18655192220217"></a><a href="删除Job.md">删除Job</a></p>
+<tr id="row53616428296"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p91791836183017"><a name="p91791836183017"></a><a name="p91791836183017"></a>删除指定的DaemonSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p665572217211"><a name="p665572217211"></a><a name="p665572217211"></a>删除Job资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p041125020307"><a name="p041125020307"></a><a name="p041125020307"></a>DELETE /apis/apps/v1/namespaces/{namespace}/daemonsets/{name}</p>
 </td>
 </tr>
-<tr id="row13655822132117"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p965511224212"><a name="p965511224212"></a><a name="p965511224212"></a><a href="删除所有的Job.md">删除所有的Job</a></p>
+<tr id="row1561213454291"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p4612134512291"><a name="p4612134512291"></a><a name="p4612134512291"></a>删除所有的Daemonset</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p065532222116"><a name="p065532222116"></a><a name="p065532222116"></a>删除所有的Job资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p111115911337"><a name="p111115911337"></a><a name="p111115911337"></a>DELETE /apis/apps/v1/namespaces/{namespace}/daemonsets</p>
 </td>
 </tr>
-<tr id="row1265532218217"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p196551022162116"><a name="p196551022162116"></a><a name="p196551022162116"></a><a href="获取指定的Job.md">获取指定的Job</a></p>
+<tr id="row6541248112919"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p876811493320"><a name="p876811493320"></a><a name="p876811493320"></a>获取指定的DaemonSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p15655182210219"><a name="p15655182210219"></a><a name="p15655182210219"></a>获取指定的Job资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p19111133373312"><a name="p19111133373312"></a><a name="p19111133373312"></a>GET /apis/apps/v1/namespaces/{namespace}/daemonsets/{name}</p>
 </td>
 </tr>
-<tr id="row136551224215"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p12655192212118"><a name="p12655192212118"></a><a name="p12655192212118"></a><a href="获取指定的Job的状态.md">获取指定的Job的状态</a></p>
+<tr id="row144191453102911"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7419185362915"><a name="p7419185362915"></a><a name="p7419185362915"></a>获取指定的DaemonSet的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p6655122252110"><a name="p6655122252110"></a><a name="p6655122252110"></a>获取指定Job的状态信息。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1964015718333"><a name="p1964015718333"></a><a name="p1964015718333"></a>GET /apis/apps/v1/namespaces/{namespace}/daemonsets/{name}/status</p>
 </td>
 </tr>
-<tr id="row106554227211"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1665592214216"><a name="p1665592214216"></a><a name="p1665592214216"></a><a href="替换指定的Job.md">替换指定的Job</a></p>
+<tr id="row2931756152918"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p193205642916"><a name="p193205642916"></a><a name="p193205642916"></a>更新指定的DaemonSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p865518223216"><a name="p865518223216"></a><a name="p865518223216"></a>替换指定Job。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p14925137343"><a name="p14925137343"></a><a name="p14925137343"></a>PATCH /apis/apps/v1/namespaces/{namespace}/daemonsets/{name}</p>
 </td>
 </tr>
-<tr id="row11655152292114"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1565562218217"><a name="p1565562218217"></a><a name="p1565562218217"></a><a href="替换指定的Job的状态.md">替换指定的Job的状态</a></p>
+<tr id="row18757596293"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p475115992918"><a name="p475115992918"></a><a name="p475115992918"></a>更新指定的DaemonSet的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p16655132292112"><a name="p16655132292112"></a><a name="p16655132292112"></a>替换指定Job的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p175359192914"><a name="p175359192914"></a><a name="p175359192914"></a>PATCH /apis/apps/v1/namespaces/{namespace}/daemonsets/{name}/status</p>
 </td>
 </tr>
-<tr id="row747158241"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p2048115182417"><a name="p2048115182417"></a><a name="p2048115182417"></a><a href="列出指定Namespace下的Job.md">列出指定Namespace下的Job</a></p>
+<tr id="row363419303010"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1963410312305"><a name="p1963410312305"></a><a name="p1963410312305"></a>列出所有的DaemonSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1648455242"><a name="p1648455242"></a><a name="p1648455242"></a>列出指定Namespace下的所有Jod资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p863413315307"><a name="p863413315307"></a><a name="p863413315307"></a>GET /apis/apps/v1/daemonsets</p>
 </td>
 </tr>
-<tr id="row18180161218247"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1018018128249"><a name="p1018018128249"></a><a name="p1018018128249"></a><a href="列出所有Job.md">列出所有Job</a></p>
+<tr id="row1229966304"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p222920612308"><a name="p222920612308"></a><a name="p222920612308"></a>列出指定Namespace下的DaemonSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p5180121217248"><a name="p5180121217248"></a><a name="p5180121217248"></a>用于获取Job列表。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1462477133516"><a name="p1462477133516"></a><a name="p1462477133516"></a>GET /apis/apps/v1/namespaces/{namespace}/daemonsets</p>
 </td>
 </tr>
-<tr id="row16627149172414"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p5627393245"><a name="p5627393245"></a><a name="p5627393245"></a><a href="更新指定的Job的状态.md">更新指定的Job的状态</a></p>
+<tr id="row1111513297"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1311105118298"><a name="p1311105118298"></a><a name="p1311105118298"></a>替换指定的DaemonSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p12628189182420"><a name="p12628189182420"></a><a name="p12628189182420"></a>更新指定Namespace下指定Job的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p311151182916"><a name="p311151182916"></a><a name="p311151182916"></a>PUT /apis/apps/v1/namespaces/{namespace}/daemonsets/{name}</p>
 </td>
 </tr>
-<tr id="row2127176241"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p41276713244"><a name="p41276713244"></a><a name="p41276713244"></a><a href="更新指定的Job.md">更新指定的Job</a></p>
+<tr id="row7616153716293"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1361643713294"><a name="p1361643713294"></a><a name="p1361643713294"></a>替换指定的DaemonSet的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p10127972246"><a name="p10127972246"></a><a name="p10127972246"></a>更新指定的Job。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p196162375291"><a name="p196162375291"></a><a name="p196162375291"></a>PUT /apis/apps/v1/namespaces/{namespace}/daemonsets/{name}/status</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## CronJob<a name="section6473758192314"></a>
-
-**表 12**  CronJob
-
-<a name="table21132315244"></a>
-<table><thead align="left"><tr id="row911413362418"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p695771010248"><a name="p695771010248"></a><a name="p695771010248"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p9957510102415"><a name="p9957510102415"></a><a name="p9957510102415"></a>说明</p>
-</th>
+<tr id="row10260164310320"><td class="cellrowborder" rowspan="11" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p3094168219276"><a name="p3094168219276"></a><a name="p3094168219276"></a>Job</p>
+<p id="p1396162510575"><a name="p1396162510575"></a><a name="p1396162510575"></a></p>
+<p id="p17593728205714"><a name="p17593728205714"></a><a name="p17593728205714"></a></p>
+<p id="p1962533113577"><a name="p1962533113577"></a><a name="p1962533113577"></a></p>
+<p id="p18183618572"><a name="p18183618572"></a><a name="p18183618572"></a></p>
+<p id="p1354320411918"><a name="p1354320411918"></a><a name="p1354320411918"></a></p>
+<p id="p1951511441912"><a name="p1951511441912"></a><a name="p1951511441912"></a></p>
+<p id="p12349120220"><a name="p12349120220"></a><a name="p12349120220"></a></p>
+<p id="p3105245217"><a name="p3105245217"></a><a name="p3105245217"></a></p>
+<p id="p63478348210"><a name="p63478348210"></a><a name="p63478348210"></a></p>
+<p id="p316214475214"><a name="p316214475214"></a><a name="p316214475214"></a></p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p1518673313403"><a name="p1518673313403"></a><a name="p1518673313403"></a>创建Job</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p12307184154018"><a name="p12307184154018"></a><a name="p12307184154018"></a>POST /apis/batch/v1/namespaces/{namespace}/jobs</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row1711515315243"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1711543152412"><a name="p1711543152412"></a><a name="p1711543152412"></a><a href="创建CronJob.md">创建CronJob</a></p>
+<tr id="row83964259571"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1418314389016"><a name="p1418314389016"></a><a name="p1418314389016"></a>删除Job</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1511553102418"><a name="p1511553102418"></a><a name="p1511553102418"></a>创建CronJob资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p979713225313"><a name="p979713225313"></a><a name="p979713225313"></a>DELETE /apis/batch/v1/namespaces/{namespace}/jobs/{name}</p>
 </td>
 </tr>
-<tr id="row611513192413"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p13115434244"><a name="p13115434244"></a><a name="p13115434244"></a><a href="删除CronJob.md">删除CronJob</a></p>
+<tr id="row8593172845713"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1859372814579"><a name="p1859372814579"></a><a name="p1859372814579"></a>删除所有的Job</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p161152313246"><a name="p161152313246"></a><a name="p161152313246"></a>删除CronJob资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p134611361320"><a name="p134611361320"></a><a name="p134611361320"></a>DELETE /apis/batch/v1/namespaces/{namespace}/jobs</p>
 </td>
 </tr>
-<tr id="row17115639240"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p61151439240"><a name="p61151439240"></a><a name="p61151439240"></a><a href="删除所有的CronJob.md">删除所有的CronJob</a></p>
+<tr id="row6624143119579"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p136251731185717"><a name="p136251731185717"></a><a name="p136251731185717"></a>获取指定的Job</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p131151137246"><a name="p131151137246"></a><a name="p131151137246"></a>删除所有CronJob资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p56251331145713"><a name="p56251331145713"></a><a name="p56251331145713"></a>GET /apis/batch/v1/namespaces/{namespace}/jobs/{name}</p>
 </td>
 </tr>
-<tr id="row11153382417"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p181151835241"><a name="p181151835241"></a><a name="p181151835241"></a><a href="获取指定的CronJob.md">获取指定的CronJob</a></p>
+<tr id="row1381113617578"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1681103615579"><a name="p1681103615579"></a><a name="p1681103615579"></a>获取指定的Job的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p131161333242"><a name="p131161333242"></a><a name="p131161333242"></a>获取指定的CronJob资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p10364359239"><a name="p10364359239"></a><a name="p10364359239"></a>GET /apis/batch/v1/namespaces/{namespace}/jobs/{name}/status</p>
 </td>
 </tr>
-<tr id="row41165392415"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1511613322411"><a name="p1511613322411"></a><a name="p1511613322411"></a><a href="获取指定的CronJob的状态.md">获取指定的CronJob的状态</a></p>
+<tr id="row1154214411113"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p13543441818"><a name="p13543441818"></a><a name="p13543441818"></a>替换指定的Job</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p335590173210"><a name="p335590173210"></a><a name="p335590173210"></a>获取指定的CronJob的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p25229347"><a name="p25229347"></a><a name="p25229347"></a>PUT /apis/batch/v1/namespaces/{namespace}/jobs/{name}</p>
 </td>
 </tr>
-<tr id="row151167314247"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p811615302413"><a name="p811615302413"></a><a name="p811615302413"></a><a href="替换指定的CronJob.md">替换指定的CronJob</a></p>
+<tr id="row175155441614"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p205151441312"><a name="p205151441312"></a><a name="p205151441312"></a>替换指定的Job的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1711683122415"><a name="p1711683122415"></a><a name="p1711683122415"></a>替换指定的CronJob资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p18407324544"><a name="p18407324544"></a><a name="p18407324544"></a>PUT /apis/batch/v1/namespaces/{namespace}/jobs/{name}/status</p>
 </td>
 </tr>
-<tr id="row101161938244"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p20116183162416"><a name="p20116183162416"></a><a name="p20116183162416"></a><a href="替换指定的CronJob的状态.md">替换指定的CronJob的状态</a></p>
+<tr id="row1923414121628"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p18234101219210"><a name="p18234101219210"></a><a name="p18234101219210"></a>列出指定Namespace下的Job</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p4116133182414"><a name="p4116133182414"></a><a name="p4116133182414"></a>替换指定CronJob的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p92343121925"><a name="p92343121925"></a><a name="p92343121925"></a>GET /apis/batch/v1/namespaces/{namespace}/jobs</p>
 </td>
 </tr>
-<tr id="row133721432718"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p23395148272"><a name="p23395148272"></a><a name="p23395148272"></a><a href="列出指定Namespace下的CronJob.md">列出指定Namespace下的CronJob</a></p>
+<tr id="row210924825"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p37351129523"><a name="p37351129523"></a><a name="p37351129523"></a>列出所有Job</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p433951411279"><a name="p433951411279"></a><a name="p433951411279"></a>列出指定Namespace下的所有CronJod资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p33414562"><a name="p33414562"></a><a name="p33414562"></a>GET /apis/batch/v1/jobs</p>
 </td>
 </tr>
-<tr id="row7240524112714"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p7240124112715"><a name="p7240124112715"></a><a name="p7240124112715"></a><a href="列出所有的CronJob.md">列出所有的CronJob</a></p>
+<tr id="row1834718341326"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p113471534329"><a name="p113471534329"></a><a name="p113471534329"></a>更新指定的Job的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p14240182472720"><a name="p14240182472720"></a><a name="p14240182472720"></a>列出所有的CronJob资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p47779422"><a name="p47779422"></a><a name="p47779422"></a>PATCH /apis/batch/v1/namespaces/{namespace}/jobs/{name}/status</p>
 </td>
 </tr>
-<tr id="row2077102717276"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p10782272279"><a name="p10782272279"></a><a name="p10782272279"></a><a href="更新指定的CronJob的状态.md">更新指定的CronJob的状态</a></p>
+<tr id="row161611147223"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1416264719218"><a name="p1416264719218"></a><a name="p1416264719218"></a>更新指定的Job</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1878182772718"><a name="p1878182772718"></a><a name="p1878182772718"></a>更新指定Namespace下指定CronJob的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p14624719"><a name="p14624719"></a><a name="p14624719"></a>PATCH /apis/batch/v1/namespaces/{namespace}/jobs/{name}</p>
 </td>
 </tr>
-<tr id="row950122117273"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p145011021162719"><a name="p145011021162719"></a><a name="p145011021162719"></a><a href="更新指定的CronJob.md">更新指定的CronJob</a></p>
+<tr id="row175471579568"><td class="cellrowborder" rowspan="11" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p184360125719"><a name="p184360125719"></a><a name="p184360125719"></a>CronJob</p>
+<p id="p1173612583369"><a name="p1173612583369"></a><a name="p1173612583369"></a></p>
+<p id="p1791122120366"><a name="p1791122120366"></a><a name="p1791122120366"></a></p>
+<p id="p19791151833612"><a name="p19791151833612"></a><a name="p19791151833612"></a></p>
+<p id="p1682862412363"><a name="p1682862412363"></a><a name="p1682862412363"></a></p>
+<p id="p61931028183618"><a name="p61931028183618"></a><a name="p61931028183618"></a></p>
+<p id="p148712407369"><a name="p148712407369"></a><a name="p148712407369"></a></p>
+<p id="p89027388362"><a name="p89027388362"></a><a name="p89027388362"></a></p>
+<p id="p176944353362"><a name="p176944353362"></a><a name="p176944353362"></a></p>
+<p id="p10381133117369"><a name="p10381133117369"></a><a name="p10381133117369"></a></p>
+<p id="p6417151633618"><a name="p6417151633618"></a><a name="p6417151633618"></a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p15501152122719"><a name="p15501152122719"></a><a name="p15501152122719"></a>更新指定的CronJob资源对象。</p>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p1443306571"><a name="p1443306571"></a><a name="p1443306571"></a>创建CronJob</p>
 </td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p443200125718"><a name="p443200125718"></a><a name="p443200125718"></a>POST /apis/batch/v1beta1/namespaces/{namespace}/cronjobs</p>
+</td>
 </tr>
-</tbody>
-</table>
-
-## ReplicaSet<a name="section1136381210362"></a>
-
-**表 13**  ReplicaSet
-
-<a name="table11215101815365"></a>
-<table><thead align="left"><tr id="row1721810186364"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p101766339367"><a name="p101766339367"></a><a name="p101766339367"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p1617673323615"><a name="p1617673323615"></a><a name="p1617673323615"></a>说明</p>
-</th>
+<tr id="row177361586366"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1051981213401"><a name="p1051981213401"></a><a name="p1051981213401"></a>删除CronJob</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p14722502"><a name="p14722502"></a><a name="p14722502"></a>DELETE /apis/batch/v1beta1/namespaces/{namespace}/cronjobs/{name}</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row1721811811368"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p3218518183614"><a name="p3218518183614"></a><a name="p3218518183614"></a><a href="列出指定的ReplicaSet.md">列出指定的ReplicaSet</a></p>
+<tr id="row13791152116361"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p4791132163619"><a name="p4791132163619"></a><a name="p4791132163619"></a>删除所有的CronJob</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9218818163615"><a name="p9218818163615"></a><a name="p9218818163615"></a>列出指定Namespace下的所有ReplicaSet资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p17217497"><a name="p17217497"></a><a name="p17217497"></a>DELETE /apis/batch/v1beta1/namespaces/{namespace}/cronjobs</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## ReplicationController<a name="section19743501453"></a>
-
-**表 14**  ReplicationController
-
-<a name="table12457630134518"></a>
-<table><thead align="left"><tr id="row1845863084518"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p631833944517"><a name="p631833944517"></a><a name="p631833944517"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p931813911450"><a name="p931813911450"></a><a name="p931813911450"></a>说明</p>
-</th>
+<tr id="row57911818153617"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p193531451104014"><a name="p193531451104014"></a><a name="p193531451104014"></a>获取指定的CronJob</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p5525626"><a name="p5525626"></a><a name="p5525626"></a>GET /apis/batch/v1beta1/namespaces/{namespace}/cronjobs/{name}</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row145813301454"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p84583308455"><a name="p84583308455"></a><a name="p84583308455"></a><a href="创建ReplicationController.md">创建ReplicationController</a></p>
+<tr id="row1182811242363"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1946318784118"><a name="p1946318784118"></a><a name="p1946318784118"></a>获取指定的CronJob的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p16458143016451"><a name="p16458143016451"></a><a name="p16458143016451"></a>创建ReplicationController资源类型。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p59499602"><a name="p59499602"></a><a name="p59499602"></a>GET /apis/batch/v1beta1/namespaces/{namespace}/cronjobs/{name}/status</p>
 </td>
 </tr>
-<tr id="row1145810302453"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p74581430144520"><a name="p74581430144520"></a><a name="p74581430144520"></a><a href="删除ReplicationController.md">删除ReplicationController</a></p>
+<tr id="row111931128123619"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p19821025154114"><a name="p19821025154114"></a><a name="p19821025154114"></a>替换指定的CronJob</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1545813074514"><a name="p1545813074514"></a><a name="p1545813074514"></a>删除一个ReplicationController对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p51931028153610"><a name="p51931028153610"></a><a name="p51931028153610"></a>PUT /apis/batch/v1beta1/namespaces/{namespace}/cronjobs/{name}</p>
 </td>
 </tr>
-<tr id="row7458143015453"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p11458113014456"><a name="p11458113014456"></a><a name="p11458113014456"></a><a href="删除所有的ReplicationController.md">删除所有的ReplicationController</a></p>
+<tr id="row1387094013363"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7871104013365"><a name="p7871104013365"></a><a name="p7871104013365"></a>替换指定的CronJob的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p945883084513"><a name="p945883084513"></a><a name="p945883084513"></a>批量删除ReplicationController。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1482944"><a name="p1482944"></a><a name="p1482944"></a>PUT /apis/batch/v1beta1/namespaces/{namespace}/cronjobs/{name}/status</p>
 </td>
 </tr>
-<tr id="row7458103017458"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p34583309457"><a name="p34583309457"></a><a name="p34583309457"></a><a href="获取指定Namespace下的ReplicationController.md">获取指定Namespace下的ReplicationController</a></p>
+<tr id="row790123863614"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p167531711427"><a name="p167531711427"></a><a name="p167531711427"></a>列出指定Namespace下的CronJob</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1545813304457"><a name="p1545813304457"></a><a name="p1545813304457"></a>获取指定Namespace下的ReplicationController对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p19528317"><a name="p19528317"></a><a name="p19528317"></a>GET /apis/batch/v1beta1/namespaces/{namespace}/cronjobs</p>
 </td>
 </tr>
-<tr id="row17458430174517"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p345893034511"><a name="p345893034511"></a><a name="p345893034511"></a><a href="替换指定Namespace下的ReplicationController.md">替换指定Namespace下的ReplicationController</a></p>
+<tr id="row56936351369"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p14694133503613"><a name="p14694133503613"></a><a name="p14694133503613"></a>列出所有的CronJob</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p945833014457"><a name="p945833014457"></a><a name="p945833014457"></a>替换指定Namespace下的ReplicationController对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1669419357365"><a name="p1669419357365"></a><a name="p1669419357365"></a>GET /apis/batch/v1beta1/cronjobs</p>
 </td>
 </tr>
-<tr id="row745920302450"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p24591430164516"><a name="p24591430164516"></a><a name="p24591430164516"></a><a href="替换指定Namespace下的ReplicationController状态.md">替换指定Namespace下的ReplicationController状态</a></p>
+<tr id="row12381143116368"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p438212316369"><a name="p438212316369"></a><a name="p438212316369"></a>更新指定的CronJob的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p3459530114518"><a name="p3459530114518"></a><a name="p3459530114518"></a>替换指定Namespace下的某个ReplicationController对象的状态，即修改ReplicationController对象status各字段的值。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6382153123613"><a name="p6382153123613"></a><a name="p6382153123613"></a>PATCH /apis/batch/v1beta1/namespaces/{namespace}/cronjobs/{name}/status</p>
 </td>
 </tr>
-<tr id="row1545917308450"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p164592306459"><a name="p164592306459"></a><a name="p164592306459"></a><a href="列出指定Namespace下的ReplicationController.md">列出指定Namespace下的ReplicationController</a></p>
+<tr id="row10416181673610"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p184172162360"><a name="p184172162360"></a><a name="p184172162360"></a>更新指定的CronJob</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079615054_p19352287"><a name="zh-cn_topic_0079615054_p19352287"></a><a name="zh-cn_topic_0079615054_p19352287"></a>列出指定Namespace下的所有ReplicationController。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p341761610368"><a name="p341761610368"></a><a name="p341761610368"></a>PATCH /apis/batch/v1beta1/namespaces/{namespace}/cronjobs/{name}</p>
 </td>
 </tr>
-<tr id="row17156194074710"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p13157174094720"><a name="p13157174094720"></a><a name="p13157174094720"></a><a href="列出ReplicationController.md">列出ReplicationController</a></p>
+<tr id="row1419213219339"><td class="cellrowborder" rowspan="3" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p6028906019279"><a name="p6028906019279"></a><a name="p6028906019279"></a>ReplicaSet</p>
+<p id="p13551801968"><a name="p13551801968"></a><a name="p13551801968"></a></p>
+<p id="p1838143465"><a name="p1838143465"></a><a name="p1838143465"></a></p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p625919448514"><a name="p625919448514"></a><a name="p625919448514"></a>列出指定的ReplicaSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p2157154014714"><a name="p2157154014714"></a><a name="p2157154014714"></a>获取ReplicationController列表。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p14307194174018"><a name="p14307194174018"></a><a name="p14307194174018"></a>GET /apis/apps/v1/namespaces/{namespace}/replicasets</p>
 </td>
 </tr>
-<tr id="row212744464712"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p15127134418479"><a name="p15127134418479"></a><a name="p15127134418479"></a><a href="更新指定的ReplicationController.md">更新指定的ReplicationController</a></p>
+<tr id="row8355901064"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p935570868"><a name="p935570868"></a><a name="p935570868"></a>获取指定的ReplicaSet</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1812715447477"><a name="p1812715447477"></a><a name="p1812715447477"></a>更新指定Namespace下的ReplicationController对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6355501260"><a name="p6355501260"></a><a name="p6355501260"></a>GET /apis/apps/v1/namespaces/{namespace}/replicasets/{name}</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## Endpoints<a name="section19711239392"></a>
-
-**表 15**  Endpoints
-
-<a name="table962485015406"></a>
-<table><thead align="left"><tr id="row66243503405"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p7939359134015"><a name="p7939359134015"></a><a name="p7939359134015"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p893918595407"><a name="p893918595407"></a><a name="p893918595407"></a>说明</p>
-</th>
+<tr id="row1738531768"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p107813262612"><a name="p107813262612"></a><a name="p107813262612"></a>获取Replicasets</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1474617321187"><a name="p1474617321187"></a><a name="p1474617321187"></a>GET /apis/apps/v1/replicasets</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row1662485018401"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p262495012404"><a name="p262495012404"></a><a name="p262495012404"></a><a href="创建Endpoints.md">创建Endpoints</a></p>
+<tr id="row10957421145910"><td class="cellrowborder" rowspan="9" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p30771534145910"><a name="p30771534145910"></a><a name="p30771534145910"></a>ReplicationController</p>
+<p id="p623819131718"><a name="p623819131718"></a><a name="p623819131718"></a></p>
+<p id="p151491817372"><a name="p151491817372"></a><a name="p151491817372"></a></p>
+<p id="p9662023876"><a name="p9662023876"></a><a name="p9662023876"></a></p>
+<p id="p1596782613718"><a name="p1596782613718"></a><a name="p1596782613718"></a></p>
+<p id="p48942331977"><a name="p48942331977"></a><a name="p48942331977"></a></p>
+<p id="p17758163619717"><a name="p17758163619717"></a><a name="p17758163619717"></a></p>
+<p id="p43445391670"><a name="p43445391670"></a><a name="p43445391670"></a></p>
+<p id="p166720201572"><a name="p166720201572"></a><a name="p166720201572"></a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1462416507409"><a name="p1462416507409"></a><a name="p1462416507409"></a>创建一个Endpoints资源对象。</p>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p11867334406"><a name="p11867334406"></a><a name="p11867334406"></a>创建ReplicationController</p>
 </td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0079615078_p66883292"><a name="zh-cn_topic_0079615078_p66883292"></a><a name="zh-cn_topic_0079615078_p66883292"></a>POST /api/v1/namespaces/{namespace}/replicationcontrollers</p>
+</td>
 </tr>
-<tr id="row12624950134013"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1162435044011"><a name="p1162435044011"></a><a name="p1162435044011"></a><a href="删除Endpoints.md">删除Endpoints</a></p>
+<tr id="row16238131320712"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p52387132710"><a name="p52387132710"></a><a name="p52387132710"></a>删除ReplicationController</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p15624165019409"><a name="p15624165019409"></a><a name="p15624165019409"></a>删除一个Endpoints资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p142382013774"><a name="p142382013774"></a><a name="p142382013774"></a>DELETE /api/v1/namespaces/{namespace}/replicationcontrollers/{name}</p>
 </td>
 </tr>
-<tr id="row17624450134015"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1624050154013"><a name="p1624050154013"></a><a name="p1624050154013"></a><a href="删除所有的Endpoints.md">删除所有的Endpoints</a></p>
+<tr id="row6149917376"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p141495171777"><a name="p141495171777"></a><a name="p141495171777"></a>删除所有的ReplicationController</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p146251850164016"><a name="p146251850164016"></a><a name="p146251850164016"></a>删除所有Endpoints资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p31949389"><a name="p31949389"></a><a name="p31949389"></a>DELETE /api/v1/namespaces/{namespace}/replicationcontrollers</p>
 </td>
 </tr>
-<tr id="row762585034015"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p66251550134010"><a name="p66251550134010"></a><a name="p66251550134010"></a><a href="获取指定的Endpoints.md">获取指定的Endpoints</a></p>
+<tr id="row866210231278"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p86621423976"><a name="p86621423976"></a><a name="p86621423976"></a>获取指定Namespace下的ReplicationController</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p562545019405"><a name="p562545019405"></a><a name="p562545019405"></a>获取某个Namespace下指定的Endpoints对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614960_p23141731"><a name="zh-cn_topic_0079614960_p23141731"></a><a name="zh-cn_topic_0079614960_p23141731"></a>GET /api/v1/namespaces/{namespace}/replicationcontrollers/{name}</p>
 </td>
 </tr>
-<tr id="row11625175084014"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p262525011406"><a name="p262525011406"></a><a name="p262525011406"></a><a href="替换指定的Endpoints.md">替换指定的Endpoints</a></p>
+<tr id="row1596715261075"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p596719263715"><a name="p596719263715"></a><a name="p596719263715"></a>替换指定Namespace下的ReplicationController</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p8625350184012"><a name="p8625350184012"></a><a name="p8625350184012"></a>替换指定Namespace下指定的Endpoints资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079615034_p37094046"><a name="zh-cn_topic_0079615034_p37094046"></a><a name="zh-cn_topic_0079615034_p37094046"></a>PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}</p>
 </td>
 </tr>
-<tr id="row96259501408"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18625105084015"><a name="p18625105084015"></a><a name="p18625105084015"></a><a href="列出Endpoints.md">列出Endpoints</a></p>
+<tr id="row118941733872"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1548191481318"><a name="p1548191481318"></a><a name="p1548191481318"></a>替换指定Namespace下的ReplicationController状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1262595017402"><a name="p1262595017402"></a><a name="p1262595017402"></a>列出所有的Endpoints资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1689413332718"><a name="p1689413332718"></a><a name="p1689413332718"></a>PUT /api/v1/namespaces/{namespace}/replicationcontrollers/{name}/status</p>
 </td>
 </tr>
-<tr id="row9625145013406"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1562515064018"><a name="p1562515064018"></a><a name="p1562515064018"></a><a href="列出指定Namespace下的Endpoints.md">列出指定Namespace下的Endpoints</a></p>
+<tr id="row15758193620716"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p193253616131"><a name="p193253616131"></a><a name="p193253616131"></a>列出指定Namespace下的ReplicationController</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p16625145013406"><a name="p16625145013406"></a><a name="p16625145013406"></a>获取指定Namespace下的所有Endpoints对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079615054_p24031405"><a name="zh-cn_topic_0079615054_p24031405"></a><a name="zh-cn_topic_0079615054_p24031405"></a>GET /api/v1/namespaces/{namespace}/replicationcontrollers</p>
 </td>
 </tr>
-<tr id="row193705016447"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p4371190204412"><a name="p4371190204412"></a><a name="p4371190204412"></a><a href="更新指定的Endpoints.md">更新指定的Endpoints</a></p>
+<tr id="row834312391174"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p289651131313"><a name="p289651131313"></a><a name="p289651131313"></a>列出ReplicationController</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p83718034414"><a name="p83718034414"></a><a name="p83718034414"></a>更新指定Namespace下的Endpoints对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614978_p17977942"><a name="zh-cn_topic_0079614978_p17977942"></a><a name="zh-cn_topic_0079614978_p17977942"></a>GET /api/v1/replicationcontrollers</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## Service<a name="section22031373168"></a>
-
-**表 16**  Service
-
-<a name="table13943613191610"></a>
-<table><thead align="left"><tr id="row16944713191618"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p172071120151617"><a name="p172071120151617"></a><a name="p172071120151617"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p4207820141610"><a name="p4207820141610"></a><a name="p4207820141610"></a>说明</p>
-</th>
+<tr id="row9672520674"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5825621412"><a name="p5825621412"></a><a name="p5825621412"></a>更新指定的ReplicationController</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079615044_p66090286"><a name="zh-cn_topic_0079615044_p66090286"></a><a name="zh-cn_topic_0079615044_p66090286"></a>PATCH /api/v1/namespaces/{namespace}/replicationcontrollers/{name}</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row20944101351610"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p179441113131618"><a name="p179441113131618"></a><a name="p179441113131618"></a><a href="创建Service.md">创建Service</a></p>
+<tr id="row68481325181518"><td class="cellrowborder" rowspan="8" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p1412513962011"><a name="p1412513962011"></a><a name="p1412513962011"></a>Endpoints</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p025425441618"><a name="p025425441618"></a><a name="p025425441618"></a>创建Endpoints</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18944913121611"><a name="p18944913121611"></a><a name="p18944913121611"></a>创建一个Service对象。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="zh-cn_topic_0079614955_p55629438"><a name="zh-cn_topic_0079614955_p55629438"></a><a name="zh-cn_topic_0079614955_p55629438"></a>POST /api/v1/namespaces/{namespace}/endpoints</p>
 </td>
 </tr>
-<tr id="row7944131381618"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p094413136165"><a name="p094413136165"></a><a name="p094413136165"></a><a href="删除指定的Service.md">删除Service</a></p>
+<tr id="row592033915159"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1164217651712"><a name="p1164217651712"></a><a name="p1164217651712"></a>删除Endpoints</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p294401319169"><a name="p294401319169"></a><a name="p294401319169"></a>删除一个Service对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614926_p38742975"><a name="zh-cn_topic_0079614926_p38742975"></a><a name="zh-cn_topic_0079614926_p38742975"></a>DELETE /api/v1/namespaces/{namespace}/endpoints/{name}</p>
 </td>
 </tr>
-<tr id="row2944413141616"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1944111310166"><a name="p1944111310166"></a><a name="p1944111310166"></a><a href="获取指定的Service.md">获取指定的Service</a></p>
+<tr id="row1722615127169"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1299310425171"><a name="p1299310425171"></a><a name="p1299310425171"></a>删除所有的Endpoints</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p159448135160"><a name="p159448135160"></a><a name="p159448135160"></a>获取指定的Service对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p14226121211163"><a name="p14226121211163"></a><a name="p14226121211163"></a>DELETE /api/v1/namespaces/{namespace}/endpoints</p>
 </td>
 </tr>
-<tr id="row169441513151610"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p19944013191611"><a name="p19944013191611"></a><a name="p19944013191611"></a><a href="替换指定的Service.md">替换指定的Service</a></p>
+<tr id="row6537917181617"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p10167117186"><a name="p10167117186"></a><a name="p10167117186"></a>获取指定的Endpoints</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p6944161316161"><a name="p6944161316161"></a><a name="p6944161316161"></a>替换指定的Service对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079615072_p9185002"><a name="zh-cn_topic_0079615072_p9185002"></a><a name="zh-cn_topic_0079615072_p9185002"></a>GET /api/v1/namespaces/{namespace}/endpoints/{name}</p>
 </td>
 </tr>
-<tr id="row1694491313169"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1994511137160"><a name="p1994511137160"></a><a name="p1994511137160"></a><a href="列出指定Namespace下的Service.md">列出指定Namespace下的Service</a></p>
+<tr id="row1833672111166"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p144682316184"><a name="p144682316184"></a><a name="p144682316184"></a>替换指定的Endpoints</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p16945413101620"><a name="p16945413101620"></a><a name="p16945413101620"></a>列出指定Namespace下的Service对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p633614210165"><a name="p633614210165"></a><a name="p633614210165"></a>PUT /api/v1/namespaces/{namespace}/endpoints/{name}</p>
 </td>
 </tr>
-<tr id="row294512136163"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1594517139164"><a name="p1594517139164"></a><a name="p1594517139164"></a><a href="列出Service.md">列出Service</a></p>
+<tr id="row1280102631614"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p4280126111614"><a name="p4280126111614"></a><a name="p4280126111614"></a>列出Endpoints</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p094521301618"><a name="p094521301618"></a><a name="p094521301618"></a>获取集群中的Service列表。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614910_p53121653"><a name="zh-cn_topic_0079614910_p53121653"></a><a name="zh-cn_topic_0079614910_p53121653"></a>GET /api/v1/endpoints</p>
 </td>
 </tr>
-<tr id="row1694581361619"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1694551317164"><a name="p1694551317164"></a><a name="p1694551317164"></a><a href="更新指定的Service.md">更新指定的Service</a></p>
+<tr id="row117034280163"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p14703102831617"><a name="p14703102831617"></a><a name="p14703102831617"></a>列出指定Namespace下的Endpoints</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p209452013181617"><a name="p209452013181617"></a><a name="p209452013181617"></a>替换指定的Service对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079615068_p3825860"><a name="zh-cn_topic_0079615068_p3825860"></a><a name="zh-cn_topic_0079615068_p3825860"></a>GET /api/v1/namespaces/{namespace}/endpoints</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## Ingress<a name="section59746191731"></a>
-
-**表 17**  Ingress
-
-<a name="table210410261331"></a>
-<table><thead align="left"><tr id="row41059267311"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p93241635934"><a name="p93241635934"></a><a name="p93241635934"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p113252035336"><a name="p113252035336"></a><a name="p113252035336"></a>说明</p>
-</th>
+<tr id="row02001434161614"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1320043416161"><a name="p1320043416161"></a><a name="p1320043416161"></a>更新指定的Endpoints</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p220063410163"><a name="p220063410163"></a><a name="p220063410163"></a>PATCH /api/v1/namespaces/{namespace}/endpoints/{name}</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row131055261311"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p71059262033"><a name="p71059262033"></a><a name="p71059262033"></a><a href="创建Ingress.md">创建Ingress</a></p>
+<tr id="row19649141632016"><td class="cellrowborder" rowspan="7" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p1858061573212"><a name="p1858061573212"></a><a name="p1858061573212"></a>Service</p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p20945157172816"><a name="p20945157172816"></a><a name="p20945157172816"></a>创建Service</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1210517261236"><a name="p1210517261236"></a><a name="p1210517261236"></a>创建一个Ingress。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p9649141632014"><a name="p9649141632014"></a><a name="p9649141632014"></a>POST /api/v1/namespaces/{namespace}/services</p>
 </td>
 </tr>
-<tr id="row16105142619314"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p121051926535"><a name="p121051926535"></a><a name="p121051926535"></a><a href="更新指定的Ingress.md">更新指定的Ingress</a></p>
+<tr id="row12947142042019"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p63823394298"><a name="p63823394298"></a><a name="p63823394298"></a>删除指定的Service</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1410512267314"><a name="p1410512267314"></a><a name="p1410512267314"></a>对指定的Ingress进行局部更新。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079615016_p16764692"><a name="zh-cn_topic_0079615016_p16764692"></a><a name="zh-cn_topic_0079615016_p16764692"></a>DELETE /api/v1/namespaces/{namespace}/services/{name}</p>
 </td>
 </tr>
-<tr id="row510510261138"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p61051526138"><a name="p61051526138"></a><a name="p61051526138"></a><a href="替换指定的Ingress.md">替换指定的Ingress</a></p>
+<tr id="row285902352011"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p142725173019"><a name="p142725173019"></a><a name="p142725173019"></a>获取指定的Service</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p101051926933"><a name="p101051926933"></a><a name="p101051926933"></a>替换指定的Ingress。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614941_p26666169"><a name="zh-cn_topic_0079614941_p26666169"></a><a name="zh-cn_topic_0079614941_p26666169"></a>GET /api/v1/namespaces/{namespace}/services/{name}</p>
 </td>
 </tr>
-<tr id="row3105826831"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p610542620318"><a name="p610542620318"></a><a name="p610542620318"></a><a href="删除Ingress.md">删除Ingress</a></p>
+<tr id="row15913141918292"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p89133193291"><a name="p89133193291"></a><a name="p89133193291"></a>替换指定的Service</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1589411332712"><a name="p1589411332712"></a><a name="p1589411332712"></a>删除Ingress。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079615066_p22860275"><a name="zh-cn_topic_0079615066_p22860275"></a><a name="zh-cn_topic_0079615066_p22860275"></a>PUT /api/v1/namespaces/{namespace}/services/{name}</p>
 </td>
 </tr>
-<tr id="row1210612268310"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p11106172611314"><a name="p11106172611314"></a><a name="p11106172611314"></a><a href="删除所有的Ingress.md">删除所有的Ingress</a></p>
+<tr id="row17312141713298"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p11312151716299"><a name="p11312151716299"></a><a name="p11312151716299"></a>列出指定Namespace下的Service</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p191065261132"><a name="p191065261132"></a><a name="p191065261132"></a>删除所有的Ingress。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614912_p44847908"><a name="zh-cn_topic_0079614912_p44847908"></a><a name="zh-cn_topic_0079614912_p44847908"></a>GET /api/v1/namespaces/{namespace}/services</p>
 </td>
 </tr>
-<tr id="row910618261637"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p610672616320"><a name="p610672616320"></a><a name="p610672616320"></a><a href="获取指定的Ingress.md">获取指定的Ingress</a></p>
+<tr id="row148711112122912"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p124886663120"><a name="p124886663120"></a><a name="p124886663120"></a>列出Service</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1410662614312"><a name="p1410662614312"></a><a name="p1410662614312"></a>获取指定的Ingress。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079615003_p39571321"><a name="zh-cn_topic_0079615003_p39571321"></a><a name="zh-cn_topic_0079615003_p39571321"></a>GET /api/v1/services</p>
 </td>
 </tr>
-<tr id="row7106162611315"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p010662617314"><a name="p010662617314"></a><a name="p010662617314"></a><a href="列出指定Namespace下的Ingress.md">列出指定Namespace下的Ingress</a></p>
+<tr id="row8187193182010"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1718773142014"><a name="p1718773142014"></a><a name="p1718773142014"></a>更新指定的Service</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1210692619320"><a name="p1210692619320"></a><a name="p1210692619320"></a>列出指定Namespace下的Ingress。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079614894_p61872932"><a name="zh-cn_topic_0079614894_p61872932"></a><a name="zh-cn_topic_0079614894_p61872932"></a>PATCH /api/v1/namespaces/{namespace}/services/{name}</p>
 </td>
 </tr>
-<tr id="row1852517191951"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p2052512198512"><a name="p2052512198512"></a><a name="p2052512198512"></a><a href="获取Ingress列表.md">获取Ingress列表</a></p>
+<tr id="row4542922133210"><td class="cellrowborder" rowspan="11" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p10774165353310"><a name="p10774165353310"></a><a name="p10774165353310"></a>Ingress</p>
+<p id="p177397301370"><a name="p177397301370"></a><a name="p177397301370"></a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p15128934118"><a name="p15128934118"></a><a name="p15128934118"></a>获取Ingress列表。</p>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p5450137203414"><a name="p5450137203414"></a><a name="p5450137203414"></a>创建Ingress</p>
 </td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p937713588515"><a name="p937713588515"></a><a name="p937713588515"></a>POST /apis/networking.k8s.io/v1beta1/namespaces/{namespace}/ingresses (仅适用于1.15及以上版本)</p>
+<p id="p27723259"><a name="p27723259"></a><a name="p27723259"></a>POST /apis/extensions/v1beta1/namespaces/{namespace}/ingresses (仅适用于1.15以下版本)</p>
+</td>
 </tr>
-<tr id="row13655203513"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p5651220357"><a name="p5651220357"></a><a name="p5651220357"></a><a href="获取指定Namespace下的某个Ingress对象的状态.md">获取指定Namespace下的某个Ingress对象的状态</a></p>
+<tr id="row15314192833211"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1586728163420"><a name="p1586728163420"></a><a name="p1586728163420"></a>更新指定的Ingress</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p85097546713"><a name="p85097546713"></a><a name="p85097546713"></a>获取指定Namespace下的某个Ingress对象的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p10852105019143"><a name="p10852105019143"></a><a name="p10852105019143"></a>PATCH /apis/networking.k8s.io/v1beta1/namespaces/{namespace}/ingresses/{name} (仅适用于1.15及以上版本)</p>
+<p id="p76611638133414"><a name="p76611638133414"></a><a name="p76611638133414"></a>PATCH /apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name} (仅适用于1.15以下版本)</p>
 </td>
 </tr>
-<tr id="row56003201511"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1860017201058"><a name="p1860017201058"></a><a name="p1860017201058"></a><a href="替换指定Namespace下的某个Ingress对象的状态.md">替换指定Namespace下的某个Ingress对象的状态</a></p>
+<tr id="row896015335329"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p496015331325"><a name="p496015331325"></a><a name="p496015331325"></a>替换指定的Ingress</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p060010206515"><a name="p060010206515"></a><a name="p060010206515"></a>替换指定Namespace下的某个Ingress对象的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1755574141515"><a name="p1755574141515"></a><a name="p1755574141515"></a>PUT /apis/networking.k8s.io/v1beta1/namespaces/{namespace}/ingresses/{name} (仅适用于1.15及以上版本)</p>
+<p id="p35216193515"><a name="p35216193515"></a><a name="p35216193515"></a>PUT /apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name} (仅适用于1.15以下版本)</p>
 </td>
 </tr>
-<tr id="row13237132115513"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p32371721458"><a name="p32371721458"></a><a name="p32371721458"></a><a href="更新指定Namespace下的某个Ingress对象的状态.md">更新指定Namespace下的某个Ingress对象的状态</a></p>
+<tr id="row18258810113311"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p19197390353"><a name="p19197390353"></a><a name="p19197390353"></a>删除Ingress</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1423752110514"><a name="p1423752110514"></a><a name="p1423752110514"></a>更新指定Namespace下的某个Ingress对象的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p3286191113151"><a name="p3286191113151"></a><a name="p3286191113151"></a>DELETE /apis/networking.k8s.io/v1beta1/namespaces/{namespace}/ingresses/{name} (仅适用于1.15及以上版本)</p>
+<p id="p14262192356"><a name="p14262192356"></a><a name="p14262192356"></a>DELETE /apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name} (仅适用于1.15以下版本)</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## NetworkPolicy<a name="section3512167169"></a>
-
-**表 18**  NetworkPolicy
-
-<a name="table877821191612"></a>
-<table><thead align="left"><tr id="row9781101116163"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p12033224166"><a name="p12033224166"></a><a name="p12033224166"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p20203522111612"><a name="p20203522111612"></a><a name="p20203522111612"></a>说明</p>
-</th>
+<tr id="row1061784017329"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p19618194011327"><a name="p19618194011327"></a><a name="p19618194011327"></a>删除所有的Ingress</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p14964823131514"><a name="p14964823131514"></a><a name="p14964823131514"></a>DELETE /apis/networking.k8s.io/v1beta1/namespaces/{namespace}/ingresses (仅适用于1.15及以上版本)</p>
+<p id="p4670123620353"><a name="p4670123620353"></a><a name="p4670123620353"></a>DELETE /apis/extensions/v1beta1/namespaces/{namespace}/ingresses (仅适用于1.15以下版本)</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row478131141613"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p47811911171618"><a name="p47811911171618"></a><a name="p47811911171618"></a><a href="创建networkpolicy.md">创建networkpolicy</a></p>
+<tr id="row209082183312"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p14915219334"><a name="p14915219334"></a><a name="p14915219334"></a>获取指定的Ingress</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1578117117162"><a name="p1578117117162"></a><a name="p1578117117162"></a>创建networkpolicy。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p892143110152"><a name="p892143110152"></a><a name="p892143110152"></a>GET /apis/networking.k8s.io/v1beta1/namespaces/{namespace}/ingresses/{name} (仅适用于1.15及以上版本)</p>
+<p id="p54711156193519"><a name="p54711156193519"></a><a name="p54711156193519"></a>GET /apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name} (仅适用于1.15以下版本)</p>
 </td>
 </tr>
-<tr id="row37814118163"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p117812011151616"><a name="p117812011151616"></a><a name="p117812011151616"></a><a href="更新指定的networkpolicy.md">更新指定的networkpolicy</a></p>
+<tr id="row31514130339"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p115121343311"><a name="p115121343311"></a><a name="p115121343311"></a>列出指定Namespace下的Ingress</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1478191131614"><a name="p1478191131614"></a><a name="p1478191131614"></a>部分更新指定的NetworkPolicy。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6213103712157"><a name="p6213103712157"></a><a name="p6213103712157"></a>GET /apis/networking.k8s.io/v1beta1/namespaces/{namespace}/ingresses (仅适用于1.15及以上版本)</p>
+<p id="p9498812163612"><a name="p9498812163612"></a><a name="p9498812163612"></a>GET /apis/extensions/v1beta1/namespaces/{namespace}/ingresses (仅适用于1.15以下版本)</p>
 </td>
 </tr>
-<tr id="row8781111119164"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1578118113168"><a name="p1578118113168"></a><a name="p1578118113168"></a><a href="替换指定的networkpolicy.md">替换指定的networkpolicy</a></p>
+<tr id="row680916333317"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p168091234339"><a name="p168091234339"></a><a name="p168091234339"></a>获取Ingress列表</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13781111161611"><a name="p13781111161611"></a><a name="p13781111161611"></a>替换指定的networkpolicy。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p0725124317153"><a name="p0725124317153"></a><a name="p0725124317153"></a>GET /apis/networking.k8s.io/v1beta1/ingresses (仅适用于1.15及以上版本)</p>
+<p id="p39740330364"><a name="p39740330364"></a><a name="p39740330364"></a>GET /apis/extensions/v1beta1/ingresses (仅适用于1.15以下版本)</p>
 </td>
 </tr>
-<tr id="row178115116167"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p11781111141610"><a name="p11781111141610"></a><a name="p11781111141610"></a><a href="删除networkpolicy.md">删除networkpolicy</a></p>
+<tr id="row1830485663214"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p63041056133216"><a name="p63041056133216"></a><a name="p63041056133216"></a>获取指定Namespace下的某个Ingress对象的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p978241151610"><a name="p978241151610"></a><a name="p978241151610"></a>删除networkpolicy。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1594774921516"><a name="p1594774921516"></a><a name="p1594774921516"></a>GET /apis/networking.k8s.io/v1beta1/namespaces/{namespace}/ingresses/{name}/status (仅适用于1.15及以上版本)</p>
+<p id="p14124653193615"><a name="p14124653193615"></a><a name="p14124653193615"></a>GET /apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name}/status (仅适用于1.15以下版本)</p>
 </td>
 </tr>
-<tr id="row167821311191619"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p87821911191619"><a name="p87821911191619"></a><a name="p87821911191619"></a><a href="批量删除networkpolicy.md">批量删除networkpolicy</a></p>
+<tr id="row103521859183215"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1035285913327"><a name="p1035285913327"></a><a name="p1035285913327"></a>替换指定Namespace下的某个Ingress对象的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1278211119169"><a name="p1278211119169"></a><a name="p1278211119169"></a>批量删除networkpolicy。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p10500859141510"><a name="p10500859141510"></a><a name="p10500859141510"></a>PUT /apis/networking.k8s.io/v1beta1/namespaces/{namespace}/ingresses/{name}/status (仅适用于1.15及以上版本)</p>
+<p id="p880362510371"><a name="p880362510371"></a><a name="p880362510371"></a>PUT /apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name}/status (仅适用于1.15以下版本)</p>
 </td>
 </tr>
-<tr id="row478214117164"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p578281116166"><a name="p578281116166"></a><a name="p578281116166"></a><a href="获取指定的networkpolicy.md">获取指定的networkpolicy</a></p>
+<tr id="row1073913043712"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p145011377377"><a name="p145011377377"></a><a name="p145011377377"></a>更新指定Namespace下的某个Ingress对象的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11398111312010"><a name="p11398111312010"></a><a name="p11398111312010"></a>获取指定的networkpolicy。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p56628551611"><a name="p56628551611"></a><a name="p56628551611"></a>PATCH /apis/networking.k8s.io/v1beta1/namespaces/{namespace}/ingresses/{name}/status (仅适用于1.15及以上版本)</p>
+<p id="p35682485373"><a name="p35682485373"></a><a name="p35682485373"></a>PATCH /apis/extensions/v1beta1/namespaces/{namespace}/ingresses/{name}/status (仅适用于1.15以下版本)</p>
 </td>
 </tr>
-<tr id="row9782411141611"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1778221116161"><a name="p1778221116161"></a><a name="p1778221116161"></a><a href="列出指定namespace下的networkpolicy.md">列出指定namespace下的networkpolicy</a></p>
+<tr id="row27081713134118"><td class="cellrowborder" rowspan="8" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p14708213134116"><a name="p14708213134116"></a><a name="p14708213134116"></a>NetworkPolicy</p>
+<p id="p17142134144111"><a name="p17142134144111"></a><a name="p17142134144111"></a></p>
+<p id="p164868172412"><a name="p164868172412"></a><a name="p164868172412"></a></p>
+<p id="p1471133874110"><a name="p1471133874110"></a><a name="p1471133874110"></a></p>
+<p id="p1423943618416"><a name="p1423943618416"></a><a name="p1423943618416"></a></p>
+<p id="p13661163210419"><a name="p13661163210419"></a><a name="p13661163210419"></a></p>
+<p id="p59445210416"><a name="p59445210416"></a><a name="p59445210416"></a></p>
+<p id="p19415112517418"><a name="p19415112517418"></a><a name="p19415112517418"></a></p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p118913413421"><a name="p118913413421"></a><a name="p118913413421"></a>创建networkpolicy</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p6782611161614"><a name="p6782611161614"></a><a name="p6782611161614"></a>列出指定namespace下的networkpolicy。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p127081813184112"><a name="p127081813184112"></a><a name="p127081813184112"></a>POST /apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies</p>
 </td>
 </tr>
-<tr id="row16931528181819"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p4932162815181"><a name="p4932162815181"></a><a name="p4932162815181"></a><a href="获取networkpolicy列表.md">获取networkpolicy列表</a></p>
+<tr id="row6142164112413"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p13142174124119"><a name="p13142174124119"></a><a name="p13142174124119"></a>更新指定的networkpolicy</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p893218285186"><a name="p893218285186"></a><a name="p893218285186"></a>获取networkpolicy列表。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1214211411414"><a name="p1214211411414"></a><a name="p1214211411414"></a>PATCH /apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies/{name}</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## PersistentVolume<a name="section2877714125317"></a>
-
-**表 19**  PersistentVolume
-
-<a name="table15768102015318"></a>
-<table><thead align="left"><tr id="row57691120155314"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p137637316537"><a name="p137637316537"></a><a name="p137637316537"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p1076316319537"><a name="p1076316319537"></a><a name="p1076316319537"></a>说明</p>
-</th>
+<tr id="row14486181720412"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p19486817194116"><a name="p19486817194116"></a><a name="p19486817194116"></a>替换指定的networkpolicy</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p44862175417"><a name="p44862175417"></a><a name="p44862175417"></a>PUT /apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies/{name}</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row167701020205316"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p7770152095314"><a name="p7770152095314"></a><a name="p7770152095314"></a><a href="创建PersistentVolume.md">创建PersistentVolume</a></p>
+<tr id="row2470193854119"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p144710388415"><a name="p144710388415"></a><a name="p144710388415"></a>删除networkpolicy</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1770320205319"><a name="p1770320205319"></a><a name="p1770320205319"></a>创建一个PersistentVolume。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p711353142614"><a name="p711353142614"></a><a name="p711353142614"></a>DELETE /apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies/{name}</p>
 </td>
 </tr>
-<tr id="row197701220125313"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p11770102019533"><a name="p11770102019533"></a><a name="p11770102019533"></a><a href="删除指定的PersistentVolume.md">删除指定的PersistentVolume</a></p>
+<tr id="row5239636154111"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1622923111430"><a name="p1622923111430"></a><a name="p1622923111430"></a>批量删除networkpolicy</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9770192013532"><a name="p9770192013532"></a><a name="p9770192013532"></a>删除指定的PersistentVolume对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p88712574268"><a name="p88712574268"></a><a name="p88712574268"></a>DELETE /apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies</p>
 </td>
 </tr>
-<tr id="row6770192018538"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p87701720185320"><a name="p87701720185320"></a><a name="p87701720185320"></a><a href="删除所有的PersistentVolume.md">删除所有的PersistentVolume</a></p>
+<tr id="row1566111326411"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p8989145494318"><a name="p8989145494318"></a><a name="p8989145494318"></a>获取指定的networkpolicy</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11770182010532"><a name="p11770182010532"></a><a name="p11770182010532"></a>删除所有的PersistentVolume对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p11661173284119"><a name="p11661173284119"></a><a name="p11661173284119"></a>GET /apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies/{name}</p>
 </td>
 </tr>
-<tr id="row16770192017531"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p2770202012531"><a name="p2770202012531"></a><a name="p2770202012531"></a><a href="获取指定的PersistentVolume.md">获取指定的PersistentVolume</a></p>
+<tr id="row1294332117415"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1530611251449"><a name="p1530611251449"></a><a name="p1530611251449"></a>列出指定namespace下的networkpolicy</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p137706206536"><a name="p137706206536"></a><a name="p137706206536"></a>获取指定的PersistentVolume对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p694412120418"><a name="p694412120418"></a><a name="p694412120418"></a>GET /apis/networking.k8s.io/v1/namespaces/{namespace}/networkpolicies</p>
 </td>
 </tr>
-<tr id="row117701320115316"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p077072018536"><a name="p077072018536"></a><a name="p077072018536"></a><a href="替换指定的PersistentVolume.md">替换指定的PersistentVolume</a></p>
+<tr id="row1541462512411"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5658640124418"><a name="p5658640124418"></a><a name="p5658640124418"></a>获取networkpolicy列表</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p7771132045320"><a name="p7771132045320"></a><a name="p7771132045320"></a>替换指定的PersistentVolume对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6221175673610"><a name="p6221175673610"></a><a name="p6221175673610"></a>GET /apis/networking.k8s.io/v1/networkpolicies</p>
 </td>
 </tr>
-<tr id="row127711820165316"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p577122012533"><a name="p577122012533"></a><a name="p577122012533"></a><a href="替换指定的PersistentVolume的状态.md">替换指定的PersistentVolume的状态</a></p>
+<tr id="row577671014452"><td class="cellrowborder" rowspan="8" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p4627145474516"><a name="p4627145474516"></a><a name="p4627145474516"></a>PersistentVolume</p>
+<p id="p9878101314515"><a name="p9878101314515"></a><a name="p9878101314515"></a></p>
+<p id="p1240716161454"><a name="p1240716161454"></a><a name="p1240716161454"></a></p>
+<p id="p1173819144514"><a name="p1173819144514"></a><a name="p1173819144514"></a></p>
+<p id="p12966249452"><a name="p12966249452"></a><a name="p12966249452"></a></p>
+<p id="p376912213451"><a name="p376912213451"></a><a name="p376912213451"></a></p>
+<p id="p92771757455"><a name="p92771757455"></a><a name="p92771757455"></a></p>
+<p id="p649478164511"><a name="p649478164511"></a><a name="p649478164511"></a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p0771152005310"><a name="p0771152005310"></a><a name="p0771152005310"></a>替换指定的PersistentVolume对象的状态。</p>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p1356017613463"><a name="p1356017613463"></a><a name="p1356017613463"></a>创建PersistentVolume</p>
 </td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p97761810114518"><a name="p97761810114518"></a><a name="p97761810114518"></a>POST /api/v1/persistentvolumes</p>
+</td>
 </tr>
-<tr id="row167711920125310"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p677152015318"><a name="p677152015318"></a><a name="p677152015318"></a><a href="列出所有的PersistentVolume.md">列出所有的PersistentVolume</a></p>
+<tr id="row9878161312457"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1287801317459"><a name="p1287801317459"></a><a name="p1287801317459"></a>删除指定的PersistentVolume</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p8771220185315"><a name="p8771220185315"></a><a name="p8771220185315"></a>列出所有PersistentVolume资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="a607cd13c3be24cc5aaab13586448e055"><a name="a607cd13c3be24cc5aaab13586448e055"></a><a name="a607cd13c3be24cc5aaab13586448e055"></a>DELETE /api/v1/persistentvolumes/{name}</p>
 </td>
 </tr>
-<tr id="row1896213294569"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p3962629125610"><a name="p3962629125610"></a><a name="p3962629125610"></a><a href="更新指定的PersistentVolume.md">更新指定的PersistentVolume</a></p>
+<tr id="row640771644513"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p3407201618457"><a name="p3407201618457"></a><a name="p3407201618457"></a>删除所有的PersistentVolume</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p189621329205610"><a name="p189621329205610"></a><a name="p189621329205610"></a>更新PersistentVolume对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p47592738"><a name="p47592738"></a><a name="p47592738"></a>DELETE /api/v1/persistentvolumes</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## PersistentVolumeClaim<a name="section1213813510476"></a>
-
-**表 20**  PersistentVolumeClaim
-
-<a name="table2480151244711"></a>
-<table><thead align="left"><tr id="row948015124473"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p1722218273471"><a name="p1722218273471"></a><a name="p1722218273471"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p1822262716470"><a name="p1822262716470"></a><a name="p1822262716470"></a>说明</p>
-</th>
+<tr id="row1273919144518"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p573131917458"><a name="p573131917458"></a><a name="p573131917458"></a>获取指定的PersistentVolume</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="adeead686cd374b1ba05c94288ad41cd2"><a name="adeead686cd374b1ba05c94288ad41cd2"></a><a name="adeead686cd374b1ba05c94288ad41cd2"></a>GET /api/v1/persistentvolumes/{name}</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row348010121475"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1948041216475"><a name="p1948041216475"></a><a name="p1948041216475"></a><a href="创建PersistentVolumeClaim.md">创建PersistentVolumeClaim</a></p>
+<tr id="row62969247451"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p33882313477"><a name="p33882313477"></a><a name="p33882313477"></a>替换指定的PersistentVolume</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="a863b97964c8f46c382c223f924027de7"><a name="a863b97964c8f46c382c223f924027de7"></a><a name="a863b97964c8f46c382c223f924027de7"></a>在指定的Namespace下创建PersistentVolumeClaim。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="add50420526264a00b7755b79ff1c6d94"><a name="add50420526264a00b7755b79ff1c6d94"></a><a name="add50420526264a00b7755b79ff1c6d94"></a>PUT /api/v1/persistentvolumes/{name}</p>
 </td>
 </tr>
-<tr id="row9480912204717"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p648151210475"><a name="p648151210475"></a><a name="p648151210475"></a><a href="删除指定的PersistentVolumeClaim.md">删除指定的PersistentVolumeClaim</a></p>
+<tr id="row2076913216453"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p147691921134511"><a name="p147691921134511"></a><a name="p147691921134511"></a>替换指定的PersistentVolume的状态</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p64814121472"><a name="p64814121472"></a><a name="p64814121472"></a>删除指定Namespace下的PersistentVolumeClaim对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="a6c88517788d546da915f31aa6ebfeab9"><a name="a6c88517788d546da915f31aa6ebfeab9"></a><a name="a6c88517788d546da915f31aa6ebfeab9"></a>PUT /api/v1/persistentvolumes/{name}/status</p>
 </td>
 </tr>
-<tr id="row048111234711"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p948112123474"><a name="p948112123474"></a><a name="p948112123474"></a><a href="删除所有的PersistentVolumeClaim.md">删除所有的PersistentVolumeClaim</a></p>
+<tr id="row1827611513453"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7750135654715"><a name="p7750135654715"></a><a name="p7750135654715"></a>列出所有的PersistentVolume</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1448181213479"><a name="p1448181213479"></a><a name="p1448181213479"></a>删除所有的PersistentVolumeClaim资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="a6d192ef136004c88a1c29ad7364a15f7"><a name="a6d192ef136004c88a1c29ad7364a15f7"></a><a name="a6d192ef136004c88a1c29ad7364a15f7"></a>GET /api/v1/persistentvolumes</p>
 </td>
 </tr>
-<tr id="row14481012174718"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1248119125473"><a name="p1248119125473"></a><a name="p1248119125473"></a><a href="获取指定的PersistentVolumeClaim.md">获取指定的PersistentVolumeClaim</a></p>
+<tr id="row204931882458"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p16233101104810"><a name="p16233101104810"></a><a name="p16233101104810"></a>更新指定的PersistentVolume</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19481131218479"><a name="p19481131218479"></a><a name="p19481131218479"></a>获取指定Namespace下的PersistentVolumeClaim对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="aa05c77c94be74794a5e4e7b578a02525"><a name="aa05c77c94be74794a5e4e7b578a02525"></a><a name="aa05c77c94be74794a5e4e7b578a02525"></a>PATCH /api/v1/persistentvolumes/{name}</p>
 </td>
 </tr>
-<tr id="row1948141220479"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p9481151244713"><a name="p9481151244713"></a><a name="p9481151244713"></a><a href="替换指定的PersistentVolumeClaim.md">替换指定的PersistentVolumeClaim</a></p>
+<tr id="row1496918390482"><td class="cellrowborder" rowspan="9" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p410473995016"><a name="p410473995016"></a><a name="p410473995016"></a>PersistentVolumeClaim</p>
+<p id="p12623145524810"><a name="p12623145524810"></a><a name="p12623145524810"></a></p>
+<p id="p1336103174910"><a name="p1336103174910"></a><a name="p1336103174910"></a></p>
+<p id="p8286114914"><a name="p8286114914"></a><a name="p8286114914"></a></p>
+<p id="p15297118174911"><a name="p15297118174911"></a><a name="p15297118174911"></a></p>
+<p id="p1015221120492"><a name="p1015221120492"></a><a name="p1015221120492"></a></p>
+<p id="p314661444918"><a name="p314661444918"></a><a name="p314661444918"></a></p>
+<p id="p14145058114815"><a name="p14145058114815"></a><a name="p14145058114815"></a></p>
+<p id="p1687150204917"><a name="p1687150204917"></a><a name="p1687150204917"></a></p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p3357450125018"><a name="p3357450125018"></a><a name="p3357450125018"></a>创建PersistentVolumeClaim</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p44811412124720"><a name="p44811412124720"></a><a name="p44811412124720"></a>替换指定Namespace下的PersistentVolumeClaim对象。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="aed55e8b758cb44f1abaf8ccb8dcf1083"><a name="aed55e8b758cb44f1abaf8ccb8dcf1083"></a><a name="aed55e8b758cb44f1abaf8ccb8dcf1083"></a>POST /api/v1/namespaces/{namespace}/persistentvolumeclaims</p>
 </td>
 </tr>
-<tr id="row14481111224711"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p10481121216475"><a name="p10481121216475"></a><a name="p10481121216475"></a><a href="替换指定的PersistentVolumeClaim的状态.md">替换指定的PersistentVolumeClaim的状态</a></p>
+<tr id="row19623135516484"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p862319555481"><a name="p862319555481"></a><a name="p862319555481"></a>删除指定的PersistentVolumeClaim</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p174811412104714"><a name="p174811412104714"></a><a name="p174811412104714"></a>替换指定的Namespace下指定的PersistentVolumeClaim对象的状态。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="a9e09191bad1c47a9abbd50d527678f69"><a name="a9e09191bad1c47a9abbd50d527678f69"></a><a name="a9e09191bad1c47a9abbd50d527678f69"></a>DELETE  /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}</p>
 </td>
 </tr>
-<tr id="row11481112174710"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p648181211472"><a name="p648181211472"></a><a name="p648181211472"></a><a href="列出指定的Namespace下的PersistentVolumeClaim.md">列出指定的Namespace下的PersistentVolumeClaim</a></p>
+<tr id="row11361134493"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p23611438492"><a name="p23611438492"></a><a name="p23611438492"></a>删除所有的PersistentVolumeClaim</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p34813127474"><a name="p34813127474"></a><a name="p34813127474"></a>列出指定Namespace下的所有PersistentVolumeClaim资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p14361837499"><a name="p14361837499"></a><a name="p14361837499"></a>DELETE /api/v1/namespaces/{namespace}/persistentvolumeclaims</p>
 </td>
 </tr>
-<tr id="row12239758114914"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p19240758104916"><a name="p19240758104916"></a><a name="p19240758104916"></a><a href="列出所有的PersistentVolumeClaim.md">列出所有的PersistentVolumeClaim</a></p>
+<tr id="row18213654916"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7216114914"><a name="p7216114914"></a><a name="p7216114914"></a>获取指定的PersistentVolumeClaim</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18241165818498"><a name="p18241165818498"></a><a name="p18241165818498"></a>列出所有PersistentVolumeClaim资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="a71ee18eeb9624100822b748e8490f956"><a name="a71ee18eeb9624100822b748e8490f956"></a><a name="a71ee18eeb9624100822b748e8490f956"></a>GET /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}</p>
 </td>
 </tr>
-<tr id="row1694514045015"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p189451608508"><a name="p189451608508"></a><a name="p189451608508"></a><a href="更新指定的PersistentVolumeClaim.md">更新指定的PersistentVolumeClaim</a></p>
+<tr id="row122977814910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p53413435211"><a name="p53413435211"></a><a name="p53413435211"></a>替换指定的PersistentVolumeClaim</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p129461508505"><a name="p129461508505"></a><a name="p129461508505"></a>更新PersistentVolumeClaim对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="a1d5ba595c39745c2b0c3c838ad95f9b4"><a name="a1d5ba595c39745c2b0c3c838ad95f9b4"></a><a name="a1d5ba595c39745c2b0c3c838ad95f9b4"></a>PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## ConfigMap<a name="section3536121119448"></a>
-
-**表 21**  ConfigMap
-
-<a name="table116555196444"></a>
-<table><thead align="left"><tr id="row165916194446"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p1557713412445"><a name="p1557713412445"></a><a name="p1557713412445"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p11577154119441"><a name="p11577154119441"></a><a name="p11577154119441"></a>说明</p>
-</th>
+<tr id="row161521011104917"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p9935172012523"><a name="p9935172012523"></a><a name="p9935172012523"></a>替换指定的PersistentVolumeClaim的状态</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="aa715d4d56074416686788a7fde239df0"><a name="aa715d4d56074416686788a7fde239df0"></a><a name="aa715d4d56074416686788a7fde239df0"></a>PUT /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}/status</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row13659101914447"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1565921915448"><a name="p1565921915448"></a><a name="p1565921915448"></a><a href="创建ConfigMap.md">创建ConfigMap</a></p>
+<tr id="row18146181417496"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p10881538105212"><a name="p10881538105212"></a><a name="p10881538105212"></a>列出指定的Namespace下的PersistentVolumeClaim</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11660161911446"><a name="p11660161911446"></a><a name="p11660161911446"></a>创建ConfigMap资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="a740e303a205d467d8bf611b955dd139f"><a name="a740e303a205d467d8bf611b955dd139f"></a><a name="a740e303a205d467d8bf611b955dd139f"></a>GET /api/v1/namespaces/{namespace}/persistentvolumeclaims</p>
 </td>
 </tr>
-<tr id="row8660319114412"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p15660151974415"><a name="p15660151974415"></a><a name="p15660151974415"></a><a href="删除ConfigMap.md">删除ConfigMap</a></p>
+<tr id="row13145758184820"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p957990205311"><a name="p957990205311"></a><a name="p957990205311"></a>列出所有的PersistentVolumeClaim</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11660121904411"><a name="p11660121904411"></a><a name="p11660121904411"></a>删除ConfigMap资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="a06f45a66ebf341b39f990962ac1f5c08"><a name="a06f45a66ebf341b39f990962ac1f5c08"></a><a name="a06f45a66ebf341b39f990962ac1f5c08"></a>GET /api/v1/persistentvolumeclaims</p>
 </td>
 </tr>
-<tr id="row566013191445"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1166016193442"><a name="p1166016193442"></a><a name="p1166016193442"></a><a href="删除所有的ConfigMap.md">删除所有的ConfigMap</a></p>
+<tr id="row188718017492"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p108719018494"><a name="p108719018494"></a><a name="p108719018494"></a>更新指定的PersistentVolumeClaim</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11660101917441"><a name="p11660101917441"></a><a name="p11660101917441"></a>删除所有ConfigMap资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="a4060049f545d48b58a9ed6b10609ee3a"><a name="a4060049f545d48b58a9ed6b10609ee3a"></a><a name="a4060049f545d48b58a9ed6b10609ee3a"></a>PATCH /api/v1/namespaces/{namespace}/persistentvolumeclaims/{name}</p>
 </td>
 </tr>
-<tr id="row1366018198442"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p7660181924417"><a name="p7660181924417"></a><a name="p7660181924417"></a><a href="获取指定的ConfigMap.md">获取指定的ConfigMap</a></p>
+<tr id="row1243918521537"><td class="cellrowborder" rowspan="8" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p043925215312"><a name="p043925215312"></a><a name="p043925215312"></a>ConfigMap</p>
+<p id="p1810895517538"><a name="p1810895517538"></a><a name="p1810895517538"></a></p>
+<p id="p11231059145310"><a name="p11231059145310"></a><a name="p11231059145310"></a></p>
+<p id="p6917101105412"><a name="p6917101105412"></a><a name="p6917101105412"></a></p>
+<p id="p1451162035412"><a name="p1451162035412"></a><a name="p1451162035412"></a></p>
+<p id="p59721623175415"><a name="p59721623175415"></a><a name="p59721623175415"></a></p>
+<p id="p185801826135410"><a name="p185801826135410"></a><a name="p185801826135410"></a></p>
+<p id="p335102955410"><a name="p335102955410"></a><a name="p335102955410"></a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p7660219164411"><a name="p7660219164411"></a><a name="p7660219164411"></a>获取指定的ConfigMap资源对象。</p>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p126241712125511"><a name="p126241712125511"></a><a name="p126241712125511"></a>创建ConfigMap</p>
 </td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p35772102"><a name="p35772102"></a><a name="p35772102"></a>POST /api/v1/namespaces/{namespace}/configmaps</p>
+</td>
 </tr>
-<tr id="row186601819164410"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p16604192444"><a name="p16604192444"></a><a name="p16604192444"></a><a href="替换指定ConfigMap.md">替换指定ConfigMap</a></p>
+<tr id="row41086553537"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1922622825514"><a name="p1922622825514"></a><a name="p1922622825514"></a>删除ConfigMap</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p52696176"><a name="p52696176"></a><a name="p52696176"></a>替换指定的ConfigMap资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p64518786"><a name="p64518786"></a><a name="p64518786"></a>DELETE /api/v1/namespaces/{namespace}/configmaps/{name}</p>
 </td>
 </tr>
-<tr id="row10660181910445"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p11660519184413"><a name="p11660519184413"></a><a name="p11660519184413"></a><a href="列出指定Namespace下的ConfigMap.md">列出指定Namespace下的ConfigMap</a></p>
+<tr id="row15123175913537"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p2123175915313"><a name="p2123175915313"></a><a name="p2123175915313"></a>删除所有的ConfigMap</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p0660171914413"><a name="p0660171914413"></a><a name="p0660171914413"></a>列出指定Namespace下的所有ConfigMap资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p111232592530"><a name="p111232592530"></a><a name="p111232592530"></a>DELETE /api/v1/namespaces/{namespace}/configmaps</p>
 </td>
 </tr>
-<tr id="row9660219104410"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p566019194444"><a name="p566019194444"></a><a name="p566019194444"></a><a href="列出所有的ConfigMap.md">列出指定的ConfigMap</a></p>
+<tr id="row1191611195418"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p191710114545"><a name="p191710114545"></a><a name="p191710114545"></a>获取指定的ConfigMap</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p126600195445"><a name="p126600195445"></a><a name="p126600195445"></a>获取ConfigMap列表。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p45968213"><a name="p45968213"></a><a name="p45968213"></a>GET /api/v1/namespaces/{namespace}/configmaps/{name}</p>
 </td>
 </tr>
-<tr id="row182401734174620"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p3241133444613"><a name="p3241133444613"></a><a name="p3241133444613"></a><a href="更新指定的ConfigMap.md">更新指定的ConfigMap</a></p>
+<tr id="row8451152018544"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p16501124155617"><a name="p16501124155617"></a><a name="p16501124155617"></a>替换指定ConfigMap</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1724116347466"><a name="p1724116347466"></a><a name="p1724116347466"></a>更新指定的ConfigMap资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p10451420205419"><a name="p10451420205419"></a><a name="p10451420205419"></a>PUT /api/v1/namespaces/{namespace}/configmaps/{name}</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## Secret<a name="section179302618111"></a>
-
-**表 22**  Secret
-
-<a name="table846494691712"></a>
-<table><thead align="left"><tr id="row246494631719"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p7286553131710"><a name="p7286553131710"></a><a name="p7286553131710"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p328615381711"><a name="p328615381711"></a><a name="p328615381711"></a>说明</p>
-</th>
+<tr id="row1497212325419"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p154634295617"><a name="p154634295617"></a><a name="p154634295617"></a>列出指定Namespace下的ConfigMap</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p997222313540"><a name="p997222313540"></a><a name="p997222313540"></a>GET /api/v1/namespaces/{namespace}/configmaps</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row154651646101710"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p946504619171"><a name="p946504619171"></a><a name="p946504619171"></a><a href="创建Secret.md">创建Secret</a></p>
+<tr id="row75801826185416"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p19580122695410"><a name="p19580122695410"></a><a name="p19580122695410"></a>列出所有的ConfigMap</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9465194631716"><a name="p9465194631716"></a><a name="p9465194631716"></a>创建Secret资源类型。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p75801026145413"><a name="p75801026145413"></a><a name="p75801026145413"></a>GET /api/v1/configmaps</p>
 </td>
 </tr>
-<tr id="row14651046111716"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p0465446101711"><a name="p0465446101711"></a><a name="p0465446101711"></a><a href="删除Secret.md">删除Secret</a></p>
+<tr id="row1835329195413"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p8362296541"><a name="p8362296541"></a><a name="p8362296541"></a>更新指定的ConfigMap</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p346517462177"><a name="p346517462177"></a><a name="p346517462177"></a>删除指定Namespace下的Secret对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p93692916542"><a name="p93692916542"></a><a name="p93692916542"></a>PATCH /api/v1/namespaces/{namespace}/configmaps/{name}</p>
 </td>
 </tr>
-<tr id="row18465646141713"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18465204631717"><a name="p18465204631717"></a><a name="p18465204631717"></a><a href="删除指定命名空间下所有的Secret.md">删除所有的Secret</a></p>
+<tr id="row13373352594"><td class="cellrowborder" rowspan="7" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p10618859115810"><a name="p10618859115810"></a><a name="p10618859115810"></a>Secret</p>
+<p id="p3141181085917"><a name="p3141181085917"></a><a name="p3141181085917"></a></p>
+<p id="p962216150591"><a name="p962216150591"></a><a name="p962216150591"></a></p>
+<p id="p5740836135915"><a name="p5740836135915"></a><a name="p5740836135915"></a></p>
+<p id="p1074073665917"><a name="p1074073665917"></a><a name="p1074073665917"></a></p>
+<p id="p8541145915916"><a name="p8541145915916"></a><a name="p8541145915916"></a></p>
+<p id="p45414593591"><a name="p45414593591"></a><a name="p45414593591"></a></p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p17277484013"><a name="p17277484013"></a><a name="p17277484013"></a>创建Secret</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p17466144631718"><a name="p17466144631718"></a><a name="p17466144631718"></a>批量删除Secret。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p5373105105914"><a name="p5373105105914"></a><a name="p5373105105914"></a>POST /api/v1/namespaces/{namespace}/secrets</p>
 </td>
 </tr>
-<tr id="row246634631711"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1446664611171"><a name="p1446664611171"></a><a name="p1446664611171"></a><a href="获取Secret信息.md">获取Secret信息</a></p>
+<tr id="row21419101597"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p2050213261701"><a name="p2050213261701"></a><a name="p2050213261701"></a>删除Secret</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1346615466173"><a name="p1346615466173"></a><a name="p1346615466173"></a>获取指定Secret的详细信息。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="zh-cn_topic_0079615047_p59567086"><a name="zh-cn_topic_0079615047_p59567086"></a><a name="zh-cn_topic_0079615047_p59567086"></a>DELETE /api/v1/namespaces/{namespace}/secrets/{name}</p>
 </td>
 </tr>
-<tr id="row646618468172"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p8466546171712"><a name="p8466546171712"></a><a name="p8466546171712"></a><a href="替换指定的Secret.md">替换指定的Secret</a></p>
+<tr id="row186223155595"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p250017421404"><a name="p250017421404"></a><a name="p250017421404"></a>删除指定命名空间下所有的Secret</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9466154618172"><a name="p9466154618172"></a><a name="p9466154618172"></a>替换指定Namespace下的Secret对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p64597705"><a name="p64597705"></a><a name="p64597705"></a>DELETE /api/v1/namespaces/{namespace}/secrets</p>
 </td>
 </tr>
-<tr id="row1846611461178"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p546614614174"><a name="p546614614174"></a><a name="p546614614174"></a><a href="列出指定Namespace下的Secret.md">列出指定Namespace下的Secret</a></p>
+<tr id="row2075115366599"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p141751157113"><a name="p141751157113"></a><a name="p141751157113"></a>获取Secret信息</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0079614896_p20437785"><a name="zh-cn_topic_0079614896_p20437785"></a><a name="zh-cn_topic_0079614896_p20437785"></a>在指定的Namespace下列出Secret对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1274033645910"><a name="p1274033645910"></a><a name="p1274033645910"></a>GET /api/v1/namespaces/{namespace}/secrets/{name}</p>
 </td>
 </tr>
-<tr id="row8466174616177"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p746634619177"><a name="p746634619177"></a><a name="p746634619177"></a><a href="列出集群下的Secret.md">列出集群下的Secret</a></p>
+<tr id="row475013617597"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1379713213117"><a name="p1379713213117"></a><a name="p1379713213117"></a>替换指定的Secret</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p846684610172"><a name="p846684610172"></a><a name="p846684610172"></a>列出集群中的所有Secret对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p14740183614596"><a name="p14740183614596"></a><a name="p14740183614596"></a>PUT /api/v1/namespaces/{namespace}/secrets/{name}</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## RBAC<a name="section1279014445266"></a>
-
-**表 23**  RBAC
-
-<a name="table9795194911260"></a>
-<table><thead align="left"><tr id="row5796549112610"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p102791555192715"><a name="p102791555192715"></a><a name="p102791555192715"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p92808553276"><a name="p92808553276"></a><a name="p92808553276"></a>说明</p>
-</th>
+<tr id="row3546205915915"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1541259185913"><a name="p1541259185913"></a><a name="p1541259185913"></a>列出指定Namespace下的Secret</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="ad089adbf03904cbbac75ae62e80eda8a"><a name="ad089adbf03904cbbac75ae62e80eda8a"></a><a name="ad089adbf03904cbbac75ae62e80eda8a"></a>GET /api/v1/namespaces/{namespace}/secrets</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row17961149162615"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p18796749112610"><a name="p18796749112610"></a><a name="p18796749112610"></a><a href="创建ClusterRole.md">创建ClusterRole</a></p>
+<tr id="row17545145975912"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p388020571511"><a name="p388020571511"></a><a name="p388020571511"></a>列出集群下的Secret</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1644811402911"><a name="p1644811402911"></a><a name="p1644811402911"></a>创建ClusterRole。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="a2fab34208467472e8bfb5f9e53c702fb"><a name="a2fab34208467472e8bfb5f9e53c702fb"></a><a name="a2fab34208467472e8bfb5f9e53c702fb"></a>GET /api/v1/secrets</p>
 </td>
 </tr>
-<tr id="row7796164918261"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p77960499269"><a name="p77960499269"></a><a name="p77960499269"></a><a href="更新指定的ClusterRole.md">更新指定的ClusterRole</a></p>
+<tr id="row9787549329"><td class="cellrowborder" rowspan="7" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p764591511518"><a name="p764591511518"></a><a name="p764591511518"></a>RBAC/</p>
+<p id="p172838518203"><a name="p172838518203"></a><a name="p172838518203"></a>ClusterRole</p>
+<p id="p1776584910210"><a name="p1776584910210"></a><a name="p1776584910210"></a></p>
+<p id="p376519491526"><a name="p376519491526"></a><a name="p376519491526"></a></p>
+<p id="p117661349926"><a name="p117661349926"></a><a name="p117661349926"></a></p>
+<p id="p194545231553"><a name="p194545231553"></a><a name="p194545231553"></a></p>
+<p id="p6431181612193"><a name="p6431181612193"></a><a name="p6431181612193"></a></p>
+<p id="p1031121719196"><a name="p1031121719196"></a><a name="p1031121719196"></a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1444818148299"><a name="p1444818148299"></a><a name="p1444818148299"></a>部分更新指定的ClusterRole。</p>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p13643121513511"><a name="p13643121513511"></a><a name="p13643121513511"></a>创建ClusterRole</p>
 </td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p81091853315"><a name="p81091853315"></a><a name="p81091853315"></a>POST /apis/rbac.authorization.k8s.io/v1/clusterroles</p>
+</td>
 </tr>
-<tr id="row9796164916265"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p16796114916262"><a name="p16796114916262"></a><a name="p16796114916262"></a><a href="替换指定的ClusterRole.md">替换指定的ClusterRole</a></p>
+<tr id="row167861249528"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p18108851732"><a name="p18108851732"></a><a name="p18108851732"></a>更新指定的ClusterRole</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p844821482910"><a name="p844821482910"></a><a name="p844821482910"></a>替换指定的ClusterRole。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p19305545113910"><a name="p19305545113910"></a><a name="p19305545113910"></a>PATCH /apis/rbac.authorization.k8s.io/v1/clusterroles/{name}</p>
 </td>
 </tr>
-<tr id="row379624910264"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p5796134962618"><a name="p5796134962618"></a><a name="p5796134962618"></a><a href="删除指定的ClusterRole.md">删除指定的ClusterRole</a></p>
+<tr id="row1278615491820"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p13695111722115"><a name="p13695111722115"></a><a name="p13695111722115"></a>替换指定的ClusterRole</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p5449171402913"><a name="p5449171402913"></a><a name="p5449171402913"></a>删除指定的ClusterRole。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p17499735154117"><a name="p17499735154117"></a><a name="p17499735154117"></a>PUT /apis/rbac.authorization.k8s.io/v1/clusterroles/{name}</p>
 </td>
 </tr>
-<tr id="row1479613491261"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1279684972611"><a name="p1279684972611"></a><a name="p1279684972611"></a><a href="批量删除ClusterRole.md">批量删除ClusterRole</a></p>
+<tr id="row97859491827"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5846103010212"><a name="p5846103010212"></a><a name="p5846103010212"></a>删除指定的ClusterRole</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p10449171422918"><a name="p10449171422918"></a><a name="p10449171422918"></a>批量删除ClusterRole。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1216694064219"><a name="p1216694064219"></a><a name="p1216694064219"></a>DELETE /apis/rbac.authorization.k8s.io/v1/clusterroles/{name}</p>
 </td>
 </tr>
-<tr id="row3796749172618"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p197971649162614"><a name="p197971649162614"></a><a name="p197971649162614"></a><a href="获取指定的ClusterRole.md">获取指定的ClusterRole</a></p>
+<tr id="row1746052316518"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1856714742114"><a name="p1856714742114"></a><a name="p1856714742114"></a>批量删除ClusterRole</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p14449814192918"><a name="p14449814192918"></a><a name="p14449814192918"></a>获取指定的ClusterRole。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1587116386438"><a name="p1587116386438"></a><a name="p1587116386438"></a>DELETE /apis/rbac.authorization.k8s.io/v1/clusterroles</p>
 </td>
 </tr>
-<tr id="row1879714496265"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p17974494267"><a name="p17974494267"></a><a name="p17974494267"></a><a href="获取ClusterRole列表.md">获取ClusterRole列表</a></p>
+<tr id="row84311316101911"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1072711114229"><a name="p1072711114229"></a><a name="p1072711114229"></a>获取指定的ClusterRole</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1644931416297"><a name="p1644931416297"></a><a name="p1644931416297"></a>获取ClusterRole列表。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p843161641919"><a name="p843161641919"></a><a name="p843161641919"></a>GET /apis/rbac.authorization.k8s.io/v1/clusterroles/{name}</p>
 </td>
 </tr>
-<tr id="row12385152113416"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p15386102193417"><a name="p15386102193417"></a><a name="p15386102193417"></a><a href="创建ClusterRoleBinding.md">创建ClusterRoleBinding</a></p>
+<tr id="row18310017181910"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p43111817171919"><a name="p43111817171919"></a><a name="p43111817171919"></a>获取ClusterRole列表</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9347617204114"><a name="p9347617204114"></a><a name="p9347617204114"></a>创建ClusterRoleBinding。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p63111177192"><a name="p63111177192"></a><a name="p63111177192"></a>GET /apis/rbac.authorization.k8s.io/v1/clusterroles</p>
 </td>
 </tr>
-<tr id="row169598203419"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p12960192183411"><a name="p12960192183411"></a><a name="p12960192183411"></a><a href="更新指定的ClusterRoleBinding.md">更新指定的ClusterRoleBinding</a></p>
+<tr id="row69410181197"><td class="cellrowborder" rowspan="7" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p51939082316"><a name="p51939082316"></a><a name="p51939082316"></a>RBAC/</p>
+<p id="p112901120192313"><a name="p112901120192313"></a><a name="p112901120192313"></a>ClusterRoleBinding</p>
+<p id="p357391911191"><a name="p357391911191"></a><a name="p357391911191"></a></p>
+<p id="p245412310510"><a name="p245412310510"></a><a name="p245412310510"></a></p>
+<p id="p34543234518"><a name="p34543234518"></a><a name="p34543234518"></a></p>
+<p id="p114551523655"><a name="p114551523655"></a><a name="p114551523655"></a></p>
+<p id="p4742183311510"><a name="p4742183311510"></a><a name="p4742183311510"></a></p>
+<p id="p77421433657"><a name="p77421433657"></a><a name="p77421433657"></a></p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p8941818101920"><a name="p8941818101920"></a><a name="p8941818101920"></a>创建ClusterRoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p834761774111"><a name="p834761774111"></a><a name="p834761774111"></a>部分更新指定的ClusterRoleBinding。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p11423202118591"><a name="p11423202118591"></a><a name="p11423202118591"></a>POST /apis/rbac.authorization.k8s.io/v1/clusterrolebindings</p>
 </td>
 </tr>
-<tr id="row13376066343"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p11376196113417"><a name="p11376196113417"></a><a name="p11376196113417"></a><a href="替换指定的ClusterRoleBinding.md">替换指定的ClusterRoleBinding</a></p>
+<tr id="row0573161915193"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p19915184652318"><a name="p19915184652318"></a><a name="p19915184652318"></a>更新指定的ClusterRoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p134871716413"><a name="p134871716413"></a><a name="p134871716413"></a>替换指定的ClusterRoleBinding。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p86043476597"><a name="p86043476597"></a><a name="p86043476597"></a>PATCH /apis/rbac.authorization.k8s.io/v1/clusterrolebindings/{name}</p>
 </td>
 </tr>
-<tr id="row5798186203411"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p879811613410"><a name="p879811613410"></a><a name="p879811613410"></a><a href="删除指定的ClusterRoleBinding.md">删除指定的ClusterRoleBinding</a></p>
+<tr id="row346012237512"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p154541231455"><a name="p154541231455"></a><a name="p154541231455"></a>替换指定的ClusterRoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p83481170411"><a name="p83481170411"></a><a name="p83481170411"></a>删除指定的ClusterRoleBinding。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p345419231358"><a name="p345419231358"></a><a name="p345419231358"></a>PUT /apis/rbac.authorization.k8s.io/v1/clusterrolebindings/{name}</p>
 </td>
 </tr>
-<tr id="row138620893416"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p108618143410"><a name="p108618143410"></a><a name="p108618143410"></a><a href="批量删除ClusterRoleBinding.md">批量删除ClusterRoleBinding</a></p>
+<tr id="row6459112312519"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p445414231512"><a name="p445414231512"></a><a name="p445414231512"></a>删除指定的ClusterRoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1534816175417"><a name="p1534816175417"></a><a name="p1534816175417"></a>批量删除ClusterRoleBinding。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p15948827005"><a name="p15948827005"></a><a name="p15948827005"></a>DELETE /apis/rbac.authorization.k8s.io/v1/clusterrolebindings/{name}</p>
 </td>
 </tr>
-<tr id="row159207817347"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p139206816345"><a name="p139206816345"></a><a name="p139206816345"></a><a href="获取指定的ClusterRoleBinding.md">获取指定的ClusterRoleBinding</a></p>
+<tr id="row2459123153"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5455102312515"><a name="p5455102312515"></a><a name="p5455102312515"></a>批量删除ClusterRoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p734801744117"><a name="p734801744117"></a><a name="p734801744117"></a>获取指定的ClusterRoleBinding。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p3455122317520"><a name="p3455122317520"></a><a name="p3455122317520"></a>DELETE /apis/rbac.authorization.k8s.io/v1/clusterrolebindings</p>
 </td>
 </tr>
-<tr id="row57308919344"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p17306910347"><a name="p17306910347"></a><a name="p17306910347"></a><a href="获取ClusterRoleBinding列表.md">获取ClusterRoleBinding列表</a></p>
+<tr id="row87491233755"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p274210331250"><a name="p274210331250"></a><a name="p274210331250"></a>获取指定的ClusterRoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1734961712412"><a name="p1734961712412"></a><a name="p1734961712412"></a>获取ClusterRoleBinding列表。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p177018411112"><a name="p177018411112"></a><a name="p177018411112"></a>GET /apis/rbac.authorization.k8s.io/v1/clusterrolebindings/{name}</p>
 </td>
 </tr>
-<tr id="row10503110163419"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p105031110203418"><a name="p105031110203418"></a><a name="p105031110203418"></a><a href="创建Role.md">创建Role</a></p>
+<tr id="row1474915333516"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p208984862515"><a name="p208984862515"></a><a name="p208984862515"></a>获取ClusterRoleBinding列表</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p4873131316421"><a name="p4873131316421"></a><a name="p4873131316421"></a>创建Role。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p11578286115"><a name="p11578286115"></a><a name="p11578286115"></a>GET /apis/rbac.authorization.k8s.io/v1/clusterrolebindings</p>
 </td>
 </tr>
-<tr id="row20188101116343"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p918918113347"><a name="p918918113347"></a><a name="p918918113347"></a><a href="更新指定的Role.md">更新指定的Role</a></p>
+<tr id="row574918336513"><td class="cellrowborder" rowspan="8" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p199091526265"><a name="p199091526265"></a><a name="p199091526265"></a>RBAC/Role</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9874213174211"><a name="p9874213174211"></a><a name="p9874213174211"></a>部分更新指定的Role。</p>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p97439332512"><a name="p97439332512"></a><a name="p97439332512"></a>创建Role</p>
 </td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p1986715316175"><a name="p1986715316175"></a><a name="p1986715316175"></a>POST /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles</p>
+</td>
 </tr>
-<tr id="row68933115347"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p13893121111344"><a name="p13893121111344"></a><a name="p13893121111344"></a><a href="替换指定的Role.md">替换指定的Role</a></p>
+<tr id="row174916337512"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p20754932152618"><a name="p20754932152618"></a><a name="p20754932152618"></a>更新指定的Role</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p18874181318420"><a name="p18874181318420"></a><a name="p18874181318420"></a>替换指定的Role。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p62523721719"><a name="p62523721719"></a><a name="p62523721719"></a>PATCH /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}</p>
 </td>
 </tr>
-<tr id="row157771283413"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p14577101253416"><a name="p14577101253416"></a><a name="p14577101253416"></a><a href="删除指定的Role.md">删除指定的Role</a></p>
+<tr id="row770518371152"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p16528345274"><a name="p16528345274"></a><a name="p16528345274"></a>替换指定的Role</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p687515138420"><a name="p687515138420"></a><a name="p687515138420"></a>删除指定的Role。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1891516567174"><a name="p1891516567174"></a><a name="p1891516567174"></a>PUT /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}</p>
 </td>
 </tr>
-<tr id="row1130311133342"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p4304101316344"><a name="p4304101316344"></a><a name="p4304101316344"></a><a href="批量删除Role.md">批量删除Role</a></p>
+<tr id="row117051037959"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p16961237857"><a name="p16961237857"></a><a name="p16961237857"></a>删除指定的Role</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p20875113114215"><a name="p20875113114215"></a><a name="p20875113114215"></a>批量删除Role。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p5998111611185"><a name="p5998111611185"></a><a name="p5998111611185"></a>DELETE /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}</p>
 </td>
 </tr>
-<tr id="row16950813123418"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p895012137341"><a name="p895012137341"></a><a name="p895012137341"></a><a href="获取指定的Role.md">获取指定的Role</a></p>
+<tr id="row27058371453"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p106964371751"><a name="p106964371751"></a><a name="p106964371751"></a>批量删除Role</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p9875713124214"><a name="p9875713124214"></a><a name="p9875713124214"></a>获取指定的Role。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p6631194181814"><a name="p6631194181814"></a><a name="p6631194181814"></a>DELETE /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles</p>
 </td>
 </tr>
-<tr id="row3625191433416"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p17626171412343"><a name="p17626171412343"></a><a name="p17626171412343"></a><a href="获取指定namespace下的Role列表.md">获取指定namespace下的Role列表</a></p>
+<tr id="row107057371451"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p19234153102716"><a name="p19234153102716"></a><a name="p19234153102716"></a>获取指定的Role</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1787581312422"><a name="p1787581312422"></a><a name="p1787581312422"></a>列出指定namespace下的Role列表。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p114781061916"><a name="p114781061916"></a><a name="p114781061916"></a>GET /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles/{name}</p>
 </td>
 </tr>
-<tr id="row3428815103412"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p12428141518346"><a name="p12428141518346"></a><a name="p12428141518346"></a><a href="获取Role列表.md">获取Role列表</a></p>
+<tr id="row5682840851"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1571347192810"><a name="p1571347192810"></a><a name="p1571347192810"></a>获取指定namespace下的Role列表</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p487601312421"><a name="p487601312421"></a><a name="p487601312421"></a>获取Role列表。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p32291375314"><a name="p32291375314"></a><a name="p32291375314"></a>GET /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/roles</p>
 </td>
 </tr>
-<tr id="row9850164414386"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p12850104493811"><a name="p12850104493811"></a><a name="p12850104493811"></a><a href="创建RoleBinding.md">创建RoleBinding</a></p>
+<tr id="row136811940752"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p8667520132816"><a name="p8667520132816"></a><a name="p8667520132816"></a>获取Role列表</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p14790163819435"><a name="p14790163819435"></a><a name="p14790163819435"></a>创建RoleBinding。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1826614282531"><a name="p1826614282531"></a><a name="p1826614282531"></a>GET /apis/rbac.authorization.k8s.io/v1/roles</p>
 </td>
 </tr>
-<tr id="row12422184518384"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p7422645113819"><a name="p7422645113819"></a><a name="p7422645113819"></a><a href="更新指定的RoleBinding.md">更新指定的RoleBinding</a></p>
+<tr id="row1468113401511"><td class="cellrowborder" rowspan="8" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p12674204012515"><a name="p12674204012515"></a><a name="p12674204012515"></a>RBAC/RoleBinding</p>
+<p id="p6675240453"><a name="p6675240453"></a><a name="p6675240453"></a></p>
+<p id="p1019694313515"><a name="p1019694313515"></a><a name="p1019694313515"></a></p>
+<p id="p201977432512"><a name="p201977432512"></a><a name="p201977432512"></a></p>
+<p id="p519717431150"><a name="p519717431150"></a><a name="p519717431150"></a></p>
+<p id="p7197204319512"><a name="p7197204319512"></a><a name="p7197204319512"></a></p>
+<p id="p83776451959"><a name="p83776451959"></a><a name="p83776451959"></a></p>
+<p id="p133770451953"><a name="p133770451953"></a><a name="p133770451953"></a></p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p4741133612293"><a name="p4741133612293"></a><a name="p4741133612293"></a>创建RoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p11790163814431"><a name="p11790163814431"></a><a name="p11790163814431"></a>部分更新指定的RoleBinding。</p>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p15865118542"><a name="p15865118542"></a><a name="p15865118542"></a>POST /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings</p>
 </td>
 </tr>
-<tr id="row1299824517389"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p13998144533811"><a name="p13998144533811"></a><a name="p13998144533811"></a><a href="替换指定的RoleBinding.md">替换指定的RoleBinding</a></p>
+<tr id="row196816401656"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p86755401257"><a name="p86755401257"></a><a name="p86755401257"></a>更新指定的RoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p187901538164315"><a name="p187901538164315"></a><a name="p187901538164315"></a>替换指定的RoleBinding。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p15675840151"><a name="p15675840151"></a><a name="p15675840151"></a>PATCH /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}</p>
 </td>
 </tr>
-<tr id="row553474623820"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p12534144643816"><a name="p12534144643816"></a><a name="p12534144643816"></a><a href="删除指定的RoleBinding.md">删除指定的RoleBinding</a></p>
+<tr id="row18205843552"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1197743752"><a name="p1197743752"></a><a name="p1197743752"></a>替换指定的RoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p8791113884313"><a name="p8791113884313"></a><a name="p8791113884313"></a>删除指定的RoleBinding。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1119784310517"><a name="p1119784310517"></a><a name="p1119784310517"></a>PUT /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}</p>
 </td>
 </tr>
-<tr id="row13415476382"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1941347123811"><a name="p1941347123811"></a><a name="p1941347123811"></a><a href="批量删除RoleBinding.md">批量删除RoleBinding</a></p>
+<tr id="row1420517431754"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7117102818306"><a name="p7117102818306"></a><a name="p7117102818306"></a>删除指定的RoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p15792123811436"><a name="p15792123811436"></a><a name="p15792123811436"></a>批量删除RoleBinding。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1319719433515"><a name="p1319719433515"></a><a name="p1319719433515"></a>DELETE /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}</p>
 </td>
 </tr>
-<tr id="row96408470383"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p15640194712381"><a name="p15640194712381"></a><a name="p15640194712381"></a><a href="获取指定的RoleBinding.md">获取指定的RoleBinding</a></p>
+<tr id="row920554314512"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p168531426304"><a name="p168531426304"></a><a name="p168531426304"></a>批量删除RoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p8792138144316"><a name="p8792138144316"></a><a name="p8792138144316"></a>获取指定的RoleBinding。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p12545274555"><a name="p12545274555"></a><a name="p12545274555"></a>DELETE /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings</p>
 </td>
 </tr>
-<tr id="row4230124883810"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p323110487381"><a name="p323110487381"></a><a name="p323110487381"></a><a href="获取指定namespace下RoleBinding列表.md">获取指定namespace下RoleBinding列表</a></p>
+<tr id="row12041043352"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p18752057183016"><a name="p18752057183016"></a><a name="p18752057183016"></a>获取指定的RoleBinding</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p7792938134311"><a name="p7792938134311"></a><a name="p7792938134311"></a>列出指定namespace下的RoleBinding列表。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p161978431651"><a name="p161978431651"></a><a name="p161978431651"></a>GET /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings/{name}</p>
 </td>
 </tr>
-<tr id="row895614819382"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1956748153814"><a name="p1956748153814"></a><a name="p1956748153814"></a><a href="获取RoleBinding列表.md">获取RoleBinding列表</a></p>
+<tr id="row113861845155"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p6377845452"><a name="p6377845452"></a><a name="p6377845452"></a>获取指定namespace下RoleBinding列表</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p20793938164315"><a name="p20793938164315"></a><a name="p20793938164315"></a>获取RoleBinding列表。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1245412216565"><a name="p1245412216565"></a><a name="p1245412216565"></a>GET /apis/rbac.authorization.k8s.io/v1/namespaces/{namespace}/rolebindings</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## API groups<a name="section16132195617408"></a>
-
-**表 24**  API groups
-
-<a name="table526181134119"></a>
-<table><thead align="left"><tr id="row1426219118416"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p16575181116417"><a name="p16575181116417"></a><a name="p16575181116417"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p7575121120417"><a name="p7575121120417"></a><a name="p7575121120417"></a>说明</p>
-</th>
+<tr id="row138610451453"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1589812338319"><a name="p1589812338319"></a><a name="p1589812338319"></a>获取RoleBinding列表</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p0356172010568"><a name="p0356172010568"></a><a name="p0356172010568"></a>GET /apis/rbac.authorization.k8s.io/v1/rolebindings</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row132622124111"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p62621915418"><a name="p62621915418"></a><a name="p62621915418"></a><a href="列出APIVersions.md">列出APIVersions</a></p>
+<tr id="row2038617456513"><td class="cellrowborder" rowspan="19" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p6752553218"><a name="p6752553218"></a><a name="p6752553218"></a>API groups</p>
+<p id="p53778455510"><a name="p53778455510"></a><a name="p53778455510"></a></p>
+<p id="p1175155311514"><a name="p1175155311514"></a><a name="p1175155311514"></a></p>
+<p id="p37525539513"><a name="p37525539513"></a><a name="p37525539513"></a></p>
+<p id="p117531453052"><a name="p117531453052"></a><a name="p117531453052"></a></p>
+<p id="p12753753458"><a name="p12753753458"></a><a name="p12753753458"></a></p>
+<p id="p15245165619512"><a name="p15245165619512"></a><a name="p15245165619512"></a></p>
+<p id="p1724514561352"><a name="p1724514561352"></a><a name="p1724514561352"></a></p>
+<p id="p524513561553"><a name="p524513561553"></a><a name="p524513561553"></a></p>
+<p id="p524545614511"><a name="p524545614511"></a><a name="p524545614511"></a></p>
+<p id="p10983202611198"><a name="p10983202611198"></a><a name="p10983202611198"></a></p>
+<p id="p373883191912"><a name="p373883191912"></a><a name="p373883191912"></a></p>
+<p id="p131825285194"><a name="p131825285194"></a><a name="p131825285194"></a></p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p626241184110"><a name="p626241184110"></a><a name="p626241184110"></a>列出APIVersions。</p>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p0575717133918"><a name="p0575717133918"></a><a name="p0575717133918"></a>列出APIVersions</p>
 </td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p8211143411399"><a name="p8211143411399"></a><a name="p8211143411399"></a>GET /api</p>
+</td>
 </tr>
-<tr id="row192628113417"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p6262101144117"><a name="p6262101144117"></a><a name="p6262101144117"></a><a href="列出APIGroups.md">列出APIGroups</a></p>
+<tr id="row18385134514520"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p147031739163918"><a name="p147031739163918"></a><a name="p147031739163918"></a>列出APIGroups</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p92621118417"><a name="p92621118417"></a><a name="p92621118417"></a>列出 APIGroups。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p91991048051"><a name="p91991048051"></a><a name="p91991048051"></a>GET /apis</p>
 </td>
 </tr>
-<tr id="row7262171134111"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p152621814416"><a name="p152621814416"></a><a name="p152621814416"></a><a href="listing-APIResources-of-GroupVersion-apiregistration-k8s-io-v1beta1.md">listing APIResources of GroupVersion apiregistration.k8s.io/v1beta1</a></p>
+<tr id="row117658535520"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p57527531754"><a name="p57527531754"></a><a name="p57527531754"></a>listing APIResources of GroupVersion apiregistration.k8s.io/v1beta1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p52627154114"><a name="p52627154114"></a><a name="p52627154114"></a>列出 APIGroups。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p8752453351"><a name="p8752453351"></a><a name="p8752453351"></a>GET /apis/apiregistration.k8s.io/v1beta1</p>
 </td>
 </tr>
-<tr id="row15263111124117"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p20263819417"><a name="p20263819417"></a><a name="p20263819417"></a><a href="listing-APIResources-of-GroupVersion-extensions-v1beta1.md">listing APIResources of GroupVersion extensions/v1beta1</a></p>
+<tr id="row1076517537510"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p210212924015"><a name="p210212924015"></a><a name="p210212924015"></a>listing APIResources of GroupVersion extensions/v1beta1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1026319116412"><a name="p1026319116412"></a><a name="p1026319116412"></a>列出 APIGroups。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1775215531752"><a name="p1775215531752"></a><a name="p1775215531752"></a>GET /apis/extensions/v1beta1</p>
 </td>
 </tr>
-<tr id="row726361104119"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p162631817413"><a name="p162631817413"></a><a name="p162631817413"></a><a href="listing-APIResources-of-GroupVersion-apps-v1-apps-v1beta1.md">listing APIResources of GroupVersion apps/v1beta1</a></p>
+<tr id="row1376511531952"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p3753753651"><a name="p3753753651"></a><a name="p3753753651"></a>listing APIResources of GroupVersion apps/v1&amp;apps/v1beta1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1726313114119"><a name="p1726313114119"></a><a name="p1726313114119"></a>列出APIResources of Group Version "apps/v1beta1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p1219419165171"><a name="p1219419165171"></a><a name="p1219419165171"></a>GET /apis/apps/v1（适用于1.15以上版本的集群）</p>
+<p id="p44307368"><a name="p44307368"></a><a name="p44307368"></a>GET /apis/apps/v1beta1（仅适用于1.15及以下版本的集群）</p>
 </td>
 </tr>
-<tr id="row126312116419"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1726381134119"><a name="p1726381134119"></a><a name="p1726381134119"></a><a href="listing-APIResources-of-GroupVersion-authentication-k8s-io-v1.md">listing APIResources of GroupVersion authentication.k8s.io/v1</a></p>
+<tr id="row676417531451"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p7858166194117"><a name="p7858166194117"></a><a name="p7858166194117"></a>listing APIResources of GroupVersion authentication.k8s.io/v1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p32635114413"><a name="p32635114413"></a><a name="p32635114413"></a>列出APIResources of GroupVersion "authentication.kubernetes.io/v1"</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p59255157"><a name="p59255157"></a><a name="p59255157"></a>GET /apis/authentication.k8s.io/v1</p>
 </td>
 </tr>
-<tr id="row626315117412"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p82631112416"><a name="p82631112416"></a><a name="p82631112416"></a><a href="listing-APIResources-of-GroupVersion-authentication-k8s-io-v1beta1.md">listing APIResources of GroupVersion authentication.k8s.io/v1beta1</a></p>
+<tr id="row132581356254"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1024518566517"><a name="p1024518566517"></a><a name="p1024518566517"></a>listing APIResources of GroupVersion authentication.k8s.io/v1beta1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p52631610416"><a name="p52631610416"></a><a name="p52631610416"></a>列出APIResources of GroupVersion "authentication.k8s.io/v1beta1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p61978487"><a name="p61978487"></a><a name="p61978487"></a>GET /apis/authentication.k8s.io/v1beta1</p>
 </td>
 </tr>
-<tr id="row148841646134319"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p1488504624319"><a name="p1488504624319"></a><a name="p1488504624319"></a><a href="listing-APIResources-of-GroupVersion-authorization-k8s-io-v1.md">listing APIResources of GroupVersion authorization.k8s.io/v1</a></p>
+<tr id="row162587565514"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p171951343184114"><a name="p171951343184114"></a><a name="p171951343184114"></a>listing APIResources of GroupVersion authorization.k8s.io/v1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1886134664314"><a name="p1886134664314"></a><a name="p1886134664314"></a>列出APIResources of GroupVersion "authorization.k8s.io/v1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p61148946"><a name="p61148946"></a><a name="p61148946"></a>GET /apis/authorization.k8s.io/v1</p>
 </td>
 </tr>
-<tr id="row1735315254313"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p17353175215435"><a name="p17353175215435"></a><a name="p17353175215435"></a><a href="listing-APIResources-of-GroupVersion-authorization-k8s-io-v1beta1.md">listing APIResources of GroupVersion authorization.k8s.io/v1beta1</a></p>
+<tr id="row22582561355"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1324517567512"><a name="p1324517567512"></a><a name="p1324517567512"></a>listing APIResources of GroupVersion authorization.k8s.io/v1beta1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1435355214437"><a name="p1435355214437"></a><a name="p1435355214437"></a>列出APIResources of GroupVersion "authorization.k8s.io/v1beta1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p49070508"><a name="p49070508"></a><a name="p49070508"></a>GET /apis/authorization.k8s.io/v1beta1</p>
 </td>
 </tr>
-<tr id="row1191055104317"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p179105518435"><a name="p179105518435"></a><a name="p179105518435"></a><a href="listing-APIResources-of-GroupVersion-autoscaling-v1.md">listing APIResources of GroupVersion autoscaling/v1</a></p>
+<tr id="row2258105614511"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p461016194426"><a name="p461016194426"></a><a name="p461016194426"></a>listing APIResources of GroupVersion autoscaling/v1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p2098552434"><a name="p2098552434"></a><a name="p2098552434"></a>列出APIResources of GroupVersion "autoscaling/v1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p42009373"><a name="p42009373"></a><a name="p42009373"></a>GET /apis/autoscaling/v1</p>
 </td>
 </tr>
-<tr id="row1382117493437"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p8821184984313"><a name="p8821184984313"></a><a name="p8821184984313"></a><a href="listing-APIResources-of-GroupVersion-batch-v1.md">listing APIResources of GroupVersion batch/v1</a></p>
+<tr id="row1198332618191"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p145054367422"><a name="p145054367422"></a><a name="p145054367422"></a>listing APIResources of GroupVersion batch/v1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p3821164918435"><a name="p3821164918435"></a><a name="p3821164918435"></a>列出APIResources of GroupVersion "batch/v1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p18291833"><a name="p18291833"></a><a name="p18291833"></a>GET /apis/batch/v1</p>
 </td>
 </tr>
-<tr id="row12872690444"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p9872189204415"><a name="p9872189204415"></a><a name="p9872189204415"></a><a href="listing-APIResources-of-GroupVersion-certificates-k8s-io-v1beta1.md">listing APIResources of GroupVersion certificates.k8s.io/v1beta1</a></p>
+<tr id="row3738113161914"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p5524150104219"><a name="p5524150104219"></a><a name="p5524150104219"></a>listing APIResources of GroupVersion certificates.k8s.io/v1beta1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p187212910446"><a name="p187212910446"></a><a name="p187212910446"></a>列出GroupVersion "certificates.k8s.io/v1beta1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p57469819"><a name="p57469819"></a><a name="p57469819"></a>GET /apis/certificates.k8s.io/v1beta1</p>
 </td>
 </tr>
-<tr id="row95601910104416"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p556151019446"><a name="p556151019446"></a><a name="p556151019446"></a><a href="listing-APIResources-of-GroupVersion-networking-k8s-io-v1.md">listing APIResources of GroupVersion networking.k8s.io/v1</a></p>
+<tr id="row2668752203217"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p67317644318"><a name="p67317644318"></a><a name="p67317644318"></a>listing APIResources of GroupVersion networking.k8s.io/v1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1356161084419"><a name="p1356161084419"></a><a name="p1356161084419"></a>列出APIResources of GroupVersion "networking.k8s.io/v1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p36473072"><a name="p36473072"></a><a name="p36473072"></a>GET /apis/networking.k8s.io/v1</p>
 </td>
 </tr>
-<tr id="row1317451134410"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p11175511164417"><a name="p11175511164417"></a><a name="p11175511164417"></a><a href="listing-APIResources-of-GroupVersion-policy-v1beta1.md">listing APIResources of GroupVersion policy/v1beta1</a></p>
+<tr id="row03101420337"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p2263230164314"><a name="p2263230164314"></a><a name="p2263230164314"></a>listing APIResources of GroupVersion policy/v1beta1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p517581112442"><a name="p517581112442"></a><a name="p517581112442"></a>列出APIResources of GroupVersion "policy/v1beta1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p183111325333"><a name="p183111325333"></a><a name="p183111325333"></a>GET /apis/policy/v1beta1</p>
 </td>
 </tr>
-<tr id="row1977431110443"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p197741011194419"><a name="p197741011194419"></a><a name="p197741011194419"></a><a href="listing-APIResources-of-GroupVersion-rbac-authorization-k8s-io-v1beta1.md">listing APIResources of GroupVersion rbac.authorization.k8s.io/v1beta1</a></p>
+<tr id="row1022216112335"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p104176498436"><a name="p104176498436"></a><a name="p104176498436"></a>listing APIResources of GroupVersion rbac.authorization.k8s.io/v1beta1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p43091357135318"><a name="p43091357135318"></a><a name="p43091357135318"></a>列出APIResources of GroupVersion "rbac.authorization.k8s.io/v1beta1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p34832013"><a name="p34832013"></a><a name="p34832013"></a>GET /apis/rbac.authorization.k8s.io/v1beta1</p>
 </td>
 </tr>
-<tr id="row53341124442"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p6334812134412"><a name="p6334812134412"></a><a name="p6334812134412"></a><a href="listing-APIResources-of-GroupVersion-storage-k8s-io-v1.md">listing APIResources of GroupVersion storage.k8s.io/v1</a></p>
+<tr id="row77756883310"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p17752863316"><a name="p17752863316"></a><a name="p17752863316"></a>listing APIResources of GroupVersion storage.k8s.io/v1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p13347123441"><a name="p13347123441"></a><a name="p13347123441"></a>列出APIResources of GroupVersion "storage.k8s.io/v1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p50088692"><a name="p50088692"></a><a name="p50088692"></a>GET /apis/storage.k8s.io/v1</p>
 </td>
 </tr>
-<tr id="row1197831212448"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p17978212134418"><a name="p17978212134418"></a><a name="p17978212134418"></a><a href="listing-APIResources-of-GroupVersion-storage-k8s-io-v1beta1.md">listing APIResources of GroupVersion storage.k8s.io/v1beta1</a></p>
+<tr id="row9992114163319"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p115385267445"><a name="p115385267445"></a><a name="p115385267445"></a>listing APIResources of GroupVersion storage.k8s.io/v1beta1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p097817124440"><a name="p097817124440"></a><a name="p097817124440"></a>列出APIResources of GroupVersion "storage.k8s.io/v1beta1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p39188142"><a name="p39188142"></a><a name="p39188142"></a>GET /apis/storage.k8s.io/v1beta1</p>
 </td>
 </tr>
-<tr id="row12580121314415"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p558120138445"><a name="p558120138445"></a><a name="p558120138445"></a><a href="listing-APIResources-of-GroupVersion-apiextensions-k8s-io-v1beta1.md">listing APIResources of GroupVersion apiextensions.k8s.io/v1beta1</a></p>
+<tr id="row84151659123219"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p44159593325"><a name="p44159593325"></a><a name="p44159593325"></a>listing APIResources of GroupVersion apiextensions.k8s.io/v1beta1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p1581141318442"><a name="p1581141318442"></a><a name="p1581141318442"></a>列出APIResources of GroupVersion "apiextensions.k8s.io/v1beta1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p21965084"><a name="p21965084"></a><a name="p21965084"></a>GET /apis/apiextensions.k8s.io/v1beta1</p>
 </td>
 </tr>
-<tr id="row42641114164414"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p172651514154414"><a name="p172651514154414"></a><a name="p172651514154414"></a><a href="listing-APIResources-of-GroupVersion-v1.md">listing APIResources of GroupVersion v1</a></p>
+<tr id="row1018272813193"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p829210598443"><a name="p829210598443"></a><a name="p829210598443"></a>listing APIResources of GroupVersion v1</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p826511494414"><a name="p826511494414"></a><a name="p826511494414"></a>列出APIResources of GroupVersion "v1"。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p41785475"><a name="p41785475"></a><a name="p41785475"></a>GET /api/v1</p>
 </td>
 </tr>
-</tbody>
-</table>
-
-## Event<a name="section1177391011383"></a>
-
-**表 25**  Event
-
-<a name="table97521615163812"></a>
-<table><thead align="left"><tr id="row675351519389"><th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.1"><p id="p1843227173815"><a name="p1843227173815"></a><a name="p1843227173815"></a>API</p>
-</th>
-<th class="cellrowborder" valign="top" width="50%" id="mcps1.2.3.1.2"><p id="p0843192723813"><a name="p0843192723813"></a><a name="p0843192723813"></a>说明</p>
-</th>
+<tr id="row20777132554513"><td class="cellrowborder" rowspan="2" valign="top" width="13.278672132786722%" headers="mcps1.1.4.1.1 "><p id="p6777225154512"><a name="p6777225154512"></a><a name="p6777225154512"></a>Event</p>
+<p id="p367516264456"><a name="p367516264456"></a><a name="p367516264456"></a></p>
+</td>
+<td class="cellrowborder" valign="top" width="31.286871312868712%" headers="mcps1.1.4.1.2 "><p id="p2777182554515"><a name="p2777182554515"></a><a name="p2777182554515"></a>获取Event</p>
+</td>
+<td class="cellrowborder" valign="top" width="55.43445655434457%" headers="mcps1.1.4.1.3 "><p id="p37777259457"><a name="p37777259457"></a><a name="p37777259457"></a>GET /api/v1/events</p>
+</td>
 </tr>
-</thead>
-<tbody><tr id="row1575491519386"><td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.1 "><p id="p177541215193813"><a name="p177541215193813"></a><a name="p177541215193813"></a><a href="列出指定命名空间下的Event.md">列出指定的Event</a></p>
+<tr id="row667562613453"><td class="cellrowborder" valign="top" headers="mcps1.1.4.1.1 "><p id="p1370245411452"><a name="p1370245411452"></a><a name="p1370245411452"></a>列出指定命名空间下的Event</p>
 </td>
-<td class="cellrowborder" valign="top" width="50%" headers="mcps1.2.3.1.2 "><p id="p19754181513388"><a name="p19754181513388"></a><a name="p19754181513388"></a>列出指定Namespace下的所有Event资源对象。</p>
+<td class="cellrowborder" valign="top" headers="mcps1.1.4.1.2 "><p id="p15374686"><a name="p15374686"></a><a name="p15374686"></a>GET /api/v1/namespaces/{namespace}/events</p>
 </td>
 </tr>
 </tbody>

@@ -1,4 +1,4 @@
-# 命名空间权限（Kubernetes RBAC授权）<a name="cce_01_0189"></a>
+# 命名空间权限（Kubernetes RBAC授权）<a name="cce_10_0189"></a>
 
 ## 命名空间权限（kubernetes RBAC授权）<a name="section54736241399"></a>
 
@@ -14,77 +14,76 @@ Role和ClusterRole指定了可以对哪些资源做哪些动作，RoleBinding和
 **图 1**  角色绑定<a name="zh-cn_topic_0084600596_fig1751131311103"></a>  
 ![](figures/角色绑定.png "角色绑定")
 
-在CCE控制台中可以授予用户或用户组命名空间权限，可以对某一个命名空间或全部命名空间授权，CCE控制台中默认提供如下ClusterRole。
+在CCE控制台可以授予用户或用户组命名空间权限，可以对某一个命名空间或全部命名空间授权，CCE控制台默认提供如下ClusterRole。
 
--   view：对全部或所选命名空间下大多数资源的只读权限。
--   edit：对全部或所选命名空间下多数资源的读写权限。当配置在全部命名空间时能力与运维权限一致。
--   admin：对全部命名空间下大多数资源的读写权限，对节点、存储卷，命名空间和配额管理的只读权限。
--   cluster-admin：对全部命名空间下所有资源的读写权限。
+-   view（只读权限）：对全部或所选命名空间下大多数资源的只读权限。
+-   edit（开发权限）：对全部或所选命名空间下多数资源的读写权限。当配置在全部命名空间时能力与运维权限一致。
+-   admin（运维权限）：对全部命名空间下大多数资源的读写权限，对节点、存储卷，命名空间和配额管理的只读权限。
+-   cluster-admin（管理员权限）：对全部命名空间下所有资源的读写权限。
 
 ## 集群权限（IAM授权）与命名空间权限（Kubernetes RBAC授权）的关系<a name="section207514572488"></a>
 
-拥有不同集群权限（IAM授权）的用户，其拥有的命名空间权限（Kubernetes RBAC授权）不同。[表1](#cce_01_0187_table886210176509)给出了不同用户拥有的命名空间权限详情。
+拥有不同集群权限（IAM授权）的用户，其拥有的命名空间权限（Kubernetes RBAC授权）不同。[表1](#cce_10_0187_table886210176509)给出了不同用户拥有的命名空间权限详情。
 
 **表 1**  不同用户拥有的命名空间权限
 
-<a name="cce_01_0187_table886210176509"></a>
-<table><thead align="left"><tr id="cce_01_0187_row14863201719502"><th class="cellrowborder" valign="top" width="31.91752577319587%" id="mcps1.2.4.1.1"><p id="cce_01_0187_p14863111718502"><a name="cce_01_0187_p14863111718502"></a><a name="cce_01_0187_p14863111718502"></a>用户类型</p>
+<a name="cce_10_0187_table886210176509"></a>
+<table><thead align="left"><tr id="cce_10_0187_row14863201719502"><th class="cellrowborder" valign="top" width="46.54%" id="mcps1.2.3.1.1"><p id="cce_10_0187_p14863111718502"><a name="cce_10_0187_p14863111718502"></a><a name="cce_10_0187_p14863111718502"></a>用户类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="31.422680412371136%" id="mcps1.2.4.1.2"><p id="cce_01_0187_p18636175506"><a name="cce_01_0187_p18636175506"></a><a name="cce_01_0187_p18636175506"></a>1.11.7-r2以下版本的集群</p>
-</th>
-<th class="cellrowborder" valign="top" width="36.65979381443299%" id="mcps1.2.4.1.3"><p id="cce_01_0187_p10295153183913"><a name="cce_01_0187_p10295153183913"></a><a name="cce_01_0187_p10295153183913"></a>1.13及以上版本的集群</p>
+<th class="cellrowborder" valign="top" width="53.459999999999994%" id="mcps1.2.3.1.2"><p id="cce_10_0187_p10295153183913"><a name="cce_10_0187_p10295153183913"></a><a name="cce_10_0187_p10295153183913"></a>1.13及以上版本的集群</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="cce_01_0187_row138631617185012"><td class="cellrowborder" valign="top" width="31.91752577319587%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p1787744075015"><a name="cce_01_0187_p1787744075015"></a><a name="cce_01_0187_p1787744075015"></a>拥有Tenant Administrator权限的用户（例如华为云账号）</p>
+<tbody><tr id="cce_10_0187_row138631617185012"><td class="cellrowborder" valign="top" width="46.54%" headers="mcps1.2.3.1.1 "><p id="cce_10_0187_p1787744075015"><a name="cce_10_0187_p1787744075015"></a><a name="cce_10_0187_p1787744075015"></a>拥有Tenant Administrator权限的用户（例如账号）</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.422680412371136%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p14863717165019"><a name="cce_01_0187_p14863717165019"></a><a name="cce_01_0187_p14863717165019"></a>全部命名空间权限</p>
-</td>
-<td class="cellrowborder" valign="top" width="36.65979381443299%" headers="mcps1.2.4.1.3 "><p id="cce_01_0187_p1829523133913"><a name="cce_01_0187_p1829523133913"></a><a name="cce_01_0187_p1829523133913"></a>全部命名空间权限</p>
+<td class="cellrowborder" valign="top" width="53.459999999999994%" headers="mcps1.2.3.1.2 "><p id="cce_10_0187_p1829523133913"><a name="cce_10_0187_p1829523133913"></a><a name="cce_10_0187_p1829523133913"></a>全部命名空间权限</p>
 </td>
 </tr>
-<tr id="cce_01_0187_row138631317205019"><td class="cellrowborder" valign="top" width="31.91752577319587%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p3878104075018"><a name="cce_01_0187_p3878104075018"></a><a name="cce_01_0187_p3878104075018"></a>拥有CCE Administrator权限的IAM用户</p>
+<tr id="cce_10_0187_row138631317205019"><td class="cellrowborder" valign="top" width="46.54%" headers="mcps1.2.3.1.1 "><p id="cce_10_0187_p3878104075018"><a name="cce_10_0187_p3878104075018"></a><a name="cce_10_0187_p3878104075018"></a>拥有CCE Administrator权限的IAM用户</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.422680412371136%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p270032114512"><a name="cce_01_0187_p270032114512"></a><a name="cce_01_0187_p270032114512"></a>全部命名空间权限</p>
-</td>
-<td class="cellrowborder" valign="top" width="36.65979381443299%" headers="mcps1.2.4.1.3 "><p id="cce_01_0187_p172951435393"><a name="cce_01_0187_p172951435393"></a><a name="cce_01_0187_p172951435393"></a>全部命名空间权限</p>
+<td class="cellrowborder" valign="top" width="53.459999999999994%" headers="mcps1.2.3.1.2 "><p id="cce_10_0187_p172951435393"><a name="cce_10_0187_p172951435393"></a><a name="cce_10_0187_p172951435393"></a>全部命名空间权限</p>
 </td>
 </tr>
-<tr id="cce_01_0187_row1386412176506"><td class="cellrowborder" valign="top" width="31.91752577319587%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p187854025013"><a name="cce_01_0187_p187854025013"></a><a name="cce_01_0187_p187854025013"></a>拥有CCE&nbsp;FullAccess或者CCE&nbsp;ReadOnlyAccess权限的IAM用户</p>
+<tr id="cce_10_0187_row1386412176506"><td class="cellrowborder" valign="top" width="46.54%" headers="mcps1.2.3.1.1 "><p id="cce_10_0187_p187854025013"><a name="cce_10_0187_p187854025013"></a><a name="cce_10_0187_p187854025013"></a>拥有CCE&nbsp;FullAccess或者CCE&nbsp;ReadOnlyAccess权限的IAM用户</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.422680412371136%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p12703172316516"><a name="cce_01_0187_p12703172316516"></a><a name="cce_01_0187_p12703172316516"></a>全部命名空间权限</p>
-</td>
-<td class="cellrowborder" valign="top" width="36.65979381443299%" headers="mcps1.2.4.1.3 "><p id="cce_01_0187_p7321956194312"><a name="cce_01_0187_p7321956194312"></a><a name="cce_01_0187_p7321956194312"></a>按Kubernetes RBAC授权</p>
+<td class="cellrowborder" valign="top" width="53.459999999999994%" headers="mcps1.2.3.1.2 "><p id="cce_10_0187_p7321956194312"><a name="cce_10_0187_p7321956194312"></a><a name="cce_10_0187_p7321956194312"></a>按Kubernetes RBAC授权</p>
 </td>
 </tr>
-<tr id="cce_01_0187_row28641117145019"><td class="cellrowborder" valign="top" width="31.91752577319587%" headers="mcps1.2.4.1.1 "><p id="cce_01_0187_p11879440195014"><a name="cce_01_0187_p11879440195014"></a><a name="cce_01_0187_p11879440195014"></a>拥有Tenant Guest权限的IAM用户</p>
+<tr id="cce_10_0187_row28641117145019"><td class="cellrowborder" valign="top" width="46.54%" headers="mcps1.2.3.1.1 "><p id="cce_10_0187_p11879440195014"><a name="cce_10_0187_p11879440195014"></a><a name="cce_10_0187_p11879440195014"></a>拥有Tenant Guest权限的IAM用户</p>
 </td>
-<td class="cellrowborder" valign="top" width="31.422680412371136%" headers="mcps1.2.4.1.2 "><p id="cce_01_0187_p1490645915120"><a name="cce_01_0187_p1490645915120"></a><a name="cce_01_0187_p1490645915120"></a>全部命名空间权限</p>
-</td>
-<td class="cellrowborder" valign="top" width="36.65979381443299%" headers="mcps1.2.4.1.3 "><p id="cce_01_0187_p1932115664317"><a name="cce_01_0187_p1932115664317"></a><a name="cce_01_0187_p1932115664317"></a>按Kubernetes RBAC授权</p>
+<td class="cellrowborder" valign="top" width="53.459999999999994%" headers="mcps1.2.3.1.2 "><p id="cce_10_0187_p1932115664317"><a name="cce_10_0187_p1932115664317"></a><a name="cce_10_0187_p1932115664317"></a>按Kubernetes RBAC授权</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-## 前提条件<a name="section320111415506"></a>
+## 注意事项<a name="section320111415506"></a>
 
--   Kubernetes RBAC的授权能力支持1.11.7-r2及以上版本集群。若需使用RBAC功能请将集群升级至1.11.7-r2或以上版本，升级方法请参见[升级集群（1.13及以下版本）](升级集群（1-13及以下版本）.md)。
--   任何用户创建1.11.7-r2或以上版本集群后，CCE会自动为该用户添加该集群的所有命名空间的cluster-admin权限，也就是说该用户允许对集群以及所有命名空间中的全部资源进行完全控制。
--   拥有Security Administrator（IAM除切换角色外所有权限）权限的用户（如华为云账号所在的admin用户组默认拥有此权限），才能在CCE控制台命名空间权限页面进行授权操作。
+-   Kubernetes RBAC的授权能力支持1.11.7-r2及以上版本集群。若需使用RBAC功能请将集群升级至1.11.7-r2或以上版本，升级方法请参见[重置升级/滚动升级（1.13版本）](重置升级-滚动升级（1-13版本）.md)。
+-   任何用户创建1.11.7-r2或以上版本集群后，CCE会自动为该用户添加该集群的所有命名空间的cluster-admin权限，也就是说该用户允许对集群以及所有命名空间中的全部资源进行完全控制。联邦用户由于每次登录注销都会改变用户ID，所以权限用户会显示已删除，此情况下请勿删除该权限，否则会导致鉴权失败。此种情况下建议在CCE为某个用户组创建cluster-admin权限，将联邦用户加入此用户组。
+-   拥有Security Administrator（IAM除切换角色外所有权限）权限的用户（如账号所在的admin用户组默认拥有此权限），才能在CCE控制台命名空间权限页面进行授权操作。
 
 ## 配置命名空间权限（控制台）<a name="section14142185815219"></a>
 
 CCE中的命名空间权限是基于Kubernetes RBAC能力的授权，通过权限设置可以让不同的用户或用户组拥有操作不同Kubernetes资源的权限。
 
-1.  登录CCE控制台，在左侧导航栏中选择“权限管理“，进入权限管理页面。
-2.  单击“命名空间权限“页签，在命名空间权限列表右上方选择要添加授权的集群，单击“添加授权“按钮，进入添加授权页面。
-3.  在添加授权页面，确认集群名称，选择该集群下要授权使用的命名空间，例如选择“全部命名空间”，选择要授权的用户或用户组，再选择具体权限，如下图所示。
+1.  登录CCE控制台，在左侧导航栏中选择“权限管理“。
+2.  在右边下拉列表中选择要添加权限的集群。
+3.  在右上角单击“添加权限“，进入添加授权页面。
+4.  在添加授权页面，确认集群名称，选择该集群下要授权使用的命名空间，例如选择“全部命名空间”，选择要授权的用户或用户组，再选择具体权限。
 
-    **图 2**  配置命名空间权限<a name="fig829510551637"></a>  
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >对于没有IAM权限的用户，给其他用户和用户组配置权限时，无法选择用户和用户组，此时支持填写用户ID或用户组ID进行配置。
+
+    **图 2**  配置命名空间权限<a name="fig1333741815411"></a>  
     ![](figures/配置命名空间权限.png "配置命名空间权限")
 
-4.  单击“创建“。
+    其中自定义权限可以根据需要自定义，选择自定义权限后，在自定义权限一行右侧单击新建自定义权限，在弹出的窗口中填写名称并选择规则。创建完成后，在添加权限的自定义权限下拉框中可以选择。
+
+    **图 3**  自定义权限<a name="fig43382183546"></a>  
+    ![](figures/自定义权限.png "自定义权限")
+
+5.  单击“创建“。
 
 ## 自定义命名空间权限（kubectl）<a name="section1273861718819"></a>
 
@@ -135,7 +134,7 @@ subjects:
 
 这里的subjects就是将Role与IAM用户绑定起来，从而使得IAM用户获取role-example这个Role里面定义的权限，如下图所示。
 
-**图 3**  RoleBinding绑定Role和用户<a name="fig9473195372813"></a>  
+**图 4**  RoleBinding绑定Role和用户<a name="fig9473195372813"></a>  
 ![](figures/RoleBinding绑定Role和用户.png "RoleBinding绑定Role和用户")
 
 subjects下用户的类型还可以是用户组，这样配置可以对用户组下所有用户生效。
@@ -178,7 +177,7 @@ Error from server (Forbidden): pods is forbidden: User "0c97ac3cb280f4d91fa7c009
 
 集群全部权限可以使用cluster-admin权限，cluster-admin包含集群级别资源（PV、StorageClass等）的权限。
 
-**图 4**  授予集群全部权限（cluster-admin）<a name="fig887052410553"></a>  
+**图 5**  授予集群全部权限（cluster-admin）<a name="fig887052410553"></a>  
 ![](figures/授予集群全部权限（cluster-admin）.png "授予集群全部权限（cluster-admin）")
 
 如果使用kubectl查看可以看到创建了一个ClusterRoleBinding，将cluster-admin和cce-role-group这个用户组绑定了起来。
@@ -225,9 +224,9 @@ csi-sfsturbo        everest-csi-provisioner         Delete          Immediate   
 
 ## 示例：授予命名空间全部权限（admin）<a name="section6257142116414"></a>
 
-admin权限拥有命名空间全部权限，您可以给某个或全部命名空间授权。
+admin权限拥有命名空间全部权限，您可以授予用户/用户组某个命名空间或全部命名空间admin权限。
 
-**图 5**  授予default命名空间全部权限（admin）<a name="fig966535195416"></a>  
+**图 6**  授予default命名空间全部权限（admin）<a name="fig966535195416"></a>  
 ![](figures/授予default命名空间全部权限（admin）.png "授予default命名空间全部权限（admin）")
 
 如果使用kubectl查看可以看到创建了一个RoleBinding，将admin和cce-role-group这个用户组绑定了起来，且权限范围是default这个命名空间。
@@ -275,7 +274,7 @@ Error from server (Forbidden): persistentvolumes is forbidden: User "0c97ac3cb28
 
 view权限拥有命名空间查看权限，您可以给某个或全部命名空间授权。
 
-**图 6**  授予default命名空间只读权限（view）<a name="fig1980215481568"></a>  
+**图 7**  授予default命名空间只读权限（view）<a name="fig1980215481568"></a>  
 ![](figures/授予default命名空间只读权限（view）.png "授予default命名空间只读权限（view）")
 
 如果使用kubectl查看可以看到创建了一个RoleBinding，将view和cce-role-group这个用户组绑定了起来，且权限范围是default这个命名空间。

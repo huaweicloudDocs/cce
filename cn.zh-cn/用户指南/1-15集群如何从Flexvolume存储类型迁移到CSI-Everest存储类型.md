@@ -1,6 +1,6 @@
-# 1.15集群如何从Flexvolume存储类型迁移到CSI Everest存储类型<a name="cce_01_0343"></a>
+# 1.15集群如何从Flexvolume存储类型迁移到CSI Everest存储类型<a name="cce_10_0343"></a>
 
-在v1.15.11-r1之后版本的集群中，CSI Everest插件已接管fuxi Flexvolume（即storage-driver插件）容器存储的所有功能，1.17.9-r0版本后不再支持fuxi Flexvolume（storage-driver插件），请将对fuxi Flexvolume的使用切换CSI Everest上。
+在v1.15.11-r1之后版本的集群中，CSI Everest插件已接管fuxi Flexvolume（即storage-driver插件）容器存储的所有功能，建议将对fuxi Flexvolume的使用切换CSI Everest上。
 
 迁移的主要原理是通过创建静态PV的形式关联原有底层存储，并创建新的PVC关联该新建的静态PV，之后应用升级挂载这个新的PVC到原有挂载路径，实现存储卷迁移。
 
@@ -124,7 +124,7 @@
         driver: nas.csi.everest.io
         fsType: nfs
         volumeAttributes:
-          everest.io/share-export-location: sfs-nas01.cn-north-4.myhuaweicloud.com:/share-436304e8 
+          everest.io/share-export-location: sfs-nas01.cn-south-1.myhuaweicloud.com:/share-436304e8 
           storage.kubernetes.io/csiProvisionerIdentity: everest-csi-provisioner
         volumeHandle: 682f00bb-ace0-41d8-9b3e-913c9aa6b695
       persistentVolumeReclaimPolicy: Delete
@@ -655,9 +655,6 @@
 
     2.  将应用的实例数修改成0。
     3.  在存储界面解关联有状态应用使用的flexVolume格式的PVC。
-
-        ![](figures/zh-cn_image_0000001096963443.png)
-
     4.  通过kubectl create -f的形式创建pv和pvc。
 
         **kubectl create -f pv-example.yaml**
@@ -769,9 +766,6 @@
 6.  卸载FlexVolume格式的PVC。
 
     检查正常，存储管理界面执行解关联操作。
-
-    **图 1**  存储解关联<a name="zh-cn_topic_0285037038_fig1614076165010"></a>  
-    ![](figures/存储解关联.png "存储解关联")
 
     也可以后台通过kubectl指令删除Flexvolume格式的PVC和PV。
 

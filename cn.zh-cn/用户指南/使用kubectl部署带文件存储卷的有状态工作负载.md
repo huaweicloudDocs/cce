@@ -1,20 +1,16 @@
-# 使用kubectl部署带文件存储卷的有状态工作负载<a name="cce_01_0262"></a>
+# 使用kubectl部署带文件存储卷的有状态工作负载<a name="cce_10_0321"></a>
 
 ## 操作场景<a name="section1062914713566"></a>
 
-CCE支持使用文件存储（PersistentVolumeClaim），创建有状态工作负载（StatefulSet）**。**
-
-## 前提条件<a name="section13181839131510"></a>
-
-您已经创建好一个CCE集群，并且在该集群中安装CSI插件（[Everest](Everest（系统资源插件-必装）.md)）。
+CCE支持使用已有的文件存储（PersistentVolumeClaim），创建有状态工作负载（StatefulSet）**。**
 
 ## 约束与限制<a name="section946015116135"></a>
 
-如下配置示例适用于Kubernetes 1.15及以上版本的集群。
+如下配置示例适用于Kubernetes 1.13及以下版本的集群。
 
 ## 操作步骤<a name="section1530655595611"></a>
 
-1.  参照[创建文件存储卷](使用文件存储卷.md#section1191025105819)中操作创建文件存储卷，记录文件存储卷名称。
+1.  参照[使用kubectl自动创建文件存储](使用kubectl自动创建文件存储.md)中操作创建文件存储卷，记录文件存储卷名称。
 2.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
 3.  新建一个YAML文件，用于创建工作负载。假设文件名为**sfs-statefulset-example**.**yaml**。
 
@@ -22,7 +18,7 @@ CCE支持使用文件存储（PersistentVolumeClaim），创建有状态工作�
 
     **vi sfs-statefulset-example.yaml**
 
-    配置示例：
+    **yaml示例如下：**
 
     ```
     apiVersion: apps/v1
@@ -31,31 +27,32 @@ CCE支持使用文件存储（PersistentVolumeClaim），创建有状态工作�
       name: sfs-statefulset-example
       namespace: default
     spec:
-      replicas: 1
+      replicas: 2
       selector:
         matchLabels:
           app: sfs-statefulset-example
+      serviceName: qwqq
       template:
         metadata:
+          annotations:
+            metrics.alpha.kubernetes.io/custom-endpoints: '[{"api":"","path":"","port":"","names":""}]'
+            pod.alpha.kubernetes.io/initialized: "true"
           labels:
             app: sfs-statefulset-example
         spec:
-          volumes: 
-          - name: pvc-sfs-example 
-            persistentVolumeClaim:
-              claimName: pvc-sfs-example     
+          affinity: {}
           containers:
-          - name: container-0
-            image: 'nginx:latest'
+          - image: nginx:latest
+            name: container-0
             volumeMounts:
-              - name: pvc-sfs-example
-                mountPath: /tmp
-          restartPolicy: Always
+            - mountPath: /tmp
+              name: pvc-sfs-example
           imagePullSecrets:
-          - name: default-secret 
-      serviceName: sfs-statefulset-example-headless
-      updateStrategy:
-        type: RollingUpdate
+          - name: default-secret
+          volumes:
+            - name: pvc-sfs-example
+              persistentVolumeClaim:
+                claimName: cce-sfs-demo
     ```
 
     **表 1**  关键参数说明
@@ -114,51 +111,6 @@ CCE支持使用文件存储（PersistentVolumeClaim），创建有状态工作�
     </tbody>
     </table>
 
-    在有状态工作负载中基于PVCTemplate独占式使用文件存储：
-
-    **yaml配置示例如下：**
-
-    ```
-    apiVersion: apps/v1
-    kind: StatefulSet
-    metadata:
-      name: sfs-statefulset-example
-      namespace: default
-    spec:
-      replicas: 1
-      selector:
-        matchLabels:
-          app: sfs-statefulset-example
-      template:
-        metadata:
-          labels:
-            app: sfs-statefulset-example
-        spec:
-          containers:
-            - name: container-0
-              image: 'nginx:latest'
-              volumeMounts:
-                - name: pvc-sfs-auto-example
-                  mountPath: /tmp
-          restartPolicy: Always
-          imagePullSecrets:
-            - name: default-secret
-      volumeClaimTemplates:
-        - metadata:
-            name: pvc-sfs-auto-example
-            namespace: default
-          spec:
-            accessModes:
-              - ReadWriteMany
-            resources:
-              requests:
-                storage: 10Gi
-            storageClassName: csi-nas
-      serviceName: sfs-statefulset-example-headless
-      updateStrategy:
-        type: RollingUpdate
-    ```
-
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >spec.template.spec.containers.volumeMounts.name和spec.template.spec.volumes.name有映射关系，必须保持一致。
 
@@ -166,87 +118,4 @@ CCE支持使用文件存储（PersistentVolumeClaim），创建有状态工作�
 
     **kubectl create -f  sfs-statefulset-example .yaml**
 
-
-## 验证文件系统的持久化存储<a name="section179416310352"></a>
-
-1.  查询部署的工作负载（以**sfs-statefulset-example**为例）的实例和文件存储。
-    1.  执行以下命令，查看工作负载对应的实例名称。
-
-        ```
-        kubectl get po | grep sfs-statefulset-example
-        ```
-
-        期望输出：
-
-        ```
-        sfs-statefulset-example-0   1/1     Running   0          2m5s
-        ```
-
-    2.  执行以下命令，查看/tmp目录下是否挂载了文件存储。
-
-        ```
-        kubectl exec sfs-statefulset-example-0 -- mount|grep /tmp
-        ```
-
-        期望输出：
-
-        ```
-        sfs-nas01.cn-north-4.myhuaweicloud.com:/share-c56b9aa4 on /tmp type nfs (rw,relatime,vers=3,rsize=1048576,wsize=1048576,namlen=255,hard,nolock,noresvport,proto=tcp,timeo=600,retrans=2,sec=sys,mountaddr=10.79.96.32,mountvers=3,mountport=2050,mountproto=tcp,local_lock=all,addr=10.79.96.32)
-        ```
-
-2.  执行以下命令，在/tmp路径下创建问题test。
-
-    ```
-    kubectl exec sfs-statefulset-example-0 -- touch /tmp/test
-    ```
-
-3.  执行以下命令，查看/tmp路径下的文件。
-
-    ```
-    kubectl exec sfs-statefulset-example-0 -- ls -l /tmp
-    ```
-
-    预期输出：
-
-    ```
-    -rw-r--r-- 1 root root     0 Jun  1 02:50 test
-    ```
-
-4.  执行以下命令，删除名称为sfs-statefulset-example-0的实例
-
-    ```
-    kubectl delete po sfs-statefulset-example-0
-    ```
-
-5.  验证重建后的实例，文件存储卷内的数据文件会否仍然存在
-    1.  执行以下命令，查看重建的实例名称
-
-        ```
-        kubectl get po
-        ```
-
-        预期输出：
-
-        ```
-        sfs-statefulset-example-0   1/1     Running   0          2m
-        ```
-
-    2.  执行以下命令，查看/tmp路径下的文件
-
-        ```
-        kubectl exec sfs-statefulset-example-0 -- ls -l /tmp
-        ```
-
-        预期输出：
-
-        ```
-        -rw-r--r-- 1 root root     0 Jun  1 02:50 test
-        ```
-
-    3.  test文件在实例重建之后仍然存在，说明文件系统数据可持久化保存
-
-
-## 相关操作<a name="section184741309122"></a>
-
-[使用subpath类型动态创建SFS Turbo存储卷](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00253.html)
 

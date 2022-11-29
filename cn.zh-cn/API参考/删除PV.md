@@ -1,8 +1,8 @@
-# 删除PV<a name="cce_02_0255_0"></a>
+# 删除PV<a name="cce_02_0255"></a>
 
 ## 功能介绍<a name="section16489614164410"></a>
 
-该API用于删除指定Namespace下的PV（PersistentVolume）对象，并可以选择是否保留后端云存储。该API已废弃，请使用[删除指定的PersistentVolume](删除指定的PersistentVolume.md)。
+该API用于删除指定Namespace下的PV（PersistentVolume）对象，并可以选择是否保留后端云存储。该API已废弃，请使用Kubernetes PV相关接口。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >存储管理的URL格式为：https://\{clusterid\}.Endpoint/uri。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。如果使用https://Endpoint/uri，则必须指定请求header中的X-Cluster-ID参数。

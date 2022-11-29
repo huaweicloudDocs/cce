@@ -1,4 +1,4 @@
-# dew-provider<a name="cce_01_0370"></a>
+# dew-provider<a name="cce_10_0370"></a>
 
 ## 插件简介<a name="section173631312185614"></a>
 
@@ -6,10 +6,11 @@ dew-provider插件用于对接[数据加密服务](https://support.huaweicloud.c
 
 ## 约束与限制<a name="section11172124718374"></a>
 
--   数据加密服务包含[密钥管理](https://support.huaweicloud.com/productdesc-dew/dew_01_0001.html)\(Key Management Service, KMS\)、[云凭据管理](https://support.huaweicloud.com/productdesc-dew/dew_01_9997.html)\(Cloud Secret Management Service，CSMS\)和[密钥对管理](https://support.huaweicloud.com/productdesc-dew/dew_01_0010.html)\(Key Pair Service, KPS\)等服务。当前，该插件仅支持对接其中的云凭据管理服务。
+-   数据加密服务包含密钥管理\(Key Management Service, KMS\)、云凭据管理\(Cloud Secret Management Service，CSMS\)和密钥对管理\(Key Pair Service, KPS\)等服务。当前，该插件仅支持对接其中的云凭据管理服务。
 -   支持的集群版本：v1.19+。
 -   支持的集群类型：CCE集群和CCE Turbo集群。
 -   允许创建的SecretProviderClass对象个数上限：500个。
+-   插件卸载时，会同时删除相关的CRD资源。即使重装插件，原有的SecretProviderClass对象也不可用，请谨慎操作。插件卸载再重装后，若需使用原有的SecretProviderClass资源，需重新手动创建。
 
 ## 插件说明<a name="section1672101771516"></a>
 
@@ -28,7 +29,7 @@ dew-provider插件由两个组件组成，分别为secrets-store-csi-driver和de
 
 ## 安装插件<a name="section215134717391"></a>
 
-1.  登录CCE控制台，单击左侧导航栏的“插件市场“，在“插件市场“页签下，单击“dew-provider“下的“安装“按钮。
+1.  登录CCE控制台，进入集群，单击左侧导航栏的“插件管理“，在右侧找到**dew-provider**，单击“安装“。
 2.  在安装插件页面，选择安装的集群，在参数配置栏进行参数配置。参数配置说明如下。
 
     <a name="table128205210207"></a>
@@ -49,7 +50,7 @@ dew-provider插件由两个组件组成，分别为secrets-store-csi-driver和de
 
 3.  单击“安装”。
 
-    待插件安装完成后，选择对应的集群，然后单击左侧导航栏的“插件管理”，可在“已安装插件”页签中查看相应的插件。。
+    待插件安装完成后，选择对应的集群，然后单击左侧导航栏的“插件管理”，可在“已安装插件”页签中查看相应的插件。
 
 
 ## 插件使用说明<a name="section0596254104114"></a>
@@ -70,7 +71,7 @@ dew-provider插件由两个组件组成，分别为secrets-store-csi-driver和de
 
         这里需要明确，此处声明的凭据应确保在凭据管理服务中是存在的，如下图所示。否则，即使通过了校验，最终向凭据管理服务中获取相应凭据的时候也会出错，从而导致Pod无法正常运行。
 
-        ![](figures/zh-cn_image_0000001178124388.png)
+        ![](figures/zh-cn_image_0000001199501298.png)
 
     2.  执行如下命令创建ServiceAccount对象。
 
@@ -327,23 +328,4 @@ $ kubectl logs csi-secrets-store-76tj2 -c secrets-store -n kube-system
 …日志信息略…
 …
 ```
-
-## 升级/编辑插件<a name="section1524192016615"></a>
-
-1.  登录CCE控制台，在“集群管理”中选择相应集群，然后在左侧导航栏中选择“插件管理”，在“已安装插件”页签下，单击“dew-provider”下的“ 升级”。
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   如果不存在“升级”按钮，则说明当前插件版本是最新的版本，不需要进行升级操作。可单击“编辑”按钮进行编辑，修改插件的配置参数。
-    >-   升级或修改“dew-provider”插件时，会替换原先节点上的插件实例，并安装新的“dew-provider”插件。
-    >-   在新console下升级插件时，默认升级为可用的最新版本。
-
-2.  参考安装插件中的参数说明进行参数配置，单击“确定”即可。
-
-## 卸载插件<a name="section96415138718"></a>
-
->![](public_sys-resources/icon-note.gif) **说明：** 
->插件卸载时，会同时删除相关的CRD资源。即使重装插件，原有的SecretProviderClass对象也不可用，请谨慎操作。插件卸载再重装后，若需使用原有的SecretProviderClass资源，需重新手动创建。
-
-1.  登录CCE控制台，在“集群管理”中选择相应集群，然后单击左侧导航栏的“插件管理”，在“已安装插件”页签下，单击“dew-provider”下的“卸载”。
-2.  在弹出的窗口中，单击“是”，可卸载该插件。
 

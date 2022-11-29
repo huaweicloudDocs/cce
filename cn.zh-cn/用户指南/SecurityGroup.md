@@ -1,76 +1,11 @@
-# SecurityGroup<a name="cce_01_0288"></a>
+# SecurityGroup<a name="cce_10_0288"></a>
 
-云原生网络2.0网络模式下，Pod使用的是华为云VPC的弹性网卡/辅助弹性网卡，可直接绑定安全组，绑定弹性公网IP。为方便用户在CCE内直接为Pod关联安全组，CCE新增了一个名为SecurityGroup的自定义资源对象，通过SecurityGroup资源对象，用户可对有特定安全隔离诉求的工作负载的工作进行自定义。
+云原生网络2.0网络模式下，Pod使用的是VPC的弹性网卡/辅助弹性网卡，可直接绑定安全组，绑定弹性公网IP。为方便用户在CCE内直接为Pod关联安全组，CCE新增了一个名为SecurityGroup的自定义资源对象，通过SecurityGroup资源对象，用户可对有特定安全隔离诉求的工作负载的工作进行自定义。
 
 ## 约束与限制<a name="section21791218165310"></a>
 
 -   v1.19及以上的CCE Turbo集群支持此功能，v1.19以下版本CCE Turbo集群需要升级到v1.19及以上版本后才能启用此功能。
 -   1个工作负载最多可绑定5个安全组。
-
-## 通过界面创建<a name="section11870154492516"></a>
-
-1.  单击CCE左侧导航栏的“资源管理 \> 网络管理”。
-2.  在“SecurityGroup“页签下，在右上角选择框中点选要操作的集群，单击“添加SecurityGroup“。
-3.  根据界面提示，配置参数， 具体如[表1](#table572616321913)所示。
-
-    **表 1**  配置参数
-
-    <a name="table572616321913"></a>
-    <table><thead align="left"><tr id="row207274322093"><th class="cellrowborder" valign="top" width="27.49274927492749%" id="mcps1.2.4.1.1"><p id="p77276326911"><a name="p77276326911"></a><a name="p77276326911"></a>参数名称</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="38.943894389438945%" id="mcps1.2.4.1.2"><p id="p0728113212917"><a name="p0728113212917"></a><a name="p0728113212917"></a>描述</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="33.563356335633564%" id="mcps1.2.4.1.3"><p id="p1372820323916"><a name="p1372820323916"></a><a name="p1372820323916"></a>示例</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row1772883218911"><td class="cellrowborder" valign="top" width="27.49274927492749%" headers="mcps1.2.4.1.1 "><p id="p1972843218919"><a name="p1972843218919"></a><a name="p1972843218919"></a>SecurityGroup名称</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="38.943894389438945%" headers="mcps1.2.4.1.2 "><p id="p1272819324915"><a name="p1272819324915"></a><a name="p1272819324915"></a>输入SecurityGroup名称。</p>
-    <p id="p4881951142411"><a name="p4881951142411"></a><a name="p4881951142411"></a>请输入4-63个字符，以小写字母开头，由小写字母、数字、连接符（-）组成，且不能以连接符（-）结尾。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.563356335633564%" headers="mcps1.2.4.1.3 "><p id="p972814326910"><a name="p972814326910"></a><a name="p972814326910"></a>security-group</p>
-    </td>
-    </tr>
-    <tr id="row872812321194"><td class="cellrowborder" valign="top" width="27.49274927492749%" headers="mcps1.2.4.1.1 "><p id="p14728133219910"><a name="p14728133219910"></a><a name="p14728133219910"></a>集群名称</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="38.943894389438945%" headers="mcps1.2.4.1.2 "><p id="p372814324915"><a name="p372814324915"></a><a name="p372814324915"></a>选择集群名称</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.563356335633564%" headers="mcps1.2.4.1.3 "><p id="p2728832094"><a name="p2728832094"></a><a name="p2728832094"></a>cce-turbo</p>
-    </td>
-    </tr>
-    <tr id="row1573293217917"><td class="cellrowborder" valign="top" width="27.49274927492749%" headers="mcps1.2.4.1.1 "><p id="p5732203215913"><a name="p5732203215913"></a><a name="p5732203215913"></a>命名空间</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="38.943894389438945%" headers="mcps1.2.4.1.2 "><p id="p8732632390"><a name="p8732632390"></a><a name="p8732632390"></a>选择命名空间。如未创建，可单击“创建命名空间”。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.563356335633564%" headers="mcps1.2.4.1.3 "><p id="p573211323919"><a name="p573211323919"></a><a name="p573211323919"></a>default</p>
-    </td>
-    </tr>
-    <tr id="row873219323913"><td class="cellrowborder" valign="top" width="27.49274927492749%" headers="mcps1.2.4.1.1 "><p id="p27320321598"><a name="p27320321598"></a><a name="p27320321598"></a>关联工作负载</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="38.943894389438945%" headers="mcps1.2.4.1.2 "><p id="p1173273219910"><a name="p1173273219910"></a><a name="p1173273219910"></a>选择工作负载。</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.563356335633564%" headers="mcps1.2.4.1.3 "><p id="p715010280425"><a name="p715010280425"></a><a name="p715010280425"></a>nginx</p>
-    </td>
-    </tr>
-    <tr id="row18733153211911"><td class="cellrowborder" valign="top" width="27.49274927492749%" headers="mcps1.2.4.1.1 "><p id="p187338321199"><a name="p187338321199"></a><a name="p187338321199"></a>安全组</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="38.943894389438945%" headers="mcps1.2.4.1.2 "><p id="p1328632118575"><a name="p1328632118575"></a><a name="p1328632118575"></a>选中的安全组将绑定到选中的工作负载的弹性网卡/辅助弹性网卡上，在下拉框中最多可以选择5条，安全组必选，不可缺省。</p>
-    <p id="p147335320917"><a name="p147335320917"></a><a name="p147335320917"></a>如将绑定的安全组未创建，可单击“创建安全组”，完成创建后单击刷新按钮。</p>
-    <div class="notice" id="note1159255716127"><a name="note1159255716127"></a><a name="note1159255716127"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><a name="ul1543718137385"></a><a name="ul1543718137385"></a><ul id="ul1543718137385"><li>最多可选择5个安全组。</li><li>鼠标悬浮在安全组名称上，可查看安全组的详细信息。</li></ul>
-    </div></div>
-    </td>
-    <td class="cellrowborder" valign="top" width="33.563356335633564%" headers="mcps1.2.4.1.3 "><p id="p62971643205712"><a name="p62971643205712"></a><a name="p62971643205712"></a>64566556-bd6f-48fb-b2c6-df8f44617953</p>
-    <p id="p109894523576"><a name="p109894523576"></a><a name="p109894523576"></a>5451f1b0-bd6f-48fb-b2c6-df8f44617953</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-4.  参数配置后，单击“创建”。
-
-    创建完成后页面将自动返回到SecurityGroup列表页，可以看到新添加的SecurityGroup已在列表中。
-
 
 ## 通过kubectl命令行创建<a name="section16951511152313"></a>
 
@@ -96,9 +31,9 @@
       - id: 5451f1b0-bd6f-48fb-b2c6-df8f44617953
     ```
 
-    以上yaml参数说明如[表2](#table132326831016)。
+    以上yaml参数说明如[表1](#table132326831016)。
 
-    **表 2**  参数说明
+    **表 1**  参数说明
 
     <a name="table132326831016"></a>
     <table><thead align="left"><tr id="row523318817104"><th class="cellrowborder" valign="top" width="36.75%" id="mcps1.2.4.1.1"><p id="p162344817100"><a name="p162344817100"></a><a name="p162344817100"></a>字段名称</p>
@@ -191,41 +126,4 @@
     demo                       map[matchLabels:map[app:nginx]]   2m9s
     ```
 
-
-## 其他操作<a name="section682403717222"></a>
-
-**表 3**  其他操作
-
-<a name="table394616495249"></a>
-<table><thead align="left"><tr id="row49471249162418"><th class="cellrowborder" valign="top" width="24.5%" id="mcps1.2.3.1.1"><p id="p189471749182410"><a name="p189471749182410"></a><a name="p189471749182410"></a>操作项</p>
-</th>
-<th class="cellrowborder" valign="top" width="75.5%" id="mcps1.2.3.1.2"><p id="p16947114913245"><a name="p16947114913245"></a><a name="p16947114913245"></a>操作步骤</p>
-</th>
-</tr>
-</thead>
-<tbody><tr id="row6139155142516"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="p5140451132520"><a name="p5140451132520"></a><a name="p5140451132520"></a>删除</p>
-</td>
-<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><a name="ol1639531782718"></a><a name="ol1639531782718"></a><ol id="ol1639531782718"><li>单击CCE左侧导航栏的“资源管理 &gt; 网络管理”。</li><li>在<span class="uicontrol" id="uicontrol5155161022719"><a name="uicontrol5155161022719"></a><a name="uicontrol5155161022719"></a>“SecurityGroup”</span>页签下，勾选SecurityGroup名称。</li><li>单击“删除”，即可删除SecurityGroup。</li></ol>
-</td>
-</tr>
-<tr id="row694712493245"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="p89473498241"><a name="p89473498241"></a><a name="p89473498241"></a>更新</p>
-</td>
-<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><a name="ol5931555183617"></a><a name="ol5931555183617"></a><ol id="ol5931555183617"><li>单击CCE左侧导航栏的“资源管理 &gt; 网络管理”。</li><li>在<span class="uicontrol" id="uicontrol20931155593619"><a name="uicontrol20931155593619"></a><a name="uicontrol20931155593619"></a>“SecurityGroup”</span>页签下，单击SecurityGroup列表后的“更新”。<p id="p399219043815"><a name="p399219043815"></a><a name="p399219043815"></a>可更新安全组ID和工作负载。</p>
-</li></ol>
-</td>
-</tr>
-<tr id="row7947349202412"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="p1594713497241"><a name="p1594713497241"></a><a name="p1594713497241"></a>查看YAML</p>
-</td>
-<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><a name="ol184959289353"></a><a name="ol184959289353"></a><ol id="ol184959289353"><li>单击CCE左侧导航栏的“资源管理 &gt; 网络管理”。</li><li>在<span class="uicontrol" id="uicontrol14496628153511"><a name="uicontrol14496628153511"></a><a name="uicontrol14496628153511"></a>“SecurityGroup”</span>页签下，单击SecurityGroup列表后的“查看YAML”。<p id="p367182203813"><a name="p367182203813"></a><a name="p367182203813"></a>可查看、复制和下载YAML文件。</p>
-</li></ol>
-</td>
-</tr>
-<tr id="row884419237424"><td class="cellrowborder" valign="top" width="24.5%" headers="mcps1.2.3.1.1 "><p id="p784482354213"><a name="p784482354213"></a><a name="p784482354213"></a>查看事件</p>
-</td>
-<td class="cellrowborder" valign="top" width="75.5%" headers="mcps1.2.3.1.2 "><a name="ol2341203144310"></a><a name="ol2341203144310"></a><ol id="ol2341203144310"><li>单击CCE左侧导航栏的“资源管理 &gt; 网络管理”。</li><li>在<span class="uicontrol" id="uicontrol83411831114310"><a name="uicontrol83411831114310"></a><a name="uicontrol83411831114310"></a>“SecurityGroup”</span>页签下，单击“查看事件”。<p id="p16341103113432"><a name="p16341103113432"></a><a name="p16341103113432"></a>可查看事件信息。</p>
-</li></ol>
-</td>
-</tr>
-</tbody>
-</table>
 

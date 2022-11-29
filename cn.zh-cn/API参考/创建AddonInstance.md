@@ -4,9 +4,9 @@
 
 根据提供的插件模板，安装插件实例。
 
-## 调试
+## 调试<a name="atuogenerate_1"></a>
 
-您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=CreateAddonInstance)中调试该接口。
+您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=CreateAddonInstance)中调试该接口，支持自动认证鉴权。API Explorer可以自动生成SDK代码示例，并提供SDK代码示例调试功能。
 
 ## URI
 
@@ -34,7 +34,6 @@ POST /api/v3/addons
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>消息体的类型（格式）</p>
-<p>缺省值：<strong>application/json</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>X-Auth-Token</p>
@@ -43,8 +42,7 @@ POST /api/v3/addons
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>"调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0004.html#cce_02_0004__section2417768214391" target="_blank" rel="noopener noreferrer">获取token</a>。"</p>
-<p>最大长度：<strong>16384</strong></p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="认证鉴权.md">获取token</a>。</p>
 </td>
 </tr>
 </tbody>
@@ -70,7 +68,6 @@ POST /api/v3/addons
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>API类型，固定值“Addon”，该值不可修改。</p>
-<p>缺省值：<strong>Addon</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>apiVersion</p>
@@ -80,7 +77,6 @@ POST /api/v3/addons
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>API版本，固定值“v3”，该值不可修改。</p>
-<p>缺省值：<strong>v3</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>metadata</p>
@@ -231,7 +227,7 @@ POST /api/v3/addons
 
 ## 响应参数
 
-**状态码： 200**
+**状态码： 201**
 
 **表 5**  响应Body参数
 
@@ -249,7 +245,6 @@ POST /api/v3/addons
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API类型，固定值“Addon”，该值不可修改。</p>
-<p>缺省值：<strong>Addon</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>apiVersion</p>
@@ -257,7 +252,6 @@ POST /api/v3/addons
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API版本，固定值“v3”，该值不可修改。</p>
-<p>缺省值：<strong>v3</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>metadata</p>
@@ -387,7 +381,6 @@ POST /api/v3/addons
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板logo图片的地址</p>
-<p>最大长度：<strong>200</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>addonTemplateLabels</p>
@@ -430,19 +423,6 @@ POST /api/v3/addons
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件实例状态</p>
-<p>枚举值：</p>
-<ul><li><p><strong>running</strong></p>
-</li><li><p><strong>abnormal</strong></p>
-</li><li><p><strong>installing</strong></p>
-</li><li><p><strong>installFailed</strong></p>
-</li><li><p><strong>upgrading</strong></p>
-</li><li><p><strong>upgradeFailed</strong></p>
-</li><li><p><strong>deleting</strong></p>
-</li><li><p><strong>deleteSuccess</strong></p>
-</li><li><p><strong>deleteFailed</strong></p>
-</li><li><p><strong>available</strong></p>
-</li><li><p><strong>rollbacking</strong></p>
-</li></ul>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>Reason</p>
@@ -579,23 +559,43 @@ POST /api/v3/addons
     }
   },
   "spec" : {
-    "addonTemplateName" : "npd",
-    "clusterID" : "7fd16832-e9c1-11ea-a67b-0255ac10043d",
+    "clusterID" : "1b2ec02d-a3b2-11ec-b0d0-0255ac100099",
+    "version" : "1.17.15",
+    "addonTemplateName" : "coredns",
     "values" : {
       "basic" : {
-        "rbac_enabled" : true,
-        "swr_addr" : "100.125.6.246:20202",
-        "swr_user" : "hwofficial"
+        "cluster_ip" : "10.247.3.10",
+        "image_version" : "1.17.15",
+        "platform" : "linux-amd64",
+        "swr_addr" : "<Replace_SWR_address>",
+        "swr_user" : "hwofficial",
+        "rbac_enabled" : true
+      },
+      "flavor" : {
+        "name" : 2500,
+        "replicas" : 2,
+        "resources" : [ {
+          "limitsCpu" : "500m",
+          "limitsMem" : "512Mi",
+          "name" : "coredns",
+          "requestsCpu" : "500m",
+          "requestsMem" : "512Mi"
+        } ]
+      },
+      "custom" : {
+        "stub_domains" : { },
+        "upstream_nameservers" : [ ],
+        "cluster_id" : "1b2ec02d-a3b2-11ec-b0d0-0255ac100099",
+        "tenant_id" : "0504201b6c80256b2f08c0099f0c8fe4"
       }
-    },
-    "version" : "1.13.5"
+    }
   }
 }
 ```
 
 ## 响应示例
 
-**状态码： 200**
+**状态码： 201**
 
 OK
 
@@ -604,24 +604,44 @@ OK
   "kind" : "Addon",
   "apiVersion" : "v3",
   "metadata" : {
-    "uid" : "24b23108-55c0-11e9-926f-0255ac101a31",
-    "name" : "gpu-beta",
-    "creationTimestamp" : "2019-04-03T03:25:34Z",
-    "updateTimestamp" : "2019-04-03T03:25:34Z"
+    "uid" : "b748aaea-a984-11ec-987b-0255ac1000bc",
+    "name" : "coredns",
+    "creationTimestamp" : "2022-03-22T02:06:41Z",
+    "updateTimestamp" : "2022-03-22T02:06:41Z"
   },
   "spec" : {
-    "clusterID" : "0c0e4a63-5539-11e9-95f7-0255ac10177e",
-    "version" : "1.0.0",
-    "addonTemplateName" : "gpu-beta",
+    "clusterID" : "1b2ec02d-a3b2-11ec-b0d0-0255ac100099",
+    "version" : "1.17.15",
+    "addonTemplateName" : "coredns",
     "addonTemplateType" : "helm",
     "addonTemplateLogo" : "",
-    "addonTemplateLabels" : [ "Accelerator" ],
-    "description" : "A device plugin for nvidia.com/gpu resource on nvidia driver",
+    "addonTemplateLabels" : [ "ServiceDiscovery" ],
+    "description" : "CoreDNS is a DNS server that chains plugins and provides Kubernetes DNS Services",
     "values" : {
       "basic" : {
+        "cluster_ip" : "10.247.3.10",
+        "image_version" : "1.17.15",
+        "platform" : "linux-amd64",
         "rbac_enabled" : true,
-        "swr_addr" : "100.125.6.246:20202",
+        "swr_addr" : "",
         "swr_user" : "hwofficial"
+      },
+      "custom" : {
+        "cluster_id" : "1b2ec02d-a3b2-11ec-b0d0-0255ac100099",
+        "stub_domains" : { },
+        "tenant_id" : "0504201b6c80256b2f08c0099f0c8fe4",
+        "upstream_nameservers" : [ ]
+      },
+      "flavor" : {
+        "name" : 2500,
+        "replicas" : 2,
+        "resources" : [ {
+          "limitsCpu" : "500m",
+          "limitsMem" : "512Mi",
+          "name" : "coredns",
+          "requestsCpu" : "500m",
+          "requestsMem" : "512Mi"
+        } ]
       }
     }
   },
@@ -631,32 +651,138 @@ OK
     "message" : "",
     "targetVersions" : null,
     "currentVersion" : {
-      "version" : "1.0.0",
+      "version" : "1.17.15",
       "input" : {
         "basic" : {
-          "swr_addr" : "100.125.6.246:20202",
+          "cluster_ip" : "10.247.3.10",
+          "image_version" : "1.17.15",
+          "platform" : "linux-amd64",
+          "swr_addr" : "",
           "swr_user" : "hwofficial"
         },
-        "parameters" : { }
+        "parameters" : {
+          "custom" : {
+            "stub_domains" : "",
+            "upstream_nameservers" : ""
+          },
+          "flavor1" : {
+            "name" : 2500,
+            "replicas" : 2,
+            "resources" : [ {
+              "limitsCpu" : "500m",
+              "limitsMem" : "512Mi",
+              "name" : "coredns",
+              "requestsCpu" : "500m",
+              "requestsMem" : "512Mi"
+            } ]
+          },
+          "flavor2" : {
+            "name" : 5000,
+            "replicas" : 2,
+            "resources" : [ {
+              "limitsCpu" : "1000m",
+              "limitsMem" : "1024Mi",
+              "name" : "coredns",
+              "requestsCpu" : "1000m",
+              "requestsMem" : "1024Mi"
+            } ]
+          },
+          "flavor3" : {
+            "name" : 10000,
+            "replicas" : 2,
+            "resources" : [ {
+              "limitsCpu" : "2000m",
+              "limitsMem" : "2048Mi",
+              "name" : "coredns",
+              "requestsCpu" : "2000m",
+              "requestsMem" : "2048Mi"
+            } ]
+          },
+          "flavor4" : {
+            "name" : 20000,
+            "replicas" : 4,
+            "resources" : [ {
+              "limitsCpu" : "2000m",
+              "limitsMem" : "2048Mi",
+              "name" : "coredns",
+              "requestsCpu" : "2000m",
+              "requestsMem" : "2048Mi"
+            } ]
+          }
+        }
       },
       "stable" : true,
       "translate" : {
         "en_US" : {
           "addon" : {
-            "changeLog" : "A device plugin for nvidia.com/gpu resource on nvidia driver",
-            "description" : "A device plugin for nvidia.com/gpu resource on nvidia driver"
+            "changeLog" : "Supported CCE clusters of v1.21.",
+            "description" : "CoreDNS is a DNS server that chains plugins and provides Kubernetes DNS Services"
+          },
+          "description" : {
+            "Parameters.custom.stub_domains" : "The target nameserver may itself be a Kubernetes service. For instance, you can run your own copy of dnsmasq to export custom DNS names into the ClusterDNS namespace, a JSON map using a DNS suffix key (e.g. “acme.local”) and a value consisting of a JSON array of DNS IPs.",
+            "Parameters.custom.upstream_nameservers" : "If specified, then the values specified replace the nameservers taken by default from the node’s /etc/resolv.conf. Limits:a maximum of three upstream nameservers can be specified, A JSON array of DNS IPs.",
+            "Parameters.flavor1.description" : "Concurrent domain name resolution ability  -  External domain name：2500 qps,  Internal domain name：10000 qps",
+            "Parameters.flavor1.name" : 2500,
+            "Parameters.flavor2.description" : "Concurrent domain name resolution ability  -  External domain name：5000 qps, Internal domain name：20000 qps",
+            "Parameters.flavor2.name" : 5000,
+            "Parameters.flavor3.description" : "Concurrent domain name resolution ability  -  External domain name：10000 qps, Internal domain name：40000 qps",
+            "Parameters.flavor3.name" : 10000,
+            "Parameters.flavor4.description" : "Concurrent domain name resolution ability  -  External domain name：20000 qps, Internal domain name：80000 qps",
+            "Parameters.flavor4.name" : 20000
+          },
+          "key" : {
+            "Parameters.custom.stub_domains" : "stub domain",
+            "Parameters.custom.upstream_nameservers" : "upstream nameservers"
+          }
+        },
+        "fr_FR" : {
+          "addon" : {
+            "changeLog" : "Prise en charge du cluster 1.21.",
+            "description" : "Un serveur DNS qui enchaîne les plug-ins et fournit des services DNS Kubernetes."
+          },
+          "description" : {
+            "Parameters.custom.stub_domains" : "Le serveur de noms cible peut lui-même être un service Kubernetes. Par exemple, vous pouvez exécuter votre propre copie de dnsmasq pour exporter des noms DNS personnalisés dans l'espace de noms ClusterDNS, une carte JSON à l'aide d'une clé de suffixe DNS (par exemple, «acme.local») et une valeur constituée d'un tableau JSON d'adresses IP DNS.",
+            "Parameters.custom.upstream_nameservers" : "Si spécifié, les valeurs spécifiées remplacent les serveurs de noms pris par défaut dans le fichier /etc/resolv.conf du nœud. Limites: un maximum de trois serveurs de noms en amont peuvent être spécifiés, un tableau JSON d'adresses IP DNS.",
+            "Parameters.flavor1.description" : "Capacité de résolution de nom de domaine simultanée - Nom de domaine externe: 2500 qps, Nom de domaine interne: 10000 qp",
+            "Parameters.flavor1.name" : 2500,
+            "Parameters.flavor2.description" : "Capacité de résolution de nom de domaine simultanée - Nom de domaine externe: 5000 qps, Nom de domaine interne: 20000 qp",
+            "Parameters.flavor2.name" : 5000,
+            "Parameters.flavor3.description" : "Capacité de résolution de nom de domaine simultanée - Nom de domaine externe: 10000 qps, Nom de domaine interne: 40000 qp",
+            "Parameters.flavor3.name" : 10000,
+            "Parameters.flavor4.description" : "Capacité de résolution de nom de domaine simultanée - Nom de domaine externe: 20000 qps, Nom de domaine interne: 80000 qp",
+            "Parameters.flavor4.name" : 20000
+          },
+          "key" : {
+            "Parameters.custom.stub_domains" : "domaine stub",
+            "Parameters.custom.upstream_nameservers" : "serveurs de noms en amont"
           }
         },
         "zh_CN" : {
           "addon" : {
-            "changeLog" : "支持容器里使用GPU显卡的设备管理插件，仅支持nvidia驱动",
-            "description" : "支持容器里使用GPU显卡的设备管理插件，仅支持nvidia驱动"
+            "changeLog" : "",
+            "description" : ""
+          },
+          "description" : {
+            "Parameters.custom.stub_domains" : "",
+            "Parameters.custom.upstream_nameservers" : "",
+            "Parameters.flavor1.description" : "",
+            "Parameters.flavor1.name" : 2500,
+            "Parameters.flavor2.description" : "",
+            "Parameters.flavor2.name" : 5000,
+            "Parameters.flavor3.description" : "",
+            "Parameters.flavor3.name" : 10000,
+            "Parameters.flavor4.description" : "",
+            "Parameters.flavor4.name" : 20000
+          },
+          "key" : {
+            "Parameters.custom.stub_domains" : "",
+            "Parameters.custom.upstream_nameservers" : ""
           }
         }
       },
       "supportVersions" : null,
-      "creationTimestamp" : "2018-10-23T13:14:55Z",
-      "updateTimestamp" : "2018-12-07T09:40:24Z"
+      "creationTimestamp" : "2021-12-14T13:43:15Z",
+      "updateTimestamp" : "2022-01-11T14:32:10Z"
     }
   }
 }
@@ -671,7 +797,7 @@ OK
 </th>
 </tr>
 </thead>
-<tbody><tr><td class="cellrowborder" valign="top" width="15%" headers="mcps1.1.3.1.1 "><p>200</p>
+<tbody><tr><td class="cellrowborder" valign="top" width="15%" headers="mcps1.1.3.1.1 "><p>201</p>
 </td>
 <td class="cellrowborder" valign="top" width="85%" headers="mcps1.1.3.1.2 "><p>OK</p>
 </td>

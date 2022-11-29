@@ -4,9 +4,9 @@
 
 更新插件实例的功能。
 
-## 调试
+## 调试<a name="atuogenerate_1"></a>
 
-您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=UpdateAddonInstance)中调试该接口。
+您可以在[API Explorer](https://apiexplorer.developer.huaweicloud.com/apiexplorer/doc?product=CCE&api=UpdateAddonInstance)中调试该接口，支持自动认证鉴权。API Explorer可以自动生成SDK代码示例，并提供SDK代码示例调试功能。
 
 ## URI
 
@@ -31,8 +31,6 @@ PUT /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>插件实例id</p>
-<p>最小长度：<strong>1</strong></p>
-<p>最大长度：<strong>255</strong></p>
 </td>
 </tr>
 </tbody>
@@ -60,7 +58,6 @@ PUT /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>消息体的类型（格式）</p>
-<p>缺省值：<strong>application/json</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>X-Auth-Token</p>
@@ -69,8 +66,7 @@ PUT /api/v3/addons/\{id\}
 </td>
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
-<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>"调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="https://support.huaweicloud.com/api-cce/cce_02_0004.html#cce_02_0004__section2417768214391" target="_blank" rel="noopener noreferrer">获取token</a>。"</p>
-<p>最大长度：<strong>16384</strong></p>
+<td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>调用接口的认证方式分为Token和AK/SK两种，如果您使用的Token方式，此参数为必填，请填写Token的值，获取方式请参见<a href="认证鉴权.md">获取token</a>。</p>
 </td>
 </tr>
 </tbody>
@@ -96,7 +92,6 @@ PUT /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>API类型，固定值“Addon”，该值不可修改。</p>
-<p>缺省值：<strong>Addon</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>apiVersion</p>
@@ -106,7 +101,6 @@ PUT /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.3 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="40%" headers="mcps1.2.5.1.4 "><p>API版本，固定值“v3”，该值不可修改。</p>
-<p>缺省值：<strong>v3</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.5.1.1 "><p>metadata</p>
@@ -275,7 +269,6 @@ PUT /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API类型，固定值“Addon”，该值不可修改。</p>
-<p>缺省值：<strong>Addon</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>apiVersion</p>
@@ -283,7 +276,6 @@ PUT /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>API版本，固定值“v3”，该值不可修改。</p>
-<p>缺省值：<strong>v3</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>metadata</p>
@@ -413,7 +405,6 @@ PUT /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件模板logo图片的地址</p>
-<p>最大长度：<strong>200</strong></p>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>addonTemplateLabels</p>
@@ -456,19 +447,6 @@ PUT /api/v3/addons/\{id\}
 <td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.2 "><p>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="60%" headers="mcps1.2.4.1.3 "><p>插件实例状态</p>
-<p>枚举值：</p>
-<ul><li><p><strong>running</strong></p>
-</li><li><p><strong>abnormal</strong></p>
-</li><li><p><strong>installing</strong></p>
-</li><li><p><strong>installFailed</strong></p>
-</li><li><p><strong>upgrading</strong></p>
-</li><li><p><strong>upgradeFailed</strong></p>
-</li><li><p><strong>deleting</strong></p>
-</li><li><p><strong>deleteSuccess</strong></p>
-</li><li><p><strong>deleteFailed</strong></p>
-</li><li><p><strong>available</strong></p>
-</li><li><p><strong>rollbacking</strong></p>
-</li></ul>
 </td>
 </tr>
 <tr><td class="cellrowborder" valign="top" width="20%" headers="mcps1.2.4.1.1 "><p>Reason</p>
@@ -605,13 +583,25 @@ PUT /api/v3/addons/\{id\}
     }
   },
   "spec" : {
-    "addonTemplateName" : "autoscaler",
-    "clusterID" : "ff3c18de-d9fe-11ea-ae03-0255ac100449",
-    "values" : [ {
-      "basic" : ""
-    } ]
-  },
-  "version" : "1.17.2"
+    "clusterID" : "1b2ec02d-a3b2-11ec-b0d0-0255ac100099",
+    "version" : "1.2.10",
+    "addonTemplateName" : "gpu-beta",
+    "values" : {
+      "basic" : {
+        "device_version" : "1.2.10",
+        "driver_version" : "1.2.10",
+        "obs_url" : "******",
+        "region" : "******",
+        "swr_addr" : "******",
+        "swr_user" : "hwofficial",
+        "rbac_enabled" : true
+      },
+      "custom" : {
+        "is_driver_from_nvidia" : true,
+        "nvidia_driver_download_url" : "https://us.download.nvidia.com/tesla/396.37/NVIDIA-Linux-x86_64-396.37.run"
+      }
+    }
+  }
 }
 ```
 
@@ -626,59 +616,112 @@ OK
   "kind" : "Addon",
   "apiVersion" : "v3",
   "metadata" : {
-    "uid" : "24b23108-55c0-11e9-926f-0255ac101a31",
+    "uid" : "684fa9b2-a987-11ec-ba79-0255ac100096",
     "name" : "gpu-beta",
-    "creationTimestamp" : "2019-04-03T03:25:34Z",
-    "updateTimestamp" : "2019-04-03T03:25:34Z"
+    "creationTimestamp" : "2022-03-22T02:25:57Z",
+    "updateTimestamp" : "2022-03-22T02:25:57Z"
   },
   "spec" : {
-    "clusterID" : "0c0e4a63-5539-11e9-95f7-0255ac10177e",
-    "version" : "1.0.0",
+    "clusterID" : "1b2ec02d-a3b2-11ec-b0d0-0255ac100099",
+    "version" : "1.2.10",
     "addonTemplateName" : "gpu-beta",
     "addonTemplateType" : "helm",
-    "addonTemplateLogo" : "",
+    "addonTemplateLogo" : "******",
     "addonTemplateLabels" : [ "Accelerator" ],
     "description" : "A device plugin for nvidia.com/gpu resource on nvidia driver",
     "values" : {
       "basic" : {
+        "device_version" : "1.2.10",
+        "driver_version" : "1.2.10",
+        "obs_url" : "******",
         "rbac_enabled" : true,
-        "swr_addr" : "100.125.6.246:20202",
+        "region" : "******",
+        "swr_addr" : "******",
         "swr_user" : "hwofficial"
+      },
+      "custom" : {
+        "is_driver_from_nvidia" : true,
+        "nvidia_driver_download_url" : "https://us.download.nvidia.com/tesla/396.37/NVIDIA-Linux-x86_64-396.37.run"
       }
     }
   },
   "status" : {
-    "status" : "installing",
-    "Reason" : "",
+    "status" : "upgrading",
+    "Reason" : "addon upgrading",
     "message" : "",
     "targetVersions" : null,
     "currentVersion" : {
-      "version" : "1.0.0",
+      "version" : "1.2.10",
       "input" : {
         "basic" : {
-          "swr_addr" : "100.125.6.246:20202",
+          "device_version" : "1.2.10",
+          "driver_version" : "1.2.10",
+          "obs_url" : "******",
+          "region" : "******",
+          "swr_addr" : "******",
           "swr_user" : "hwofficial"
         },
-        "parameters" : { }
+        "parameters" : {
+          "custom" : {
+            "is_driver_from_nvidia" : true,
+            "nvidia_driver_download_url" : ""
+          }
+        }
       },
       "stable" : true,
       "translate" : {
         "en_US" : {
           "addon" : {
-            "changeLog" : "A device plugin for nvidia.com/gpu resource on nvidia driver",
+            "changeLog" : "Supported GPU driver of a new version for CentOS.",
             "description" : "A device plugin for nvidia.com/gpu resource on nvidia driver"
+          },
+          "description" : {
+            "Parameters.custom.drivers_info.cuda" : "CUDA Toolkit",
+            "Parameters.custom.drivers_info.product" : "Product",
+            "Parameters.custom.drivers_info.product_series" : "Product Series",
+            "Parameters.custom.drivers_info.product_type" : "Product Type",
+            "Parameters.custom.nvidia_driver_download_url" : "Download the nvidia driver accroding to the input link"
+          },
+          "key" : {
+            "Parameters.custom.nvidia_driver_download_url" : "Nvidia Driver"
+          }
+        },
+        "fr_FR" : {
+          "addon" : {
+            "changeLog" : "Pilote GPU pris en charge d'une nouvelle version pour CentOS.",
+            "description" : "Un plug-in de dispositif pour les ressources GPU sur un pilote NVIDIA."
+          },
+          "description" : {
+            "Parameters.custom.drivers_info.cuda" : "Boîte à outils CUDA",
+            "Parameters.custom.drivers_info.product" : "Produit",
+            "Parameters.custom.drivers_info.product_series" : "Serie de produits",
+            "Parameters.custom.drivers_info.product_type" : "type de produit",
+            "Parameters.custom.nvidia_driver_download_url" : "Téléchargez le pilote nvidia accroding sur le lien d'entrée"
+          },
+          "key" : {
+            "Parameters.custom.nvidia_driver_download_url" : "Nvidia Driver"
           }
         },
         "zh_CN" : {
           "addon" : {
-            "changeLog" : "支持容器里使用GPU显卡的设备管理插件，仅支持nvidia驱动",
-            "description" : "支持容器里使用GPU显卡的设备管理插件，仅支持nvidia驱动"
+            "changeLog" : "",
+            "description" : ""
+          },
+          "description" : {
+            "Parameters.custom.drivers_info.cuda" : "CUDA Toolkit",
+            "Parameters.custom.drivers_info.product" : "",
+            "Parameters.custom.drivers_info.product_series" : "",
+            "Parameters.custom.drivers_info.product_type" : "",
+            "Parameters.custom.nvidia_driver_download_url" : ""
+          },
+          "key" : {
+            "Parameters.custom.nvidia_driver_download_url" : ""
           }
         }
       },
       "supportVersions" : null,
-      "creationTimestamp" : "2018-10-23T13:14:55Z",
-      "updateTimestamp" : "2018-12-07T09:40:24Z"
+      "creationTimestamp" : "2022-01-11T14:57:44Z",
+      "updateTimestamp" : "2022-01-11T15:04:37Z"
     }
   }
 }

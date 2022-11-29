@@ -1,4 +1,4 @@
-# CCE Turbo集群与CCE集群的区别<a name="cce_01_0342"></a>
+# CCE Turbo集群与CCE集群的区别<a name="cce_10_0342"></a>
 
 ## CCE Turbo集群与CCE集群对比<a name="section67171919115114"></a>
 
@@ -17,7 +17,7 @@ CCE支持多种类型的集群创建，以满足您各种业务需求，如下�
 </th>
 </tr>
 </thead>
-<tbody><tr id="zh-cn_topic_0000001151389047_row0378353192912"><td class="cellrowborder" rowspan="3" valign="top" width="9.699030096990302%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0000001151389047_p243905112307"><a name="zh-cn_topic_0000001151389047_p243905112307"></a><a name="zh-cn_topic_0000001151389047_p243905112307"></a>集群</p>
+<tbody><tr id="zh-cn_topic_0000001151389047_row0378353192912"><td class="cellrowborder" rowspan="2" valign="top" width="9.699030096990302%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0000001151389047_p243905112307"><a name="zh-cn_topic_0000001151389047_p243905112307"></a><a name="zh-cn_topic_0000001151389047_p243905112307"></a>集群</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.218778122187782%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0000001151389047_p4966548153013"><a name="zh-cn_topic_0000001151389047_p4966548153013"></a><a name="zh-cn_topic_0000001151389047_p4966548153013"></a>定位</p>
 </td>
@@ -33,22 +33,15 @@ CCE支持多种类型的集群创建，以满足您各种业务需求，如下�
 <td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0000001151389047_p11340151510272"><a name="zh-cn_topic_0000001151389047_p11340151510272"></a><a name="zh-cn_topic_0000001151389047_p11340151510272"></a>支持虚拟机和裸金属服务器混合</p>
 </td>
 </tr>
-<tr id="zh-cn_topic_0000001151389047_row528934132217"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0000001151389047_p86287020271"><a name="zh-cn_topic_0000001151389047_p86287020271"></a><a name="zh-cn_topic_0000001151389047_p86287020271"></a>支持机型</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0000001151389047_p51991589292"><a name="zh-cn_topic_0000001151389047_p51991589292"></a><a name="zh-cn_topic_0000001151389047_p51991589292"></a>基于<a href="https://activity.huaweicloud.com/ECS_C7.html" target="_blank" rel="noopener noreferrer">擎天</a>软硬件协同架构的机型</p>
-</td>
-<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0000001151389047_p969111063112"><a name="zh-cn_topic_0000001151389047_p969111063112"></a><a name="zh-cn_topic_0000001151389047_p969111063112"></a>通用机型</p>
-</td>
-</tr>
 <tr id="zh-cn_topic_0000001151389047_row19562502266"><td class="cellrowborder" rowspan="3" valign="top" width="9.699030096990302%" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0000001151389047_p1356550102618"><a name="zh-cn_topic_0000001151389047_p1356550102618"></a><a name="zh-cn_topic_0000001151389047_p1356550102618"></a>网络</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.218778122187782%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0000001151389047_p76288082716"><a name="zh-cn_topic_0000001151389047_p76288082716"></a><a name="zh-cn_topic_0000001151389047_p76288082716"></a>网络模型</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.965903409659035%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0000001151389047_p101999842920"><a name="zh-cn_topic_0000001151389047_p101999842920"></a><a name="zh-cn_topic_0000001151389047_p101999842920"></a><strong id="zh-cn_topic_0000001151389047_b111991280296"><a name="zh-cn_topic_0000001151389047_b111991280296"></a><a name="zh-cn_topic_0000001151389047_b111991280296"></a><a href="https://support.huaweicloud.com/usermanual-cce/cce_01_0284.html" target="_blank" rel="noopener noreferrer">云原生网络2.0</a></strong>：面向大规模和高性能的场景。</p>
-<p id="zh-cn_topic_0000001151389047_p74677316335"><a name="zh-cn_topic_0000001151389047_p74677316335"></a><a name="zh-cn_topic_0000001151389047_p74677316335"></a>组网规模2000节点</p>
+<td class="cellrowborder" valign="top" width="40.965903409659035%" headers="mcps1.2.5.1.3 "><p id="zh-cn_topic_0000001151389047_p101999842920"><a name="zh-cn_topic_0000001151389047_p101999842920"></a><a name="zh-cn_topic_0000001151389047_p101999842920"></a><strong id="zh-cn_topic_0000001151389047_b111991280296"><a name="zh-cn_topic_0000001151389047_b111991280296"></a><a name="zh-cn_topic_0000001151389047_b111991280296"></a>云原生网络2.0</strong>：面向大规模和高性能的场景。</p>
+<p id="zh-cn_topic_0000001151389047_p74677316335"><a name="zh-cn_topic_0000001151389047_p74677316335"></a><a name="zh-cn_topic_0000001151389047_p74677316335"></a>组网规模最大支持2000节点</p>
 </td>
 <td class="cellrowborder" valign="top" width="37.11628837116288%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0000001151389047_p1734061519273"><a name="zh-cn_topic_0000001151389047_p1734061519273"></a><a name="zh-cn_topic_0000001151389047_p1734061519273"></a><strong id="zh-cn_topic_0000001151389047_b113401315112712"><a name="zh-cn_topic_0000001151389047_b113401315112712"></a><a name="zh-cn_topic_0000001151389047_b113401315112712"></a>云原生网络1.0</strong>：面向性能和规模要求不高的场景。</p>
-<a name="zh-cn_topic_0000001151389047_ul2055005123618"></a><a name="zh-cn_topic_0000001151389047_ul2055005123618"></a><ul id="zh-cn_topic_0000001151389047_ul2055005123618"><li>隧道网络模式</li><li>VPC网络模式</li></ul>
+<a name="zh-cn_topic_0000001151389047_ul2055005123618"></a><a name="zh-cn_topic_0000001151389047_ul2055005123618"></a><ul id="zh-cn_topic_0000001151389047_ul2055005123618"><li>容器隧道网络模式</li><li>VPC网络模式</li></ul>
 </td>
 </tr>
 <tr id="zh-cn_topic_0000001151389047_row133581631175511"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="zh-cn_topic_0000001151389047_p2800173617559"><a name="zh-cn_topic_0000001151389047_p2800173617559"></a><a name="zh-cn_topic_0000001151389047_p2800173617559"></a>网络性能</p>
@@ -69,13 +62,47 @@ CCE支持多种类型的集群创建，以满足您各种业务需求，如下�
 </td>
 <td class="cellrowborder" valign="top" width="12.218778122187782%" headers="mcps1.2.5.1.2 "><p id="zh-cn_topic_0000001151389047_p959891855012"><a name="zh-cn_topic_0000001151389047_p959891855012"></a><a name="zh-cn_topic_0000001151389047_p959891855012"></a>隔离性</p>
 </td>
-<td class="cellrowborder" valign="top" width="40.965903409659035%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0000001151389047_ul125981418125012"></a><a name="zh-cn_topic_0000001151389047_ul125981418125012"></a><ul id="zh-cn_topic_0000001151389047_ul125981418125012"><li>裸金属服务器：安全容器，支持虚机级别的隔离</li><li>虚拟机：普通容器</li></ul>
+<td class="cellrowborder" valign="top" width="40.965903409659035%" headers="mcps1.2.5.1.3 "><a name="zh-cn_topic_0000001151389047_ul125981418125012"></a><a name="zh-cn_topic_0000001151389047_ul125981418125012"></a><ul id="zh-cn_topic_0000001151389047_ul125981418125012"><li>物理机：安全容器，支持虚机级别的隔离</li><li>虚拟机：普通容器</li></ul>
 </td>
 <td class="cellrowborder" valign="top" width="37.11628837116288%" headers="mcps1.2.5.1.4 "><p id="zh-cn_topic_0000001151389047_p16598131835011"><a name="zh-cn_topic_0000001151389047_p16598131835011"></a><a name="zh-cn_topic_0000001151389047_p16598131835011"></a>普通容器，Cgroups隔离</p>
 </td>
 </tr>
 </tbody>
 </table>
+
+## CCE Turbo分布式集群<a name="section177181671556"></a>
+
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>CCE Turbo 分布式集群当前仅在“华南-广州“区域上线，且需要注册了边缘小站后才可见。
+
+CCE Turbo分布式集群在CCE Turbo集群的基础上增加了**管理边缘基础设施**的能力，包括智能边缘云Homezone和智能边缘小站IES。启用分布式集群后，一个集群可以统一管理数据中心和边缘的计算资源，用户可以便捷地根据应用的诉求将其部署在对应的区域。
+
+![](figures/zh-cn_image_0000001333102073.png)
+
+**核心概念**
+
+为了区分云上资源和分布在不同边缘区域的资源，也为了方便用户使用和管理处于不同区域的资源，引入了**分区**概念，定义如下：
+
+-   计算角度：一个分区是一组“风火水电”相互隔离、但网络位置靠近（通常互访时延小于2ms）的数据中心可用区（available zone）的集合。将应用分散在一个分区内不同可用区可以实现应用高可用性。
+-   网络角度：一个分区内节点和容器需要使用创建在该分区内可用区下的虚拟私有云（VPC）子网。为方便配置和管理，分区创建时需设定默认子网，当创建节点不指定子网时，会填入分区默认子网。
+-   其他属性：分区包含资源类别，即中心云、Homezone或IES。该属性的配置方便后续负载的调度。
+
+**约束与限制**
+
+-   节点：分布式集群当前仅支持普通x86虚拟机。
+-   节点池：节点池随机调度功能仅限于分区内；暂不支持节点迁移功能。
+-   存储：当前仅支持在边缘区域创建云硬盘（EVS），其他种类存储方式不推荐使用。
+-   服务与路由：仅支持独享型ELB；仅支持在Homezone类型的分区创建4层ELB，其他类型需要将ELB实例创建在中心分区。
+-   插件：分布式集群支持如下插件，且优先将插件部署在云上节点。
+    -   everest
+    -   coredns
+    -   node-local-dns
+    -   autoscaler
+    -   metrics-server
+    -   dashboard
+    -   huawei-npu
+    -   gpu-beta
+
 
 ## CCE Turbo集群Pod批量创建性能说明<a name="section2774164118419"></a>
 

@@ -1,4 +1,4 @@
-# Kubectl常用命令<a name="cce_01_0139"></a>
+# Kubectl常用命令<a name="cce_10_0139"></a>
 
 ## 基础命令<a name="section18967103615461"></a>
 
@@ -78,7 +78,7 @@ kubectl expose deployment deployname --port=81 --type=NodePort --target-port=80 
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->给deployname发布一个服务，-port为暴露出去的端口，-type为服务类型，-target-port为容器端口，port通过clusterip加端口访问，target-port通过节点ip加端口访问。
+>给deployname发布一个服务，--port为服务暴露出去的端口，--type为服务类型，--target-port为服务对应后端Pod的端口，port提供了集群内部访问服务的入口，即ClusterIP:port。
 
 **run**
 

@@ -1,4 +1,4 @@
-# 使用kubectl部署带云硬盘存储卷的工作负载<a name="cce_01_0257"></a>
+# 使用kubectl部署带云硬盘存储卷的工作负载<a name="cce_10_0314"></a>
 
 ## 操作场景<a name="section1789161805617"></a>
 
@@ -7,15 +7,11 @@
 >![](public_sys-resources/icon-notice.gif) **须知：** 
 >云硬盘不支持跨可用区挂载。在挂载前，您可以使用** kubectl get pvc**  命令查询当前集群所在分区下可用PVC。
 
-## 前提条件<a name="section13181839131510"></a>
-
-您已经创建好一个CCE集群，并且在该集群中安装CSI插件（[Everest](Everest（系统资源插件-必装）.md)）。
-
 ## 约束与限制<a name="section946015116135"></a>
 
-如下配置示例适用于Kubernetes 1.15及以上版本的集群。
+如下配置示例适用于Kubernetes 1.13及以下版本的集群。
 
-## 无状态负载使用云硬盘<a name="section421772310564"></a>
+## 操作步骤<a name="section421772310564"></a>
 
 1.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
 2.  执行如下命令，配置名为“evs-deployment-example.yaml“的创建无状态工作负载的yaml文件。
@@ -102,22 +98,6 @@
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >“spec.template.spec.containers.volumeMounts.name ”和 “spec.template.spec.volumes.name”有映射关系，必须保持一致。
 
-3.  执行如下命令创建Pod。
-
-    **kubectl create -f evs-deployment-example.yaml**
-
-    创建完成后，登录CCE控制台，在左侧导航栏中选择“存储管理 \> 云硬盘存储卷“。单击PVC名称，在PVC详情页面可查看云硬盘和PVC的绑定关系。
-
-
-## 有状态负载使用云硬盘<a name="section1104163720107"></a>
-
-1.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
-2.  执行如下命令，配置名为“evs-statefulset-example.yaml“的创建有状态工作负载的yaml文件。
-
-    **touch evs-statefulset-example.yaml**
-
-    **vi evs-statefulset-example.yaml**
-
     在有状态工作负载中基于PVCTemplate独占式使用云硬盘存储。
 
     **yaml示例如下：**
@@ -126,82 +106,79 @@
     apiVersion: apps/v1
     kind: StatefulSet
     metadata:
-      name: evs-statefulset-example
-      namespace: default
+      name: deploy-evs-sas-in
     spec:
       replicas: 1
       selector:
         matchLabels:
-          app: evs-statefulset-example
+          app: deploy-evs-sata-in
       template:
         metadata:
           labels:
-            app: evs-statefulset-example
+            app: deploy-evs-sata-in
+            failure-domain.beta.kubernetes.io/region: cn-north-4
+            failure-domain.beta.kubernetes.io/zone: cn-north-4b
         spec:
           containers:
             - name: container-0
-              image: 'nginx:latest'
+              image: 'nginx:1.12-alpine-perl'
               volumeMounts:
-                - name: pvc-evs-auto-example
+                - name: bs-sas-mountoptionpvc
                   mountPath: /tmp
-          restartPolicy: Always
           imagePullSecrets:
             - name: default-secret
       volumeClaimTemplates:
         - metadata:
-            name: pvc-evs-auto-example
-            namespace: default
+            name: bs-sas-mountoptionpvc
             annotations:
-              everest.io/disk-volume-type: SAS
+              volume.beta.kubernetes.io/storage-class: sas
+              volume.beta.kubernetes.io/storage-provisioner: flexvolume-huawei.com/fuxivol
           spec:
             accessModes:
               - ReadWriteOnce
             resources:
               requests:
                 storage: 10Gi
-            storageClassName: csi-disk   
-      serviceName: evs-statefulset-example-headless
-      updateStrategy:
-        type: RollingUpdate
+      serviceName: wwww
     ```
 
     **表 2**  关键参数说明
 
-    <a name="table37966951119"></a>
-    <table><thead align="left"><tr id="row17796159151117"><th class="cellrowborder" valign="top" width="30.570000000000004%" id="mcps1.2.4.1.1"><p id="p779629181113"><a name="p779629181113"></a><a name="p779629181113"></a>前置路径</p>
+    <a name="table628368131916"></a>
+    <table><thead align="left"><tr id="row122837851917"><th class="cellrowborder" valign="top" width="27.01%" id="mcps1.2.4.1.1"><p id="p24390324267"><a name="p24390324267"></a><a name="p24390324267"></a>前置路径</p>
     </th>
-    <th class="cellrowborder" valign="top" width="16.150000000000002%" id="mcps1.2.4.1.2"><p id="p079615917118"><a name="p079615917118"></a><a name="p079615917118"></a>参数</p>
+    <th class="cellrowborder" valign="top" width="17.59%" id="mcps1.2.4.1.2"><p id="p42830816196"><a name="p42830816196"></a><a name="p42830816196"></a>参数</p>
     </th>
-    <th class="cellrowborder" valign="top" width="53.28000000000001%" id="mcps1.2.4.1.3"><p id="p1179619111112"><a name="p1179619111112"></a><a name="p1179619111112"></a>描述</p>
+    <th class="cellrowborder" valign="top" width="55.400000000000006%" id="mcps1.2.4.1.3"><p id="p16284108101912"><a name="p16284108101912"></a><a name="p16284108101912"></a>描述</p>
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row079615921119"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p20796691110"><a name="p20796691110"></a><a name="p20796691110"></a>metadata</p>
+    <tbody><tr id="row1428438101916"><td class="cellrowborder" valign="top" width="27.01%" headers="mcps1.2.4.1.1 "><p id="p143914327264"><a name="p143914327264"></a><a name="p143914327264"></a>metadata</p>
     </td>
-    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p179617921112"><a name="p179617921112"></a><a name="p179617921112"></a>name</p>
+    <td class="cellrowborder" valign="top" width="17.59%" headers="mcps1.2.4.1.2 "><p id="p142843811197"><a name="p142843811197"></a><a name="p142843811197"></a>name</p>
     </td>
-    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p1979620951115"><a name="p1979620951115"></a><a name="p1979620951115"></a>创建的工作负载名称。</p>
-    </td>
-    </tr>
-    <tr id="row177961797115"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p4796119161110"><a name="p4796119161110"></a><a name="p4796119161110"></a>spec.template.spec.containers</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p879699101113"><a name="p879699101113"></a><a name="p879699101113"></a>image</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p979689131114"><a name="p979689131114"></a><a name="p979689131114"></a>工作负载的镜像。</p>
+    <td class="cellrowborder" valign="top" width="55.400000000000006%" headers="mcps1.2.4.1.3 "><p id="p14367283124"><a name="p14367283124"></a><a name="p14367283124"></a>创建的工作负载名称。</p>
     </td>
     </tr>
-    <tr id="row179617915117"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p13796189161112"><a name="p13796189161112"></a><a name="p13796189161112"></a>spec.template.spec.containers.volumeMount</p>
+    <tr id="row428458201916"><td class="cellrowborder" valign="top" width="27.01%" headers="mcps1.2.4.1.1 "><p id="p104391325267"><a name="p104391325267"></a><a name="p104391325267"></a>spec.template.spec.containers</p>
     </td>
-    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p157966913118"><a name="p157966913118"></a><a name="p157966913118"></a>mountPath</p>
+    <td class="cellrowborder" valign="top" width="17.59%" headers="mcps1.2.4.1.2 "><p id="p202841483196"><a name="p202841483196"></a><a name="p202841483196"></a>image</p>
     </td>
-    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p1796189101112"><a name="p1796189101112"></a><a name="p1796189101112"></a>容器内挂载路径，示例中挂载到“/tmp”路径。</p>
+    <td class="cellrowborder" valign="top" width="55.400000000000006%" headers="mcps1.2.4.1.3 "><p id="p11284585196"><a name="p11284585196"></a><a name="p11284585196"></a>工作负载的镜像。</p>
     </td>
     </tr>
-    <tr id="row197963921111"><td class="cellrowborder" valign="top" width="30.570000000000004%" headers="mcps1.2.4.1.1 "><p id="p379618918119"><a name="p379618918119"></a><a name="p379618918119"></a>spec</p>
+    <tr id="row192841589190"><td class="cellrowborder" valign="top" width="27.01%" headers="mcps1.2.4.1.1 "><p id="p243920327269"><a name="p243920327269"></a><a name="p243920327269"></a>spec.template.spec.containers.volumeMount</p>
     </td>
-    <td class="cellrowborder" valign="top" width="16.150000000000002%" headers="mcps1.2.4.1.2 "><p id="p579610915115"><a name="p579610915115"></a><a name="p579610915115"></a>serviceName</p>
+    <td class="cellrowborder" valign="top" width="17.59%" headers="mcps1.2.4.1.2 "><p id="p32847817196"><a name="p32847817196"></a><a name="p32847817196"></a>mountPath</p>
     </td>
-    <td class="cellrowborder" valign="top" width="53.28000000000001%" headers="mcps1.2.4.1.3 "><p id="p079610971112"><a name="p079610971112"></a><a name="p079610971112"></a>工作负载对应的服务，服务创建过程请参见<a href="创建有状态负载(StatefulSet).md">创建有状态负载(StatefulSet)</a>。</p>
+    <td class="cellrowborder" valign="top" width="55.400000000000006%" headers="mcps1.2.4.1.3 "><p id="p112851818196"><a name="p112851818196"></a><a name="p112851818196"></a>容器内挂载路径，示例中挂载到“/tmp”路径。</p>
+    </td>
+    </tr>
+    <tr id="row6285158191916"><td class="cellrowborder" valign="top" width="27.01%" headers="mcps1.2.4.1.1 "><p id="p2043914322263"><a name="p2043914322263"></a><a name="p2043914322263"></a>spec</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.59%" headers="mcps1.2.4.1.2 "><p id="p1828558101912"><a name="p1828558101912"></a><a name="p1828558101912"></a>serviceName</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="55.400000000000006%" headers="mcps1.2.4.1.3 "><p id="p415683820207"><a name="p415683820207"></a><a name="p415683820207"></a>工作负载对应的服务，服务创建过程请参见<a href="创建有状态负载(StatefulSet).md">创建有状态负载(StatefulSet)</a>。</p>
     </td>
     </tr>
     </tbody>
@@ -212,87 +189,8 @@
 
 3.  执行如下命令创建Pod。
 
-    **kubectl create -f evs-statefulset-example.yaml**
+    **kubectl create -f evs-deployment-example.yaml**
 
     创建完成后，登录CCE控制台，在左侧导航栏中选择“存储管理 \> 云硬盘存储卷“。单击PVC名称，在PVC详情页面可查看云硬盘和PVC的绑定关系。
-
-
-## 验证云硬盘的持久化存储<a name="section1347793033917"></a>
-
-1.  查询部署的工作负载（以**evs-statefulset-example**为例）的实例和云硬盘文件。
-    1.  执行以下命令，查看工作负载对应的实例名称。
-
-        ```
-        kubectl get po | grep evs-statefulset-example
-        ```
-
-        期望输出：
-
-        ```
-        evs-statefulset-example-0   1/1     Running   0          22h
-        ```
-
-    2.  执行以下命令，查看/tmp目录下是否挂载了云硬盘。
-
-        ```
-        kubectl exec evs-statefulset-example-0 -- df tmp
-        ```
-
-        期望输出：
-
-        ```
-        /dev/sda        10255636 36888  10202364   1% /tmp
-        ```
-
-2.  执行以下命令，在/tmp路径下创建问题test。
-
-    ```
-    kubectl exec evs-statefulset-example-0 -- touch /tmp/test
-    ```
-
-3.  执行以下命令，查看/tmp路径下的文件。
-
-    ```
-    kubectl exec evs-statefulset-example-0 -- ls -l /tmp
-    ```
-
-    预期输出：
-
-    ```
-    -rw-r--r-- 1 root root     0 Jun  1 02:50 test
-    ```
-
-4.  执行以下命令，删除名称为evs-statefulset-example-0的实例
-
-    ```
-    kubectl delete po evs-statefulset-example-0
-    ```
-
-5.  验证重建后的实例，文件是否仍然存在
-    1.  执行以下命令，查看重建的实例名称
-
-        ```
-        kubectl get po
-        ```
-
-        预期输出：
-
-        ```
-        evs-statefulset-example-0   1/1     Running   0          2m
-        ```
-
-    2.  执行以下命令，查看/tmp路径下的文件
-
-        ```
-        kubectl exec evs-statefulset-example-0 -- ls -l /tmp
-        ```
-
-        预期输出：
-
-        ```
-        -rw-r--r-- 1 root root     0 Jun  1 02:50 test
-        ```
-
-    3.  test文件在实例重建之后仍然存在，说明云硬盘数据可持久化保存
 
 

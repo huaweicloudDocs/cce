@@ -1,7 +1,7 @@
 # API URL说明<a name="cce_02_0363"></a>
 
--   集群管理、节点管理、节点池管理的URL格式为：**https://Endpoint/uri**。其中**uri**为资源路径，也即API访问的路径。
--   Kubernetes API、存储管理、插件管理的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中**\{clusterid\}**为集群ID，**uri**为资源路径，也即API访问的路径。
+-   集群管理、节点管理、节点池管理、插件管理、配额管理的URL格式为：**https://Endpoint/uri**。其中**uri**为资源路径，也即API访问的路径。
+-   Kubernetes API、存储管理的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中**\{clusterid\}**为集群ID，**uri**为资源路径，也即API访问的路径。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >-   插件管理接口调用的URL格式为：**https://\{clusterid\}.Endpoint/uri**，但**\{clusterid\}**参数仅用于域名，不会被接口校验和使用。插件管理实际使用的**\{clusterid\}**参数请参考插件管理，填写在query或body体中。
@@ -24,7 +24,7 @@
 </tr>
 <tr id="zh-cn_topic_0092901339_row195716107550"><td class="cellrowborder" valign="top" width="24.529999999999998%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0092901339_p119571610115515"><a name="zh-cn_topic_0092901339_p119571610115515"></a><a name="zh-cn_topic_0092901339_p119571610115515"></a>Endpoint</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.47%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0092901339_p4957181017553"><a name="zh-cn_topic_0092901339_p4957181017553"></a><a name="zh-cn_topic_0092901339_p4957181017553"></a>Web服务入口点的URL，可以从<a href="https://developer.huaweicloud.com/endpoint?cce" target="_blank" rel="noopener noreferrer">地区和终端节点</a>中获取。</p>
+<td class="cellrowborder" valign="top" width="75.47%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0092901339_p4957181017553"><a name="zh-cn_topic_0092901339_p4957181017553"></a><a name="zh-cn_topic_0092901339_p4957181017553"></a>Web服务入口点的URL，可以从<a href="终端节点（Endpoint）.md">终端节点（Endpoint）</a>中获取。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0092901339_row0957191065512"><td class="cellrowborder" valign="top" width="24.529999999999998%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0092901339_p179581410115511"><a name="zh-cn_topic_0092901339_p179581410115511"></a><a name="zh-cn_topic_0092901339_p179581410115511"></a>uri</p>
@@ -34,10 +34,4 @@
 </tr>
 </tbody>
 </table>
-
-## 如何调用API<a name="section28643518411"></a>
-
--   [构造请求](构造请求.md)
--   [认证鉴权](认证鉴权.md)
--   [返回结果](返回结果.md)
 

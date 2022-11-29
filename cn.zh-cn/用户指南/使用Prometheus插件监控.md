@@ -1,4 +1,4 @@
-# 使用Prometheus插件监控<a name="cce_01_0373"></a>
+# 使用Prometheus插件监控<a name="cce_10_0373"></a>
 
 在[自定义监控](自定义监控.md)中介绍了AOM ICAgent获取负载自定义指标监控数据的方法。您也可以直接在集群中安装Prometheus插件，直接使用Prometheus作为监控平台。
 
@@ -10,19 +10,45 @@
 
 Prometheus插件安装完成后会在集群中部署一系列工作负载和Service。其中有状态负载prometheus就是Prometheus Server。
 
-![](figures/zh-cn_image_0000001221601173.png)
-
 您可以创建一个公网[LoadBalancer类型Service](负载均衡(LoadBalancer).md)，这样就可以从外部访问Prometheus。
-
-![](figures/zh-cn_image_0000001176162844.png)
 
 创建完成后单击访问地址，访问Prometheus。
 
-![](figures/zh-cn_image_0000001176162888.png)
+1.  登录CCE控制台，选择一个已安装Prometheus插件的集群，在左侧导航栏中选择“服务发现“。
+2.  单击右上角“YAML创建“，为有状态负载prometheus创建一个公网LoadBalancer类型Service。
 
-单击“Status \> Targets“，可以查看到Prometheus监控了哪些目标。
+    ```
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: prom-lb     #服务名称，可自定义
+      namespace: monitoring
+      labels:
+        app: prometheus
+        component: server
+      annotations:
+        kubernetes.io/elb.id: 038ff***     #请替换为集群所在VPC下的ELB实例ID，且ELB实例为公网访问类型
+    spec:
+      ports:
+        - name: cce-service-0
+          protocol: TCP
+          port: 88     #服务端口号，可自定义
+          targetPort: 9090     #Prometheus的默认端口号，无需更改
+      selector:
+        app: prometheus
+        component: server
+        release: cceaddon-prometheus
+      type: LoadBalancer
+    ```
 
-![](figures/zh-cn_image_0000001176481424.png)
+3.  创建完成后在浏览器访问“负载均衡公网IP地址:服务端口“，访问Prometheus。
+
+    ![](figures/zh-cn_image_0000001360169953.png)
+
+4.  单击“Status \> Targets“，可以查看到Prometheus监控了哪些目标。
+
+    ![](figures/zh-cn_image_0000001360410057.png)
+
 
 ## 监控自定义指标<a name="section179021319175"></a>
 
@@ -51,7 +77,7 @@ spec:
     spec:
       containers:
         - name: container-0
-          image: 'swr.cn-east-3.myhuaweicloud.com/dev-container/nginx:exporter'
+          image: 'nginx:exporter'      # 替换为您上传到SWR的镜像地址
           resources:
             limits:
               cpu: 250m
@@ -78,21 +104,46 @@ spec:
 
 部署应用后，在“Status \> Targets“能够发现多了一个9113端口的采集路径的Pod。
 
-![](figures/zh-cn_image_0000001221801445.png)
+![](figures/zh-cn_image_0000001199501294.png)
 
 在Graph页签下输入nginx，可以看出nginx相关的指标已经在Prometheus中呈现。
 
-![](figures/zh-cn_image_0000001221601539.png)
+![](figures/zh-cn_image_0000001199501292.png)
 
 ## 访问Grafana<a name="section1112612916573"></a>
 
 Prometheus插件同时安装了[Grafana](https://grafana.com/)（一款开源可视化工具），并且与Prometheus进行了对接。您可以创建一个公网[LoadBalancer类型Service](负载均衡(LoadBalancer).md)，这样就可以从公网访问Grafana，从Grafana中看到Prometheus的监控数据。
 
-![](figures/zh-cn_image_0000001176007758.png)
-
 单击访问地址，访问Grafana，选择合适的DashBoard，即可以查到相应的聚合内容。
 
-![](figures/zh-cn_image_0000001221606213.png)
+1.  登录CCE控制台，选择一个已安装Prometheus插件的集群，在左侧导航栏中选择“服务发现“。
+2.  单击右上角“YAML创建“，为Grafana创建一个公网LoadBalancer类型Service。
+
+    ```
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: grafana-lb     #服务名称，可自定义
+      namespace: monitoring
+      labels:
+        app: grafana
+      annotations:
+        kubernetes.io/elb.id: 038ff***     #请替换为集群所在VPC下的ELB实例ID，且ELB实例为公网访问类型
+    spec:
+      ports:
+        - name: cce-service-0
+          protocol: TCP
+          port: 80     #服务端口号，可自定义
+          targetPort: 3000     #Grafana的默认端口号，无需更改
+      selector:
+        app: grafana
+      type: LoadBalancer
+    ```
+
+3.  创建完成后在浏览器访问“负载均衡公网IP地址:服务端口“，访问Grafana并选择合适的DashBoard，即可以查到相应的聚合内容。
+
+    ![](figures/zh-cn_image_0000001307730038.png)
+
 
 ## Grafana数据持久化<a name="section676815415156"></a>
 
@@ -127,7 +178,7 @@ Prometheus插件同时安装了[Grafana](https://grafana.com/)（一款开源可
     -   failure-domain.beta.kubernetes.io/zone：云硬盘所在的AZ。
     -   storage：云硬盘大小，请根据需要选择。
 
-    您还可以在CCE控制台创建云硬盘存储，具体方法请参见[购买云硬盘存储卷](使用云硬盘存储卷.md#section1727261664619)。
+    您还可以在CCE控制台创建云硬盘存储，具体方法请参见[使用存储类创建PVC](存储卷声明PVC.md#section155911631134310)。
 
 3.  修改Grafana工作负载配置，挂载云硬盘。
 

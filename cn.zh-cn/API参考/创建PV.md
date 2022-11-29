@@ -1,8 +1,8 @@
-# 创建PV<a name="cce_02_0256_0"></a>
+# 创建PV<a name="cce_02_0256"></a>
 
 ## 功能介绍<a name="section1337912142448"></a>
 
-该API用于通过指定云存储服务中的云存储（如EVS、SFS、OBS）去创建PV（PersistentVolume）。该API已废弃，请使用[创建PersistentVolume](创建PersistentVolume.md)。
+该API用于通过指定云存储服务中的云存储（如EVS、SFS、OBS）去创建PV（PersistentVolume）。该API已废弃，请使用Kubernetes PV相关接口。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >存储管理的URL格式为：https://\{clusterid\}.Endpoint/uri。其中\{clusterid\}为集群ID，uri为资源路径，也即API访问的路径。如果使用https://Endpoint/uri，则必须指定请求header中的X-Cluster-ID参数。

@@ -1,11 +1,11 @@
 # 终端节点（Endpoint）<a name="cce_02_0330"></a>
 
-终端节点（Endpoint）即调用API的**请求地址**，不同服务不同区域的终端节点不同，您可以从[地区和终端节点](https://developer.huaweicloud.com/endpoint?cce)中查询服务的终端节点。
+终端节点（Endpoint）即调用API的**请求地址**，不同服务不同区域的终端节点不同，您可以从[地区和终端节点](https://developer.huaweicloud.com/endpoint)[地区和终端节点](https://docs.prod-cloud-ocb.orange-business.com/zh-cn/endpoint/index.html)[区域及终端节点](https://docs.otc.t-systems.com/en-us/endpoint/index.html)查询服务的终端节点。
 
 请您根据业务需要选择对应区域的终端节点。
 
--   集群管理、节点管理、节点池管理的URL格式为：**https://Endpoint/uri**。其中**uri**为资源路径，也即API访问的路径。
--   Kubernetes API、存储管理、插件管理的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中**\{clusterid\}**为集群ID，**uri**为资源路径，也即API访问的路径。
+-   集群管理、节点管理、节点池管理、插件管理、配额管理的URL格式为：**https://Endpoint/uri**。其中**uri**为资源路径，也即API访问的路径。
+-   Kubernetes API、存储管理的URL格式为：**https://\{clusterid\}.Endpoint/uri**。其中**\{clusterid\}**为集群ID，**uri**为资源路径，也即API访问的路径。
 
 **表 1**  URL中的参数说明
 
@@ -23,7 +23,7 @@
 </tr>
 <tr id="zh-cn_topic_0092901339_row195716107550"><td class="cellrowborder" valign="top" width="24.529999999999998%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0092901339_p119571610115515"><a name="zh-cn_topic_0092901339_p119571610115515"></a><a name="zh-cn_topic_0092901339_p119571610115515"></a>Endpoint</p>
 </td>
-<td class="cellrowborder" valign="top" width="75.47%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0092901339_p4957181017553"><a name="zh-cn_topic_0092901339_p4957181017553"></a><a name="zh-cn_topic_0092901339_p4957181017553"></a>Web服务入口点的URL，可以从<a href="https://developer.huaweicloud.com/endpoint?cce" target="_blank" rel="noopener noreferrer">地区和终端节点</a>中获取。</p>
+<td class="cellrowborder" valign="top" width="75.47%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0092901339_p4957181017553"><a name="zh-cn_topic_0092901339_p4957181017553"></a><a name="zh-cn_topic_0092901339_p4957181017553"></a>Web服务入口点的URL，不同服务不同区域的终端节点不同。</p>
 </td>
 </tr>
 <tr id="zh-cn_topic_0092901339_row0957191065512"><td class="cellrowborder" valign="top" width="24.529999999999998%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0092901339_p179581410115511"><a name="zh-cn_topic_0092901339_p179581410115511"></a><a name="zh-cn_topic_0092901339_p179581410115511"></a>uri</p>

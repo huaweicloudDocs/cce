@@ -1,4 +1,4 @@
-# 创建守护进程集\(DaemonSet\)<a name="cce_01_0216"></a>
+# 创建守护进程集\(DaemonSet\)<a name="cce_10_0216"></a>
 
 ## 操作场景<a name="section1479811467429"></a>
 
@@ -18,198 +18,124 @@
 
 在创建守护进程集前，您需要存在一个可用集群。若没有可用集群 ，请参照[购买CCE集群](购买CCE集群.md)中内容创建。
 
-
-## 操作步骤<a name="section1160483214207"></a>
+## 通过控制台创建<a name="section1160483214207"></a>
 
 1.  登录CCE控制台。
-2.  在左侧导航栏中选择“工作负载 \> 守护进程集 DaemonSet”，单击页面右上角的“创建守护进程集”。参照[表1](#table18511927357)设置基本信息，其中带“\*”标志的参数为必填参数。
+2.  进入集群，在左侧选择“工作负载“，在右上角单击“创建负载“。
+3.  配置工作负载的信息。
 
-    **表 1**  工作负载基本信息
+    **基本信息**
 
-    <a name="table18511927357"></a>
-    <table><thead align="left"><tr id="row165111724358"><th class="cellrowborder" valign="top" width="23.07%" id="mcps1.2.3.1.1"><p id="p151110220357"><a name="p151110220357"></a><a name="p151110220357"></a>参数</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="76.92999999999999%" id="mcps1.2.3.1.2"><p id="p151111263510"><a name="p151111263510"></a><a name="p151111263510"></a>参数说明</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row165116293513"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p15111126356"><a name="p15111126356"></a><a name="p15111126356"></a>* 工作负载名称</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p5511132113518"><a name="p5511132113518"></a><a name="p5511132113518"></a>新建工作负载的名称，命名必须唯一。</p>
-    <p id="p91103247115"><a name="p91103247115"></a><a name="p91103247115"></a>请输入4到63个字符的字符串，可以包含小写英文字母、数字和中划线（-），并以小写英文字母开头，小写英文字母或数字结尾。</p>
-    </td>
-    </tr>
-    <tr id="row9511529359"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p2511192203512"><a name="p2511192203512"></a><a name="p2511192203512"></a>* 集群名称</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p1251118203518"><a name="p1251118203518"></a><a name="p1251118203518"></a>新建工作负载所在的集群。</p>
-    </td>
-    </tr>
-    <tr id="row551122123512"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p175112263520"><a name="p175112263520"></a><a name="p175112263520"></a>* 命名空间</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p2511628354"><a name="p2511628354"></a><a name="p2511628354"></a>在单集群中，不同命名空间中的数据彼此隔离。使应用可以共享同个集群的服务，也能够互不干扰。若您不设置命名空间，系统会默认使用default命名空间。</p>
-    </td>
-    </tr>
-    <tr id="row8593232161514"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p1522718171417"><a name="p1522718171417"></a><a name="p1522718171417"></a>* 容器运行时</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><div class="p" id="p12516203954310"><a name="p12516203954310"></a><a name="p12516203954310"></a>请选择容器的运行时（Runtime），创建后不可修改。<strong id="b1631410435919"><a name="b1631410435919"></a><a name="b1631410435919"></a>该参数仅支持CCE Turbo集群。</strong><a name="ul138143112439"></a><a name="ul138143112439"></a><ul id="ul138143112439"><li>docker运行时：普通容器</li><li>安全运行时：选择该运行时后将升级为安全容器，该守护进程集只能运行在使用安全运行时的节点上。</li></ul>
-    </div>
-    <p id="p2468151522611"><a name="p2468151522611"></a><a name="p2468151522611"></a>两种容器运行时的对比请参见<a href="节点概述.md#section7201124294111">普通容器与安全容器的区别</a>。</p>
-    </td>
-    </tr>
-    <tr id="row32431417251"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p15337247203514"><a name="cce_01_0047_p15337247203514"></a><a name="cce_01_0047_p15337247203514"></a>弹性网卡</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p476333074117"><a name="cce_01_0047_p476333074117"></a><a name="cce_01_0047_p476333074117"></a>Pod中的容器支持绑定弹性网卡，单击选中<span class="uicontrol" id="cce_01_0047_uicontrol187631230104117"><a name="cce_01_0047_uicontrol187631230104117"></a><a name="cce_01_0047_uicontrol187631230104117"></a>“绑定弹性网卡”</span>可以绑定已有的网络平面。更多网络平面信息请参见<a href="网络平面(NetworkAttachmentDefinition).md">网络平面(NetworkAttachmentDefinition)</a>。</p>
-    <p id="cce_01_0047_p58611513174112"><a name="cce_01_0047_p58611513174112"></a><a name="cce_01_0047_p58611513174112"></a><strong id="cce_01_0047_b10861121314119"><a name="cce_01_0047_b10861121314119"></a><a name="cce_01_0047_b10861121314119"></a>仅v1.13.7-r0及以上版本且网络模型为VPC网络的CCE集群才能绑定弹性网卡，不符合条件的集群将不显示<span class="uicontrol" id="cce_01_0047_uicontrol1986171319410"><a name="cce_01_0047_uicontrol1986171319410"></a><a name="cce_01_0047_uicontrol1986171319410"></a>“弹性网卡”</span>选项。</strong></p>
-    <div class="note" id="cce_01_0047_note124412587394"><a name="cce_01_0047_note124412587394"></a><a name="cce_01_0047_note124412587394"></a><span class="notetitle"> 说明： </span><div class="notebody"><a name="cce_01_0047_ul1444165810398"></a><a name="cce_01_0047_ul1444165810398"></a><ul id="cce_01_0047_ul1444165810398"><li>网络平面是CCE新增的一种crd资源，记录了租户ID，子网ID，安全组等的配置项，作为申请弹性网卡的配置信息。</li><li>创建工作负载时，在<a href="创建无状态负载(Deployment).md#li3580132418215">设置工作负载访问方式</a>步骤中如果添加了节点级别的Service，将无法绑定弹性网卡；同理，绑定了弹性网卡的工作负载，将无法添加节点级别的Service。</li></ul>
-    </div></div>
-    </td>
-    </tr>
-    <tr id="row15115217354"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p151122103514"><a name="p151122103514"></a><a name="p151122103514"></a>时区同步</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p14511926351"><a name="p14511926351"></a><a name="p14511926351"></a>单击<a name="image16680652104914"></a><a name="image16680652104914"></a><span><img id="image16680652104914" src="figures/2020-08-13_092636-12.png"></span>开启后，容器将和节点使用相同时区。</p>
-    <div class="notice" id="note25113211350"><a name="note25113211350"></a><a name="note25113211350"></a><span class="noticetitle"> 须知： </span><div class="noticebody"><p id="p75117233519"><a name="p75117233519"></a><a name="p75117233519"></a>时区同步功能开启后，在<span class="uicontrol" id="uicontrol0511182113516"><a name="uicontrol0511182113516"></a><a name="uicontrol0511182113516"></a>“数据存储 &gt; 本地磁盘”</span>中，将会自动添加HostPath类型的磁盘，请勿修改删除该磁盘。</p>
-    </div></div>
-    </td>
-    </tr>
-    <tr id="row135110233512"><td class="cellrowborder" valign="top" width="23.07%" headers="mcps1.2.3.1.1 "><p id="p135111219354"><a name="p135111219354"></a><a name="p135111219354"></a>工作负载描述</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76.92999999999999%" headers="mcps1.2.3.1.2 "><p id="p1651112143513"><a name="p1651112143513"></a><a name="p1651112143513"></a>工作负载描述信息。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
+    -   负载类型：选择守护进程DaemonSet。工作负载类型的介绍请参见[工作负载概述](工作负载概述.md)。
+    -   负载名称：填写工作负载的名称。
+    -   命名空间：选择工作负载的命名空间，默认为default。您可以单击后面的“创建命名空间“，命名空间的详细介绍请参见[创建命名空间](创建命名空间.md)。
+    -   容器运行时：CCE集群默认使用普通运行时，CCE Turbo集群可以使用普通运行时或安全运行时。具体区别请参见[安全容器与普通容器](安全容器与普通容器.md)。
+    -   时区同步：选择是否开启时区同步。开启后容器与节点使用相同时区（时区同步功能依赖容器中挂载的本地磁盘，请勿修改删除），时区同步详细介绍请参见[时区同步](时区同步.md)。
 
-3.  单击“下一步：容器设置“，添加容器。
-    1.  单击“添加容器“，选择需要部署的镜像。
-        -   **我的镜像：**展示了您创建的所有镜像仓库。
-        -   **开源镜像中心：**展示了开源镜像中心仓库中的官方镜像。
-        -   **第三方镜像：**CCE支持拉取第三方镜像仓库（即镜像仓库与开源镜像中心之外的镜像仓库）的镜像创建工作负载。使用第三方镜像时，请确保工作负载运行的节点可访问公网。第三方镜像的具体使用方法请参见[如何使用第三方镜像](如何使用第三方镜像.md)。
-            -   若您的镜像仓库不需要认证，密钥认证请选择“否“，并输入“镜像名称“，单击“确定“。
-            -   若您的镜像仓库都必须经过认证（帐号密码）才能访问，您需要先创建密钥再使用第三方镜像，具体操作请参见[如何使用第三方镜像](如何使用第三方镜像.md)。
+    **容器配置**
 
-        -   **共享镜像：**其它租户通过“容器镜像服务“共享给您的镜像将在此处展示，您可以基于共享镜像创建工作负载。
+    -   容器信息
 
-    2.  配置镜像基本信息。
+        Pod中可以配置多个容器，您可以单击右侧“添加容器“为Pod配置多个容器。
 
-        工作负载是Kubernetes对一组Pod的抽象模型，用于描述业务的运行载体，一个Pod可以封装1个或多个容器，您可以单击右上方的“添加容器”，添加多个容器镜像并分别进行设置。
-
-        **表 2**  镜像参数说明
-
-        <a name="cce_01_0047_table128216444815"></a>
-        <table><thead align="left"><tr id="cce_01_0047_row0282348486"><th class="cellrowborder" valign="top" width="23%" id="mcps1.2.3.1.1"><p id="cce_01_0047_p3282147483"><a name="cce_01_0047_p3282147483"></a><a name="cce_01_0047_p3282147483"></a>参数</p>
-        </th>
-        <th class="cellrowborder" valign="top" width="77%" id="mcps1.2.3.1.2"><p id="cce_01_0047_p1828244144819"><a name="cce_01_0047_p1828244144819"></a><a name="cce_01_0047_p1828244144819"></a>说明</p>
-        </th>
-        </tr>
-        </thead>
-        <tbody><tr id="cce_01_0047_row1844916557597"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p182837474815"><a name="cce_01_0047_p182837474815"></a><a name="cce_01_0047_p182837474815"></a>镜像名称</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p3283134134820"><a name="cce_01_0047_p3283134134820"></a><a name="cce_01_0047_p3283134134820"></a>导入的镜像，您可单击<span class="uicontrol" id="cce_01_0047_uicontrol1217815019463"><a name="cce_01_0047_uicontrol1217815019463"></a><a name="cce_01_0047_uicontrol1217815019463"></a>“更换镜像”</span>进行更换。</p>
-        </td>
-        </tr>
-        <tr id="cce_01_0047_row338117362515"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p1038143616517"><a name="cce_01_0047_p1038143616517"></a><a name="cce_01_0047_p1038143616517"></a>* 镜像版本</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p1338110368519"><a name="cce_01_0047_p1338110368519"></a><a name="cce_01_0047_p1338110368519"></a>选择需要部署的镜像版本。</p>
-        </td>
-        </tr>
-        <tr id="cce_01_0047_row32839494813"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p122831140486"><a name="cce_01_0047_p122831140486"></a><a name="cce_01_0047_p122831140486"></a>* 容器名称</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p528314415486"><a name="cce_01_0047_p528314415486"></a><a name="cce_01_0047_p528314415486"></a>容器的名称，可修改。</p>
-        </td>
-        </tr>
-        <tr id="cce_01_0047_row1449911299503"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p53374336504"><a name="cce_01_0047_p53374336504"></a><a name="cce_01_0047_p53374336504"></a>特权容器</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p49887211526"><a name="cce_01_0047_p49887211526"></a><a name="cce_01_0047_p49887211526"></a>特权容器是指容器里面的程序具有一定的特权。</p>
-        <p id="cce_01_0047_p65001729105011"><a name="cce_01_0047_p65001729105011"></a><a name="cce_01_0047_p65001729105011"></a>若选中，容器将获得超级权限，例如可以操作宿主机上面的网络设备、修改内核参数等。</p>
-        </td>
-        </tr>
-        <tr id="cce_01_0047_row152831345485"><td class="cellrowborder" valign="top" width="23%" headers="mcps1.2.3.1.1 "><p id="cce_01_0047_p875325925918"><a name="cce_01_0047_p875325925918"></a><a name="cce_01_0047_p875325925918"></a>容器规格</p>
-        </td>
-        <td class="cellrowborder" valign="top" width="77%" headers="mcps1.2.3.1.2 "><p id="cce_01_0047_p5379182494610"><a name="cce_01_0047_p5379182494610"></a><a name="cce_01_0047_p5379182494610"></a><strong id="cce_01_0047_b2155195713314"><a name="cce_01_0047_b2155195713314"></a><a name="cce_01_0047_b2155195713314"></a>CPU配额：</strong></p>
-        <a name="cce_01_0047_ul67283495467"></a><a name="cce_01_0047_ul67283495467"></a><ul id="cce_01_0047_ul67283495467"><li>申请：容器需要使用的最小CPU值，默认0.25Core。</li><li>限制：允许容器使用的CPU最大值。建议设容器配额的最高限额，避免容器资源超额导致系统故障。</li></ul>
-        <p id="cce_01_0047_p633394210502"><a name="cce_01_0047_p633394210502"></a><a name="cce_01_0047_p633394210502"></a><strong id="cce_01_0047_b5114173113411"><a name="cce_01_0047_b5114173113411"></a><a name="cce_01_0047_b5114173113411"></a>内存配额：</strong></p>
-        <a name="cce_01_0047_ul14326165915010"></a><a name="cce_01_0047_ul14326165915010"></a><ul id="cce_01_0047_ul14326165915010"><li>申请：容器需要使用的内存最小值，默认512MiB。</li><li>限制：允许容器使用的内存最大值。如果超过，容器会被终止。</li></ul>
-        <p id="cce_01_0047_p1825119142351"><a name="cce_01_0047_p1825119142351"></a><a name="cce_01_0047_p1825119142351"></a>申请和限制的具体请参见<a href="设置容器规格.md">设置容器规格</a>。</p>
-        <p id="cce_01_0047_p38521896343"><a name="cce_01_0047_p38521896343"></a><a name="cce_01_0047_p38521896343"></a><strong id="cce_01_0047_b11557151512341"><a name="cce_01_0047_b11557151512341"></a><a name="cce_01_0047_b11557151512341"></a>GPU配额：</strong>当集群中包含GPU节点时，才能设置GPU，无GPU节点不显示此选项。</p>
-        <p id="cce_01_0047_p15403132914341"><a name="cce_01_0047_p15403132914341"></a><a name="cce_01_0047_p15403132914341"></a>容器需要使用的GPU百分比。勾选<span class="uicontrol" id="cce_01_0047_uicontrol952171455614"><a name="cce_01_0047_uicontrol952171455614"></a><a name="cce_01_0047_uicontrol952171455614"></a>“使用”</span>并设置百分比，例如设置为10%，表示该容器需使用GPU资源的10%。若不勾选<span class="uicontrol" id="cce_01_0047_uicontrol12950184715612"><a name="cce_01_0047_uicontrol12950184715612"></a><a name="cce_01_0047_uicontrol12950184715612"></a>“使用”</span>，或设置为0，则无法使用GPU资源。</p>
-        <p id="cce_01_0047_p9626154413340"><a name="cce_01_0047_p9626154413340"></a><a name="cce_01_0047_p9626154413340"></a><strong id="cce_01_0047_b423894943411"><a name="cce_01_0047_b423894943411"></a><a name="cce_01_0047_b423894943411"></a>GPU显卡：</strong>工作负载实例将被调度到GPU显卡类型为指定显卡的节点上。</p>
-        <p id="cce_01_0047_p15765438173416"><a name="cce_01_0047_p15765438173416"></a><a name="cce_01_0047_p15765438173416"></a>若勾选“不限制”，容器将会随机使用节点中的任一显卡。您也可以勾选某个显卡，容器将使用特定显卡。</p>
-        <p id="cce_01_0047_p58663964520"><a name="cce_01_0047_p58663964520"></a><a name="cce_01_0047_p58663964520"></a><strong id="cce_01_0047_b188666944516"><a name="cce_01_0047_b188666944516"></a><a name="cce_01_0047_b188666944516"></a>昇腾&nbsp;310配额：</strong>容器需要使用的昇腾 310芯片个数，此处须为整数。</p>
-        <p id="cce_01_0047_p2097772173513"><a name="cce_01_0047_p2097772173513"></a><a name="cce_01_0047_p2097772173513"></a>选用AI加速型节点并安装<strong id="cce_01_0047_b99085210250"><a name="cce_01_0047_b99085210250"></a><a name="cce_01_0047_b99085210250"></a>huawei-npu</strong>插件后该参数设置将生效。AI加速型节点目前已开放公测，该节点搭载高性能、低功耗的海思Ascend 310 AI处理器，适用于图像识别、视频处理、推理计算以及机器学习等场景，点此可<a href="https://account.huaweicloud.com/usercenter/#/userindex/betaManagement?serviceCode=ecs_ascend_ai1" target="_blank" rel="noopener noreferrer">立即申请</a>。</p>
-        </td>
-        </tr>
-        </tbody>
-        </table>
-
-    3.  **生命周期：**用于设置容器启动和运行时需要执行的命令。
-        -   启动命令：设置容器启动时执行的命令，具体请参见[设置容器启动命令](设置容器启动命令.md)。
-        -   启动后处理：设置容器成功运行后执行的命令，详细配置方法请参见[设置容器生命周期](设置容器生命周期.md)。
-        -   停止前处理：设置容器结束前执行的命令，通常用于删除日志/临时文件等，详细配置方法请参见[设置容器生命周期](设置容器生命周期.md)。
-
-    4.  **健康检查：**CCE提供了存活与业务两种探针，用于判断容器和用户业务是否正常运行。详细配置方法请参见[设置容器健康检查](设置容器健康检查.md)。
-        -   工作负载存活探针：检查容器是否正常，不正常则重启实例。
-        -   工作负载业务探针：检查用户业务是否就绪，不就绪则不转发流量到当前实例。
-
-    5.  **环境变量：**在容器中添加环境变量，一般用于通过环境变量设置参数。
-
-        在“环境变量“页签，单击“添加环境变量“，当前支持三种类型：
-
-        -   手动添加：输入变量名称、变量/变量引用。
-        -   密钥导入：输入变量名称，选择导入的密钥名称和数据。您需要提前创建密钥，具体请参见[创建密钥](创建密钥.md)。
-        -   配置项导入：输入变量名称，选择导入的配置项名称和数据。您需要提前创建配置项，具体请参见[创建配置项](创建配置项.md)。
+        -   基本信息：[容器基本信息](容器基本信息.md)
+        -   生命周期：[设置容器生命周期](设置容器生命周期.md)
+        -   健康检查：[设置容器健康检查](设置容器健康检查.md)
+        -   环境变量：[设置环境变量](设置环境变量.md)
+        -   数据存储：[存储概述](存储概述.md)
 
             >![](public_sys-resources/icon-note.gif) **说明：** 
-            >对于已设置的环境变量，单击环境变量后的“编辑”，可对该环境变量进行编辑。单击环境变量后的“删除”，可删除该环境变量。
+            >负载实例数大于1时，不支持挂载云硬盘类型的存储。
 
+        -   安全设置：对容器权限进行设置，保护系统和其他容器不受其影响。请输入用户ID，容器将以当前用户权限运行。
+        -   容器日志：[容器日志](容器日志.md)
 
-    6.  **数据存储：**给容器挂载数据存储，支持本地磁盘和云存储，适用于需持久化存储、高磁盘IO等场景。具体请参见[存储管理-CSI](存储管理-CSI.md)。
-    7.  **安全设置：**对容器权限进行设置，保护系统和其他容器不受其影响。
+    -   镜像访问凭证：用于访问镜像仓库的凭证，默认取值为default-secret，使用default-secret可访问SWR镜像仓库的镜像。default-secret详细说明请参见[default-secret](集群系统密钥说明.md#section11760122012591)。
+    -   GPU显卡：默认为不限制。当集群中存在GPU节点时，工作负载实例可以调度到指定GPU显卡类型的节点上。
 
-        请输入用户ID，容器将以当前用户权限运行。
+    **服务配置**
 
-    8.  **容器日志：**设置容器日志采集策略、配置日志目录。用于收集容器日志便于统一管理和分析。详细配置请参见[容器日志](容器日志.md)。
+    服务（Service）是用来解决Pod访问问题的。每个Service有一个固定IP地址，Service将访问流量转发给Pod，而且Service可以给这些Pod做负载均衡。
 
-4.  单击“下一步：工作负载访问设置“，单击“添加服务“，设置工作负载访问方式。
+    您也可以在创建完工作负载之后再创建Service，Service的概念和使用方法请参见[Service概述](Service概述.md)。
 
-    若工作负载需要和其它服务互访，或需要被公网访问，您需要添加服务，设置工作负载访问方式。
+    **高级配置**
 
-    工作负载访问的方式决定了这个工作负载的网络属性，不同访问方式的工作负载可以提供不同网络能力，具体请参见[网络概述](网络概述.md)。
+    -   升级策略：[工作负载升级配置](工作负载升级配置.md)
+    -   调度策略：[调度策略（亲和与反亲和）](调度策略（亲和与反亲和）.md)
+    -   标签与注解：[Pod标签与注解](Pod标签与注解.md)
+    -   容忍策略：当工作负载实例所在的节点不可用时，系统将实例重新调度到其它可用节点的时间窗。迁移时间窗 \(s\)：请输入时间，默认为300秒。容忍与污点相关，请参见[容忍度（Toleration）](管理节点污点（taint）.md#section2047442210417)。
+    -   DNS配置：[工作负载DNS配置说明](工作负载DNS配置说明.md)
+    -   性能管理配置：[性能管理配置（性能瓶颈分析）](性能管理配置（性能瓶颈分析）.md)
 
-5.  单击“下一步：高级设置“，配置更多高级策略。
-    -   **升级策略：**
-        -   升级方式：支持“滚动升级“。滚动升级将逐步用新版本的实例替换旧版本的实例，升级的过程中，业务流量会同时负载均衡分布到新老的实例上，因此业务不会中断。
-        -   最大无效实例数：每次滚动升级允许的最大无效实例数，如果等于实例数有断服风险（最小存活实例数 = 实例数 - 最大无效实例数）。
+4.  单击右下角“创建工作负载“。
 
-    -   **缩容策略：**
+## 通过kubectl命令行创建<a name="section856819324156"></a>
 
-        缩容时间窗：请输入时间。为工作负载删除提供一个时间窗，预留给生命周期中PreStop阶段执行命令。若超过此时间窗，进程仍未停止，该工作负载将被强制删除。
+本节以nginx工作负载为例，说明kubectl命令创建工作负载的方法。
 
-    -   **调度策略：**您可以根据需要自由组合静态的全局调度策略或动态的运行时调度策略来实现自己的需求。具体请参见[调度策略概述](调度策略概述.md)。
-    -   **Pod高级设置**
+1.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
+2.  创建一个名为nginx-daemonset.yaml的描述文件。其中，nginx-daemonset.yaml为自定义名称，您可以随意命名。
 
-        -   Pod标签：内置app标签在工作负载创建时指定，主要用于设置亲和性与反亲和性调度，暂不支持修改。您可以单击下方的“添加标签“增加标签。
+    **vi nginx-daemonset.yaml**
 
-        **图 1**  Pod高级设置<a name="cce_01_0047_fig2225829163110"></a>  
-        ![](figures/Pod高级设置.png "Pod高级设置")
+    描述文件内容如下。此处仅为示例，daemonset的详细说明请参见[kubernetes官方文档](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/)。
 
-    -   **客户端DNS配置**：CCE集群内置DNS插件CoreDNS，为集群内的工作负载提供域名解析服务。详细使用方法请参见[工作负载DNS配置说明](工作负载DNS配置说明.md)。
-        -   DNS策略：
-            -   追加域名解析配置：选择该配置后，将保留默认配置，以下“IP地址“和“搜索域“配置可能不生效。
-            -   替换域名解析配置：选择该配置后，将仅使用以下“IP地址“和“搜索域“配置进行域名解析。
-            -   继承Pod所在节点域名解析配置：将继承Pod所在节点的域名解析配置。
+    ```
+    apiVersion: apps/v1
+    kind: DaemonSet
+    metadata:
+      name: nginx-daemonset
+      labels:
+        app: nginx-daemonset
+    spec:
+      selector:
+        matchLabels:
+          app: nginx-daemonset
+      template:
+        metadata:
+          labels:
+            app: nginx-daemonset
+        spec:
+          nodeSelector:                 # 节点选择，当节点拥有daemon=need时才在节点上创建Pod
+            daemon: need
+          containers:
+          - name: nginx-daemonset
+            image: nginx:alpine
+            resources:
+              limits:
+                cpu: 250m
+                memory: 512Mi
+              requests:
+                cpu: 250m
+                memory: 512Mi
+          imagePullSecrets:
+          - name: default-secret
+    ```
 
-        -   IP地址：您可对自定义的域名配置域名服务器，值为一个或一组DNS IP地址，如“1.2.3.4”。
-        -   搜索域：定义域名的搜索域列表，当访问的域名不能被DNS解析时，会把该域名与搜索域列表中的域依次进行组合，并重新向DNS发起请求，直到域名被正确解析或者尝试完搜索域列表为止。
-        -   超时时间（s）：查询超时时间，请自定义。
-        -   ndots：表示域名中必须出现的“.”的个数，如果域名中的“.”的个数不小于ndots，则该域名为一个FQDN，操作系统会直接查询；如果域名中的“.”的个数小于ndots，操作系统会在搜索域中进行查询。
+    这里可以看出没有Deployment或StatefulSet中的replicas参数，因为是每个节点固定一个。
 
-    -   **自定义指标监控：**是指监控系统提供的一种指标收集机制，该机制允许工作负载在部署时自定义需要上报的指标名称以及获取这些指标数据的接入点信息，在应用运行时由监控系统按固定的频率访问接入点进行指标的收集。详细请参见[自定义监控](自定义监控.md)。
-    -   **性能管理配置：**性能管理服务可协助您快速进行工作负载的问题定位与性能瓶颈分析。详细请参见[性能管理配置（性能瓶颈分析）](性能管理配置（性能瓶颈分析）.md)。
+    Pod模板中有个nodeSelector，指定了只在有“daemon=need“的节点上才创建Pod，如下图所示，DaemonSet只在指定标签的节点上创建Pod。如果需要在每一个节点上创建Pod可以删除该标签。
 
-6.  配置完成后，单击“创建”，在创建成功页面单击“返回工作负载列表”，查看工作负载状态。
+3.  创建daemonset。
 
-    在工作负载列表中，当工作负载状态为“运行中”时，表示工作负载创建成功。
+    **kubectl create -f nginx-daemonset.yaml**
 
-    工作负载状态不会实时更新，请单击右上角的![](figures/zh-cn_image_0183674977.png)图标或按F5刷新页面查看。
+    回显如下表示已开始创建daemonset。
 
+    ```
+    daemonset.apps/nginx-daemonset created
+    ```
+
+4.  查看daemonset状态。
+
+    **kubectl get ds**
+
+    ```
+    $ kubectl get ds
+    NAME              DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+    nginx-daemonset   1         1         0       1            0           daemon=need     116s
+    ```
+
+5.  若工作负载需要被访问（集群内访问或节点访问），您需要设置访问方式，具体请参见[网络管理](网络管理.md)创建对应服务。
 

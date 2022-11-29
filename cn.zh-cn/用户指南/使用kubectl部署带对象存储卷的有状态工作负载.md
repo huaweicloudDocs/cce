@@ -1,20 +1,16 @@
-# 使用kubectl部署带对象存储卷的有状态工作负载<a name="cce_01_0268"></a>
+# 使用kubectl部署带对象存储卷的有状态工作负载<a name="cce_10_0328"></a>
 
 ## 操作场景<a name="section1062914713566"></a>
 
-CCE支持使用对象存储卷（PersistentVolumeClaim），创建有状态工作负载（StatefulSet）**。**
-
-## 前提条件<a name="section13181839131510"></a>
-
-您已经创建好一个CCE集群，并且在该集群中安装CSI插件（[Everest](Everest（系统资源插件-必装）.md)）。
+CCE支持使用已有的对象存储卷（PersistentVolumeClaim），创建有状态工作负载（StatefulSet）**。**
 
 ## 约束与限制<a name="section946015116135"></a>
 
-如下配置示例适用于Kubernetes 1.15及以上版本的集群。
+如下配置示例适用于Kubernetes 1.13及以下版本的集群。
 
 ## 操作步骤<a name="section1530655595611"></a>
 
-1.  参照[创建对象存储卷](使用对象存储卷.md#section172788131291)中操作创建对象存储卷，并获取PVC名称。
+1.  参照[使用kubectl自动创建对象存储](使用kubectl自动创建对象存储.md)中操作创建对象存储卷，并获取PVC名称。
 2.  请参见[通过kubectl连接集群](通过kubectl连接集群.md)，使用kubectl连接集群。
 3.  新建一个YAML文件，用于创建工作负载。假设文件名为**obs-statefulset-example.yaml**。
 
@@ -22,7 +18,7 @@ CCE支持使用对象存储卷（PersistentVolumeClaim），创建有状态工�
 
     **vi obs-statefulset-example.yaml**
 
-    配置示例：
+    **yaml示例如下：**
 
     ```
     apiVersion: apps/v1
@@ -35,25 +31,30 @@ CCE支持使用对象存储卷（PersistentVolumeClaim），创建有状态工�
       selector:
         matchLabels:
           app: obs-statefulset-example
+      serviceName: qwqq
       template:
         metadata:
+          annotations:
+            metrics.alpha.kubernetes.io/custom-endpoints: '[{"api":"","path":"","port":"","names":""}]'
+            pod.alpha.kubernetes.io/initialized: "true"
+          creationTimestamp: null
           labels:
             app: obs-statefulset-example
         spec:
-          volumes: 
-          - name: pvc-obs-example 
-            persistentVolumeClaim:
-              claimName: pvc-obs-example     
-          containers:
-          - name: container-0
-            image: 'nginx:latest'
+          affinity: {}
+          containers:	
+            image: nginx:latest
+            imagePullPolicy: Always
+            name: container-0
             volumeMounts:
-              - name: pvc-obs-example
-                mountPath: /tmp
-          restartPolicy: Always
+            - mountPath: /tmp
+              name: pvc-obs-example
           imagePullSecrets:
-          - name: default-secret 
-      serviceName: obs-statefulset-example-headless    # Headless Service的名称
+          - name: default-secret
+          volumes:
+            - name: pvc-obs-example
+              persistentVolumeClaim:
+                claimName: cce-obs-demo
     ```
 
     **表 1**  关键参数说明
@@ -98,132 +99,8 @@ CCE支持使用对象存储卷（PersistentVolumeClaim），创建有状态工�
     </tbody>
     </table>
 
-    在有状态工作负载中基于PVCTemplate独占式使用对象存储。
-
-    **yaml示例如下：**
-
-    ```
-    apiVersion: apps/v1
-    kind: StatefulSet
-    metadata:
-      name: obs-statefulset-example
-      namespace: default
-    spec:
-      replicas: 1
-      selector:
-        matchLabels:
-          app: obs-statefulset-example
-      template:
-        metadata:
-          labels:
-            app: obs-statefulset-example
-        spec:
-          containers:
-            - name: container-0
-              image: 'nginx:latest'
-              volumeMounts:
-                - name: pvc-obs-auto-example
-                  mountPath: /tmp
-          restartPolicy: Always
-          imagePullSecrets:
-            - name: default-secret
-      volumeClaimTemplates:
-        - metadata:
-            name: pvc-obs-auto-example
-            namespace: default
-            annotations:
-              everest.io/obs-volume-type: STANDARD
-          spec:
-            accessModes:
-              - ReadWriteMany
-            resources:
-              requests:
-                storage: 1Gi
-            storageClassName: csi-obs  
-      serviceName: obs-statefulset-example-headless
-    ```
-
 4.  创建有状态工作负载。
 
     **kubectl create -f obs-statefulset-example.yaml**
-
-
-## 验证对象存储的持久化存储<a name="section179416310352"></a>
-
-1.  查询部署的工作负载（以**obs-statefulset-example**为例）的实例和对象存储。
-    1.  执行以下命令，查看工作负载对应的实例名称。
-
-        ```
-        kubectl get po | grep obs-statefulset-example
-        ```
-
-        期望输出：
-
-        ```
-        obs-statefulset-example-0   1/1     Running   0          2m5s
-        ```
-
-    2.  执行以下命令，查看/tmp目录下是否挂载了对象存储。
-
-        ```
-        kubectl exec obs-statefulset-example-0 -- mount|grep /tmp
-        ```
-
-        期望输出：
-
-        ```
-        s3fs on /tmp type fuse.s3fs (rw,nosuid,nodev,relatime,user_id=0,group_id=0,allow_other)
-        ```
-
-2.  执行以下命令，在/tmp路径下创建文件test。
-
-    ```
-    kubectl exec obs-statefulset-example-0 -- touch /tmp/test
-    ```
-
-3.  执行以下命令，查看/tmp路径下的文件。
-
-    ```
-    kubectl exec obs-statefulset-example-0 -- ls -l /tmp
-    ```
-
-    预期输出：
-
-    ```
-    -rw-r--r-- 1 root root     0 Jun  1 02:50 test
-    ```
-
-4.  执行以下命令，删除名称为obs-statefulset-example-0的实例
-
-    ```
-    kubectl delete po obs-statefulset-example-0
-    ```
-
-5.  验证重建后的实例，文件是否仍然存在。
-    1.  执行以下命令，查看重建的实例名称
-
-        ```
-        kubectl get po
-        ```
-
-        预期输出：
-
-        ```
-        obs-statefulset-example-0   1/1     Running   0          2m
-        ```
-
-    2.  执行以下命令，查看/tmp路径下的文件
-
-        ```
-        kubectl exec obs-statefulset-example-0 -- ls -l /tmp
-        ```
-
-        预期输出：
-
-        ```
-        -rw-r--r-- 1 root root     0 Jun  1 02:50 test
-        ```
-
-    3.  test文件在实例重建之后仍然存在，说明对象存储数据可持久化保存。
 
 

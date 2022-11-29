@@ -1,12 +1,6 @@
-# 对象存储卷挂载设置自定义访问密钥（AK/SK）<a name="cce_01_0336"></a>
+# 对象存储卷挂载设置自定义访问密钥（AK/SK）<a name="cce_10_0336"></a>
 
 ## 背景信息<a name="section69149541619"></a>
-
-对象存储卷在使用时要求先在控制台上传访问密钥（参考对象存储卷[准备工作](使用对象存储卷.md#section14271608324)）。
-
-![](figures/001-28.png)
-
-为了方便使用，对象存储卷挂载时默认使用用户上传的访问密钥，相当于所有IAM用户（即子用户）都使用的是同一个访问密钥挂载的对象捅，对桶的权限都是一样的，导致无法对IAM用户使用对象存储桶进行权限控制。
 
 Everest在1.2.8及以上版本提供了设置自定义访问密钥的能力，这样可以让IAM用户使用自己的访问密钥挂载对象存储卷，从而可以对OBS进行访问权限控制（具体请参见[如何对OBS进行访问权限控制？](https://support.huaweicloud.com/obs_faq/obs_faq_0042.html)）。
 
@@ -21,7 +15,9 @@ Everest在1.2.8及以上版本提供了设置自定义访问密钥的能力，�
 
 ## 关闭自动挂载访问密钥<a name="section1045502219184"></a>
 
-为防止IAM用户越权，建议关闭自动挂载访问密钥，即需要在Everest插件中将**disable\_auto\_mount\_secret**参数打开，这样使用对象存储时就不会自动使用在控制台上传的访问密钥。
+老版本控制台会要求您上传AK/SK，对象存储卷挂载时默认使用您上传的访问密钥，相当于所有IAM用户（即子用户）都使用的是同一个访问密钥挂载的对象捅，对桶的权限都是一样的，导致无法对IAM用户使用对象存储桶进行权限控制。
+
+如果您之前上传过AK/SK，为防止IAM用户越权，建议关闭自动挂载访问密钥，即需要在Everest插件中将**disable\_auto\_mount\_secret**参数打开，这样使用对象存储时就不会自动使用在控制台上传的访问密钥。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   设置disable-auto-mount-secret时要求当前集群中无对象存储卷，否则挂载了该对象卷的工作负载扩容或重启的时候会由于必须指定访问密钥而导致挂卷失败。
@@ -31,7 +27,7 @@ Everest在1.2.8及以上版本提供了设置自定义访问密钥的能力，�
 
 搜索disable-auto-mount-secret，并将值设置为true。
 
-![](figures/zh-cn_image_0000001118652602.png)
+![](figures/zh-cn_image_0000001199181232.png)
 
 执行** :wq **保存退出，等待实例重启完毕即可。
 
@@ -96,7 +92,7 @@ Everest在1.2.8及以上版本提供了设置自定义访问密钥的能力，�
     </tr>
     <tr id="row16799198182814"><td class="cellrowborder" valign="top" width="26.43%" headers="mcps1.1.3.1.1 "><p id="p0245182232816"><a name="p0245182232816"></a><a name="p0245182232816"></a>secret.kubernetes.io/used-by: csi</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.57000000000001%" headers="mcps1.1.3.1.2 "><p id="p380018122814"><a name="p380018122814"></a><a name="p380018122814"></a>带上这个标签才能在CCE新版控制台UI上创建OBS PV/PVC时可见。</p>
+    <td class="cellrowborder" valign="top" width="73.57000000000001%" headers="mcps1.1.3.1.2 "><p id="p380018122814"><a name="p380018122814"></a><a name="p380018122814"></a>带上这个标签才能在控制台上创建OBS PV/PVC时可见。</p>
     </td>
     </tr>
     <tr id="row1451283421016"><td class="cellrowborder" valign="top" width="26.43%" headers="mcps1.1.3.1.1 "><p id="p25121234161018"><a name="p25121234161018"></a><a name="p25121234161018"></a>type</p>
@@ -316,7 +312,7 @@ Everest在1.2.8及以上版本提供了设置自定义访问密钥的能力，�
 
 4.  参考桶策略配置，给挂载桶的子用户设置读写权限。
 
-    ![](figures/zh-cn_image_0000001118492694.png)
+    ![](figures/zh-cn_image_0000001244141105.png)
 
 5.  再次尝试在挂在目录内写入数据，写入成功。
 

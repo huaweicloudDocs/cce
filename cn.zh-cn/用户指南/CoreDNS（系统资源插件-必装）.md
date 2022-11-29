@@ -1,10 +1,10 @@
-# CoreDNS（系统资源插件，必装）<a name="cce_01_0129"></a>
+# CoreDNS（系统资源插件，必装）<a name="cce_10_0129"></a>
 
 ## 插件简介<a name="section25311744154917"></a>
 
 CoreDNS插件是一款通过链式插件的方式为Kubernetes提供域名解析服务的DNS服务器。
 
-CoreDNS是由CNCF孵化的开源软件，用于Cloud-Native环境下的DNS服务器和服务发现解决方案。CoreDNS实现了插件链式架构，能够按需组合插件，运行效率高、配置灵活。在kubernetes集群中使用CoreDNS能够自动发现集群内的服务，并为这些服务提供域名解析。同时，通过级联华为云的DNS服务器，还能够为集群内的工作负载提供外部域名的解析服务。
+CoreDNS是由CNCF孵化的开源软件，用于Cloud-Native环境下的DNS服务器和服务发现解决方案。CoreDNS实现了插件链式架构，能够按需组合插件，运行效率高、配置灵活。在kubernetes集群中使用CoreDNS能够自动发现集群内的服务，并为这些服务提供域名解析。同时，通过级联云上DNS服务器，还能够为集群内的工作负载提供外部域名的解析服务。
 
 **该插件为系统资源插件，kubernetes 1.11及以上版本的集群在创建时默认安装。**
 
@@ -15,7 +15,7 @@ CoreDNS官网：[https://coredns.io/](https://coredns.io/)
 开源社区地址：[https://github.com/coredns/coredns](https://github.com/coredns/coredns)
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->DNS详细使用方法请参见[工作负载DNS配置说明](工作负载DNS配置说明.md)。
+>DNS详细使用方法请参见[DNS](DNS.md)。
 
 ## 约束与限制<a name="section10849134521812"></a>
 
@@ -25,9 +25,8 @@ CoreDNS正常运行或升级时，请确保集群中的可用节点数大于等�
 
 本插件为系统默认安装，若因特殊情况卸载后，可参照如下步骤重新安装。
 
-1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件市场“页签下，单击**coredns**插件下的“安装插件“。
-2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
-3.  在“规格配置“步骤中，可配置如下参数：
+1.  登录CCE控制台，进入集群，在左侧导航栏中选择“插件管理“，在右侧找到**coredns**，单击“安装“。
+2.  在安装插件页面，选择插件规格，并配置相关参数。
 
     **表 1**  coredns插件参数配置
 
@@ -45,7 +44,7 @@ CoreDNS正常运行或升级时，请确保集群中的可用节点数大于等�
     </tr>
     <tr id="row83701240105118"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p3370040165116"><a name="p3370040165116"></a><a name="p3370040165116"></a>实例数</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p93701640145120"><a name="p93701640145120"></a><a name="p93701640145120"></a>选择上方插件规格后，显示插件中的实例数，此处仅作显示。</p>
+    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p93701640145120"><a name="p93701640145120"></a><a name="p93701640145120"></a>选择上方插件规格后，显示插件中的实例数。</p>
     </td>
     </tr>
     <tr id="row4370840165119"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p937054045117"><a name="p937054045117"></a><a name="p937054045117"></a>容器</p>
@@ -53,124 +52,138 @@ CoreDNS正常运行或升级时，请确保集群中的可用节点数大于等�
     <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p1437014065110"><a name="p1437014065110"></a><a name="p1437014065110"></a>选择插件规格后，显示插件容器的CPU和内存配额，此处仅作显示。</p>
     </td>
     </tr>
-    <tr id="row12370940175116"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p237044095117"><a name="p237044095117"></a><a name="p237044095117"></a>提示</p>
+    <tr id="row53701440125116"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p8370124035118"><a name="p8370124035118"></a><a name="p8370124035118"></a>参数配置</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p1493852310547"><a name="p1493852310547"></a><a name="p1493852310547"></a>关于本插件的注意事项，请仔细阅读。</p>
-    </td>
-    </tr>
-    <tr id="row53701440125116"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p8370124035118"><a name="p8370124035118"></a><a name="p8370124035118"></a>存根域</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p1837104015118"><a name="p1837104015118"></a><a name="p1837104015118"></a>单击<span class="uicontrol" id="uicontrol1158517458572"><a name="uicontrol1158517458572"></a><a name="uicontrol1158517458572"></a>“添加”</span>，您可对自定义的域名配置域名服务器，格式为一个键值对，键为DNS后缀域名，值为一个或一组DNS IP地址，如"acme.local -- 1.2.3.4,6.7.8.9"。</p>
+    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><a name="ul221832131618"></a><a name="ul221832131618"></a><ul id="ul221832131618"><li>parameterSyncStrategy：插件升级时是否配置一致性检查。<a name="ul9522414615"></a><a name="ul9522414615"></a><ul id="ul9522414615"><li>ensureConsistent：表示启用配置一致性检查，如果集群中记录的配置和实际生效配置不一致，插件将无法升级。</li><li>force：表示升级时忽略配置一致性检查。请您自行确保当前生效配置和原配置一致。插件升级完毕后，需恢复parameterSyncStrategy值为ensureConsistent，重新启用配置一致性检查。</li></ul>
+    </li><li>stub_domains：存根域，您可对自定义的域名配置域名服务器，格式为一个键值对，键为DNS后缀域名，值为一个或一组DNS IP地址。</li><li>upstream_nameservers：上游域名服务器地址。</li><li>servers: coredns 1.23.1插件版本开始开放servers配置，用户可对servers做定制化配置，参见<a href="https://kubernetes.io/zh/docs/tasks/administer-cluster/dns-custom-nameservers" target="_blank" rel="noopener noreferrer">dns-custom-nameservers</a>，其中plugins为coredns中各组件配置（参考https://coredns.io/manual/plugins/，一般场景建议保持默认配置，以免出现配置错误而导致coredns整体不可用），每个plugin组件可包含"name"、"parameters"(可选)、"configBlock"(可选)配置，对应生成的Corefile配置文件中格式如下:<p id="p17731113172317"><a name="p17731113172317"></a><a name="p17731113172317"></a>$name  $parameters {</p>
+    <p id="p1122616245232"><a name="p1122616245232"></a><a name="p1122616245232"></a>$configBlock</p>
+    <p id="p2035773019227"><a name="p2035773019227"></a><a name="p2035773019227"></a>}</p>
+    <p id="p187693475389"><a name="p187693475389"></a><a name="p187693475389"></a>常用plugin的说明请参见<a href="#table1420814384015">表2</a>。</p>
+    </li></ul>
+    <p id="p13671111141717"><a name="p13671111141717"></a><a name="p13671111141717"></a>示例：</p>
+    <pre class="screen" id="screen9635912141719"><a name="screen9635912141719"></a><a name="screen9635912141719"></a>{
+         "servers": [
+    		   {
+    			"plugins": [
+    				{
+    					"name": "bind",
+    					"parameters": "{$POD_IP}"
+    				},
+    				{
+    					"name": "cache",
+    					"parameters": 30
+    				},
+    				{
+    					"name": "errors"
+    				},
+    				{
+    					"name": "health",
+    					"parameters": "{$POD_IP}:8080"
+    				},
+    				{
+    					"configBlock": "pods insecure\nfallthrough in-addr.arpa ip6.arpa",
+    					"name": "kubernetes",
+    					"parameters": "cluster.local in-addr.arpa ip6.arpa"
+    				},
+    				{
+    					"name": "loadbalance",
+    					"parameters": "round_robin"
+    				},
+    				{
+    					"name": "prometheus",
+    					"parameters": "{$POD_IP}:9153"
+    				},
+    				{
+    					"configBlock": "policy random",
+    					"name": "forward",
+    					"parameters": ". /etc/resolv.conf"
+    				},
+    				{
+    					"name": "reload"
+    				},
+    				{
+    					"name": "log"
+    				}
+    			],
+    			"port": 5353,
+    			"zones": [
+    				{
+    					"zone": "."
+    				}
+    			]
+    		}
+    	],
+    	"stub_domains": {
+    		"acme.local": [
+    			"1.2.3.4",
+    			"6.7.8.9"
+    		]
+    	},
+    	"upstream_nameservers": ["8.8.8.8", "8.8.4.4"]
+    }</pre>
     </td>
     </tr>
     </tbody>
     </table>
 
-4.  完成以上配置后，单击“安装“。
+    **表 2**  coredns主zone默认plugin配置说明
 
-    待插件安装完成后，单击“返回“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
+    <a name="table1420814384015"></a>
+    <table><thead align="left"><tr id="row122089381904"><th class="cellrowborder" valign="top" width="24.93%" id="mcps1.2.3.1.1"><p id="p42081738709"><a name="p42081738709"></a><a name="p42081738709"></a>plugin名称</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="75.07000000000001%" id="mcps1.2.3.1.2"><p id="p02081938205"><a name="p02081938205"></a><a name="p02081938205"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row192083386015"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p1020814381709"><a name="p1020814381709"></a><a name="p1020814381709"></a>bind</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p1020813385019"><a name="p1020813385019"></a><a name="p1020813385019"></a>coredns 侦听的hostIP配置，建议保持当前默认值{$POD_IP}。</p>
+    </td>
+    </tr>
+    <tr id="row72085381200"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p17208738008"><a name="p17208738008"></a><a name="p17208738008"></a>cache</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p122081381708"><a name="p122081381708"></a><a name="p122081381708"></a><span>启用</span>DNS缓存。</p>
+    </td>
+    </tr>
+    <tr id="row20208338609"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p13208163819018"><a name="p13208163819018"></a><a name="p13208163819018"></a>errors</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p2208838309"><a name="p2208838309"></a><a name="p2208838309"></a>错误信息到标准输出。</p>
+    </td>
+    </tr>
+    <tr id="row320816381009"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p1420810386014"><a name="p1420810386014"></a><a name="p1420810386014"></a>health</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p19208153819010"><a name="p19208153819010"></a><a name="p19208153819010"></a>coredns健康检查配置，当前侦听{$POD_IP}:8080，<span>请保持此默认值，否则导致coredns健康检查失败而不断重启</span></p>
+    </td>
+    </tr>
+    <tr id="row320883811017"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p82081381506"><a name="p82081381506"></a><a name="p82081381506"></a>kubernetes</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p480645417412"><a name="p480645417412"></a><a name="p480645417412"></a>CoreDNS Kubernetes插件，提供集群内服务解析能力。</p>
+    </td>
+    </tr>
+    <tr id="row420811381012"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p1220893817011"><a name="p1220893817011"></a><a name="p1220893817011"></a>loadbalance</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p4208143817017"><a name="p4208143817017"></a><a name="p4208143817017"></a><span>轮转式 DNS 负载均衡器， 在应答中随机分配 A、AAAA 和 MX 记录的顺序</span>。</p>
+    </td>
+    </tr>
+    <tr id="row204781431659"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p04781133513"><a name="p04781133513"></a><a name="p04781133513"></a>prometheus</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p10970514661"><a name="p10970514661"></a><a name="p10970514661"></a>CoreDNS自身metrics数据接口, 默认zone侦听{$POD_IP}:9153，<span>请保持此默认值，否则普罗无法采集coredns metrics数据。</span></p>
+    </td>
+    </tr>
+    <tr id="row4820791651"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p2820899511"><a name="p2820899511"></a><a name="p2820899511"></a>forward</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p78211391652"><a name="p78211391652"></a><a name="p78211391652"></a><span>不在 Kubernetes 集群域内的任何查询都将转发到默认的解析器 (/etc/resolv.conf)。</span></p>
+    </td>
+    </tr>
+    <tr id="row6126137245"><td class="cellrowborder" valign="top" width="24.93%" headers="mcps1.2.3.1.1 "><p id="p181260314249"><a name="p181260314249"></a><a name="p181260314249"></a>reload</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="75.07000000000001%" headers="mcps1.2.3.1.2 "><p id="p1812620312244"><a name="p1812620312244"></a><a name="p1812620312244"></a>允许自动重新加载已更改的 Corefile。 编辑 ConfigMap 配置后，请等待两分钟，以使更改生效。</p>
+    </td>
+    </tr>
+    </tbody>
+    </table>
 
-
-## 为CoreDNS配置存根域<a name="section5202157467"></a>
-
-集群管理员可以修改CoreDNS Corefile的ConfigMap以更改服务发现的工作方式。使用插件proxy可对CoreDNS的存根域进行配置。
-
-若集群管理员有一个位于10.150.0.1的Consul域名解析服务器，并且所有Consul的域名都带有.consul.local的后缀。
-
-执行以下命令，在CoreDNS的ConfigMap中添加如下信息即可将该域名服务器配置在CoreDNS中：
-
-**kubectl edit configmap coredns -n kube-system**
-
-参照下方示例进行配置：
-
-```
-consul.local:5353 {
-        errors
-        cache 30
-        proxy . 10.150.0.1
-    }
-```
-
-**v1.15.11及之后的集群版本**，修改后最终的ConfigMap如下所示：
-
-```
-apiVersion: v1
-metadata:
-  name: coredns
-  namespace: kube-system
-  selfLink: /api/v1/namespaces/kube-system/configmaps/coredns
-  uid: 00cb8f29-62d7-4df8-a769-0a16237903c1
-  resourceVersion: '2074614'
-  creationTimestamp: '2021-04-07T03:52:42Z'
-  labels:
-    app: coredns
-    k8s-app: coredns
-    kubernetes.io/cluster-service: 'true'
-    kubernetes.io/name: CoreDNS
-    release: cceaddon-coredns
-data:
-  Corefile: |-
-    .:5353 {
-        bind {$POD_IP}
-        cache 30
-        errors
-        health {$POD_IP}:8080
-        kubernetes cluster.local in-addr.arpa ip6.arpa {
-          pods insecure
-          upstream /etc/resolv.conf
-          fallthrough in-addr.arpa ip6.arpa
-        }
-        loadbalance round_robin
-        prometheus {$POD_IP}:9153
-        forward . /etc/resolv.conf
-        reload
-    }
-
-    acme.local:5353 {
-        bind {$POD_IP}
-        errors
-        cache 30
-        forward . 1.2.3.4
-    }
-    test.com:5353 {
-        bind {$POD_IP}
-        errors
-        cache 30
-        forward . 8.8.8.8
-    }
-```
-
-**1.15.11之前的集群版本**，修改后最终的ConfigMap如下所示：
-
-```
-apiVersion: v1
-data:
-  Corefile: |-
-    .:5353 {
-        cache 30
-        errors
-        health
-        kubernetes cluster.local in-addr.arpa ip6.arpa {
-          pods insecure
-          upstream /etc/resolv.conf
-          fallthrough in-addr.arpa ip6.arpa
-        }
-        loadbalance round_robin
-        prometheus 0.0.0.0:9153
-        proxy . /etc/resolv.conf
-        reload
-    }
-
-    consul.local:5353 {
-        errors
-        cache 30
-        proxy . 10.150.0.1
-    }
-kind: ConfigMap
-metadata:
-  name: coredns
-  namespace: kube-system
-```
+3.  完成以上配置后，单击“安装“。
 
 ## kubernetes中的域名解析逻辑<a name="section1860523212152"></a>
 
@@ -279,44 +292,4 @@ CoreDNS在插件界面仅支持按预设规格配置，通常情况下，这满�
     }
     ```
 
-
-## 升级插件<a name="section19566181513486"></a>
-
-1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“升级“。
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
-    >-   升级时之前的配置会丢失，需要重新配置。
-    >-   升级coredns插件时，会替换原先节点上的旧版本的coredns插件，安装最新版本的coredns插件以实现功能的快速升级。如果升级出现异常，请卸载插件后重新安装和配置。
-
-2.  在基本信息页面选择插件版本，单击“下一步“。
-3.  参照[表2](#table1410658238)配置插件安装参数。配置完成后，单击“升级“即可升级coredns插件。
-
-    **表 2**  安装插件说明
-
-    <a name="table1410658238"></a>
-    <table><thead align="left"><tr id="row10111254234"><th class="cellrowborder" valign="top" width="21.240000000000002%" id="mcps1.2.3.1.1"><p id="p1711053236"><a name="p1711053236"></a><a name="p1711053236"></a>参数</p>
-    </th>
-    <th class="cellrowborder" valign="top" width="78.75999999999999%" id="mcps1.2.3.1.2"><p id="p10119522319"><a name="p10119522319"></a><a name="p10119522319"></a>参数说明</p>
-    </th>
-    </tr>
-    </thead>
-    <tbody><tr id="row1611957237"><td class="cellrowborder" valign="top" width="21.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p16111158235"><a name="p16111158235"></a><a name="p16111158235"></a>插件规格</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="78.75999999999999%" headers="mcps1.2.3.1.2 "><p id="p71111552319"><a name="p71111552319"></a><a name="p71111552319"></a>并发域名解析能力。请根据业务需求选择插件规格。</p>
-    </td>
-    </tr>
-    <tr id="row15111555233"><td class="cellrowborder" valign="top" width="21.240000000000002%" headers="mcps1.2.3.1.1 "><p id="p121114510237"><a name="p121114510237"></a><a name="p121114510237"></a>存根域</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="78.75999999999999%" headers="mcps1.2.3.1.2 "><p id="p2111453233"><a name="p2111453233"></a><a name="p2111453233"></a>用户可对自定义的域名配置域名服务器，格式为一个键值对，键为DNS后缀域名，值为一个或一组DNS IP地址，如"acme.local -- 1.2.3.4,6.7.8.9"。</p>
-    </td>
-    </tr>
-    </tbody>
-    </table>
-
-
-## 卸载插件<a name="section7582615184814"></a>
-
-1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击**coredns**下的“卸载“。
-2.  在弹出的窗口中，单击“是“，可卸载该插件。
 

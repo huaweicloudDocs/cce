@@ -1,6 +1,6 @@
-# 使用HPA+CA实现工作负载和节点联动弹性伸缩<a name="cce_01_0300"></a>
+# 使用HPA+CA实现工作负载和节点联动弹性伸缩<a name="cce_10_0300"></a>
 
-## 应用现状<a name="zh-cn_topic_0000001148755333_section124810133244"></a>
+## 应用场景<a name="zh-cn_topic_0000001148755333_section124810133244"></a>
 
 企业应用的流量大小不是每时每刻都一样，有高峰，有低谷，如果每时每刻都要保持能够扛住高峰流量的机器数目，那么成本会很高。通常解决这个问题的办法就是根据流量大小或资源占用率自动调节机器的数量，也就是弹性伸缩。
 
@@ -12,12 +12,10 @@ CCE中弹性伸缩最主要的就是使用HPA（Horizontal Pod Autoscaling）和
 
 通常情况下，两者需要配合使用，因为HPA需要集群有足够的资源才能扩容成功，当集群资源不够时需要CA扩容节点，使得集群有足够资源；而当HPA缩容后集群会有大量空余资源，这时需要CA缩容节点释放资源，才不至于造成浪费。
 
-如[图1](#zh-cn_topic_0000001148755333_fig6540132372015)所示，HPA根据监控指标进行扩容，当集群资源不够时，新创建的Pod会处于Pending状态，CA会检查所有Pending状态的Pod，根据用户配置的扩缩容策略，选择出一个最合适的节点池，在这个节点池扩容。HPA和CA的工作原理详情请参见[工作负载伸缩原理](https://support.huaweicloud.com/usermanual-cce/cce_01_0290.html)和[节点伸缩原理](https://support.huaweicloud.com/usermanual-cce/cce_01_0296.html)。
+如[图1](#zh-cn_topic_0000001148755333_fig6540132372015)所示，HPA根据监控指标进行扩容，当集群资源不够时，新创建的Pod会处于Pending状态，CA会检查所有Pending状态的Pod，根据用户配置的扩缩容策略，选择出一个最合适的节点池，在这个节点池扩容。HPA和CA的工作原理详情请参见[工作负载伸缩原理](https://support.huaweicloud.com/usermanual-cce/cce_10_0290.html)和[节点伸缩原理](https://support.huaweicloud.com/usermanual-cce/cce_10_0296.html)。
 
 **图 1**  HPA + CA工作流程<a name="zh-cn_topic_0000001148755333_fig6540132372015"></a>  
 ![](figures/HPA-+-CA工作流程.png "HPA-+-CA工作流程")
-
-CCE还支持创建CA策略，根据CPU/内存分配率扩容、还可以按照时间定期扩容节点，CA策略可以与autoscaler默认的根据Pod的Pending状态进行扩容共同作用。
 
 使用HPA+CA可以很容易做到弹性伸缩，且节点和Pod的伸缩过程可以非常方便的观察到，使用HPA+CA做弹性伸缩能够满足大部分业务场景需求。
 
@@ -25,61 +23,119 @@ CCE还支持创建CA策略，根据CPU/内存分配率扩容、还可以按照�
 
 ## 准备工作<a name="zh-cn_topic_0000001148755333_section11665144319113"></a>
 
--   准备一个算力密集型的应用，当用户请求时，需要先计算出结果后才返回给用户结果，如下所示，这是一个PHP页面，代码写在index.php文件中，用户请求时先循环开方1000000次，然后再返回“OK!”。
+1.  创建一个有1个节点的集群，节点规格为2U4G及以上，并在创建节点时为节点添加弹性公网IP，以便从外部访问。如创建节点时未绑定弹性公网IP，您也可以前往ECS控制台为该节点进行手动绑定。
 
-    ```
-    <?php
-      $x = 0.0001;
-      for ($i = 0; $i <= 1000000; $i++) {
-        $x += sqrt($x);
-      }
-      echo "OK!";
-    ?>
-    ```
+    ![](figures/zh-cn_image_0000001306734238.png)
 
-    编写Dockerfile制作镜像。
+2.  给集群安装插件。
+    -   autoscaler：节点伸缩插件。
+    -   metrics-server：是Kubernetes集群范围资源使用数据的聚合器，能够收集包括了Pod、Node、容器、Service等主要Kubernetes核心资源的度量数据。
 
-    ```
-    FROM php:5-apache
-    COPY index.php /var/www/html/index.php
-    RUN chmod a+rx index.php
-    ```
+3.  登录集群节点，准备一个算力密集型的应用。当用户请求时，需要先计算出结果后才返回给用户结果，如下所示。
+    1.  创建一个名为index.php的PHP文件，文件内容是在用户请求时先循环开方1000000次，然后再返回“OK!”。
 
-    执行如下命令构建镜像，镜像名称为hpa-example。
+        ```
+        vi index.php
+        ```
 
-    **docker build -t hpa-example:latest .**
+        文件内容如下：
 
-    构建完成后上传到SWR镜像仓库，上传镜像的步骤请参见[客户端上传镜像](https://support.huaweicloud.com/usermanual-swr/swr_01_0011.html)。
+        ```
+        <?php
+          $x = 0.0001;
+          for ($i = 0; $i <= 1000000; $i++) {
+            $x += sqrt($x);
+          }
+          echo "OK!";
+        ?>
+        ```
 
--   创建一个有1个节点的集群，节点规格2U4G，节点需要带弹性公网IP，以便从外部访问。
--   给集群安装插件。
+    2.  编写Dockerfile制作镜像。
 
-    cce-hpa-controller：HPA插件。
+        ```
+        vi Dockerfile
+        ```
 
-    autoscaler：CA插件。
+        Dockerfile内容如下：
 
-    prometheus：是一套开源的系统监控报警框架，能够采集丰富的Metrics（度量数据）。
+        ```
+        FROM php:5-apache
+        COPY index.php /var/www/html/index.php
+        RUN chmod a+rx index.php
+        ```
 
-    metrics-server：是Kubernetes集群范围资源使用数据的聚合器，能够收集包括了Pod、Node、容器、Service等主要Kubernetes核心资源的度量数据。
+    3.  执行如下命令构建镜像，镜像名称为hpa-example，版本为latest。
 
-    ![](figures/zh-cn_image_0000001101795656.png)
+        ```
+        docker build -t hpa-example:latest .
+        ```
+
+    4.  <a name="zh-cn_topic_0000001148755333_li108181514125"></a>（可选）登录SWR管理控制台，选择左侧导航栏的“组织管理”，单击页面右上角的“创建组织”，创建一个组织。
+
+        如已有组织可跳过此步骤。
+
+    5.  <a name="zh-cn_topic_0000001148755333_li187221141362"></a>在左侧导航栏选择“我的镜像“，单击右侧“客户端上传“，在弹出的页面中单击“生成临时登录指令“，单击![](figures/icon-copy.png)复制登录指令。
+    6.  在集群节点上执行上一步复制的登录指令，登录成功会显示“Login Succeeded”。
+    7.  为hpa-example镜像打标签。
+
+        **docker tag \[镜像名称1:版本名称1\] \[镜像仓库地址\]/\[组织名称\]/\[镜像名称2:版本名称2\]**
+
+        -   **\[镜像名称1:版本名称1\]**：请替换为您本地所要上传的实际镜像的名称和版本名称。
+        -   **\[镜像仓库地址\]**：可在SWR控制台上查询，[5](#zh-cn_topic_0000001148755333_li187221141362)中登录指令末尾的域名即为镜像仓库地址。
+        -   **\[组织名称\]**：请替换为[4](#zh-cn_topic_0000001148755333_li108181514125)中创建的组织。
+        -   **\[镜像名称2:版本名称2\]**：请替换为SWR镜像仓库中需要显示的镜像名称和镜像版本。
+
+        示例：
+
+        **docker tag hpa-example:latest swr.cn-east-3.myhuaweicloud.com/cloud-develop/hpa-example:latest**
+
+    8.  上传镜像至镜像仓库。
+
+        **docker push \[镜像仓库地址\]/\[组织名称\]/\[镜像名称2:版本名称2\]**
+
+        示例：
+
+        **docker push swr.cn-east-3.myhuaweicloud.com/cloud-develop/hpa-example:latest**
+
+        终端显示如下信息，表明上传镜像成功。
+
+        ```
+        6d6b9812c8ae: Pushed 
+        ... 
+        fe4c16cbf7a4: Pushed 
+        latest: digest: sha256:eb7e3bbd*** size: **
+        ```
+
+        返回容器镜像服务控制台，在“我的镜像“页面，执行刷新操作后可查看到对应的镜像信息。
 
 
-## 创建节点池和CA策略<a name="zh-cn_topic_0000001148755333_section1155620269250"></a>
 
-创建节点池，添加一个2U4G的节点，并打开弹性扩缩容开关，如下图所示。
+## 创建节点池和节点伸缩策略<a name="zh-cn_topic_0000001148755333_section1155620269250"></a>
 
-![](figures/zh-cn_image_0000001101955474.png)
+1.  登录CCE控制台，进入已创建的集群，在左侧单击“节点管理”，选择“节点池”页签并单击右上角“创建节点池”。
+2.  填写节点池配置，添加2U4G的节点，并打开弹性扩缩容开关。
 
-修改autoscaler插件配置，将自动缩容开关打开，并配置缩容相关参数，例如节点资源使用率小于50%时进行缩容扫描，启动缩容。
+    -   节点数量：设置为1，表示创建节点池时默认创建的节点数为1。
+    -   弹性伸缩：开启，表示节点池将根据集群负载情况自动创建或删除节点池内的节点。
+    -   节点数上限：设置为5，表示节点池中节点数的最大值。
+    -   节点规格：2核 | 4GiB
 
-![](figures/zh-cn_image_0000001148435281.png)
+    其余参数设置可使用默认值，详情请参见[创建节点池](https://support.huaweicloud.com/usermanual-cce/cce_10_0012.html)。
 
-上面配置的节点池弹性伸缩，会根据Pod的Pending状态进行扩容，根据节点的资源使用率进行缩容。
+    ![](figures/zh-cn_image_0000001359051037.png)
 
-CCE还支持创建CA策略，这里的CA策略可以根据CPU/内存分配率扩容、还可以按照时间定期扩容。CA策略可以与autoscaler默认的根据Pod的Pending状态进行扩容共同作用。如下所示，这里配置当集群CPU分配率大于70%时，增加一个节点。CA策略需要关联节点池，可以关联多个节点池，当需要对节点扩缩容时，在节点池中根据最小浪费规则挑选合适规格的节点扩缩容。
+3.  在集群控制台左侧单击“插件管理”，单击autoscaler插件下的“编辑“按钮，修改autoscaler插件配置，将自动缩容开关打开，并配置缩容相关参数。例如节点资源使用率小于50%时进行缩容扫描，启动缩容。
 
-![](figures/zh-cn_image_0000001148755339.png)
+    ![](figures/zh-cn_image_0000001265139697.png)
+
+    上面配置的节点池弹性伸缩，会根据Pod的Pending状态进行扩容，根据节点的资源使用率进行缩容。
+
+4.  在集群控制台左侧单击“节点伸缩”，单击页面右上角的“创建节点伸缩策略“。这里的节点伸缩策略可以根据CPU/内存分配率扩容、还可以按照时间定期扩容节点数量。
+
+    节点伸缩示例如下，这里配置当集群CPU分配率大于70%时，增加一个节点。CA策略需要关联节点池，可以关联多个节点池，当需要对节点扩缩容时，在节点池中根据最小浪费规则挑选合适规格的节点扩缩容。关于节点伸缩策略设置的详细说明，请参见[创建节点伸缩策略](https://support.huaweicloud.com/usermanual-cce/cce_10_0209.html)。
+
+    ![](figures/zh-cn_image_0000001265140473.png)
+
 
 ## 创建工作负载<a name="zh-cn_topic_0000001148755333_section57571151111612"></a>
 
@@ -102,7 +158,7 @@ spec:
     spec:
       containers:
       - name: container-1
-        image: 'swr.cn-east-3.myhuaweicloud.com/group/hpa-example:latest'
+        image: 'hpa-example:latest ' # 替换为您上传到SWR的镜像地址
         resources:
           limits:                  # limits与requests建议取值保持一致，避免扩缩容过程中出现震荡
             cpu: 500m
@@ -117,8 +173,8 @@ spec:
 然后再为这个负载创建一个Nodeport类型的Service，以便能从外部访问。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->Nodeport类型的Service从外网访问需要为集群某个节点购买EIP，购买完后需要同步节点信息，具体请参见[同步节点信息](https://support.huaweicloud.com/usermanual-cce/cce_01_0184.html)。如果节点已有EIP则无需再次购买。
->或者您也可以创建带ELB的Service从外部访问，具体请参见[通过kubectl命令行创建-自动创建ELB](https://support.huaweicloud.com/usermanual-cce/cce_01_0014.html#section6)。
+>Nodeport类型的Service从外网访问需要为集群某个节点创建EIP，创建完后需要同步节点信息，具体请参见[同步节点信息](https://support.huaweicloud.com/usermanual-cce/cce_10_0184.html)。如果节点已有EIP则无需再次创建。
+>或者您也可以创建带ELB的Service从外部访问，具体请参见[通过kubectl命令行创建-自动创建ELB](https://support.huaweicloud.com/usermanual-cce/cce_10_0014.html#section6)。
 
 ```
 kind: Service
@@ -144,7 +200,7 @@ spec:
 另外有两条注解annotations，一条是CPU的阈值范围，最低30，最高70，表示CPU使用率在30%到70%之间时，不会扩缩容，防止小幅度波动造成影响。另一条是扩缩容时间窗，表示策略成功触发后，在缩容/扩容冷却时间内，不会再次触发缩容/扩容，以防止短期波动造成影响。
 
 ```
-apiVersion: autoscaling/v2beta1
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: hpa-policy
@@ -192,10 +248,8 @@ spec:
 
     **while true;do wget -q -O- http://**_\{ip:port\}_**; done**
 
-    ![](figures/zh-cn_image_0000001102115470.png)
-
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >如果此处不显示公网IP地址，则说明集群节点没有弹性公网IP，请购买弹性公网IP并绑定到节点，购买完后需要同步节点信息，具体请参见[同步节点信息](https://support.huaweicloud.com/usermanual-cce/cce_01_0184.html)。
+    >如果此处不显示公网IP地址，则说明集群节点没有弹性公网IP，请创建弹性公网IP并绑定到节点，创建完后需要同步节点信息，具体请参见[同步节点信息](https://support.huaweicloud.com/usermanual-cce/cce_10_0184.html)。
 
     观察负载的伸缩过程。
 
@@ -250,9 +304,7 @@ spec:
     192.168.0.26    Ready    <none>   71m     v1.17.9-r0-CCE21.1.1.3.B001-17.36.8
     ```
 
-    在控制台中也可以看到伸缩历史，这里可以看到CA策略执行了一次，当集群中CPU分配率大于70%，将节点池中节点数量从2扩容到3。另一个节点是autoscaler默认的根据Pod的Pending状态扩容而来，在HPA初期。
-
-    ![](figures/ca-scaling.png)
+    在控制台也可以看到伸缩历史，这里可以看到CA策略执行了一次，当集群中CPU分配率大于70%，将节点池中节点数量从2扩容到3。另一个节点是autoscaler默认的根据Pod的Pending状态扩容而来，在HPA初期。
 
     这里节点扩容过程具体是这样：
 
@@ -304,15 +356,9 @@ spec:
       Normal  SuccessfulRescale  90s    horizontal-pod-autoscaler  New size: 1; reason: All metrics below target
     ```
 
-    在控制台中同样可以看到HPA策略生效历史。
+    在控制台同样可以看到HPA策略生效历史，再继续等待，会看到节点也会被缩容一个。
 
-    ![](figures/scaling.png)
-
-    再继续等待，会看到节点也会被缩容一个。
-
-    ![](figures/zh-cn_image_0000001101795658.png)
-
-    这里为何没有被缩容掉两个节点，是因为节点池中这两个节点都存在kube-system namespace下的Pod（且不是DaemonSets创建的Pod），节点在什么情况下不会缩容请参见[Cluster Autoscaler工作原理](https://support.huaweicloud.com/usermanual-cce/cce_01_0296.html)。
+    这里为何没有被缩容掉两个节点，是因为节点池中这两个节点都存在kube-system namespace下的Pod（且不是DaemonSets创建的Pod），节点在什么情况下不会缩容请参见[Cluster Autoscaler工作原理](https://support.huaweicloud.com/usermanual-cce/cce_10_0296.html)。
 
 
 ## 总结<a name="zh-cn_topic_0000001148755333_section1989492202616"></a>

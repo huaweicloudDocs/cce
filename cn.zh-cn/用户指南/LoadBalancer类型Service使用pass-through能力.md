@@ -1,4 +1,4 @@
-# LoadBalancer类型Service使用pass-through能力<a name="cce_01_0355"></a>
+# LoadBalancer类型Service使用pass-through能力<a name="cce_10_0355"></a>
 
 ## 应用现状<a name="zh-cn_topic_0000001168691039_section7206104617334"></a>
 
@@ -26,6 +26,7 @@ CCE服务支持pass-through能力，通过Loadbalance类型Service配置kubernet
 
 -   独享型负载均衡配置pass-through后，在工作负载同节点和同节点容器内无法通过Service访问。
 -   1.15及以下老版本集群暂不支持该能力。
+-   IPVS网络模式下，对接同一个ELB的Service需保持pass-through设置情况一致。
 
 ## 操作步骤<a name="zh-cn_topic_0000001168691039_section127841658113314"></a>
 
@@ -64,7 +65,7 @@ CCE服务支持pass-through能力，通过Loadbalance类型Service配置kubernet
 
 2.  Loadbalance类型的Service，并设置kubernetes.io/elb.pass-through为true。
 
-    Loadbalance类型的Service具体创建方法请参见[自动创建负载均衡类型Service](https://support.huaweicloud.com/usermanual-cce/cce_01_0014.html#section6)。
+    Loadbalance类型的Service具体创建方法请参见[自动创建负载均衡类型Service](https://support.huaweicloud.com/usermanual-cce/cce_10_0014.html#section6)。
 
     ```
     apiVersion: v1 
@@ -73,8 +74,6 @@ CCE服务支持pass-through能力，通过Loadbalance类型Service配置kubernet
       annotations:   
         kubernetes.io/elb.pass-through: "true"
         kubernetes.io/elb.class: union
-        kubernetes.io/session-affinity-mode: SOURCE_IP
-        kubernetes.io/elb.subnet-id: a9cf6d24-ad43-4f75-94d1-4e0e0464afac
         kubernetes.io/elb.autocreate: '{"type":"public","bandwidth_name":"cce-bandwidth","bandwidth_chargemode":"bandwidth","bandwidth_size":5,"bandwidth_sharetype":"PER","eip_type":"5_bgp","name":"james"}'
       labels: 
         app: nginx 

@@ -1,4 +1,4 @@
-# 使用CoreDNS实现自定义域名解析<a name="cce_01_0361"></a>
+# 使用CoreDNS实现自定义域名解析<a name="cce_10_0361"></a>
 
 ## 应用现状<a name="section1374833194817"></a>
 
@@ -22,18 +22,73 @@ CoreDNS修改配置需额外谨慎，因为CoreDNS负责集群的域名解析任
 
 ## 为CoreDNS配置存根域<a name="section5202157467"></a>
 
-集群管理员可以修改CoreDNS Corefile的ConfigMap以更改服务发现的工作方式。使用插件proxy可对CoreDNS的存根域进行配置。
+集群管理员可以修改CoreDNS Corefile的ConfigMap以更改服务发现的工作方式。
 
 若集群管理员有一个位于10.150.0.1的Consul域名解析服务器，并且所有Consul的域名都带有.consul.local的后缀。
 
-1.  登录CCE控制台。
-2.  在左侧导航栏中选择“插件管理“，在“插件实例“页签下，单击CoreDNS插件，进入插件详情页。
-3.  单击参数列表下的“编辑“按钮，在弹出窗口中添加存根域。
+1.  登录CCE控制台，进入集群。
+2.  在左侧导航栏中选择“插件管理“，在“已安装插件“下，在CoreDNS下单击“编辑“，进入插件详情页。
+3.  在“参数配置“下添加存根域。
 
-    **图 1**  配置存根域<a name="fig118492813367"></a>  
-    ![](figures/配置存根域.png "配置存根域")
+    修改stub\_domains参数，格式为一个键值对，键为DNS后缀域名，值为一个或一组DNS IP地址，如下所示。
+
+    ```
+    {
+    	"stub_domains": {
+                    "consul.local": [
+    			"10.150.0.1"
+    		]
+    	},
+    	"upstream_nameservers": []
+    }
+    ```
 
 4.  单击“确定“。
+
+也可以通过修改ConfigMap，直接按如下方式添加。
+
+```
+$ kubectl edit configmap coredns -n kube-system
+apiVersion: v1
+data:
+  Corefile: |-
+    .:5353 {
+        bind {$POD_IP}
+        cache 30
+        errors
+        health {$POD_IP}:8080
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+            pods insecure
+            fallthrough in-addr.arpa ip6.arpa
+        }
+        loadbalance round_robin
+        prometheus {$POD_IP}:9153
+        forward . /etc/resolv.conf {
+            policy random
+        }
+        reload
+    }
+
+    consul.local:5353 {
+        bind {$POD_IP}
+        errors
+        cache 30
+        forward . 10.150.0.1
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-05-04T04:42:24Z"
+  labels:
+    app: coredns
+    k8s-app: coredns
+    kubernetes.io/cluster-service: "true"
+    kubernetes.io/name: CoreDNS
+    release: cceaddon-coredns
+  name: coredns
+  namespace: kube-system
+  resourceVersion: "8663493"
+  uid: bba87142-9f8d-4056-b8a6-94c3887e9e1d
+```
 
 ## 修改CoreDNS Hosts配置<a name="section106211954135311"></a>
 
@@ -172,8 +227,4 @@ CoreDNS修改配置需额外谨慎，因为CoreDNS负责集群的域名解析任
       uid: be64aaad-1629-441f-8a40-a3efc0db9fa9
     ```
 
-
-## 相关文档<a name="section1382343322314"></a>
-
-[自建IDC与CCE集群共享域名解析](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00276.html)
 

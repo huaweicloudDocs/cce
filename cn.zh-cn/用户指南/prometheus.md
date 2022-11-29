@@ -1,4 +1,4 @@
-# prometheus<a name="cce_01_0221"></a>
+# prometheus<a name="cce_10_0221"></a>
 
 ## 插件简介<a name="section173631312185614"></a>
 
@@ -9,6 +9,10 @@ Prometheus是一套开源的系统监控报警框架。它启发于Google的borg
 插件官网：[https://prometheus.io/](https://prometheus.io/)
 
 开源社区地址：[https://github.com/prometheus/prometheus](https://github.com/prometheus/prometheus)
+
+## 约束与限制<a name="section127964318113"></a>
+
+CCE提供的Prometheus插件仅支持1.21及以下版本的集群。1.23及以上集群请使用[kube-prometheus-stack](kube-prometheus-stack.md)插件替代。
 
 ## 插件特点<a name="section4740192825614"></a>
 
@@ -33,15 +37,10 @@ Prometheus是一套开源的系统监控报警框架。它启发于Google的borg
 
 需要指出的是，由于数据采集可能会有丢失，所以Prometheus不适用对采集数据要100%准确的情形。但如果用于记录时间序列数据，Prometheus具有很大的查询优势，此外，Prometheus适用于微服务的体系架构。
 
-## 约束与限制<a name="section11172124718374"></a>
-
-仅支持在1.11及以上版本的CCE集群中安装此插件，暂不支持鲲鹏集群。
-
 ## 安装插件<a name="section189463341114"></a>
 
-1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件市场“页签下，单击**Prometheus**下的“安装插件“按钮。
-2.  在安装插件页面，选择安装的集群和插件版本，单击“下一步：规格配置“。
-3.  <a name="li126079206265"></a>在“规格配置“步骤中，配置以下参数：
+1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在右侧找到**Prometheus**，单击“安装“。
+2.  在“规格配置“步骤中，配置以下参数：
 
     **表 1**  Prometheus配置参数说明
 
@@ -74,15 +73,15 @@ Prometheus是一套开源的系统监控报警框架。它启发于Google的borg
     <a name="ul46735991617"></a><a name="ul46735991617"></a><ul id="ul46735991617"><li>不对接：普罗采集的数据仅存储在本地数据盘中。</li><li>对接CIE：普罗采集的数据将同时存放在本地数据盘和CIE远端服务中。</li><li>自定义：普罗采集的数据将同时存放在本地数据盘和自定义的远端服务中。远端地址、HTTPS认证等所需的信息，需从第三方服务获取。</li></ul>
     </td>
     </tr>
-    <tr id="row1535723154615"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p83591731124620"><a name="p83591731124620"></a><a name="p83591731124620"></a>监控数据保留期</p>
+    <tr id="row1535723154615"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p83591731124620"><a name="p83591731124620"></a><a name="p83591731124620"></a>数据保留期</p>
     </td>
     <td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p1736012314462"><a name="p1736012314462"></a><a name="p1736012314462"></a>自定义监控数据需要保留的天数，默认为15天。</p>
     </td>
     </tr>
     <tr id="row133224252315"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p23228259314"><a name="p23228259314"></a><a name="p23228259314"></a>存储</p>
     </td>
-    <td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p13325193219477"><a name="p13325193219477"></a><a name="p13325193219477"></a>按照界面提示配置如下参数：</p>
-    <a name="ul14470191614487"></a><a name="ul14470191614487"></a><ul id="ul14470191614487"><li>类型：支持云硬盘。</li><li>可用区：请根据业务需要进行选择。可用区是在同一区域下，电力、网络隔离的物理区域，可用区之间内网互通，不同可用区之间物理隔离。</li><li>子类型：支持普通IO、高IO和超高IO三种类型。各类型对比请参见<a href="购买CCE集群.md#li12223421320">系统盘和数据盘</a>。</li><li>容量：请根据业务需要输入存储容量，默认10G。</li></ul>
+    <td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p13325193219477"><a name="p13325193219477"></a><a name="p13325193219477"></a>支持云硬盘作为存储，按照界面提示配置如下参数：</p>
+    <a name="ul14470191614487"></a><a name="ul14470191614487"></a><ul id="ul14470191614487"><li>可用区：请根据业务需要进行选择。可用区是在同一区域下，电力、网络隔离的物理区域，可用区之间内网互通，不同可用区之间物理隔离。</li><li>子类型：支持普通IO、高IO和超高IO三种类型。</li><li>容量：请根据业务需要输入存储容量，默认10G。</li></ul>
     <div class="note" id="note132861729114815"><a name="note132861729114815"></a><a name="note132861729114815"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p1328618298481"><a name="p1328618298481"></a><a name="p1328618298481"></a>若命名空间monitoring下已存在pvc，将使用此存储作为存储源。</p>
     </div></div>
     </td>
@@ -90,27 +89,61 @@ Prometheus是一套开源的系统监控报警框架。它启发于Google的borg
     </tbody>
     </table>
 
-4.  单击“安装“。
+3.  单击“安装“。安装完成后，插件会在集群中部署以下实例。
+    -   prometheus-operator：根据自定义资源（Custom Resource Definition / CRDs）来部署和管理Prometheus Server，同时监控这些自定义资源事件的变化来做相应的处理，是整个系统的控制中心。
+    -   prometheus（Server）：Operator根据自定义资源Prometheus类型中定义的内容而部署的Prometheus Server集群，这些自定义资源可以看作是用来管理Prometheus Server集群的 StatefulSets 资源。
+    -   prometheus-kube-state-metrics：将Prometheus的metrics数据格式转换成K8s API接口能识别的格式。
+    -   custom-metrics-apiserver：将自定义指标聚合到原生的kubernetes apiserver。
+    -   prometheus-node-exporter：每个节点上均有部署，收集Node级别的监控数据。
+    -   grafana：可视化浏览普罗监控数据。
 
-    待插件安装完成后，单击“返回“，在“插件实例“页签下，选择对应的集群，可查看到运行中的实例，这表明该插件已在当前集群的各节点中安装。
 
-5.  在CCE控制台中，单击左侧导航栏的“插件管理“，在“插件实例”中，单击“Prometheus”进入详情页，可以查看插件实例的详细情况。
+## 提供资源指标<a name="section13409107262"></a>
 
-## 升级插件<a name="section23441939916"></a>
+容器和节点的资源指标，如CPU、内存使用量，可通过Kubernetes的Metrics API获得。这些指标可以直接被用户访问，比如用kubectl top命令，也可以被HPA或者CustomedHPA使用，根据资源使用率使负载弹性伸缩。
 
-1.  登录CCE控制台，在左侧导航栏中选择“插件管理“，在“插件实例“页签下，选择对应的集群，单击“Prometheus“下的“ 升级“。
+Prometheus插件可为Kubernetes提供Metrics API，但默认未开启，若要将其开启，需要创建以下APIService对象：
 
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >-   如果升级按钮处于冻结状态，则说明当前插件版本是最新的版本，不需要进行升级操作。
-    >-   升级“Prometheus“插件时，会替换原先节点上的旧版本的“Prometheus“插件，安装最新版本的“Prometheus“插件以实现功能的快速升级。
+```
+apiVersion: apiregistration.k8s.io/v1
+kind: APIService
+metadata:
+  labels:
+    app: custom-metrics-apiserver
+    release: cceaddon-prometheus
+  name: v1beta1.metrics.k8s.io
+spec:
+  group: metrics.k8s.io
+  groupPriorityMinimum: 100
+  insecureSkipTLSVerify: true
+  service:
+    name: custom-metrics-apiserver
+    namespace: monitoring
+    port: 443
+  version: v1beta1
+  versionPriority: 100
+```
 
-2.  在基本信息页面选择插件版本，单击“下一步“。
-3.  参考[安装插件](#li126079206265)中参数说明配置参数后，单击“升级“即可升级“Prometheus“插件。
+可以将该对象保存为文件，命名为metrics-apiservice.yaml，然后执行以下命令：
 
-## 卸载插件<a name="section1395073191112"></a>
+```
+kubectl create -f metrics-apiservice.yaml
+```
 
-1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在“插件实例“页签下，选择对应的集群，单击**Prometheus**下的“卸载“。
-2.  在弹出的窗口中，单击“是“，可卸载该插件。
+执行kubectl top命令，若显示如下，则表示Metrics API是否能正常访问：
+
+```
+# kubectl top pod -n monitoring
+NAME                                                      CPU(cores)   MEMORY(bytes)
+cceaddon-prometheus-kube-state-metrics-7b77694f48-zc9pl   4m           16Mi
+cceaddon-prometheus-node-exporter-4jvwv                   1m           16Mi
+cceaddon-prometheus-node-exporter-85zl4                   2m           39Mi
+cceaddon-prometheus-node-exporter-qbrmb                   0m           15Mi
+cceaddon-prometheus-operator-659547567d-j6484             0m           48Mi
+custom-metrics-apiserver-d4f556ff9-l2j2m                  38m          44Mi
+grafana-78f9966c99-xprkx                                  0m           25Mi
+prometheus-0                                              18m          706Mi
+```
 
 ## 参考资源<a name="section16331426191116"></a>
 
