@@ -16,16 +16,18 @@ Virtual Kubelet插件具体如下功能：
 
 ## 约束及限制<a name="section628693291119"></a>
 
--   仅支持VPC网络模式的CCE集群和CCE Turbo集群（virtual-kubelet 1.2.5版本及以上支持），且仅支持1.21及以下版本集群，暂不支持ARM集群。如果集群中包含ARM节点，插件实例将不会部署至ARM节点。
+-   仅支持VPC网络模式的CCE集群和CCE Turbo集群（virtual-kubelet 1.2.5版本及以上支持），暂不支持ARM集群。如果集群中包含ARM节点，插件实例将不会部署至ARM节点。
 
 -   调度到CCI的实例的存储类型只支持ConfigMap、Secret、emptyDir、SFS、SFS Turbo几种Volume类型，其中emptyDir不支持子路径，且SFS、SFS Turbo类型存储对应的PVC只支持使用CSI类型的StorageClass。
 -   暂不支持守护进程集（DaemonSet）以及HostNetwork网络模式的容器实例（Pod）弹性到CCI。
 -   跨CCE和CCI实例Service网络互通只支持集群内访问（ClusterIP）类型。
--   跨CCE和CCI实例，在对接LoadBalancer或Ingress时，禁止指定健康检查端口：
+-   跨CCE和CCI实例，在对接LoadBalancer类型的Service或Ingress时，禁止指定健康检查端口：
 
     1. 在CCE集群下，由于CCI的容器与CCE的容器在ELB注册的后端使用端口不一致，指定健康检查端口会导致部分后端健康检查异常。
 
     2. 跨集群使用Service对接同一个ELB的监听器时，需确认健康检查方式，避免服务访问异常。
+
+    3. 跨CCE和CCI实例，在对接共享型LoadBalancer类型的Service时，需要放通node安全组下100.125.0.0/16网段的容器端口。
 
 -   集群所在子网不能与10.247.0.0/16重叠，否则会与CCI命名空间下的Service网段冲突，导致无法使用。
 -   使用插件前需要用户在[CCI界面](https://console.huaweicloud.com/cci/?locale=zh-cn#/dashboard)对CCI服务进行授信。
@@ -50,9 +52,17 @@ Virtual Kubelet插件具体如下功能：
 
 ## 安装插件<a name="section2237175619515"></a>
 
-1.  在CCE控制台，进入集群，单击左侧导航栏的“插件管理“，在右侧找到**virtual-kubelet**，单击“安装“。
-2.  选择插件规格，勾选“支持CCE集群中的Pod与CCI集群中的Pod通过Kubernetes Service互通“。
+1.  在CCE控制台，单击集群名称进入集群，单击左侧导航栏的“插件管理“，在右侧找到**virtual-kubelet**，单击“安装“。
+2.  在“规格配置”步骤中，勾选“网络互通”后的选择框，可实现CCE集群中的Pod与CCI集群中的Pod通过Kubernetes Service互通。
+
+    **图 1**  勾选“网络互通”<a name="fig4189175010414"></a>  
+    ![](figures/勾选-网络互通.png "勾选-网络互通")
+
 3.  单击“安装“。
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >勾选了网络互通后，会在CCI运行的Pod中注入一个sidecar用于支持service访问的能力，查询到的运行容器数量会比定义的多一个，属于正常情况。
+
 
 ## 使用插件<a name="section162391856185111"></a>
 
@@ -92,26 +102,25 @@ spec:
 ```
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->标红部分为添加labels。
->创建弹性至CCI的负载时需要在负载的labels中添加如下字段：
+>创建弹性至CCI的负载时需要在工作负载或Pod的labels中添加如下字段：
 >```
 >virtual-kubelet.io/burst-to-cci: "auto"
 >```
 >其中，value值支持以下选项：
->-   auto：CCE节点资源使用率较高时自动弹性至CCI。
+>-   auto：根据用户集群内调度器实际打分结果自动决定是否弹性至CCI，其中在[TaintToleration算法](https://kubernetes.io/docs/reference/scheduling/config/#scheduling-plugins)上会优先选择调度到CCE节点。
 >-   enforce：强制调度至CCI。
 >-   off：不调度至CCI。
 
 ## Virtual Kubelet可分配资源监控影响说明<a name="section76394615111"></a>
 
-安装Virtual Kubelet插件后，从监控的角度，相当于引入一个超大节点，此时在CCE集群监控界面上可分配资源使用率会把CCI的资源放在一起计算。如下所示，刚安装Virtual Kubelet插件后，CPU/内存的可分配率剧烈下降。
+安装Virtual Kubelet插件后，系统会将CCI的资源作为集群节点资源。从监控的角度，相当于引入一个超大节点，此时在CCE集群监控界面上可分配资源使用率会把CCI的资源放在一起计算。如下所示，刚安装Virtual Kubelet插件后，CPU/内存的可分配率剧烈下降。
 
-**图 1**  集群监控<a name="fig17527445313"></a>  
+**图 2**  集群监控<a name="fig17527445313"></a>  
 ![](figures/集群监控.png "集群监控")
 
 您可以在节点管理界面或AOM中查看具体节点的分配率。
 
-**图 2**  在AOM中查看节点资源可分配率<a name="fig171801375410"></a>  
+**图 3**  在AOM中查看节点资源可分配率<a name="fig171801375410"></a>  
 ![](figures/在AOM中查看节点资源可分配率.png "在AOM中查看节点资源可分配率")
 
 ## 卸载插件<a name="section18671115841510"></a>
@@ -125,4 +134,43 @@ spec:
 >    -   在删除集群前先卸载virtual-kubelet插件。
 >    -   在直接删除集群后登录CCI控制台删除名为**cce-burst-$\{CLUSTER\_ID\}**的命名空间。
 >    -   集群休眠时CCI侧正在运行的实例不会自动停止，会持续运行并计费。因此如不需要实例继续运行，请确保在集群休眠前将弹性到CCI的负载实例数缩至0。
+
+## 版本记录<a name="section183121449435"></a>
+
+**表 1**  CCE插件版本记录
+
+<a name="table88489551792"></a>
+<table><thead align="left"><tr id="row139251455994"><th class="cellrowborder" valign="top" width="37.50531236719082%" id="mcps1.2.3.1.1"><p id="p13601510205420"><a name="p13601510205420"></a><a name="p13601510205420"></a>插件版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="62.494687632809175%" id="mcps1.2.3.1.2"><p id="p156011107542"><a name="p156011107542"></a><a name="p156011107542"></a>支持的集群版本</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row8757710175517"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p5416623195810"><a name="p5416623195810"></a><a name="p5416623195810"></a>1.3.7</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p1441662310580"><a name="p1441662310580"></a><a name="p1441662310580"></a>/v1.(17|19|21|23).*/</p>
+</td>
+</tr>
+<tr id="row101387413157"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p1139164113159"><a name="p1139164113159"></a><a name="p1139164113159"></a>1.2.12</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p19507163101614"><a name="p19507163101614"></a><a name="p19507163101614"></a>/v1.13.*|v1.15.*|v1.17.*|v1.19.*/</p>
+</td>
+</tr>
+<tr id="row17276317105810"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p104169233582"><a name="p104169233582"></a><a name="p104169233582"></a>1.2.5</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p10416132325816"><a name="p10416132325816"></a><a name="p10416132325816"></a>/v1.13.*|v1.15.*|v1.17.*|v1.19.*/</p>
+</td>
+</tr>
+<tr id="row723201855819"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p15416223185819"><a name="p15416223185819"></a><a name="p15416223185819"></a>1.2.0</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p8416023175815"><a name="p8416023175815"></a><a name="p8416023175815"></a>/v1.13.*|v1.15.*|v1.17.*|v1.19.*/</p>
+</td>
+</tr>
+<tr id="row19850201865813"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p16416192325819"><a name="p16416192325819"></a><a name="p16416192325819"></a>1.0.5</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p441602310589"><a name="p441602310589"></a><a name="p441602310589"></a>/v1.13.*|v1.15.*|v1.17.*/</p>
+</td>
+</tr>
+</tbody>
+</table>
 

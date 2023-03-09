@@ -138,11 +138,11 @@ kernel.pid_max = 4194304
 
 您可以设置节点池安装前执行脚本，在节点池中新创建节点时通过脚本配置kernel.pid\_max大小。
 
-在创建节点池时，在“高级配置 \> 安装前执行脚本“中添加如下命令。
+在创建节点池时，在“高级配置 \> 安装后执行脚本“中添加如下命令。
 
 **echo kernel.pid\_max =  _4194304_  \>\> /etc/sysctl.conf && sysctl -p**
 
-![](figures/zh-cn_image_0000001261871450.png)
+![](figures/zh-cn_image_0000001536070461.png)
 
 ## 创建节点时配置kernel.pid\_max<a name="section12529121819573"></a>
 
@@ -152,9 +152,9 @@ kernel.pid_max = 4194304
 
 您可以设置节点安装前执行脚本，在新创建节点时通过脚本配置kernel.pid\_max大小。
 
-在创建节点时，在“高级配置 \> 安装前执行脚本“中添加如下命令。
+在创建节点时，在“高级配置 \> 安装后执行脚本“中添加如下命令。
 
 **echo kernel.pid\_max =  _4194304_  \>\> /etc/sysctl.conf && sysctl -p**
 
-![](figures/zh-cn_image_0000001309430457.png)
+![](figures/zh-cn_image_0000001536070685.png)
 

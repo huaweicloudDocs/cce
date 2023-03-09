@@ -29,7 +29,7 @@ dew-provider插件由两个组件组成，分别为secrets-store-csi-driver和de
 
 ## 安装插件<a name="section215134717391"></a>
 
-1.  登录CCE控制台，进入集群，单击左侧导航栏的“插件管理“，在右侧找到**dew-provider**，单击“安装“。
+1.  登录CCE控制台，单击集群名称进入集群，单击左侧导航栏的“插件管理“，在右侧找到**dew-provider**，单击“安装“。
 2.  在安装插件页面，选择安装的集群，在参数配置栏进行参数配置。参数配置说明如下。
 
     <a name="table128205210207"></a>
@@ -277,7 +277,7 @@ spec:
             objectType: "csms"
 ```
 
-更新该SPC对象后，插件将周期性地向凭据管理服务发起请求，获取凭据secret\_1最新版本的值，并将其刷新至引用了该SPC对象的Pod内。
+更新该SPC对象后，插件将周期性地向凭据管理服务发起请求，获取凭据secret\_1最新版本的值，并将其刷新至引用了该SPC对象的Pod内。此处插件周期性发起请求的时间间隔由[安装插件](#section215134717391)时设置的rotation\_poll\_interval参数确定。
 
 ## 实时感知SPC变化<a name="section74012042624"></a>
 
@@ -328,4 +328,33 @@ $ kubectl logs csi-secrets-store-76tj2 -c secrets-store -n kube-system
 …日志信息略…
 …
 ```
+
+## 版本记录<a name="section183121449435"></a>
+
+**表 1**  CCE插件版本记录
+
+<a name="table88489551792"></a>
+<table><thead align="left"><tr id="row139251455994"><th class="cellrowborder" valign="top" width="37.50531236719082%" id="mcps1.2.3.1.1"><p id="p13601510205420"><a name="p13601510205420"></a><a name="p13601510205420"></a>插件版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="62.494687632809175%" id="mcps1.2.3.1.2"><p id="p156011107542"><a name="p156011107542"></a><a name="p156011107542"></a>支持的集群版本</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row77591313112718"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p1375961372720"><a name="p1375961372720"></a><a name="p1375961372720"></a>1.0.3</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p14426103525717"><a name="p14426103525717"></a><a name="p14426103525717"></a>/v1.(19|21|23|25).*/</p>
+</td>
+</tr>
+<tr id="row8757710175517"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p8601103544"><a name="p8601103544"></a><a name="p8601103544"></a>1.0.2</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p1465244835710"><a name="p1465244835710"></a><a name="p1465244835710"></a>/v1.(19|21|23).*/</p>
+</td>
+</tr>
+<tr id="row3926175518912"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p1760161011549"><a name="p1760161011549"></a><a name="p1760161011549"></a>1.0.1</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p266774810577"><a name="p266774810577"></a><a name="p266774810577"></a>/v1.(19|21).*/</p>
+</td>
+</tr>
+</tbody>
+</table>
 

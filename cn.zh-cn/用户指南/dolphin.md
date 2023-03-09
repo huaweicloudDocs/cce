@@ -8,7 +8,8 @@ dolphin是一款容器网络流量监控管理插件，当前版本可支持从C
 
 ## 使用约束<a name="section9717216192118"></a>
 
--   仅支持在1.19及以上版本的CCE Turbo集群中安装此插件。
+-   仅支持在1.19及以上版本的CCE Turbo集群中安装此插件，且插件实例不支持部署在ARM节点上。
+-   仅支持在容器引擎为Containerd且操作系统为EulerOS的节点上部署插件实例。
 -   仅支持统计CCE Turbo集群**安全容器**（容器运行时为kata）以及普通容器（容器运行时为runc）的流量。
 -   安装插件后默认将不进行流量监控，用户需通过创建CR来配置监控任务进行流量监控。
 -   安装时请确保节点有足够的资源安装本插件。
@@ -21,7 +22,7 @@ dolphin是一款容器网络流量监控管理插件，当前版本可支持从C
 
 ## 下发监控任务<a name="section112539251411"></a>
 
-当前用户可通过创建CR的方式下发监控任务，当前用户可以通过API或登录工作节点kubectl apply的方式创建CR，后续将支持前端界面的创建。一个CR代表着一个监控任务，提供selector、podLabel、ip4Tx等可选参数，具体参考以下CR的创建模板：
+当前用户可通过创建CR的方式下发监控任务，当前用户可以通过API或登录工作节点kubectl apply的方式创建CR，后续将支持前端界面的创建。一个CR代表着一个监控任务，提供selector、podLable、ip4Tx等可选参数，具体参考以下CR的创建模板：
 
 ```
 apiVersion: crd.dolphin.io/v1
@@ -38,7 +39,7 @@ spec:
         operator: In
         values:
           - nginx
-  podLabel: [app]               #选填，用户标签
+  podLable: [app]               #选填，用户标签
   ip4Tx:                        #选填，ipv4发送报文数和发送字节数这两个指标的开关，默认不开
     enable: true
   ip4Rx:                        #选填，ipv4接收报文数和发送字节数这两个指标的开关，默认不开
@@ -47,7 +48,7 @@ spec:
     enable: true
 ```
 
-用户标签podLabel：可输入多个Pod的Label标签，以逗号分隔，如\[app, version\]。
+用户标签PodLable：可输入多个Pod的label标签，以逗号分隔，如\[app, version\]。
 
 标签需符合以下规则，对应正则表达式为\(^\[a-zA-Z\_\]$\)|\(^\(\[a-zA-Z\]\[a-zA-Z0-9\_\]|\_\[a-zA-Z0-9\]\)\(\[a-zA-Z0-9\_\]\)\{0,254\}$\)：
 
@@ -64,7 +65,7 @@ metadata:
   name: example-task  
   namespace: kube-system        
 spec:
-  podLabel: [app]
+  podLable: [app]
   ip4Tx:
     enable: true
 ```
@@ -83,7 +84,7 @@ spec:
   selector:
     matchLabels:
       app: nginx
-  podLabel: [test, app]
+  podLable: [test, app]
   ip4Tx:
     enable: true
   ip4Rx:
@@ -206,4 +207,43 @@ dolphin插件的监控信息以普罗米修斯exporter格式输出，有两种�
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >若容器无用户指定的标签，返回体中标签值为not found。形如：
 >dolphin\_ip4\_send\_byte\_internet\{test="not found", pod="default/nginx-66c9c65dbf-zjg24",task="default" \} 23618
+
+## 版本记录<a name="section183121449435"></a>
+
+**表 2**  CCE插件版本记录
+
+<a name="table88489551792"></a>
+<table><thead align="left"><tr id="row139251455994"><th class="cellrowborder" valign="top" width="37.50531236719082%" id="mcps1.2.3.1.1"><p id="p13601510205420"><a name="p13601510205420"></a><a name="p13601510205420"></a>插件版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="62.494687632809175%" id="mcps1.2.3.1.2"><p id="p156011107542"><a name="p156011107542"></a><a name="p156011107542"></a>支持的集群版本</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row996416251185"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p954911291082"><a name="p954911291082"></a><a name="p954911291082"></a>1.1.8</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p5549152915814"><a name="p5549152915814"></a><a name="p5549152915814"></a>/v1.(19|21|23|25).*/</p>
+</td>
+</tr>
+<tr id="row9724172132816"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p1954089288"><a name="p1954089288"></a><a name="p1954089288"></a>1.1.6</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p165413862813"><a name="p165413862813"></a><a name="p165413862813"></a>/v1.(19|21|23).*/</p>
+</td>
+</tr>
+<tr id="row8757710175517"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p41775215556"><a name="p41775215556"></a><a name="p41775215556"></a>1.1.5</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p20894104611584"><a name="p20894104611584"></a><a name="p20894104611584"></a>/v1.(19|21|23).*/</p>
+</td>
+</tr>
+<tr id="row3926175518912"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p1517720211558"><a name="p1517720211558"></a><a name="p1517720211558"></a>1.1.2</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p1389744613587"><a name="p1389744613587"></a><a name="p1389744613587"></a>/v1.(19|21|23).*/</p>
+</td>
+</tr>
+<tr id="row17504125318549"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p61788211554"><a name="p61788211554"></a><a name="p61788211554"></a>1.0.1</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p1017811218557"><a name="p1017811218557"></a><a name="p1017811218557"></a>/v1.(19|21).*/</p>
+</td>
+</tr>
+</tbody>
+</table>
 

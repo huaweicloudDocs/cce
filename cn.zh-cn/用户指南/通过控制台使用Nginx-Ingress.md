@@ -4,7 +4,6 @@
 
 -   Ingress为后端工作负载提供网络访问，因此集群中需提前部署可用的工作负载。若您无可用工作负载，可参考[创建无状态负载\(Deployment\)](创建无状态负载(Deployment).md)、[创建有状态负载\(StatefulSet\)](创建有状态负载(StatefulSet).md)或[创建守护进程集\(DaemonSet\)](创建守护进程集(DaemonSet).md)部署工作负载。
 -   添加Nginx Ingress时，需在集群中提前安装nginx-ingress插件，具体操作可参考[安装插件](nginx-ingress.md#section1152424015224)。
--   ELB直通Pod场景（CCE Turbo集群 + 独享型ELB实例）下，Nginx Ingress支持ClusterIP类型Service，非直通场景下支持ClusterIP和NodePort类型Service。
 
 ## 注意事项<a name="section2042610683912"></a>
 
@@ -17,7 +16,7 @@
 
 本节以Nginx作为工作负载并添加Nginx Ingress为例进行说明。
 
-1.  登录CCE控制台，进入集群。
+1.  登录CCE控制台，单击集群名称进入集群。
 2.  选择左侧导航栏的“服务发现“，在右侧选择“路由“页签，单击右上角“创建路由“。
 3.  设置Ingress参数。
     -   **名称：**自定义Ingress名称，例如nginx-ingress-demo。
@@ -33,8 +32,11 @@
 
     -   **转发策略配置：**请求的访问地址与转发规则匹配时（转发规则由域名、URL组成），此请求将被转发到对应的目标Service处理。单击“添加转发策略“按钮可添加多条转发策略。
         -   域名：实际访问的域名地址。请确保所填写的域名已注册并备案，在Ingress创建完成后，将域名与自动创建的负载均衡实例的IP（即Ingress访问地址的IP部分）绑定。一旦配置了域名规则，则必须使用域名访问。
-        -   URL匹配规则：支持前缀匹配，例如映射URL为/healthz，只要符合此前缀的URL均可访问。例如/healthz/v1，/healthz/v2。
         -   URL：需要注册的访问路径，例如：/healthz。社区v1.2.0版本（对应CCE nginx-ingress插件2.1.0版本）后修复CVE-2021-25745\(https://github.com/kubernetes/ingress-nginx/issues/8502\)漏洞，新增规则（https://github.com/kubernetes/ingress-nginx/blame/main/internal/ingress/inspector/rules.go）禁用一些存在越权风险的访问路径。
+
+            >![](public_sys-resources/icon-note.gif) **说明：** 
+            >Nginx Ingress的URL匹配规则是基于“/”符号分隔的路径前缀匹配，并区分大小写。只要访问路径以“/”符号分隔后的子路径匹配此前缀，均可正常访问，但如果该前缀仅是子路径中的部分字符串，则不会匹配。例如URL设置为/healthz，则匹配/healthz/v1，但不匹配/healthzv1。
+
         -   目标服务名称：请选择已有Service或新建Service。页面列表中的查询结果已自动过滤不符合要求的Service。
         -   目标服务访问端口：可选择目标Service的访问端口。
         -   操作：可单击“删除“按钮删除该配置。
@@ -45,4 +47,8 @@
 
     创建完成后，在Ingress列表可查看到已添加的Ingress。
 
+
+## 相关操作<a name="section59831252163212"></a>
+
+[部署多个Nginx Ingress Controller](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_0342.html)
 

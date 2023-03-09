@@ -309,12 +309,12 @@ kubectl exec -it podname -c containername bash
 转发pod中的6000端口到本地的5000端口：
 
 ```
-kubectl port -forward podname 5000:6000
+kubectl port-forward podname 5000:6000
 ```
 
 **proxy\***
 
-运行一个proxy到kubernetes api server。
+运行一个proxy到Kubernetes api server。
 
 例如：
 
@@ -359,7 +359,7 @@ kubectl replace -f filename
 
 **apply\***
 
-apply命令提供了比patch，edit等更严格的更新resource的方式。通过apply，用户可以将resource的configuration使用source control的方式维护在版本库中。每次有更新时，将配置文件push到server，然后使用kubectl apply将更新应用到resource。kubernetes会在引用更新前将当前配置文件中的配置同已经应用的配置做比较，并只更新更改的部分，而不会主动更改任何用户未指定的部分。apply命令的使用方式同replace相同，不同的是，apply不会删除原有resource，然后创建新的。apply直接在原有resource的基础上进行更新。同时kubectl apply还会在resource中添加一条注释，标记当前的apply，类似于git操作。
+apply命令提供了比patch，edit等更严格的更新resource的方式。通过apply，用户可以将resource的configuration使用source control的方式维护在版本库中。每次有更新时，将配置文件push到server，然后使用kubectl apply将更新应用到resource。Kubernetes会在引用更新前将当前配置文件中的配置同已经应用的配置做比较，并只更新更改的部分，而不会主动更改任何用户未指定的部分。apply命令的使用方式同replace相同，不同的是，apply不会删除原有resource，然后创建新的。apply直接在原有resource的基础上进行更新。同时kubectl apply还会在resource中添加一条注释，标记当前的apply，类似于git操作。
 
 ```
 kubectl apply -f
@@ -367,7 +367,7 @@ kubectl apply -f
 
 **patch**
 
-如果一个容器已经在运行，这时需要对一些容器属性进行修改，又不想删除容器，或不方便通过replace的方式进行更新。kubernetes还提供了一种在容器运行时，直接对容器进行修改的方式，就是patch命令。 例如已存在一个pod的label为app=nginx1，如果需要在运行过程中，将其修改为app=nginx2。
+如果一个容器已经在运行，这时需要对一些容器属性进行修改，又不想删除容器，或不方便通过replace的方式进行更新。Kubernetes还提供了一种在容器运行时，直接对容器进行修改的方式，就是patch命令。 例如已存在一个pod的label为app=nginx1，如果需要在运行过程中，将其修改为app=nginx2。
 
 ```
 kubectl patch pod podname -p '{"metadata":{"labels":{"app":"nginx2"}}}'

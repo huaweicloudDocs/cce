@@ -1,4 +1,4 @@
-# Service概述<a name="cce_10_0249"></a>
+# Service概述<a name="cce_01_0249"></a>
 
 ## 直接访问Pod的问题<a name="section674023294115"></a>
 
@@ -26,20 +26,24 @@ Kubernetes中的Service对象就是用来解决上述Pod访问问题的。Servic
 
 Kubernetes允许指定一个需要的类型的Service，类型的取值以及行为如下：
 
--   [集群内访问\(ClusterIP\)](集群内访问(ClusterIP).md)
+-   [集群内访问\(ClusterIP\)](集群内访问(ClusterIP)-70.md)
 
     集群内访问表示工作负载暴露给同一集群内其他工作负载访问的方式，可以通过“集群内部域名”访问。
 
 
--   [节点访问\(NodePort\)](节点访问(NodePort).md)
+-   [节点访问\(NodePort\)](节点访问(NodePort)-71.md)
 
     节点访问 \( NodePort \)是指在每个节点的IP上开放一个静态端口，通过静态端口对外暴露服务。节点访问 \( NodePort \)会路由到ClusterIP服务，这个ClusterIP服务会自动创建。通过请求<NodeIP\>:<NodePort\>，可以从集群的外部访问一个NodePort服务。
 
--   [负载均衡\(LoadBalancer\)](负载均衡(LoadBalancer).md)
+-   [负载均衡\(LoadBalancer\)](负载均衡(LoadBalancer)-72.md)
 
     负载均衡\( LoadBalancer \)可以通过弹性负载均衡从公网访问到工作负载，与弹性IP方式相比提供了高可靠的保障，一般用于系统中需要暴露到公网的服务。
 
--   [DNAT网关\(DNAT\)](DNAT网关(DNAT).md)
+-   [ENI负载均衡\(ENI LoadBalancer\)](ENI负载均衡-(-ENI-LoadBalancer-).md)
+
+    ENI负载均衡 \( ENI LoadBalancer \)使用弹性负载均衡器直通容器，使部署在容器中的业务时延降低、性能无损耗。
+
+-   [DNAT网关\(DNAT\)](DNAT网关(DNAT)-73.md)
 
     可以为集群节点提供网络地址转换服务，使多个节点可以共享使用弹性IP。与弹性IP方式相比增强了可靠性，弹性IP无需与单个节点绑定，任何节点状态的异常不影响其访问。
 

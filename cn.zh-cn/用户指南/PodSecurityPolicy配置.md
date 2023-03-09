@@ -6,6 +6,7 @@ v1.17.17版本的集群默认启用Pod安全策略准入控制组件，并创建
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   除全局默认安全策略外，系统为kube-system命名空间下的系统组件配置了独立的Pod安全策略，修改psp-global配置不影响kube-system下Pod创建。
+>-   在Kubernetes 1.25版本中， PodSecurityPolicy已被移除，并提供Pod安全性准入控制器（Pod Security Admission）作为PodSecurityPolicy的替代，详情请参见[Pod Security Admission配置](Pod-Security-Admission配置.md)。
 
 ## 修改全局默认Pod安全策略<a name="section1077811013599"></a>
 

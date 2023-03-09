@@ -2,7 +2,7 @@
 
 ## CoreDNS介绍<a name="section092613718475"></a>
 
-购买集群时会安装[CoreDNS插件](CoreDNS（系统资源插件-必装）.md)，CoreDNS是用来做集群内部域名解析。
+创建集群时会安装[CoreDNS插件](coredns（系统资源插件-必装）.md)，CoreDNS是用来做集群内部域名解析。
 
 在kube-system命名空间下可以查看到CoreDNS的Pod。
 

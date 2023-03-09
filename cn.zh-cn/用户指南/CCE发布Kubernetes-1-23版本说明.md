@@ -130,6 +130,7 @@ CCE针对Kubernetes 1.23版本提供了全链路的组件优化和升级。
 -   Kubernetes版本发布周期由一年4个版本变为一年3个版本。
 -   StatefulSets 支持minReadySeconds。
 -   缩容时默认根据Pod uid排序随机选择删除Pod（LogarithmicScaleDown）。基于该特性，可以增强Pod被缩容的随机性，缓解由于Pod拓扑分布约束带来的问题。更多信息，请参见[KEP-2185](https://github.com/kubernetes/enhancements/tree/master/keps/sig-apps/2185-random-pod-select-on-replicaset-downscale)和[issues 96748](https://github.com/kubernetes/kubernetes/issues/96748?spm=a2c4g.11186623.0.0.1de23edc3yorUN)。
+-   [BoundServiceAccountTokenVolume](https://kubernetes.io/zh-cn/docs/reference/access-authn-authz/service-accounts-admin/#bound-service-account-token-volume)特性已稳定，该特性能够提升服务帐号（ServiceAccount）Token的安全性，改变了Pod挂载Token的方式，Kubernetes 1.21及以上版本的集群中会默认开启。
 
 ## 参考链接<a name="zh-cn_topic_0000001212381758_zh-cn_topic_0000001072975092_zh-cn_topic_0261805759_zh-cn_topic_0261793154_section1272182810583"></a>
 

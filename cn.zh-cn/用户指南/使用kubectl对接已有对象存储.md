@@ -17,7 +17,7 @@ CCE支持使用已有的对象存储来创建PersistentVolume，并通过创建�
     **touch pv-obs-example.yaml** **pvc-obs-example.yaml**
 
     <a name="table184303411324"></a>
-    <table><thead align="left"><tr id="row104311415322"><th class="cellrowborder" valign="top" width="33.2033203320332%" id="mcps1.1.4.1.1"><p id="p443118443220"><a name="p443118443220"></a><a name="p443118443220"></a>K8S集群版本（K8S version）</p>
+    <table><thead align="left"><tr id="row104311415322"><th class="cellrowborder" valign="top" width="33.2033203320332%" id="mcps1.1.4.1.1"><p id="p443118443220"><a name="p443118443220"></a><a name="p443118443220"></a>K8s集群版本（K8s version）</p>
     </th>
     <th class="cellrowborder" valign="top" width="35.34353435343534%" id="mcps1.1.4.1.2"><p id="p1431154113212"><a name="p1431154113212"></a><a name="p1431154113212"></a>说明</p>
     </th>
@@ -25,14 +25,14 @@ CCE支持使用已有的对象存储来创建PersistentVolume，并通过创建�
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row543118415321"><td class="cellrowborder" valign="top" width="33.2033203320332%" headers="mcps1.1.4.1.1 "><p id="p1743111463216"><a name="p1743111463216"></a><a name="p1743111463216"></a>1.11 ≤ K8S version ≤ 1.13</p>
+    <tbody><tr id="row543118415321"><td class="cellrowborder" valign="top" width="33.2033203320332%" headers="mcps1.1.4.1.1 "><p id="p1743111463216"><a name="p1743111463216"></a><a name="p1743111463216"></a>1.11 ≤ K8s version ≤ 1.13</p>
     </td>
     <td class="cellrowborder" valign="top" width="35.34353435343534%" headers="mcps1.1.4.1.2 "><p id="p743119413320"><a name="p743119413320"></a><a name="p743119413320"></a>1.11以上及1.13版本集群</p>
     </td>
     <td class="cellrowborder" valign="top" width="31.453145314531454%" headers="mcps1.1.4.1.3 "><p id="p13431246327"><a name="p13431246327"></a><a name="p13431246327"></a>请参见<a href="#li45671840132016">1.11~1.13 yaml文件配置示例</a></p>
     </td>
     </tr>
-    <tr id="row72981940163417"><td class="cellrowborder" valign="top" width="33.2033203320332%" headers="mcps1.1.4.1.1 "><p id="p9298154043420"><a name="p9298154043420"></a><a name="p9298154043420"></a>K8S version = 1.9</p>
+    <tr id="row72981940163417"><td class="cellrowborder" valign="top" width="33.2033203320332%" headers="mcps1.1.4.1.1 "><p id="p9298154043420"><a name="p9298154043420"></a><a name="p9298154043420"></a>K8s version = 1.9</p>
     </td>
     <td class="cellrowborder" valign="top" width="35.34353435343534%" headers="mcps1.1.4.1.2 "><p id="p1729814407349"><a name="p1729814407349"></a><a name="p1729814407349"></a>1.9版本集群</p>
     </td>
@@ -42,7 +42,7 @@ CCE支持使用已有的对象存储来创建PersistentVolume，并通过创建�
     </tbody>
     </table>
 
-    **1.11 ≤ K8S version ≤ 1.13（1.11以上及1.13版本集群）**
+    **1.11 ≤ K8s version ≤ 1.13（1.11以上及1.13版本集群）**
 
     -   <a name="li45671840132016"></a>**PV yaml文件配置示例：**
 
@@ -190,7 +190,7 @@ CCE支持使用已有的对象存储来创建PersistentVolume，并通过创建�
         </tbody>
         </table>
 
-    **K8S version = 1.9（1.9版本集群）**
+    **K8s version = 1.9（1.9版本集群）**
 
     -   <a name="li154036581589"></a>**PV yaml文件配置示例：**
 

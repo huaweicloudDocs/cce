@@ -68,7 +68,7 @@
     -   vpc-demo：网段为192.168.0.0/16，集群在vpc-demo内，容器网段为10.0.0.0/16。
     -   vpc-demo2：网段为10.1.0.0/16。
 
-    创建一个名为peering-demo的对等连接（本端为vpc-demo，对端为vpc-demo2），注意对端VPC的路由添加容器网段，如下所示。
+    创建一个名为peering-demo的对等连接（本端为vpc-demo，对端为vpc-demo2），注意对端VPC的路由添加容器网段。
 
     ![](figures/zh-cn_image_0000001267136457.png)
 

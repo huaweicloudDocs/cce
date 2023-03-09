@@ -6,7 +6,7 @@ CCE支持使用对象存储卷（PersistentVolumeClaim），创建有状态工�
 
 ## 前提条件<a name="section13181839131510"></a>
 
-您已经创建好一个CCE集群，并且在该集群中安装CSI插件（[Everest](Everest（系统资源插件-必装）.md)）。
+您已经创建好一个CCE集群，并且在该集群中安装CSI插件（[Everest](everest（系统资源插件-必装）.md)）。
 
 ## 约束与限制<a name="section946015116135"></a>
 

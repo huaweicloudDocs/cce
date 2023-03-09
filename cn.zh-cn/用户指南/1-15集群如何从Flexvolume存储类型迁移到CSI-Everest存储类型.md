@@ -100,7 +100,7 @@
     </tr>
     <tr id="zh-cn_topic_0285037038_row153610571511"><td class="cellrowborder" valign="top" width="26.1%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0285037038_p03614576517"><a name="zh-cn_topic_0285037038_p03614576517"></a><a name="zh-cn_topic_0285037038_p03614576517"></a>storageClassName</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p1436557154"><a name="zh-cn_topic_0285037038_p1436557154"></a><a name="zh-cn_topic_0285037038_p1436557154"></a>存储卷动态供应关联的k8s storage class名称；云硬盘需使用“csi-disk”。</p>
+    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p1436557154"><a name="zh-cn_topic_0285037038_p1436557154"></a><a name="zh-cn_topic_0285037038_p1436557154"></a>存储卷动态供应关联的K8s storage class名称；云硬盘需使用“csi-disk”。</p>
     </td>
     </tr>
     </tbody>
@@ -169,7 +169,7 @@
     </tr>
     <tr id="zh-cn_topic_0285037038_row5860143317914"><td class="cellrowborder" valign="top" width="26.1%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0285037038_p178608331994"><a name="zh-cn_topic_0285037038_p178608331994"></a><a name="zh-cn_topic_0285037038_p178608331994"></a>storageClassName</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p1786013338917"><a name="zh-cn_topic_0285037038_p1786013338917"></a><a name="zh-cn_topic_0285037038_p1786013338917"></a>k8s storage class名称；需配置为"csi-nas"。</p>
+    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p1786013338917"><a name="zh-cn_topic_0285037038_p1786013338917"></a><a name="zh-cn_topic_0285037038_p1786013338917"></a>K8s storage class名称；需配置为"csi-nas"。</p>
     </td>
     </tr>
     </tbody>
@@ -249,7 +249,7 @@
     </tr>
     <tr id="zh-cn_topic_0285037038_row197641935171213"><td class="cellrowborder" valign="top" width="26.1%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0285037038_p576413351125"><a name="zh-cn_topic_0285037038_p576413351125"></a><a name="zh-cn_topic_0285037038_p576413351125"></a>storageClassName</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p576473510123"><a name="zh-cn_topic_0285037038_p576473510123"></a><a name="zh-cn_topic_0285037038_p576473510123"></a>k8s storage class名称；需配置为"csi-obs”。</p>
+    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p576473510123"><a name="zh-cn_topic_0285037038_p576473510123"></a><a name="zh-cn_topic_0285037038_p576473510123"></a>K8s storage class名称；需配置为"csi-obs”。</p>
     </td>
     </tr>
     </tbody>
@@ -318,7 +318,7 @@
     </tr>
     <tr id="zh-cn_topic_0285037038_row12603415203"><td class="cellrowborder" valign="top" width="26.1%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0285037038_p11879153915225"><a name="zh-cn_topic_0285037038_p11879153915225"></a><a name="zh-cn_topic_0285037038_p11879153915225"></a>storageClassName</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p19878539112216"><a name="zh-cn_topic_0285037038_p19878539112216"></a><a name="zh-cn_topic_0285037038_p19878539112216"></a>指定k8s storage class名称；极速文件存储卷需配置为"csi-sfsturbo”。</p>
+    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p19878539112216"><a name="zh-cn_topic_0285037038_p19878539112216"></a><a name="zh-cn_topic_0285037038_p19878539112216"></a>指定K8s storage class名称；极速文件存储卷需配置为"csi-sfsturbo”。</p>
     </td>
     </tr>
     </tbody>
@@ -404,7 +404,7 @@
     </tr>
     <tr id="zh-cn_topic_0285037038_row18815102892413"><td class="cellrowborder" valign="top" width="26.1%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0285037038_p8310164517245"><a name="zh-cn_topic_0285037038_p8310164517245"></a><a name="zh-cn_topic_0285037038_p8310164517245"></a>storageClassName</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p1530854517246"><a name="zh-cn_topic_0285037038_p1530854517246"></a><a name="zh-cn_topic_0285037038_p1530854517246"></a>指定k8s storage class名称；云硬盘需使用“csi-disk”。</p>
+    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p1530854517246"><a name="zh-cn_topic_0285037038_p1530854517246"></a><a name="zh-cn_topic_0285037038_p1530854517246"></a>指定K8s storage class名称；云硬盘需使用“csi-disk”。</p>
     </td>
     </tr>
     </tbody>
@@ -529,7 +529,7 @@
     </tr>
     <tr id="zh-cn_topic_0285037038_row19543858172911"><td class="cellrowborder" valign="top" width="26.1%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0285037038_p185431558192914"><a name="zh-cn_topic_0285037038_p185431558192914"></a><a name="zh-cn_topic_0285037038_p185431558192914"></a>storageClassName</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p12544958192916"><a name="zh-cn_topic_0285037038_p12544958192916"></a><a name="zh-cn_topic_0285037038_p12544958192916"></a>k8s storage class名称；需配置为"csi-obs”。</p>
+    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p12544958192916"><a name="zh-cn_topic_0285037038_p12544958192916"></a><a name="zh-cn_topic_0285037038_p12544958192916"></a>K8s storage class名称；需配置为"csi-obs”。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0285037038_row1577494282811"><td class="cellrowborder" valign="top" width="26.1%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0285037038_p169043554284"><a name="zh-cn_topic_0285037038_p169043554284"></a><a name="zh-cn_topic_0285037038_p169043554284"></a>volumeName</p>
@@ -583,7 +583,7 @@
     </tr>
     <tr id="zh-cn_topic_0285037038_row10712132133110"><td class="cellrowborder" valign="top" width="26.1%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0285037038_p193419653113"><a name="zh-cn_topic_0285037038_p193419653113"></a><a name="zh-cn_topic_0285037038_p193419653113"></a>storageClassName</p>
     </td>
-    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p593318613110"><a name="zh-cn_topic_0285037038_p593318613110"></a><a name="zh-cn_topic_0285037038_p593318613110"></a>指定k8s storage class名称；需配置为"csi-sfsturbo”。</p>
+    <td class="cellrowborder" valign="top" width="73.9%" headers="mcps1.2.3.1.2 "><p id="zh-cn_topic_0285037038_p593318613110"><a name="zh-cn_topic_0285037038_p593318613110"></a><a name="zh-cn_topic_0285037038_p593318613110"></a>指定K8s storage class名称；需配置为"csi-sfsturbo”。</p>
     </td>
     </tr>
     <tr id="zh-cn_topic_0285037038_row97131621319"><td class="cellrowborder" valign="top" width="26.1%" headers="mcps1.2.3.1.1 "><p id="zh-cn_topic_0285037038_p11933106203116"><a name="zh-cn_topic_0285037038_p11933106203116"></a><a name="zh-cn_topic_0285037038_p11933106203116"></a>storage</p>
@@ -667,7 +667,7 @@
     5.  将应用的实例数恢复，等待pod running。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
-    >有状态应用动态创建存储是通过volumeClaimTemplates机制实现，而该字段k8s无法修改，因此无法通过更换新PVC的方式实现数据迁移。
+    >有状态应用动态创建存储是通过volumeClaimTemplates机制实现，而该字段K8s无法修改，因此无法通过更换新PVC的方式实现数据迁移。
     >volumeClaimTemplates的PVC命名格式是固定的，当符合命名格式的PVC已经存在的时候则直接使用该PVC。
     >因此需要些解关联原有PVC之后，创建同名的CSI格式的PVC来实现存储迁移。
 

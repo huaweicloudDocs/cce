@@ -1,4 +1,4 @@
-# CoreDNS（系统资源插件，必装）<a name="cce_10_0129"></a>
+# coredns（系统资源插件，必装）<a name="cce_10_0129"></a>
 
 ## 插件简介<a name="section25311744154917"></a>
 
@@ -25,7 +25,7 @@ CoreDNS正常运行或升级时，请确保集群中的可用节点数大于等�
 
 本插件为系统默认安装，若因特殊情况卸载后，可参照如下步骤重新安装。
 
-1.  登录CCE控制台，进入集群，在左侧导航栏中选择“插件管理“，在右侧找到**coredns**，单击“安装“。
+1.  登录CCE控制台，单击集群名称进入集群，在左侧导航栏中选择“插件管理“，在右侧找到**coredns**，单击“安装“。
 2.  在安装插件页面，选择插件规格，并配置相关参数。
 
     **表 1**  coredns插件参数配置
@@ -40,6 +40,7 @@ CoreDNS正常运行或升级时，请确保集群中的可用节点数大于等�
     <tbody><tr id="row1137014404511"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p11370134095120"><a name="p11370134095120"></a><a name="p11370134095120"></a>插件规格</p>
     </td>
     <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p937064085113"><a name="p937064085113"></a><a name="p937064085113"></a>并发域名解析能力，请根据业务需求选择插件规格。</p>
+    <p id="p4537165014612"><a name="p4537165014612"></a><a name="p4537165014612"></a>如选择“自定义qps”，CoreDNS所能提供的域名解析QPS与CPU消耗成正相关，请根据业务需求，合理调整插件实例数和容器CPU/内存配额。</p>
     </td>
     </tr>
     <tr id="row83701240105118"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p3370040165116"><a name="p3370040165116"></a><a name="p3370040165116"></a>实例数</p>
@@ -49,7 +50,7 @@ CoreDNS正常运行或升级时，请确保集群中的可用节点数大于等�
     </tr>
     <tr id="row4370840165119"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p937054045117"><a name="p937054045117"></a><a name="p937054045117"></a>容器</p>
     </td>
-    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p1437014065110"><a name="p1437014065110"></a><a name="p1437014065110"></a>选择插件规格后，显示插件容器的CPU和内存配额，此处仅作显示。</p>
+    <td class="cellrowborder" valign="top" width="76%" headers="mcps1.2.3.1.2 "><p id="p1437014065110"><a name="p1437014065110"></a><a name="p1437014065110"></a>选择插件规格后，显示插件容器的CPU和内存配额。</p>
     </td>
     </tr>
     <tr id="row53701440125116"><td class="cellrowborder" valign="top" width="24%" headers="mcps1.2.3.1.1 "><p id="p8370124035118"><a name="p8370124035118"></a><a name="p8370124035118"></a>参数配置</p>
@@ -292,4 +293,90 @@ CoreDNS在插件界面仅支持按预设规格配置，通常情况下，这满�
     }
     ```
 
+
+## 版本记录<a name="section183121449435"></a>
+
+**表 3**  CCE插件版本记录
+
+<a name="table88489551792"></a>
+<table><thead align="left"><tr id="row139251455994"><th class="cellrowborder" valign="top" width="27.254545454545454%" id="mcps1.2.4.1.1"><p id="p1969103105514"><a name="p1969103105514"></a><a name="p1969103105514"></a>插件版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="45.47272727272726%" id="mcps1.2.4.1.2"><p id="p396917314551"><a name="p396917314551"></a><a name="p396917314551"></a>支持的集群版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="27.27272727272727%" id="mcps1.2.4.1.3"><p id="p513770143216"><a name="p513770143216"></a><a name="p513770143216"></a>社区版本（仅1.17及以上版本集群支持）</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row736418372590"><td class="cellrowborder" valign="top" width="27.254545454545454%" headers="mcps1.2.4.1.1 "><p id="p172915645912"><a name="p172915645912"></a><a name="p172915645912"></a>1.25.1</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.47272727272726%" headers="mcps1.2.4.1.2 "><p id="p1472920564592"><a name="p1472920564592"></a><a name="p1472920564592"></a>/v1.(19|21|23|25).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.3 "><p id="p17331021301"><a name="p17331021301"></a><a name="p17331021301"></a><a href="https://github.com/coredns/coredns/releases/tag/v1.8.4" target="_blank" rel="noopener noreferrer">1.8.4</a></p>
+</td>
+</tr>
+<tr id="row2531172511593"><td class="cellrowborder" valign="top" width="27.254545454545454%" headers="mcps1.2.4.1.1 "><p id="p18588153885919"><a name="p18588153885919"></a><a name="p18588153885919"></a>1.23.3</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.47272727272726%" headers="mcps1.2.4.1.2 "><p id="p1858817382598"><a name="p1858817382598"></a><a name="p1858817382598"></a>/v1.(15|17|19|21|23).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.3 "><p id="p4588938195911"><a name="p4588938195911"></a><a name="p4588938195911"></a><a href="https://github.com/coredns/coredns/releases/tag/v1.8.4" target="_blank" rel="noopener noreferrer">1.8.4</a></p>
+</td>
+</tr>
+<tr id="row8757710175517"><td class="cellrowborder" valign="top" width="27.254545454545454%" headers="mcps1.2.4.1.1 "><p id="p5757151010555"><a name="p5757151010555"></a><a name="p5757151010555"></a>1.23.2</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.47272727272726%" headers="mcps1.2.4.1.2 "><p id="p207831947131511"><a name="p207831947131511"></a><a name="p207831947131511"></a>/v1.(15|17|19|21|23).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.3 "><p id="p1029758112912"><a name="p1029758112912"></a><a name="p1029758112912"></a><a href="https://github.com/coredns/coredns/releases/tag/v1.8.4" target="_blank" rel="noopener noreferrer">1.8.4</a></p>
+</td>
+</tr>
+<tr id="row3926175518912"><td class="cellrowborder" valign="top" width="27.254545454545454%" headers="mcps1.2.4.1.1 "><p id="p5969132555"><a name="p5969132555"></a><a name="p5969132555"></a>1.23.1</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.47272727272726%" headers="mcps1.2.4.1.2 "><p id="p45421811111619"><a name="p45421811111619"></a><a name="p45421811111619"></a>/v1.(15|17|19|21|23).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.3 "><p id="p1734664055618"><a name="p1734664055618"></a><a name="p1734664055618"></a><a href="https://github.com/coredns/coredns/releases/tag/v1.8.4" target="_blank" rel="noopener noreferrer">1.8.4</a></p>
+</td>
+</tr>
+<tr id="row15926105520911"><td class="cellrowborder" valign="top" width="27.254545454545454%" headers="mcps1.2.4.1.1 "><p id="p1397023115510"><a name="p1397023115510"></a><a name="p1397023115510"></a>1.17.15</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.47272727272726%" headers="mcps1.2.4.1.2 "><p id="p4627521181613"><a name="p4627521181613"></a><a name="p4627521181613"></a>/v1.(15|17|19|21).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.3 "><p id="p1335434055619"><a name="p1335434055619"></a><a name="p1335434055619"></a><a href="https://github.com/coredns/coredns/releases/tag/v1.8.4" target="_blank" rel="noopener noreferrer">1.8.4</a></p>
+</td>
+</tr>
+<tr id="row2035714120472"><td class="cellrowborder" valign="top" width="27.254545454545454%" headers="mcps1.2.4.1.1 "><p id="p16970193175519"><a name="p16970193175519"></a><a name="p16970193175519"></a>1.17.9</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.47272727272726%" headers="mcps1.2.4.1.2 "><p id="p97811531121611"><a name="p97811531121611"></a><a name="p97811531121611"></a>/v1.(15|17|19).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.3 "><p id="p4361440175619"><a name="p4361440175619"></a><a name="p4361440175619"></a><a href="https://github.com/coredns/coredns/releases/tag/v1.8.4" target="_blank" rel="noopener noreferrer">1.8.4</a></p>
+</td>
+</tr>
+<tr id="row58816436322"><td class="cellrowborder" valign="top" width="27.254545454545454%" headers="mcps1.2.4.1.1 "><p id="p20970632552"><a name="p20970632552"></a><a name="p20970632552"></a>1.17.7</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.47272727272726%" headers="mcps1.2.4.1.2 "><p id="p8161140101619"><a name="p8161140101619"></a><a name="p8161140101619"></a>/v1.(15|17|19).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.3 "><p id="p89329293290"><a name="p89329293290"></a><a name="p89329293290"></a><a href="https://github.com/coredns/coredns/releases/tag/v1.8.4" target="_blank" rel="noopener noreferrer">1.8.4</a></p>
+</td>
+</tr>
+<tr id="row440924363210"><td class="cellrowborder" valign="top" width="27.254545454545454%" headers="mcps1.2.4.1.1 "><p id="p99701365510"><a name="p99701365510"></a><a name="p99701365510"></a>1.17.4</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.47272727272726%" headers="mcps1.2.4.1.2 "><p id="p2923185061618"><a name="p2923185061618"></a><a name="p2923185061618"></a>/v1.(17|19).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.3 "><p id="p61351334205617"><a name="p61351334205617"></a><a name="p61351334205617"></a><a href="https://github.com/coredns/coredns/releases/tag/v1.6.5" target="_blank" rel="noopener noreferrer">1.6.5</a></p>
+</td>
+</tr>
+<tr id="row126511443153215"><td class="cellrowborder" valign="top" width="27.254545454545454%" headers="mcps1.2.4.1.1 "><p id="p797023125517"><a name="p797023125517"></a><a name="p797023125517"></a>1.17.3</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.47272727272726%" headers="mcps1.2.4.1.2 "><p id="p20785058171618"><a name="p20785058171618"></a><a name="p20785058171618"></a>/v1.17.*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.3 "><p id="p15135193414562"><a name="p15135193414562"></a><a name="p15135193414562"></a><a href="https://github.com/coredns/coredns/releases/tag/v1.6.5" target="_blank" rel="noopener noreferrer">1.6.5</a></p>
+</td>
+</tr>
+<tr id="row396884320323"><td class="cellrowborder" valign="top" width="27.254545454545454%" headers="mcps1.2.4.1.1 "><p id="p99701534559"><a name="p99701534559"></a><a name="p99701534559"></a>1.17.1</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.47272727272726%" headers="mcps1.2.4.1.2 "><p id="p838957111718"><a name="p838957111718"></a><a name="p838957111718"></a>/v1.17.*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.27272727272727%" headers="mcps1.2.4.1.3 "><p id="p413513343566"><a name="p413513343566"></a><a name="p413513343566"></a><a href="https://github.com/coredns/coredns/releases/tag/v1.6.5" target="_blank" rel="noopener noreferrer">1.6.5</a></p>
+</td>
+</tr>
+</tbody>
+</table>
 

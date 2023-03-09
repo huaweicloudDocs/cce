@@ -1,4 +1,4 @@
-# Ingress概述<a name="cce_10_0094"></a>
+# Ingress概述<a name="cce_01_0094"></a>
 
 ## 为什么需要Ingress<a name="section17868123416122"></a>
 
@@ -7,7 +7,7 @@ Service基于TCP和UDP协议进行访问转发，为集群提供了四层负载�
 Ingress是Kubernetes集群中一种独立的资源，制定了集群外部访问流量的转发规则。如[图1](#fig18155819416)所示，用户可根据域名和路径对转发规则进行自定义，完成对访问流量的细粒度划分。
 
 **图 1**  Ingress示意图<a name="fig18155819416"></a>  
-![](figures/Ingress示意图.png "Ingress示意图")
+![](figures/Ingress示意图-87.png "Ingress示意图-87")
 
 下面对Ingress的相关定义进行介绍：
 
@@ -31,7 +31,7 @@ Ingress Controller在不同厂商之间的实现方式不同，根据负载均�
 </thead>
 <tbody><tr id="row55117175111"><td class="cellrowborder" valign="top" width="33.24332433243324%" headers="mcps1.2.4.1.1 "><p id="p15111917181112"><a name="p15111917181112"></a><a name="p15111917181112"></a>运维</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.423342334233425%" headers="mcps1.2.4.1.2 "><p id="p4511191711114"><a name="p4511191711114"></a><a name="p4511191711114"></a>免运维</p>
+<td class="cellrowborder" valign="top" width="33.423342334233425%" headers="mcps1.2.4.1.2 "><p id="p4511191711114"><a name="p4511191711114"></a><a name="p4511191711114"></a>免运维，更新升级由华为云负责</p>
 </td>
 <td class="cellrowborder" valign="top" width="33.33333333333333%" headers="mcps1.2.4.1.3 "><p id="p9511161720113"><a name="p9511161720113"></a><a name="p9511161720113"></a>自行安装、升级、维护</p>
 </td>
@@ -77,15 +77,61 @@ Ingress Controller在不同厂商之间的实现方式不同，根据负载均�
 </tbody>
 </table>
 
-由于ELB Ingress和社区开源的Nginx Ingress在原理上存在本质区别，因此支持的Service类型不同。
+由于华为云自研的ELB Ingress和社区开源的Nginx Ingress在原理上存在本质区别，因此支持的Service类型不同，如[表2](#table9511151771120)中所示。
 
-ELB直通Pod场景（CCE Turbo集群 + 独享型ELB实例）下，ELB Ingress支持ClusterIP类型Service；其他非直通场景下支持NodePort类型Service。
+**表 2**  支持Service类型
 
-ELB Ingress Controller部署在master节点，所有策略配置和转发行为均在ELB侧完成。非ELB直通Pod场景下，集群外部的ELB只能通过VPC的IP对接集群内部节点，因此ELB Ingress只支持NodePort类型的Service。ELB直通Pod场景下，ELB可直接将流量转发到集群内Pod，此时Ingress仅支持对接ClusterIP类型的Service。
+<a name="table9511151771120"></a>
+<table><thead align="left"><tr id="row175113174112"><th class="cellrowborder" valign="top" width="25%" id="mcps1.2.5.1.1"><p id="p8511917191116"><a name="p8511917191116"></a><a name="p8511917191116"></a>Ingress类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="24.959999999999997%" id="mcps1.2.5.1.2"><p id="p175111917121116"><a name="p175111917121116"></a><a name="p175111917121116"></a>访问类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="24.990000000000002%" id="mcps1.2.5.1.3"><p id="p17511817151112"><a name="p17511817151112"></a><a name="p17511817151112"></a>集群内访问（ClusterIP）</p>
+</th>
+<th class="cellrowborder" valign="top" width="25.05%" id="mcps1.2.5.1.4"><p id="p10511817141113"><a name="p10511817141113"></a><a name="p10511817141113"></a>节点访问（NodePort）</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row1751131717112"><td class="cellrowborder" rowspan="2" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p14511617171113"><a name="p14511617171113"></a><a name="p14511617171113"></a>ELB Ingress</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.959999999999997%" headers="mcps1.2.5.1.2 "><p id="p20512181718118"><a name="p20512181718118"></a><a name="p20512181718118"></a>负载均衡路由</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.990000000000002%" headers="mcps1.2.5.1.3 "><p id="p115120175113"><a name="p115120175113"></a><a name="p115120175113"></a>不支持</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.05%" headers="mcps1.2.5.1.4 "><p id="p75126176116"><a name="p75126176116"></a><a name="p75126176116"></a>支持</p>
+</td>
+</tr>
+<tr id="row25121617101119"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p1251291712119"><a name="p1251291712119"></a><a name="p1251291712119"></a>ENI负载均衡路由</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p185121417161116"><a name="p185121417161116"></a><a name="p185121417161116"></a>支持</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p2051271714110"><a name="p2051271714110"></a><a name="p2051271714110"></a>不支持</p>
+</td>
+</tr>
+<tr id="row9512181719115"><td class="cellrowborder" rowspan="2" valign="top" width="25%" headers="mcps1.2.5.1.1 "><p id="p1551211716112"><a name="p1551211716112"></a><a name="p1551211716112"></a>Nginx Ingress</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.959999999999997%" headers="mcps1.2.5.1.2 "><p id="p75121517111114"><a name="p75121517111114"></a><a name="p75121517111114"></a>负载均衡路由</p>
+</td>
+<td class="cellrowborder" valign="top" width="24.990000000000002%" headers="mcps1.2.5.1.3 "><p id="p6512141712114"><a name="p6512141712114"></a><a name="p6512141712114"></a>支持</p>
+</td>
+<td class="cellrowborder" valign="top" width="25.05%" headers="mcps1.2.5.1.4 "><p id="p0512121714116"><a name="p0512121714116"></a><a name="p0512121714116"></a>支持</p>
+</td>
+</tr>
+<tr id="row1451241718110"><td class="cellrowborder" valign="top" headers="mcps1.2.5.1.1 "><p id="p551271751118"><a name="p551271751118"></a><a name="p551271751118"></a>ENI负载均衡路由</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.2 "><p id="p651271712119"><a name="p651271712119"></a><a name="p651271712119"></a>支持</p>
+</td>
+<td class="cellrowborder" valign="top" headers="mcps1.2.5.1.3 "><p id="p251221731114"><a name="p251221731114"></a><a name="p251221731114"></a>不支持</p>
+</td>
+</tr>
+</tbody>
+</table>
 
-Nginx Ingress Controller运行在集群中，作为服务通过NodePort对外暴露，流量经过Nginx-ingress转发到集群内其他业务，流量转发行为及转发对象均在集群内部，因此支持ClusterIP和NodePort类型的Service。ELB直通Pod场景下，Nginx Ingress仅支持ClusterIP类型的Service。
+ELB Ingress Controller部署在master节点，所有策略配置和转发行为均在ELB侧完成。不使用ENI负载均衡的情况下，集群外部的ELB只能通过VPC的IP对接集群内部节点，因此ELB Ingress只支持NodePort类型的Service。使用ENI负载均衡后，ELB可直接将流量转发到集群内Pod，此时Ingress仅支持对接ClusterIP类型的Service。
 
-综上，ELB Ingress使用企业级LB进行流量转发，拥有高性能和高稳定性的优点，而Nginx Ingress Controller部署在集群节点上，牺牲了一定的集群资源但可配置性相对更好。
+Nginx Ingress Controller运行在集群中，作为服务通过NodePort对外暴露，流量经过Nginx-ingress转发到集群内其他业务，流量转发行为及转发对象均在集群内部，因此支持ClusterIP和NodePort类型的Service。当集群使用ENI负载均衡时，Nginx Ingress仅支持ClusterIP类型的Service。
+
+综上，华为云自研的ELB Ingress使用企业级LB进行流量转发，拥有高性能和高稳定性的优点，而Nginx Ingress Controller部署在集群节点上，牺牲了一定的集群资源但可配置性相对更好。
 
 ## ELB Ingress Controller工作原理<a name="section162271821192312"></a>
 
@@ -98,11 +144,11 @@ ELB Ingress Controller部署于Master节点上，与集群所在VPC下的弹性�
 3.  当用户进行访问时，流量根据ELB中配置的转发策略转发到对应的后端Service端口，然后再经过Service二次转发访问到关联的各个工作负载。
 
 **图 2**  ELB Ingress Controller工作原理<a name="fig122542486129"></a>  
-![](figures/ELB-Ingress-Controller工作原理.png "ELB-Ingress-Controller工作原理")
+![](figures/ELB-Ingress-Controller工作原理-88.png "ELB-Ingress-Controller工作原理-88")
 
 ## Nginx Ingress Controller工作原理<a name="section1973674703410"></a>
 
-Nginx型的Ingress使用弹性负载均衡（ELB）作为流量入口，并在集群中部署[nginx-ingress插件](nginx-ingress.md)来对流量进行负载均衡及访问控制。
+Nginx型的Ingress使用弹性负载均衡（ELB）作为流量入口，并在集群中部署[nginx-ingress插件](nginx-ingress-153.md)来对流量进行负载均衡及访问控制。
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >nginx-ingress插件直接使用社区模板与镜像，CCE不提供额外维护，不建议用于商用场景。
@@ -115,5 +161,5 @@ Nginx型的Ingress Controller通过pod部署在工作节点上，因此引入了
 3.  在流量访问集群时，首先被已创建的负载均衡实例转发到集群内部的Nginx组件，然后Nginx组件再根据转发规则将其转发至对应的各个工作负载。
 
 **图 3**  Nginx Ingress Controller工作原理<a name="fig2042781115133"></a>  
-![](figures/Nginx-Ingress-Controller工作原理.png "Nginx-Ingress-Controller工作原理")
+![](figures/Nginx-Ingress-Controller工作原理-89.png "Nginx-Ingress-Controller工作原理-89")
 

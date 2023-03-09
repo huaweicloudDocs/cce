@@ -1,4 +1,4 @@
-# E-Backup<a name="cce_10_0395"></a>
+# e-backup<a name="cce_10_0395"></a>
 
 ## 插件简介<a name="section13441104311208"></a>
 
@@ -18,7 +18,7 @@ E-Backup提供集群备份恢复能力。它将用户应用数据和业务数据
     -   可以将应用的镜像地址\(repo\)换成另一个镜像地址，镜像名字和版本号在恢复过程中是保持不变的；
     -   可以将应用使用的StorageClass的名字更换成新的StorageClass，注意需要使用同类型替换，比如：块存储 -\> 块存储。
 
--   遵循开源velero和restic插件的约束，比如：在恢复过程中Service会清除clusterIP的IP地址，这样才能更适应源、目标K8S集群的差异。
+-   遵循开源velero和restic插件的约束，比如：在恢复过程中Service会清除clusterIP的IP地址，这样才能更适应源、目标K8s集群的差异。
 
 ## 安装插件<a name="section19447194914319"></a>
 
@@ -34,7 +34,7 @@ E-Backup提供集群备份恢复能力。它将用户应用数据和业务数据
 
 E-Backup使用OBS桶作为后端存储库，在备份前需要[准备密钥](#section614514242712)并[创建存储库](#section111141472815)。
 
-备份支持[备用应用（立即备份）](#section20885165233817)和[备用应用（定时备份）](#section454444004516)，恢复支持[立即恢复](#section141018019611)和[周期恢复](#section1631963714)。
+备份支持[备用应用（立即备份）](#section20885165233817)和[备用应用（定时备份）](#section454444004516)，恢复支持[立即恢复](#section141018019611)。
 
 ## 准备密钥<a name="section614514242712"></a>
 
@@ -64,7 +64,7 @@ E-Backup使用OBS桶作为后端存储库，在备份前需要[准备密钥](#se
     kind: Secret
     metadata:
       labels:
-        backup.everest.io/secret: 'true'   #标识该secret用于E-Backup访问备份存储库
+        secret.everest.io/backup: 'true'   #标识该secret用于E-Backup访问备份存储库
       name: secret-secure-opaque
       namespace: velero                  #必须和E-Backup置于同一namespace，取值必须为velero
     type: cfe/secure-opaque
@@ -75,12 +75,12 @@ E-Backup使用OBS桶作为后端存储库，在备份前需要[准备密钥](#se
 
     -   secret 所在 namespace 必须和 E-Backup 实例所在namespace一致，即 velero。
     -   secret.data 中存储的是访问对象存储服务的秘钥，其中 key 必须为 cloud，而 value 为[2](#li12643172610310)中通过 base64 编码得到的字符串。一般通过 base64 编码后显示的字符串会有换行符，请在写入 secret.data 中时手动去除这些换行符。
-    -   secret 需要打上标签“secret.everest.io/backup: true”，标识该 secret 是用于备份存储库的管理的。
+    -   secret 需要打上标签“secret.everest.io/backup: true”，标识该 secret 是用于备份存储库的管理。
 
 
 ## 创建存储库<a name="section111141472815"></a>
 
-这里的备份存储库是指 E-Backup 用于获取和检测后端对象存储服务相关信息的 K8S 资源对象。
+这里的备份存储库是指 E-Backup 用于获取和检测后端对象存储服务相关信息的 K8s 资源对象。
 
 ```
 apiVersion: velero.io/v1
@@ -181,7 +181,7 @@ spec:
 
 -   资源过滤相关：以下字段为过滤条件，都配置时取交集，相当于对集群中的所有资源进行筛选。
     -   **includedNamespaces**/**excludedNamespaces**：指定对某些命名空间下的资源备份/不备份，互斥选项，选择一项配置即可，可选择多个namespace，默认表示所有namespace。
-    -   **labelSelector**：指定对具有特定标签的资源进行备份，参照 K8S 的标准用法，按需选择。
+    -   **labelSelector**：指定对具有特定标签的资源进行备份，参照 K8s 的标准用法，按需选择。
     -   **runMode**：选择备份的运行方式，**必填**，Normal（备份应用和数据）/AppOnly（仅备份应用）/DataOnly（仅备份数据）/DryRun（用于验证，不备份）。
 
 -   业务数据备份相关：当前支持两种方式对业务产生的实际数据进行备份，一种是 everest 快照，只适用于使用 evs 类型的持久卷（pvc）作为数据卷；另一种是 restic 备份，可备份除去 hostpath 类型以外的所有数据卷。两种方式支持混用。
@@ -190,7 +190,7 @@ spec:
 -   **hook**：hook是用于在备份前或备份后执行某些指令，实现用户对备份的精细化控制，hook 类似于执行 kubectl exec 命令，目前只对 Pod 有效。
 
     -   includedNamespaces/excludedNamespaces：指定对某些 namespace 下的 Pod 执行/不执行 hook ，互斥选项，默认表示所有namespace
-    -   labelSelector：指定对具有某些 label 的 Pod 执行 hook，参照 K8S 的标准用法，按需选择
+    -   labelSelector：指定对具有某些 label 的 Pod 执行 hook，参照 K8s 的标准用法，按需选择
     -   command：指定 hook 的执行命令
     -   container	：指定执行命令的容器名，当 Pod 有多个容器时用于精细化控制，默认为Pod 的第一个容器。
     -   onError：指定 hook 执行失败时的行为，可选择 Continue/Fail ，默认为 Fail。
@@ -251,6 +251,7 @@ metadata:
 spec:
   schedule: 0 */10 * * *
   template:
+    runMode: Normal
     hooks: {}
     includedNamespaces:
     - nginx
@@ -394,9 +395,9 @@ spec:
     -   **imageRepositoryMapping**：改变备份资源的images字段，用于仓库的映射关系，不包含镜像名字和标签的改变（防止迁移和升级耦合在一起），比如：quay.io/coreos/etcd:2.5 搬迁到SWR后，使用本地镜像仓库下 s**wr.cn-south-1.myhuaweicloud.com/everest/etcd:2.5**，配置格式为：**quay.io/coreos: swr.cn-south-1.myhuaweicloud.com/everest**
     -   **preserveNodePorts**：如果设置成不保留，则不保留的是 Service 自动生成的 nodePort，用户手动配置的 nodePort 仍然会保留
 
--   **hook**相关：Restore 模板的 hook 配置和 Backup 模板的不太相同，共有两种类型，一种是 init 类型，用于向 pod 中添加 initContainer；一种是 exec 类型，用于执行某些指令。init 类型的 hook 请参照 K8S 中 initContainers 的定义方式进行配置，下面介绍有关 hook 整体选择的参数和 exec 类型的参数。
+-   **hook**相关：Restore 模板的 hook 配置和 Backup 模板的不太相同，共有两种类型，一种是 init 类型，用于向 pod 中添加 initContainer；一种是 exec 类型，用于执行某些指令。init 类型的 hook 请参照 K8s 中 initContainers 的定义方式进行配置，下面介绍有关 hook 整体选择的参数和 exec 类型的参数。
     -   **includedNamespaces**/**excludedNamespaces**：指定对某些 namespace 下的 pod 执行/不执行 hook ，互斥选项，默认表示所有namespace
-    -   **labelSelector**：指定对具有某些 label 的 pod 执行 hook，参照 K8S 的标准用法，按需选择。
+    -   **labelSelector**：指定对具有某些 label 的 pod 执行 hook，参照 K8s 的标准用法，按需选择。
     -   **command**：指定 hook 的执行命令。
     -   **container**：指定执行命令的容器名，当 pod 有多个容器时用于精细化控制，默认为pod的第一个容器。
     -   **onError：**指定 hook 执行失败时的行为，可选择 Continue/Fail ，默认为 Fail。
@@ -440,83 +441,22 @@ status:
 -   restore-01-logs.gz：日志文件，随后下载、解压并查看日志。
 -   restore-01-results.gz：恢复结果文件，包含 warnings 和 errors 信息。
 
-## 周期恢复<a name="section1631963714"></a>
+## 版本记录<a name="section183121449435"></a>
 
-将某个定时备份作为数据源，恢复应用到另一个 namespace/集群 中，全场景适用。
+**表 1**  CCE插件版本记录
 
-编辑 Restore 模板，如下所示，随后通过 kubectl create 命令创建。
-
-```
-apiVersion: velero.io/v1
-kind: Restore
-metadata:
-  name: restore-01
-  namespace: kube-system
-spec:
-  scheduleName: backup-01
-  hooks:
-    resources:
-    - name: restore-hook-1
-      includedNamespaces:
-      - mysql
-      labelSelector: {}
-      postHooks:
-      - init:
-          initContainers:
-          - name: restore-hook-init1
-            image: alpine:latest
-            volumeMounts:
-            - mountPath: /restores/pvc1-vm
-              name: pvc1-vm
-            command:
-            - /bin/ash
-            - -c
-            - echo -n "FOOBARBAZ" >> /restores/pvc1-vm/foobarbaz
-          - name: restore-hook-init2
-            image: alpine:latest
-            volumeMounts:
-            - mountPath: /restores/pvc2-vm
-              name: pvc2-vm
-            command:
-            - /bin/ash
-            - -c
-            - echo -n "DEADFEED" >> /restores/pvc2-vm/deadfeed
-      - exec:
-          execTimeout: 1m
-          waitTimeout: 5m
-          onError: Fail
-          container: mysql
-          command:
-          - /bin/bash
-          - '-c'
-          - 'while ! mysql_isready; do sleep 1; done'
-      - exec:
-          container: mysql
-          waitTimeout: 6m
-          execTimeout: 1m
-          onError: Continue
-          command:
-          - /bin/bash
-          - '-c'
-          - 'mysql < /backup/backup.sql'
-  includedNamespaces:
-  - nginx
-  - mysql
-  namespaceMapping:
-    nginx: nginx-another
-    mysql: mysql-another
-  labelSelector: {}
-  preserveNodePorts: false
-  storageClassMapping:
-    disk: csi-disk
-    obs: csi-obs
-  imageRepositoryMapping:
-    quay.io/coreos: swr.cn-south-1.myhuaweicloud.com/everest 
-```
-
-参数说明如下。
-
-**scheduleName**：指定某个定时备份作为数据源，会从该定时备份创建的状态为 Completed 的立即备份中进行恢复，必填项。
-
-其余参数与[立即恢复](#section141018019611)一致。
+<a name="table88489551792"></a>
+<table><thead align="left"><tr id="row139251455994"><th class="cellrowborder" valign="top" width="37.50531236719082%" id="mcps1.2.3.1.1"><p id="p13601510205420"><a name="p13601510205420"></a><a name="p13601510205420"></a>插件版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="62.494687632809175%" id="mcps1.2.3.1.2"><p id="p156011107542"><a name="p156011107542"></a><a name="p156011107542"></a>支持的集群版本</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row8757710175517"><td class="cellrowborder" valign="top" width="37.50531236719082%" headers="mcps1.2.3.1.1 "><p id="p1347794815513"><a name="p1347794815513"></a><a name="p1347794815513"></a>1.2.0</p>
+</td>
+<td class="cellrowborder" valign="top" width="62.494687632809175%" headers="mcps1.2.3.1.2 "><p id="p1647714812555"><a name="p1647714812555"></a><a name="p1647714812555"></a>/v1.(15|17|19|21).*/</p>
+</td>
+</tr>
+</tbody>
+</table>
 

@@ -1,6 +1,6 @@
 # CCE容器实例弹性伸缩到CCI服务<a name="cce_10_0295"></a>
 
-Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该插件支持用户在短时高负载场景下，将部署在CCE上的无状态负载（Deployment）、有状态负载（StatefulSet）、普通任务（Job）三种资源类型的容器实例（Pod），弹性创建到云容器实例CCI服务上，以减少集群扩容带来的消耗。
+Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该插件支持用户在短时高负载场景下，将部署在CCE上的容器实例（Pod）弹性创建到云容器实例CCI服务上，以减少集群扩容带来的消耗。弹性Pod实例可以在创建无状态负载（Deployment）、有状态负载（StatefulSet）、普通任务（Job）三种资源类型时设置，也可以在单独创建Pod时在YAML中指定Label，详情请参见[通过YAMl文件配置](#zh-cn_topic_0287319085_section1088133211315)。
 
 具体功能如下：
 
@@ -12,16 +12,18 @@ Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该�
 
 ## 约束及限制<a name="zh-cn_topic_0287319085_section1925910435328"></a>
 
--   仅支持VPC网络模式的CCE集群和CCE Turbo集群（virtual-kubelet 1.2.5版本及以上支持），且仅支持1.21及以下版本集群，暂不支持ARM集群。如果集群中包含ARM节点，插件实例将不会部署至ARM节点。
+-   仅支持VPC网络模式的CCE集群和CCE Turbo集群（virtual-kubelet 1.2.5版本及以上支持），暂不支持ARM集群。如果集群中包含ARM节点，插件实例将不会部署至ARM节点。
 
 -   调度到CCI的实例的存储类型只支持ConfigMap、Secret、emptyDir、SFS、SFS Turbo几种Volume类型，其中emptyDir不支持子路径，且SFS、SFS Turbo类型存储对应的PVC只支持使用CSI类型的StorageClass。
 -   暂不支持守护进程集（DaemonSet）以及HostNetwork网络模式的容器实例（Pod）弹性到CCI。
 -   跨CCE和CCI实例Service网络互通只支持集群内访问（ClusterIP）类型。
--   跨CCE和CCI实例，在对接LoadBalancer或Ingress时，禁止指定健康检查端口：
+-   跨CCE和CCI实例，在对接LoadBalancer类型的Service或Ingress时，禁止指定健康检查端口：
 
     1. 在CCE集群下，由于CCI的容器与CCE的容器在ELB注册的后端使用端口不一致，指定健康检查端口会导致部分后端健康检查异常。
 
     2. 跨集群使用Service对接同一个ELB的监听器时，需确认健康检查方式，避免服务访问异常。
+
+    3. 跨CCE和CCI实例，在对接共享型LoadBalancer类型的Service时，需要放通node安全组下100.125.0.0/16网段的容器端口。
 
 -   集群所在子网不能与10.247.0.0/16重叠，否则会与CCI命名空间下的Service网段冲突，导致无法使用。
 -   使用插件前需要用户在[CCI界面](https://console.huaweicloud.com/cci/?locale=zh-cn#/dashboard)对CCI服务进行授信。
@@ -46,13 +48,21 @@ Virtual Kubelet是基于社区Virtual Kubelet开源项目开发的插件，该�
 
 ## 安装插件<a name="zh-cn_topic_0287319085_section1372419715333"></a>
 
-1.  登录CCE控制台，进入集群，单击左侧导航栏的“插件管理“，在右侧找到**virtual-kubelet**，单击“安装“。
-2.  选择插件规格，勾选“支持CCE集群中的Pod与CCI集群中的Pod通过Kubernetes Service互通“。
+1.  在CCE控制台，单击集群名称进入集群，单击左侧导航栏的“插件管理“，在右侧找到**virtual-kubelet**，单击“安装“。
+2.  在“规格配置”步骤中，勾选“网络互通”后的选择框，可实现CCE集群中的Pod与CCI集群中的Pod通过Kubernetes Service互通。
+
+    **图 1**  勾选“网络互通”<a name="zh-cn_topic_0287319085_cce_10_0135_fig4189175010414"></a>  
+    ![](figures/勾选-网络互通.png "勾选-网络互通")
+
 3.  单击“安装“。
 
-## 通过Yaml文件创建工作负载<a name="zh-cn_topic_0287319085_section1088133211315"></a>
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >勾选了网络互通后，会在CCI运行的Pod中注入一个sidecar用于支持service访问的能力，查询到的运行容器数量会比定义的多一个，属于正常情况。
 
-示例模板
+
+## 通过YAMl文件配置<a name="zh-cn_topic_0287319085_section1088133211315"></a>
+
+无状态工作负载示例模板：
 
 ```
 apiVersion: apps/v1
@@ -88,9 +98,32 @@ spec:
       dnsPolicy: Default
 ```
 
+Pod示例模板：
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    virtual-kubelet.io/burst-to-cci: 'auto'
+spec:
+  containers:
+  - image: nginx:alpine
+    name: container-0
+    resources:
+      limits:
+        cpu: 500m
+        memory: 1024Mi
+      requests:
+        cpu: 500m
+        memory: 1024Mi
+  imagePullSecrets:
+  - name: default-secret
+```
+
 >![](public_sys-resources/icon-note.gif) **说明：** 
->标红部分为添加labels。
->创建弹性至CCI的负载时需要在负载的labels中添加如下字段：
+>创建弹性至CCI的负载时需要在工作负载或Pod的labels中添加如下字段：
 >```
 >virtual-kubelet.io/burst-to-cci: "auto"
 >```

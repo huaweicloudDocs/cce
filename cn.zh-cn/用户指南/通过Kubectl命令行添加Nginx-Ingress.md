@@ -86,6 +86,65 @@ v1版本参数相较v1beta1参数有如下区别。
                   servicePort: <your_service_port>  #替换为您的目标服务端口
     ```
 
+    **表 1**  关键参数说明
+
+    <a name="table128613206282"></a>
+    <table><thead align="left"><tr id="row0861920112817"><th class="cellrowborder" valign="top" width="24.772477247724773%" id="mcps1.2.5.1.1"><p id="p786112062818"><a name="p786112062818"></a><a name="p786112062818"></a>参数</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="13.691369136913693%" id="mcps1.2.5.1.2"><p id="p88617203282"><a name="p88617203282"></a><a name="p88617203282"></a>是否必填</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="13.821382138213819%" id="mcps1.2.5.1.3"><p id="p1586162032820"><a name="p1586162032820"></a><a name="p1586162032820"></a>参数类型</p>
+    </th>
+    <th class="cellrowborder" valign="top" width="47.714771477147714%" id="mcps1.2.5.1.4"><p id="p10862120122811"><a name="p10862120122811"></a><a name="p10862120122811"></a>描述</p>
+    </th>
+    </tr>
+    </thead>
+    <tbody><tr id="row1386292022814"><td class="cellrowborder" valign="top" width="24.772477247724773%" headers="mcps1.2.5.1.1 "><p id="p28627205285"><a name="p28627205285"></a><a name="p28627205285"></a>kubernetes.io/ingress.class</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.691369136913693%" headers="mcps1.2.5.1.2 "><p id="p9862182092810"><a name="p9862182092810"></a><a name="p9862182092810"></a>是（仅1.21及以下集群）</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.821382138213819%" headers="mcps1.2.5.1.3 "><p id="p1986282011288"><a name="p1986282011288"></a><a name="p1986282011288"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="47.714771477147714%" headers="mcps1.2.5.1.4 "><p id="p1486222020282"><a name="p1486222020282"></a><a name="p1486222020282"></a>nginx：表示使用NginxIngress，未安装nginx-ingress插件时无法使用。</p>
+    <p id="p7862132017287"><a name="p7862132017287"></a><a name="p7862132017287"></a>通过API接口创建Ingress时必须增加该参数。</p>
+    </td>
+    </tr>
+    <tr id="row28621220132812"><td class="cellrowborder" valign="top" width="24.772477247724773%" headers="mcps1.2.5.1.1 "><p id="p59194313143"><a name="p59194313143"></a><a name="p59194313143"></a>ingressClassName</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.691369136913693%" headers="mcps1.2.5.1.2 "><p id="p19193301415"><a name="p19193301415"></a><a name="p19193301415"></a>是</p>
+    <p id="p69199318144"><a name="p69199318144"></a><a name="p69199318144"></a>（仅1.23及以上集群）</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.821382138213819%" headers="mcps1.2.5.1.3 "><p id="p1791953141420"><a name="p1791953141420"></a><a name="p1791953141420"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="47.714771477147714%" headers="mcps1.2.5.1.4 "><p id="p191993181412"><a name="p191993181412"></a><a name="p191993181412"></a>nginx：表示使用NginxIngress，未安装nginx-ingress插件时无法使用。</p>
+    <p id="p18919163191414"><a name="p18919163191414"></a><a name="p18919163191414"></a>通过API接口创建Ingress时必须增加该参数。</p>
+    </td>
+    </tr>
+    <tr id="row10728182725410"><td class="cellrowborder" valign="top" width="24.772477247724773%" headers="mcps1.2.5.1.1 "><p id="p1968717516225"><a name="p1968717516225"></a><a name="p1968717516225"></a>ingress.beta.kubernetes.io/url-match-mode</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.691369136913693%" headers="mcps1.2.5.1.2 "><p id="p06871551221"><a name="p06871551221"></a><a name="p06871551221"></a>否</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.821382138213819%" headers="mcps1.2.5.1.3 "><p id="p368765202212"><a name="p368765202212"></a><a name="p368765202212"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="47.714771477147714%" headers="mcps1.2.5.1.4 "><p id="p17687954227"><a name="p17687954227"></a><a name="p17687954227"></a>路由匹配策略。</p>
+    <p id="p2687851225"><a name="p2687851225"></a><a name="p2687851225"></a>默认值为<span class="parmvalue" id="parmvalue1124845489"><a name="parmvalue1124845489"></a><a name="parmvalue1124845489"></a>“STARTS_WITH”</span>(前缀匹配)。</p>
+    <p id="p14687135102217"><a name="p14687135102217"></a><a name="p14687135102217"></a>取值范围：</p>
+    <a name="ul1368755172219"></a><a name="ul1368755172219"></a><ul id="ul1368755172219"><li>EQUAL_TO：精确匹配</li><li>STARTS_WITH：前缀匹配</li><li>REGEX：正则匹配</li></ul>
+    </td>
+    </tr>
+    <tr id="row67278272540"><td class="cellrowborder" valign="top" width="24.772477247724773%" headers="mcps1.2.5.1.1 "><p id="p10643627185415"><a name="p10643627185415"></a><a name="p10643627185415"></a>pathType</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.691369136913693%" headers="mcps1.2.5.1.2 "><p id="p9643182718545"><a name="p9643182718545"></a><a name="p9643182718545"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="13.821382138213819%" headers="mcps1.2.5.1.3 "><p id="p20643122719545"><a name="p20643122719545"></a><a name="p20643122719545"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="47.714771477147714%" headers="mcps1.2.5.1.4 "><p id="p16431427135414"><a name="p16431427135414"></a><a name="p16431427135414"></a>路径类型，改字段仅v1.23及以上集群支持。</p>
+    <a name="ul364310277543"></a><a name="ul364310277543"></a><ul id="ul364310277543"><li>ImplementationSpecific: 匹配方法取决于具体Ingress Controller的实现。在CCE中会使用ingress.beta.kubernetes.io/url-match-mode指定的匹配方式。</li><li>Exact：精确匹配 URL 路径，且区分大小写。</li><li>Prefix：基于以 / 分隔的 URL 路径前缀匹配。匹配区分大小写，并且对路径中的元素逐个匹配。 路径元素指的是由 / 分隔符分隔的路径中的标签列表。</li></ul>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
 3.  创建Ingress。
 
     **kubectl create -f ingress-test.yaml**
@@ -168,6 +227,12 @@ spec:
           serviceName: <your_service_name>  #替换为您的目标服务名称
           servicePort: <your_service_port>  #替换为您的目标服务端口
   ingressClassName: nginx
+```
+
+如想配置HTTP重定向到HTTPS，可在annotation字段中加入如下配置：
+
+```
+nginx.ingress.kubernetes.io/ssl-redirect: "true"
 ```
 
 ## 配置URL重写规则<a name="section14863520202819"></a>

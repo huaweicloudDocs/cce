@@ -1,4 +1,4 @@
-# Dashboard<a name="cce_10_0128"></a>
+# dashboard<a name="cce_10_0128"></a>
 
 ## 插件简介<a name="section1418513434428"></a>
 
@@ -17,16 +17,9 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
 **开源社区地址：**[https://github.com/kubernetes/dashboard](https://github.com/kubernetes/dashboard)
 
->![](public_sys-resources/icon-note.gif) **说明：** 
->当前CCE提供的Dashboard插件已将对应镜像升级到最新版本，不受Kubernetes Dashboard漏洞CVE-2018-18264影响。
->安全漏洞CVE-2018-18264的详细信息，请参考：
->-   [https://github.com/kubernetes/dashboard/pull/3289](https://github.com/kubernetes/dashboard/pull/3289?spm=a2c4g.11186623.2.10.34d16d21dGsJMe)
->-   [https://github.com/kubernetes/dashboard/pull/3400](https://github.com/kubernetes/dashboard/pull/3400?spm=a2c4g.11186623.2.11.34d16d21dGsJMe)
->-   [https://github.com/kubernetes/dashboard/releases/tag/v1.10.1](https://github.com/kubernetes/dashboard/releases/tag/v1.10.1)
-
 ## 安装步骤<a name="section46701613154319"></a>
 
-1.  登录CCE控制台，进入集群，单击左侧导航栏的“插件管理“，在右侧找到**dashboard**，单击“安装“。
+1.  登录CCE控制台，单击集群名称进入集群，单击左侧导航栏的“插件管理“，在右侧找到**dashboard**，单击“安装“。
 2.  在规格配置页面，配置以下参数。
     -   证书配置：dashboard服务端使用的证书。
         -   使用自定义证书。
@@ -43,7 +36,7 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
 ## 访问dashboard<a name="section15288141117362"></a>
 
-1.  登录CCE控制台，进入集群，单击左侧导航栏的“插件管理“，确认dashboard插件状态为“运行中“后，单击“访问“。
+1.  登录CCE控制台，单击集群名称进入集群，单击左侧导航栏的“插件管理“，确认dashboard插件状态为“运行中“后，单击“访问“。
 2.  在CCE控制台弹出的窗口中复制token。
 3.  在登录页面中选择“令牌”的登录方式，粘贴输入复制的token，单击“登录“按钮。
 
@@ -81,4 +74,76 @@ Kubernetes Dashboard是一个旨在为Kubernetes世界带来通用监控和操�
 
     Windows：保存链接地址，关闭所有已经打开的Chrome浏览器窗口，Windows键 +“R”弹出“运行”对话框，输入“chrome --ignore-certificate-errors”启动新的chrome窗口，输入地址进入登录界面。
 
+
+## 版本记录<a name="section183121449435"></a>
+
+**表 1**  CCE插件版本记录
+
+<a name="table88489551792"></a>
+<table><thead align="left"><tr id="row139251455994"><th class="cellrowborder" valign="top" width="27.236363636363635%" id="mcps1.2.4.1.1"><p id="p1494784163412"><a name="p1494784163412"></a><a name="p1494784163412"></a>插件版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="45.49090909090909%" id="mcps1.2.4.1.2"><p id="p02501368494"><a name="p02501368494"></a><a name="p02501368494"></a>支持的集群版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="27.272727272727277%" id="mcps1.2.4.1.3"><p id="p1044510618373"><a name="p1044510618373"></a><a name="p1044510618373"></a>社区版本（仅1.17及以上版本集群支持）</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row966259113"><td class="cellrowborder" valign="top" width="27.236363636363635%" headers="mcps1.2.4.1.1 "><p id="p1634208217"><a name="p1634208217"></a><a name="p1634208217"></a>2.2.3</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.49090909090909%" headers="mcps1.2.4.1.2 "><p id="p1134701215"><a name="p1134701215"></a><a name="p1134701215"></a>/v1.(21|23|25).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.272727272727277%" headers="mcps1.2.4.1.3 "><p id="p238017112210"><a name="p238017112210"></a><a name="p238017112210"></a><a href="https://github.com/kubernetes/dashboard/releases/tag/v2.7.0" target="_blank" rel="noopener noreferrer">2.7.0</a></p>
+</td>
+</tr>
+<tr id="row3926175518912"><td class="cellrowborder" valign="top" width="27.236363636363635%" headers="mcps1.2.4.1.1 "><p id="p1162124314508"><a name="p1162124314508"></a><a name="p1162124314508"></a>2.1.1</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.49090909090909%" headers="mcps1.2.4.1.2 "><p id="p19738321134717"><a name="p19738321134717"></a><a name="p19738321134717"></a>/v1.(19|21|23).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.272727272727277%" headers="mcps1.2.4.1.3 "><p id="p11896727151112"><a name="p11896727151112"></a><a name="p11896727151112"></a><a href="https://github.com/kubernetes/dashboard/releases/tag/v2.5.0" target="_blank" rel="noopener noreferrer">2.5.0</a></p>
+</td>
+</tr>
+<tr id="row15926105520911"><td class="cellrowborder" valign="top" width="27.236363636363635%" headers="mcps1.2.4.1.1 "><p id="p4621164311505"><a name="p4621164311505"></a><a name="p4621164311505"></a>2.0.10</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.49090909090909%" headers="mcps1.2.4.1.2 "><p id="p1991603534710"><a name="p1991603534710"></a><a name="p1991603534710"></a>/v1.(15|17|19|21).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.272727272727277%" headers="mcps1.2.4.1.3 "><p id="p141781146113811"><a name="p141781146113811"></a><a name="p141781146113811"></a><a href="https://github.com/kubernetes/dashboard/releases/tag/v2.0.0" target="_blank" rel="noopener noreferrer">2.0.0</a></p>
+</td>
+</tr>
+<tr id="row2035714120472"><td class="cellrowborder" valign="top" width="27.236363636363635%" headers="mcps1.2.4.1.1 "><p id="p8621104312504"><a name="p8621104312504"></a><a name="p8621104312504"></a>2.0.4</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.49090909090909%" headers="mcps1.2.4.1.2 "><p id="p7204104884715"><a name="p7204104884715"></a><a name="p7204104884715"></a>/v1.(15|17|19).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.272727272727277%" headers="mcps1.2.4.1.3 "><p id="p5183546163814"><a name="p5183546163814"></a><a name="p5183546163814"></a><a href="https://github.com/kubernetes/dashboard/releases/tag/v2.0.0" target="_blank" rel="noopener noreferrer">2.0.0</a></p>
+</td>
+</tr>
+<tr id="row58816436322"><td class="cellrowborder" valign="top" width="27.236363636363635%" headers="mcps1.2.4.1.1 "><p id="p9621194315019"><a name="p9621194315019"></a><a name="p9621194315019"></a>2.0.3</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.49090909090909%" headers="mcps1.2.4.1.2 "><p id="p1936818918481"><a name="p1936818918481"></a><a name="p1936818918481"></a>/v1.(15|17|19).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.272727272727277%" headers="mcps1.2.4.1.3 "><p id="p2185134618389"><a name="p2185134618389"></a><a name="p2185134618389"></a><a href="https://github.com/kubernetes/dashboard/releases/tag/v2.0.0" target="_blank" rel="noopener noreferrer">2.0.0</a></p>
+</td>
+</tr>
+<tr id="row440924363210"><td class="cellrowborder" valign="top" width="27.236363636363635%" headers="mcps1.2.4.1.1 "><p id="p106214431505"><a name="p106214431505"></a><a name="p106214431505"></a>2.0.2</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.49090909090909%" headers="mcps1.2.4.1.2 "><p id="p15113162116488"><a name="p15113162116488"></a><a name="p15113162116488"></a>/v1.(17|19).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.272727272727277%" headers="mcps1.2.4.1.3 "><p id="p11186114643815"><a name="p11186114643815"></a><a name="p11186114643815"></a><a href="https://github.com/kubernetes/dashboard/releases/tag/v2.0.0" target="_blank" rel="noopener noreferrer">2.0.0</a></p>
+</td>
+</tr>
+<tr id="row126511443153215"><td class="cellrowborder" valign="top" width="27.236363636363635%" headers="mcps1.2.4.1.1 "><p id="p16622164375014"><a name="p16622164375014"></a><a name="p16622164375014"></a>2.0.1</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.49090909090909%" headers="mcps1.2.4.1.2 "><p id="p3489163454817"><a name="p3489163454817"></a><a name="p3489163454817"></a>/v1.(15|17).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.272727272727277%" headers="mcps1.2.4.1.3 "><p id="p61881446203813"><a name="p61881446203813"></a><a name="p61881446203813"></a><a href="https://github.com/kubernetes/dashboard/releases/tag/v2.0.0" target="_blank" rel="noopener noreferrer">2.0.0</a></p>
+</td>
+</tr>
+<tr id="row396884320323"><td class="cellrowborder" valign="top" width="27.236363636363635%" headers="mcps1.2.4.1.1 "><p id="p19622154310507"><a name="p19622154310507"></a><a name="p19622154310507"></a>2.0.0</p>
+</td>
+<td class="cellrowborder" valign="top" width="45.49090909090909%" headers="mcps1.2.4.1.2 "><p id="p1662211431502"><a name="p1662211431502"></a><a name="p1662211431502"></a>/v1.(17).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="27.272727272727277%" headers="mcps1.2.4.1.3 "><p id="p15333143014114"><a name="p15333143014114"></a><a name="p15333143014114"></a><a href="https://github.com/kubernetes/dashboard/releases/tag/v2.0.0" target="_blank" rel="noopener noreferrer">2.0.0</a></p>
+</td>
+</tr>
+</tbody>
+</table>
 

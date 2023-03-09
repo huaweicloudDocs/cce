@@ -32,7 +32,7 @@
 
 ![](figures/zh-cn_image_0000001244261055.png)
 
-另外在节点池中也可以配置CPU管理策略，配置后会自动修改节点的上kubelet 参数 --cpu-manager-policy。登录CCE控制台，进入集群，在左侧选择“节点管理“，在右侧选择“节点池“页签，单击节点池名称后的“更多 \> 配置管理“，将cpu-manager-policy的值修改为static即可。
+另外在节点池中也可以配置CPU管理策略，配置后会自动修改节点的上kubelet 参数 --cpu-manager-policy。登录CCE控制台，单击集群名称进入集群，在左侧选择“节点管理“，在右侧选择“节点池“页签，单击节点池名称后的“更多 \> 配置管理“，将cpu-manager-policy的值修改为static即可。
 
 ## Pod资源配置<a name="section193243402534"></a>
 

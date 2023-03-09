@@ -4,19 +4,19 @@
 
 历史版本中，CCE支持在工作负载中挂载SFS 1.0，建议迁移至SFS 3.0容量型或SFS Turbo。
 
-根据工作负载类型不同，应用可实现的存储挂载方式也不同。此处“动态存储“挂载和“静态存储“挂载是从工作负载挂载存储卷的方式进行区分的。
+根据工作负载类型不同，应用可实现的存储挂载方式也不同。此处动态挂载和静态挂载是从工作负载挂载存储卷的方式进行区分的。
 
--   “动态存储“挂载：仅有状态工作负载支持使用动态存储挂载，该功能通过[volumeClaimTemplates](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/statefulset/#volume-claim-templates)字段实现，并依赖于StorageClass动态创建能力。有状态工作负载通过volumeClaimTemplates字段为每一个Pod关联了一个独有的PVC，而这个PVC又会和对应的PV绑定。因此当Pod被重新调度后，仍然能够根据该PVC名称挂载原有的数据。
--   静态挂载：与动态存储挂载相对，即工作负载中通过[volumes](https://kubernetes.io/zh-cn/docs/concepts/storage/persistent-volumes/#claims-as-volumes)字段挂载存储卷，所有类型的工作负载均可通过该方法挂载存储。
+-   动态挂载：仅有状态工作负载支持使用动态挂载，该功能通过[volumeClaimTemplates](https://kubernetes.io/zh-cn/docs/concepts/workloads/controllers/statefulset/#volume-claim-templates)字段实现，并依赖于StorageClass动态创建能力。有状态工作负载通过volumeClaimTemplates字段为每一个Pod关联了一个独有的PVC，而这个PVC又会和对应的PV绑定。因此当Pod被重新调度后，仍然能够根据该PVC名称挂载原有的数据。
+-   静态挂载：与动态挂载相对，即工作负载中通过[volumes](https://kubernetes.io/zh-cn/docs/concepts/storage/persistent-volumes/#claims-as-volumes)字段挂载存储卷，所有类型的工作负载均可通过该方法挂载存储。
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->将容器应用从SFS 1.0迁移到SFS 3.0或SFS Turbo的操作步骤一样，两者区别点仅限于：SFS Turbo不支持动态创建，有状态应用在使用SFS Turbo时会限制“动态存储”的扩容能力。
+>将容器应用从SFS 1.0迁移到SFS 3.0或SFS Turbo的操作步骤一样，两者区别点仅限于：SFS Turbo不支持动态创建，有状态应用在使用SFS Turbo时会限制“动态挂载”的扩容能力。
 
 ## 约束与限制<a name="section21551554192919"></a>
 
 -   您需要提前将SFS 1.0中的数据迁移至SFS 3.0容量型或SFS Turbo，操作步骤请参见[文件系统之间迁移数据](https://support.huaweicloud.com/bestpractice-sfs/sfs_03_0011.html)，必要时请联系SFS服务的客服提供支撑。
 -   SFS必须与集群在同一个VPC内。
--   SFS 3.0文件存储当前正在各region逐步上线中，部分region可能还未支持，请您耐心等待。使用SFS 3.0时，集群中需要安装2.0.8及以上版本的everest插件。
+-   SFS 3.0文件存储当前正在各region逐步上线中，部分region可能还未支持，请您耐心等待。使用SFS 3.0时，集群中需要安装2.0.9及以上版本的everest插件。
 
 ## 静态挂载存储的迁移<a name="section9827175814372"></a>
 
@@ -65,23 +65,23 @@
     确认无问题后，可清理CCE侧的SFS 1.0的存储卷。
 
 
-## 有状态应用中的动态存储迁移至SFS Turbo<a name="section758505214217"></a>
+## 有状态应用中的动态挂载存储迁移至SFS Turbo<a name="section758505214217"></a>
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->-   “动态存储“的自动扩容能力仅有状态应用支持。
->-   由于SFS Turbo不支持动态创建，因此SFS1.0在迁移至SFS Turbo后，该有状态应用不再支持“动态存储”的自动扩容能力。
+>-   “动态挂载“的自动扩容能力仅有状态应用支持。
+>-   由于SFS Turbo不支持动态创建，因此SFS1.0在迁移至SFS Turbo后，该有状态应用不再支持“动态挂载”的自动扩容能力。
 
-1.  在左侧导航栏中选择“工作负载“，找到目标工作负载，记录缩容前的实例数，将工作负载实例数需要缩容到0。
+1.  在左侧导航栏中选择“工作负载“，切换至“有状态负载“页签，找到目标工作负载，记录缩容前的实例数，并将工作负载实例数需要缩容到0。
 
     >![](public_sys-resources/icon-note.gif) **说明：** 
     >对每个实例使用的PVC均需要执行步骤[2](#li1263604823614)\~[6](#li11316181193)。
 
 2.  <a name="li1263604823614"></a>单击工作负载名称，在“容器管理\>数据存储”页面查看有状态应用使用PVC的方式。
 
-    -   如使用“动态存储“，则需继续执行[3](#li213113181193)\~[7](#li21319181397)。
-    -   如未使用“动态存储“，则无需执行以下步骤，请参考[静态挂载存储的迁移](#section9827175814372)。
+    -   如使用“动态挂载“，则需继续执行[3](#li213113181193)\~[7](#li21319181397)。
+    -   如未使用“动态挂载“，则无需执行以下步骤，请参考[静态挂载存储的迁移](#section9827175814372)。
 
-    ![](figures/zh-cn_image_0000001386034074.png)
+    ![](figures/zh-cn_image_0000001445699066.png)
 
 3.  <a name="li213113181193"></a>修改Pod所使用的SFS 1.0类型PVC对应PV的persistentVolumeReclaimPolicy参数，从“Delete“修改为“Retain“，命令如下：
 
@@ -129,13 +129,13 @@
     确认无问题后，可前往SFS控制台删除对应的SFS 1.0卷，并在CCE控制台中删除SFS 1.0对应的PV。
 
 
-## 有状态应用中的动态存储迁移SFS 3.0<a name="section1081951144311"></a>
+## 有状态应用中的动态挂载存储迁移SFS 3.0<a name="section1081951144311"></a>
 
 >![](public_sys-resources/icon-notice.gif) **须知：** 
->-   “动态存储“的自动扩容能力仅有状态应用支持。
+>-   “动态挂载“的自动扩容能力仅有状态应用支持。
 >-   如有状态应用从SFS 1.0迁移至SFS 3.0，则该有状态应用支持自动扩容能力。
 
-为了让有状态负载在完成SFS 1.0迁移至SFS 3.0后仍支持动态扩容，需将有状态应用中的volumeClaimTemplates使用的存储类从csi-nas修改为csi-sfs。由于使用动态存储的有状态应用不支持修改volumeClaimTemplates，因此需要先删除有状态应用，然后重建，过程中需要确保配置与迁移前完全一致，包括实例数。
+为了让有状态负载在完成SFS 1.0迁移至SFS 3.0后仍支持动态扩容，需将有状态应用中的volumeClaimTemplates使用的存储类从csi-nas修改为csi-sfs。由于使用动态挂载的有状态应用不支持修改volumeClaimTemplates，因此需要先删除有状态应用，然后重建，过程中需要确保配置与迁移前完全一致，包括实例数。
 
 1.  在左侧导航栏中选择“工作负载“，找到目标工作负载，记录缩容前的实例数，将工作负载实例数需要缩容到0。
 
@@ -144,10 +144,10 @@
 
 2.  <a name="li184742741114"></a>单击工作负载名称，在“容器管理\>数据存储”页面查看有状态应用使用PVC的方式。
 
-    -   如使用“动态存储“，则需继续执行[3](#li213113181193)\~[7](#li21319181397)。
-    -   如未使用“动态存储“，则无需执行以下步骤，请参考[静态挂载存储的迁移](#section9827175814372)。
+    -   如使用“动态挂载“，则需继续执行[3](#li213113181193)\~[7](#li21319181397)。
+    -   如未使用“动态挂载“，则无需执行以下步骤，请参考[静态挂载存储的迁移](#section9827175814372)。
 
-    ![](figures/zh-cn_image_0000001386976378.png)
+    ![](figures/zh-cn_image_0000001495704637.png)
 
 3.  修改SFS 1.0对应PV的persistentVolumeReclaimPolicy参数，从“Delete“修改为“Retain“，命令如下：
 
@@ -172,7 +172,7 @@
 
 4.  <a name="li5484876115"></a>记录SFS1.0 PV对应的PVC名称，并删除该PVC。此时该PV处于“已释放“状态。
 
-    ![](figures/Snipaste_2022-10-26_19-29-18-7.png)
+    ![](figures/Snipaste_2022-10-26_19-29-18-8.png)
 
 5.  进入“容器存储“界面，在“存储卷“页签下单击右上角“创建存储卷“。
 

@@ -8,7 +8,7 @@ CCE集群权限是基于IAM**系统策略**和**自定义策略**的授权，可
 ## 前提条件<a name="section16601203895318"></a>
 
 -   给用户组授权之前，请您了解用户组可以添加的CCE系统策略，并结合实际需求进行选择，CCE支持的系统策略及策略间的对比，请参见[CCE系统权限](https://support.huaweicloud.com/productdesc-cce/cce_productdesc_0002.html)。若您需要对除CCE之外的其它服务授权，IAM支持服务的所有策略请参见[系统权限](https://support.huaweicloud.com/usermanual-permissions/iam_01_0001.html)。
--   拥有Security Administrator（IAM除切换角色外所有权限）权限的用户（如账号默认拥有此权限），才能看见CCE控制台权限管理页面当前用户组及用户组所拥有的权限。
+-   拥有Security Administrator（IAM除切换角色外所有权限）权限的用户（如帐号默认拥有此权限），才能看见CCE控制台权限管理页面当前用户组及用户组所拥有的权限。
 
 ## 配置说明<a name="section638994317105"></a>
 
@@ -34,7 +34,7 @@ CCE控制台“权限管理 \> 集群权限“页面中创建用户组和具体�
 
     新创建的用户登录控制台，切换至授权区域，验证权限：
 
-    -   在“服务列表”中选择云容器引擎，进入CCE主界面，单击右上角“购买Kubernetes集群”，如果无法无法成功操作（假设当前权限仅包含CCEReadOnlyAccess），表示“CCEReadOnlyAccess”已生效。
+    -   在“服务列表”中选择云容器引擎，进入CCE主界面尝试购买集群，如果无法无法成功操作（假设当前权限仅包含CCEReadOnlyAccess），表示“CCEReadOnlyAccess”已生效。
     -   在“服务列表”中选择除云容器引擎外（假设当前策略仅包含CCEReadOnlyAccess）的任一服务，若提示权限不足，表示“CCEReadOnlyAccess”已生效。
 
 
@@ -463,7 +463,7 @@ IAM中预置的CCE系统策略当前包含**CCEFullAccess**和**CCEReadOnlyAcces
 </td>
 <td class="cellrowborder" valign="top" width="27.029999999999998%" headers="mcps1.2.4.1.2 "><p id="p77016415184"><a name="p77016415184"></a><a name="p77016415184"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.3 "><p id="p18702412180"><a name="p18702412180"></a><a name="p18702412180"></a>操作所有kubernetes资源，具体权限请在<a href="zh-cn_topic_0166937326.md">命名空间权限</a>中配置。</p>
+<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.3 "><p id="p18702412180"><a name="p18702412180"></a><a name="p18702412180"></a>操作所有kubernetes资源，具体权限请在<a href="命名空间权限（Kubernetes-RBAC授权）-180.md">命名空间权限</a>中配置。</p>
 </td>
 </tr>
 <tr id="row1557101593414"><td class="cellrowborder" valign="top" width="19.97%" headers="mcps1.2.4.1.1 "><p id="p15966145792119"><a name="p15966145792119"></a><a name="p15966145792119"></a>ecs:*:get</p>
@@ -698,5 +698,5 @@ RBAC与IAM策略共存时，CCE开放API或Console操作的后端鉴权逻辑如
 
 >![](public_sys-resources/icon-caution.gif) **注意：** 
 >CCE部分接口由于涉及命名空间权限或关键操作，需要特殊权限：
->clusterCert获取集群k8s kubeconfig: cceadm/teadmin
+>clusterCert获取集群K8s kubeconfig: cceadm/teadmin
 

@@ -82,7 +82,7 @@ Everest还支持一种删除PVC时不删除底层存储资源的使用方法，�
 **使用控制台创建**
 
 1.  登录CCE控制台。
-2.  进入集群，在左侧选择“容器存储“，在右侧选择“存储卷“页签。
+2.  单击集群名称进入集群，在左侧选择“容器存储“，在右侧选择“存储卷“页签。
 3.  单击右上角“创建存储卷“，在弹出的窗口中填写存储卷参数。
     -   存储卷类型：选择“云硬盘“。
     -   选择云硬盘。（仅支持选择集群所属企业项目和 default 企业项目下的云硬盘）。
@@ -194,15 +194,19 @@ spec:
 >![](public_sys-resources/icon-note.gif) **说明：** 
 >-   SFS必须与集群在同一个VPC内。
 >-   当前SFS 1.0文件存储处于售罄状态，CCE控制台已经屏蔽创建，存量SFS 1.0仍可以使用YAML方式创建PV。
->-   SFS 3.0文件存储当前正在各region逐步上线中，部分region可能还未支持，请您耐心等待。使用SFS 3.0时，集群中需要安装2.0.8及以上版本的everest插件。
+>-   SFS 3.0文件存储当前正在各region逐步上线中，部分region可能还未支持，请您耐心等待。使用SFS 3.0时，集群中需要安装2.0.9及以上版本的everest插件。
 
 **使用控制台创建**
 
 1.  登录CCE控制台。
-2.  进入集群，在左侧选择“容器存储“，在右侧选择“存储卷“页签。
+2.  单击集群名称进入集群，在左侧选择“容器存储“，在右侧选择“存储卷“页签。
 3.  单击右上角“创建存储卷“，在弹出的窗口中填写存储卷参数。
     -   存储卷类型：选择“文件存储“。
     -   选择文件存储资源。
+
+        >![](public_sys-resources/icon-note.gif) **说明：** 
+        >使用SFS 3.0文件存储时，您需要提前在集群所在VPC创建一个VPC终端节点，这样集群就可以通过VPC终端节点访问SFS 3.0容量型文件系统。配置VPC终端节点的方法请参见[配置VPC终端节点](https://support.huaweicloud.com/qs-sfs/sfs_01_0134.html)。
+
     -   PV名称：输入PV名称。
     -   访问模式：ReadWriteMany。
     -   回收策略：Delete或Retain，具体解释请参见[PV回收策略](#section19999142414413)。
@@ -233,7 +237,7 @@ spec:
       everest.io/share-export-location: sfs-nas01.cn-north-4.myhuaweicloud.com:/share-436304e8  
       storage.kubernetes.io/csiProvisionerIdentity: everest-csi-provisioner
   persistentVolumeReclaimPolicy: Retain    # 回收策略
-  storageClassName: csi-nas                # 存储类名称
+  storageClassName: csi-nas                # 存储类名称：csi-nas表示使用SFS 1.0；csi-sfs表示使用SFS 3.0
   mountOptions: []                         # 挂载参数
 ```
 
@@ -255,8 +259,8 @@ spec:
 </tr>
 <tr id="row1713683175810"><td class="cellrowborder" valign="top" width="32.5%" headers="mcps1.2.3.1.1 "><p id="p20136133145811"><a name="p20136133145811"></a><a name="p20136133145811"></a>volumeHandle</p>
 </td>
-<td class="cellrowborder" valign="top" width="67.5%" headers="mcps1.2.3.1.2 "><p id="p557443910014"><a name="p557443910014"></a><a name="p557443910014"></a>文件存储的ID。</p>
-<p id="p1182583515019"><a name="p1182583515019"></a><a name="p1182583515019"></a>获取方法：在CCE控制台，单击顶部的<span class="uicontrol" id="uicontrol198251135202"><a name="uicontrol198251135202"></a><a name="uicontrol198251135202"></a>“服务列表 &gt; 存储 &gt; 弹性文件服务”</span>，在弹性文件服务列表中单击对应的弹性文件服务名称，在详情页中复制<span class="uicontrol" id="uicontrol1682513351503"><a name="uicontrol1682513351503"></a><a name="uicontrol1682513351503"></a>“ID”</span>后的内容即可。</p>
+<td class="cellrowborder" valign="top" width="67.5%" headers="mcps1.2.3.1.2 "><a name="ul5922134121016"></a><a name="ul5922134121016"></a><ul id="ul5922134121016"><li>使用SFS容量型文件存储：填写文件存储的ID。<p id="p1182583515019"><a name="p1182583515019"></a><a name="p1182583515019"></a>获取方法：在CCE控制台，单击顶部的<span class="uicontrol" id="uicontrol198251135202"><a name="uicontrol198251135202"></a><a name="uicontrol198251135202"></a>“服务列表 &gt; 存储 &gt; 弹性文件服务”</span>，在弹性文件服务列表中单击对应的弹性文件服务名称，在详情页中复制<span class="uicontrol" id="uicontrol1682513351503"><a name="uicontrol1682513351503"></a><a name="uicontrol1682513351503"></a>“ID”</span>后的内容即可。</p>
+</li><li>使用SFS 3.0容量型文件存储：填写文件存储的名称。</li></ul>
 </td>
 </tr>
 <tr id="row12163348416"><td class="cellrowborder" valign="top" width="32.5%" headers="mcps1.2.3.1.1 "><p id="p737873912413"><a name="p737873912413"></a><a name="p737873912413"></a>everest.io/share-export-location</p>
@@ -309,7 +313,7 @@ spec:
 **使用控制台创建**
 
 1.  登录CCE控制台。
-2.  进入集群，在左侧选择“容器存储“，在右侧选择“存储卷“页签。
+2.  单击集群名称进入集群，在左侧选择“容器存储“，在右侧选择“存储卷“页签。
 3.  单击右上角“创建存储卷“，在弹出的窗口中填写存储卷参数。
     -   存储卷类型：选择“对象存储“。
     -   选择对象存储资源。
@@ -428,7 +432,7 @@ spec:
 **使用控制台创建**
 
 1.  登录CCE控制台。
-2.  进入集群，在左侧选择“容器存储“，在右侧选择“存储卷“页签。
+2.  单击集群名称进入集群，在左侧选择“容器存储“，在右侧选择“存储卷“页签。
 3.  单击右上角“创建存储卷“，在弹出的窗口中填写存储卷参数。
     -   存储卷类型：选择“极速文件存储“。
     -   选择极速文件存储资源。

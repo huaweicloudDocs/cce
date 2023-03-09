@@ -36,7 +36,7 @@
 
 ## 创建LoadBalancer类型Service<a name="section1325012312139"></a>
 
-1.  登录CCE控制台，进入集群。
+1.  登录CCE控制台，单击集群名称进入集群。
 2.  在左侧导航栏中选择“服务发现“，在右上角单击“创建服务“。
 3.  设置参数。
     -   **Service名称：**自定义服务名称，可与工作负载名称保持一致。
@@ -46,7 +46,7 @@
         -   集群级别：集群下所有节点的IP+访问端口均可以访问到此服务关联的负载，服务访问会因路由跳转导致一定性能损失，且无法获取到客户端源IP。
         -   节点级别：只有通过负载所在节点的IP+访问端口才可以访问此服务关联的负载，服务访问没有因路由跳转导致的性能损失，且可以获取到客户端源IP。
 
-    -   **选择器：**添加标签，Service根据标签选择Pod，填写后单击“添加“。也可以引用已有工作负载的标签，单击“引用负载标签“，在弹出的窗口中选择负载，然后单击“确定“。
+    -   **选择器：**添加标签，Service根据标签选择Pod，填写后单击“确认添加“。也可以引用已有工作负载的标签，单击“引用负载标签“，在弹出的窗口中选择负载，然后单击“确定“。
     -   **IPv6：**默认不开启，开启后服务的集群内IP地址（ClusterIP）变为IPv6地址，具体请参见[如何通过CCE搭建IPv4/IPv6双栈集群？](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_00222.html)。**该功能仅在1.15及以上版本的集群创建时开启了IPv6功能才会显示。**
     -   **负载均衡器：**
 
@@ -64,9 +64,9 @@
             >-   源IP算法：将请求的源IP地址进行Hash运算，得到一个具体的数值，同时对后端服务器进行编号，按照运算结果将请求分发到对应编号的服务器上。这可以使得对不同源IP的访问进行负载分发，同时使得同一个客户端IP的请求始终被派发至某特定的服务器。该方式适合负载均衡无cookie功能的TCP协议。
 
         -   会话保持类型：默认不启用，可选择“源IP地址“。负载均衡监听是基于IP地址的会话保持，即来自同一IP地址的访问请求转发到同一台后端服务器上。
-        -   健康检查：默认不启用。此处健康检查是设置负载均衡的健康检查配置，支持TCP和HTTP协议，其参数详细解释可参见[配置健康检查](https://support.huaweicloud.com/usermanual-elb/zh-cn_topic_0162227063.html#section2)。健康检查默认使用业务端口（Service的NodePort和容器端口）作为健康检查的端口；您也可以重新指定端口用于健康检查，重新制定端口会为服务增加一个名为cce-healthz的服务端口配置。
+        -   健康检查：默认不启用。此处健康检查是设置负载均衡的健康检查配置。当[端口配置](#li388800117144)协议为TCP时，支持TCP和HTTP协议，当[端口配置](#li388800117144)协议为UDP时，支持UDP协议，参数配置详情请参见[修改健康检查配置](https://support.huaweicloud.com/usermanual-elb/elb_ug_hc_0005.html#elb_ug_hc_0005__table772415634315)。健康检查默认使用业务端口（Service的NodePort和容器端口）作为健康检查的端口；您也可以重新指定端口用于健康检查，重新指定端口会为服务增加一个名为cce-healthz的服务端口配置。
 
-    -   **端口配置：**
+    -   <a name="li388800117144"></a>**端口配置：**
         -   协议：请根据业务的协议类型选择。
         -   服务端口：Service使用的端口，端口范围为1-65535。
         -   容器端口：工作负载程序实际监听的端口，需用户确定。例如nginx默认使用80端口。
@@ -121,7 +121,7 @@
     metadata: 
       annotations:
         kubernetes.io/elb.id: 5083f225-9bf8-48fa-9c8b-67bd9693c4c0   # ELB ID，替换为实际值
-        kubernetes.io/elb.class: performance                    # 负载均衡器类型
+        kubernetes.io/elb.class: performance                   # 负载均衡器类型
       name: nginx 
     spec: 
       ports: 
@@ -149,14 +149,13 @@
     </thead>
     <tbody><tr id="row435284723911"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p1535274714391"><a name="p1535274714391"></a><a name="p1535274714391"></a>kubernetes.io/elb.class</p>
     </td>
-    <td class="cellrowborder" valign="top" width="12.31%" headers="mcps1.2.5.1.2 "><p id="p16843829579"><a name="p16843829579"></a><a name="p16843829579"></a>否</p>
+    <td class="cellrowborder" valign="top" width="12.31%" headers="mcps1.2.5.1.2 "><p id="p584312291278"><a name="p584312291278"></a><a name="p584312291278"></a>是</p>
     </td>
     <td class="cellrowborder" valign="top" width="13.65%" headers="mcps1.2.5.1.3 "><p id="p163521247103920"><a name="p163521247103920"></a><a name="p163521247103920"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p193521947123917"><a name="p193521947123917"></a><a name="p193521947123917"></a>请根据不同的应用场景和功能需求选择合适的负载均衡器类型。</p>
     <p id="p163524473399"><a name="p163524473399"></a><a name="p163524473399"></a>取值如下：</p>
     <a name="ul16352114763920"></a><a name="ul16352114763920"></a><ul id="ul16352114763920"><li>union：共享型负载均衡。</li><li>performance：独享型负载均衡，仅支持1.17及以上集群，详情请参见<a href="https://support.huaweicloud.com/productdesc-elb/elb_pro_0004.html" target="_blank" rel="noopener noreferrer">共享型弹性负载均衡与独享型负载均衡的功能区别</a></li></ul>
-    <p id="p861911425283"><a name="p861911425283"></a><a name="p861911425283"></a>默认值：union</p>
     </td>
     </tr>
     <tr id="row8353174763911"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p6353144783916"><a name="p6353144783916"></a><a name="p6353144783916"></a>kubernetes.io/elb.session-affinity-mode</p>
@@ -188,6 +187,9 @@
     <p id="p123611341161318"><a name="p123611341161318"></a><a name="p123611341161318"></a>在关联已有ELB时：必填。</p>
     <p id="p735464753918"><a name="p735464753918"></a><a name="p735464753918"></a><strong id="b10354347133914"><a name="b10354347133914"></a><a name="b10354347133914"></a>获取方法：</strong></p>
     <p id="p1335417476396"><a name="p1335417476396"></a><a name="p1335417476396"></a>在控制台的<span class="uicontrol" id="uicontrol1535474753911"><a name="uicontrol1535474753911"></a><a name="uicontrol1535474753911"></a>“服务列表”</span>中，单击<span class="uicontrol" id="uicontrol13541247103920"><a name="uicontrol13541247103920"></a><a name="uicontrol13541247103920"></a>“网络 &gt; 弹性负载均衡 ELB”</span>，单击ELB的名称，在ELB详情页的<span class="uicontrol" id="uicontrol1235454713918"><a name="uicontrol1235454713918"></a><a name="uicontrol1235454713918"></a>“基本信息”</span>页签下找到<span class="uicontrol" id="uicontrol735414773911"><a name="uicontrol735414773911"></a><a name="uicontrol735414773911"></a>“ID”</span>字段复制即可。</p>
+    <div class="note" id="note15831105313919"><a name="note15831105313919"></a><a name="note15831105313919"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p101811542174310"><a name="p101811542174310"></a><a name="p101811542174310"></a>系统优先根据kubernetes.io/elb.id字段对接ELB，若此字段未指定，则会根据spec.loadBalancerIP字段（非必填，且仅1.23及以前版本可用）对接ELB。</p>
+    <p id="p16831653153912"><a name="p16831653153912"></a><a name="p16831653153912"></a>请尽量不要使用spec.loadBalancerIP字段对接ELB，该字段在将来的集群版本中会被Kubernetes官方废弃，详情请参见<a href="https://github.com/kubernetes/kubernetes/blob/8f2371bcceff7962ddb4901c36536c6ff659755b/CHANGELOG/CHANGELOG-1.24.md#changes-by-kind-13" target="_blank" rel="noopener noreferrer">Deprecation</a>。</p>
+    </div></div>
     </td>
     </tr>
     <tr id="row13354124714392"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p1435534753920"><a name="p1435534753920"></a><a name="p1435534753920"></a>kubernetes.io/elb.subnet-id</p>
@@ -221,8 +223,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p168696109319"><a name="p168696109319"></a><a name="p168696109319"></a>是否开启ELB健康检查功能。</p>
     <a name="ul10870710633"></a><a name="ul10870710633"></a><ul id="ul10870710633"><li>开启：“（空值）”或“on”</li><li>关闭：“off”</li></ul>
-    <p id="p1488621164517"><a name="p1488621164517"></a><a name="p1488621164517"></a>默认开启，采用如下默认值。</p>
-    <a name="ul6443617184511"></a><a name="ul6443617184511"></a><ul id="ul6443617184511"><li>健康检查协议：TCP</li><li>健康检查端口：使用后端服务器端口</li><li>检查间隔(秒)：5</li><li>超时时间(秒)：10</li><li>最大重试次数：3</li></ul>
+    <p id="p1576051514113"><a name="p1576051514113"></a><a name="p1576051514113"></a>开启时需同时填写<a href="#table236017471397">kubernetes.io/elb.health-check-option</a>字段。</p>
     </td>
     </tr>
     <tr id="row3358194712396"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p1287011015315"><a name="p1287011015315"></a><a name="p1287011015315"></a>kubernetes.io/elb.health-check-option</p>
@@ -252,8 +253,6 @@
     <td class="cellrowborder" valign="top" width="13.65%" headers="mcps1.2.5.1.3 "><p id="p115244366104"><a name="p115244366104"></a><a name="p115244366104"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p17524143691013"><a name="p17524143691013"></a><a name="p17524143691013"></a>Service使用7层能力配置端口。具体请参见<a href="#section833011453318">Service使用HTTP</a>。</p>
-    <p id="p109178299443"><a name="p109178299443"></a><a name="p109178299443"></a>对于已创建且不支持HTTP的Service，不支持更新成支持HTTP的Service。</p>
-    <p id="p10234112841311"><a name="p10234112841311"></a><a name="p10234112841311"></a><strong id="b12341428171316"><a name="b12341428171316"></a><a name="b12341428171316"></a>kubernetes.io/elb.protocol-port仅支持在新创建Service时配置，不支持更新</strong>。</p>
     </td>
     </tr>
     <tr id="row19579142951016"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p652493681013"><a name="p652493681013"></a><a name="p652493681013"></a>kubernetes.io/elb.cert-id</p>
@@ -385,7 +384,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="49.230000000000004%" headers="mcps1.2.5.1.4 "><p id="p15361164723916"><a name="p15361164723916"></a><a name="p15361164723916"></a>健康检查的协议</p>
     <p id="p2361204719390"><a name="p2361204719390"></a><a name="p2361204719390"></a>默认值：取关联服务的协议</p>
-    <p id="p143617474391"><a name="p143617474391"></a><a name="p143617474391"></a>取值范围：“TCP”、“UDP_CONNECT”或者“HTTP”</p>
+    <p id="p143617474391"><a name="p143617474391"></a><a name="p143617474391"></a>取值范围：“TCP”、“UDP”或者“HTTP”</p>
     </td>
     </tr>
     <tr id="row036113475395"><td class="cellrowborder" valign="top" width="24.95%" headers="mcps1.2.5.1.1 "><p id="p93612047133915"><a name="p93612047133915"></a><a name="p93612047133915"></a>path</p>
@@ -409,7 +408,7 @@
     回显如下，表示工作负载已创建完成。
 
     ```
-    deployment "nginx" created
+    deployment/nginx created
     ```
 
     **kubectl get pod**
@@ -428,7 +427,7 @@
     回显如下，表示服务已创建。
 
     ```
-    service "nginx" created
+    service/nginx created
     ```
 
     **kubectl get svc**
@@ -572,14 +571,13 @@
     </thead>
     <tbody><tr id="row433017915509"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p17331159135017"><a name="p17331159135017"></a><a name="p17331159135017"></a>kubernetes.io/elb.class</p>
     </td>
-    <td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p1968618512213"><a name="p1968618512213"></a><a name="p1968618512213"></a>否</p>
+    <td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p964263012477"><a name="p964263012477"></a><a name="p964263012477"></a>是</p>
     </td>
     <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.3 "><p id="p5331189115017"><a name="p5331189115017"></a><a name="p5331189115017"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p17331169135014"><a name="p17331169135014"></a><a name="p17331169135014"></a>请根据不同的应用场景和功能需求选择合适的负载均衡器类型。</p>
     <p id="p143311298508"><a name="p143311298508"></a><a name="p143311298508"></a>取值如下：</p>
     <a name="ul3415201212612"></a><a name="ul3415201212612"></a><ul id="ul3415201212612"><li>union：共享型负载均衡。</li><li>performance：独享型负载均衡，仅支持1.17及以上集群，详情请参见<a href="https://support.huaweicloud.com/productdesc-elb/elb_pro_0004.html" target="_blank" rel="noopener noreferrer">共享型弹性负载均衡与独享型负载均衡的功能区别</a></li></ul>
-    <p id="p733118975010"><a name="p733118975010"></a><a name="p733118975010"></a>默认值：union</p>
     </td>
     </tr>
     <tr id="row790233013543"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p143324917501"><a name="p143324917501"></a><a name="p143324917501"></a>kubernetes.io/elb.subnet-id</p>
@@ -648,8 +646,7 @@
     </td>
     <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p1833315910509"><a name="p1833315910509"></a><a name="p1833315910509"></a>是否开启ELB健康检查功能。</p>
     <a name="ul19333199205012"></a><a name="ul19333199205012"></a><ul id="ul19333199205012"><li>开启：“（空值）”或“on”</li><li>关闭：“off”</li></ul>
-    <p id="p1676918894612"><a name="p1676918894612"></a><a name="p1676918894612"></a>默认开启，采用如下默认值。</p>
-    <a name="ul57693874615"></a><a name="ul57693874615"></a><ul id="ul57693874615"><li>健康检查协议：TCP</li><li>健康检查端口：使用后端服务器端口</li><li>检查间隔(秒)：5</li><li>超时时间(秒)：10</li><li>最大重试次数：3</li></ul>
+    <p id="p510323641317"><a name="p510323641317"></a><a name="p510323641317"></a>开启时需同时填写<a href="#table236017471397">kubernetes.io/elb.health-check-option</a>字段。</p>
     </td>
     </tr>
     <tr id="row14334169195010"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p43341794509"><a name="p43341794509"></a><a name="p43341794509"></a>kubernetes.io/elb.health-check-option</p>
@@ -679,8 +676,6 @@
     <td class="cellrowborder" valign="top" width="13.639999999999999%" headers="mcps1.2.5.1.3 "><p id="p12360164512310"><a name="p12360164512310"></a><a name="p12360164512310"></a>String</p>
     </td>
     <td class="cellrowborder" valign="top" width="49.19%" headers="mcps1.2.5.1.4 "><p id="p113603453318"><a name="p113603453318"></a><a name="p113603453318"></a>Service使用7层能力配置端口。具体请参见<a href="#section833011453318">Service使用HTTP</a>。</p>
-    <p id="p547534274618"><a name="p547534274618"></a><a name="p547534274618"></a>对于已创建且不支持HTTP的Service，不支持更新成支持HTTP的Service。</p>
-    <p id="p424419133137"><a name="p424419133137"></a><a name="p424419133137"></a><strong id="b8244181351313"><a name="b8244181351313"></a><a name="b8244181351313"></a>kubernetes.io/elb.protocol-port仅支持在新创建Service时配置，不支持更新</strong>。</p>
     </td>
     </tr>
     <tr id="row6360174119318"><td class="cellrowborder" valign="top" width="24.85%" headers="mcps1.2.5.1.1 "><p id="p19360541138"><a name="p19360541138"></a><a name="p19360541138"></a>kubernetes.io/elb.cert-id</p>
@@ -925,7 +920,7 @@
     回显如下，表示工作负载已开始创建。
 
     ```
-    deployment "nginx" created
+    deployment/nginx created
     ```
 
     **kubectl get po**
@@ -944,7 +939,7 @@
     回显如下，表示服务已创建。
 
     ```
-    service "nginx" created
+    service/nginx created
     ```
 
     **kubectl get svc**
@@ -962,33 +957,33 @@
     可成功访问nginx。
 
     **图 4**  通过负载均衡访问nginx<a name="fig2406102717469"></a>  
-    ![](figures/通过负载均衡访问nginx-2.png "通过负载均衡访问nginx-2")
+    ![](figures/通过负载均衡访问nginx-3.png "通过负载均衡访问nginx-3")
 
 
 ## ELB转发说明<a name="section18120261746"></a>
 
-LoadBalancer类型Service创建完后，可以在ELB控制台查看ELB实例的监听器转发规则，如下所示。
+LoadBalancer类型Service创建完后，可以在ELB控制台查看ELB实例的监听器转发规则。
 
 **图 5**  ELB转发说明<a name="fig18958180171116"></a>  
 ![](figures/ELB转发说明.png "ELB转发说明")
 
 可以看到这个ELB实例创建了一个监听器，其后端服务器为Pod所在的节点，后端服务器端口为Service的NodePort（节点端口）。当有流量通过ELB请求时，会转发给Pod所在节点IP:节点端口，也就是访问到了Service，从而访问到Pod，这跟[操作场景](#section19854101411508)中所述是一致的。
 
-ELB直通容器场景（CCE Turbo + 独享型ELB实例）下，LoadBalancer类型Service创建完后，可以在ELB控制台查看ELB实例的监听器转发规则，如下所示。
+ELB直通容器场景（CCE Turbo + 独享型ELB实例）下，LoadBalancer类型Service创建完后，可以在ELB控制台查看ELB实例的监听器转发规则。
 
 **图 6**  ELB转发说明<a name="fig18321515105911"></a>  
-![](figures/ELB转发说明-3.png "ELB转发说明-3")
+![](figures/ELB转发说明-4.png "ELB转发说明-4")
 
 可以看到这个ELB实例创建了一个监听器，其后端服务器地址是Pod的IP地址，业务端口是容器端口。这是因为Pod使用了ENI或Sub-ENI，ELB会直通Pod，当有流量通过ELB请求时，会直接转发给Pod，从而访问到Pod，这跟[操作场景](#section19854101411508)中所述是一致的。
 
 ## Service使用HTTP<a name="section833011453318"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->-   Service使用HTTP仅1.21及以上版本集群支持。
->-   对于已创建且不支持HTTP的Service，不支持更新成支持HTTP的Service。
+>-   Service使用HTTP仅v1.19.16及以上版本集群支持。
 >-   CCE控制台当前仅支持自动创建4层独享型ELB实例，此种情况下无法使用HTTP能力，在控制台创建Service使用HTTP时请选择对接已有独享型ELB实例。
+>-   请勿将Ingress与使用HTTP的Service对接同一个ELB下的同一个监听器，否则将产生端口冲突。
 
-Service支持使用ELB的7层能力，共享型和独享型ELB都支持对接。您还可以通过[Ingress](Ingress.md)进行7层转发，Ingress支持根据域名和路径定义转发规则，完成对访问流量的细粒度划分。
+Service支持使用ELB的7层能力，共享型和独享型ELB都支持对接。
 
 独享型ELB实例有如下限制：
 
@@ -999,7 +994,7 @@ Service支持使用ELB的7层能力，共享型和独享型ELB都支持对接。
 
 -   **kubernetes.io/elb.protocol-port**: "https:443,http:80"
 
-    protocol-port的取值需要和service的spec.ports字段中的端口对应，格式为protocol:port，port中的端口会匹配service.spec.ports中端口，并将该端口发布成对应的protocol协议。**kubernetes.io/elb.protocol-port仅支持在新创建Service时配置，不支持更新**。
+    protocol-port的取值需要和service的spec.ports字段中的端口对应，格式为protocol:port，port中的端口会匹配service.spec.ports中端口，并将该端口发布成对应的protocol协议。
 
 -   **kubernetes.io/elb.cert-id**: "17e3b4f4bc40471c86741dc3aa211379"
 
@@ -1056,13 +1051,230 @@ spec:
 
 ![](figures/zh-cn_image_0000001199021330.png)
 
+## 多端口配置健康检查<a name="section_healthCheckOptions"></a>
+
+LoadBalancer Service的健康检查相关注解字段由"kubernetes.io/elb.health-check-option"升级为"kubernetes.io/elb.health-check-options"，支持Service每个端口单独配置，且可以只配置部分端口。如无需单独配置端口协议，原有注解字段依旧可用无需修改。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>-   该特性存在集群版本限制，仅在以下版本中生效：
+>    -   v1.19集群：v1.19.16-r5及以上版本
+>    -   v1.21集群：v1.21.8-r0及以上版本
+>    -   v1.23集群：v1.23.6-r0及以上版本
+>    -   v1.25集群：v1.25.2-r0及以上版本
+>-   不允许同时配置 "kubernetes.io/elb.health-check-option" 和 "kubernetes.io/elb.health-check-options"。
+>-   target\_service\_port字段必须配置，且不能重复。
+>-   TCP端口只能配置健康检查协议为TCP、HTTP，UDP端口必须配置健康检查协议为UDP。
+
+使用"kubernetes.io/elb.health-check-options"注解的示例如下：
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  namespace: default
+  labels: {}
+  annotations:
+    kubernetes.io/elb.class: union
+    kubernetes.io/elb.id: 038ffbda-bd3a-48bb-8b8c-a8582601fd97
+    kubernetes.io/elb.lb-algorithm: ROUND_ROBIN
+    kubernetes.io/elb.health-check-flag: 'on'
+    kubernetes.io/elb.health-check-options: '{
+    "target_service_port": "TCP:80", //【必填】spec.ports添加健康检查的目标端口，由协议、端口号组成，如：TCP:80
+    "monitor_port": "",        //【可选】重新指定的健康检查端口，不指定时默认使用业务端口。请确保该端口在Pod所在节点已被监听，否则会影响健康检查结果
+    "protocol":"TCP",
+    "delay":"5",
+    "timeout":"10",
+    "max_retries":"3",
+    "path":"/"
+    }'
+spec:
+  selector: {}
+  externalTrafficPolicy: Cluster
+  ports:
+    - name: cce-service-0
+      targetPort: 80
+      nodePort: 0
+      port: 80
+      protocol: TCP
+  type: LoadBalancer
+  loadBalancerIP: **.**.**.**
+```
+
+**表 6**  elb.health-check-options字段数据结构说明
+
+<a name="table33328411456"></a>
+<table><thead align="left"><tr id="row8332174116451"><th class="cellrowborder" valign="top" width="24.95%" id="mcps1.2.5.1.1"><p id="p15332341134519"><a name="p15332341134519"></a><a name="p15332341134519"></a>参数</p>
+</th>
+<th class="cellrowborder" valign="top" width="12.32%" id="mcps1.2.5.1.2"><p id="p1433224113458"><a name="p1433224113458"></a><a name="p1433224113458"></a>是否必填</p>
+</th>
+<th class="cellrowborder" valign="top" width="13.5%" id="mcps1.2.5.1.3"><p id="p1333264119451"><a name="p1333264119451"></a><a name="p1333264119451"></a>参数类型</p>
+</th>
+<th class="cellrowborder" valign="top" width="49.230000000000004%" id="mcps1.2.5.1.4"><p id="p133321541104515"><a name="p133321541104515"></a><a name="p133321541104515"></a>描述</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row9970134616453"><td class="cellrowborder" valign="top" width="24.95%" headers="mcps1.2.5.1.1 "><p id="p9970174614451"><a name="p9970174614451"></a><a name="p9970174614451"></a>target_service_port</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p139702465450"><a name="p139702465450"></a><a name="p139702465450"></a>是</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.5.1.3 "><p id="p20970194610452"><a name="p20970194610452"></a><a name="p20970194610452"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.230000000000004%" headers="mcps1.2.5.1.4 "><p id="p17970104664515"><a name="p17970104664515"></a><a name="p17970104664515"></a>spec.ports添加健康检查的目标端口，由协议、端口号组成，如：TCP:80</p>
+</td>
+</tr>
+<tr id="row95025954512"><td class="cellrowborder" valign="top" width="24.95%" headers="mcps1.2.5.1.1 "><p id="p150145934517"><a name="p150145934517"></a><a name="p150145934517"></a>monitor_port</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p16504596451"><a name="p16504596451"></a><a name="p16504596451"></a>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.5.1.3 "><p id="p15509590453"><a name="p15509590453"></a><a name="p15509590453"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.230000000000004%" headers="mcps1.2.5.1.4 "><p id="p4507598455"><a name="p4507598455"></a><a name="p4507598455"></a>重新指定的健康检查端口，不指定时默认使用业务端口。</p>
+<div class="note" id="note97001514120"><a name="note97001514120"></a><a name="note97001514120"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p470010520123"><a name="p470010520123"></a><a name="p470010520123"></a>请确保该端口在Pod所在节点已被监听，否则会影响健康检查结果。</p>
+</div></div>
+</td>
+</tr>
+<tr id="row9332341104516"><td class="cellrowborder" valign="top" width="24.95%" headers="mcps1.2.5.1.1 "><p id="p2332204117454"><a name="p2332204117454"></a><a name="p2332204117454"></a>delay</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p8332341134515"><a name="p8332341134515"></a><a name="p8332341134515"></a>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.5.1.3 "><p id="p183321041114516"><a name="p183321041114516"></a><a name="p183321041114516"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.230000000000004%" headers="mcps1.2.5.1.4 "><p id="p8333741184515"><a name="p8333741184515"></a><a name="p8333741184515"></a>开始健康检查的初始等待时间（秒）</p>
+<p id="p933344117450"><a name="p933344117450"></a><a name="p933344117450"></a>默认值：5，取值范围：1-50</p>
+</td>
+</tr>
+<tr id="row10333041134513"><td class="cellrowborder" valign="top" width="24.95%" headers="mcps1.2.5.1.1 "><p id="p1233334115456"><a name="p1233334115456"></a><a name="p1233334115456"></a>timeout</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p18333194144514"><a name="p18333194144514"></a><a name="p18333194144514"></a>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.5.1.3 "><p id="p8333124164514"><a name="p8333124164514"></a><a name="p8333124164514"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.230000000000004%" headers="mcps1.2.5.1.4 "><p id="p1633304114451"><a name="p1633304114451"></a><a name="p1633304114451"></a>健康检查的超时时间（秒）</p>
+<p id="p333316412452"><a name="p333316412452"></a><a name="p333316412452"></a>默认值：10，取值范围1-50</p>
+</td>
+</tr>
+<tr id="row14333164115455"><td class="cellrowborder" valign="top" width="24.95%" headers="mcps1.2.5.1.1 "><p id="p7333194115454"><a name="p7333194115454"></a><a name="p7333194115454"></a>max_retries</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p1933364120456"><a name="p1933364120456"></a><a name="p1933364120456"></a>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.5.1.3 "><p id="p1333311419450"><a name="p1333311419450"></a><a name="p1333311419450"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.230000000000004%" headers="mcps1.2.5.1.4 "><p id="p633384164514"><a name="p633384164514"></a><a name="p633384164514"></a>健康检查的最大重试次数</p>
+<p id="p633394113453"><a name="p633394113453"></a><a name="p633394113453"></a>默认值：3，取值范围1-10</p>
+</td>
+</tr>
+<tr id="row1533313416459"><td class="cellrowborder" valign="top" width="24.95%" headers="mcps1.2.5.1.1 "><p id="p1133319414454"><a name="p1133319414454"></a><a name="p1133319414454"></a>protocol</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p20333144117453"><a name="p20333144117453"></a><a name="p20333144117453"></a>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.5.1.3 "><p id="p63331941164511"><a name="p63331941164511"></a><a name="p63331941164511"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.230000000000004%" headers="mcps1.2.5.1.4 "><p id="p43331841104517"><a name="p43331841104517"></a><a name="p43331841104517"></a>健康检查的协议</p>
+<p id="p13335417459"><a name="p13335417459"></a><a name="p13335417459"></a>默认值：取关联服务的协议</p>
+<p id="p333316417453"><a name="p333316417453"></a><a name="p333316417453"></a>取值范围：“TCP”、“UDP”或者“HTTP”</p>
+</td>
+</tr>
+<tr id="row5333241174516"><td class="cellrowborder" valign="top" width="24.95%" headers="mcps1.2.5.1.1 "><p id="p8333184124517"><a name="p8333184124517"></a><a name="p8333184124517"></a>path</p>
+</td>
+<td class="cellrowborder" valign="top" width="12.32%" headers="mcps1.2.5.1.2 "><p id="p833310419455"><a name="p833310419455"></a><a name="p833310419455"></a>否</p>
+</td>
+<td class="cellrowborder" valign="top" width="13.5%" headers="mcps1.2.5.1.3 "><p id="p13333741174519"><a name="p13333741174519"></a><a name="p13333741174519"></a>String</p>
+</td>
+<td class="cellrowborder" valign="top" width="49.230000000000004%" headers="mcps1.2.5.1.4 "><p id="p433334154520"><a name="p433334154520"></a><a name="p433334154520"></a>健康检查的URL，协议是“HTTP”时配置</p>
+<p id="p1133324134511"><a name="p1133324134511"></a><a name="p1133324134511"></a>默认值：“/”</p>
+<p id="p33337418453"><a name="p33337418453"></a><a name="p33337418453"></a>取值范围：1-10000字符</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+## Pod就绪状态与ELB健康检查联动<a name="section9313533195715"></a>
+
+Pod的就绪状态与挂载到ELB后端的健康检查联动，在健康检查成功后，将Pod置为就绪。与Pod的strategy.rollingUpdate.maxSurge和strategy.rollingUpdate.maxUnavailable参数配合，可实现负载的优雅滚动升级。
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>-   该特性存在集群版本限制，仅在以下版本中生效：
+>    -   v1.19集群：v1.19.16-r5及以上版本
+>    -   v1.21集群：v1.21.8-r0及以上版本
+>    -   v1.23集群：v1.23.6-r0及以上版本
+>    -   v1.25集群：v1.25.2-r0及以上版本
+>-   该功能只支持直通场景，即CCE Turbo集群中使用独享型ELB的场景。
+>-   该功能需在Pod中配置特定的readinessGates字段，指定标签target-health.elb.k8s.cce/\{serviceName\}，其中\{serviceName\}为服务名称。
+>-   Pod就绪状态只在最初对接ELB后端时生效，后续健康检查状态不再影响Pod就绪状态。
+
+使用Pod readiness Gates方式如下：
+
+1.  登录CCE控制台，单击集群名称进入集群。
+2.  在左侧导航栏中选择“工作负载“，在右上角单击“YAML创建“。
+
+    YAML内容如下：
+
+    ```
+    kind: Deployment
+    apiVersion: apps/v1
+    metadata:
+      name: nginx
+      namespace: default
+      labels:
+        version: v1
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: nginx
+          version: v1
+      template:
+        metadata:
+          labels:
+            app: nginx
+            version: v1
+        spec:
+          containers:
+            - name: container-1
+              image: nginx:latest
+          imagePullSecrets:
+            - name: default-secret
+          readinessGates:
+            - conditionType: target-health.elb.k8s.cce/specific-service-name  # 指定ServiceName。
+      strategy:
+        type: RollingUpdate
+        rollingUpdate:
+          maxUnavailable: 25%           # 配合以下两个参数，可以控制ELB后端个数，实现优雅滚动升级。
+          maxSurge: 25%
+    ```
+
+3.  单击“确定“创建工作负载后，查看工作负载状态，Pod处于未就绪状态。
+
+    ![](figures/zh-cn_image_0000001494071461.png)
+
+4.  在左侧导航栏中选择“服务发现“，在右上角单击“创建服务“，并进行以下配置。
+
+    -   Service名称：需要与Pod中readinessGates字段设置的名称一致。
+    -   访问类型：选择负载均衡型Service。
+    -   选择器：单击“引用负载标签”，选择上一步中创建的工作负载并单击“确定“。
+    -   负载均衡器：必须使用独享型ELB，您可以选择已有的ELB或自动创建新的ELB。
+    -   负载均衡器配置：开启健康检查（不开启则默认为健康检查成功）。
+
+    ![](figures/zh-cn_image_0000001494184089.png)
+
+5.  前往ELB控制台，查看对应的后端服务器组，健康检查状态正常。
+6.  在CCE控制台中查看工作负载状态处于“运行中”。
+
+    ![](figures/zh-cn_image_0000001494186053.png)
+
+
 ## 集群内使用ELB地址无法访问Service说明<a name="section52631714117"></a>
 
-当LoadBalancer Service设置了服务亲和为节点级别，即externalTrafficPolicy取值为Local时，在使用中可能会碰到从集群内部（节点上或容器中）使用ELB地址访问不通的情况。
+当LoadBalancer Service设置了服务亲和为节点级别，即externalTrafficPolicy取值为Local时，在使用中可能会碰到从集群内部（节点上或容器中）使用ELB地址访问不通的情况，回显类似如下内容：
 
-这是因为创建LoadBalancer Service时，kube-proxy会把ELB的访问地址（external-ip）添加到iptables或IPVS中，当在集群内部访问ELB地址时不会经过ELB，而是kube-proxy直接转发。不同容器网络模型和服务转发模式下会有情况不同。
+```
+upstream connect error or disconnect/reset before headers. reset reason: connection failure
+```
 
-externalTrafficPolicy取值为Local时，存在如下场景存在访问不通的情况。
+这是由于Kubernetes在创建LoadBalancer Service时，kube-proxy会把ELB的访问地址作为External-IP添加到iptables或IPVS中。如果客户端从集群内部发起访问ELB地址的请求，该地址会被认为是服务的External-IP，被kube-proxy直接转发，而不再经过集群外部的ELB。
+
+当externalTrafficPolicy的取值为Local时，在不同容器网络模型和服务转发模式下，情况会有所不同，详情如下：
 
 <a name="table198144149333"></a>
 <table><tbody><tr id="row159506147335"><td class="cellrowborder" valign="top" width="18.28817118288171%"><p id="p1895081493315"><a name="p1895081493315"></a><a name="p1895081493315"></a>Server</p>
@@ -1202,7 +1414,12 @@ externalTrafficPolicy取值为Local时，存在如下场景存在访问不通的
       type: LoadBalancer
     ```
 
--   使用Service的pass-through特性（独享型负载均衡在工作负载同节点和同节点容器内无法通过Service访问），使用ELB地址访问时绕过kube-proxy，先访问ELB，经过ELB再访问到负载。具体请参见[LoadBalancer类型Service使用pass-through能力](LoadBalancer类型Service使用pass-through能力.md)。
+-   使用Service的pass-through特性，使用ELB地址访问时绕过kube-proxy，先访问ELB，经过ELB再访问到负载。具体请参见[LoadBalancer类型Service使用pass-through能力](LoadBalancer类型Service使用pass-through能力.md)。
+
+    >![](public_sys-resources/icon-note.gif) **说明：** 
+    >-   独享型负载均衡配置pass-through后，在工作负载同节点和同节点容器内无法通过Service访问。
+    >-   1.15及以下老版本集群暂不支持该能力。
+    >-   IPVS网络模式下，对接同一个ELB的Service需保持pass-through设置情况一致。
 
     ```
     apiVersion: v1 

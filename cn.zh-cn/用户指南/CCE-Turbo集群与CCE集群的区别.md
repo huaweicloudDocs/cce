@@ -73,7 +73,7 @@ CCE支持多种类型的集群创建，以满足您各种业务需求，如下�
 ## CCE Turbo分布式集群<a name="section177181671556"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->CCE Turbo 分布式集群当前仅在“华南-广州“区域上线，且需要注册了边缘小站后才可见。
+>CCE Turbo 分布式集群需要注册了边缘小站后才可见。
 
 CCE Turbo分布式集群在CCE Turbo集群的基础上增加了**管理边缘基础设施**的能力，包括智能边缘云Homezone和智能边缘小站IES。启用分布式集群后，一个集群可以统一管理数据中心和边缘的计算资源，用户可以便捷地根据应用的诉求将其部署在对应的区域。
 
@@ -106,72 +106,75 @@ CCE Turbo分布式集群在CCE Turbo集群的基础上增加了**管理边缘基
 
 ## CCE Turbo集群Pod批量创建性能说明<a name="section2774164118419"></a>
 
-CCE Turbo集群的Pod网络申请VPC的弹性网卡或者辅助弹性网卡，目前Pod与网卡（弹性网卡或辅助弹性网卡）的关联操作发生在Pod调度完成之后，Pod创建的速度受网卡创建与绑定速度的影响，具体限制如下表所示。
+CCE Turbo集群的Pod容器网卡申请自VPC的弹性网卡或者辅助弹性网卡，目前Pod与网卡（弹性网卡或辅助弹性网卡）的关联操作发生在Pod调度完成之后，Pod创建的速度受网卡创建与绑定速度的影响，具体限制如下表所示。
 
-**表 2**  网卡创建耗时
+**表 2**  容器网卡创建耗时
 
 <a name="table204615556719"></a>
-<table><thead align="left"><tr id="row6460551719"><th class="cellrowborder" valign="top" width="10.678932106789322%" id="mcps1.2.7.1.1"><p id="p846955677"><a name="p846955677"></a><a name="p846955677"></a>节点类型</p>
+<table><thead align="left"><tr id="row6460551719"><th class="cellrowborder" valign="top" width="5.140000000000001%" id="mcps1.2.8.1.1"><p id="p846955677"><a name="p846955677"></a><a name="p846955677"></a>节点类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="13.708629137086293%" id="mcps1.2.7.1.2"><p id="p84619551720"><a name="p84619551720"></a><a name="p84619551720"></a>网卡类型</p>
+<th class="cellrowborder" valign="top" width="7.64%" id="mcps1.2.8.1.2"><p id="p84619551720"><a name="p84619551720"></a><a name="p84619551720"></a>网卡类型</p>
 </th>
-<th class="cellrowborder" valign="top" width="21.72782721727827%" id="mcps1.2.7.1.3"><p id="p124610558720"><a name="p124610558720"></a><a name="p124610558720"></a>网卡绑定到节点上的操作</p>
+<th class="cellrowborder" valign="top" width="9.82%" id="mcps1.2.8.1.3"><p id="p117621223131915"><a name="p117621223131915"></a><a name="p117621223131915"></a>可支持的最大网卡数</p>
 </th>
-<th class="cellrowborder" valign="top" width="13.908609139086092%" id="mcps1.2.7.1.4"><p id="p24645513713"><a name="p24645513713"></a><a name="p24645513713"></a>网卡可用耗时</p>
+<th class="cellrowborder" valign="top" width="11.15%" id="mcps1.2.8.1.4"><p id="p124610558720"><a name="p124610558720"></a><a name="p124610558720"></a>网卡绑定到节点上的操作</p>
 </th>
-<th class="cellrowborder" valign="top" width="17.83821617838216%" id="mcps1.2.7.1.5"><p id="p14468552073"><a name="p14468552073"></a><a name="p14468552073"></a>并发控制</p>
+<th class="cellrowborder" valign="top" width="15.52%" id="mcps1.2.8.1.5"><p id="p24645513713"><a name="p24645513713"></a><a name="p24645513713"></a>网卡可用耗时</p>
 </th>
-<th class="cellrowborder" valign="top" width="22.137786221377866%" id="mcps1.2.7.1.6"><p id="p14552544121619"><a name="p14552544121619"></a><a name="p14552544121619"></a>节点默认预热配置</p>
+<th class="cellrowborder" valign="top" width="9.69%" id="mcps1.2.8.1.6"><p id="p14468552073"><a name="p14468552073"></a><a name="p14468552073"></a>并发控制</p>
+</th>
+<th class="cellrowborder" valign="top" width="41.04%" id="mcps1.2.8.1.7"><p id="p14552544121619"><a name="p14552544121619"></a><a name="p14552544121619"></a>节点上的容器网卡默认预热配置</p>
 </th>
 </tr>
 </thead>
-<tbody><tr id="row2460552719"><td class="cellrowborder" valign="top" width="10.678932106789322%" headers="mcps1.2.7.1.1 "><p id="p2466551575"><a name="p2466551575"></a><a name="p2466551575"></a>ECS节点</p>
+<tbody><tr id="row2460552719"><td class="cellrowborder" valign="top" width="5.140000000000001%" headers="mcps1.2.8.1.1 "><p id="p2466551575"><a name="p2466551575"></a><a name="p2466551575"></a>ECS节点</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.708629137086293%" headers="mcps1.2.7.1.2 "><p id="p12461559718"><a name="p12461559718"></a><a name="p12461559718"></a>辅助弹性网卡</p>
+<td class="cellrowborder" valign="top" width="7.64%" headers="mcps1.2.8.1.2 "><p id="p12461559718"><a name="p12461559718"></a><a name="p12461559718"></a>辅助弹性网卡</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.72782721727827%" headers="mcps1.2.7.1.3 "><p id="p12101545111015"><a name="p12101545111015"></a><a name="p12101545111015"></a>指定该节点的弹性网卡创建辅助弹性网卡</p>
+<td class="cellrowborder" valign="top" width="9.82%" headers="mcps1.2.8.1.3 "><p id="p15762192315196"><a name="p15762192315196"></a><a name="p15762192315196"></a>256</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.908609139086092%" headers="mcps1.2.7.1.4 "><p id="p346165519710"><a name="p346165519710"></a><a name="p346165519710"></a>1s以内</p>
+<td class="cellrowborder" valign="top" width="11.15%" headers="mcps1.2.8.1.4 "><p id="p12101545111015"><a name="p12101545111015"></a><a name="p12101545111015"></a>指定该节点的弹性网卡创建辅助弹性网卡</p>
 </td>
-<td class="cellrowborder" valign="top" width="17.83821617838216%" headers="mcps1.2.7.1.5 "><p id="p7468551978"><a name="p7468551978"></a><a name="p7468551978"></a>租户级别：600/分钟</p>
+<td class="cellrowborder" valign="top" width="15.52%" headers="mcps1.2.8.1.5 "><p id="p346165519710"><a name="p346165519710"></a><a name="p346165519710"></a>1s以内</p>
 </td>
-<td class="cellrowborder" valign="top" width="22.137786221377866%" headers="mcps1.2.7.1.6 "><p id="p55521244101613"><a name="p55521244101613"></a><a name="p55521244101613"></a>不预热</p>
+<td class="cellrowborder" valign="top" width="9.69%" headers="mcps1.2.8.1.6 "><p id="p7468551978"><a name="p7468551978"></a><a name="p7468551978"></a>租户级别：600/分钟</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.04%" headers="mcps1.2.8.1.7 "><p id="p55521244101613"><a name="p55521244101613"></a><a name="p55521244101613"></a>1.19.16-r2、1.21.5-r0、1.23.3-r0之前的集群版本：容器网卡不预热</p>
+<p id="p2225631104211"><a name="p2225631104211"></a><a name="p2225631104211"></a>1.19.16-r2、1.21.5-r0、1.23.3-r0到1.19.16-r4、1.21.7-r0、1.23.5-r0之间的集群版本：容器网卡动态预热（nic-minimum-target=10；nic-warm-target=2）</p>
+<p id="p1971113542413"><a name="p1971113542413"></a><a name="p1971113542413"></a>1.19.16-r4、1.21.7-r0、1.23.5-r0、1.25.1-r0及以上集群版本：容器网卡动态预热（nic-minimum-target=10；nic-maximum-target=2；nic-warm-target=2；nic-max-above-warm-target=2）</p>
 </td>
 </tr>
-<tr id="row11461855176"><td class="cellrowborder" valign="top" width="10.678932106789322%" headers="mcps1.2.7.1.1 "><p id="p1146855576"><a name="p1146855576"></a><a name="p1146855576"></a>BMS节点</p>
+<tr id="row11461855176"><td class="cellrowborder" valign="top" width="5.140000000000001%" headers="mcps1.2.8.1.1 "><p id="p1146855576"><a name="p1146855576"></a><a name="p1146855576"></a>BMS节点</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.708629137086293%" headers="mcps1.2.7.1.2 "><p id="p146355171"><a name="p146355171"></a><a name="p146355171"></a>弹性网卡</p>
+<td class="cellrowborder" valign="top" width="7.64%" headers="mcps1.2.8.1.2 "><p id="p146355171"><a name="p146355171"></a><a name="p146355171"></a>弹性网卡</p>
 </td>
-<td class="cellrowborder" valign="top" width="21.72782721727827%" headers="mcps1.2.7.1.3 "><p id="p20461055973"><a name="p20461055973"></a><a name="p20461055973"></a>节点绑定弹性网卡</p>
+<td class="cellrowborder" valign="top" width="9.82%" headers="mcps1.2.8.1.3 "><p id="p1176212234192"><a name="p1176212234192"></a><a name="p1176212234192"></a>128</p>
 </td>
-<td class="cellrowborder" valign="top" width="13.908609139086092%" headers="mcps1.2.7.1.4 "><p id="p246655775"><a name="p246655775"></a><a name="p246655775"></a>20s-30s</p>
+<td class="cellrowborder" valign="top" width="11.15%" headers="mcps1.2.8.1.4 "><p id="p20461055973"><a name="p20461055973"></a><a name="p20461055973"></a>节点绑定弹性网卡</p>
 </td>
-<td class="cellrowborder" valign="top" width="17.83821617838216%" headers="mcps1.2.7.1.5 "><p id="p44611551778"><a name="p44611551778"></a><a name="p44611551778"></a>节点级别：3并发</p>
+<td class="cellrowborder" valign="top" width="15.52%" headers="mcps1.2.8.1.5 "><p id="p246655775"><a name="p246655775"></a><a name="p246655775"></a>20s-30s</p>
 </td>
-<td class="cellrowborder" valign="top" width="22.137786221377866%" headers="mcps1.2.7.1.6 "><p id="p35529445162"><a name="p35529445162"></a><a name="p35529445162"></a>0.3:0.6的高低水位预热</p>
+<td class="cellrowborder" valign="top" width="9.69%" headers="mcps1.2.8.1.6 "><p id="p44611551778"><a name="p44611551778"></a><a name="p44611551778"></a>节点级别：3并发</p>
+</td>
+<td class="cellrowborder" valign="top" width="41.04%" headers="mcps1.2.8.1.7 "><p id="p8568846144713"><a name="p8568846144713"></a><a name="p8568846144713"></a>1.19.16-r4、1.21.7-r0、1.23.5-r0之前的集群版本：容器网卡总数高低水位预热（nic-threshold=0.3:0.6）</p>
+<p id="p5957913172711"><a name="p5957913172711"></a><a name="p5957913172711"></a>1.19.16-r4、1.21.7-r0、1.23.5-r0、1.25.1-r0及以上集群版本：容器网卡动态预热（nic-minimum-target=10；nic-maximum-target=2；nic-warm-target=2；nic-max-above-warm-target=2）</p>
 </td>
 </tr>
 </tbody>
 </table>
 
+>![](public_sys-resources/icon-note.gif) **说明：** 
+>容器网卡预热会提前消耗容器子网的IP地址，进而影响集群可运行的Pod数规模，请根据业务规模合理规划配置容器网卡动态预热参数，详情请参见[CCE Turbo配置容器网卡动态预热](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_10010.html)。
+
 **ECS节点创建Pod说明（采用辅助弹性网卡）**
 
--   当Pod调度的节点上没有可用的已经预热的网卡时，会调用辅助弹性网卡的创建API，在该节点的一个弹性网卡上创建一个辅助弹性网卡；并把该辅助弹性网卡分配给该Pod。
--   当Pod调度的节点上有可用的已经预热的网卡时，会选择最早未使用的一张辅助弹性网卡分配给该Pod。
--   受限于辅助弹性网卡的租户并发创建速度，不预热的场景下，每分钟最多创建成功600个Pod；如果有更高的弹性要求，可配置辅助弹性网卡的预热。
-
-    >![](public_sys-resources/icon-note.gif) **说明：** 
-    >预热会消耗子网的IP地址，进而影响集群可运行的Pod数规模，请根据业务规模合理规划配置预热比例。
-
+-   当Pod调度的节点上没有可用的已经预热的容器网卡时，会调用辅助弹性网卡的创建API，在该节点的一个弹性网卡上创建一个辅助弹性网卡；并把该辅助弹性网卡分配给该Pod。
+-   当Pod调度的节点上有可用的已经预热的容器网卡时，会选择最早未使用的一张辅助弹性网卡分配给该Pod。
+-   受限于辅助弹性网卡的租户并发创建速度，容器网卡不预热的场景下，每分钟最多创建成功600个Pod；如果有更高的弹性要求，可根据业务场景合理配置容器网卡动态预热参数。
 
 **BMS节点创建Pod说明（采用弹性网卡）**
 
--   当Pod调度的节点上没有可用的已经预热的网卡时，会调用节点绑定网卡的API，在该节点上绑定一个弹性网卡；并把该弹性网卡分配给该Pod。目前BMS节点绑定一张弹性网卡大约耗时在20s到30s不等。
--   当Pod调度的节点上有可用的已经预热的网卡时，会选择最早未使用的一张弹性网卡分配给该Pod。
--   受限于BMS节点绑定弹性网卡的速度，不预热的场景下，同一节点的Pod启动速度为：3个/20秒；所以针对BMS节点，默认配置了节点弹性网卡总配额的30%到60%的高低水位预热。
-
-弹性网卡预热策略（按照以下策略2分钟周期性检查）：
-
--   当  **节点上预热网卡数 + 当前Pod使用的网卡数 < 低水位网卡数（节点网卡配额\*低水位比例）**时，会预热一部分网卡使得  **节点上预热网卡数 + 当前Pod使用的网卡数 = 低水位网卡数（节点网卡配额\*低水位比例）**。
--   当  **节点上预热网卡数 + 当前Pod使用的网卡数 \> 高水位网卡数（节点网卡配额\*高水位比例）**时，会释放一部分网卡使得  **节点上预热网卡数 + 当前Pod使用的网卡数 = 高水位网卡数（节点网卡配额\*高水位比例）**。
+-   当Pod调度的节点上没有可用的已经预热的容器网卡时，会调用节点绑定网卡的API，在该节点上绑定一个弹性网卡；并把该弹性网卡分配给该Pod。目前BMS节点绑定一张弹性网卡直至完全可用大约耗时在20s到30s不等。
+-   当Pod调度的节点上有可用的已经预热的容器网卡时，会选择最早未使用的一张弹性网卡分配给该Pod。
+-   受限于BMS节点绑定弹性网卡的速度，容器网卡不预热的场景下，同一节点的Pod启动速度为：3个/20秒；所以针对BMS节点，强烈建议用户配置容器网卡全预热。
 

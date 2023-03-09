@@ -47,6 +47,9 @@ Pod直接使用主机的网络会占用宿主机的端口，Pod的IP就是宿主
 
 另外由于占用主机端口，使用Deployment部署hostNetwork类型Pod时，要注意**Pod的副本数不要超过节点数量**，否则会导致一个节点上调度了多个Pod，Pod启动时端口冲突无法创建。例如上面例子中的nginx，如果服务数为2，并部署在只有1个节点的集群上，就会有一个Pod无法创建，查询Pod日志会发现是由于端口占用导致nginx无法启动。
 
+>![](public_sys-resources/icon-caution.gif) **注意：** 
+>请避免在同一个节点上调度多个使用主机网络的Pod，否则在创建ClusterIP类型的Service访问Pod时，会出现访问ClusterIP不通的情况。
+
 ```
 $ kubectl get deploy
 NAME    READY   UP-TO-DATE   AVAILABLE   AGE

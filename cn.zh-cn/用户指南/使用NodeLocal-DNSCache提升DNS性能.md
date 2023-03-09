@@ -40,7 +40,7 @@ CCE提供了[node-local-dns](node-local-dns.md)插件，可以方便的安装Nod
     forward . /etc/resolv.conf { prefer_udp }
     ```
 
-2.  登录CCE控制台，进入集群，在左侧导航栏中选择“插件管理“，在右侧找到**node-local-dns**，单击“安装“。
+2.  登录CCE控制台，单击集群名称进入集群，在左侧导航栏中选择“插件管理“，在右侧找到**node-local-dns**，单击“安装“。
 3.  在安装插件页面，选择插件规格，并配置相关参数。
 
     **enable\_dnsconfig\_admission**：是否自动注入DNSConfig至新建的Pod中。默认为**false**，设置为**true**表示支持自动注入，避免您手工配置Pod YAML进行注入。

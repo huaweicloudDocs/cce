@@ -2,4 +2,6 @@
 
 -   **[PodSecurityPolicy配置](PodSecurityPolicy配置.md)**  
 
+-   **[Pod Security Admission配置](Pod-Security-Admission配置.md)**  
+
 

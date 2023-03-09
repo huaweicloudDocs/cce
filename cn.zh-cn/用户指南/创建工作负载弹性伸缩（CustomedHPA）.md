@@ -15,7 +15,7 @@ CustomedHPA策略是自研的弹性伸缩增强能力，能够基于指标（CPU
 ## 约束与限制<a name="section107429267459"></a>
 
 -   CustomedHPA策略：仅支持1.15及以上版本的集群创建。
--   每个工作负载只能创建一个策略，即如果您创建了一个[HPA策略](创建工作负载弹性伸缩（HPA）.md)，则不能再对其创建CustomedHPA策略或其他HPA策略，您可以删除该HPA策略后再创建。
+-   每个工作负载只能创建一个[HPA策略](创建工作负载弹性伸缩（HPA）.md)或CustomedHPA策略。
 -   1.19.10以下版本的集群中，如果使用HPA策略对挂载了EVS卷的负载进行扩容，当新Pod被调度到另一个节点时，会导致之前Pod不能正常读写。
 
     1.19.10及以上版本集群中，如果使用HPA策略对挂载了EVS卷的负载进行扩容，新Pod会因为无法挂载云硬盘导致无法成功启动。
@@ -25,7 +25,7 @@ CustomedHPA策略是自研的弹性伸缩增强能力，能够基于指标（CPU
 
 ## 操作步骤<a name="section15633192745418"></a>
 
-1.  在CCE控制台，进入集群。
+1.  在CCE控制台，单击集群名称进入集群。
 2.  单击左侧导航栏的“负载伸缩“，选择“CustomedHPA策略“。
     -   若插件名称后方显示“未安装“，请单击插件后方的“安装“按钮，根据业务需求配置插件参数后单击“安装“，等待插件安装完成。
     -   若插件名称后方显示“已安装“，则说明插件已安装成功。
@@ -74,17 +74,14 @@ CustomedHPA策略是自研的弹性伸缩增强能力，能够基于指标（CPU
     <td class="cellrowborder" valign="top" width="79.97999999999999%" headers="mcps1.2.3.1.2 "><p id="p3272153618157"><a name="p3272153618157"></a><a name="p3272153618157"></a>单击<a name="image122890257013"></a><a name="image122890257013"></a><span><img id="image122890257013" src="figures/zh-cn_image_0000001249970593.png" width="17.955000000000002" height="23.94"></span>在弹出的窗口中设置伸缩策略参数：</p>
     <a name="ul1118523472911"></a><a name="ul1118523472911"></a><ul id="ul1118523472911"><li>规则名称：请输入规则名称，可自定义。</li><li>类型：可选择<span class="uicontrol" id="uicontrol111853343295"><a name="uicontrol111853343295"></a><a name="uicontrol111853343295"></a>“指标触发”</span>或<span class="uicontrol" id="uicontrol8537183924318"><a name="uicontrol8537183924318"></a><a name="uicontrol8537183924318"></a>“周期触发”</span>。</li></ul>
     <p id="p51991125164415"><a name="p51991125164415"></a><a name="p51991125164415"></a><strong id="b112712277447"><a name="b112712277447"></a><a name="b112712277447"></a>指标触发</strong></p>
-    <a name="ul7210112510444"></a><a name="ul7210112510444"></a><ul id="ul7210112510444"><li>触发条件：请选择<span class="uicontrol" id="uicontrol139971753132917"><a name="uicontrol139971753132917"></a><a name="uicontrol139971753132917"></a>“CPU利用率”</span>或<span class="uicontrol" id="uicontrol8997553182915"><a name="uicontrol8997553182915"></a><a name="uicontrol8997553182915"></a>“内存利用率”</span>，选择<span class="uicontrol" id="uicontrol199971353172910"><a name="uicontrol199971353172910"></a><a name="uicontrol199971353172910"></a>“&gt;”</span>或<span class="uicontrol" id="uicontrol099715534291"><a name="uicontrol099715534291"></a><a name="uicontrol099715534291"></a>“&lt;”</span>，并输入百分比的值。如下图中所示，则表示CPU利用率瞬时值 &gt; 50% 时，立即执行此规则。<div class="note" id="note1989064993310"><a name="note1989064993310"></a><a name="note1989064993310"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p189034933311"><a name="p189034933311"></a><a name="p189034933311"></a>利用率 = 工作负载的实际使用量 / 申请量。</p>
+    <a name="ul7210112510444"></a><a name="ul7210112510444"></a><ul id="ul7210112510444"><li>触发条件：请选择<span class="uicontrol" id="uicontrol139971753132917"><a name="uicontrol139971753132917"></a><a name="uicontrol139971753132917"></a>“CPU利用率”</span>或<span class="uicontrol" id="uicontrol8997553182915"><a name="uicontrol8997553182915"></a><a name="uicontrol8997553182915"></a>“内存利用率”</span>，选择<span class="uicontrol" id="uicontrol199971353172910"><a name="uicontrol199971353172910"></a><a name="uicontrol199971353172910"></a>“&gt;”</span>或<span class="uicontrol" id="uicontrol099715534291"><a name="uicontrol099715534291"></a><a name="uicontrol099715534291"></a>“&lt;”</span>，并输入百分比的值。如下图中所示，则表示CPU利用率瞬时值 &gt; 50% 时，立即执行此规则。<div class="note" id="note1751133503518"><a name="note1751133503518"></a><a name="note1751133503518"></a><span class="notetitle"> 说明： </span><div class="notebody"><p id="p12511735183515"><a name="p12511735183515"></a><a name="p12511735183515"></a>利用率 = 工作负载容器组（Pod）的实际使用量 / 申请量</p>
     </div></div>
-    <div class="fignone" id="fig543116367335"><a name="fig543116367335"></a><a name="fig543116367335"></a><span class="figcap"><b>图1 </b>触发条件</span><br><a name="image643123611338"></a><a name="image643123611338"></a><span><img id="image643123611338" src="figures/触发条件.png" width="413.63" height="131.699792"></span></div>
-    </li><li>执行动作：与上述<span class="uicontrol" id="uicontrol1621082513447"><a name="uicontrol1621082513447"></a><a name="uicontrol1621082513447"></a>“触发条件”</span>相对应，达到触发条件值后所要执行的动作，可添加多个执行动作。如下图中所示，当CPU利用率超过50%时将伸缩至5个实例，当超过70%时伸缩至8个实例，当超过90%时在8个实例基础上再增加10个实例。反之，按此规则执行缩容。<div class="fignone" id="fig921072518446"><a name="fig921072518446"></a><a name="fig921072518446"></a><span class="figcap"><b>图2 </b>执行动作</span><br><a name="image1226732611245"></a><a name="image1226732611245"></a><span><img id="image1226732611245" src="figures/执行动作.png" width="413.63" height="138.05293600000002"></span></div>
-    </li><li>是否启用：可单击启用或关闭该策略规则。</li></ul>
+    </li><li>执行动作：与上述<span class="uicontrol" id="uicontrol252785574112"><a name="uicontrol252785574112"></a><a name="uicontrol252785574112"></a>“触发条件”</span>相对应，达到触发条件值后所要执行的动作，可添加多个执行动作。如下图中所示，当CPU利用率超过50%时将5个实例，当超过70%时伸缩至8个实例，当超过90%时在8个实例基础上再增加10个实例。反之，按此规则执行缩容。</li><li>是否启用：可选择启用或关闭该策略规则。</li></ul>
+    <div class="fignone" id="fig543116367335"><a name="fig543116367335"></a><a name="fig543116367335"></a><span class="figcap"><b>图1 </b>触发条件</span><br><a name="image4198220619"></a><a name="image4198220619"></a><span><img id="image4198220619" src="figures/触发条件.png" width="352.45000000000005" height="219.15740000000002"></span></div>
     <p id="p1559773314518"><a name="p1559773314518"></a><a name="p1559773314518"></a><strong id="b1244574912453"><a name="b1244574912453"></a><a name="b1244574912453"></a>周期触发</strong></p>
-    <a name="ul676113102462"></a><a name="ul676113102462"></a><ul id="ul676113102462"><li>触发时间：可选择每天、每周、每月或每年的具体时间点，如设置为下图所示，则为每天17:00触发。<div class="fignone" id="fig626073005017"><a name="fig626073005017"></a><a name="fig626073005017"></a><span class="figcap"><b>图3 </b>周期触发-每天</span><br><a name="image814831725011"></a><a name="image814831725011"></a><span><img id="image814831725011" src="figures/周期触发-每天.png" height="178.12929400000002" width="413.63"></span></div>
-    </li><li>执行动作：与上述<span class="uicontrol" id="uicontrol9492546161716"><a name="uicontrol9492546161716"></a><a name="uicontrol9492546161716"></a>“触发时间”</span>相对应，达到触发时间值后所要执行的动作。如下图中所示，即每天17:00时将执行减少4个实例的动作。<div class="fignone" id="fig5492546111720"><a name="fig5492546111720"></a><a name="fig5492546111720"></a><span class="figcap"><b>图4 </b>周期触发-执行动作</span><br><a name="image11168046532"></a><a name="image11168046532"></a><span><img id="image11168046532" src="figures/周期触发-执行动作.png" width="413.63" height="272.199795"></span></div>
-    </li><li>是否启用：可单击启用或关闭该策略规则。</li></ul>
-    <p id="p16849185724113"><a name="p16849185724113"></a><a name="p16849185724113"></a>单击确定后，您可以在<span class="uicontrol" id="uicontrol38493574412"><a name="uicontrol38493574412"></a><a name="uicontrol38493574412"></a>“策略规则”</span>列表中查看添加的规则，并可执行开启关闭、编辑、删除等操作。</p>
-    <p id="p191851634172918"><a name="p191851634172918"></a><a name="p191851634172918"></a>单击<span class="uicontrol" id="uicontrol14289104184212"><a name="uicontrol14289104184212"></a><a name="uicontrol14289104184212"></a>“策略规则”</span>列表下方的<span class="uicontrol" id="uicontrol418543422918"><a name="uicontrol418543422918"></a><a name="uicontrol418543422918"></a>“添加策略规则”</span>，可设置多条策略。</p>
+    <a name="ul676113102462"></a><a name="ul676113102462"></a><ul id="ul676113102462"><li>触发时间：可选择每天、每周、每月或每年的具体时间点。</li><li>执行动作：与上述<span class="uicontrol" id="uicontrol9492546161716"><a name="uicontrol9492546161716"></a><a name="uicontrol9492546161716"></a>“触发时间”</span>相对应，达到触发时间值后所要执行的动作。如下图中所示，即每天17:00时将执行增加1个实例的动作。</li><li>是否启用：可选择启用或关闭该策略规则。</li></ul>
+    <div class="fignone" id="fig626073005017"><a name="fig626073005017"></a><a name="fig626073005017"></a><span class="figcap"><b>图2 </b>周期触发-每天</span><br><a name="image1336892817615"></a><a name="image1336892817615"></a><span><img id="image1336892817615" src="figures/周期触发-每天.png" width="352.45000000000005" height="249.94690000000003"></span></div>
+    <p id="p16849185724113"><a name="p16849185724113"></a><a name="p16849185724113"></a>单击确定后，您可以在列表中查看添加的策略规则。</p>
     </td>
     </tr>
     </tbody>

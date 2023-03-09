@@ -35,7 +35,7 @@ CCE当前会尝试转换v2模板实例到v3模板实例。若在后台操作Helm
     mv linux-amd64/helm /usr/local/bin/helm
     ```
 
-4.  因为Kubernetes APIServer开启了RBAC访问控制，所以需创建tiller使用的service account:tiller并给其分配cluster-admin这个集群内置的ClusterRole。按如下创建tiller的资源账户。
+4.  因为Kubernetes APIServer开启了RBAC访问控制，所以需创建tiller使用的service account:tiller并给其分配cluster-admin这个集群内置的ClusterRole。按如下创建tiller的资源帐户。
 
     **vim tiller-rbac.yaml**
 
@@ -60,7 +60,7 @@ CCE当前会尝试转换v2模板实例到v3模板实例。若在后台操作Helm
         namespace: kube-system
     ```
 
-5.  部署tiller资源账户。
+5.  部署tiller资源帐户。
 
     ```
     kubectl apply -f tiller-rbac.yaml

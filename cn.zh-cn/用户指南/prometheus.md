@@ -39,7 +39,7 @@ CCE提供的Prometheus插件仅支持1.21及以下版本的集群。1.23及以�
 
 ## 安装插件<a name="section189463341114"></a>
 
-1.  登录CCE控制台，单击左侧导航栏的“插件管理“，在右侧找到**Prometheus**，单击“安装“。
+1.  登录CCE控制台，单击集群名称进入集群，单击左侧导航栏的“插件管理“，在右侧找到**Prometheus**，单击“安装“。
 2.  在“规格配置“步骤中，配置以下参数：
 
     **表 1**  Prometheus配置参数说明
@@ -65,12 +65,6 @@ CCE提供的Prometheus插件仅支持1.21及以下版本的集群。1.23及以�
     <tr id="row111551253912"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p51551451293"><a name="p51551451293"></a><a name="p51551451293"></a>容器</p>
     </td>
     <td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p1437014065110"><a name="p1437014065110"></a><a name="p1437014065110"></a>选择插件规格后，显示插件容器的CPU和内存配额，此处仅作显示。</p>
-    </td>
-    </tr>
-    <tr id="row1683716231053"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p98372023951"><a name="p98372023951"></a><a name="p98372023951"></a>对接远端</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="72%" headers="mcps1.2.3.1.2 "><p id="p103251148141510"><a name="p103251148141510"></a><a name="p103251148141510"></a>可根据实际场景选择对应参数:</p>
-    <a name="ul46735991617"></a><a name="ul46735991617"></a><ul id="ul46735991617"><li>不对接：普罗采集的数据仅存储在本地数据盘中。</li><li>对接CIE：普罗采集的数据将同时存放在本地数据盘和CIE远端服务中。</li><li>自定义：普罗采集的数据将同时存放在本地数据盘和自定义的远端服务中。远端地址、HTTPS认证等所需的信息，需从第三方服务获取。</li></ul>
     </td>
     </tr>
     <tr id="row1535723154615"><td class="cellrowborder" valign="top" width="28.000000000000004%" headers="mcps1.2.3.1.1 "><p id="p83591731124620"><a name="p83591731124620"></a><a name="p83591731124620"></a>数据保留期</p>
@@ -102,7 +96,7 @@ CCE提供的Prometheus插件仅支持1.21及以下版本的集群。1.23及以�
 
 容器和节点的资源指标，如CPU、内存使用量，可通过Kubernetes的Metrics API获得。这些指标可以直接被用户访问，比如用kubectl top命令，也可以被HPA或者CustomedHPA使用，根据资源使用率使负载弹性伸缩。
 
-Prometheus插件可为Kubernetes提供Metrics API，但默认未开启，若要将其开启，需要创建以下APIService对象：
+插件可为Kubernetes提供Metrics API，但默认未开启，若要将其开启，需要创建以下APIService对象：
 
 ```
 apiVersion: apiregistration.k8s.io/v1
@@ -130,24 +124,90 @@ spec:
 kubectl create -f metrics-apiservice.yaml
 ```
 
-执行kubectl top命令，若显示如下，则表示Metrics API是否能正常访问：
+执行kubectl top命令，若显示如下，则表示Metrics API能正常访问：
 
 ```
 # kubectl top pod -n monitoring
 NAME                                                      CPU(cores)   MEMORY(bytes)
-cceaddon-prometheus-kube-state-metrics-7b77694f48-zc9pl   4m           16Mi
-cceaddon-prometheus-node-exporter-4jvwv                   1m           16Mi
-cceaddon-prometheus-node-exporter-85zl4                   2m           39Mi
-cceaddon-prometheus-node-exporter-qbrmb                   0m           15Mi
-cceaddon-prometheus-operator-659547567d-j6484             0m           48Mi
+......
 custom-metrics-apiserver-d4f556ff9-l2j2m                  38m          44Mi
-grafana-78f9966c99-xprkx                                  0m           25Mi
-prometheus-0                                              18m          706Mi
+......
 ```
+
+>![](public_sys-resources/icon-notice.gif) **须知：** 
+>卸载插件时，需要执行以下kubectl命令，同时删除APIService对象，否则残留的APIService资源将导致metrics-server插件安装失败。
+>```
+>kubectl delete APIService v1beta1.metrics.k8s.io
+>```
 
 ## 参考资源<a name="section16331426191116"></a>
 
 -   Prometheus概念及详细配置请参阅[Prometheus 官方文档](https://prometheus.io/docs/introduction/overview/)
 -   Node exporter安装请参考[node\_exporter github 仓库](https://github.com/prometheus/node_exporter)
 -   Slack 信息发送请参考  [Incoming Webhooks](https://api.slack.com/incoming-webhooks)
+
+## 版本记录<a name="section183121449435"></a>
+
+**表 2**  CCE插件版本记录
+
+<a name="table545952314179"></a>
+<table><thead align="left"><tr id="row13459112313176"><th class="cellrowborder" valign="top" width="26.697353279631752%" id="mcps1.2.4.1.1"><p id="p206369328181"><a name="p206369328181"></a><a name="p206369328181"></a>插件版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="34.94438051400076%" id="mcps1.2.4.1.2"><p id="p1663653221810"><a name="p1663653221810"></a><a name="p1663653221810"></a>支持的集群版本</p>
+</th>
+<th class="cellrowborder" valign="top" width="38.35826620636747%" id="mcps1.2.4.1.3"><p id="p445992311174"><a name="p445992311174"></a><a name="p445992311174"></a>社区版本（仅1.17及以上版本集群支持）</p>
+</th>
+</tr>
+</thead>
+<tbody><tr id="row174592023121714"><td class="cellrowborder" valign="top" width="26.697353279631752%" headers="mcps1.2.4.1.1 "><p id="p946017346239"><a name="p946017346239"></a><a name="p946017346239"></a>2.23.32</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.94438051400076%" headers="mcps1.2.4.1.2 "><p id="p11289140124818"><a name="p11289140124818"></a><a name="p11289140124818"></a>/v1.(17|19|21).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.35826620636747%" headers="mcps1.2.4.1.3 "><p id="p1143218810236"><a name="p1143218810236"></a><a name="p1143218810236"></a><a href="https://github.com/prometheus/prometheus/releases/tag/v2.10.0" target="_blank" rel="noopener noreferrer">2.10.0</a></p>
+</td>
+</tr>
+<tr id="row10459723151716"><td class="cellrowborder" valign="top" width="26.697353279631752%" headers="mcps1.2.4.1.1 "><p id="p16461163410236"><a name="p16461163410236"></a><a name="p16461163410236"></a>2.23.31</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.94438051400076%" headers="mcps1.2.4.1.2 "><p id="p123031127114817"><a name="p123031127114817"></a><a name="p123031127114817"></a>/v1.15.*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.35826620636747%" headers="mcps1.2.4.1.3 "><p id="p943208102317"><a name="p943208102317"></a><a name="p943208102317"></a><a href="https://github.com/prometheus/prometheus/releases/tag/v2.10.0" target="_blank" rel="noopener noreferrer">2.10.0</a></p>
+</td>
+</tr>
+<tr id="row3459112341718"><td class="cellrowborder" valign="top" width="26.697353279631752%" headers="mcps1.2.4.1.1 "><p id="p15461434132316"><a name="p15461434132316"></a><a name="p15461434132316"></a>2.23.30</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.94438051400076%" headers="mcps1.2.4.1.2 "><p id="p919101814815"><a name="p919101814815"></a><a name="p919101814815"></a>/v1.(17|19|21).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.35826620636747%" headers="mcps1.2.4.1.3 "><p id="p84329816239"><a name="p84329816239"></a><a name="p84329816239"></a><a href="https://github.com/prometheus/prometheus/releases/tag/v2.10.0" target="_blank" rel="noopener noreferrer">2.10.0</a></p>
+</td>
+</tr>
+<tr id="row114591523181710"><td class="cellrowborder" valign="top" width="26.697353279631752%" headers="mcps1.2.4.1.1 "><p id="p1746183492312"><a name="p1746183492312"></a><a name="p1746183492312"></a>2.21.14</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.94438051400076%" headers="mcps1.2.4.1.2 "><p id="p728918104814"><a name="p728918104814"></a><a name="p728918104814"></a>/v1.(17|19|21).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.35826620636747%" headers="mcps1.2.4.1.3 "><p id="p124328811237"><a name="p124328811237"></a><a name="p124328811237"></a><a href="https://github.com/prometheus/prometheus/releases/tag/v2.10.0" target="_blank" rel="noopener noreferrer">2.10.0</a></p>
+</td>
+</tr>
+<tr id="row646042319177"><td class="cellrowborder" valign="top" width="26.697353279631752%" headers="mcps1.2.4.1.1 "><p id="p184611634182310"><a name="p184611634182310"></a><a name="p184611634182310"></a>2.21.12</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.94438051400076%" headers="mcps1.2.4.1.2 "><p id="p12593158154810"><a name="p12593158154810"></a><a name="p12593158154810"></a>/v1.15.*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.35826620636747%" headers="mcps1.2.4.1.3 "><p id="p18432128132311"><a name="p18432128132311"></a><a name="p18432128132311"></a><a href="https://github.com/prometheus/prometheus/releases/tag/v2.10.0" target="_blank" rel="noopener noreferrer">2.10.0</a></p>
+</td>
+</tr>
+<tr id="row13757134401715"><td class="cellrowborder" valign="top" width="26.697353279631752%" headers="mcps1.2.4.1.1 "><p id="p1046153432314"><a name="p1046153432314"></a><a name="p1046153432314"></a>2.21.11</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.94438051400076%" headers="mcps1.2.4.1.2 "><p id="p727861016499"><a name="p727861016499"></a><a name="p727861016499"></a>/v1.(17|19).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.35826620636747%" headers="mcps1.2.4.1.3 "><p id="p1243216810236"><a name="p1243216810236"></a><a name="p1243216810236"></a><a href="https://github.com/prometheus/prometheus/releases/tag/v2.10.0" target="_blank" rel="noopener noreferrer">2.10.0</a></p>
+</td>
+</tr>
+<tr id="row10575174891715"><td class="cellrowborder" valign="top" width="26.697353279631752%" headers="mcps1.2.4.1.1 "><p id="p1446143415231"><a name="p1446143415231"></a><a name="p1446143415231"></a>1.15.1</p>
+</td>
+<td class="cellrowborder" valign="top" width="34.94438051400076%" headers="mcps1.2.4.1.2 "><p id="p13461173472316"><a name="p13461173472316"></a><a name="p13461173472316"></a>/v1.(15|17).*/</p>
+</td>
+<td class="cellrowborder" valign="top" width="38.35826620636747%" headers="mcps1.2.4.1.3 "><p id="p124321988237"><a name="p124321988237"></a><a name="p124321988237"></a><a href="https://github.com/prometheus/prometheus/releases/tag/v2.10.0" target="_blank" rel="noopener noreferrer">2.10.0</a></p>
+</td>
+</tr>
+</tbody>
+</table>
 

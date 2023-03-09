@@ -204,7 +204,7 @@ v1版本参数相较v1beta1参数有如下区别。
     </thead>
     <tbody><tr id="row968615513223"><td class="cellrowborder" valign="top" width="24.542454245424544%" headers="mcps1.2.5.1.1 "><p id="p36867562211"><a name="p36867562211"></a><a name="p36867562211"></a>kubernetes.io/elb.class</p>
     </td>
-    <td class="cellrowborder" valign="top" width="14.331433143314332%" headers="mcps1.2.5.1.2 "><p id="p1968618512213"><a name="p1968618512213"></a><a name="p1968618512213"></a>否</p>
+    <td class="cellrowborder" valign="top" width="14.331433143314332%" headers="mcps1.2.5.1.2 "><p id="p1968618512213"><a name="p1968618512213"></a><a name="p1968618512213"></a>是</p>
     </td>
     <td class="cellrowborder" valign="top" width="17.461746174617463%" headers="mcps1.2.5.1.3 "><p id="p12686135112213"><a name="p12686135112213"></a><a name="p12686135112213"></a>String</p>
     </td>
@@ -329,6 +329,16 @@ v1版本参数相较v1beta1参数有如下区别。
     <p id="p2687851225"><a name="p2687851225"></a><a name="p2687851225"></a>默认值为<span class="parmvalue" id="parmvalue1124845489"><a name="parmvalue1124845489"></a><a name="parmvalue1124845489"></a>“STARTS_WITH”</span>(前缀匹配)。</p>
     <p id="p14687135102217"><a name="p14687135102217"></a><a name="p14687135102217"></a>取值范围：</p>
     <a name="ul1368755172219"></a><a name="ul1368755172219"></a><ul id="ul1368755172219"><li>EQUAL_TO：精确匹配</li><li>STARTS_WITH：前缀匹配</li><li>REGEX：正则匹配</li></ul>
+    </td>
+    </tr>
+    <tr id="row158261683461"><td class="cellrowborder" valign="top" width="24.542454245424544%" headers="mcps1.2.5.1.1 "><p id="p19827108154619"><a name="p19827108154619"></a><a name="p19827108154619"></a>pathType</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="14.331433143314332%" headers="mcps1.2.5.1.2 "><p id="p188276814619"><a name="p188276814619"></a><a name="p188276814619"></a>是</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="17.461746174617463%" headers="mcps1.2.5.1.3 "><p id="p188278815467"><a name="p188278815467"></a><a name="p188278815467"></a>String</p>
+    </td>
+    <td class="cellrowborder" valign="top" width="43.66436643664366%" headers="mcps1.2.5.1.4 "><p id="p1489918544469"><a name="p1489918544469"></a><a name="p1489918544469"></a>路径类型，改字段仅v1.23及以上集群支持。</p>
+    <a name="ul513514415472"></a><a name="ul513514415472"></a><ul id="ul513514415472"><li>ImplementationSpecific: 匹配方法取决于具体Ingress Controller的实现。在CCE中会使用ingress.beta.kubernetes.io/url-match-mode指定的匹配方式。</li><li>Exact：精确匹配 URL 路径，且区分大小写。</li><li>Prefix：基于以 / 分隔的 URL 路径前缀匹配。匹配区分大小写，并且对路径中的元素逐个匹配。 路径元素指的是由 / 分隔符分隔的路径中的标签列表。</li></ul>
     </td>
     </tr>
     </tbody>

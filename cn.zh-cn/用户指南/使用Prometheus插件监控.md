@@ -212,3 +212,8 @@ Prometheus插件同时安装了[Grafana](https://grafana.com/)（一款开源可
     修改完成后保存配置，Grafana负载会升级并挂载云硬盘。
 
 
+## 相关操作<a name="section1701526192917"></a>
+
+-   [Prometheus监控多个集群](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_10009.html)
+-   [使用dcgm-exporter监控GPU指标](https://support.huaweicloud.com/bestpractice-cce/cce_bestpractice_10011.html)
+

@@ -41,7 +41,7 @@ CCE的权限可以从使用的阶段分为两个阶段来看，第一个阶段�
 </th>
 </tr>
 </thead>
-<tbody><tr id="row138631617185012"><td class="cellrowborder" valign="top" width="46.54%" headers="mcps1.2.3.1.1 "><p id="p1787744075015"><a name="p1787744075015"></a><a name="p1787744075015"></a>拥有Tenant Administrator权限的用户（例如账号）</p>
+<tbody><tr id="row138631617185012"><td class="cellrowborder" valign="top" width="46.54%" headers="mcps1.2.3.1.1 "><p id="p1787744075015"><a name="p1787744075015"></a><a name="p1787744075015"></a>拥有Tenant Administrator权限的用户（例如帐号）</p>
 </td>
 <td class="cellrowborder" valign="top" width="53.459999999999994%" headers="mcps1.2.3.1.2 "><p id="p1829523133913"><a name="p1829523133913"></a><a name="p1829523133913"></a>全部命名空间权限</p>
 </td>

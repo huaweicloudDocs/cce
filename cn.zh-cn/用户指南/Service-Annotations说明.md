@@ -13,7 +13,7 @@ Service的Annotation主要是Service对接ELB时需要指定的参数，详细�
 </th>
 <th class="cellrowborder" valign="top" width="35.44%" id="mcps1.2.6.1.3"><p id="p133301795508"><a name="p133301795508"></a><a name="p133301795508"></a>描述</p>
 </th>
-<th class="cellrowborder" valign="top" width="19.52%" id="mcps1.2.6.1.4"><p id="p498113216229"><a name="p498113216229"></a><a name="p498113216229"></a>默认取值</p>
+<th class="cellrowborder" valign="top" width="19.52%" id="mcps1.2.6.1.4"><p id="p498113216229"><a name="p498113216229"></a><a name="p498113216229"></a>控制台默认取值</p>
 </th>
 <th class="cellrowborder" valign="top" width="12.98%" id="mcps1.2.6.1.5"><p id="p2060351510225"><a name="p2060351510225"></a><a name="p2060351510225"></a>支持的集群版本</p>
 </th>
@@ -26,9 +26,8 @@ Service的Annotation主要是Service对接ELB时需要指定的参数，详细�
 <td class="cellrowborder" valign="top" width="35.44%" headers="mcps1.2.6.1.3 "><p id="p17331169135014"><a name="p17331169135014"></a><a name="p17331169135014"></a>请根据不同的应用场景和功能需求选择合适的负载均衡器类型。</p>
 <p id="p143311298508"><a name="p143311298508"></a><a name="p143311298508"></a>取值如下：</p>
 <a name="ul3415201212612"></a><a name="ul3415201212612"></a><ul id="ul3415201212612"><li>union：共享型负载均衡。</li><li>performance：独享型负载均衡，仅支持1.17及以上集群，详情请参见<a href="https://support.huaweicloud.com/productdesc-elb/elb_pro_0004.html" target="_blank" rel="noopener noreferrer">共享型弹性负载均衡与独享型负载均衡的功能区别</a></li></ul>
-<p id="p733118975010"><a name="p733118975010"></a><a name="p733118975010"></a>默认值：union</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.6.1.4 "><p id="p598114218226"><a name="p598114218226"></a><a name="p598114218226"></a>union</p>
+<td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.6.1.4 "><p id="p598114218226"><a name="p598114218226"></a><a name="p598114218226"></a>performance</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.98%" headers="mcps1.2.6.1.5 "><p id="p156031515142220"><a name="p156031515142220"></a><a name="p156031515142220"></a>v1.9及以上</p>
 </td>
@@ -52,13 +51,11 @@ Service的Annotation主要是Service对接ELB时需要指定的参数，详细�
 <td class="cellrowborder" valign="top" width="11.06%" headers="mcps1.2.6.1.2 "><p id="p14668143915226"><a name="p14668143915226"></a><a name="p14668143915226"></a>String</p>
 </td>
 <td class="cellrowborder" valign="top" width="35.44%" headers="mcps1.2.6.1.3 "><p id="p955862311215"><a name="p955862311215"></a><a name="p955862311215"></a>Service使用7层能力配置端口。</p>
-<p id="p1446473012477"><a name="p1446473012477"></a><a name="p1446473012477"></a>对于已创建且不支持HTTP的Service，不支持更新成支持HTTP的Service。</p>
-<p id="p424419133137"><a name="p424419133137"></a><a name="p424419133137"></a><strong id="b8244181351313"><a name="b8244181351313"></a><a name="b8244181351313"></a>kubernetes.io/elb.protocol-port仅支持在新创建Service时配置，不支持更新</strong>。</p>
 <p id="p4103673472"><a name="p4103673472"></a><a name="p4103673472"></a>详细使用请参见<a href="负载均衡(LoadBalancer).md#section833011453318">Service使用HTTP</a>。</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.6.1.4 "><p id="p189811021228"><a name="p189811021228"></a><a name="p189811021228"></a>无</p>
 </td>
-<td class="cellrowborder" valign="top" width="12.98%" headers="mcps1.2.6.1.5 "><p id="p4603415122219"><a name="p4603415122219"></a><a name="p4603415122219"></a>v1.21及以上</p>
+<td class="cellrowborder" valign="top" width="12.98%" headers="mcps1.2.6.1.5 "><p id="p4603415122219"><a name="p4603415122219"></a><a name="p4603415122219"></a>v1.19.16及以上</p>
 </td>
 </tr>
 <tr id="row161302114216"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.6.1.1 "><p id="p2558132317219"><a name="p2558132317219"></a><a name="p2558132317219"></a>kubernetes.io/elb.cert-id</p>
@@ -70,7 +67,7 @@ Service的Annotation主要是Service对接ELB时需要指定的参数，详细�
 </td>
 <td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.6.1.4 "><p id="p59812216227"><a name="p59812216227"></a><a name="p59812216227"></a>无</p>
 </td>
-<td class="cellrowborder" valign="top" width="12.98%" headers="mcps1.2.6.1.5 "><p id="p1960311516226"><a name="p1960311516226"></a><a name="p1960311516226"></a>v1.21及以上</p>
+<td class="cellrowborder" valign="top" width="12.98%" headers="mcps1.2.6.1.5 "><p id="p1960311516226"><a name="p1960311516226"></a><a name="p1960311516226"></a>v1.19.16及以上</p>
 </td>
 </tr>
 <tr id="row790233013543"><td class="cellrowborder" valign="top" width="21%" headers="mcps1.2.6.1.1 "><p id="p143324917501"><a name="p143324917501"></a><a name="p143324917501"></a>kubernetes.io/elb.subnet-id</p>
@@ -96,7 +93,7 @@ Service的Annotation主要是Service对接ELB时需要指定的参数，详细�
 <p id="p233313917501"><a name="p233313917501"></a><a name="p233313917501"></a><strong id="b733349135014"><a name="b733349135014"></a><a name="b733349135014"></a>获取方法：</strong></p>
 <p id="p833389105013"><a name="p833389105013"></a><a name="p833389105013"></a>登录控制台后，单击顶部菜单右侧的<span class="uicontrol" id="uicontrol633319205011"><a name="uicontrol633319205011"></a><a name="uicontrol633319205011"></a>“企业 &gt; 项目管理”</span>，在打开的企业项目列表中单击要加入的企业项目名称，进入企业项目详情页，找到<span class="uicontrol" id="uicontrol633399135010"><a name="uicontrol633399135010"></a><a name="uicontrol633399135010"></a>“ID”</span>字段复制即可。</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.6.1.4 "><p id="p139818202217"><a name="p139818202217"></a><a name="p139818202217"></a>0</p>
+<td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.6.1.4 "><p id="p139818202217"><a name="p139818202217"></a><a name="p139818202217"></a>无</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.98%" headers="mcps1.2.6.1.5 "><p id="p1760391512227"><a name="p1760391512227"></a><a name="p1760391512227"></a>v1.15及以上</p>
 </td>
@@ -124,7 +121,7 @@ Service的Annotation主要是Service对接ELB时需要指定的参数，详细�
 <a name="ul74009241447"></a><a name="ul74009241447"></a><ul id="ul74009241447"><li>开启：true</li><li>关闭：false</li></ul>
 <p id="p10400102420420"><a name="p10400102420420"></a><a name="p10400102420420"></a>该参数仅1.21及以上集群适用，且ELB直通Pod场景下无效。</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.6.1.4 "><p id="p66761430349"><a name="p66761430349"></a><a name="p66761430349"></a>false</p>
+<td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.6.1.4 "><p id="p66761430349"><a name="p66761430349"></a><a name="p66761430349"></a>无</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.98%" headers="mcps1.2.6.1.5 "><p id="p163318141620"><a name="p163318141620"></a><a name="p163318141620"></a>v1.21及以上</p>
 </td>
@@ -149,8 +146,7 @@ Service的Annotation主要是Service对接ELB时需要指定的参数，详细�
 </td>
 <td class="cellrowborder" valign="top" width="35.44%" headers="mcps1.2.6.1.3 "><p id="p1833315910509"><a name="p1833315910509"></a><a name="p1833315910509"></a>是否开启ELB健康检查功能。</p>
 <a name="ul19333199205012"></a><a name="ul19333199205012"></a><ul id="ul19333199205012"><li>开启：“（空值）”或“on”</li><li>关闭：“off”</li></ul>
-<p id="p1488621164517"><a name="p1488621164517"></a><a name="p1488621164517"></a>默认开启，采用如下默认值。</p>
-<a name="ul6443617184511"></a><a name="ul6443617184511"></a><ul id="ul6443617184511"><li>健康检查协议：TCP</li><li>健康检查端口：使用后端服务器端口</li><li>检查间隔(秒)：5</li><li>超时时间(秒)：10</li><li>最大重试次数：3</li></ul>
+<p id="p144301330171416"><a name="p144301330171416"></a><a name="p144301330171416"></a>开启时需同时填写<a href="#table19192143412319">kubernetes.io/elb.health-check-option</a>字段。</p>
 </td>
 <td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.6.1.4 "><p id="p4981142142210"><a name="p4981142142210"></a><a name="p4981142142210"></a>off</p>
 </td>
@@ -247,9 +243,10 @@ Service的Annotation主要是Service对接ELB时需要指定的参数，详细�
 <td class="cellrowborder" valign="top" width="11.06%" headers="mcps1.2.6.1.2 "><p id="p76688396226"><a name="p76688396226"></a><a name="p76688396226"></a>Boolean</p>
 </td>
 <td class="cellrowborder" valign="top" width="35.44%" headers="mcps1.2.6.1.3 "><p id="p6334798502"><a name="p6334798502"></a><a name="p6334798502"></a>为标记工作负载服务是否使用主机网络模式。如果Pod使用的主机网络，开启这个annotation会ELB转发到主机网络的方式对接。</p>
-<p id="p14334095506"><a name="p14334095506"></a><a name="p14334095506"></a>默认是未使用主机网络，取值范围：“true”或者“false”</p>
+<p id="p14334095506"><a name="p14334095506"></a><a name="p14334095506"></a>取值范围：“true”或者“false”</p>
+<p id="p11863913162416"><a name="p11863913162416"></a><a name="p11863913162416"></a>默认是“false”，表示未使用主机网络。</p>
 </td>
-<td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.6.1.4 "><p id="p698214232218"><a name="p698214232218"></a><a name="p698214232218"></a>false</p>
+<td class="cellrowborder" valign="top" width="19.52%" headers="mcps1.2.6.1.4 "><p id="p698214232218"><a name="p698214232218"></a><a name="p698214232218"></a>无</p>
 </td>
 <td class="cellrowborder" valign="top" width="12.98%" headers="mcps1.2.6.1.5 "><p id="p1860331572220"><a name="p1860331572220"></a><a name="p1860331572220"></a>v1.9及以上</p>
 </td>
@@ -453,7 +450,7 @@ Service的Annotation主要是Service对接ELB时需要指定的参数，详细�
 </td>
 <td class="cellrowborder" valign="top" width="49.230000000000004%" headers="mcps1.2.5.1.4 "><p id="cce_10_0014_p15361164723916"><a name="cce_10_0014_p15361164723916"></a><a name="cce_10_0014_p15361164723916"></a>健康检查的协议</p>
 <p id="cce_10_0014_p2361204719390"><a name="cce_10_0014_p2361204719390"></a><a name="cce_10_0014_p2361204719390"></a>默认值：取关联服务的协议</p>
-<p id="cce_10_0014_p143617474391"><a name="cce_10_0014_p143617474391"></a><a name="cce_10_0014_p143617474391"></a>取值范围：“TCP”、“UDP_CONNECT”或者“HTTP”</p>
+<p id="cce_10_0014_p143617474391"><a name="cce_10_0014_p143617474391"></a><a name="cce_10_0014_p143617474391"></a>取值范围：“TCP”、“UDP”或者“HTTP”</p>
 </td>
 </tr>
 <tr id="cce_10_0014_row036113475395"><td class="cellrowborder" valign="top" width="24.95%" headers="mcps1.2.5.1.1 "><p id="cce_10_0014_p93612047133915"><a name="cce_10_0014_p93612047133915"></a><a name="cce_10_0014_p93612047133915"></a>path</p>

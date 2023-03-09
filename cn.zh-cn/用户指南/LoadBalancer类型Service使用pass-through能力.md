@@ -13,13 +13,17 @@ CCE服务支持pass-through能力，通过Loadbalance类型Service配置kubernet
 **图 1**  pass-through访问示例<a name="zh-cn_topic_0000001168691039_fig1610719509396"></a>  
 ![](figures/pass-through访问示例.png "pass-through访问示例")
 
--   针对CCE集群：
-    -   集群内部访问LB类型service，默认行为是通过iptables/ipvs转发到后端的容器实例。
-    -   LB类型service配置elb.pass-through，集群内访问Service地址流量能支持先转发到ELB，利用了ELB的负载均衡能力回到节点。
+-   对于CCE集群：
 
--   针对CCE Turbo集群：
-    -   集群内部访问LB类型service，默认行为是通过iptables/ipvs转发到后端的容器实例。
-    -   LB类型service配置elb.pass-through，集群内访问Service地址流量能支持先转发到ELB，利用了ELB的负载均衡能力流量直通到容器中。
+    集群内部客户端访问LB类型Service时，访问请求默认是通过集群服务转发规则（iptables或IPVS）转发到后端的容器实例。
+
+    当LB类型Service配置elb.pass-through后，集群内部客户端访问Service地址时会先访问到ELB，再通过ELB的负载均衡能力先访问到节点，然后通过集群服务转发规则（iptables或IPVS）转发到后端的容器实例。
+
+-   对于CCE Turbo集群：
+
+    集群内部客户端访问LB类型Service时，访问请求默认也是通过集群服务转发规则（iptables或IPVS）转发到后端的容器实例。
+
+    当LB类型Service配置elb.pass-through后，集群内部客户端访问Service地址时会先访问到ELB，然后通过ELB直通容器的能力直接访问容器实例。
 
 
 ## 约束限制<a name="zh-cn_topic_0000001168691039_section377316644214"></a>
@@ -97,7 +101,7 @@ CCE服务支持pass-through能力，通过Loadbalance类型Service配置kubernet
 
 查看上面创建的Service对应的ELB，名称为james，可以看到ELB的连接数为0，如下图所示。
 
-![](figures/zh-cn_image_0000001169698557.png)
+![](figures/unnaming-(15).png)
 
 使用kubectl连接集群，进入到某一个nginx容器中，然后访问ELB的地址。可以看到能够正常访问。
 
@@ -137,5 +141,5 @@ Commercial support is available at
 
 稍微等待一段时间看ELB的监控数据，可以看到ELB有一个新建访问连接，这就证明了这次访问经过ELB，与预期一致。
 
-![](figures/zh-cn_image_0000001169818441.png)
+![](figures/unnaming-(16).png)
 

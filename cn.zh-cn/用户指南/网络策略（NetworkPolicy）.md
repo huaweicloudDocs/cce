@@ -77,7 +77,7 @@ NetworkPolicy的规则可以选择如下3种：
 
 ## 在控制台创建网络策略<a name="section349662212313"></a>
 
-1.  登录CCE控制台，进入集群。
+1.  登录CCE控制台，单击集群名称进入集群。
 2.  在左侧导航栏中选择“服务发现“，在右侧选择“网络策略“页签，单击右上角“创建网络策略“。
     -   策略名称：自定义输入NetworkPolicy名称。
     -   命名空间：选择网络策略所在命名空间。
@@ -86,7 +86,7 @@ NetworkPolicy的规则可以选择如下3种：
 
         ![](figures/zh-cn_image_0000001207036074.png)
 
-        **表 1**  添加规则
+        **表 1**  添加入方向规则
 
         <a name="table166419994515"></a>
         <table><thead align="left"><tr id="row186401397458"><th class="cellrowborder" valign="top" width="15%" id="mcps1.2.3.1.1"><p id="p163919913452"><a name="p163919913452"></a><a name="p163919913452"></a>参数</p>
@@ -102,12 +102,12 @@ NetworkPolicy的规则可以选择如下3种：
         </tr>
         <tr id="row1164011917451"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p66400984510"><a name="p66400984510"></a><a name="p66400984510"></a>源对象命名空间</p>
         </td>
-        <td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p164014916457"><a name="p164014916457"></a><a name="p164014916457"></a>选择允许哪个命名空间的对象允许访问。</p>
+        <td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p164014916457"><a name="p164014916457"></a><a name="p164014916457"></a>选择允许哪个命名空间的对象访问。不填写表示和当前策略属于同一命名空间。</p>
         </td>
         </tr>
         <tr id="row1564115912452"><td class="cellrowborder" valign="top" width="15%" headers="mcps1.2.3.1.1 "><p id="p8640792450"><a name="p8640792450"></a><a name="p8640792450"></a>源对象Pod标签</p>
         </td>
-        <td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p590912241576"><a name="p590912241576"></a><a name="p590912241576"></a>选择允许带有这个标签的Pod访问。</p>
+        <td class="cellrowborder" valign="top" width="85%" headers="mcps1.2.3.1.2 "><p id="p590912241576"><a name="p590912241576"></a><a name="p590912241576"></a>允许带有这个标签的Pod访问，不填写表示命名空间下全部Pod。</p>
         </td>
         </tr>
         </tbody>

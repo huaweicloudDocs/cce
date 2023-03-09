@@ -148,9 +148,9 @@ CronHPA支持定时调整HPA策略的最大和最小实例数，满足复杂场�
     [图1](#fig8528823151719)中为可能存在的扩缩容场景，如下表格以举例的形式说明了不同场景下CronHPA修改HPA的情况。
 
     <a name="table1259511111590"></a>
-    <table><thead align="left"><tr id="row1359391175913"><th class="cellrowborder" valign="top" width="7.1499999999999995%" id="mcps1.1.8.1.1"><p id="p1913916712434"><a name="p1913916712434"></a><a name="p1913916712434"></a>场景</p>
+    <table><thead align="left"><tr id="row1359391175913"><th class="cellrowborder" valign="top" width="7.140000000000001%" id="mcps1.1.8.1.1"><p id="p1913916712434"><a name="p1913916712434"></a><a name="p1913916712434"></a>场景</p>
     </th>
-    <th class="cellrowborder" valign="top" width="21.62%" id="mcps1.1.8.1.2"><p id="p1998551910408"><a name="p1998551910408"></a><a name="p1998551910408"></a>场景说明</p>
+    <th class="cellrowborder" valign="top" width="21.63%" id="mcps1.1.8.1.2"><p id="p1998551910408"><a name="p1998551910408"></a><a name="p1998551910408"></a>场景说明</p>
     </th>
     <th class="cellrowborder" valign="top" width="11.95%" id="mcps1.1.8.1.3"><p id="p35921112597"><a name="p35921112597"></a><a name="p35921112597"></a>Cronhpa</p>
     <p id="p16592161155912"><a name="p16592161155912"></a><a name="p16592161155912"></a>(targetReplicas)</p>
@@ -167,9 +167,9 @@ CronHPA支持定时调整HPA策略的最大和最小实例数，满足复杂场�
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row5784203864815"><td class="cellrowborder" valign="top" width="7.1499999999999995%" headers="mcps1.1.8.1.1 "><p id="p192157405219"><a name="p192157405219"></a><a name="p192157405219"></a>场景一</p>
+    <tbody><tr id="row5784203864815"><td class="cellrowborder" valign="top" width="7.140000000000001%" headers="mcps1.1.8.1.1 "><p id="p192157405219"><a name="p192157405219"></a><a name="p192157405219"></a>场景一</p>
     </td>
-    <td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.1.8.1.2 "><p id="p199851919164011"><a name="p199851919164011"></a><a name="p199851919164011"></a><strong id="b37940110514"><a name="b37940110514"></a><a name="b37940110514"></a>targetReplicas</strong> &lt; minReplicas ≤ replicas ≤ maxReplicas</p>
+    <td class="cellrowborder" valign="top" width="21.63%" headers="mcps1.1.8.1.2 "><p id="p199851919164011"><a name="p199851919164011"></a><a name="p199851919164011"></a><strong id="b37940110514"><a name="b37940110514"></a><a name="b37940110514"></a>targetReplicas</strong> &lt; minReplicas ≤ replicas ≤ maxReplicas</p>
     </td>
     <td class="cellrowborder" valign="top" width="11.95%" headers="mcps1.1.8.1.3 "><p id="p05930115913"><a name="p05930115913"></a><a name="p05930115913"></a>4</p>
     </td>
@@ -184,9 +184,9 @@ CronHPA支持定时调整HPA策略的最大和最小实例数，满足复杂场�
     <a name="ul8223124413111"></a><a name="ul8223124413111"></a><ul id="ul8223124413111"><li>修改HPA的最小实例数。</li><li>Deployment实例数无修改。</li></ul>
     </td>
     </tr>
-    <tr id="row1399713196109"><td class="cellrowborder" valign="top" width="7.1499999999999995%" headers="mcps1.1.8.1.1 "><p id="p62152401825"><a name="p62152401825"></a><a name="p62152401825"></a>场景二</p>
+    <tr id="row1399713196109"><td class="cellrowborder" valign="top" width="7.140000000000001%" headers="mcps1.1.8.1.1 "><p id="p62152401825"><a name="p62152401825"></a><a name="p62152401825"></a>场景二</p>
     </td>
-    <td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.1.8.1.2 "><p id="p1898514194405"><a name="p1898514194405"></a><a name="p1898514194405"></a><strong id="b478416247517"><a name="b478416247517"></a><a name="b478416247517"></a>targetReplicas</strong> = minReplicas ≤ replicas ≤ maxReplicas</p>
+    <td class="cellrowborder" valign="top" width="21.63%" headers="mcps1.1.8.1.2 "><p id="p1898514194405"><a name="p1898514194405"></a><a name="p1898514194405"></a><strong id="b478416247517"><a name="b478416247517"></a><a name="b478416247517"></a>targetReplicas</strong> = minReplicas ≤ replicas ≤ maxReplicas</p>
     </td>
     <td class="cellrowborder" valign="top" width="11.95%" headers="mcps1.1.8.1.3 "><p id="p1699712195104"><a name="p1699712195104"></a><a name="p1699712195104"></a>5</p>
     </td>
@@ -201,9 +201,9 @@ CronHPA支持定时调整HPA策略的最大和最小实例数，满足复杂场�
     <a name="ul4395195512128"></a><a name="ul4395195512128"></a><ul id="ul4395195512128"><li>HPA的最小实例数无修改。</li><li>Deployment实例数无修改。</li></ul>
     </td>
     </tr>
-    <tr id="row1559310119598"><td class="cellrowborder" valign="top" width="7.1499999999999995%" headers="mcps1.1.8.1.1 "><p id="p82154401427"><a name="p82154401427"></a><a name="p82154401427"></a>场景三</p>
+    <tr id="row1559310119598"><td class="cellrowborder" valign="top" width="7.140000000000001%" headers="mcps1.1.8.1.1 "><p id="p82154401427"><a name="p82154401427"></a><a name="p82154401427"></a>场景三</p>
     </td>
-    <td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.1.8.1.2 "><p id="p798591964013"><a name="p798591964013"></a><a name="p798591964013"></a>minReplicas &lt;<strong id="b15983343515"><a name="b15983343515"></a><a name="b15983343515"></a> targetReplicas</strong> &lt; replicas ≤ maxReplicas</p>
+    <td class="cellrowborder" valign="top" width="21.63%" headers="mcps1.1.8.1.2 "><p id="p798591964013"><a name="p798591964013"></a><a name="p798591964013"></a>minReplicas &lt;<strong id="b15983343515"><a name="b15983343515"></a><a name="b15983343515"></a> targetReplicas</strong> &lt; replicas ≤ maxReplicas</p>
     </td>
     <td class="cellrowborder" valign="top" width="11.95%" headers="mcps1.1.8.1.3 "><p id="p1593514595"><a name="p1593514595"></a><a name="p1593514595"></a>4</p>
     </td>
@@ -218,9 +218,9 @@ CronHPA支持定时调整HPA策略的最大和最小实例数，满足复杂场�
     <a name="ul1718616118132"></a><a name="ul1718616118132"></a><ul id="ul1718616118132"><li>修改HPA的最小实例数。</li><li>Deployment实例数无修改。</li></ul>
     </td>
     </tr>
-    <tr id="row17410155411386"><td class="cellrowborder" valign="top" width="7.1499999999999995%" headers="mcps1.1.8.1.1 "><p id="p3139137124316"><a name="p3139137124316"></a><a name="p3139137124316"></a>场景四</p>
+    <tr id="row17410155411386"><td class="cellrowborder" valign="top" width="7.140000000000001%" headers="mcps1.1.8.1.1 "><p id="p3139137124316"><a name="p3139137124316"></a><a name="p3139137124316"></a>场景四</p>
     </td>
-    <td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.1.8.1.2 "><p id="p1098551944010"><a name="p1098551944010"></a><a name="p1098551944010"></a>minReplicas &lt;<strong id="b1650845155212"><a name="b1650845155212"></a><a name="b1650845155212"></a> targetReplicas</strong> = replicas &lt; maxReplicas</p>
+    <td class="cellrowborder" valign="top" width="21.63%" headers="mcps1.1.8.1.2 "><p id="p1098551944010"><a name="p1098551944010"></a><a name="p1098551944010"></a>minReplicas &lt;<strong id="b1650845155212"><a name="b1650845155212"></a><a name="b1650845155212"></a> targetReplicas</strong> = replicas &lt; maxReplicas</p>
     </td>
     <td class="cellrowborder" valign="top" width="11.95%" headers="mcps1.1.8.1.3 "><p id="p1741035413383"><a name="p1741035413383"></a><a name="p1741035413383"></a>5</p>
     </td>
@@ -235,9 +235,9 @@ CronHPA支持定时调整HPA策略的最大和最小实例数，满足复杂场�
     <a name="ul7587104761511"></a><a name="ul7587104761511"></a><ul id="ul7587104761511"><li>修改HPA的最小实例数。</li><li>Deployment实例数无修改。</li></ul>
     </td>
     </tr>
-    <tr id="row0594611592"><td class="cellrowborder" valign="top" width="7.1499999999999995%" headers="mcps1.1.8.1.1 "><p id="p1514114284818"><a name="p1514114284818"></a><a name="p1514114284818"></a>场景五</p>
+    <tr id="row0594611592"><td class="cellrowborder" valign="top" width="7.140000000000001%" headers="mcps1.1.8.1.1 "><p id="p1514114284818"><a name="p1514114284818"></a><a name="p1514114284818"></a>场景五</p>
     </td>
-    <td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.1.8.1.2 "><p id="p191401142204820"><a name="p191401142204820"></a><a name="p191401142204820"></a>minReplicas ≤ replicas &lt;<strong id="b363710045318"><a name="b363710045318"></a><a name="b363710045318"></a> targetReplicas</strong> &lt; maxReplicas</p>
+    <td class="cellrowborder" valign="top" width="21.63%" headers="mcps1.1.8.1.2 "><p id="p191401142204820"><a name="p191401142204820"></a><a name="p191401142204820"></a>minReplicas ≤ replicas &lt;<strong id="b363710045318"><a name="b363710045318"></a><a name="b363710045318"></a> targetReplicas</strong> &lt; maxReplicas</p>
     </td>
     <td class="cellrowborder" valign="top" width="11.95%" headers="mcps1.1.8.1.3 "><p id="p14594131185910"><a name="p14594131185910"></a><a name="p14594131185910"></a>6</p>
     </td>
@@ -252,9 +252,9 @@ CronHPA支持定时调整HPA策略的最大和最小实例数，满足复杂场�
     <a name="ul1918115564154"></a><a name="ul1918115564154"></a><ul id="ul1918115564154"><li>修改HPA的最小实例数。</li><li>修改Deployment实例数。</li></ul>
     </td>
     </tr>
-    <tr id="row1359411114596"><td class="cellrowborder" valign="top" width="7.1499999999999995%" headers="mcps1.1.8.1.1 "><p id="p21391179436"><a name="p21391179436"></a><a name="p21391179436"></a>场景六</p>
+    <tr id="row1359411114596"><td class="cellrowborder" valign="top" width="7.140000000000001%" headers="mcps1.1.8.1.1 "><p id="p21391179436"><a name="p21391179436"></a><a name="p21391179436"></a>场景六</p>
     </td>
-    <td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.1.8.1.2 "><p id="p1985161934020"><a name="p1985161934020"></a><a name="p1985161934020"></a>minReplicas ≤ replicas &lt;<strong id="b36939297543"><a name="b36939297543"></a><a name="b36939297543"></a> targetReplicas</strong> = maxReplicas</p>
+    <td class="cellrowborder" valign="top" width="21.63%" headers="mcps1.1.8.1.2 "><p id="p1985161934020"><a name="p1985161934020"></a><a name="p1985161934020"></a>minReplicas ≤ replicas &lt;<strong id="b36939297543"><a name="b36939297543"></a><a name="b36939297543"></a> targetReplicas</strong> = maxReplicas</p>
     </td>
     <td class="cellrowborder" valign="top" width="11.95%" headers="mcps1.1.8.1.3 "><p id="p101751726351"><a name="p101751726351"></a><a name="p101751726351"></a>10</p>
     </td>
@@ -269,9 +269,9 @@ CronHPA支持定时调整HPA策略的最大和最小实例数，满足复杂场�
     <a name="ul145799583165"></a><a name="ul145799583165"></a><ul id="ul145799583165"><li>修改HPA的最小实例数。</li><li>修改Deployment实例数。</li></ul>
     </td>
     </tr>
-    <tr id="row135948165919"><td class="cellrowborder" valign="top" width="7.1499999999999995%" headers="mcps1.1.8.1.1 "><p id="p17941446154618"><a name="p17941446154618"></a><a name="p17941446154618"></a>场景七</p>
+    <tr id="row135948165919"><td class="cellrowborder" valign="top" width="7.140000000000001%" headers="mcps1.1.8.1.1 "><p id="p17941446154618"><a name="p17941446154618"></a><a name="p17941446154618"></a>场景七</p>
     </td>
-    <td class="cellrowborder" valign="top" width="21.62%" headers="mcps1.1.8.1.2 "><p id="p15555583563"><a name="p15555583563"></a><a name="p15555583563"></a>minReplicas ≤ replicas ≤ maxReplicas &lt; <strong id="b105810375716"><a name="b105810375716"></a><a name="b105810375716"></a>targetReplicas</strong></p>
+    <td class="cellrowborder" valign="top" width="21.63%" headers="mcps1.1.8.1.2 "><p id="p15555583563"><a name="p15555583563"></a><a name="p15555583563"></a>minReplicas ≤ replicas ≤ maxReplicas &lt; <strong id="b105810375716"><a name="b105810375716"></a><a name="b105810375716"></a>targetReplicas</strong></p>
     </td>
     <td class="cellrowborder" valign="top" width="11.95%" headers="mcps1.1.8.1.3 "><p id="p1259414145914"><a name="p1259414145914"></a><a name="p1259414145914"></a>11</p>
     </td>
