@@ -463,7 +463,7 @@ IAM中预置的CCE系统策略当前包含**CCEFullAccess**和**CCEReadOnlyAcces
 </td>
 <td class="cellrowborder" valign="top" width="27.029999999999998%" headers="mcps1.2.4.1.2 "><p id="p77016415184"><a name="p77016415184"></a><a name="p77016415184"></a>-</p>
 </td>
-<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.3 "><p id="p18702412180"><a name="p18702412180"></a><a name="p18702412180"></a>操作所有kubernetes资源，具体权限请在<a href="命名空间权限（Kubernetes-RBAC授权）-180.md">命名空间权限</a>中配置。</p>
+<td class="cellrowborder" valign="top" width="53%" headers="mcps1.2.4.1.3 "><p id="p18702412180"><a name="p18702412180"></a><a name="p18702412180"></a>操作所有kubernetes资源，具体权限请在<a href="zh-cn_topic_0166937326.md">命名空间权限</a>中配置。</p>
 </td>
 </tr>
 <tr id="row1557101593414"><td class="cellrowborder" valign="top" width="19.97%" headers="mcps1.2.4.1.1 "><p id="p15966145792119"><a name="p15966145792119"></a><a name="p15966145792119"></a>ecs:*:get</p>

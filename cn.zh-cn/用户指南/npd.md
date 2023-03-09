@@ -31,7 +31,7 @@ NPD插件为监控内核日志，需要读取宿主机/dev/kmsg设备，为此�
 
     仅v1.16.0及以上版本支持配置。
 
-    npc.enable：是否启用npc，默认值为**false**，**true**表示启用。
+    npc.enable：是否启用[Node-problem-controller](#section1471610580474)。
 
 
 ## NPD检查项<a name="section69115153399"></a>
@@ -56,28 +56,7 @@ NPD的检查项主要分为事件类检查项和状态类检查项。
     </th>
     </tr>
     </thead>
-    <tbody><tr id="row178721458114011"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="p387285834013"><a name="p387285834013"></a><a name="p387285834013"></a>KubeletStart</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="40.88%" headers="mcps1.2.4.1.2 "><p id="p10872155815409"><a name="p10872155815409"></a><a name="p10872155815409"></a>检查kubelet启动并上报</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="36.57%" headers="mcps1.2.4.1.3 "><p id="p187215584409"><a name="p187215584409"></a><a name="p187215584409"></a>Normal类事件</p>
-    </td>
-    </tr>
-    <tr id="row118721358164011"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="p1587295817403"><a name="p1587295817403"></a><a name="p1587295817403"></a>DockerStart</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="40.88%" headers="mcps1.2.4.1.2 "><p id="p187245812404"><a name="p187245812404"></a><a name="p187245812404"></a>检查Docker启动并上报</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="36.57%" headers="mcps1.2.4.1.3 "><p id="p118721958114018"><a name="p118721958114018"></a><a name="p118721958114018"></a>Normal类事件</p>
-    </td>
-    </tr>
-    <tr id="row687214583403"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="p5872115811403"><a name="p5872115811403"></a><a name="p5872115811403"></a>ContainerdStart</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="40.88%" headers="mcps1.2.4.1.2 "><p id="p887215810403"><a name="p887215810403"></a><a name="p887215810403"></a>检查Containerd启动并上报</p>
-    </td>
-    <td class="cellrowborder" valign="top" width="36.57%" headers="mcps1.2.4.1.3 "><p id="p1787215834015"><a name="p1787215834015"></a><a name="p1787215834015"></a>Normal类事件</p>
-    </td>
-    </tr>
-    <tr id="row19872758194019"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="p17872858134019"><a name="p17872858134019"></a><a name="p17872858134019"></a>OOMKilling</p>
+    <tbody><tr id="row19872758194019"><td class="cellrowborder" valign="top" width="22.55%" headers="mcps1.2.4.1.1 "><p id="p17872858134019"><a name="p17872858134019"></a><a name="p17872858134019"></a>OOMKilling</p>
     </td>
     <td class="cellrowborder" valign="top" width="40.88%" headers="mcps1.2.4.1.2 "><p id="p1987215816404"><a name="p1987215816404"></a><a name="p1987215816404"></a>检查oom事件发生并上报</p>
     </td>
@@ -396,11 +375,11 @@ NPD的检查项主要分为事件类检查项和状态类检查项。
 ## Node-problem-controller故障隔离<a name="section1471610580474"></a>
 
 >![](public_sys-resources/icon-note.gif) **说明：** 
->故障隔离仅1.16.0及以上版本支持。
->Node-problem-controller（NPC）并不会随NPD插件默认安装。在安装NPD插件时，将参数\`npc.enable\`配置为true以部署双实例NPC（注：也可配置单实例但不保证高可用）。
+>故障隔离仅1.16.0及以上版本的插件支持。
+>在安装NPD插件时，将参数\`npc.enable\`配置为true以部署双实例Node-problem-controller（NPC）（注：也可配置单实例但不保证高可用）。
 >默认情况下，若多个节点发生故障，NPC只会为1个节点添加污点，可通过参数npc. maxTaintedNode提高数量限制。故障恢复时，NPC不在运行状态，污点会残留，需要手动清理或启动NPC。
 
-开源NPD插件提供了故障探测能力，但未提供基础故障隔离能力。对此，CCE在开源NPD的基础上，增强了Node-problem-controller（节点故障控制器组件），该组件参照kubernetes[节点控制器](https://kubernetes.io/zh/docs/concepts/scheduling-eviction/taint-and-toleration/#taint-based-evictions)实现，针对NPD探测上报的故障，自动为节点添加污点以进行基本的节点故障隔离。
+开源NPD插件提供了故障探测能力，但未提供基础故障隔离能力。对此，CCE在开源NPD的基础上，增强了Node-problem-controller（节点故障控制器组件），该组件参照Kubernetes[节点控制器](https://kubernetes.io/zh/docs/concepts/scheduling-eviction/taint-and-toleration/#taint-based-evictions)实现，针对NPD探测上报的故障，自动为节点添加污点以进行基本的节点故障隔离。
 
 可以按下表修改插件**npc.customConditionToTaint**参数，配置故障隔离规则。
 
@@ -419,7 +398,7 @@ NPD的检查项主要分为事件类检查项和状态类检查项。
 </td>
 <td class="cellrowborder" valign="top" width="34.300000000000004%" headers="mcps1.2.4.1.2 "><p id="p6537155372414"><a name="p6537155372414"></a><a name="p6537155372414"></a>是否启用npc</p>
 </td>
-<td class="cellrowborder" valign="top" width="33.01%" headers="mcps1.2.4.1.3 "><p id="p1353716531240"><a name="p1353716531240"></a><a name="p1353716531240"></a>false</p>
+<td class="cellrowborder" valign="top" width="33.01%" headers="mcps1.2.4.1.3 "><p id="p1353716531240"><a name="p1353716531240"></a><a name="p1353716531240"></a>true</p>
 </td>
 </tr>
 <tr id="row1453705322418"><td class="cellrowborder" valign="top" width="32.690000000000005%" headers="mcps1.2.4.1.1 "><p id="p853718533245"><a name="p853718533245"></a><a name="p853718533245"></a>npc.customCondtionToTaint</p>

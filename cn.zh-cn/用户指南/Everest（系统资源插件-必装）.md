@@ -21,14 +21,14 @@ Everest是一个云原生容器存储系统，基于CSI（即Container Storage I
 
     Everest插件包含以下容器，您可根据需求自定义调整规格：
 
-    -   everest-csi-controller：由Deployment形式部署，Pod中含有一个everest-csi-controller容器，此容器负责存储卷的创建、删除、快照、扩容、attach/detach等功能。若集群版本大于等于1.19，everest-csi-driver组件的Pod还会默认带有一个everest-localvolume-manager容器，此容器负责管理节点上的lvm存储池及localpv的创建。
+    -   everest-csi-controller：由Deployment形式部署，Pod中含有一个everest-csi-controller容器，此容器负责存储卷的创建、删除、快照、扩容、attach/detach等功能。若集群版本大于等于1.19，且插件版本为1.2.x，everest-csi-driver组件的Pod还会默认带有一个everest-localvolume-manager容器，此容器负责管理节点上的lvm存储池及localpv的创建。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >选择自定义规格时，everest-csi-controller内存配置推荐如下。
         >-   Pod和PVC的数量均小于2000时，everest-csi-controller的内存上限推荐配置为600Mi。
         >-   Pod和PVC的数量均小于5000时，everest-csi-controller的内存上限推荐配置为1Gi。
 
-    -   everest-csi-driver：由DaemonSet形式部署，Pod中含有一个基本容器everest-csi-driver容器，负责PV的挂载、卸载、文件系统resize等功能。若集群所在区域支持node-attacher，everest-csi-driver组件的Pod还会带有一个everest-node-attacher的容器，此容器负责分布式attach EVS，该配置项在部分Region开放。
+    -   everest-csi-driver：由DaemonSet形式部署，Pod中含有一个基本容器everest-csi-driver容器，负责PV的挂载、卸载、文件系统resize等功能。若插件版本为1.2.x，且集群所在区域支持node-attacher，everest-csi-driver组件的Pod还会带有一个everest-node-attacher的容器，此容器负责分布式attach EVS，该配置项在部分Region开放。
 
         >![](public_sys-resources/icon-note.gif) **说明：** 
         >选择自定义规格时，everest-csi-driver内存限制推荐配置不低于300Mi。若该值太小可能导致插件实例容器启动异常，从而导致插件不可用的情况。
@@ -36,13 +36,23 @@ Everest是一个云原生容器存储系统，基于CSI（即Container Storage I
 
 3.  参数配置。
 
-    everest 1.2.26以上版本针对大批量挂EVS卷的性能做了优化，提供了如下3个参数供用户配置。
+    everest 1.2.26以上版本针对大批量挂EVS卷的性能做了优化，用户可配置如下3个参数。
 
     -   csi\_attacher\_worker\_threads：everest插件中同时处理挂EVS卷的worker数，默认值为“60”。
     -   csi\_attacher\_detach\_worker\_threads：everest插件中同时处理卸载EVS卷的worker数，默认值均为“60”。
     -   volume\_attaching\_flow\_ctrl：everest插件在1分钟内可以挂载EVS卷的最大数量，此参数的默认值“0”表示everest插件不做挂卷限制，此时挂卷性能由底层存储资源决定。
 
     上述三个参数由于存在关联性且与集群所在局点的底层存储资源限制有关，当您对大批量挂卷的性能有要求（大于500EVS卷/分钟）时，请联系客服，在指导下进行配置，否则可能会因为参数配置不合理导致出现everest插件运行不正常的情况。
+
+    其余参数：
+
+    -   cluster\_id：集群ID。
+    -   default\_vpc\_id：集群所在VPC的ID。
+    -   disable\_auto\_mount\_secret：挂载对象桶/并行文件系统时，是否允许使用默认的AKSK，默认为false。
+    -   enable\_node\_attacher：是否开启agent侧attacher，开启后由attacher负责处理[VolumeAttachment](https://kubernetes.io/zh-cn/docs/reference/kubernetes-api/config-and-storage-resources/volume-attachment-v1/)。
+    -   flow\_control：默认为空。用户无需填写。
+    -   over\_subscription：本地存储池（local\_storage）的超分比。默认为80，若本地存储池为100G，可以超分为180G使用。
+    -   project\_id：集群所属项目ID。
 
 4.  单击“安装“。
 
